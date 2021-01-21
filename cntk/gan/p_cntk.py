@@ -206,7 +206,7 @@ def train(reader_train):
                 batch_inputs = {X_real: X_data[X_real].data, Z: Z_data}
                 D_trainer.train_minibatch(batch_inputs)
 
-        # learning Generator
+        # Learning Generator
         Z_data = noise_sample(minibatch_size)
         batch_inputs = {Z: Z_data}
         G_trainer.train_minibatch(batch_inputs)

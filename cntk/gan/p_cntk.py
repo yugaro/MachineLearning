@@ -216,7 +216,7 @@ def train(reader_train):
 
 def plot_images(images, subplot_shape):
     """
-    plot MNIST image
+    plot MNIST image 
     imput:
         images (ndarray): images (784px)
         subplot_shape (list): image row, row [index(int), row(int)]

@@ -1,0 +1,21 @@
+default:
+  image: "pytorch/pytorch"
+  before_script:
+    - pip --version
+    - python --version
+
+before_script:
+  - docker info
+
+build_image:
+  stage: build
+  script:
+    - docker build -t gitlab-registry.nautilus.optiputer.net/vdhiman/bayescbf:${CI_COMMIT_SHA:0:0} .
+    - docker tag gitlab-registry.nautilus.optiputer.net/vdhiman/bayescbf:${CI_COMMIT_SHA:0:0} gitlab-registry.nautilus.optiputer.net/vdhiman/bayescbf:latest
+    - docker push gitlab-registry.nautilus.optiputer.net/vdhiman/bayescbf
+
+
+test-repo:
+  stage: test
+  script:
+    - docker run gitlab-registry.nautilus.optiputer.net/vdhiman/bayescbf python setup.py test

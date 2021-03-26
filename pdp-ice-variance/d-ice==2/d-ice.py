@@ -10,28 +10,28 @@ np.random.seed(0)
 plt.rcParams['font.size'] = 18
 
 def data_cleansing(dataset):
-    # 特徴量の選択
+    # select features
     X_dataset = pd.DataFrame(dataset.data, columns=dataset.feature_names)
     feature_names = [X_dataset.columns[7], X_dataset.columns[20], X_dataset.columns[21],
                      X_dataset.columns[24], X_dataset.columns[27], X_dataset.columns[28]]
 
-    # データセットの正規化 (範囲: [0, 1])
+    # normalize dataset (範囲: [0, 1])
     mms = MinMaxScaler(feature_range=(0, 1), copy=True)
     X_train = mms.fit_transform(X_dataset[feature_names])
 
-    # 正解ラベルの取り出し
+    # extract label
     y_train = dataset.target
 
     return X_train, y_train, feature_names
 
 
 def derivative_func(prior_data, post_data, h):
-    # # compute derivative
+    # compute derivative
     return (post_data - prior_data) / h
 
 
 def analyze_var_dice(model, X_train, grid_resolution):
-    # # analyze variances of derivative of ice
+    # analyze variances of derivative of ice
     grid_value = np.zeros((X_train.shape[1], grid_resolution))
     pdp_data = np.zeros((X_train.shape[1], grid_resolution))
     ice_data = np.zeros(
@@ -120,17 +120,17 @@ def plot_pdp_std(grid_value, pdp_data, pdp_data_upper, pdp_data_bottom, feature_
     fig.suptitle("Feature - Benign Prob. (with STD.)")
     fig.savefig('./images/pdp_std.png')
 
-# 乳がんデータセットの読み込み
+# read dataset
 dataset = load_breast_cancer()
 
-# 学習用データの生成
+# extract training dataset
 X_train, y_train, feature_names = data_cleansing(dataset)
 
-# ランダムフォレストでモデルの学習
+# lean model by random forest
 rfc = RandomForestClassifier()
 # rfc.fit(X_train, y_train)
 
-# ロジステック回帰
+# learn model by logistic regression
 lg = LogisticRegression()
 lg.fit(X_train, y_train)
 
@@ -144,9 +144,9 @@ grid_value, pdp_data, ice_data, dpdp_data, dice_data, var_dice_data = analyze_va
 # plot data
 plot_var_dice(grid_value, var_dice_data, feature_names)
 
-# aiueo
+# compute upper and bottom of pdp
 pdp_data_upper, pdp_data_bottom = pdp_upper_bottom(
     grid_value, pdp_data, dpdp_data, var_dice_data)
 
-# 信頼区間を付随させてPDPを可視化
+# visualize pdp with std
 plot_pdp_std(grid_value, pdp_data, pdp_data_upper, pdp_data_bottom, feature_names)

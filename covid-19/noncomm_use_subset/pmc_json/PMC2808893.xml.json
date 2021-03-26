@@ -1,0 +1,2536 @@
+{
+    "paper_id": "PMC2808893",
+    "metadata": {
+        "title": "Recode-2: new design, new search tools, and many more genes",
+        "authors": [
+            {
+                "first": "Micha\u00ebl",
+                "middle": [],
+                "last": "Bekaert",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Andrew",
+                "middle": [
+                    "E."
+                ],
+                "last": "Firth",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Yan",
+                "middle": [],
+                "last": "Zhang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Vadim",
+                "middle": [
+                    "N."
+                ],
+                "last": "Gladyshev",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "John",
+                "middle": [
+                    "F."
+                ],
+                "last": "Atkins",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Pavel",
+                "middle": [
+                    "V."
+                ],
+                "last": "Baranov",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The term \u2018translational recoding\u2019 describes the utilization of non-standard decoding during protein synthesis and encompasses such processes as ribosomal frameshifting, codon redefinition, translational bypassing and StopGo (1\u20137). What is often considered as a decoding error\u2014e.g. a frameshifting error or mistranslation of a particular codon\u2014may occasionally benefit the organism by increasing its fitness and survival. In such instances the propensity for the decoding \u2018error\u2019 may be selected for during evolution, leading to the formation of a particular sequence context that elevates the frequency of the \u2018error\u2019. To discriminate such cases of programmed decoding \u2018misbehaviour\u2019 from promiscuous translational errors or translational noise, the term recoding is used. The position within an mRNA where a recoding event takes place is termed the \u2018recoding site\u2019. Sequence elements responsible for increasing the efficiency of recoding events are termed \u2018recoding stimulatory signals\u2019, and a minimal sequence fragment that allows recoding to take place at the natural efficiency (i.e. relative to the level of standard decoding at the recoding site) is termed a \u2018recoding cassette\u2019.",
+            "cite_spans": [
+                {
+                    "start": 225,
+                    "end": 228,
+                    "mention": "1\u20137",
+                    "ref_id": null
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Recoding can benefit gene expression in a number of ways. It can regulate gene expression by being part of a sensor for particular cellular conditions. Prominent examples include ribosomal frameshifting in bacterial release factor 2 (RF2) and eukaryotic antizyme mRNAs. In both instances, ribosomal frameshifting is required for the production of the corresponding active full-length protein products. In the RF2 mRNA, the efficiency of frameshifting is negatively regulated by the cellular concentration of its product, RF2, providing an auto-regulatory circuit for its biosynthesis (8\u201310). In the antizyme mRNA, the efficiency of frameshifting is modulated by cellular levels of polyamines, whose concentration in turn is controlled by antizyme (11,12). Thus, this mechanism ensures the maintenance of antizyme production at the levels required to support physiologically appropriate concentrations of polyamines. Recoding can also be used for the diversification of protein products encoded by a single gene. An illustrative example is in bacterial dnaX mRNA, where frameshifting allows synthesis of two different protein subunits\u2014sharing the same N-terminal part\u2014from a single open reading frame (ORF) in its mRNA (13\u201315). A presumed constant ratio of frameshifting in dnaX ensures a fixed stoichiometric balance between these two subunits (16). This balance, then, is independent of the absolute levels of dnaX transcription and translational initiation on its mRNA. Similarly, in many viruses recoding is responsible for setting a ratio between protein products (such as those encoded by gag\u2013pro\u2013pol genes in retroviruses) produced from a single mRNA (17). Recoding also provides RNA viruses with a mechanism for the translation of downstream ORFs on polycistronic RNAs [other mechanisms include leaky scanning, shunting, reinitiation, IRESs and the production of subgenomic RNAs (18)] and may also be involved in global regulation mechanisms, such as mediating the switch between translation and replication on the same genomic RNA (19). Finally, recoding provides a way for the incorporation of non-standard amino acids\u2014e.g. amino acids that share their codons with termination signals (the most prominent example of which is selenocysteine, encoded by UGA) (20\u201322). For further information on the diverse variety of recoding functions, see recent reviews (1,3,7,23,24).",
+            "cite_spans": [
+                {
+                    "start": 585,
+                    "end": 589,
+                    "mention": "8\u201310",
+                    "ref_id": null
+                },
+                {
+                    "start": 748,
+                    "end": 750,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 751,
+                    "end": 753,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1219,
+                    "end": 1224,
+                    "mention": "13\u201315",
+                    "ref_id": null
+                },
+                {
+                    "start": 1345,
+                    "end": 1347,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1658,
+                    "end": 1660,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1887,
+                    "end": 1889,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 2040,
+                    "end": 2042,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 2267,
+                    "end": 2272,
+                    "mention": "20\u201322",
+                    "ref_id": null
+                },
+                {
+                    "start": 2365,
+                    "end": 2366,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 2367,
+                    "end": 2368,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 2369,
+                    "end": 2370,
+                    "mention": "7",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 2371,
+                    "end": 2373,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 2374,
+                    "end": 2376,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Recoding cassettes may be composed of a variety of diverse sequence elements. For example, primary nucleotide sequences may promote re-arrangements of tRNA molecules relative to their codons in mRNA inside the ribosome or affect recognition of tRNAs or release factors in the ribosomal A-site. On the other hand, many recoding signals act in the form of RNA secondary structures, such as simple stem-loops, or more complex pseudoknots, kissing stem-loops and other structures that involve interactions between considerably distant RNA regions (19,25\u201328). Trans-acting RNA signals affecting ribosomal decoding through complementary interactions with ribosomal RNA (29\u201332), or through the nascent peptide acting within the ribosome exit tunnel (6,33,34), are also known. Some recoding events\u2014such as selenocysteine insertion\u2014require the presence of additional specialized machinery such as selenocysteine tRNAs, selenocysteine-specific translation factors and several other components of the selenocysteine biosynthesis and insertion pathway (20,35\u201337). Recent reviews on stimulatory signals involved in the modulation of recoding events and molecular mechanisms of recoding provide further details (7,25,27,38,39).",
+            "cite_spans": [
+                {
+                    "start": 544,
+                    "end": 546,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 547,
+                    "end": 552,
+                    "mention": "25\u201328",
+                    "ref_id": null
+                },
+                {
+                    "start": 664,
+                    "end": 669,
+                    "mention": "29\u201332",
+                    "ref_id": null
+                },
+                {
+                    "start": 743,
+                    "end": 744,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 745,
+                    "end": 747,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 748,
+                    "end": 750,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1041,
+                    "end": 1043,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 1044,
+                    "end": 1049,
+                    "mention": "35\u201337",
+                    "ref_id": null
+                },
+                {
+                    "start": 1198,
+                    "end": 1199,
+                    "mention": "7",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 1200,
+                    "end": 1202,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1203,
+                    "end": 1205,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1206,
+                    "end": 1208,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1209,
+                    "end": 1211,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Despite considerable progress in the development of computational tools for the prediction of protein coding genes in sequenced genomes, the identification and annotation of recoded genes lags far behind. The hurdle lies not so much in the fact that recoded genes do not obey standard rules of genetic readout but, rather, in the considerable diversity of recoded genes and sequence elements responsible for recoding. Even among evolutionarily related genes, all utilizing recoding, the diversity of recoding signals can be considerable. An extreme example is when orthologous genes utilize recoding at different stages of gene expression to achieve the same goal. An example is in dnaX, where ribosomal frameshifting is employed by enterobacteria, but transcriptional slippage is used in Thermus thermophilus (40). A similar situation occurs in bacterial insertion sequence (IS) elements, where a certain group of IS elements utilizes transcriptional slippage to produce ORFA\u2013ORFB fusions, while many other IS elements utilize ribosomal frameshifting for the same purpose (41). The diversity of recoding functions, combined with the wide spectrum of unrelated sequence elements involved in recoding, makes the design of a uniform model of recoding intractable. Nonetheless, in recent years, we have witnessed the development of specialized models and computational tools for the identification of particular subsets of recoding cassettes, or tools that are specific to recoding events in particular groups of homologous genes (42\u201345).",
+            "cite_spans": [
+                {
+                    "start": 811,
+                    "end": 813,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 1074,
+                    "end": 1076,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 1528,
+                    "end": 1533,
+                    "mention": "42\u201345",
+                    "ref_id": null
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "These developments, at least partially, were facilitated by the availability of a compiled dataset of known recoded genes collected together in the Recode database (http://recode.genetics.utah.edu), which was initially launched 9 years ago (46,47). To facilitate further development of computational tools for the prediction of recoded genes in the ever faster growing body of sequence data, as well as to provide bench researchers with up-to-date information on recoding, an efficient means of Recode database population and annotation are now required. In this article, we describe the incarnation of the database, Recode-2. The major advances of Recode-2 (hosted in a new location http://recode.ucc.ie) over previous versions include a new web design allowing enhanced visualization of stimulatory signals, a uniform RecodeML format for the annotation of recoded genes, and a significantly larger number of entries\u2014including many recently identified cases\u2014that altogether have more than doubled the size of the database since its last published update.",
+            "cite_spans": [
+                {
+                    "start": 241,
+                    "end": 243,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 244,
+                    "end": 246,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The data are stored in a local PostgreSQL database that is queried by PHP scripts embedded in the web interface. The schema of the PostgreSQL database is shown in Figure 1. The database stores information on individual genes that utilize recoding, the mechanisms and stimulatory signals involved, and references to the original literature sources that describe the recoding events. In order to facilitate the uniform annotation of recoding events, we have designed an XML-based format for the annotation of recoded genes, RecodeML. The document type definition for RecodeML is available at the Recode-2 web site at http://recode.ucc.ie/dtd The extensibility of the RecodeML format will allow incorporation of new annotation, if required, for newly discovered types of recoding, and the associated features, as they are being discovered. The database handles batch importation of properly designed RecodeML entries into the PostgreSQL database, thus facilitating rapid population of the database with new data.\n\n",
+            "cite_spans": [],
+            "section": "DATABASE ORGANIZATION AND USAGE",
+            "ref_spans": [
+                {
+                    "start": 163,
+                    "end": 171,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The data in the database may be explored in two ways. They may be browsed by one of the three categories: kingdom (archaea, bacteria, eukaryotes and viruses), organism and type of recoding. The data may also be searched directly by key words that can be inserted into the search field. Searches that use regular expressions are allowed. The output of a database search is a list of Recode-2 entries in a short format that includes organism name, kingdom, genus, type of recoding event, status of the entry in the database and a link to the full database entry. The full description includes the following additional information: (i) the common name of the gene and the validation status of the recoding event; (ii) the organism description, giving the organism name and a link to the NCBI Taxonomy Browser (48); (iii) the sequence description, giving the Genbank (49) accession numbers for matching sequences (with links to Genbank) and links to detailed annotations of the sequences and to diagrams of RNA secondary structures involved in stimulation of the recoding event; (iv) information on the protein sequence generated as a result of recoding; (v) comments on the function of the recoding event and any additional notes and (vi) references to relevant literature (with links to corresponding abstracts in PubMed). The detailed sequence annotation appears in the form of text decorations that are described in the Help page of the database and are also illustrated within the Recode-1 logo itself (which can be used for rapid intuitive decoding of the text decorations and their associations with the mechanistic ways by which different sequences affect ribosome functions). To generate RNA secondary structure diagrams, PseudoViewer3 (50) is used, since it can handle complex pseudoknot RNA structures correctly. Figure 2 shows an example of sequence annotation for the human oaz1 gene, alongside a diagram of a stimulatory RNA secondary structure, and the Recode-1 logo.\n\n",
+            "cite_spans": [
+                {
+                    "start": 807,
+                    "end": 809,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 864,
+                    "end": 866,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1742,
+                    "end": 1744,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "DATABASE ORGANIZATION AND USAGE",
+            "ref_spans": [
+                {
+                    "start": 1820,
+                    "end": 1828,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Unlike Recode-1, where all data on recoding events were introduced manually, Recode-2 also utilizes automated identification of recoding events by the recently developed computer programs ARFA (43) and OAF (44), that are able to identify and annotate +1 frameshifting events in mRNAs of bacterial RF2s and eukaryotic antizyme (OAZs), respectively. However, a significant source of recoding events remains to be serendipitous discoveries by experimental studies that sometimes are complemented by more systematic studies of large groups of similar genes (51,52). Therefore, a large proportion of new data are still populated manually or semi-manually. To ease manual population of recoding events, a special form has been designed that is available in the database upon user registration. User registration needs to be approved by one of the database contributors. The novel data in the database include 249 RF2 mRNAs identified by ARFA, 152 events identified by OAF, 200 new selenoprotein genes (53\u201356) and \u223c200 new viral annotations (57) including the newly discovered frameshift cassettes in potyviruses (58), alphaviruses (59) and the Japanese encephalitis group of flaviviruses (60).",
+            "cite_spans": [
+                {
+                    "start": 194,
+                    "end": 196,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 207,
+                    "end": 209,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 554,
+                    "end": 556,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 557,
+                    "end": 559,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 996,
+                    "end": 1001,
+                    "mention": "53\u201356",
+                    "ref_id": null
+                },
+                {
+                    "start": 1035,
+                    "end": 1037,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 1107,
+                    "end": 1109,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 1126,
+                    "end": 1128,
+                    "mention": "59",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 1183,
+                    "end": 1185,
+                    "mention": "60",
+                    "ref_id": "BIBREF56"
+                }
+            ],
+            "section": "NOVEL DATA",
+            "ref_spans": []
+        },
+        {
+            "text": "The database will expand in accordance with the growth of available sequence information that will be scanned by one of the existing programs for recode annotation. We also plan to continue developing tools for the automatic identification of recoding events from nucleotide sequences. As the field grows and the number of recoded genes progressively increases, it becomes harder to extract data from the relevant literature and a number of novel recoded genes may escape the database. Therefore, we encourage users and researchers in the field to submit their data directly to the Recode-2 database. We are also willing to provide help with the analysis of potential new recoding events.",
+            "cite_spans": [],
+            "section": "FUTURE DEVELOPMENT",
+            "ref_spans": []
+        },
+        {
+            "text": "Science Foundation Ireland (SFI) grants (to P.V.B. and J.F.A.); National Institutes of Health grants (to J.F.A. and V.N.G.). Funding for open access charge: Science Foundation Ireland.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        },
+        {
+            "text": "Conflict of interest statement. None declared.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1.: Entity-Relationship diagram for the Recode-2 database. The database schematic shows the relationships between the database tables. Each Recode-2 entry is composed of one entry in the Recode-2 table and a variable number of entries in related tables. PK (Primary Key) indicates the row selected as the unique identifier for a table. FK (Foreign Key) indicates rows of a table whose values match those in the primary key of a related table. (This ensures the constancy of the database.) The arrows show the connection relationships between the various tables (PK to FK).",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: Screenshots from the Recode-2 database for the entry describing +1 frameshifting in human antizyme 1. (A) Annotated sequence of the human antizyme 1 gene. Colouring and formatting of the text highlights functional elements according to a scheme described on the Help page of the Recode-2 database and within the Recode-1 logo. (B) Structure of the stimulatory RNA pseudoknot. (C) The Recode1 logo.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Reprogrammed genetic decoding in cellular gene expression",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Namy",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Rousset",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Napthine",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol. Cell",
+            "volume": "13",
+            "issn": "",
+            "pages": "157-168",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Release factor 2 frameshifting sites in different bacteria",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "EMBO Rep.",
+            "volume": "3",
+            "issn": "",
+            "pages": "373-377",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Ribosomal frameshifting in decoding antizyme mRNAs from yeast and protists to humans: close to 300 cases reveal remarkable diversity despite underlying conservation",
+            "authors": [
+                {
+                    "first": "IP",
+                    "middle": [],
+                    "last": "Ivanov",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res.",
+            "volume": "35",
+            "issn": "",
+            "pages": "1842-1858",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Autoregulatory frameshifting in decoding mammalian ornithine decarboxylase antizyme",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Matsufuji",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Matsufuji",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Miyazaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Murakami",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Hayashi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Cell",
+            "volume": "80",
+            "issn": "",
+            "pages": "51-60",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "The gamma subunit of DNA polymerase III holoenzyme of Escherichia coli is produced by ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Flower",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "McHenry",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "87",
+            "issn": "",
+            "pages": "3713-3717",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Translational frameshifting generates the gamma subunit of DNA polymerase III holoenzyme",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Tsuchihashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kornberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "87",
+            "issn": "",
+            "pages": "2516-2520",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Programmed ribosomal frameshifting generates the Escherichia coli DNA polymerase III gamma subunit from within the tau subunit reading frame",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Blinkowa",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Nucleic Acids Res.",
+            "volume": "18",
+            "issn": "",
+            "pages": "1725-1729",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Structural probing and mutagenic analysis of the stem-loop required for Escherichia coli dnaX ribosomal frameshifting: programmed efficiency of 50%",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Larsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J. Mol. Biol.",
+            "volume": "271",
+            "issn": "",
+            "pages": "47-60",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Programmed ribosomal frameshifting in HIV-1 and the SARS-CoV",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                },
+                {
+                    "first": "FJ",
+                    "middle": [],
+                    "last": "Dos Ramos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Virus Res.",
+            "volume": "119",
+            "issn": "",
+            "pages": "29-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Alternative translation strategies in plant viruses",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Thiebeauld",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Pooggin",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Ryabova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Plant Viruses",
+            "volume": "1",
+            "issn": "",
+            "pages": "1-20",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Long-distance RNA\u2013RNA interactions in plant virus gene expression and replication",
+            "authors": [
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Annu. Rev. Phytopathol.",
+            "volume": "44",
+            "issn": "",
+            "pages": "447-467",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Programmed translational frameshifting",
+            "authors": [
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Farabaugh",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Annu. Rev. Genet.",
+            "volume": "30",
+            "issn": "",
+            "pages": "507-528",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Eukaryotic selenoprotein synthesis: mechanistic insight incorporating new factors and new functions for old factors",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Squires",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Berry",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "IUBMB Life",
+            "volume": "60",
+            "issn": "",
+            "pages": "232-235",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Selenoprotein synthesis: UGA does not end the story",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Allmang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Krol",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Biochimie",
+            "volume": "88",
+            "issn": "",
+            "pages": "1561-1571",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Hatfield",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Berry",
+                    "suffix": ""
+                },
+                {
+                    "first": "VN",
+                    "middle": [],
+                    "last": "Gladyshev",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Selenium: Its Molecular Biology and Role in Human Health",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Recoding in bacteriophages and bacterial IS elements",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Fayet",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Hendrix",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Trends Genet.",
+            "volume": "22",
+            "issn": "",
+            "pages": "174-181",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "The role of programmed-1 ribosomal frameshifting in coronavirus propagation",
+            "authors": [
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Plant",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Front Biosci.",
+            "volume": "13",
+            "issn": "",
+            "pages": "4873-4881",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Frameshifting RNA pseudoknots: structure and mechanism",
+            "authors": [
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Giedroc",
+                    "suffix": ""
+                },
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Cornish",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Virus Res.",
+            "volume": "139",
+            "issn": "",
+            "pages": "193-208",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Structure, stability and function of RNA pseudoknots involved in stimulating ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Giedroc",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Theimer",
+                    "suffix": ""
+                },
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Nixon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J. Mol. Biol.",
+            "volume": "298",
+            "issn": "",
+            "pages": "167-185",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "RNA pseudoknots and the regulation of protein synthesis",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Gilbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Pennell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Biochem. Soc. Trans.",
+            "volume": "36",
+            "issn": "",
+            "pages": "684-689",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "A -1 ribosomal frameshift element that requires base pairing across four kilobases suggests a mechanism of regulating ribosome and replicase traffic on a viral RNA",
+            "authors": [
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Barry",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "99",
+            "issn": "",
+            "pages": "11133-11138",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Slippery runs, shifty stops, backward steps, and forward hops: -2, -1, +1, +2, +5, and +6 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Weiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Dunn",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Cold Spring Harb. Symp. Quant. Biol.",
+            "volume": "52",
+            "issn": "",
+            "pages": "687-693",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Recoding: translational bifurcations in gene expression",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Gene",
+            "volume": "286",
+            "issn": "",
+            "pages": "187-201",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Upstream stimulators for recoding",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Larsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Peden",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Matsufuji",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Matsufuji",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Brady",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Maldonado",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Wills",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Fayet",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Biochem. Cell Biol.",
+            "volume": "73",
+            "issn": "",
+            "pages": "1123-1129",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Overriding standard decoding: implications of recoding for ribosome function and enrichment of gene expression",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Fayet",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Herr",
+                    "suffix": ""
+                },
+                {
+                    "first": "MT",
+                    "middle": [],
+                    "last": "Howard",
+                    "suffix": ""
+                },
+                {
+                    "first": "IP",
+                    "middle": [],
+                    "last": "Ivanov",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Matsufuji",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Prere",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Cold Spring Harb. Symp. Quant. Biol.",
+            "volume": "66",
+            "issn": "",
+            "pages": "217-232",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Use of tRNA suppressors to probe regulation of Escherichia coli release factor 2",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Curran",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Yarus",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "J. Mol. Biol.",
+            "volume": "203",
+            "issn": "",
+            "pages": "75-83",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Translational bypassing without peptidyl-tRNA anticodon scanning of coding gap mRNA",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Wills",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "O'C;onnor",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Rettberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "EMBO J.",
+            "volume": "27",
+            "issn": "",
+            "pages": "2533-2544",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "A nascent peptide is required for ribosomal bypass of the coding gap in bacteriophage T4 gene 60",
+            "authors": [
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Weiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Dunn",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Cell",
+            "volume": "62",
+            "issn": "",
+            "pages": "117-126",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Protein factors mediating selenoprotein synthesis",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lescure",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Fagegaltier",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Carbon",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Krol",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Curr. Protein Pept. Sci.",
+            "volume": "3",
+            "issn": "",
+            "pages": "143-151",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Solution structure of SECIS, the mRNA element required for eukaryotic selenocysteine insertion\u2013interaction studies with the SECIS-binding protein SBP",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Walczak",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Hubert",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Carbon",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Krol",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Biomed. Environ. Sci.",
+            "volume": "10",
+            "issn": "",
+            "pages": "177-181",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Selenocysteine inserting tRNAs: an overview",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Commans",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bock",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "FEMS Microbiol. Rev.",
+            "volume": "23",
+            "issn": "",
+            "pages": "335-351",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "P-site tRNA is a crucial initiator of ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "RNA",
+            "volume": "10",
+            "issn": "",
+            "pages": "221-230",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "A new kinetic model reveals the synergistic effect of E-, P- and A-sites on +1 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Gupta",
+                    "suffix": ""
+                },
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Petrov",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Res.",
+            "volume": "36",
+            "issn": "",
+            "pages": "2619-2629",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Programmed ribosomal frameshifting goes beyond viruses: organisms from all three kingdoms use frameshifting to regulate gene expression, perhaps signaling a paradigm shift",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Microbe",
+            "volume": "1",
+            "issn": "",
+            "pages": "521-527",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Nonlinearity in genetic decoding: homologous DNA replicase genes use alternatives of transcriptional slippage or translational frameshifting",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Larsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Wills",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "97",
+            "issn": "",
+            "pages": "1683-1688",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Transcriptional slippage in bacteria: distribution in sequenced genomes and utilization in IS element gene expression",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Hammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Genome Biol.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "KnotInFrame: prediction of -1 ribosomal frameshift events",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Theis",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Reeder",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Giegerich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Res.",
+            "volume": "36",
+            "issn": "",
+            "pages": "6013-6020",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "ARFA: a program for annotating bacterial release factor genes, including prediction of programmed ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bekaert",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Bioinformatics",
+            "volume": "22",
+            "issn": "",
+            "pages": "2463-2465",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Ornithine decarboxylase antizyme finder (OAF): fast and reliable detection of antizymes with frameshifts in mRNAs",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bekaert",
+                    "suffix": ""
+                },
+                {
+                    "first": "IP",
+                    "middle": [],
+                    "last": "Ivanov",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMC Bioinformatics",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Predicting genes expressed via -1 and +1 frameshifts",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Moon",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Byun",
+                    "suffix": ""
+                },
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jeong",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res.",
+            "volume": "32",
+            "issn": "",
+            "pages": "4884-4892",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "RECODE: a database of frameshifting, bypassing and codon redefinition utilized for gene expression",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "OL",
+                    "middle": [],
+                    "last": "Gurvich",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Fayet",
+                    "suffix": ""
+                },
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Prere",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Giddings",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nucleic Acids Res.",
+            "volume": "29",
+            "issn": "",
+            "pages": "264-267",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Recode 2003",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "OL",
+                    "middle": [],
+                    "last": "Gurvich",
+                    "suffix": ""
+                },
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Hammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res.",
+            "volume": "31",
+            "issn": "",
+            "pages": "87-89",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Database resources of the National Center for Biotechnology Information",
+            "authors": [
+                {
+                    "first": "EW",
+                    "middle": [],
+                    "last": "Sayers",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Barrett",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Benson",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Bryant",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Canese",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Chetvernin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Church",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "DiCuccio",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Edgar",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Federhen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Res.",
+            "volume": "37",
+            "issn": "",
+            "pages": "D5-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "GenBank",
+            "authors": [
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Benson",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Karsch-Mizrachi",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ostell",
+                    "suffix": ""
+                },
+                {
+                    "first": "EW",
+                    "middle": [],
+                    "last": "Sayers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Res.",
+            "volume": "37",
+            "issn": "",
+            "pages": "D26-D31",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "A case for \u201cStopGo\u201d: reprogramming translation to augment codon meaning of GGN by promoting unconventional termination (Stop) after addition of glycine and then allowing continued translation (Go)",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Wills",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Loughran",
+                    "suffix": ""
+                },
+                {
+                    "first": "CY",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Parsawar",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Ryan",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "RNA",
+            "volume": "13",
+            "issn": "",
+            "pages": "803-810",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "PseudoViewer3: generating planar drawings of large-scale RNA structures with pseudoknots",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Byun",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "",
+            "pages": "1435-1437",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Sequences that direct significant levels of frameshifting are frequent in coding regions of Escherichia coli",
+            "authors": [
+                {
+                    "first": "OL",
+                    "middle": [],
+                    "last": "Gurvich",
+                    "suffix": ""
+                },
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Hammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "EMBO J.",
+            "volume": "22",
+            "issn": "",
+            "pages": "5941-5950",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Conserved translational frameshift in dsDNA bacteriophage tail assembly genes",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Hendrix",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Duda",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol. Cell",
+            "volume": "16",
+            "issn": "",
+            "pages": "11-21",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Comparative genomics of trace elements: emerging dynamic view of trace element utilization and function",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "VN",
+                    "middle": [],
+                    "last": "Gladyshev",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Chem. Rev.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Dynamic evolution of selenocysteine utilization in bacteria: a balance between selenoprotein loss and evolution of selenocysteine from redox active cysteine residues",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Romero",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Salinas",
+                    "suffix": ""
+                },
+                {
+                    "first": "VN",
+                    "middle": [],
+                    "last": "Gladyshev",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Genome Biol.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Trends in selenium utilization in marine microbial world revealed through the analysis of the global ocean sampling (GOS) project",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "VN",
+                    "middle": [],
+                    "last": "Gladyshev",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS Genet.",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "The selenoproteome of Clostridium sp. OhILAs: characterization of anaerobic bacterial selenoprotein methionine sulfoxide reductase A",
+            "authors": [
+                {
+                    "first": "HY",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "BC",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "VN",
+                    "middle": [],
+                    "last": "Gladyshev",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Proteins",
+            "volume": "74",
+            "issn": "",
+            "pages": "1008-1017",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "An extended signal involved in eukaryotic -1 frameshifting operates through modification of the E site tRNA",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bekaert",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Rousset",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Mol. Cell",
+            "volume": "17",
+            "issn": "",
+            "pages": "61-68",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "An overlapping essential gene in the Potyviridae",
+            "authors": [
+                {
+                    "first": "BY",
+                    "middle": [],
+                    "last": "Chung",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "105",
+            "issn": "",
+            "pages": "5897-5902",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Discovery of frameshifting in Alphavirus 6K resolves a 20-year enigma",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "BY",
+                    "middle": [],
+                    "last": "Chung",
+                    "suffix": ""
+                },
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Fleeton",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Virol. J.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Coupling of open reading frames by translational bypassing",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Herr",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Annu. Rev. Biochem.",
+            "volume": "69",
+            "issn": "",
+            "pages": "343-372",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "A conserved predicted pseudoknot in the NS2A-encoding sequence of West Nile and Japanese encephalitis flaviviruses suggests NS1' may derive from ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Virol. J.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Recoding: expansion of decoding rules enriches gene expression",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Expression of peptide chain release factor 2 requires high-efficiency frameshift",
+            "authors": [
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Craigen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CT",
+                    "middle": [],
+                    "last": "Caskey",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Nature",
+            "volume": "322",
+            "issn": "",
+            "pages": "273-275",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "The function, structure and regulation of E. coli peptide chain release factors",
+            "authors": [
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Craigen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CT",
+                    "middle": [],
+                    "last": "Caskey",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Biochimie",
+            "volume": "69",
+            "issn": "",
+            "pages": "1031-1041",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

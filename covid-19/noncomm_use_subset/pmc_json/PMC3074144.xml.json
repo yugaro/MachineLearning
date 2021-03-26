@@ -1,0 +1,2925 @@
+{
+    "paper_id": "PMC3074144",
+    "metadata": {
+        "title": "Endogenous ribosomal frameshift signals operate as mRNA destabilizing elements through at least two molecular pathways in yeast",
+        "authors": [
+            {
+                "first": "Ashton",
+                "middle": [
+                    "T."
+                ],
+                "last": "Belew",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Vivek",
+                "middle": [
+                    "M."
+                ],
+                "last": "Advani",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jonathan",
+                "middle": [
+                    "D."
+                ],
+                "last": "Dinman",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Programmed ribosomal frameshifting (PRF) is has historically been associated with the study of viruses. PRF signals stochastically redirect ribosomes into new reading frames and viral PRF promotes synthesis of C-terminally extended fusion proteins. The most well defined PRF signals direct ribosomes to slip by one nucleotide in the 5\u2032 (\u22121) direction. \u22121 PRF signals typically contain three elements: a \u2018slippery site\u2019 composed of seven nucleotides (X XXY YYZ, incoming zero-frame indicated by spaces) where shifting occurs; a short spacer sequence and a downstream stimulatory structure, typically an mRNA pseudoknot (1\u20133). Current models posit that the pseudoknot directs ribosomes to pause with their aminoacyl- (aa-) and peptidyl-tRNAs positioned over the slippery sequence, where re-pairing of the non-wobble bases of both tRNAs with the \u22121 frame codons occurs (4\u20137).",
+            "cite_spans": [
+                {
+                    "start": 619,
+                    "end": 622,
+                    "mention": "1\u20133",
+                    "ref_id": null
+                },
+                {
+                    "start": 867,
+                    "end": 870,
+                    "mention": "4\u20137",
+                    "ref_id": null
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "It is now clear that PRF is employed by organisms representing every branch in the tree of life, suggesting an ancient and possibly universal mechanism for controlling the expression of actively translated mRNAs (8). The past few years have witnessed several reports describing in silico identification of recoding signals using a variety of computational approaches (9\u201316). While the methodologies of each study covered a broad range of bioinformatics techniques, the general goal with the exceptions of (9,15) was to first find out-of-frame ORFs followed by the identification of PRF signals in the overlapping region between them. While this can identify new classes of PRF signals, it is based on the assumption that PRF outcomes should mimic those observed in viral genomes and thus cannot identify new operational outcomes of frameshifting.",
+            "cite_spans": [
+                {
+                    "start": 213,
+                    "end": 214,
+                    "mention": "8",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 368,
+                    "end": 372,
+                    "mention": "9\u201316",
+                    "ref_id": null
+                },
+                {
+                    "start": 506,
+                    "end": 507,
+                    "mention": "9",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 508,
+                    "end": 510,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "While \u2018outcome-neutral\u2019 approaches using mRNA motifs known to promote efficient PRF cannot identify new classes of frameshift signals, they enable an expansion of our understanding of operational uses for PRF. The seminal study in this field searched the yeast genome for operational \u22121 ribosomal frameshift (\u22121 RF) promoting motifs resembling well characterized examples of viral \u22121 RF signals, identifying \u223c260 putative such elements (9). This work was limited by incomplete annotation of the yeast genome and insufficient computational resources available at the time. New bioinformatics tools were subsequently developed and applied using faster and more robust computational platforms. The results showed that: pattern matching approaches coupled with a predictive method for folding RNA sequences provided a dramatic improvement in the results; \u22121 RF motifs are widespread in the genome of Saccharomyces cerevisiae and many have predicted secondary structures with statistically significant measures of free energy (15). This analysis showed that \u223c11% of yeast genes contain at least one high probability \u22121 RF signal. Furthermore, we demonstrated that nine putative \u22121 RF signals selected from a variety of S. cerevisiae genes/genome promoted efficient recoding in vivo. More recently, this bioinformatics protocol has been applied to additional genomes. Currently, more than 25 genomes have been analyzed and it appears that 8\u201312% of genes contain at least one potential \u22121 RF signal (see PRFdB at http://prfdb.umd.edu/) (17).",
+            "cite_spans": [
+                {
+                    "start": 437,
+                    "end": 438,
+                    "mention": "9",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 1022,
+                    "end": 1024,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1530,
+                    "end": 1532,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "A key finding was that the outcome and function of \u22121 RF differs significantly between the viral and \u2018cellular\u2019 contexts. In viruses, PRF controls the stoichiometries of structural versus enzymatic proteins (18). In contrast, \u2018cellular\u2019 RF events redirect elongating ribosomes to premature termination codons, suggesting that \u22121 RF is used to control cellular mRNA abundance and stability through the nonsense-mediated mRNA decay (NMD) pathway. While PRF is required for the production of functional products, in the cellular context RF appears to operate in a different manner. Thus, in the current work, PRF is used to connote frameshift signals whose function is to produce C-terminally extended proteins with novel functions, while RF is used to refer to frameshift signals that operate to direct ribosomes to premature termination codons. A proof-of-principle experiment demonstrated that a viral \u22121 PRF signal can function as an mRNA destabilizing element and that mRNA destabilization required NMD (19). Here, rapid degradation of a reporter mRNA through NMD is demonstrated for four cellular yeast \u22121 RF signals. Further, genetic evidence suggests that the presence of the RF-stimulating pseudoknot may promote mRNA destabilization through the no-go decay (NGD) pathway (20). The EST2 gene, encoding the catalytic subunit of telomerase (21), was used to delve deeper into the relationships between \u22121 RF and mRNA stability. The EST2 mRNA is destabilized by \u22121 RF primarily via NMD. Ablation of its five \u22121 RF signals resulted in stabilization of the EST2 mRNA, and an inverse correlation between \u22121 RF efficiency and EST2 mRNA steady-steady state abundance was observed.",
+            "cite_spans": [
+                {
+                    "start": 208,
+                    "end": 210,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1006,
+                    "end": 1008,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1279,
+                    "end": 1281,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 1345,
+                    "end": 1347,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Escherichia coli DH5\u03b1 was used to amplify plasmid DNA. Transformations of E. coli were performed as described previously using the calcium chloride method (22). Yeast cells were transformed using the alkali cation method (23). Yeast strains used in this study are shown in Supplementary Table S1. Yeast were grown on YPAD and synthetic complete media (H\u2212) (24). yRP2056, yRP2077 were kind gifts from R. Parker. YJB2659 (generously provided by Judith Berman) was sporulated and strains JD1276, JD1281, JD1287 and JD1288 were obtained by tetrad dissection.",
+            "cite_spans": [
+                {
+                    "start": 156,
+                    "end": 158,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 222,
+                    "end": 224,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 357,
+                    "end": 359,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Strains, genetic manipulations and media ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Dual luciferase and mRNA stability plasmids have been previously described (15). Oligonucleotide primers were purchased from Integrated DNA Technologies (Coralville, IA, USA) and are shown in Supplementary Table S2. Computationally identified putative \u22121 RF signals were amplified from yeast genomic DNA using PCR using Oligonucleotide primers which terminated in a SalI restriction site at the 5\u2032 and BamHI at the 3\u2032. The zero-frame dual-luciferase reporter plasmid (pJD375) along with the -1 RF signal containing dsDNA fragments were digested using these restriction enzymes and ligated together to generate endogenous -1 RF signal containing dual-luciferase vectors. Oligonucleotide primers were chosen to terminate in KpnI restriction sites and amplify 41 and 30 bases of Renilla and firefly luciferase derived sequences respectively. The resulting amplicons were cloned into the KpnI site 492 bases into the PGK1 open reading frame of the unmodified PGK1 containing vector (pJD741). A premature termination codon vector (pJD828) was generated by cutting the readthrough (pJD753) with BamHI and backfilling with Klenow fragment. Plasmids so generated are described in Supplementary Table S3.",
+            "cite_spans": [
+                {
+                    "start": 76,
+                    "end": 78,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Generation of mRNA stability vectors ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Full length EST2 in a centromeric plasmid and the diploid S. cerevisiae EST2 deletion strain were generously provided by the Berman lab and have been previously described (25). Individual mutant strains were obtained by tetrad dissection. Five potentially significant \u22121 RF signals were identified in the EST2 open reading frame using the Predicted Ribosomal Frameshift Database (17). The wobble bases of five slippery heptamers were mutagenized to synonymous codons by oligonucleotide site-directed mutagenesis using the QuickChange II XL Site-Directed Mutagenesis Kit (Stratagene). Oligonucleotide design and reaction conditions were performed as recommended by the manufacturer with minor modifications. All mutations were confirmed by sequencing. Plasmids so generated are described in Supplementary Table S3.",
+            "cite_spans": [
+                {
+                    "start": 172,
+                    "end": 174,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 380,
+                    "end": 382,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Generation of EST2 open reading frame mutants ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "mRNA stability vectors were transformed into wild-type yeast (JD1158), upf1\u0394 or upf2\u0394 (JD1181 or JD1367), xrn1\u0394 (JD1170), dcp1\u0394 (JD1122), ski2\u0394 (JD1345), ski3\u0394 (JD19) and dom34\u0394 (JD1363) cells. The EST2 mRNA stability vector (pJD754) was transformed into rpb1-1 (JD977) and rpb1-1/Upf\u2212 (JD978) cells and time courses were performed as described previously (26). Total RNA was extracted with acid phenol/chloroform (pH = 4.5) from mid-logarithmic cell cultures (27), or with Trizole\u00a9 Reagent following the manufacturer\u2019s directions (Invitrogen, Carlsbad, CA, USA). RNA (northern) blotting was performed as previously described (19). Equal amounts of RNA (1, 2 or 4 \u03bcg) were separated through 1% agarose-formaldehyde gels. RNA samples were transferred and UV cross linked to Hybond-N-membranes (Amersham). Blots were hybridized with \u03b3[32P] 5\u2032-end-labeled oligonucleotides specific for U3 snoRNA (loading control) and the exogenous Renilla fragment (experimental). Messenger RNAs were identified using a GeneStorm phosphoimager (Bio-Rad) and quantified using QuantifyOne (Bio-Rad). Each experiment was repeated three or more times and averaged to generate graphs. Error bars for calculations including ratios of ratios may be approximated using either of the two following calculations. \u2018Average Ratio\u2019 is defined as the ratio of the two calculated values. Valuectrl is the value of the control (the denominator of the ratio) while Stdevctrl is the calculated standard deviation of the control. Similarly, valueexp and stdevexp are the value and standard deviations of the experimental (the numerator of the ratio). Repctrl and repexp are the number of replicates performed for the control and experimental respectively. The error bars in the graphs of ratios of ratios use the approximated standard error.\n\n",
+            "cite_spans": [
+                {
+                    "start": 357,
+                    "end": 359,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 461,
+                    "end": 463,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 627,
+                    "end": 629,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Steady state and time course RNA blot analyses of PGK1 harboring endogenous \u22121 RF signals ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Full length EST2 expression vectors (pJD641), EST2 mutant vectors (pJD796) and null plasmids (pJD315) were transformed into WT (JD1281), EST2 deletion (JD1287), UPF2 (JD1288) and EST2/UPF2 (JD1276) deletion strains. Total RNA was extracted with acid phenol/chloroform (pH = 4.5) from mid-logarithmic cell cultures. In parallel, total RNAs were extracted from isogenic rpl3\u0394 strains expressing wild-type RPL3 (JD1228), the down-frameshifting rpl3-R247A allele (AM-L3R247A), or the up-frameshifting rpl3-W255C/P257S allele (JD1229). To prevent amplification from contaminating cellular DNA, RNA was treated with DNase I before reverse transcription using Turbo DNase (Ambion). cDNA was generated using the Bio-Rad iScript cDNA synthesis kit and used in the LightCycler real-time PCR system. PCR reactions were performed with 2 \u00b5l of cDNA in 20-\u00b5l reaction mixtures containing \u223c10 nM each sense and antisense primer, and 1x LightCycler 480 SYBR Green I Master Mix (Roche). PCR cycles were run as follows: 1 cycle of 95\u00b0C for 10 min; 40 cycles of 95\u00b0C for 10 s, 54\u00b0C for 20 s and 72\u00b0C for 20 s. U3 snoRNA was chosen as a reference gene.",
+            "cite_spans": [],
+            "section": "Quantitative Real Time PCR ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The SPR6, EST2, BUB3 and TBF1 orthologs from the genomes of S. paradoxus, S. mikatae, S. bayanus, S. castellii, S. kudriavzevii and S. kluyveri were extracted from the Yeast Gene Order Browser (http://wolfe.gen.tcd.ie/ygob/) (28). Orthologs were identified for all genes. The nucleotide sequences were analyzed for the presence of potential \u22121 RF signals as previously described (15,17). Results are compiled in Supplementary Table S4.",
+            "cite_spans": [
+                {
+                    "start": 226,
+                    "end": 228,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 380,
+                    "end": 382,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 383,
+                    "end": 385,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Phylogenetic analyses ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Four operational yeast cellular \u22121 RF signals derived from the BUB3, EST2, SPR6 and TBF1 genes were employed to test the hypothesis that \u22121 RF signals function as mRNA destabilization elements. The slippery heptamers for these \u22121 RF signals begin at nucleotides 858, 1653, 279 and 1521 of their respective ORFs. These were cloned into a yeast PGK1 reporter gene so that frameshifted ribosomes are directed to PTCs. All inserts were flanked by sequences derived from Renilla and firefly luciferase genes, providing unique exogenous sequences for specific detection of the reporter mRNAs. Two additional PGK1 reporters without \u22121 RF signals were used as controls: a readthrough reporter encoded a continuous ORF, while a PTC control contained an in-frame UAA termination codon (Figure 1). Reporters were introduced into wild-type yeast cells; their steady state mRNA abundances were determined by RNA blot analysis and normalized to U3 snoRNA controls (Figure 2). A minimum of three independent blots were performed for all experiments. We note that the blots shown in Figure 2 are simplified for the purpose of publication and that the strains are not all isogenic with one another. In contrast, the bar graphs shown in Figure 2 represent data summarized from multiple blots using isogenic strains.\n\n",
+            "cite_spans": [],
+            "section": "Cellular \u22121 RF signals are mRNA destabilizing elements ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 776,
+                    "end": 784,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 951,
+                    "end": 959,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1067,
+                    "end": 1075,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1219,
+                    "end": 1227,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "In wild-type cells, all four of the cellular \u22121 RF signals and the in-frame PTC containing control were less abundant than the PGK1 reporter mRNA (Figure 2A). The decrease in mRNA steady-state abundance varied from \u223c100-fold of the readthrough control (EST2) to \u223c0.19-fold of wild-type (TBF1). Experiments were also performed in upf1\u0394 and dom34\u0394 strains, and the U3 snoRNA-normalized signal intensities were compared among the same signals between wild-type and mutant strains to determine the relative contributions of NMD and NGD on steady-state abundance of the \u22121 RF signal-containing reporters (Figure 2B and C). The PTC containing mRNA was only affected through the NMD pathway: 28-fold increased abundance in upf1\u0394 cells relative to wild-type cells, but no change in dom34\u0394 cells. The TBF1 \u22121 RF signal similarly affected the reporter signal only through NMD (\u223c4-fold). In contrast, the steady-state abundance of the EST2 and BUB3 \u22121 RF signal-containing reporter mRNAs were increased in both the upf1\u0394 and dom34\u0394 mutants: the EST2 signal was 35-fold less effective in decreasing mRNA abundance in upf1\u0394 cells when compared to the WT strain and \u223c14-fold less effective in dom34\u0394 cells, while the values for the BUB3 signal were \u223c7-fold and 8-fold, respectively. The steady-state abundance of the SPR6 \u22121 RF signal containing reporter mRNA was primarily increased in dom34\u0394 cells (\u223c2.0-fold). Deletion of DCP1, XRN1 and SKI3, all of which function downstream of UPF1 or DOM34, also generally increased the abundance of the reporter mRNAs (Figure 2D\u2013F). We note however that, in the case of the dcp1\u0394 cells, the reporter mRNAs were relatively abundant, most likely because of the presence of the 3\u2032 \u2192 5\u2032 exonuclease activity of the exosome, and/or due to decapping activity contributed by other factors, e.g. by the presence of the L-A virus (29). These results establish that endogenous cellular \u22121 RF signals can decrease mRNA steady-state abundance in yeast through the NMD pathway. In addition, the data are consistent with the hypothesis that a subset of these signals may also affect mRNA abundance through NGD, although substantiation of this claim requires further studies, e.g. to monitor the abundance of the endonucleolytic cleavage products and mRNA stability assays in NGD\u2212 strains.",
+            "cite_spans": [
+                {
+                    "start": 1848,
+                    "end": 1850,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Cellular \u22121 RF signals are mRNA destabilizing elements ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 147,
+                    "end": 155,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 600,
+                    "end": 608,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1545,
+                    "end": 1553,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Figure 2 suggests that \u22121 RF induced NMD is the major cause of decreased mRNA steady-state abundance by the EST2 \u22121 RF signal beginning at nucleotide 1653. To confirm this, a series of time course mRNA decay assays were performed employing the PGK1-EST2 \u22121 RF reporter, the readthrough control, and the PTC containing construct in cells harboring the temperature sensitive rpb1-1 allele of RNA polymerase II. At the zero time point, cells were shifted to the non-permissive temperature (42\u00b0C) to arrest transcription of mRNAs, total cellular mRNAs were extracted at 0, 1, 2, 4, 8 and 16 min. subsequent to the temperature shift, and RNA blots were hybridized with the firefly luciferase and U3 snoRNA probes. While the readthrough control was stable in wild-type cells (Figure 3A and D), both the PTC containing control and the reporter containing the EST2 \u22121 RF signal promoted rapid exponential decay of the reporter mRNA, thus demonstrating that this \u22121 RF signal can operate as an mRNA destabilizing element (Figure 3B\u2013D). In a parallel experiment using rpb1-1 upf1\u0394 cells, all of the reporter mRNAs remained stable (Figure 3E\u2013H). The rapid decay kinetic profile of the EST2 \u22121 RF containing reporter, and its stabilization in NMD-deficient cells are consistent with NMD being the major decay pathway triggered by this element (19). To independently test of this, the A AAA AAT slippery site was partially inactivated by mutating it to G AAG AAC. This silent mutation stabilized the reporter mRNA \u223c19-fold compared to the wild-type slippery site in wild-type, i.e. DOM34 cells (Figure 3I). Interestingly, this is less than the 35-fold stabilization in upf1\u0394 cells. One would expect that, since NMD is dependent of \u22121 RF, then inactivation of \u22121 RF should be quantitatively the same as inactivation of NMD. To address this, the steady state abundance of the G AAG AAC slippery site containing PGK1 reporter was assayed in an isogenic dom34\u0394 strain (Figure 3I, dom34\u0394 lane). This combination increased the steady-state abundance of the reporter mRNA to near wild-type levels.\n",
+            "cite_spans": [
+                {
+                    "start": 1332,
+                    "end": 1334,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "The EST2 \u22121 RF signal at nucleotide 1653 is primarily destabilized by \u22121 RF induced NMD ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 770,
+                    "end": 778,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1013,
+                    "end": 1021,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1121,
+                    "end": 1129,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1582,
+                    "end": 1590,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1952,
+                    "end": 1960,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The EST family of yeast genes is named after their \u2018Ever Shortening Telomere\u2019 phenotype (30). EST2 encodes the catalytic subunit of telomerase and the other three EST genes either encode protein subunits of telomerase (EST1 and EST3) or a telomere-associated regulator of telomerase (CDC13/EST4) (31). Telomere elongation occurs in late S phase, although Est2p is associated to varying extents with telomeric chromatin throughout the cell cycle, and telomerase defects result in chromosome instability and rapid senescence (32). The very low abundance EST2 mRNA is stabilized in NMD-deficient cells (33,34).",
+            "cite_spans": [
+                {
+                    "start": 89,
+                    "end": 91,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 297,
+                    "end": 299,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 524,
+                    "end": 526,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 600,
+                    "end": 602,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 603,
+                    "end": 605,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Ablation of \u22121 RF signals increases the steady-state abundance of the yeast EST2 mRNA, and \u22121 RF efficiency inversely correlates with EST2 mRNA abundance ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Computational analyses revealed that EST2 contains four additional high confidence \u22121 RF signals beginning at positions 72, 1215, 1326 and 1995 (Supplementary Figure S1). The positions of the five predicted \u22121 RF signals in the EST2 ORF are shown in Figure 4A. Silent protein coding changes were introduced into the slippery sites of all 5 of the \u22121 RF signals in a full-length EST2 clone expressed from a low copy vector (pEST2ss\u0394, Figure 4A). Clones expressing either wild-type EST2 (pEST2) or pEST2ss\u0394 were introduced into isogenic est2\u0394 or est2\u0394 upf1\u0394 cells, and qRT-PCR analyses were performed. These silent mutations resulted \u223c8.5-fold increase in the abundance of the full-length EST2ss\u0394 mRNA relative to wild-type EST2 mRNA (Figure 4B). Similarly, abrogation of NMD increased the abundance of the wild-type EST2 and EST2ss\u0394 mRNAs \u223c5.8-fold and \u223c7.0-fold, respectively. To independently monitor the influence of \u22121 RF on mRNA abundance, the steady-state abundance of the EST2 mRNA was monitored in isogenic cells expressing up- and down-frameshift promoting alleles of RPL3 (which encodes ribosomal protein L3) by qRT PCR. EST2 mRNA abundances were normalized to U3 snoRNA in cells expressing wild-type RPL3, the rpl3-R247A allele which decreases \u22121 RF from the L-A frameshift signal to \u223c55% of wild-type levels (35), and the rpl3-W255C/P247S allele which increases \u22121 RF by \u223c1.6-fold (36). Relative to wild-type cells, steady-state abundance of the EST2 mRNA was increased by 1.29 \u00b1 0.04 fold in cells expressing rpl3-R247A, and decreased to 0.55 \u00b1 0.02 in cells expressing rpl3-W255C/P247S (Figure 4C). Taken together, these experiments demonstrate that \u22121 RF induced NMD plays a significant role in destabilizing EST2 mRNA.\n",
+            "cite_spans": [
+                {
+                    "start": 1320,
+                    "end": 1322,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1393,
+                    "end": 1395,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Ablation of \u22121 RF signals increases the steady-state abundance of the yeast EST2 mRNA, and \u22121 RF efficiency inversely correlates with EST2 mRNA abundance ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 250,
+                    "end": 258,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 433,
+                    "end": 441,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 733,
+                    "end": 741,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1600,
+                    "end": 1608,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "If regulation of gene expression through \u22121 RF is biologically significant, then \u22121 RF signals should be present in orthologous mRNAs from other budding yeast species. To address this, the BUB3, EST2, SPR6 and TBF1 orthologs were identified in S. paradoxus, S. mikatae, S. bayanus, S. castellii, S. kudriavzevii and S. kluyveri, and analyzed for potentially significant \u22121 RF signals as previously described (15). At first glance, these analyses reveal that no single \u22121 RF signal is completely conserved among the budding yeasts (Supplementary Table S4). However, closer analysis shows that strong candidate \u22121 RF signals can be identified in the orthologs of all of these genes, although not in every species. For example, as noted above, the S. cerevisiae EST2 mRNA contains five potential \u22121 RF signals. Similarly, the S. paradoxus ortholog contains five potential \u22121 RF signals, although none are identical to the S. cerevisiae elements. S. mikatae EST2 appears to harbor two potential \u22121 RF signals, S. bayanus has three, and S. castelli contains two, and S. kluyveri has three. None were identified in the S. kudriavzevii EST2 ortholog. Turning to SPR6, the S. cerevisiae mRNA contains a second potential \u22121 RF signal beginning at nucleotide 348 in addition to that identified beginning at nucleotide 279 (see http://cbmgintra.umd.edu/prfdb/index.cgi/detail?id=1755&accession=SGDID:S0000917&slipstart=348). Both the S. paradoxus and S. kudriavzevii SPR6 orthologs contain three potential \u22121 RF signals, but none were identified in the S. mikatae S. bayanus or S. castelli orthologs. Interestingly, the S. kluyveri SPR6 ortholog contains a slippery site followed by a strong stem-loop structure; while this may or may not constitute a \u22121 RF signal, it does suggest the presence of a rapidly evolving cis-acting element (see Discussion below). S. cerevisiae BUB3 contains the operational \u22121 RF signal at nucleotide 858, plus potential \u22121 RF signals beginning at nucleotides 27 and 732. The orthologous mRNAs in S. paradoxus, S. bayanus, S. castelli and S. kudriavzevii each appear to have one potential \u22121 RF signal, but none were identified in S. mikatae or S. kluyveri. Lastly, the S. cerevisiae TBF1 mRNA has only the single confirmed \u22121 RF signal. The S. castelli, S. kudriavzevii and S. kluyveri orthologs contain two each, and the S. mikatae has one. No potential \u22121 RF signals were identified in either S. paradoxus or S. bayanus. As a control, six S. cerevisiae genes lacking predicted \u22121 RF signals were selected (PGK1, HHT1, TEF2, MIC14, CMD1 and GRX1), orthologs from the six other yeast species identified, and these were in turn queried for the presence of putative \u22121 RF signals. These analyses revealed that none of the orthologs of these six genes contain predicted \u22121 RF signals (Supplementary Table S5, and hyperlinked data therein). The potential evolutionary significance these observations are discussed below.",
+            "cite_spans": [
+                {
+                    "start": 409,
+                    "end": 411,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Programmed \u22121 ribosomal frameshifting, but not specific \u22121 RF signals appears to be conserved and rapidly evolving in budding yeasts ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "In a prior proof-of-principle experiment, we utilized the well characterized \u22121 PRF signal from the yeast L-A dsRNA virus to demonstrate that these elements can generally function as mRNA destabilizing elements through the NMD pathway (19). Subsequently, a bioinformatics approach was used to determine that potential \u22121 RF signals are widely found in all genomes examined, and that the great majority of these are predicted to direct elongating ribosomes to premature termination codons (15,17). Here, we show that these chromosomally encoded, endogenous \u22121 RF signals can also function as cis-acting mRNA destabilizing elements, both in the context of a reporter mRNA, and also in one case in a natural context. Further, we demonstrated that \u22121 RF signals can differentially affect mRNA abundance through the NMD pathway, and the data are also consistent with destabilization through NGD. These are modeled in Figure 5. In support of this idea, the EST2, BUB3 and SPR6 mRNAs were all stabilized in upf1\u0394, upd2\u0394/nmd2\u0394, upf3\u0394, dcp1\u0394 and xrn1\u0394 cells (37), and the half-lives of these mRNAs were less than the mean in wild-type cells (38). Interestingly, TBF1 is not represented in these databases. In the case of a ribosome shifting reading frame into a PTC, the surveillance complex led by the Upf proteins signals rapid decapping by Dcp1p/Dcp2p, followed by deadenylation and exonucleolytic decay via Xrn1p and the exosome. In parallel, the NGD pathway can be activated by ribosomes that are stalled at strong secondary structures in mRNAs. Stalled ribosomes are freed from mRNAs by Dom34p/Hbs1p, promoting exonucleolytic cleavage at unpaired nucleotides near the pause, thus resulting in two mRNA fragments which become substrates for decapping and exonucleolytic decay [reviewed in (39)]. The findings presented here suggest that cells are not only well equipped to deal with aberrant messages which contain premature termination codons and to clear stalled ribosomes from mRNAs, but have also evolved to capitalize upon these functions to post-transcriptionally regulate gene expression.\n",
+            "cite_spans": [
+                {
+                    "start": 236,
+                    "end": 238,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 489,
+                    "end": 491,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 492,
+                    "end": 494,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1050,
+                    "end": 1052,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1133,
+                    "end": 1135,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1786,
+                    "end": 1788,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 912,
+                    "end": 920,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "The strength of these signals to function as mRNA destabilizing elements should be equal to a combination of (i) their strengths as \u22121 RF signals and (ii) their abilities to block ribosome progression, i.e. their thermodynamic stability. The EST2 signal is both highly efficient at promoting \u22121 RF [\u223c55%, see (15)], and is predicted to be quite stable (\u223c\u221227 to \u221224 kcal/mol depending on the particular folding solution, see http://prfdb.umd.edu/). It is important to note however that the software used to predict mRNA pseudoknots can neither identify base triples, which make major contributions to frameshifting (40\u201344), let alone calculate their contributions to thermodynamic stability. Regardless, this combination of high frameshifting and thermodynamic stability results in very strong destabilization via NMD (Figure 2B), and perhaps NGD as well (Figure 2C). As discussed previously (19), the exponential decay profile suggests that NMD can occur beyond the \u2018pioneer round\u2019 of translation.",
+            "cite_spans": [
+                {
+                    "start": 310,
+                    "end": 312,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 615,
+                    "end": 620,
+                    "mention": "40\u201344",
+                    "ref_id": null
+                },
+                {
+                    "start": 892,
+                    "end": 894,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 818,
+                    "end": 826,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 855,
+                    "end": 863,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "In contrast to EST2, the TBF1 signal promoted \u223c5% frameshifting (15), but is not predicted to be highly stable (\u22129.5 kcal/mol). Thus, all of its mRNA destabilization activity was through NMD (compare Figure 2B with C). The thermodynamic stability of the BUB3 signal is predicted to have an intermediate value to EST2 and TBF1 (\u223c\u221212 kcal/mol), and hence the potential contribution of NGD to the stability of its reporter was significant. Interestingly, this signal only promoted \u223c1% frameshifting (15), yet the contribution of NMD to its destabilization was greater than observed for TBF1. One possible explanation for this apparent discrepancy may stem from the fact that, in order to measure frameshifting, one base had to be deleted from the spacer region between the slippery site and the stimulatory pseudoknot. Changes in the length and composition of this spacer are known to affect rates of \u22121 PRF (45), and thus the \u22121 RF values so determined cannot be taken as absolute. In contrast, the reporters used to monitor mRNA stability contained the native sequences. In light of this, it is likely that the native BUB3 \u22121 RF signal promotes more frameshifting than the TBF1 signal. Lastly, the SPR6 \u22121 RF signal is predicted to be quite stable (\u223c\u221220 kcal/mol), yet promoted very low levels of frameshifting (\u223c0.5%) (15). Accordingly, destabilization via NMD was negligible for this element, while NGD appeared to be the major contributor.",
+            "cite_spans": [
+                {
+                    "start": 65,
+                    "end": 67,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 497,
+                    "end": 499,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 906,
+                    "end": 908,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1319,
+                    "end": 1321,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 200,
+                    "end": 208,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Beyond the pro forma demonstration that \u22121 RF signals can decrease cellular mRNA abundance, it is important to begin to understand the biological function of this phenomenon. As a first step in this direction, we showed that silently mutating the slippery sites in 5 predicted \u22121 RF signals within a full-length clone of EST2 significantly stabilized its encoded mRNA (Figure 5B). Similarly, abrogation of NMD stabilized this message, while changes in \u22121 RF efficiency inversely correlated with EST2 steady-state mRNA abundance. Est2p is the reverse transcriptase subunit of the telomerase holoenzyme (21). Interestingly, prior studies have demonstrated that this mRNA, along with other mRNAs encoding proteins having telomere-associated functions, are stabilized in NMD\u2212 yeast cells (33,37). Analysis of the Programmed Ribosomal Frameshift Database (http://prfdb.umd.edu/) reveals that, along with the other four putative \u22121 RF signals in the EST2 mRNA, the mRNAs encoding Est1p, Stn1p, Cdc13p and Orc5p, all components or regulators of telomerase that are stabilized in NMD\u2212 cells, also contain high confidence \u22121 RF signals (Supplementary Figure S2). In addition, the EST3 mRNA contains a +1 PRF signal (46). Intriguingly, telomerase is limiting in cells: while a yeast cell contains 64 chromosome ends, there are only \u223c29 telomerase molecules per cell, and telomerase is preferentially recruited to short telomeres (47). Additionally, Tbf1p is a telobox containing general regulatory factor that binds to TTAGGG repeats within subtelomeric anti-silencing regions (48). Intriguingly, ablation of NMD (49) or overexpression of single components of telomerase-associated proteins, i.e. the TEL1 RNA, Est2p, Stn1p or Cdc13p resulted in changes in telomere length (47,50,51).",
+            "cite_spans": [
+                {
+                    "start": 602,
+                    "end": 604,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 785,
+                    "end": 787,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 788,
+                    "end": 790,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1207,
+                    "end": 1209,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1420,
+                    "end": 1422,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 1568,
+                    "end": 1570,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 1604,
+                    "end": 1606,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1764,
+                    "end": 1766,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 1767,
+                    "end": 1769,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 1770,
+                    "end": 1772,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 369,
+                    "end": 377,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "We hypothesize that yeast cells use \u22121 RF to limit the expression of these proteins in order to maintain the correct stoichiometric balance among telomere associated components. Corollary to this, mutations that alter \u22121 RF and/or NMD should affect telomere function, and should thus show phenotypic defects similar to those observed in telomerase mutants, e.g. cell cycle progression defects. Indeed, we have isolated numerous such mutants [reviewed in (52)], and have reported that the mof2-1 and mof5-1 mutants, which affect both NMD and \u22121 RF tend to accumulate large mother-daughter cells, and/or multiply budded cells, typical of G2/M cell cycle defects (53). Similarly, upf1\u0394 cells have abnormally elongated buds, and decreased telomere lengths (54,55). Intriguingly, mof6-1 mutants, which only affect \u22121 RF, arrest as large, unbudded cells, typical of M-phase exit defects (53). These observations suggest that stabilization of the mRNAs encoding multiple telomere-associated proteins may have dominant negative effects on telomere homeostasis, and that NMD and \u22121 RF may regulate different aspects of the cell cycle. Additionally, the central role of Bub3p at the mitotic cell cycle spindle assembly checkpoint and the progeroid phenotypes caused by Bub3p deficiency (56) suggest a more general role for \u22121 RF in control of cell growth and division. Lastly, the expression of Spr6p during sporulation (57) suggests a role for \u22121 RF in this developmental process as well. Future studies will dissect the roles of the \u22121 RF signals in these mRNAs.",
+            "cite_spans": [
+                {
+                    "start": 455,
+                    "end": 457,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 661,
+                    "end": 663,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 753,
+                    "end": 755,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 756,
+                    "end": 758,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 882,
+                    "end": 884,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1277,
+                    "end": 1279,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 1411,
+                    "end": 1413,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Finally, if \u22121 RF is widely used to regulate gene expression, then it should be well conserved. The major problem associated with attempting a phylogenetic analysis of \u22121 RF signals is the inherent limitations of the software used to predict them. In short, it is not well enough developed to automatically identify matching motifs. In an attempt to begin to address this issue, the orthologous Bub3p, Est2p, Spr6p and Tbf1p\u2019s in six closely related yeast species were identified, their nucleotide sequences extracted from the Yeast Gene Order Browser (28), and analyzed for the presence of potential \u22121 RF signals. These analyses revealed that while specific \u22121 RF signals do not appear to be evolutionarily conserved, \u22121 RF itself may be relatively well-enough conserved as a mechanism to post-transcriptionally regulate the expression of these genes across many but not all species examined (see Supplementary Table S4). Importantly, the control experiment showed that putative \u22121 RF signals were not detected in any of the orthologs of six S. cerevisiae genes that themselves were not predicted to contain \u22121 RF signals. These observations are in agreement with current evolutionary theory based on analyses of 5\u2032 UTR sequences of Drosophila species proposing that rapid rates of mutation in cis-acting regulatory elements drives speciation because they confer very specific effects on gene expression, as opposed to mutations affecting protein structure, the pleiotrophic effects of which impose very high penalties on fitness (58\u201360). The findings presented in this work, i.e. that while \u22121 RF signals are not conserved in orthologs from other yeasts, these ORFs contain generically contain \u22121 RF signals, and that the absence of \u22121 RF signals in other orthologous ORFs, agrees very well with this theory of molecular evolution.",
+            "cite_spans": [
+                {
+                    "start": 553,
+                    "end": 555,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 1533,
+                    "end": 1538,
+                    "mention": "58\u201360",
+                    "ref_id": null
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "National Institutes of Health (R01GM058859, R21GM068123 to J.D.D.); National Science Foundation (MCB-0084559); NIH Virology Training Grant (T32 AI51967 to A.T.B., partially); University of Maryland College of Chemical and Life Sciences Doctoral Fellowship (to A.T.B., partially). Funding for open access charge: NIH 5R01 GM058859.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        },
+        {
+            "text": "Conflict of interest statement. None declared.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1.: Schematic of PGK1 reporter vectors used to monitor the effects of \u22121 RF signals on mRNA stability. The indicated Renilla and firefly luciferase derived sequences from pJD375 were cloned into the unique KpnI restriction site in a high copy PGK1 expression vector to create the readthrough control (pJD753). The indicated \u22121 RF signals derived from BUB3, EST2, SPR6 and TBF1 were cloned into SalI/BamHI digested pJD753. Colored arcs depict computationally predicted base-paired stems (17). The premature termination control (PTC) was constructed by mutagenizing pJD753 to create an in-frame TAA codon.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: Cellular \u22121 RF signals can decrease mRNA steady-state abundance in yeast. The \u22121 RF signals from SPR6, EST2, BUB3 and TBF1 were cloned into a PGK1 reporter minigene such that frameshift events would cause elongating ribosomes to encounter premature termination codons (PTC). Readthrough (RT) and in-frame PTC containing reporters are included as controls. Northern blots of total mRNAs extracted from logarithmically growing cells were probed with a reporter-specific oligonucleotide (PGK), stripped and re-hybridized with a U3 snoRNA-specific probe for normalization. All blots were repeated at least three times. (A) Steady-state abundance of reporter mRNAs in wild-type cells. Graph shows abundances of test mRNAs relative to the readthrough control. (B) Same as panel A, but in upf1\u0394 cells. Graph plots abundance of specific test mRNAs in upf1\u0394 versus wild-type cells. (C\u2013F) These panels are similar to panel B, except that samples were extracted from dom34\u0394, dcp1\u0394, xrn1\u0394 and ski3\u0394 cells respectively. Bars denote standard errors.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: The EST2 \u22121 RF signal at position 1652 destabilizes mRNA primarily through NMD. (A\u2013H) The readthrough control, in-frame PTC control and EST2 \u22121 RF containing PGK1 reporters were introduced into either wild-type (A\u2013D) or upf1\u0394 (E\u2013H) cells harboring the temperature-sensitive rpb1-1 allele of RNA polymerase II. Total mRNAs were harvested from cells after temperature shift at the indicated timepoints, and Northern blots were probed using the PGK1 reporter-specific and U3 snoRNA specific probes. Graph in panel D plots normalized PGK1 reporter mRNA abundances in wild-type cells, and graph in panel h plots these data in upf1\u0394 cells. (I) The wild-type A AAA AAT slippery site of the EST2 \u22121 RF signal in the PGK1 reporter was changed to G AAG AAC, and steady state northern blot analyses were performed using mRNAs extracted from cells expressing the readthrough control, the in-frame PTC containing control, and cells expressing either the wild-type or mutant slippery sites. WTss denotes the wild-type slippery site. SSm denotes the slippery site mutant. DOM34 and dom34\u0394 denote isogenic wild-type and dom34\u0394 cells. Fold-RT denotes fold readthrough control. SD (\u00b1) denotes standard deviation.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: Silent coding mutations that disrupt 5 slippery sites in the EST2 gene stabilize its mRNA. (A) Schematic of the EST2 coding sequence. Positions of the slippery sites of five predicted \u22121 RF signals and their sequences are indicated. The full-length gene including native 5\u2032 and 3\u2032 UTR sequences were cloned into a low-copy yeast vector to create pEST2. Silent coding mutations that are predicted to inactivate \u22121 RF were introduced to produce pEST2ss\u0394. (B) pEST2 or pEST2ss\u0394 were introduced into est2\u0394 or est2\u0394 upf1\u0394 cells and EST2 mRNA steady state abundances were determined by quantitative real-time PCR. (C) Quantitative real-time PCR was used to monitor steady-state abundance of the endogenous EST2 mRNA in isogenic cells expressing three different forms of ribosomal protein L3: Wild-Type RPL3 (WT); the R247A mutant which promotes decreased rates of \u22121 RF and the W255C/P257S mutant which promotes increased \u22121 RF efficiency. EST2 mRNA abundances were normalized to U3 snoRNA abundance for each sample, and the values shown are relative to wild-type cells.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5.: \u22121 RF signals can function as mRNA destabilizing elements through the nonsense-mediated mRNA and NGD Pathways. Left panel (A) \u22121 RF event directs an elongating ribosome to encounter a premature termination codon (PTC). This leads to recruitment of the surveillance complex (Upf proteins), leading to mRNA decapping and 5\u2032 \u2192 3\u2032 degradation by Xrn1p and deadenylation and 3\u2032 \u2192 5\u2032 degradation by the degradasome. Right panel: the mRNA pseudoknot in a \u22121 RF signal causes elongating ribosomes to pause, recruiting the Dom34p/Hbs1p complex, thus initiating NGD.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Ribosomal frameshifting on viral RNAs",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "J. Gen. Virol.",
+            "volume": "76",
+            "issn": "",
+            "pages": "1885-1892",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Computational identification of putative programmed translational frameshift sites",
+            "authors": [
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Shah",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Giddings",
+                    "suffix": ""
+                },
+                {
+                    "first": "JB",
+                    "middle": [],
+                    "last": "Parvaz",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "IP",
+                    "middle": [],
+                    "last": "Ivanov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Bioinformatics",
+            "volume": "18",
+            "issn": "",
+            "pages": "1046-1053",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Translational recoding signals between gag and pol in diverse LTR retrotransposons",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "ER",
+                    "middle": [],
+                    "last": "Havecker",
+                    "suffix": ""
+                },
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "DF",
+                    "middle": [],
+                    "last": "Voytas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "RNA",
+            "volume": "9",
+            "issn": "",
+            "pages": "1422-1430",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Sequences that direct significant levels of frameshifting are frequent in coding regions of Escherichia coli",
+            "authors": [
+                {
+                    "first": "OL",
+                    "middle": [],
+                    "last": "Gurvich",
+                    "suffix": ""
+                },
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Hammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "EMBO J.",
+            "volume": "22",
+            "issn": "",
+            "pages": "5941-5950",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Predicting genes expressed via -1 and +1 frameshifts",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Moon",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Byun",
+                    "suffix": ""
+                },
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jeong",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res.",
+            "volume": "32",
+            "issn": "",
+            "pages": "4884-4892",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Reprogrammed genetic decoding in cellular gene expression",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Namy",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Rousset",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Napthine",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol. Cell",
+            "volume": "13",
+            "issn": "",
+            "pages": "157-168",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Identification of functional, endogenous programmed -1 ribosomal frameshift signals in the genome of Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "AT",
+                    "middle": [],
+                    "last": "Belew",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rakauskaite",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res.",
+            "volume": "35",
+            "issn": "",
+            "pages": "165-174",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "KnotInFrame: prediction of -1 ribosomal frameshift events",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Theis",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Reeder",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Giegerich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Res.",
+            "volume": "36",
+            "issn": "",
+            "pages": "6013-6020",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "PRFdb: a database of computationally predicted eukaryotic programmed -1 ribosomal frameshift signals",
+            "authors": [
+                {
+                    "first": "AT",
+                    "middle": [],
+                    "last": "Belew",
+                    "suffix": ""
+                },
+                {
+                    "first": "NL",
+                    "middle": [],
+                    "last": "Hepler",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMC Genomics",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Ribosomal frameshifting efficiency and Gag/Gag-pol ratio are critical for yeast M1 double-stranded RNA virus propagation",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "J. Virol.",
+            "volume": "66",
+            "issn": "",
+            "pages": "3669-3676",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "A programmed -1 ribosomal frameshift signal can function as a cis-acting mRNA destabilizing element",
+            "authors": [
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Plant",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res.",
+            "volume": "32",
+            "issn": "",
+            "pages": "784-790",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Programmed translational frameshifting",
+            "authors": [
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Farabaugh",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Microbiol. Rev.",
+            "volume": "60",
+            "issn": "",
+            "pages": "103-134",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Endonucleolytic cleavage of eukaryotic mRNAs with stalls in translation elongation",
+            "authors": [
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Doma",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Parker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "440",
+            "issn": "",
+            "pages": "561-564",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "The catalytic subunit of yeast telomerase",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Counter",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Meyerson",
+                    "suffix": ""
+                },
+                {
+                    "first": "EN",
+                    "middle": [],
+                    "last": "Eaton",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Weinberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "94",
+            "issn": "",
+            "pages": "9202-9207",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sambrook",
+                    "suffix": ""
+                },
+                {
+                    "first": "EF",
+                    "middle": [],
+                    "last": "Fritsch",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Maniatis",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Molecular cloning, a laboratory manual",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Transformation of intact yeast cells treated with alkali cations",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ito",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Fukuda",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Murata",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kimura",
+                    "suffix": ""
+                }
+            ],
+            "year": 1983,
+            "venue": "J. Bacteriol.",
+            "volume": "153",
+            "issn": "",
+            "pages": "163-168",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Two chromosomal genes required for killing expression in killer strains of Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Leibowitz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1976,
+            "venue": "Genetics",
+            "volume": "82",
+            "issn": "",
+            "pages": "429-442",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "The role of the EST genes in yeast telomere replication",
+            "authors": [
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Morris",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Salinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Walcott",
+                    "suffix": ""
+                },
+                {
+                    "first": "CI",
+                    "middle": [],
+                    "last": "Nugent",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Lundblad",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Ciba Found. Symp.",
+            "volume": "211",
+            "issn": "",
+            "pages": "41-47",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Identification and characterization of genes that are required for the accelerated degradation of mRNAs containing a premature translational termination codon",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Cui",
+                    "suffix": ""
+                },
+                {
+                    "first": "KW",
+                    "middle": [],
+                    "last": "Hagan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Peltz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Genes Dev.",
+            "volume": "9",
+            "issn": "",
+            "pages": "423-436",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "An in vivo dual-luciferase assay system for studying translational recoding in the yeast Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Harger",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "RNA",
+            "volume": "9",
+            "issn": "",
+            "pages": "1019-1024",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "The Yeast Gene Order Browser: combining curated homology and syntenic context reveals gene fate in polyploid species",
+            "authors": [
+                {
+                    "first": "KP",
+                    "middle": [],
+                    "last": "Byrne",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Wolfe",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Genome Res.",
+            "volume": "15",
+            "issn": "",
+            "pages": "1456-1461",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "The coat protein of the yeast double-stranded RNA virus L-A attaches covalently to the cap structure of eukaryotic mRNA",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Blanc",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Goyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Sonnenberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Mol. Cell. Biol.",
+            "volume": "12",
+            "issn": "",
+            "pages": "3390-3398",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Recoding: translational bifurcations in gene expression",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Gene",
+            "volume": "286",
+            "issn": "",
+            "pages": "187-201",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Senescence mutants of Saccharomyces cerevisiae with a defect in telomere replication identify three additional EST genes",
+            "authors": [
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Lendvay",
+                    "suffix": ""
+                },
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Morris",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sah",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Balasubramanian",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Lundblad",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Genetics",
+            "volume": "144",
+            "issn": "",
+            "pages": "1399-1412",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Telomerase: what are the Est proteins doing? Curr",
+            "authors": [
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Taggart",
+                    "suffix": ""
+                },
+                {
+                    "first": "VA",
+                    "middle": [],
+                    "last": "Zakian",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Opin. Cell Biol.",
+            "volume": "15",
+            "issn": "",
+            "pages": "275-280",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Chromosome end maintenance by telomerase",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Osterhage",
+                    "suffix": ""
+                },
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Friedman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J. Biol. Chem.",
+            "volume": "284",
+            "issn": "",
+            "pages": "16061-16065",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "mRNAs encoding telomerase components and regulators are controlled by UPF genes in Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Dahlseid",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lew-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Lelivelt",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Enomoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ford",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Desruisseaux",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "McClellan",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Lue",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Culbertson",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Berman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Eukaryot. Cell",
+            "volume": "2",
+            "issn": "",
+            "pages": "134-142",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Regulation of telomerase by telomeric proteins",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Smogorzewska",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "de Lange",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Annu. Rev. Biochem.",
+            "volume": "73",
+            "issn": "",
+            "pages": "177-208",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "A molecular clamp ensures allosteric coordination of peptidyltransfer and ligand binding to the ribosomal A-site",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meskauskas",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nucleic Acids Res.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Identification of functionally important amino acids of ribosomal protein L3 by saturation mutagenesis",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meskauskas",
+                    "suffix": ""
+                },
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Petrov",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Mol. Cell. Biol.",
+            "volume": "25",
+            "issn": "",
+            "pages": "10863-10874",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Genome-wide analysis of mRNAs regulated by the nonsense-mediated and 5\u2032 to 3\u2032 mRNA decay pathways in yeast",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Spatrick",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Castillo",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Jacobson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Mol. Cell",
+            "volume": "12",
+            "issn": "",
+            "pages": "1439-1452",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Precision and functional specificity in mRNA decay",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Storey",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Tibshirani",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Herschlag",
+                    "suffix": ""
+                },
+                {
+                    "first": "PO",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "99",
+            "issn": "",
+            "pages": "5860-5865",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Quality control of eukaryotic mRNA: safeguarding cells from abnormal mRNA function",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Isken",
+                    "suffix": ""
+                },
+                {
+                    "first": "LE",
+                    "middle": [],
+                    "last": "Maquat",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Genes Dev.",
+            "volume": "21",
+            "issn": "",
+            "pages": "1833-1856",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Ribosomal pausing at a frameshifter RNA pseudoknot is sensitive to reading phase but shows little correlation with frameshift efficiency",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kontos",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Napthine",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Mol. Cell. Biol.",
+            "volume": "21",
+            "issn": "",
+            "pages": "8657-8670",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Minor groove RNA triplex in the crystal structure of a ribosomal frameshifting viral pseudoknot",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Su",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Egli",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Berger",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rich",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nat. Struct. Biol.",
+            "volume": "6",
+            "issn": "",
+            "pages": "285-292",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Solution structure of the pseudoknot of SRV-1 RNA, involved in ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Michiels",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Versleijen",
+                    "suffix": ""
+                },
+                {
+                    "first": "PW",
+                    "middle": [],
+                    "last": "Verlaan",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Pleij",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Hilbers",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Heus",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J. Mol. Biol.",
+            "volume": "310",
+            "issn": "",
+            "pages": "1109-1123",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "A loop 2 cytidine-stem 1 minor groove interaction as a positive determinant for pseudoknot-stimulated -1 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Cornish",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hennig",
+                    "suffix": ""
+                },
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Giedroc",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "102",
+            "issn": "",
+            "pages": "12694-12699",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Stimulation of -1 programmed ribosomal frameshifting by a metabolite-responsive RNA pseudoknot",
+            "authors": [
+                {
+                    "first": "MY",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "KY",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "RNA",
+            "volume": "16",
+            "issn": "",
+            "pages": "1236-1244",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Functional analysis of the SRV-1 RNA frameshifting pseudoknot",
+            "authors": [
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Olsthoorn",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Reumerman",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Hilbers",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Pleij",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Heus",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nucleic Acids Res.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Mutational analysis of the \u201cslippery-sequence\u201d component of a coronavirus ribosomal frameshifting signal",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Jenner",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Inglis",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "J. Mol. Biol.",
+            "volume": "227",
+            "issn": "",
+            "pages": "463-479",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Programmed translational frameshifting in a gene required for yeast telomere replication",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Lundblad",
+                    "suffix": ""
+                },
+                {
+                    "first": "DK",
+                    "middle": [],
+                    "last": "Morris",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Curr. Biol.",
+            "volume": "7",
+            "issn": "",
+            "pages": "969-976",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Low abundance of telomerase in yeast: implications for telomerase haploinsufficiency",
+            "authors": [
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Mozdy",
+                    "suffix": ""
+                },
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Cech",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "RNA",
+            "volume": "12",
+            "issn": "",
+            "pages": "1721-1737",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Identification of high affinity Tbf1p-binding sites within the budding yeast genome",
+            "authors": [
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Koering",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Fourel",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Binet-Brasselet",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Laroche",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Klein",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Gilson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nucleic Acids Res.",
+            "volume": "28",
+            "issn": "",
+            "pages": "2519-2526",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Telomere cap components influence the rate of senescence in telomerase-deficient yeast cells",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Enomoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Glowczewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lew-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Berman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol. Cell. Biol.",
+            "volume": "24",
+            "issn": "",
+            "pages": "837-845",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Kinetics of ribosomal pausing during programmed -1 translational frameshifting",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Lopinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Bruenn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Mol. Cell. Biol.",
+            "volume": "20",
+            "issn": "",
+            "pages": "1095-1103",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Characterization of recombinant Saccharomyces cerevisiae telomerase core enzyme purified from yeast",
+            "authors": [
+                {
+                    "first": "XH",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CP",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "LX",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JQ",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Biochem. J.",
+            "volume": "390",
+            "issn": "",
+            "pages": "169-176",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Cdc13 cooperates with the yeast Ku proteins and Stn1 to regulate telomerase recruitment",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Grandin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Damon",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Charbonneau",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Mol. Cell Biol.",
+            "volume": "20",
+            "issn": "",
+            "pages": "8397-8408",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Mutants that affect recoding",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "O'Connor",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Recoding: Expansion of Decoding Rules Enriches Gene Expression",
+            "volume": "",
+            "issn": "",
+            "pages": "321-344",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Translational maintenance of frame: mutants of Saccharomyces cerevisiae with altered -1 ribosomal frameshifting efficiencies",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Genetics",
+            "volume": "136",
+            "issn": "",
+            "pages": "75-86",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "A genome-wide screen for Saccharomyces cerevisiae deletion mutants that affect telomere length",
+            "authors": [
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Askree",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Yehuda",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Smolikov",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gurevich",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hawk",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Coker",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Krauskopf",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kupiec",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "McEachern",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "101",
+            "issn": "",
+            "pages": "8658-8663",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Comprehensive and quantitative analysis of yeast deletion mutants defective in apical and isotropic bud growth",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Watanabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Watanabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nogami",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Morishita",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ohya",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Curr. Genet.",
+            "volume": "55",
+            "issn": "",
+            "pages": "365-380",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Aging in check",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Dai",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Sci. Aging Knowledge Environ.",
+            "volume": "2006",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Functional analysis of the sporulation-specific SPR6 gene of Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Kallal",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bhattacharyya",
+                    "suffix": ""
+                },
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Grove",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Iannacone",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Pugh",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Primerano",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Clancy",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Curr. Genet.",
+            "volume": "18",
+            "issn": "",
+            "pages": "293-301",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Emerging principles of regulatory evolution",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Prud'homme",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Gompel",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Carroll",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "104",
+            "issn": "Suppl. 1",
+            "pages": "8605-8612",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Functional analysis of eve stripe 2 enhancer evolution in Drosophila: rules governing conservation and change",
+            "authors": [
+                {
+                    "first": "MZ",
+                    "middle": [],
+                    "last": "Ludwig",
+                    "suffix": ""
+                },
+                {
+                    "first": "NH",
+                    "middle": [],
+                    "last": "Patel",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kreitman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Development",
+            "volume": "125",
+            "issn": "",
+            "pages": "949-958",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "The 9-angstrom solution: how mRNA pseudoknots promote efficient programmed -1 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Plant",
+                    "suffix": ""
+                },
+                {
+                    "first": "KLM",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Harger",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meskauskas",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Baxter",
+                    "suffix": ""
+                },
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Petrov",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "RNA",
+            "volume": "9",
+            "issn": "",
+            "pages": "168-174",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Repeated morphological evolution through cis-regulatory changes in a pleiotropic gene",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Prud'homme",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Gompel",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rokas",
+                    "suffix": ""
+                },
+                {
+                    "first": "VA",
+                    "middle": [],
+                    "last": "Kassner",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                },
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Yeh",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "True",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Carroll",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "440",
+            "issn": "",
+            "pages": "1050-1053",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Torsional restraint: a new twist on frameshifting pseudoknots",
+            "authors": [
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Plant",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucleic Acids Res.",
+            "volume": "33",
+            "issn": "",
+            "pages": "1825-1833",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Programmed ribosomal frameshifting goes beyond viruses: organisms from all three kingdoms use frameshifting to regulate gene expression, perhaps signaling a paradigm shift",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Microbe Wash. DC",
+            "volume": "1",
+            "issn": "",
+            "pages": "521-527",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Identification of putative programmed -1 ribosomal frameshift signals in large DNA databases",
+            "authors": [
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Hammell",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Taylor",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Peltz",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Genome Res.",
+            "volume": "9",
+            "issn": "",
+            "pages": "417-427",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

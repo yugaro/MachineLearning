@@ -1,0 +1,1034 @@
+{
+    "paper_id": "PMC5658673",
+    "metadata": {
+        "title": "Time-series oligonucleotide count to assign antiviral siRNAs with long utility fit in the big data era",
+        "authors": [
+            {
+                "first": "K",
+                "middle": [],
+                "last": "Wada",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Y",
+                "middle": [],
+                "last": "Wada",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Y",
+                "middle": [],
+                "last": "Iwasaki",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "T",
+                "middle": [],
+                "last": "Ikemura",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Viruses have always posed significant threats to public health, as highlighted by the recent Ebolavirus (EBOV) outbreak in West Africa1, 2, 3, 4, 5 and the emerging and re-emerging nature of influenza viruses.6 To face the worldwide threats caused by zoonotic RNA viruses unpredictably transmitted from nonhumans, we must understand the details of molecular evolutionary changes in highly mutable genomes, including changes in oligonucleotide occurrences. Notably, even for large numbers of the genome sequences currently available, a time-series word count for oligonucleotides can be conducted without difficulty and specialized assumptions. In addition, the obtained results for viral evolutions are intuitively and easily understandable.",
+            "cite_spans": [
+                {
+                    "start": 134,
+                    "end": 135,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 137,
+                    "end": 138,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 140,
+                    "end": 141,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 143,
+                    "end": 144,
+                    "mention": "4",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 146,
+                    "end": 147,
+                    "mention": "5",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 209,
+                    "end": 210,
+                    "mention": "6",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Viruses depend on many host factors for their growth (for example, nucleotide pools, proteins and RNAs) and must escape from host antiviral mechanisms (for example, interferon-induced systems).7, 8, 9 Because human cells may not provide ideal growth conditions for the viruses transmitted from nonhumans, a certain level of directional change in viral sequences should occur during human-to-human transmission after the invasion from nonhumans. In fact, the G+C% of influenza A viruses isolated from humans is lower than that of strains isolated from avian and the CG dinucleotide in an A/U context was preferentially eliminated from classical H1N1 influenza viruses during human-to-human transmission.10, 11, 12, 13 By focusing on short oligonucleotide (2- to 5-mer) occurrences, we previously found14, 15, 16 time-dependent unidirectional changes for a wide range of oligonucleotides in genomes of influenza viruses,17, 18, 19 Ebolaviruses and MERS (Middle East respiratory syndrome) coronaviruses.20 Notably, some oligonucleotides showed the time-dependent unidirectional changes occurring commonly across three influenza A subtypes that invaded independently from nonhumans at long intervals (for example, several decades).16 We thus proposed that such changes should reoccur at a high probability after future invasions from their natural reservoir hosts.",
+            "cite_spans": [
+                {
+                    "start": 193,
+                    "end": 194,
+                    "mention": "7",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 196,
+                    "end": 197,
+                    "mention": "8",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 199,
+                    "end": 200,
+                    "mention": "9",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 702,
+                    "end": 704,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 706,
+                    "end": 708,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 710,
+                    "end": 712,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 714,
+                    "end": 716,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 800,
+                    "end": 802,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 804,
+                    "end": 806,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 808,
+                    "end": 810,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 918,
+                    "end": 920,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 922,
+                    "end": 924,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 926,
+                    "end": 928,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1000,
+                    "end": 1002,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 1227,
+                    "end": 1229,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Longer oligonucleotides than the above-mentioned short oligonucleotides are key elements of nucleic acid therapeutics (for example, antisense RNA, small interfering RNA (siRNA) and microRNA)21, 22, 23, 24 and diagnostic PCR primers.25 Because RNA viruses mutate very rapidly, their sequence changes should be intensively characterized for designing therapeutic and diagnostic oligonucleotides with long utility. Our previous small-scale analyses of 20-mer oligonucleotides in influenza A genomes16 showed that one oligonucleotide that showed a unidirectional decrease in common for three A subtypes after their independent invasions corresponded to the target sequence for an experimentally validated siRNA,26 pointing out importance of time-series analysis for identifying siRNAs with long utility. Here, by focusing on \u223c12 000 genomes of influenza A, B and Ebolaviruses and on 182 experimentally validated siRNAs compiled by VIRsiRNAdb (a curated database of experimentally validated viral siRNA/short hairpin RNA),26 we analyzed the time-series changes in occurrences of siRNA targets in the respective viral populations to develop strategies to predict siRNAs with long and wide utility.",
+            "cite_spans": [
+                {
+                    "start": 190,
+                    "end": 192,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 194,
+                    "end": 196,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 198,
+                    "end": 200,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 202,
+                    "end": 204,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 232,
+                    "end": 234,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 495,
+                    "end": 497,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 707,
+                    "end": 709,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1017,
+                    "end": 1019,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Because of the social importance of influenza viruses, wide varieties of siRNAs have been designed, and from VIRsiRNAdb, 96 siRNAs for influenza A viruses, which were experimentally validated in various cell lines, could be downloaded on 23 September 2016. When focusing only on target sequences, 47 oligonucleotides were obtained; 42 were 19 nucleotide (nt), and the other 5 were 21 nt in length. To search siRNAs with long utility, we analyzed the time-series change in an abundance ratio of strains having the target oligonucleotides in the viral population, as follows. From the NCBI (National Center for Biotechnology Information) Influenza Virus Resource,27 we first selected \u223c10 000 influenza A strains isolated from humans who had a full set of eight segment sequences, and grouped the strains according to the serological subtype and the isolated year (or month). Specifically, as conducted in the previous time-series study,16 we first selected a year with at least 10 strains of one subtype and then a subtype with >5 years fulfilling the threshold (\u2a7e10 strains). We thus selected H1N1, H3N2 and H1N1/09(refs17, 18, 19) (starting from 2009 and abbreviated pH1N1 in the database). In the case of pH1N1, a sufficient number of strains fulfilling the above threshold (\u2a7e10 strains) were available even per month; thus, the data for the conformable months were analyzed that allowed us to study the changes occurred within one outbreak.",
+            "cite_spans": [
+                {
+                    "start": 661,
+                    "end": 663,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 934,
+                    "end": 936,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1119,
+                    "end": 1121,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1123,
+                    "end": 1125,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1127,
+                    "end": 1129,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "siRNAs for influenza A viruses ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The above selection resulted in focusing on major (but not minor) populations of viruses spreading among humans. Time-series analyses of all 47 siRNA targets, which are listed in Supplementary Figures S1\u2013S3, showed that approximately half of the targets were absent at least in one subtype. Here, to search siRNAs with wide utility, we focus on the residual half, each of which is present in all three subtypes, although the occurrence significantly differs among subtypes. Because of high mutation rate of RNA viruses, most targets clearly fluctuate in their occurrence and often disappear after or during a certain period (Figure 1). Three subtypes are distinguished by different colors: H1N1 (blue), H3N2 (brown) and pH1N1 (green). Disappearance of targets in the viral population denotes a loss or reduction in usefulness of the respective siRNA. The most desirable target for long and wide utility should maintain an abundance near 1.0 in viral populations of all three subtypes during the most epidemic period; that is, almost all strains of the three subtypes always have the target in their genomes. There was no such target 19-mers, but there were two 19-mers maintaining the abundance near 1.0 for two subtypes, although the abundance for the residual subtype was very low (Figures 1a and b). The data specified by green X-marks for pH1N1 in Figure 1b are explained later.",
+            "cite_spans": [],
+            "section": "siRNAs for influenza A viruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 625,
+                    "end": 633,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1284,
+                    "end": 1300,
+                    "mention": "Figures 1a and b",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1352,
+                    "end": 1361,
+                    "mention": "Figure 1b",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Occurrences of other 19-mers significantly fluctuate in different ways. One type fluctuates in an irregular way (Figures 1c and d and Supplementary Figures S1\u2013S3), but several others show time-dependent, unidirectional changes. The most interesting examples are the two 19-mers that show compensatory change: CAGCAGAGUGCUGUGGAUG and ACAGCAGAAUGCUGUGGAU (Figures 1e and f). These two are located in almost the same area in M gene (one base difference in their start position) but have one base change (G \u2013> A) on the inside that is responsible for the time-dependent compensatory change. The former is maintained by most strains in the early stage after invasion for all three subtypes, which have occurred independently at long intervals, but unidirectionally reduces its occurrence during human\u2013human transmission (Figure 1e). In contrast, the latter (Figure 1f) is almost absent in the early stage after invasion but begins to increase unidirectionally in H1N1 and H3N2 after a certain period. A strain that undergoes the G \u2013> A mutation progressively increases the abundance of its descendants. Because this unidirectional increase is observed for two independently invaded subtypes, the change may have a certain biological significance.",
+            "cite_spans": [],
+            "section": "siRNAs for influenza A viruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 113,
+                    "end": 129,
+                    "mention": "Figures 1c and d",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 354,
+                    "end": 370,
+                    "mention": "Figures 1e and f",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 816,
+                    "end": 825,
+                    "mention": "Figure 1e",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 853,
+                    "end": 862,
+                    "mention": "Figure 1f",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The time-series analysis shown in Figure 1 covers \u223c10 000 viral genomes simultaneously and visualizes the compensatory changes of two 19-mers in an easily understandable way (Figures 1e and f); the pooled use of the respective two siRNAs should provide therapeutic oligonucleotides with long and wide utility. Notably, the present word-count analysis requires no specific assumption or model, and the obtained result is simple and straightforward.",
+            "cite_spans": [],
+            "section": "siRNAs for influenza A viruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 34,
+                    "end": 42,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 175,
+                    "end": 191,
+                    "mention": "Figures 1e and f",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The above two 19-mers showing compensatory changes were found within the original siRNA targets. There is no other pair with this characteristic within the original targets, but several show a time-dependent unidirectional decrease (Figures 2a\u2013c). If we can find a 19-mer that shows a compensatory increase, this will provide a candidate for the \u2018awaiting-type siRNA\u2019, and its pooled use with the original will provide a therapeutic oligonucleotide with long and wide utility. We thus generated one-base changed 19-mers from each original. Most of the 19-mers thus generated are not used in viral genomes, but the following show the unidirectional increase, compensatory to the decrease of their originals; the 19-mers shown in Figures 2d\u2013f are the compensatory pair to those in Figures 2a\u2013c, respectively. Another one-base changed 19-mer can compensate for low occurrence of the original 19-mer for pH1N1 (Figure 1b); this one-base changed 19-mer is specified by green X-marks.",
+            "cite_spans": [],
+            "section": "One-base changed 19-mers ::: Results",
+            "ref_spans": [
+                {
+                    "start": 233,
+                    "end": 245,
+                    "mention": "Figures 2a\u2013c",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 728,
+                    "end": 740,
+                    "mention": "Figures 2d\u2013f",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 779,
+                    "end": 791,
+                    "mention": "Figures 2a\u2013c",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 907,
+                    "end": 916,
+                    "mention": "Figure 1b",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "When additive occurrence for the two 19-mers maintains a level near 1.0 in major epidemic periods for all three types, the pooled use of the respective two siRNAs will provide therapeutic oligonucleotides with broad utility. Experimental validation of siRNA candidates thus predicted should rigorously define siRNAs with broad utility.",
+            "cite_spans": [],
+            "section": "One-base changed 19-mers ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "We next analyzed the aforementioned five siRNA-target 21-mers that are located in M gene but are separate from each other within the gene. One was not used at a significant level (<0.1) in all three subtypes and omitted from the analysis. Among the residual four, only one shows a significant occurrence for two subtypes, but even in the two subtypes, it progressively reduces the occurrence to zero (Figure 3a). To search the compensatory pair, we generated one-base changed 21-mers but could not find a pair with an increasing trend. As an alternative approach, we first generated three 19-mers derived from each original 21-mer and successively one-base changed 19-mers. Among the one-base changed 19-mers, we found two 19-mers, each of which can compensate for the decrease in one subtype (Figures 3b and c). The residual three 21-mers showed a high occurrence only in one subtype and changed time-dependently; Figure 3d shows that one 21-mer maintains its high occurrence in H3N2 except for the early stage after invasion, but is almost absent in H1N1. One-base changed 21-mer (U\u2013> C change) derived from this original can compensate for low occurrence in H1N1 (Figure 3e).",
+            "cite_spans": [],
+            "section": "21-mer siRNAs ::: Results",
+            "ref_spans": [
+                {
+                    "start": 401,
+                    "end": 410,
+                    "mention": "Figure 3a",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 794,
+                    "end": 810,
+                    "mention": "Figures 3b and c",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 915,
+                    "end": 924,
+                    "mention": "Figure 3d",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1167,
+                    "end": 1176,
+                    "mention": "Figure 3e",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Viruses are inevitably dependent on many host factors for growth and must avoid host antiviral mechanisms. Concerning the time-dependent directional changes in oligonucleotide occurrences commonly found for three A subtypes after their independent invasions, we previously proposed that the changes should be related at least in part with viral adaptation to the new growth in human cells and will reoccur at a significant probability in future invasions.16 Invasions of new influenza A subtypes and other emerging RNA viruses from nonhumans are highly probable and may cause worldwide threats. Understanding the changes that occur during the early stage after a new invasion is undoubtedly important for preventing its worldwide pandemic, and the important issue is to know how quickly a major population of newly invaded viruses will change their oligonucleotide sequences and how long it takes to detect the directional decreasing trend of the interested oligonucleotide and assign its compensatory pair with the increasing trend.",
+            "cite_spans": [
+                {
+                    "start": 455,
+                    "end": 457,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Importance of changes occurring after new invasions ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Notably, sequence data of pH1N1 can provide valuable information about changes that occur within the first outbreak cycle after a new invasion, because sequences of >200 strains per month are available for 9 months from March 2009 that correspond to the first outbreak after the new invasion. Among the 47 siRNA targets, 16 show high occurrences and maintain a high level (>0.9) during this period, except for one 19-mer. Figure 3f shows the unidirectional decrease of this exceptional 19-mer (green triangle: Pearson\u2019s correlation coefficient=\u22120.93) and the compensatory increase of its one-base changed pair (green circle: Pearson\u2019s correlation coefficient=0.89). The null hypothesis (that is, no correlation) was rejected for these two 19-mers at the significant level of 0.01.",
+            "cite_spans": [],
+            "section": "Importance of changes occurring after new invasions ::: Results",
+            "ref_spans": [
+                {
+                    "start": 422,
+                    "end": 431,
+                    "mention": "Figure 3f",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Even including a lag of a few months possibly required for occurrence of the respective mutation, 4 or 5 months appears appropriate for detecting the decreasing trend and predicting awaiting-type oligonucleotide; when omitting the lag period, a few months may be appropriate for this prediction. Undoubtedly, the required period for the prediction depends on individual oligonucleotides and viruses, as well as the period required for getting the respective mutation in the highly mutable genomes. As the number of available genome sequences increases, the required period for detecting a directional change should decrease, and the probabilistic reliability of the prediction should increase. Therefore, in the era of big data accumulation, the time-series analysis of oligonucleotide occurrences is increasingly important for preparing for the emerging virus threats.",
+            "cite_spans": [],
+            "section": "Importance of changes occurring after new invasions ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "From VIRsiRNAdb, 81 siRNAs for influenza B virus were available on 23 September 2016. All 42 target sequences were 19 nt in length, and their occurrences in the human influenza B population were analyzed by using \u223c2000 strains obtained from the NCBI Influenza Virus Resource.27 When years with >10 strains were selected, as above done, only data from 1995 were available; if the threshold was lowered to 5, data for 1940 could be included. Because B type can currently infect only humans and the probability of a new invasion from nonhumans is very low, information about changes after 1995 may be sufficient for assigning siRNAs with long utility. However, understanding changes from an earlier stage may provide much comprehensive information about this viral evolution. Therefore, we mainly focused on data after 1995, but the additional data (\u2a7e5 strains) before 1995 are also shown but separated by a broken line in each panel (Figures 4a\u2013c).",
+            "cite_spans": [
+                {
+                    "start": 275,
+                    "end": 277,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Influenza B virus ::: Results",
+            "ref_spans": [
+                {
+                    "start": 932,
+                    "end": 944,
+                    "mention": "Figures 4a\u2013c",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Because the occurrences of eighteen 19-mers were very low or confined to a limited period, they were omitted from the analysis. Among the residual 24 (Supplementary Figures S4 and S5), CCAGAUGAUGGUCAAAGCU and GGAUGAAGAAGAUGGCCAU maintain a high level (>0.9) from 1940 to 1995, respectively; and the other 6 maintain a relatively high level (>0.5) from 1940 to 1995 (Supplementary Figures S4 and S5). Occurrences of the residual 16 evidently fluctuated and often neared zero, and therefore we generated one-base changed 19-mers. In contrast to the A type, the 19-mers showing the unidirectional change were rather rare, and those irregularly fluctuating were prominent. Among the latter cases, several pairs maintained their additive occurrence above 0.8 during a major period after 1995. Figures 4a\u2013c show the time-series change for each compensatory pair. For comparison with the pattern of influenza A, the time-series change for two 19-mers in Figures 1a and b is relisted in Figure 4d.",
+            "cite_spans": [],
+            "section": "Influenza B virus ::: Results",
+            "ref_spans": [
+                {
+                    "start": 788,
+                    "end": 800,
+                    "mention": "Figures 4a\u2013c",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 947,
+                    "end": 963,
+                    "mention": "Figures 1a and b",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 979,
+                    "end": 988,
+                    "mention": "Figure 4d",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The siRNA target harboring multiple neutral sites should be easily lost in the viral population, and the compensatory pair may not be uniquely assigned. In contrast, in the cases listed in Figures 4a\u2013c, the changed base responsible for the compensatory change can be confined, indicating that there are a few neutral sites and the compensatory pair is suitable for pooled use despite their non-unidirectional changes. Time-series analysis can visualize these evolutionary details in an easily understandable way by analyzing large numbers of genomes simultaneously.",
+            "cite_spans": [],
+            "section": "Influenza B virus ::: Results",
+            "ref_spans": [
+                {
+                    "start": 189,
+                    "end": 201,
+                    "mention": "Figures 4a\u2013c",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The above findings are consistent with the finding of Greenbaum et al.28 that B type strains have already adapted well to growth in human cells, and thus the unidirectional changes responsible for adaptation to a new cellular environment have become less prominent. Other evolutionary processes, such as a bottleneck effect occurring at the onset of each seasonal outbreak, should become prominent.",
+            "cite_spans": [
+                {
+                    "start": 70,
+                    "end": 72,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Influenza B virus ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Sequences for more than 1000 genomes of human EBOV strains, isolated from March 2014, were available from the NCBI Virus Variation Database.29 From VIRsiRNAdb, four siRNA targets for EBOV were obtained on 21 September 2016; one was 19-mer and three were 21-mers. The 19-mer (CGGACACACAAAAAGAAAG) shows a low occurrence (Figure 4e). In contrast, three 21-mers (GGCAUCAGUGUGCUCAGUUGA, GGGCUCAUAUUGUUAUUGAUA and GUCUGGGCUCAUAUUGUUAUU) maintain high occurrences (Figures 4f\u2013h), showing that most viral strains keep the target sequences during the current epidemic.",
+            "cite_spans": [
+                {
+                    "start": 140,
+                    "end": 142,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Ebolaviruses ::: Results",
+            "ref_spans": [
+                {
+                    "start": 320,
+                    "end": 329,
+                    "mention": "Figure 4e",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 459,
+                    "end": 471,
+                    "mention": "Figures 4f\u2013h",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The experimental measurement of siRNA efficacy should be the next important process to decide proper siRNAs, for the candidates obtained by one-base change from the experimentally validated siRNAs: for example, GAGACAAUGCAGAAGAGUA derived from GAGACAAUGCAGAGGAGUA; CAGCAGAAUGCUGUGGAUG derived from CAGCAGAGUGCUGUGGAUG; and CGGCUGCAUUGAGGGCAAG derived from CGGCUACAUUGAGGGCAAG (for details and additional examples, see the legends to Figures 2 and 3). Before conducting the experimental verification, it may be useful to predict their efficacy by using several informatic methods, such as VIRsiRNApred.30",
+            "cite_spans": [
+                {
+                    "start": 601,
+                    "end": 603,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 433,
+                    "end": 442,
+                    "mention": "Figures 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 447,
+                    "end": 448,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Considering the pooled use, the pair composed of totally independent sequences, such as those listed in Figures 1a and b, is expected, and for selection of this pair, an overview of time-dependent changes of a wide range of oligonucleotides for a long period is required by analyzing large numbers of viral genomes simultaneously. Taking this into account, time-series patterns of 60 experimentally validated siRNA targets are listed in Supplementary Figures S1\u2013S5.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 104,
+                    "end": 120,
+                    "mention": "Figures 1a and b",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Huge numbers of genome sequences from disease-causing microorganisms have rapidly accumulated because of revolutionary developments in sequencing technologies and social importance. In this era of big data accumulation, the participation of experts in big data analysis is increasingly important for interdisciplinary efforts against worldwide threats posed by infectious microorganisms. In this study, we focused on zoonotic RNA viruses, whose reservoir hosts are vertebrates, but it is undoubtedly important to analyze other RNA viruses spread by bugs (for example, ticks and mosquitoes) that have caused serious emerging infectious diseases, such as Dengue fever and Zika virus disease.31, 32 Notably, the present strategy is also useful for designing diagnostic reverse transcription-PCR primers with long utility.",
+            "cite_spans": [
+                {
+                    "start": 689,
+                    "end": 691,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 693,
+                    "end": 695,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "From VIRsiRNAdb,26 target sequences for 96 and 81 experimentally validated siRNAs for influenza A and B viruses, respectively, were downloaded on 23 September 2016. From the NCBI Influenza Virus Resource,27 a total of \u223c200 000 segment sequences derived from \u223c25 000 influenza strains were obtained on 1 September 2015, and grouped according to host, serological type and isolated year (or month). We calculated occurrences of siRNA target sequences in each influenza virus genome. To prevent possible misassignment from a large number of pH1N1 strains, relatively small numbers of human classical H1N1 strains isolated from 2009 were omitted from the present analysis. From VIRsiRNAdb, target sequences for 4 siRNAs for EBOV were downloaded on 30 September 2016. EBOV genome sequences were downloaded from the NCBI Virus Variation Database29 on 3 January 2016. Computer codes for the word count are available from KW (k_wada@nagahama-i-bio.ac.jp).",
+            "cite_spans": [
+                {
+                    "start": 16,
+                    "end": 18,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 204,
+                    "end": 206,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 839,
+                    "end": 841,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Subjects and methods",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Time-series changes in abundance ratios of strains having the siRNA target in the viral population of three influenza A subtypes. The ratio is plotted according to the elapsed year (or month for pH1N1) from 1930 by color distinguishing subtypes: H1N1 (blue), H3N2 (brown) and pH1N1 (green). (a) UGGCAAAUGUUGUGAGAAA in PB1 gene. (b) GCAAUUGAGGAGUGCCUGA in PA gene. Occurrence of one-base changed 19-mer, GCAAUCGAGGAGUGCCUGA, for pH1N1 is specified by green X-marks. (c) GGACCAAACUUAUACAAUA in PB1 gene. (d) CGGGACUCUAGCAUACUUA in PB2 gene. (e, f) CAGCAGAGUGCUGUGGAUG and ACAGCAGAAUGCUGUGGAU in M gene, respectively. The base change is underlined.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Time-series changes for strains having siRNA target 19-mers (a\u2013c) and their one-base changed 19-mers (d\u2013f). The abundance of strains having the respective 19-mer in the population of three influenza A subtypes is presented as described in Figure 1. (a, d) GAGACAAUGCAGAGGAGUA (original 19-mer) and GAGACAAUGCAGAAGAGUA (19-mer with the G \u2013> A change) in NP gene, respectively. (b, e) CAGCAGAGUGCUGUGGAUG (original) and CAGCAGAAUGCUGUGGAUG (G \u2013> A change) in M gene. (c, f) CGGCUACAUUGAGGGCAAG (original) and CGGCUGCAUUGAGGGCAAG (A \u2013>G change) in PA gene.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Time-series changes for siRNA targets and their one-base changed oligonucleotides. The abundance of strains having the respective 21- or 19-mer in the viral population of three influenza A subtypes is presented as described in Figure 1a AAUUUGCAGGCCUAUCAGAAA is the original 21-mer in M gene. (b) AAUUUACAGGCCUAUCAGA. The G \u2013> A change at the sixth position from the original (listed in (a)) compensates for the decrease of the original in H1N1. (c) AAUUUGCAGACCUAUCAGA. The G \u2013> A change at the tenth position from the original (listed in (a)) compensates for the decrease of the original in H3N2. (d, e) The original 21-mer GGUCGAAACGUAUGUUCUCUC and its one-base changed 21-mer GGUCGAAACGUACGUUCUCUC, respectively. Their additive occurrence maintains an approximate 1.0 level for H1N1 and H3N2 in the entire period, except 1930. (f) Abundance of pH1N1 strains having CGGCAAAGGCUAUGGAACA (original 19-mer) and CAGCAAAGGCUAUGGAACA (19-mer with the G \u2013> A change) is plotted for the first 9 months from March 2009 with triangle and circle symbols, respectively.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Time-series changes for strains having siRNA targets in the viral population of influenza B virus (a\u2013c) and EBOV (d\u2013g). (a) Abundance of influenza B strains having GCAACGGCACUAAACACAA (original 19-mer) and GCAACGGCACUGAACACAA (19-mer with the A \u2013> G change) is plotted according to the elapsed year from 1940 with violet squares and orange circles, respectively. The data before and after 1995 are separated by a broken line. (b) GAGAGACAAUUAGACUGGU (original) and GGGAGACAAUUAGACUGGU (with the A \u2013> G change). (c) GAUCUGUUUAGCAUACCAU (original) and GAUCUGUUUAGUAUACCAU (with the C \u2013> U change). (d) Time-series changes for influenza A H1N1 (blue) and H3N2 (brown) for CAGCAGAGUGCUGUGGAUG (rhombus for H1N1 and square for H3N2) and ACAGCAGAAUGCUGUGGAU (x mark) previously listed in Figure 1e, f are relisted. (e) Abundance of EBOV strains having CGGACACACAAAAAGAAAG is plotted according to the elapsed month from March 2014. We focused on the month in which >10 strains were available. (f\u2013h) The data for GGCAUCAGUGUGCUCAGUUGA, GGGCUCAUAUUGUUAUUGAUA and GUCUGGGCUCAUAUUGUUAUU are presented, respectively, as described in (e). The last two 21-mers are derived from adjacent positions in NP gene and harbored within one 25-mer (GUCUGGGCUCAUAUUGUUAUUGAUA).",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Ebola virus disease in West Africa - The first 9 months of the epidemic and forward projections",
+            "authors": [],
+            "year": 2014,
+            "venue": "N Engl J Med",
+            "volume": "371",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Comparison of avian and human influenza A viruses reveals a mutational bias on the viral genomes",
+            "authors": [],
+            "year": 2006,
+            "venue": "J Virol",
+            "volume": "80",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Oligonucleotide motifs that disappear during the evolution of influenza in humans increase IFN-\u03b1 secretion by plasmacytoid endritic cells",
+            "authors": [],
+            "year": 2011,
+            "venue": "J Virol",
+            "volume": "85",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Why is CpG suppressed in the genomes of virtually all small eukaryotic viruses but not in those of large eukaryotic viruses",
+            "authors": [],
+            "year": 1994,
+            "venue": "J Virol",
+            "volume": "68",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Patterns of evolution and host gene mimicry in influenza and other RNA viruses",
+            "authors": [],
+            "year": 2008,
+            "venue": "PLoS Pathog",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Prediction of directional changes of influenza A virus genome sequences with emphasis on pandemic H1N1/09 as a model case",
+            "authors": [],
+            "year": 2011,
+            "venue": "DNA Res",
+            "volume": "18",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Novel bioinformatics strategies for prediction of directional sequence changes in influenza virus genomes and for surveillance of potentially hazardous strains",
+            "authors": [],
+            "year": 2013,
+            "venue": "BMC Infect Dis",
+            "volume": "13",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Directional and reoccurring sequence change in zoonotic RNA virus genomes visualized by time-series word count",
+            "authors": [],
+            "year": 2016,
+            "venue": "Scientific Reports",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Emergence of a novel swine-origin influenza A (H1N1) virus in humans",
+            "authors": [],
+            "year": 2009,
+            "venue": "N Engl J Med",
+            "volume": "360",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Emergence and pandemic potential of swine-origin H1N1 influenza virus",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nature",
+            "volume": "459",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Origins and evolutionary genomics of the 2009 swine-origin H1N1 influenza A epidemic",
+            "authors": [],
+            "year": null,
+            "venue": "Nature 2009",
+            "volume": "459",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Genetic diversity and evolutionary dynamics of Ebola virus in Sierra Leone",
+            "authors": [],
+            "year": 2015,
+            "venue": "Nature",
+            "volume": "524",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Evidence for camel-to-human transmission of MERS coronavirus",
+            "authors": [],
+            "year": 2014,
+            "venue": "N Engl J Med",
+            "volume": "370",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Progress toward oligonucleotide therapeutics: pharmacodynamic properties",
+            "authors": [],
+            "year": 1993,
+            "venue": "FASEB J",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Nucleic-acid therapeutics: basic principles and recent applications",
+            "authors": [],
+            "year": 2002,
+            "venue": "Nat Rev Drug Discov",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Mechanisms of gene silencing by double-stranded RNA",
+            "authors": [],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "431",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "RNA targeting therapeutics: molecular mechanisms of antisense oligonucleotides as a therapeutic platform",
+            "authors": [],
+            "year": 2010,
+            "venue": "Annu Rev Pharmacol Toxicol",
+            "volume": "50",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Broadly reactive and highly sensitive assay for Norwalk-like viruses based on real-time quantitative reverse transcription-PCR",
+            "authors": [],
+            "year": 2003,
+            "venue": "J Clin Microbiol",
+            "volume": "41",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "VIRsiRNAdb: a curated database of experimentally validated viral siRNA/shRNA",
+            "authors": [],
+            "year": 2012,
+            "venue": "Nucleic Acids Res",
+            "volume": "40",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "The Influenza Virus Resource at the National Center for Biotechnology Information",
+            "authors": [],
+            "year": 2008,
+            "venue": "J Virol",
+            "volume": "82",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Quantitative theory of entropic forces acting on constrained nucleotide sequences applied to viruses",
+            "authors": [],
+            "year": 2014,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "111",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Virus Variation Resource - recent updates and future directions",
+            "authors": [],
+            "year": 2014,
+            "venue": "Nucleic Acids Res",
+            "volume": "42",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "The 2014 Ebola virus disease outbreak in West Africa",
+            "authors": [],
+            "year": 2014,
+            "venue": "J Gen Virol",
+            "volume": "95",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "VIRsiRNApred: a web server for predicting inhibition efficacy of siRNAs targeting human viruses",
+            "authors": [],
+            "year": 2013,
+            "venue": "J Transl Med",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "The global distribution and burden of dengue",
+            "authors": [],
+            "year": 2013,
+            "venue": "Nature",
+            "volume": "496",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "History, epidemiology, and clinical manifestations of Zika: a systematic review",
+            "authors": [],
+            "year": 2016,
+            "venue": "Am J Public Health",
+            "volume": "106",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Ebola virus epidemiology, transmission, and evolution during seven months in Sierra Leone",
+            "authors": [],
+            "year": 2015,
+            "venue": "Cell",
+            "volume": "161",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Temporal and spatial analysis of the 2014\u20132015 Ebola virus outbreak in West Africa",
+            "authors": [],
+            "year": 2015,
+            "venue": "Nature",
+            "volume": "524",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Emerging viral diseases",
+            "authors": [],
+            "year": 2000,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "97",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Inhibition of interferon-mediated antiviral responses by influenza A viruses and other negative-strand RNA viruses",
+            "authors": [],
+            "year": 2001,
+            "venue": "Virology",
+            "volume": "279",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Induction and suppression of RNA silencing: insights from viral infections",
+            "authors": [],
+            "year": 2005,
+            "venue": "Nat Rev Genet",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Interferons and viruses: an interplay between induction, signalling, antiviral responses and virus countermeasures",
+            "authors": [],
+            "year": 2008,
+            "venue": "J Gen Virol",
+            "volume": "89",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

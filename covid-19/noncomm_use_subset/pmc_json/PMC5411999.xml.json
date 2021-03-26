@@ -1,0 +1,4753 @@
+{
+    "paper_id": "PMC5411999",
+    "metadata": {
+        "title": "An In-Silico Investigation of Phytochemicals as Antiviral Agents Against Dengue Fever",
+        "authors": [
+            {
+                "first": "Chelsea",
+                "middle": [
+                    "N."
+                ],
+                "last": "Powers",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "William",
+                "middle": [
+                    "N."
+                ],
+                "last": "Setzer",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "DENV protease (NS2B-NS3pro) is a trypsin-like serine protease that cleaves the dengue polyprotein into individual proteins necessary for viral replication. DENV protease has been identified as a primary target for the development of dengue antiviral drugs [15]. There are two potential targets for DENV protease inhibition: (1) the active site of the protease [16], and (2) block association of NS3pro with its protein cofactor NS2B [17].",
+            "cite_spans": [
+                {
+                    "start": 257,
+                    "end": 259,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 361,
+                    "end": 363,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 434,
+                    "end": 436,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Dengue Virus Protease ::: INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "DENV NS3 helicase is an essential enzyme for viral replication and has been identified as a potential drug target. The enzyme shows both ATP-hydrolysis activity as well as RNA duplex unwinding activity. These two enzymatic activities are likely coupled with ATPase activity providing the chemical energy for RNA unwinding. Thus, there are two potential targets for DENV NS3 helicase, the RNA binding site [18] and the ATP binding site [12].",
+            "cite_spans": [
+                {
+                    "start": 406,
+                    "end": 408,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 436,
+                    "end": 438,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Dengue Virus Helicase ::: INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "DENV MTase is located on the N-terminus of NS5 and catalyzes the N-7 and 2\u02b9-O methylations of the viral RNA cap [19]. These modifications are necessary for formation of the mature RNA cap structure. The MTase uses S-adenosylmethionine (SAM) as the methylating cofactor. There are binding sites for GTP and the guanine moiety of the RNA cap (the GTP pocket) and for SAM. DENV MTase is a valid antiviral target, and the GTP binding site has been identified as a valid site for development of antivirals [20]. Although S-adenosylmethionine associates tightly with DENV MTase and displacement of SAM may be difficult, the SAM binding site may, however, be capable of binding other ligands [12, 21].",
+            "cite_spans": [
+                {
+                    "start": 113,
+                    "end": 115,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 502,
+                    "end": 504,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 686,
+                    "end": 688,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 690,
+                    "end": 692,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Dengue Virus Methyltransferase ::: INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "DENV RdRp is essential for viral replication and there are no similar enzymes found in the host. This enzyme, then, is considered to be a prime target for antiviral development [12]. Nucleoside-based prodrug antivirals have been investigated. These agents are phosphorylated in vivo, and then target the active site of the RdRp enzyme [20]. Non-nucleoside small molecules can inhibit viral RdRp by binding to allosteric sites of the protein [19].",
+            "cite_spans": [
+                {
+                    "start": 178,
+                    "end": 180,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 336,
+                    "end": 338,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 442,
+                    "end": 444,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Dengue Virus RNA-Dependent RNA Polymerase ::: INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "DENV E protein mediates the binding of the virus to the host cell surface receptors [19]. Thus, interference of this interaction would be a potential avenue for antiviral development. A small hydrophobic channel has been identified in the DENV E protein and this site has been identified as a target for small-molecule inhibitors [12].",
+            "cite_spans": [
+                {
+                    "start": 85,
+                    "end": 87,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 331,
+                    "end": 333,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Dengue Virus Envelope Protein ::: INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The purpose of this work was to examine whether higher plants may serve as a source of antiviral agents for treatment of dengue fever. A molecular docking approach was used to examine a selection of phytochemicals from our virtual library (2194 different compound structures) with the protein targets of dengue virus.",
+            "cite_spans": [],
+            "section": "Dengue Virus Envelope Protein ::: INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Protein-ligand docking studies were carried out based on the crystal structures (PDB 3U1J [22], 4M9K, 4M9M, and 4M9T [23]) and the NMR structures (PDB 2M9P and 2M9Q [24]) of dengue virus NS3 protease; crystal structures of dengue virus NS3 helicase (PDB 2BHR, 2BMF [25], 2JLQ, 2JLR, 2JLS, 2JLU, 2JLV, 2JLX [26], and 2WHX [27]); crystal structures of dengue virus NS5 RNA methyltransferase (PDB 3P8Z [28], 4CTJ, 4CTK, and 4R8S [21]); crystal structures of dengue virus NS5 RNA-dependent RNA polymerase (2J7U, 2J7W [29], 3VWS, and 4HHJ [30]); and crystal structures of dengue virus envelope protein (PDB 1OAN and 1OKE [31]). In order to examine selectivity for DEVN MTase, human RNA methyltransferase proteins (PDB 3BGV [32], 3EPP [33], and 4N49 [34]) were also used for docking. Similarly, in order to examine selectivity for DENV protease over mammalian serine proteases, we have carried out docking of the phytochemical ligands with crystal structures of rat trypsin (PDB 1BRB [35]), bovine trypsin (PDB 2ZDK [36] and 4MTB [37]), and porcine elastase (PDB 7EST [38]). Prior to docking, all solvent molecules and the co-crystallized ligands were removed from the structures. Molecular docking calculations for all compounds with each of the proteins were undertaken using Molegro Virtual Docker (version 6.0, Molegro ApS, Aarhus, Denmark) [39], with a sphere (15 \u00c5 radius) large enough to accommodate the cavity centered on the binding sites of each protein structure in order to allow each ligand to search. If a co-crystallized inhibitor or substrate was present in the structure, then that site was chosen as the binding site. If no co-crystallized ligand was present, then suitably sized (> 50 \u00c53) cavities were used as potential binding sites. Standard protonation states of the proteins based on neutral pH were used in the docking studies. Each protein was used as a rigid model structure; no relaxation of the protein was performed. Assignments of charges on each protein were based on standard templates as part of the Molegro Virtual Docker program; no other charges were necessary to be set. Overall, 2194 plant-derived secondary metabolites have been docked. This molecule set was comprised of 290 alkaloids (68 indole alkaloids, 153 isoquinoline alkaloids, 5 quinoline alkaloids, 13 piperidine alkaloids, 14 steroidal alkaloids, and 37 miscellaneous alkaloids), 678 terpenoids (47 monoterpenoids, 169 sesquiterpenoids, 265 diterpenoids, 81 steroids, and 96 triterpenoids), 20 aurones, 81 chalcones, 349 flavonoids, 120 isoflavonoids, 74 lignans, 58 stilbenoids, 169 miscellaneous polyphenolic compounds, 100 coumarins, 28 xanthones, 67 quinones, and 160 miscellaneous phytochemicals. While this list does not include all phytochemicals, it does represent a practical selection of phytochemical classes and structural types. Each ligand structure was built using Spartan \u201914 for Windows (version 1.1.8, Wavefunction Inc., Irvine, California). For each ligand, a conformational search and geometry optimization",
+            "cite_spans": [
+                {
+                    "start": 91,
+                    "end": 93,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 118,
+                    "end": 120,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 166,
+                    "end": 168,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 266,
+                    "end": 268,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 307,
+                    "end": 309,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 322,
+                    "end": 324,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 400,
+                    "end": 402,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 427,
+                    "end": 429,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 514,
+                    "end": 516,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 535,
+                    "end": 537,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 617,
+                    "end": 619,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 719,
+                    "end": 721,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 730,
+                    "end": 732,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 745,
+                    "end": 747,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 979,
+                    "end": 981,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1011,
+                    "end": 1013,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1025,
+                    "end": 1027,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1063,
+                    "end": 1065,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1340,
+                    "end": 1342,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "COMPUTATIONAL METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "was carried out using the MMFF force field [40]. Flexible ligand models were used in the docking and subsequent optimization scheme. Variable orientations of each of the ligands were searched and ranked based on their re-rank score. For each docking simulation the maximum number of iterations for the docking algorithm was set to 1500, with a maximum population size of 50, and 100 runs per ligand. The RMSD threshold for multiple poses was set to 1.00 \u00c5. The generated poses from each ligand were sorted by the calculated re-rank score.",
+            "cite_spans": [
+                {
+                    "start": 44,
+                    "end": 46,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "COMPUTATIONAL METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The phytochemical ligands in this investigation were docked to the DENV NS2B-NS3 protease as well as with three different mammalian trypsin-like proteases (bovine trypsin, rat trypsin, and porcine elastase). Those ligands with the best docking for the DENV NS2B-NS3 protease (Edock \u2264 -130 kJ/mol, comparable to the inhibitor (4S,5S)-4-amino-6,6,6-trifluoro-5-hydroxyhexyl-1-guanidinium) that were also selective for the virus protease over mammalian trypsin (at least 15 kJ/mol stronger docking) are listed in Table 1. The binding site of DENV NS2B-NS3 protease involves the catalytic triad of Ser196, His112, and Asp136. Additional amino acids at the active site are Glu46, Ile97, and Glu47. The binding site of this serine protease, as evidenced by the NMR structure with bound dipeptide Lys-Arg (PDB 2M9Q) [24], is bounded by Glu46 and Glu47, which both form electrostatic ionic interactions with the -NH3+ moiety of Lys-Arg. Other amino acids at the binding site include Val113, Ile97, Gln88, and Ile91.",
+            "cite_spans": [
+                {
+                    "start": 810,
+                    "end": 812,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Dengue Virus Protease ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 516,
+                    "end": 517,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "As a class, the strongest docking ligands were the chalcones (average docking energy = -121.2 kJ/mol) and the stilbenoids (average docking energy = -119.5 kJ/mol). The worst docking compounds were the terpenoids, monoterpenoids (average Edock = -63.8 kJ/mol), sesquiterpenoids (average Edock = -89.6 kJ/mol), diterpenoids (average Edock = -89.7 kJ/mol), and triterpenoids (average Edock = -91.8 kJ/mol). The lowest-energy docking poses of the chalcone ligands balsacone A, balsacone B, and balsacone C, place these compounds into both the binding site of Lys-Arg as well as the catalytic site occupied by the co-crystallized inhibitor M9P (see Fig. 1).",
+            "cite_spans": [],
+            "section": "Dengue Virus Protease ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 649,
+                    "end": 650,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Previous docking studies with DENV NS2B-NS3 protease by de Sousa and co-workers had focused on flavonoids that had shown protease inhibition activity [42]. The most active compound in that study was agathisflavone, but in our docking analysis, this compound docks to DENV protease with higher energy (Edock = -126.1 kJ/mol) than it does with rat trypsin (Edock = -138. 6 kJ/mol). Additionally, this biflavone has one rule-of-five violation (MW = 522.46 g/mol). Other flavonoid ligands examined by de Sousa et al.,",
+            "cite_spans": [
+                {
+                    "start": 151,
+                    "end": 153,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Dengue Virus Protease ::: RESULTS and DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "myricetin, quercetin, and kaempferol, were relatively weak docking ligands (Edock = -105.5, -102.7, and -91.5 kJ/mol, respectively) compared to those shown in Table 1.",
+            "cite_spans": [],
+            "section": "Dengue Virus Protease ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 165,
+                    "end": 166,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "ul Qamar and co-workers had carried out a docking analysis with DENV NS2B-NS3 protease using a library of 940 phytochemicals [43]. These workers found Garcinia phytochemicals to be their best hits, including gossypol, mangostenone C, garcidepsidone A, and dimethyl-calabaxanthone. We have docked these compounds in this present study, but they do not dock as well as the ligands listed in Table 1 (Edock = -112.6, -116.8, -111.7 kJ/mol for gossypol, mangostenone C, and demethylcalabaxanthone, respectively). Garcidepsidone A had a docking energy of -127.4 kJ/mol, but this compound violates Lipinski\u2019s rule of five (ClogP = 5.74).",
+            "cite_spans": [
+                {
+                    "start": 126,
+                    "end": 128,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Dengue Virus Protease ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 395,
+                    "end": 396,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "A docking study with compounds from Murraya koenigii and DENV NS2B-NS3 protease revealed the bisindole alkaloid bismurrayafoline E to be a promising binding ligand [44]. This compound, however, violates Lipinski\u2019s rule of 5 (MW = 724.98 g/mol), and was not considered in our study. In another docking study, panduratin A and 4-hydroxypanduratin A, two phenolic compounds from Boesenbergia rotunda with dengue-2 NS3 protease inhibitory activity [45], were found to dock well with the active site of DENV NS2B-NS3 protease [46]. In this present docking study, we find only modest docking energies for panduratin A and 4-hydroxypanduratin A (-97.1 and -90.9 kJ/mol, respectively) compared to those listed in Table 1, suggesting that much more potent dengue virus NS2B-NS3 protease inhibitors are available.",
+            "cite_spans": [
+                {
+                    "start": 165,
+                    "end": 167,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 445,
+                    "end": 447,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 522,
+                    "end": 524,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "Dengue Virus Protease ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 705,
+                    "end": 712,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "\nGlycyrrhiza extracts have shown antiviral activity against human immunodeficiency virus [47, 48], Newcastle disease virus [49], human respiratory syncytial virus [50] and herpes simplex virus 1 [51]. Prenylated stilbenoids (3,3\u02b9,4,5\u02b9-tetrahydroxy-5-prenylbibenzyl, 3,3\u02b9,5\u02b9-trihydroxy-4-methoxy-5-prenylbibenzyl, 3-acetoxy-4\u02b9,5-dihydroxy-3\u02b9-prenyldihydrostilbene, licobenzofuran) and isoflavonoids (glycyrrhisoflavone, 4\u02b9-O-methylglycyrrhisoflavone) chalcones (kanzonol Y) from G. glabra have demonstrated outstanding docking properties to DENV protease (Table 1). Prenylated phenolics from G. glabra have inhibited HIV giant cell formation [47]. In addition, kanzonol Y docked well with DENV RNA-dependent RNA polymerase and DENV envelope protein (see below). Glabraisoflavanone, also from G. glabra, docked well with DENV methyltransferase (see below).",
+            "cite_spans": [
+                {
+                    "start": 90,
+                    "end": 92,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 94,
+                    "end": 96,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 124,
+                    "end": 126,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 164,
+                    "end": 166,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 196,
+                    "end": 198,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 642,
+                    "end": 644,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "Dengue Virus Protease ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 555,
+                    "end": 562,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The balsacones A-C are antibacterial dihydrochalcones from Populus balsamifera [52]. We are unaware of any antiviral properties of these compounds, but they do exhibit excellent docking properties to DENV NS2B-NS3 protease (Table 1) and DENV helicase (see below, Table 2). The prenylated flavonoids glabranine and 7-O-methylglabranine, isolated from Tephrosia spp., had shown in-vitro antiviral activity against dengue virus serotype 2 [53]. Although these two flavonoids were not among the strongest docking, they did show docking selectivity with DENV protease (Edock = -113.4 and -118.8 kJ/mol, respectively). Two diprenylated flavanones, euchrestaflavanone A from Macaranga pleiostemona [54] and flemiflavanone D from Flemingia stricta [55] showed notably strong docking with DENV NS2B-NS3 protease (Table 1). These compounds had shown antibacterial activity, but to our knowledge have not been screened for anti-dengue activity.",
+            "cite_spans": [
+                {
+                    "start": 80,
+                    "end": 82,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 437,
+                    "end": 439,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 692,
+                    "end": 694,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 741,
+                    "end": 743,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "Dengue Virus Protease ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 230,
+                    "end": 231,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 269,
+                    "end": 270,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 810,
+                    "end": 811,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "In addition to docking energies, it is useful to consider proximity of electrophilic ligands (e.g., epoxides or enones) to nucleophilic residues in the active site. A search of the docked ligands with DENV protease has revealed three sesquiterpenoid \u03b1-methylene lactones that dock in close proximity to the \u2013OH group of Ser196. Ineupatorolide A, bigelovin, and 2-de-ethoxy-2-methoxyphantomolin (Fig. 2) dock with the methylene carbon within 3.6 \u00c5 of the serine \u2013OH. These ligands can presumably undergo conjugate addition with the \u2013OH group and form a covalent intermediate thereby inhibiting the protease.",
+            "cite_spans": [],
+            "section": "Dengue Virus Protease ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 400,
+                    "end": 401,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The strongest docking (most exothermic) ligands that do not violate Lipinski\u2019s rule of five are listed in Table 2 along with their docking energies to the RNA binding site and the ATP binding site. These ligands were selected based on their docking energies compared to the docking energies of the co-crystallized ligands in the ATP binding site, ANP (phosphoaminophosphonic acid adenylate ester, -156.9 kJ/mol) and ADP (adenosine 5\u2019-diphosphate, -142.1 kJ/mol). Note that the phytochemical ligands showed a notable docking preference for the ATP site of DENV helicase over the RNA binding site. The ATP site of DENV helicase is dominated by protonated basic amino acids (Arg463, Lys199, Lys201, Arg460) that form ionic interactions and hydrogen bonds with the phosphate groups of ATP and the co-crystallized ligands ADP or ANP. Additional hydrogen-bonding amino acids include Gly196, Gly198, and Thr200. Lys201 and Arg418 form hydrogen-bonds with the adenine moiety.",
+            "cite_spans": [],
+            "section": "Dengue Virus Helicase ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 112,
+                    "end": 113,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "As was the case with DENV protease, the strongest docking class of phytochemicals with DENV helicase ATP site were the chalcones (average Edock = -126.1 kJ/mol) and the stilbenoids (average Edock = -117.6 kJ/mol) while the worst were the terpenoids. The strongest docking ligands were curcumin II (Edock = -164.0 kJ/mol), caffeoyl-p-coumaroyltartaric acid (Edock = -156.2 kJ/mol), balsacone C (Edock = -153.6 kJ/mol), curcumin I (Edock = -153.4 kJ/mol), and angusticornin B (Edock = -152.5 kJ/mol). These ligands dock into the phosphate site of the ATP binding site and not in the adenine site of co-crystallized ADP or ANP. The common structural features of the best docking ligands are two phenolic groups with a flexible linker between them. One of the phenolic groups occupies the phosphate site while the other occupies a site flanked on either side by Arg463 and Arg418 (Figure 3). Several cinnamic acid derivatives from black cohosh (Cimicifuga racemosa) [56] have shown exceptional docking to the ATP site of DENV helicase, including cimicifugic acids B and G, cimiciphenol, and cimiracemate D (Table 2).",
+            "cite_spans": [
+                {
+                    "start": 963,
+                    "end": 965,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                }
+            ],
+            "section": "Dengue Virus Helicase ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 877,
+                    "end": 885,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1109,
+                    "end": 1110,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "DENV MTase has a relatively large binding cavity (around 425-515 \u00c53) that accommodates the viral RNA cap (the GTP site) and SAM (the SAM site). The strongest docking phytochemical ligands all docked at the SAM site. In addition, it is beneficial for antiviral agents to show selectivity for DENV MTase over human RNA MTase. Table 3 lists those compounds that docked with DENV MTase with docking energies comparable or more exothermic than SAM and also with docking energies significantly more exothermic with DENV MTase than with Hs RNA MTase. Not surprisingly, the strongest docking ligands were relatively large molecules (MW around 680-802 g/mol), and therefore violate Lipinski\u2019s rule of five. Based on this molecular docking analysis, the ligands in",
+            "cite_spans": [],
+            "section": "Dengue Virus Methyltransferase ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 324,
+                    "end": 331,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Table 3 are predicted to show inhibition of DENV MTase by competition with SAM and to selectively inhibit viral MTase over human MTase. Additionally, there are several phytochemical ligands that showed more exothermic docking energies than SAM for the SAM site of DENV MTase, more exothermic docking with DENV MTase than with human RNA MTase, and no Lipinski\u2019s rule violations: Isoborreverine, diplacone, styracifolin B, neosilyhermin A, and 8\u03b2-[4-hydroxy-5-(5-hydroxytigloyloxy)tigloyl]-sant-amarin.",
+            "cite_spans": [
+                {
+                    "start": 446,
+                    "end": 447,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Dengue Virus Methyltransferase ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 6,
+                    "end": 7,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Like DENV MTase, DENV RdRp has a very large binding cavity (ca. 3000 \u00c53), so there are several sites available for docking. Eight phytochemical ligands from our docking analysis showed excellent docking energies to DENV RdRp (Table 4). These ligands meet the rule-of-five criteria for drug likeness and have significantly lower (more exothermic) docking energies than the co-crystallized ligands guanosine 5\u02b9-triphosphate (GTP) [29] or 5-{[(4-chlorophenyl)sulfonyl]amino}-2-methyl-1-benzofuran-3-carboxylic acid (VWS) [30]. Four of the strongly docking ligands docked preferentially at the GTP site of DENV RdRp, dimethylisoborreverine, drummondin D, flinderole B, and pungiolide A. The other four ligands docked preferentially at sites removed from either the GTP binding site or the VWS site. Flinderole A and 4,6-dibenzoyl-2-[phenylhydroxymethyl]-3(2H)-benzofuranone preferentially docked in a hydrophobic pocket surrounded by Trp302, Phe354, Val358, Val577, Val579, and Gly599. Neosilyhermin B and kanzonol Y docked preferentially in a hydrophobic pocked formed by Ala406, Ala407, Asn492, Glu507, Val603, Tyr606, and Ile797.",
+            "cite_spans": [
+                {
+                    "start": 429,
+                    "end": 431,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 519,
+                    "end": 521,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Dengue Virus RNA-Dependent RNA Polymerase ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 232,
+                    "end": 233,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "\nCurcuma longa extracts have shown activity against hepatitis B virus replication [57] and dengue-2 virus protease [58]. In addition, curcumin, one of the major components of C. longa, has shown inhibition of HIV-1 and HIV-2 proteases [59] and in-vitro infectivity of dengue virus type 2 [60]. Garc\u00eda Ariza and co-workers have suggested that dengue virus RNA-dependent RNA polymerase inhibition by curcumin, based on molecular docking studies, may be responsible for the anti-dengue activity of curcumin [61]. In this present docking study, several curcuminoids (1,7-bis(4-hydroxy-3-methoxyphenyl)-1,4,6-heptatrien-3-one, curcu-min I, curcumin II, curcumin III, and dihydrocurcumin) showed notably strong docking energies to the ATP site of dengue virus helicase (Table 3). These ligands also showed docking energies somewhat stronger than those of the co-crystallized ligands for DENV RdRp (e.g., curcumin I, Edock = -119.3 kJ/mol). Curcumin I also showed excellent docking properties to the DENV envelope protein hydrophobic pore (see below, Table 5).",
+            "cite_spans": [
+                {
+                    "start": 83,
+                    "end": 85,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 116,
+                    "end": 118,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 236,
+                    "end": 238,
+                    "mention": "59",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 289,
+                    "end": 291,
+                    "mention": "60",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 505,
+                    "end": 507,
+                    "mention": "61",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "Dengue Virus RNA-Dependent RNA Polymerase ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 770,
+                    "end": 771,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 1050,
+                    "end": 1051,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "A number of alkylated flavanones, the chartaceones A-F, isolated from the bark of Cryptocarya chartacea, have shown potent activity against dengue virus NS5 RdRp [62]. The chartaceones C-F had shown the highest potency and these ligands also showed very exothermic docking energies (ranging from -125 to -139 kJ/mol). These compounds, however, all violate Lipinski\u2019s rule (MW = 660.75 g/mol). The lower molecular weight chartaceones A-B, however, docked with DENV RdRp with docking energies (Edock = -101 to -117 kJ/mol) comparable to GTP (Edock = -107.7 kJ/mol). Chartaceone A2 showed selective docking to DENV protease (Table 1), chartaceone B3 docked strongly with the ATP site of DENV helicase (Table 2), and chartaceone B4 docked well with DENV MTase (Table 3).",
+            "cite_spans": [
+                {
+                    "start": 163,
+                    "end": 165,
+                    "mention": "62",
+                    "ref_id": "BIBREF58"
+                }
+            ],
+            "section": "Dengue Virus RNA-Dependent RNA Polymerase ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 622,
+                    "end": 629,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 705,
+                    "end": 706,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 763,
+                    "end": 764,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Several phytochemical compounds have been found that dock into the small hydrophobic channel of DENV envelope protein with docking energies significantly more exothermic than the co-crystallized inhibitor, n-octyl-\u03b2-d-glucoside [12] (Table 5). Additionally, these phytochemical ligands completely occupy the channel of the envelope protein (see Fig. 4). Thus, for example, the flavonoid canniflavin A docks inside the cavity pore, which is largely hydrophobic. There are, however, key hydrogen-bonding contacts between the flavonoid ligand and Thr48 and Thr280 (Fig. 4C). An obvious structural feature of strongly docking phytochemical ligands to the hydrophobic pore is the ability to form an extended structure, particularly involving hydrophobic groups such as prenyl and geranyl.",
+            "cite_spans": [
+                {
+                    "start": 229,
+                    "end": 231,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Dengue Virus Envelope Protein ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 350,
+                    "end": 351,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 567,
+                    "end": 569,
+                    "mention": "4C",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 240,
+                    "end": 241,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "A number of flavonoids from Silybum marianum have shown exceptional docking to the hydrophobic pore of DENV Ep (2,3-dehydroxilybin, cisilandrin, isosilybins A-D, silandrins A-B, and silybin (Table 5). Silybin (silibinin, silymarin) has shown antiviral activity against hepatitis C virus [63] and chikungunya virus [64]. C-geranylated flavanones from Paulownia tomentosa fruits have shown antibacterial [65, 66], cytotoxic [67], and anti-inflammatory [68] activities as well as SARS-CoV protease inhibitory activity [69]. Diplacone showed excellent docking properties with DENV MTase (Table 3) and both 3\u02b9-O-methyldiplacone and 3\u02b9-O-methyldiplacol docked well with the ATP site of DENV helicase (Table 2). Diplacone, bonannione A, 3\u02b9-O-methyldiplacone and 4\u02b9-O-methyldiplacone docked well with the hydrophobic channel of DENV Ep (Table 5). Likewise, the C-geranylated flavone cannflavin A, from Cannabis sativa [70], also docked well with DENV Ep (Table 5).",
+            "cite_spans": [
+                {
+                    "start": 288,
+                    "end": 290,
+                    "mention": "63",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 315,
+                    "end": 317,
+                    "mention": "64",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 403,
+                    "end": 405,
+                    "mention": "65",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 407,
+                    "end": 409,
+                    "mention": "66",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 423,
+                    "end": 425,
+                    "mention": "67",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 451,
+                    "end": 453,
+                    "mention": "68",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 516,
+                    "end": 518,
+                    "mention": "69",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 911,
+                    "end": 913,
+                    "mention": "70",
+                    "ref_id": "BIBREF67"
+                }
+            ],
+            "section": "Dengue Virus Envelope Protein ::: RESULTS and DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 197,
+                    "end": 198,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                },
+                {
+                    "start": 590,
+                    "end": 591,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 701,
+                    "end": 702,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 835,
+                    "end": 836,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                },
+                {
+                    "start": 953,
+                    "end": 954,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "A molecular docking analysis of 2194 plant-derived secondary metabolites with dengue virus protein targets has been carried out. The analysis has revealed 24 compounds that docked strongly to dengue virus NS2B-NS3 protease (Edock < -130 kJ/mol) but not as strongly with mammalian trypsin, 21 compounds that docked strongly to the ATP binding site of DENV NS3 helicase (Edock < -140 kJ/mol), 13 compounds that docked strongly to DENV methyltransferase (Edock < -130 kJ/mol) but not as strongly with human RNA methyltransferase, 8 phytochemicals that showed notable docking to DENV RNA-dependent RNA polymerase, and 32 compounds that showed excellent docking properties with the hydrophobic pore of DENV envelope protein. The results of this study mirror previous docking studies that showed polyphenolic phytochemicals to be excellent docking ligands to dengue protein targets [42, 43, 46, 61]. These results and the current study underscore the importance of natural products from higher plants in drug discovery and may provide potential avenues for development of chemotherapeutic agents for the treatment of dengue fever.",
+            "cite_spans": [
+                {
+                    "start": 877,
+                    "end": 879,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 881,
+                    "end": 883,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 885,
+                    "end": 887,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 889,
+                    "end": 891,
+                    "mention": "61",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "SUMMARY AND CONCLUSION",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Docking energies (kJ/mol) of phytochemical ligands with DENV NS2B-NS3 protease and with mammalian trypsin.\n\na M9P = the inhibitor (4S,5S)-4-amino-6,6,6-trifluoro-5-hydroxyhexyl-1-guanidinium [24].",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Lowest-energy docking scores (re-rank scores) for phytochemical ligands with dengue virus helicase.\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: MolDock docking energies (kJ/mol) of phytochemical ligands with dengue virus methyltransferase and human RNA methyltransferase.\n\na SAM and SFG are co-crystallized ligands.",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: Lowest MolDock docking energies for phytochemical ligands with dengue virus RNA-dependent RNA polymerase.\n",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5: MolDock docking energies (kJ/mol) for phytochemical ligands with dengue virus envelope protein hydrophobic channel.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Fig. (1): (A) Lowest-energy docking poses of balsacone A (magenta), balsacone B (brown), and balsacone C (aqua) with DENV NS2B-NS3 protease (PDB 2M9Q) [24]. The Lys-Arg co-crystallized ligand is shown as a green wire figure. (B) Balsacone B in the active site of DENV NS2B-NS3 protease (PDB 2M9Q) showing key intermolecular contacts, including hydrogen bonding (blue dashed lines) of the ligand with His112 and Ser196.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig. (2): \u03b1-Methylenelactone ligands that can potentially alkylate DENV NW2B-NS3 protease.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Fig. (3): (A) Lowest-energy docking poses of angusticornin B (green), balsacone C (yellow), caffeoyl-p-coumaroyltartaric acid (aqua), and curcumin II (magenta) with DENV helicase (PDB 2JLX) [26]. (B) Curcumin II in the active site of DENV helicase (PDB 2JLX) showing key intermolecular contacts (hydrogen-bonds are shown as blue dashed lines). The ADP co-crystallized ligand is shown as a yellow wire figure.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Fig. (4): Dengue virus envelope protein. (A) Ribbon structure of DENV envelope protein (PDB 1OKE [31]). The cavity pores in each monomer are shown in green. (B) Solid structure of DENV envelope protein (PDB 1OKE). (C) Lowest-energy docked pose of canniflavin A with monomer A of the dimeric envelope protein (PDB 1OKE). The cavity pore is shown in green; hydrogen-bonds are shown as blue dashed lines. (D) Lowest-energy docked pose of paratocarpin L with monomer B of the dimeric envelope protein (PDB 1OKE).",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "The global distribution and burden of dengue.",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Bhatt",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.W.",
+                    "middle": [],
+                    "last": "Gething",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.J.",
+                    "middle": [],
+                    "last": "Brady",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.P.",
+                    "middle": [],
+                    "last": "Messina",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.W.",
+                    "middle": [],
+                    "last": "Farlow",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.L.",
+                    "middle": [],
+                    "last": "Moyes",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Drake",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.S.",
+                    "middle": [],
+                    "last": "Brownstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.G.",
+                    "middle": [],
+                    "last": "Hoen",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Sankoh",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.F.",
+                    "middle": [],
+                    "last": "Myers",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.B.",
+                    "middle": [],
+                    "last": "George",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Jaenisch",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.R.",
+                    "middle": [],
+                    "last": "Wint",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.P.",
+                    "middle": [],
+                    "last": "Simmons",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.W.",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.J.",
+                    "middle": [],
+                    "last": "Farrar",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.I.",
+                    "middle": [],
+                    "last": "Hay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nature",
+            "volume": "496",
+            "issn": "",
+            "pages": "504-507",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "From re-emergence to hyperendemicity: The natural history of the dengue epidemic in Brazil.",
+            "authors": [
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Rodriguez-Barraquer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.T.",
+                    "middle": [],
+                    "last": "Cordeiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Braga",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.V.",
+                    "middle": [],
+                    "last": "de Souza",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.T.",
+                    "middle": [],
+                    "last": "Marques",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.A.",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS Negl. Trop. Dis.",
+            "volume": "5",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Spatial distribution of dengue in a Brazilian urban slum setting: Role of socioeconomic gradient in disease risk.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kikuti",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.M.",
+                    "middle": [],
+                    "last": "Cunha",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.A.",
+                    "middle": [],
+                    "last": "Paploski",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.M.",
+                    "middle": [],
+                    "last": "Kasper",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.M.",
+                    "middle": [],
+                    "last": "Silva",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.S.",
+                    "middle": [],
+                    "last": "Tavares",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.S.",
+                    "middle": [],
+                    "last": "Cruz",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.L.",
+                    "middle": [],
+                    "last": "Queiroz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.S.",
+                    "middle": [],
+                    "last": "Rodrigues",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.M.",
+                    "middle": [],
+                    "last": "Santana",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.C.",
+                    "middle": [],
+                    "last": "Lima",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Calcagno",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Takahashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.H.",
+                    "middle": [],
+                    "last": "Gon\u00e7alves",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Ara\u00fajo",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Gauthior",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.A.",
+                    "middle": [],
+                    "last": "Kiuk-Wasser",
+                    "suffix": ""
+                },
+                {
+                    "first": "U.",
+                    "middle": [],
+                    "last": "Kitron",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.I.",
+                    "middle": [],
+                    "last": "Ko",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.G.",
+                    "middle": [],
+                    "last": "Reis",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.S.",
+                    "middle": [],
+                    "last": "Ribeiro",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "PLoS Negl. Trop. Dis.",
+            "volume": "9",
+            "issn": "7",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Focus on flaviviruses: current and future drug targets.",
+            "authors": [
+                {
+                    "first": "B.J.",
+                    "middle": [],
+                    "last": "Geiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Stahla",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.M.",
+                    "middle": [],
+                    "last": "Hannah",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.H.",
+                    "middle": [],
+                    "last": "Gari",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.M.",
+                    "middle": [],
+                    "last": "Keenan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Future Med. Chem.",
+            "volume": "1",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "G.M.",
+                    "middle": [],
+                    "last": "Cragg",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.J.",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Natural products: A continuing source of novel drug leads.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "The medicinal chemistry of dengue fever.",
+            "authors": [
+                {
+                    "first": "A.J.",
+                    "middle": [],
+                    "last": "Stevens",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.E.",
+                    "middle": [],
+                    "last": "Gahan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Mahalingam",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.A.",
+                    "middle": [],
+                    "last": "Keller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J. Med. Chem.",
+            "volume": "52",
+            "issn": "",
+            "pages": "7911-7926",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "New approaches to structure-based discovery of dengue protease inhibitors.",
+            "authors": [
+                {
+                    "first": "S.M.",
+                    "middle": [],
+                    "last": "Tomlinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.D.",
+                    "middle": [],
+                    "last": "Malmstrom",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.J.",
+                    "middle": [],
+                    "last": "Watowich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Infect. Disord. Drug Targets",
+            "volume": "9",
+            "issn": "",
+            "pages": "327-343",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Tripeptide inhibitors of dengue and West Nile virus NS2B-NS3 protease.",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Sch\u00fcller",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.S.",
+                    "middle": [],
+                    "last": "Chia",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.N.",
+                    "middle": [],
+                    "last": "Doan",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.K.",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Shang",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.P.",
+                    "middle": [],
+                    "last": "Loh",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Hill",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.G.",
+                    "middle": [],
+                    "last": "Vasudevan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Antiviral Res.",
+            "volume": "92",
+            "issn": "",
+            "pages": "96-101",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Dengue protease activity: the structural integrity and interaction of NS2B with NS3 protease and its potential as a drug target.",
+            "authors": [
+                {
+                    "first": "W.Y.",
+                    "middle": [],
+                    "last": "Phong",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.J.",
+                    "middle": [],
+                    "last": "Moreland",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.P.",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Wen",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.N.",
+                    "middle": [],
+                    "last": "Paradkar",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.G.",
+                    "middle": [],
+                    "last": "Vasudevan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Biosci. Rep.",
+            "volume": "31",
+            "issn": "",
+            "pages": "399-409",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Insights into RNA unwinding and ATP hydrolysis by the flavivirus NS3 protein.",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.P.",
+                    "middle": [],
+                    "last": "Watson",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Scherer-Becker",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Sampath",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Jahnke",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.S.",
+                    "middle": [],
+                    "last": "Yeong",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.H.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.P.",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Strongin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.G.",
+                    "middle": [],
+                    "last": "Vasudevan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Lescar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "EMBO J.",
+            "volume": "27",
+            "issn": "",
+            "pages": "3209-3219",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Strategies for development of dengue virus inhibitors.",
+            "authors": [
+                {
+                    "first": "C.H.",
+                    "middle": [],
+                    "last": "Noble",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.L.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Gu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.P.",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Schul",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q.Y.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.Y.",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Antiviral Res.",
+            "volume": "85",
+            "issn": "",
+            "pages": "450-462",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Dengue: an update.",
+            "authors": [
+                {
+                    "first": "M.G.",
+                    "middle": [],
+                    "last": "Guzm\u00e1n",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Kour\u00ed",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Lancet Infect. Dis.",
+            "volume": "2",
+            "issn": "",
+            "pages": "33-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Structural biology of dengue virus enzymes: Towards rational design of therapeutics.",
+            "authors": [
+                {
+                    "first": "C.G.",
+                    "middle": [],
+                    "last": "Noble",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.Y.",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Antiviral Res.",
+            "volume": "96",
+            "issn": "",
+            "pages": "115-126",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Crystal structure of dengue virus methyltransferase without S-adenosyl-L-methionine.",
+            "authors": [
+                {
+                    "first": "C.G.",
+                    "middle": [],
+                    "last": "Noble",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.H.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.H.",
+                    "middle": [],
+                    "last": "Chew",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.Y.",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Antiviral Res.",
+            "volume": "111",
+            "issn": "",
+            "pages": "78-81",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Ligand-bound structures of the dengue virus protease reveal the active conformation.",
+            "authors": [
+                {
+                    "first": "C.G.",
+                    "middle": [],
+                    "last": "Noble",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.C.",
+                    "middle": [],
+                    "last": "She",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.T.",
+                    "middle": [],
+                    "last": "Chao",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.Y.",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Virol.",
+            "volume": "86",
+            "issn": "",
+            "pages": "438-446",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Allosteric inhibition of the NS2B-SN3 protease from dengue virus.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Yildiz",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Ghosh",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.A.",
+                    "middle": [],
+                    "last": "Bell",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Sherman",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.A.",
+                    "middle": [],
+                    "last": "Hardy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "ACS Chem. Biol.",
+            "volume": "8",
+            "issn": "",
+            "pages": "2744-2752",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Gibbs",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Tounge",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Steele",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "NMR structure of an inhibitor bound dengue NS3 protease provides new insights into the NS2B NS3 ligand interactions.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Structure of the dengue virus helicase/nucleoside triphosphates catalytic domain at a resolution of 2.4 \u00c5.",
+            "authors": [
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Sampath",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Chao",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Wen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Nanao",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Chene",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.G.",
+                    "middle": [],
+                    "last": "Vasudevan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Lescar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Virol.",
+            "volume": "79",
+            "issn": "",
+            "pages": "10278-10288",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Insights into RNA unwinding and ATP hydrolysis by the flavivirus NS3 protein.",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.P.",
+                    "middle": [],
+                    "last": "Watson",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Scherer-Becker",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Sampath",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Jahnke",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.S.",
+                    "middle": [],
+                    "last": "Yeong",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.H.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.P.",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Strongin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.G.",
+                    "middle": [],
+                    "last": "Vasudevan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Lescar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "EMBO J.",
+            "volume": "27",
+            "issn": "",
+            "pages": "3209-3219",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Flexibility between the protease and helicase domains of the dengue virus NS3 protein conferred by the linker region and its functional implications.",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Wei",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.N.",
+                    "middle": [],
+                    "last": "Doan",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.N.",
+                    "middle": [],
+                    "last": "Paradkar",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Chong",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.D.",
+                    "middle": [],
+                    "last": "Davidson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kotaka",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Lescar",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.G.",
+                    "middle": [],
+                    "last": "Vasudevan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Biol. Chem.",
+            "volume": "285",
+            "issn": "",
+            "pages": "18817-18827",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Small molecule inhibitors that selectively block dengue virus methyltransferase.",
+            "authors": [
+                {
+                    "first": "S.P.",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.S.",
+                    "middle": [],
+                    "last": "Sonntag",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Noble",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.H.",
+                    "middle": [],
+                    "last": "Nilar",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.H.",
+                    "middle": [],
+                    "last": "Ng",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Zou",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Monaghan",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.Y.",
+                    "middle": [],
+                    "last": "Chung",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Bodenreider",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.R.",
+                    "middle": [],
+                    "last": "Vedananda",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.H.",
+                    "middle": [],
+                    "last": "Keller",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.Y.",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Biol. Chem.",
+            "volume": "286",
+            "issn": "",
+            "pages": "6233-6240",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Crystal structure of the dengue virus RNA-dependent RNA polymerase catalytic domain at 1.85-Angstrom resolution.",
+            "authors": [
+                {
+                    "first": "T.L.",
+                    "middle": [],
+                    "last": "Yap",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.L.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Malet",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.P.",
+                    "middle": [],
+                    "last": "Egloff",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Canard",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.G.",
+                    "middle": [],
+                    "last": "Vasudeval",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Lescar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Virol.",
+            "volume": "81",
+            "issn": "",
+            "pages": "4753-4765",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Dengue.",
+            "authors": [
+                {
+                    "first": "S.B.",
+                    "middle": [],
+                    "last": "Halstead",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Lancet",
+            "volume": "370",
+            "issn": "",
+            "pages": "1644-1652",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Conformational flexibility of the dengue virus RNA-dependent RNA polymerase revealed by a complex with an inhibitor.",
+            "authors": [
+                {
+                    "first": "C.G.",
+                    "middle": [],
+                    "last": "Noble",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.P.",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.L.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.W.",
+                    "middle": [],
+                    "last": "Liew",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Yap",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Lescar",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.Y.",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J. Virol.",
+            "volume": "87",
+            "issn": "",
+            "pages": "5291-5295",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "A ligand-binding pocket in the dengue virus envelope glycoprotein.",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Modis",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Ogata",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Clements",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.C.",
+                    "middle": [],
+                    "last": "Harrison",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "100",
+            "issn": "",
+            "pages": "6986-6991",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.V.",
+                    "middle": [],
+                    "last": "Lunin",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Zeng",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Antoshenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "MacKenzie",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Weigelt",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.H.",
+                    "middle": [],
+                    "last": "Arrowsmith",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.M.",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Bochkarev",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Min",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.N.",
+                    "middle": [],
+                    "last": "Plotnikov",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": " The crystal structure of human RNA\n(guanine-7-) methyltransferase in complex with SAH. To be\npublished. DOI:10.2210/pdb3bgv/pdb. ",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Zeng",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.F.",
+                    "middle": [],
+                    "last": "Amaya",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Loppnau",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Bountra",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Weigelt",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.H.",
+                    "middle": [],
+                    "last": "Arrowsmith",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.M.",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Botchkarev",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Min",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.N.",
+                    "middle": [],
+                    "last": "Plotnikov",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": " Crystal structure of mRNA cap guanine-\nN7 methyltransferase (RNMT) in complex with sinefungin. To be\npublished. DOI:10.2210/pdb3epp/pdb. ",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Structural analysis of human 2\u02b9-O-ribose methyltransferases involved in mRNA cap structure formation.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Smietanski",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Werner",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Purta",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.H.",
+                    "middle": [],
+                    "last": "Kaminska",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Stepinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Darzynkiewicz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Nowotny",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Bujnicki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nat. Commun.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Crystal structures of rat anionic trypsin complexed with the protein inhibitors APPI and BPTI.",
+            "authors": [
+                {
+                    "first": "J.J.",
+                    "middle": [],
+                    "last": "Perona",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.A.",
+                    "middle": [],
+                    "last": "Tsu",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.S.",
+                    "middle": [],
+                    "last": "Craik",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.J.",
+                    "middle": [],
+                    "last": "Fletterick",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "J. Mol. Biol.",
+            "volume": "230",
+            "issn": "",
+            "pages": "919-933",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Congeneric but still distinct: how closely related trypsin ligands exhibit different thermodynamic and structural properties.",
+            "authors": [
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Brandt",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Holzmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Muley",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Khayat",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Wegscheid-Gerlach",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Baum",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Heine",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Hangauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Klebe",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Mol. Biol.",
+            "volume": "405",
+            "issn": "",
+            "pages": "1170-1187",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Wagner",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Heine",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Steinmetzer",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Bovine trypsin in complex with small molecule inhibitor.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Interaction of the peptide CF3-Leu-Ala-NH-C6H4-CF3 (TFLA) with porcine pancreatic elastase. X-ray studies at 1.8 \u00c5.",
+            "authors": [
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Li de la Sierra",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Papamichael",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Sakarellos",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.L.",
+                    "middle": [],
+                    "last": "Dimicoli",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Prang\u00e9",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "J. Mol. Recognit.",
+            "volume": "3",
+            "issn": "",
+            "pages": "36-44",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "MolDock: a new technique for high-accuracy molecular docking.",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Thomsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.H.",
+                    "middle": [],
+                    "last": "Christensen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Med. Chem.",
+            "volume": "49",
+            "issn": "",
+            "pages": "3315-3321",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Dengue: A review of the laboratory tests a clinician must know to achieve a correct diagnosis.",
+            "authors": [
+                {
+                    "first": "S.O.",
+                    "middle": [],
+                    "last": "De Paula",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.A.",
+                    "middle": [],
+                    "last": "da Fonseca",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Braz. J. Infect. Dis.",
+            "volume": "8",
+            "issn": "",
+            "pages": "390-398",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Merck molecular force field. I. Basis, form, scope, parameterization, and performance of MMFF 94.",
+            "authors": [
+                {
+                    "first": "T.A.",
+                    "middle": [],
+                    "last": "Halgren",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "J. Comput. Chem.",
+            "volume": "17",
+            "issn": "",
+            "pages": "490-519",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Experimental and computational approaches to estimate solubility and permeability in drug discovery and development settings.",
+            "authors": [
+                {
+                    "first": "C.A.",
+                    "middle": [],
+                    "last": "Lipinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Lombardo",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.W.",
+                    "middle": [],
+                    "last": "Dominy",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.J.",
+                    "middle": [],
+                    "last": "Feeney",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Adv. Drug Deliv. Rev.",
+            "volume": "23",
+            "issn": "",
+            "pages": "3-25",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Flavonoids as noncompetitive inhibitors of Dengue virus NS2B-NS3 protease: Inhibition kinetics and docking studies.",
+            "authors": [
+                {
+                    "first": "L.R.",
+                    "middle": [],
+                    "last": "de Sousa",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Nebo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.B.",
+                    "middle": [],
+                    "last": "Fernandes",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.F.",
+                    "middle": [],
+                    "last": "da Silva",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Kiefer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kanitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Bodem",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.E.",
+                    "middle": [],
+                    "last": "Diederich",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Schirmeister",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.C.",
+                    "middle": [],
+                    "last": "Vieira",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Bioorg. Med. Chem.",
+            "volume": "23",
+            "issn": "",
+            "pages": "466-470",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Computer aided screening of phytochemicals from Garcinia against the dengue NS2B/NS3 protease.",
+            "authors": [
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "ul Qamar",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Mumtaz",
+                    "suffix": ""
+                },
+                {
+                    "first": "U.A.",
+                    "middle": [],
+                    "last": "Ashfaz",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Azhar",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Fatima",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Hassan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.S.",
+                    "middle": [],
+                    "last": "Hussain",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Akram",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Idrees",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Bioinformation",
+            "volume": "10",
+            "issn": "",
+            "pages": "115-118",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Docking of dengue NS2B-NS3 protease with Murraya koenigii.",
+            "authors": [
+                {
+                    "first": "K.S.",
+                    "middle": [],
+                    "last": "Yong",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.B.",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.A.",
+                    "middle": [],
+                    "last": "Wahab",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "3rd International Conference on Computation for Science and Technology",
+            "volume": "",
+            "issn": "",
+            "pages": "82-84",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Inhibitory activity of cyclohexenyl chalcone derivatives and flavonoids of fingerroot, Boesenbergia rotunda (L.), towards dengue-2-virus NS3 protease.",
+            "authors": [
+                {
+                    "first": "T.S.",
+                    "middle": [],
+                    "last": "Kiat",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Pippen",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Yusof",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Ibrahim",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Khalid",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.A.",
+                    "middle": [],
+                    "last": "Rahman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Bioorg. Med. Chem. Lett.",
+            "volume": "16",
+            "issn": "",
+            "pages": "3337-3340",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Nonsubstrate based inhibitors of dengue virus serine protease: A molecular docking approach to study binding interactions between protease and inhibitors.",
+            "authors": [
+                {
+                    "first": "L.Y.",
+                    "middle": [],
+                    "last": "Kee",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.S.",
+                    "middle": [],
+                    "last": "Kiat",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.A.",
+                    "middle": [],
+                    "last": "Wahab",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Yusof",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.A.",
+                    "middle": [],
+                    "last": "Rahman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Asia Pac. J. Mol. Biol. Biotechnol.",
+            "volume": "15",
+            "issn": "",
+            "pages": "53-59",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Anti-human immunodeficiency virus phenolics from licorice.",
+            "authors": [
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Hatano",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Yasuhara",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Miyamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Okuda",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Chem. Pharm. Bull. (Tokyo)",
+            "volume": "36",
+            "issn": "",
+            "pages": "2286-2288",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Isolation of an anti-HIV diprelylated bibenzyl from Glycyrrhiza lepidota.",
+            "authors": [
+                {
+                    "first": "K.P.",
+                    "middle": [],
+                    "last": "Manfredi",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Vallurupalli",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Demidova",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Kindscher",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.K.",
+                    "middle": [],
+                    "last": "Pannell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Phytochemistry",
+            "volume": "58",
+            "issn": "",
+            "pages": "153-157",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Comparative study to evaluate the anti-viral efficacy of Glycyrrhiza glabra extract and ribavirin against the Newcastle disease virus.",
+            "authors": [
+                {
+                    "first": "M.O.",
+                    "middle": [],
+                    "last": "Omer",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.H.",
+                    "middle": [],
+                    "last": "Al Malki",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Shakid",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Khuram",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Altaf",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Imran",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Pharmacol. Res.",
+            "volume": "6",
+            "issn": "",
+            "pages": "6-11",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "J.P.",
+                    "middle": [],
+                    "last": "Messina",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.J.",
+                    "middle": [],
+                    "last": "Brady",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.M.",
+                    "middle": [],
+                    "last": "Pigott",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Golding",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.U.",
+                    "middle": [],
+                    "last": "Kraemer",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.W.",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.R.",
+                    "middle": [],
+                    "last": "Wint",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.L.",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.I.",
+                    "middle": [],
+                    "last": "Hay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Nat. Rev. Microbiol.",
+            "volume": "13",
+            "issn": "",
+            "pages": "230-239",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Water extract of licorice had anti-viral activity against human respiratory syncytial virus in human respiratory tract cell lines.",
+            "authors": [
+                {
+                    "first": "C.F.",
+                    "middle": [],
+                    "last": "Yeh",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.C.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.C.",
+                    "middle": [],
+                    "last": "Chiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.E.",
+                    "middle": [],
+                    "last": "Shieh",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.H.",
+                    "middle": [],
+                    "last": "Yen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.S.",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J. Ethnopharmacol.",
+            "volume": "148",
+            "issn": "",
+            "pages": "466-473",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "The effect of aqueous extract of Glycyrrhiza glabra on herpes simplex virus 1.",
+            "authors": [
+                {
+                    "first": "M.S.",
+                    "middle": [],
+                    "last": "Ghannad",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Mohammadi",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Safiallahy",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Faradmal",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Azizi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Ahmadvand",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Jundishapur J. Microbiol.",
+            "volume": "7",
+            "issn": "7",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "New antibacterial dihydrochalcone derivatives from buds of Populus balsimifera.",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Lavoie",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Legault",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Simard",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Chiasson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Pichette",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Tetrahedron Lett.",
+            "volume": "54",
+            "issn": "",
+            "pages": "1631-1633",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Antiviral effect of flavonoids on the dengue virus.",
+            "authors": [
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "S\u00e1nchez",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "G\u00f3mez-Garibay",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Taboada",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.H.",
+                    "middle": [],
+                    "last": "Ruiz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Phytother. Res.",
+            "volume": "14",
+            "issn": "",
+            "pages": "89-92",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Prenylated flavanones from leaves of Macaranga pleiostemona.",
+            "authors": [
+                {
+                    "first": "B.A.",
+                    "middle": [],
+                    "last": "Sch\u00fctz",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.D.",
+                    "middle": [],
+                    "last": "Wright",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Rali",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Sticher",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Phytochemistry",
+            "volume": "40",
+            "issn": "",
+            "pages": "1273-1277",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Antimicrobial agents from higher plants: Activity and structural revision of flemiflavanone-D from Flemingia stricta.",
+            "authors": [
+                {
+                    "first": "L.A.",
+                    "middle": [],
+                    "last": "Mitscher",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.R.",
+                    "middle": [],
+                    "last": "Gollapudi",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.K.",
+                    "middle": [],
+                    "last": "Khanna",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.D.",
+                    "middle": [],
+                    "last": "Drake",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Hanamaiah",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Ramaswamy",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.V.",
+                    "middle": [],
+                    "last": "Rao",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Phytochemistry",
+            "volume": "24",
+            "issn": "",
+            "pages": "2885-2887",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Polyphenolic constituents of Actaea racemosa.",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Nuntanakorn",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.S.",
+                    "middle": [],
+                    "last": "Einbond",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Kronenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Weinstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.J.",
+                    "middle": [],
+                    "last": "Kennelly",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Nat. Prod.",
+            "volume": "69",
+            "issn": "",
+            "pages": "314-318",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Antiviral effect of Curcuma longa Linn extract against hepatitis B virus replication.",
+            "authors": [
+                {
+                    "first": "H.J.",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.W.",
+                    "middle": [],
+                    "last": "Yoo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.C.",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.S.",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.S.",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.S.",
+                    "middle": [],
+                    "last": "Min",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.S.",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.W.",
+                    "middle": [],
+                    "last": "Yoon",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.K.",
+                    "middle": [],
+                    "last": "Ahn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J. Ethnopharmacol.",
+            "volume": "124",
+            "issn": "",
+            "pages": "189-196",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Screening of selected Zingiberaceae extracts for dengue-2 virus protease inhibitory activities.",
+            "authors": [
+                {
+                    "first": "T.S.",
+                    "middle": [],
+                    "last": "Kiat",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Pippen",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Yusof",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.A.",
+                    "middle": [],
+                    "last": "Rahman",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Ibrahim",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Khalid",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Sunway Acad. J.",
+            "volume": "3",
+            "issn": "",
+            "pages": "1-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Inhibition of the HIV-1 and HIV-2 proteases by curcumin and curcumin boron complexes.",
+            "authors": [
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Sui",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Salto",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Craik",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.R.",
+                    "middle": [],
+                    "last": "Ortiz de Montellano",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Bioorg. Med. Chem.",
+            "volume": "1",
+            "issn": "",
+            "pages": "415-422",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Detection of dengue virus in individual Aedes aegypti mosquitoes in Delhi, India.",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Vikram",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.N.",
+                    "middle": [],
+                    "last": "Nagpal",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Pande",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Srivastava",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Saxena",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Singh",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.K.",
+                    "middle": [],
+                    "last": "Anushrita Gupta",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.R.",
+                    "middle": [],
+                    "last": "Tuli",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.K.",
+                    "middle": [],
+                    "last": "Yadav",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [
+                        "T."
+                    ],
+                    "last": "Olivier",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Richard",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Velecha",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "J. Vector Borne Dis.",
+            "volume": "52",
+            "issn": "",
+            "pages": "129-133",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Inhibitory effects of curcumin on dengue virus type 2-infected cells in vitro.",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Padilla-S",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Rodr\u00edguez",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.M.",
+                    "middle": [],
+                    "last": "Gonzales",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.C.",
+                    "middle": [],
+                    "last": "Gallego-G",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.C.",
+                    "middle": [],
+                    "last": "Casta\u00f1o-O",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Arch. Virol.",
+            "volume": "159",
+            "issn": "",
+            "pages": "573-579",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Molecular cloning, modelling and docking with curcumin of the dengue virus 2 NS5 polymerase domain.",
+            "authors": [
+                {
+                    "first": "L.L.",
+                    "middle": [],
+                    "last": "Garc\u00eda Ariza",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.A.",
+                    "middle": [],
+                    "last": "T\u00e9llez Ramirez",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.F.",
+                    "middle": [],
+                    "last": "Cortes Hern\u00e1ndez",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Padilla Sanabria",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.C.",
+                    "middle": [],
+                    "last": "Casta\u00f1o Osorio",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Advances in Computational Biology.",
+            "volume": "",
+            "issn": "",
+            "pages": "273-278",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Alkylated flavanones from the bark of Cryptocarya chartacea as dengue virus NS5 polymerase inhibitors.",
+            "authors": [
+                {
+                    "first": "P.M.",
+                    "middle": [],
+                    "last": "Allard",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.T.",
+                    "middle": [],
+                    "last": "Dau",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Eydoux",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.C.",
+                    "middle": [],
+                    "last": "Guillemot",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Dumontet",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Poullain",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Canard",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Gu\u00e9ritte",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Litaudon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Nat. Prod.",
+            "volume": "74",
+            "issn": "",
+            "pages": "2446-2453",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Silibinin is a potent antiviral agent in patients with chronic hepatitis C not responding to pegylated interferon/ribavirin therapy.",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Ferenci",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.M.",
+                    "middle": [],
+                    "last": "Scherzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Kerschner",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Rutter",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Beinhardt",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Hofer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Sch\u00f6niger-Hekele",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Holzmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Steindl-Munda",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Gastroenterology",
+            "volume": "135",
+            "issn": "",
+            "pages": "1561-1567",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "Antiviral activity of silymarin against chikungunya virus.",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Lani",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Hassandarvish",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.W.",
+                    "middle": [],
+                    "last": "Chiam",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Moghaddam",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.J.",
+                    "middle": [],
+                    "last": "Chu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Rausalu",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Merits",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Higgs",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Vanlandingham",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.A.",
+                    "middle": [],
+                    "last": "Bakar",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Zandi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Nature Sci. Rep.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Antibacterial C-geranylflavonoids from Paulownia tomentosa fruits.",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "\u0160mejkal",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Chud\u00edk",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Klou\u010dek",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Marek",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Cva\u010dka",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Urbanov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Jul\u00ednek",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Koko\u0161ka",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "\u0160lapetov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Zima",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Dvorsk\u00e1",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Nat. Prod.",
+            "volume": "71",
+            "issn": "",
+            "pages": "706-709",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "Minor C-geranylated flavanones from Paulownia tomentosa fruits with MRSA antibacterial activity.",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Navr\u00e1tilov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Schneiderov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Vesel\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Han\u00e1kov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Fontana",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Dall\u2019Acqua",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Cva\u010dka",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Innocenti",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Novotn\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Urvanov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Pelletier",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "\u010c\u00ed\u017eek",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "\u017demli\u010dkov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "\u0160mejkal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Phytochemistry",
+            "volume": "89",
+            "issn": "",
+            "pages": "104-113",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Cytotoxic activities of several geranyl-substituted flavanones.",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "\u0160mejkal",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Sva\u010dinov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "\u0160lapetov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Schneiderov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Dall\u2019Acqua",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Innocenti",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Z\u00e1valov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Koll\u00e1r",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Chud\u00edk",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Marek",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Jul\u00ednek",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Urbanov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kartal",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Cs\u00f6llei",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Dole\u017eal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Nat. Prod.",
+            "volume": "73",
+            "issn": "",
+            "pages": "568-572",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "\nC-geranylated flavanones from Paulownia tomentosa fruits as potential anti-inflammatory compounds acting via inhibition of TNF-\u03b1 production.",
+            "authors": [
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Han\u00e1kov\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Ho\u0161ek",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Babula",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Dall\u2019Acqua",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "V\u00e1clav\u00edk",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "\u0160mejkal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "J. Nat. Prod.",
+            "volume": "78",
+            "issn": "",
+            "pages": "850-863",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "Geranylated flavonoids displaying SARS-CoV papain-like protease inhibition from the fruits of Paulownia tomentosa.",
+            "authors": [
+                {
+                    "first": "J.K.",
+                    "middle": [],
+                    "last": "Cho",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.J.",
+                    "middle": [],
+                    "last": "Curtis-Long",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.H.",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.W.",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.W.",
+                    "middle": [],
+                    "last": "Ryu",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.J.",
+                    "middle": [],
+                    "last": "Yuk",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.H.",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Bioorg. Med. Chem.",
+            "volume": "21",
+            "issn": "",
+            "pages": "3051-3057",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": " Molecular investigation of 2013 dengue fever outbreak\nfrom Delhi, India. ",
+            "authors": [
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Afreen",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Deeba",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Naqvi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Shareef",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Ahmed",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Broor",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Parveen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS Currents, ",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Cannflavin A and B, prenylated flavones from Cannabis sativa L.",
+            "authors": [
+                {
+                    "first": "M.L.",
+                    "middle": [],
+                    "last": "Barrett",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.M.",
+                    "middle": [],
+                    "last": "Scutt",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.J.",
+                    "middle": [],
+                    "last": "Evans",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Experientia",
+            "volume": "42",
+            "issn": "",
+            "pages": "452-453",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "Spatial evaluation and modeling of dengue seroprevalence and vector density in Rio de Janeiro, Brazil.",
+            "authors": [
+                {
+                    "first": "N.A.",
+                    "middle": [],
+                    "last": "Hon\u00f3rio",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.M.",
+                    "middle": [],
+                    "last": "Nogueira",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.T.",
+                    "middle": [],
+                    "last": "Code\u00e7o",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.S.",
+                    "middle": [],
+                    "last": "Carvalho",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.G.",
+                    "middle": [],
+                    "last": "Cruz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.A.",
+                    "middle": [],
+                    "last": "Magalh\u00e3es",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "de Ara\u00fajo",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.S.",
+                    "middle": [],
+                    "last": "de Ara\u00fajo",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.Q.",
+                    "middle": [],
+                    "last": "Gomes",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.S.",
+                    "middle": [],
+                    "last": "Pinheiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.S.",
+                    "middle": [],
+                    "last": "Pinel",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Louren\u00e7o-de-Oliveira",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "PLoS Negl. Trop. Dis.",
+            "volume": "3",
+            "issn": "11",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "Impact of the emergence and re-emergence of different denque viruses\u2019 serotypes in Rio de Janeiro, Brazil, 2010 to 2012.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Heringer",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.M.",
+                    "middle": [],
+                    "last": "Nogueira",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.M.",
+                    "middle": [],
+                    "last": "de Filippis",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.R.",
+                    "middle": [],
+                    "last": "Lima",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.R.",
+                    "middle": [],
+                    "last": "Faria",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.C.",
+                    "middle": [],
+                    "last": "Nunes",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.B.",
+                    "middle": [],
+                    "last": "Nogueira",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.B.",
+                    "middle": [],
+                    "last": "dos Santos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Trans. R. Soc. Trop. Med. Hyg.",
+            "volume": "109",
+            "issn": "",
+            "pages": "268-274",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

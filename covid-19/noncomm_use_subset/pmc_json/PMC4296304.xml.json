@@ -1,0 +1,1231 @@
+{
+    "paper_id": "PMC4296304",
+    "metadata": {
+        "title": "Media impact switching surface during an infectious disease outbreak",
+        "authors": [
+            {
+                "first": "Yanni",
+                "middle": [],
+                "last": "Xiao",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Sanyi",
+                "middle": [],
+                "last": "Tang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jianhong",
+                "middle": [],
+                "last": "Wu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "We investigate a general SIR(susceptible-infective-recovery)-type epidemiological model, which incorporates media impacts and other interventions such as quarantine, isolation, vaccination and treatment. We stratify the usual susceptible (S), infected (I), and recovered (R) compartments in the classical SIR model15, to include the quarantined susceptible (Sq) and isolated infected (Iq) compartments. With contact tracing, a proportion, q, of individuals exposed to the virus is quarantined. The quarantined individuals can either move to compartment Iq or Sq, depending on whether they are infected or not1617, while the remaining proportion, 1 \u2212 q, of individuals exposed to the virus, but missed from the contact tracing, move to the infectious compartment I (once infected) or stay in compartment S (if uninfected). Let the media-influenced transmission probability be \u03b2 and the contact rate be a constant c. Then the quarantined individuals, if infected (or uninfected), move to the compartment Iq (or Sq) at a rate of \u03b2cq (or (1 \u2212 \u03b2)cq). Those who are not quarantined, if infected, will move to the compartment I at a rate of \u03b2c(1 \u2212 q). The infected individuals can be detected and then isolated at a rate of dI, and can also move to the compartment R due to recovery. The transmission dynamics is illustrated in Fig. 1.",
+            "cite_spans": [
+                {
+                    "start": 314,
+                    "end": 316,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 608,
+                    "end": 610,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 610,
+                    "end": 612,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "The model with media impact ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1321,
+                    "end": 1327,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We assume that media has impacts on individual behavioural changes via responses to the case number or to the rate of change of the case numbers, or to both181920. We then model such media impacts with a decreasing function. Here we will use as a prototype the media-impact function \u03b20e\u2212M(t), where and p1, p2, q1, q2 are non-negative parameters. The standard SIR model can then be modified as where \u2032 is the derivative with respect to time, and \u03b2 = exp\u2212M(t)\n\u03b20, PS = \u03b2c + cq(1 \u2212 \u03b2), PI = \u03b2c(1 \u2212 q), QS = (1 \u2212 \u03b2)cq, QI = \u03b2cq with baseline transmission probability \u03b20. We also assume that susceptible and quarantined susceptible individuals are also vaccinated at the per capita rates \u03bd and , respectively. We denote \u03b4I and  as the recovery rates of infected patients and isolated infected individuals, respectively, and \u039b and \u03bc the recruitment rate to the susceptible population and the natural death rate, respectively. The other parameters are defined in Table 1. The model we propose here differs from previous studies of the effect of media coverage11121314 in that our formulated media-impact function depends on both the case number and its rate of change. As the rates of change can be negative, our model has to involve a piecewise smooth function.",
+            "cite_spans": [
+                {
+                    "start": 156,
+                    "end": 158,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 158,
+                    "end": 160,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 160,
+                    "end": 162,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 1053,
+                    "end": 1055,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1055,
+                    "end": 1057,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1057,
+                    "end": 1059,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1059,
+                    "end": 1061,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "The model with media impact ::: Results",
+            "ref_spans": [
+                {
+                    "start": 957,
+                    "end": 964,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "When the media impact involves the rate of change of the case numbers (I\u2032(t) or ), the model (2) is an implicit system of differential equations. Interestingly, we show that such a system can be converted into a switching system based on an analytically computable functional relationship Sc = Sc(I, Iq) between the susceptible and infected/infected quarantined populations. This conversion is possible thanks to some important properties of the Lambert W function21.",
+            "cite_spans": [
+                {
+                    "start": 464,
+                    "end": 466,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Media-impact switching surface ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To be more specific, we let , G2(t) = p1I(t) + q1Iq(t). We can show that whenever M1(t) : = G1(t) + G2(t) > 0, we have with and mI = \u03b4I + \u03b1 + \u03bc + dI, . An important finding we made is that the linear term involving rates of change G1(t) can be written as using some important properties of the Lambert W function (see electronic supplementary information (SI) and reference 21 for details). Also, as shown in SI, M1(t) > 0 is equivalent to S(t) > Sc, with Sc = Sc(I, Iq) given by Therefore, we can characterize the transmission probability as follows: The dynamic transmission model (2) subject to media impact (1) is now converted to system (2) subject to the switching condition determined by the switching surface S = Sc(I, Iq). In the literature on control, model (2) with (6) is regarded as a qualitative description of a threshold policy (TP), referred to as an on-off control (or a special and simple case of variable structure control)222324. Note that the critical level Sc determines whether the media impact is effective in lowering the incidence rate, and is called the switching surface. Generally speaking, the critical level is used as a guide for starting/suspending strategies, and hence this level determines when the intervention strategies are implemented2532.",
+            "cite_spans": [
+                {
+                    "start": 374,
+                    "end": 376,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 943,
+                    "end": 945,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 945,
+                    "end": 947,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 947,
+                    "end": 949,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1275,
+                    "end": 1277,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1277,
+                    "end": 1279,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Media-impact switching surface ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The formula Sc reveals dependence of the switching surface on the parameters and the numbers of infected and isolated individuals. During the disease outbreak, the switching surface Sc and the number of susceptible individuals change. Depending on the relative sizes of these populations, the media impact switches on and off dynamically. To examine how long and/or how often the media impact remains effective, we simulate the switching system using the parameters listed in Table 1. It is interesting to note that media impact remains effective almost until the peak of the epidemic, and then switches off, as shown in Fig. 2(B\u2013C). This figure also shows that media impact may switch on again during the subsequent waves. In particular, increasing the susceptible size S(0) at day 50 induces the second wave. During this second wave media impact switches on, as shown in Fig. 2(B\u2013C).",
+            "cite_spans": [],
+            "section": "Media-impact switching surface ::: Results",
+            "ref_spans": [
+                {
+                    "start": 621,
+                    "end": 632,
+                    "mention": "Fig. 2(B\u2013C)",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 873,
+                    "end": 884,
+                    "mention": "Fig. 2(B\u2013C)",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 476,
+                    "end": 483,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "To identify which parameter or variable the switching surface (Sc) is sensitive to, we conducted a sensitive analysis by evaluating the partial rank correlation coefficients (PRCCs) for all input parameters against the output variable Sc. Although the variables I and Iq, are dependent on the equation (2) with (6), our sensitivity analysis is performed with I and Iq directly varying in relatively large intervals. We chose a normal distribution for all parameters with mean values and half standard deviations given in Table 1. Fig. 2(D) shows the PRCCs which illustrate the dependence of Sc on each parameter and variables I and Iq. This sensitivity analysis shows that the first five parameters with most impact on Sc are the recovery rate of the infected individuals (\u03b4I), the transmission probability (\u03b20), the contact rate (c), isolation rate (dI) and quarantine rate (q). Fig. 2(D) also shows that Sc is more sensitive to the weight parameter p2 (or q2) than to the parameter p1 (or q1). Therefore, we conclude that it is the response to the rate of change of the case numbers, rather than the case numbers, that has significant impact on the switching surface.",
+            "cite_spans": [],
+            "section": "Media-impact switching surface ::: Results",
+            "ref_spans": [
+                {
+                    "start": 530,
+                    "end": 539,
+                    "mention": "Fig. 2(D)",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 880,
+                    "end": 889,
+                    "mention": "Fig. 2(D)",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 521,
+                    "end": 528,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The switching system has the disease-free equilibrium E0 = (\u039b/mS, 0, 0, 0), which is locally asymptotically stable provided that the basic reproduction number R0 < 1, where Note that this threshold R0 is the same as that for the model in the absence of media impact. In other words, the media impact does not affect the epidemic threshold. This is in agreement with findings of refs. 11,12,13. When R0 > 1, two subsystems (the subsystems for S < Sc and for S > Sc) have their own respective endemic states. See SI for details, see also ref. 25 and references therein for discussion about \u2018virtual' and \u2018regular' endemic equilibria and their relevance to disease infection dynamics. Here we focus on how long and how effective the media impact remains, based on the 2009 A/H1N1 influenza pandemic in the Shaanxi province of China.",
+            "cite_spans": [
+                {
+                    "start": 384,
+                    "end": 386,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 387,
+                    "end": 389,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 390,
+                    "end": 392,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 541,
+                    "end": 543,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Media-impact switching surface ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "We obtained data on laboratory-confirmed cases of the A/H1N1 influenza pandemic in the Shaanxi province of China (shown in Fig. 3(A) and (B)) from the Province's Public Health Information System17. Note that the number of hospital notifications and the growth rate of these notifications were regularly available to the public during the 2009 A/H1N1 influenza pandemic. It is these notifications and their rate of change with time that contributed to the public awareness of the pandemic, and hence contributed to individuals' behaviour. So, we initially set p1 and p2 to zero and conducted sensitivity analysis to examine the effect of varying p1, p2 on disease outcomes (total number of infected individuals and hospital notifications). The demographic effects are not considered in the following discussion because of the short epidemic time scale in comparison to the demographic time scale, that is, \u039b = \u03bc = 0. Furthermore, no disease-related death was reported in mainland China before mid October 20091726 and no vaccine against A/H1N1 was available until the end of November 2009. Therefore, we set \u03b1 = 0 and  in our parameter estimation.",
+            "cite_spans": [
+                {
+                    "start": 194,
+                    "end": 196,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1008,
+                    "end": 1010,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1010,
+                    "end": 1012,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "The estimated media-impact switching time ::: Results",
+            "ref_spans": [
+                {
+                    "start": 123,
+                    "end": 140,
+                    "mention": "Fig. 3(A) and (B)",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "By fitting the model (2) with (6) to hospital notifications (from 3 September to 12 October) we estimated all unknown parameters (listed in Table 1) and derived the goodness of fit (shown in Fig. 3(C)). The estimates on media impact (q1 = 0.00074, q2 = 0.5793) suggest that individuals are more significantly influenced by the rate of change of the number of hospital notifications than the number of hospital notifications. Moreover, our model is also able to exhibit the second wave, shown in Fig. 3(D), and the estimated parameter values are listed in Table S2 in SI. We note that the initial data for the second wave and some parameters associated with interventions during the second wave are different from those for the first wave, while other parameters are kept unchanged. This is because the first wave was mostly confined to university/college students, while the second wave took off following the October National Day holiday during which population mobility increased and strict campus-relevant intervention measures (such as Fengxiao) were suspended, leading to general population susceptible to the H1N1 infection1726. As the disease spreads to general population, interventions applied to the general population such as quarantine or isolation could not be as strict as those for the university/college students during the first wave due to limited medical and public health resources. This explains why a greater initial value for the susceptible population and a greater contact rate, but lower isolation or quarantine rates, were estimated for the second wave, compared with those for the first wave.",
+            "cite_spans": [
+                {
+                    "start": 1129,
+                    "end": 1131,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1131,
+                    "end": 1133,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "The estimated media-impact switching time ::: Results",
+            "ref_spans": [
+                {
+                    "start": 191,
+                    "end": 200,
+                    "mention": "Fig. 3(C)",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 495,
+                    "end": 504,
+                    "mention": "Fig. 3(D)",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 140,
+                    "end": 147,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Based on the estimated parameter values listed in Table 1 and the formula Sc defined by (5), we calculate that the mean of the first switching time is TS = 25.47 days. The distributions of the first switching time TS associated with 100000 samples of a Markov Chain (obtained from parameter estimation) is given in Fig. 4(A). Similarly, we obtained the distribution of the first peak time for the number of infected individuals and for the hospital notifications, shown in Fig. 4 (B) and (C), respectively. It is interesting to note that the mean of the first peak time for the hospital notifications is estimated to be 25.52, which coincides very well with the first switching time. Note that the first case in Xi'an City was reported on September 3rd 2009, which was assumed to be the initial date. It follows from our estimated first switching time, based on our proposed model with media-impact switching surface, that media impact remains effective until around September 29th, a day before the National Day holiday (from October 1st to the 7th) started. Hence the model predicts that the media impact switched to the \u201coff\u201d mode on September 29. This is in excellent alignment with the real situation during the national holiday season: no H1N1 infection data available, little media coverage, no travel warning issued, and consequently individuals behaved as they would normally do during the holiday (travelling and attending social gatherings)17. In other words, media impact actually became ineffective (i.e. the \u201coff\u201d mode) as the holiday started. Hence, the predicted timing of switch off of the media impact almost coincides with the real timing of switch off of the media. This adds further validation of our proposed model.",
+            "cite_spans": [
+                {
+                    "start": 1451,
+                    "end": 1453,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "The estimated media-impact switching time ::: Results",
+            "ref_spans": [
+                {
+                    "start": 315,
+                    "end": 324,
+                    "mention": "Fig. 4(A)",
+                    "ref_id": null
+                },
+                {
+                    "start": 473,
+                    "end": 491,
+                    "mention": "Fig. 4 (B) and (C)",
+                    "ref_id": null
+                },
+                {
+                    "start": 50,
+                    "end": 57,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "To illustrate how the transmission probability with media impact  varies with disease spread (again we consider the case where p1 = p2 = 0), we plotted \u03b2 as a function of time in Fig. 5(A). Fig. 5(B) shows the fitted epidemic curve on hospital notifications. Note that the transmission probability with media impact \u03b2 might either be an increasing concave function or an increasing function based on the epidemic as shown in Fig. 5(B), depending on the values of q1 and q2. Since the estimated value of q2 is much greater than the estimated value of q1, \u03b2 increases initially and then levels off due to the media impact switching off. This indicates that the media impact, acting as a factor in reducing transmission, continuously weakened and finally switched off almost immediately after the epidemic peak. Repeating the above process without considering media impact (i.e., pi = qi = 0, i = 1, 2) and plotting the transmission probability and the corresponding epidemic curve gives the constant transmission probability (shown in Fig. 5(E)) and the simulated epidemic curve (Fig. 5(F)). It follows from Fig. 5(F) that the disease instantaneously takes off and then quickly drops due to the rapid depletion of susceptible populations. Comparing Fig. 5(B) with (F) further shows that media impact significantly delayed the epidemic peak and decreased the severity of the outbreak.",
+            "cite_spans": [],
+            "section": "Comparison with results ignoring media impact ::: Results",
+            "ref_spans": [
+                {
+                    "start": 179,
+                    "end": 188,
+                    "mention": "Fig. 5(A)",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 190,
+                    "end": 199,
+                    "mention": "Fig. 5(B)",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 425,
+                    "end": 434,
+                    "mention": "Fig. 5(B)",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 1033,
+                    "end": 1042,
+                    "mention": "Fig. 5(E)",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 1078,
+                    "end": 1087,
+                    "mention": "Fig. 5(F)",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 1106,
+                    "end": 1115,
+                    "mention": "Fig. 5(F)",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 1247,
+                    "end": 1265,
+                    "mention": "Fig. 5(B) with (F)",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "When p2 = q2 = 0 in the function M(t) in (1), model (2) reduces to the usual explicit system with media impact, that was investigated in several recent studies1112. Plotting the corresponding transmission probability () shows that media impact is effective in lowering transmission probability during the entire outbreak (shown in Fig. 5(C)). In such a scenario, media impact remains effective as long as there are infected individuals in the population and the impact is the greatest when the epidemic peaks. It also indicates that media impact increases as the number of infected individuals rises, and then weakens with epidemic waning. In contrast, incorporating the dependence on the rate of change of the case numbers in the media impact transmission probability makes the model a switching system. Consequently, media impact alternately switches on or off. On the other hand, this incorporation of the dependence on the rate of change of the case numbers makes the transmission probability the lowest at t = 0, reflecting the greatest effect of the media impact observed at the beginning of the epidemic.",
+            "cite_spans": [
+                {
+                    "start": 159,
+                    "end": 161,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 161,
+                    "end": 163,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Comparison with results ignoring media impact ::: Results",
+            "ref_spans": [
+                {
+                    "start": 331,
+                    "end": 340,
+                    "mention": "Fig. 5(C)",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "To identify key parameters and/or intervention measures that influenced the disease infection dynamics, we used Latin Hypercube Sampling (LHS) and partial rank correlation coefficients (PRCCs) to examine the dependence of the total number of infected individuals on corresponding parameters272829. Again, we chose a normal distribution for all input parameters with the mean values and half standard deviations given in Table 1. We calculated PRCCs between parameters related to integrated disease control measures (IDCMs)(all possible interventions including media impact) and the output variable (here, the total number of infected individuals I + Iq) over time, as shown in Fig. 6(A). It follows that the significance of the effect of parameters on the output variable changes over time. In particular, we note that 1) some parameters become more and more correlated to the output (e.g. \u03b4I, ); 2) some become less and less correlated to the output (e.g. \u03b20, q, dI); and 3) some are consistently insignificantly correlated to the output (e.g. \u03bdS, ).",
+            "cite_spans": [
+                {
+                    "start": 290,
+                    "end": 292,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 292,
+                    "end": 294,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 294,
+                    "end": 296,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "The key processes or parameters for integrated mitigation ::: Results",
+            "ref_spans": [
+                {
+                    "start": 677,
+                    "end": 686,
+                    "mention": "Fig. 6(A)",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 420,
+                    "end": 427,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "We then generated Fig. 6(B) according to high (|PRCCs| \u2265 0.4), moderate (0.2 \u2264 |PRCCs| < 0.4) and low (0 \u2264 |PRCCs| < 0.2) correlations between IDCM parameters and the output variable. Fig. 6(B) shows that variations in transmission probability \u03b20, isolation rate dI and quarantine rate q dominate the PRCCs during the early stages of the disease outbreak (especially before the epidemic peak). In contrast, great coverage of vaccination (increasing ) is the most effective control measure during the late stage of the disease outbreak (after the epidemic's peak). Moreover, parameter \u03b4I is strongly correlated with the output almost throughout the entire outbreak, confirming that strengthening treatment (especially for non-isolated infected individuals) is effective throughout the entire outbreak. In the early stages of the disease outbreak, enhancing quarantine and isolation after contact tracing (increasing parameter q and dI) followed by implementation of such measures as frequent hand-washing and wearing of masks (decreasing \u03b20), are the most effective integrated mitigation measures. This is consistent with the findings of Fraser (2004)30, who argued that isolating symptomatic individuals and quarantining their contacts are two effective public health measures in controlling outbreaks.",
+            "cite_spans": [
+                {
+                    "start": 1150,
+                    "end": 1152,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "The key processes or parameters for integrated mitigation ::: Results",
+            "ref_spans": [
+                {
+                    "start": 18,
+                    "end": 27,
+                    "mention": "Fig. 6(B)",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 184,
+                    "end": 193,
+                    "mention": "Fig. 6(B)",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "It is worth noting that parameters p1 and p2, associated with awareness of the number of infected individuals and the rate of change of the numbers of infected individuals, change from more (negatively) correlated to less (negatively) correlated to the output as the infection progresses, whereas parameters q1 and q2, associated with awareness to the number of isolated infectives and the rate of change of the numbers of isolated infectives, are consistently less correlated to the output. Moreover, the switching surface is more sensitive to parameters p1 and p2 than to parameters q1 and q2. This indicates that increasing the awareness to the number of infected individuals and the rate of change of the numbers of infected individuals, if practical, greatly affects the switching surface, and the total number of infected individuals during the early stage of an outbreak. In practice, however, we have very limited information on the number of non-isolated infected individuals, and hence it will be difficult to increase individuals' awareness using this information.",
+            "cite_spans": [],
+            "section": "The key processes or parameters for integrated mitigation ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "It has been observed that media impacts play an important role in generating public awareness and promoting disease mitigation measures20. Our study examined media impact using a piecewise smooth function to reflect that individuals' awareness depends on both the number of cases and its rate of change. As such, we obtained an implicitly defined system25. This modeling approach adds to a few recent studies on media impact111213 by including the dependence of media impact and behavioral change on the rate of change of disease cases. Interestingly, this piecewise smooth and implicitly defined model can be successfully converted, using the Lambert function, into a switching system22233132, which has been widely used in modern theory and applications of control. This permitted us to describe the critical level for the number of susceptibles (e.g. Sc) above (below) which media impact remains effective (ineffective) and consequently the disease transmission rate is reduced (unchanged).",
+            "cite_spans": [
+                {
+                    "start": 135,
+                    "end": 137,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 353,
+                    "end": 355,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 424,
+                    "end": 426,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 426,
+                    "end": 428,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 428,
+                    "end": 430,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 685,
+                    "end": 687,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 687,
+                    "end": 689,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 689,
+                    "end": 691,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 691,
+                    "end": 693,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Discussion and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "We observed that the switching surface Sc, dependent on numbers of different subgroups of infected individuals, is not a constant (hyperplane). This switching surface Sc given in (5) becomes a constant only if we ignore the population that is isolated (or treated/hospitalized). In practice, it is this number that is known with some certainty, and it is this number that may be released to the public in a timely fashion. Our results indicate that this number also makes the switching on/off of media impact dynamic (temporally varying) and potentially adaptive.",
+            "cite_spans": [],
+            "section": "Discussion and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "It worth noting that the media impact does not always remain effective for reducing transmission during the entire outbreak but it does switch on or off during the outbreak. This switch is most effective if it is guided by the rate of change of the disease cases, as we have shown in this study. We also demonstrated in Fig. 2 that media impact switches on and off multiple times depending on the duration of the outbreak, and this becomes a possible source for the observed multiple waves. Our study suggests that the occurrence of multiple waves may be relevant to the fact that the number of susceptible individuals oscillates around the threshold Sc (correspondingly, the number of infected individuals also oscillates). This means that, first of all, the media impact on the disease outbreak is a dynamic process; and secondly, that the media impact has its greatest effect in reducing disease transmission at the initial stage of an outbreak. This is in contrast to previous studies11121333, in which the reduction effect of the media reaches its maximum near the outbreak peak (shown in Fig. 5(C\u2013D)).",
+            "cite_spans": [
+                {
+                    "start": 988,
+                    "end": 990,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 990,
+                    "end": 992,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 992,
+                    "end": 994,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 994,
+                    "end": 996,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Discussion and conclusions",
+            "ref_spans": [
+                {
+                    "start": 320,
+                    "end": 326,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1094,
+                    "end": 1105,
+                    "mention": "Fig. 5(C\u2013D)",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "A comprehensive understanding of media impacts during an epidemic threat can aid in the development of an implementable public health policy. Of particular interest to designers of such policies are the effects of the media on some important epidemic characteristics such as the magnitude of the peak, its timing and the total number of infections. Our model and analysis, like those in previous studies1112131433, confirm that quantifying these effects provides further insights. In particular, the switching on and off of media impacts, as a result of individual behavioural responses to the rate of change of case numbers, leads to the greatest effect on the disease transmission during the early stage of the outbreak. This finding draws attention to the important role of informing the public about \u201cthe rate of change of case numbers\u201d rather than \u201cthe absolute number of cases\u201d in order to influence behavioral changes, through a self-adaptive media impact on-off switching, for a better control of the disease transmission.",
+            "cite_spans": [
+                {
+                    "start": 403,
+                    "end": 405,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 405,
+                    "end": 407,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 407,
+                    "end": 409,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 409,
+                    "end": 411,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 411,
+                    "end": 413,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Discussion and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "By fitting data on laboratory-confirmed cases during the 2009 pandemic of A/H1N1 influenza in the province of Shaanxi to our proposed model, we were able to obtain estimates of the unknown parameter values and the mean time of media-impact switching on and off. In particular, the estimated mean time when media impact switched off was about 25.47 days after the initiation of the outbreak. This result, together with the initial date of September 3rd 2009, leads to the conclusion that media impacts switched off on September 29th 2009. This is almost consistent with the realistic timing when the media impact became ineffective, represented by the fact that individual behaviours switched to regular holiday mode since a travel warning was not issued during China's National Day holiday (from 1st October to 7th October).",
+            "cite_spans": [],
+            "section": "Discussion and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "It follows from Fig. 4(A) and (C) that the media impact switched off just after the epidemic peaked. This was further demonstrated in Fig. 2(C) This observation on the consistency of media-impact switching and epidemic peaking supports the conclusion that the weakest effect of media impacts always occurs near the epidemic peak. Our sensitivity analysis indicated that the effect of media impact is much more sensitive to the parameter q2 (the weight representing individuals' response to the rate of change of case numbers) than the parameter q1 (the weight representing individuals' responses to the case numbers). This finding also explains why the switching time is always consistent with the peak time of the curve for the isolated infected individuals, since near the peak time, the rate of change of the case numbers is close to zero.",
+            "cite_spans": [],
+            "section": "Discussion and conclusions",
+            "ref_spans": [
+                {
+                    "start": 16,
+                    "end": 33,
+                    "mention": "Fig. 4(A) and (C)",
+                    "ref_id": null
+                },
+                {
+                    "start": 134,
+                    "end": 143,
+                    "mention": "Fig. 2(C)",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "By fitting the proposed model to the aforementioned real data, we obtained reasonable estimations for the parameter ranges and the curve fitting Fig. 3(D). We have also tried to fit the model using the probability transmission function that depends only on the case numbers111213, or simply a classical epidemic model without considering media impact. Within reasonable parameter values, the simulations using the model without considering media-impact, or using the model with media impact depending only on the case numbers, gave very poor fits to the A/H1N1 data, as shown in SI Fig. S1 (A\u2013B).",
+            "cite_spans": [
+                {
+                    "start": 273,
+                    "end": 275,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 275,
+                    "end": 277,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 277,
+                    "end": 279,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Discussion and conclusions",
+            "ref_spans": [
+                {
+                    "start": 145,
+                    "end": 154,
+                    "mention": "Fig. 3(D)",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The analysis based on the PRCCs, identifying the key (mitigation) input variables that contributed to the infection outcome, strongly supported the implementation of an integrated strategy of different mitigation measures, including media impact, to curb the outbreak during different phases of the epidemic. The PRCCs show that the most important parameters that contributed to the total case numbers were parameters associated with quarantine (q), isolation rate (dI) and transmission rate (including transmission probability \u03b20, and the weight measuring the media impact p1, p2) during the early stage of the disease outbreak. In other words, we confirmed that enhancing quarantine and isolation (increasing parameters q and dI), improving disease awareness (increasing p1, p2) and personal hygiene (decreasing \u03b20) are the most effective measures to be adopted in an integrated strategy for mitigation during the early stage of the outbreak.",
+            "cite_spans": [],
+            "section": "Discussion and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "The total number of cases is barely sensitive to variation in parameter \u03bdS. This observation, perhaps surprising at first glance, seems to be highly relevant to the unique characteristic of the first wave in China. The majority of susceptible individuals, during the early stage of the 2009 A/H1N1 infection in Shaanxi, China, were university students and most universities implemented relatively stringent non-pharmaceutical interventions (NPIs) like Fengxiao at the beginning of the first wave1726. Hence, the number of susceptible individuals significantly declined.",
+            "cite_spans": [
+                {
+                    "start": 495,
+                    "end": 497,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 497,
+                    "end": 499,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Discussion and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "In conclusion, this study presents a novel methodology to convert an implicitly defined compartmental model into a switching system with explicitly defined switching surface. Using this methodology, this study demonstrated that media impact exhibits dynamic on-off switching, depending on the relationship between the number of susceptible individuals and different subgroups of infectives at any time during the outbreak. The modeling analysis emphasizes the important role of behavioral changes in response to the rate of change of the case numbers, and concludes that media impact effects switched off when the epidemic peaked.",
+            "cite_spans": [],
+            "section": "Discussion and conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "We used data on laboratory-confirmed cases of 2009 A/H1N1 influenza pandemic in the Shaanxi province of China acquired from the Province's Public Health Information System17. The data included information on the cumulative number of reported cases, the cumulative number of cured cases and the number of new cases. The Shaanxi Bureau of Health started to report cases daily on September 3rd 2009 (shown in Fig. 3) and then changed, on September 19th and November 17th to report once every two days and once every week, respectively. No data were available at weekends. The majority of cases in the province in early September were associated with university/college campuses1726. All confirmed cases in mainland China were isolated in health care facilities, were treated, and were assumed to be unable to spread the disease once isolated.",
+            "cite_spans": [
+                {
+                    "start": 171,
+                    "end": 173,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 674,
+                    "end": 676,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 676,
+                    "end": 678,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Data ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 406,
+                    "end": 412,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Due to irregular reporting of data in the province of Shaanxi (e.g. reporting delays at weekends) and changes to reporting policy, we had to generate daily hospital cases using the cubic spline interpolation method, implemented as a Matlab program. We used an adaptive Metropolis-Hastings (M-H) algorithm to carry out the Markov Chain Monte Carlo (MCMC) procedure to estimate the parameters and their standard deviations based on data from hospital notifications between September 3rd and October 12th for the Shaanxi province and using model (2) with the media impact function specified in (6). The algorithm runs for 500000 iterations with a burn-in of 300000 iterations, with the Geweke convergence diagnostic method employed to assess the convergence.",
+            "cite_spans": [],
+            "section": "Parameter estimation ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Y.X., S.T. and J.W. designed the study, carried out the analysis and contributed to writing the paper. S.T. performed numerical simulations.",
+            "cite_spans": [],
+            "section": "Author Contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Integrated control measures include contact tracing, quarantine, isolation and vaccination. Media impact is modeled as a factor potentially reducing the transmission rate.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Illustrations of the switching surface of SC (A) and its solutions (B\u2013C) with parameters as listed in Table 1.  represents the switching surfaces for the first (second) outbreak. The thick and thin curves denote the trajectories of the system (2) with (6) with media impact switched on and off, respectively. (D) Partial rank correlation coefficients illustrating the dependence of Sc on each parameter. Note that variable I varies in (1, 500) with mean value of 250, and Iq varies in (1, 50) with mean value of 4. Parameter \u03b1 varies in (0, 0.02%) with mean value of 0.003%34, \u03bc varies in (1/60, 1/80) with mean value of 1/7435.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Daily number of hospital notifications for the Shaanxi province (A) from September 3rd to October 12th 2009; (B) from September 3rd 2009 to January 3rd 2010. Goodness of fit for (C) the first wave and for (D) the first and the second wave.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: (A) Transmission probability \u03b2 and (B) the fitted Iq for model (2) with (6) and p1 = p2 = 0; (C) Transmission probability \u03b2 and (D) the simulated Iq for model (2) with (6) and p1 = p2 = q2 = 0; (E) Transmission probability \u03b2 and (F) the simulated Iq for model (2) without media impact (i.e. pi = qi = 0, i = 1, 2).",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: The parameters related to IDCMs in model (2) are \u03b20, c, q, \u03b4I, , \u03bdS, , dI, p1, p2, q1, q2.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Epidemiological and genetic analysis of severe acute respiratory syndrome",
+            "authors": [],
+            "year": 2004,
+            "venue": "Lancet Infect. Dis.",
+            "volume": "4",
+            "issn": "",
+            "pages": "672-683",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "The spread of awareness and its impact on epidemic outbreaks",
+            "authors": [],
+            "year": 2009,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "106",
+            "issn": "",
+            "pages": "6872-6877",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "The impact of media on the spreading and control of infectious disease",
+            "authors": [],
+            "year": 2008,
+            "venue": "J. Dynam. Diff. Eqns.",
+            "volume": "20",
+            "issn": "",
+            "pages": "31-53",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Media/psychological impact on multiple outbreaks of emerging infectious diseases",
+            "authors": [],
+            "year": 2007,
+            "venue": "Comput. Math. Methods Med.",
+            "volume": "8",
+            "issn": "",
+            "pages": "153-164",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Effect of media-induced social distancing on disease transmission in a two patch setting",
+            "authors": [],
+            "year": 2011,
+            "venue": "Math. Biosci.",
+            "volume": "230",
+            "issn": "",
+            "pages": "87-95",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "The impact of media coverage on the transmission dynamics of human influenza",
+            "authors": [],
+            "year": 2011,
+            "venue": "BMC Public Health",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "",
+            "authors": [],
+            "year": 1991,
+            "venue": "Infectious Diseases of Humans, Dynamics and Control",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "",
+            "authors": [],
+            "year": 2008,
+            "venue": "Modeling Infectious Diseases in Humans and Animals",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Community-based measures for mitigating the 2009 H1N1 pandemic in China",
+            "authors": [],
+            "year": 2010,
+            "venue": "PLoS one",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Early assessment of anxiety and behavioral response to novel swine-origin influenza A(H1N1)",
+            "authors": [],
+            "year": 2009,
+            "venue": "PLoS one",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Mass media interventions for preventing smoking in young people",
+            "authors": [],
+            "year": 2010,
+            "venue": "Cochrane Database Syst. Rev.",
+            "volume": "11",
+            "issn": "",
+            "pages": "1-47",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Modelling strategies for controlling SARS outbreaks",
+            "authors": [],
+            "year": 2004,
+            "venue": "Proc. R. Soc. B.",
+            "volume": "271",
+            "issn": "",
+            "pages": "2223-2232",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Modelling the influence of human behaviour on the spread of infectious diseases: A review",
+            "authors": [],
+            "year": 2010,
+            "venue": "J. R. Soc. Interface",
+            "volume": "7",
+            "issn": "",
+            "pages": "1247-1256",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "On the Lambert W function. Adv",
+            "authors": [],
+            "year": 1996,
+            "venue": "Comput. Math.",
+            "volume": "5",
+            "issn": "",
+            "pages": "329-359",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "",
+            "authors": [],
+            "year": 1998,
+            "venue": "Sliding Mode Control: Theory and Applications (Series in Systems and Control)",
+            "volume": "",
+            "issn": "",
+            "pages": "15-20",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "",
+            "authors": [],
+            "year": 1988,
+            "venue": "Differential equations with discontinuous righthand sides",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "",
+            "authors": [],
+            "year": 1992,
+            "venue": "Sliding modes in control and optimization",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Dynamics of an infectious disease with media/psychology induced non-smooth incidence",
+            "authors": [],
+            "year": 2013,
+            "venue": "Math. Biosci. Eng.",
+            "volume": "10",
+            "issn": "",
+            "pages": "445-461",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Campus quarantine (Fengxiao) for curbing emergent infectious diseases: Lessons from mitigating A/H1N1 in Xi'an, China",
+            "authors": [],
+            "year": 2012,
+            "venue": "J. Theor. Biol.",
+            "volume": "295",
+            "issn": "",
+            "pages": "47-58",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Sensitivity and uncertainty analysis of complex-models of disease transmission: an HIV model as an example",
+            "authors": [],
+            "year": 1994,
+            "venue": "Int. Stat. Rev.",
+            "volume": "62",
+            "issn": "",
+            "pages": "229-243",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Sensitivity analysis of infectious disease models: methods, advances and their application",
+            "authors": [],
+            "year": 2013,
+            "venue": "J. R. Soc. Interface",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "A methodology for performing global uncertainty and sensitivity analysis in systems biology",
+            "authors": [],
+            "year": 2008,
+            "venue": "J. Theor. Biol.",
+            "volume": "254",
+            "issn": "",
+            "pages": "178-196",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Swine influenza A (H1N1) infection in two children - Southern California, March - April 2009",
+            "authors": [],
+            "year": 2009,
+            "venue": "MMWR Morb Mortal Wkly Rep.",
+            "volume": "58",
+            "issn": "",
+            "pages": "400-402",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Factors that make an infectious disease outbreak controllable",
+            "authors": [],
+            "year": 2004,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "101",
+            "issn": "",
+            "pages": "6146-6151",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "",
+            "authors": [],
+            "year": 1999,
+            "venue": "Nonsmooth Mechanics: Models, Dynamics and Control",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Sliding mode control of outbreaks of emerging infectious diseases",
+            "authors": [],
+            "year": 2012,
+            "venue": "Bull. Math. Biol.",
+            "volume": "74",
+            "issn": "",
+            "pages": "2403-2422",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Modelling the effects of media during an influenza epidemic",
+            "authors": [],
+            "year": 2014,
+            "venue": "BMC Public Health",
+            "volume": "14",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Deaths related to 2009 pandemic influenza A (H1N1) among American Indian/Alaska natives - 12 states, 2009",
+            "authors": [],
+            "year": 2009,
+            "venue": "MMWR Morb Mortal Wkly Rep.",
+            "volume": "58",
+            "issn": "",
+            "pages": "1341-1344",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Trends in infant/child mortality and life expectancy in indigenous populations in Yunnan Province, China",
+            "authors": [],
+            "year": 2008,
+            "venue": "Aust. NZ. J. Publ. Heal.",
+            "volume": "32",
+            "issn": "",
+            "pages": "216-223",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Pandemic potential of a strain of influenza A (H1N1): Early findings",
+            "authors": [],
+            "year": 2009,
+            "venue": "Science",
+            "volume": "324",
+            "issn": "",
+            "pages": "1557-1561",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Strategies for containing an emerging influenza pandemic in Southeast Asia",
+            "authors": [],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "209-214",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Does the effectiveness of control measures depend on the influenza pandemic profile?",
+            "authors": [],
+            "year": 2008,
+            "venue": "PLoS one",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Containing pandemic influenza at the source",
+            "authors": [],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "309",
+            "issn": "",
+            "pages": "1083-1087",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Simple models for containment of a pandemic",
+            "authors": [],
+            "year": 2006,
+            "venue": "J. R. Soc. Interface",
+            "volume": "3",
+            "issn": "",
+            "pages": "453-457",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Spread of a novel influenza A (H1N1) virus via global airline transportation",
+            "authors": [],
+            "year": 2009,
+            "venue": "N. Engl. J. Med.",
+            "volume": "361",
+            "issn": "",
+            "pages": "212-214",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

@@ -1,0 +1,2675 @@
+{
+    "paper_id": "PMC4149408",
+    "metadata": {
+        "title": "Design of an epitope-based peptide vaccine against spike protein of human coronavirus: an in silico approach",
+        "authors": [
+            {
+                "first": "Arafat",
+                "middle": [
+                    "Rahman"
+                ],
+                "last": "Oany",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Abdullah-Al",
+                "middle": [],
+                "last": "Emran",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Tahmina",
+                "middle": [
+                    "Pervin"
+                ],
+                "last": "Jyoti",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Human coronavirus (HCoV) belongs to the Coronaviridae family (alphacoronavirus 1) and comprises a large group of enveloped, positive-sense, single-stranded polyadenylated RNA virus.1,2 It consists of the largest known viral RNA genomes, ranging from 27.6 to 31.6 kb. Usually, coronaviruses are classified into three groups (group I to III), based on their serological cross-reactivity.3 Their classification is also supported by evolutionary analysis.1 The group I viruses are animal pathogens, including porcine epidemic diarrhea virus and feline infectious peritonitis virus. The group II viruses are responsible for domestic animal pathogenic infections, and the final group III viruses are responsible for avian species infection.4 However both the group I and group II viruses are considered HCoV. The protein molecules that usually contribute the structure of all coronaviruses are the spike (S), envelope (E), membrane (M) and nucleocapsid (N). HCoV is usually the causative agent of upper respiratory tract infections and also the causative agent of \u201catypical pneumonia\u201d, which was first identified in the People\u2019s Republic of China.5 As nowadays, an environmental resistance is shown by these viruses,6 it is urgent to develop an effective prevention for HCoV. Currently, there is no available treatment or vaccine to cure HCoV infections. Due to the ever rising spread of this viral infection, the development of vaccines or antiviral drugs against HCoVs infections is crucial.",
+            "cite_spans": [
+                {
+                    "start": 181,
+                    "end": 182,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 183,
+                    "end": 184,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 385,
+                    "end": 386,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 451,
+                    "end": 452,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 734,
+                    "end": 735,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1141,
+                    "end": 1142,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 1210,
+                    "end": 1211,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "A novel approach integrating immunogenetics and immunogenomics with bioinformatics for the development of vaccines is known as vaccinomics.7 This approach has been used to address the development of new vaccines. The present conventional approach for vaccine development relies on antigen expression, in sufficient amount, from in vitro culture models; however, many antigens, while expressed sufficiently, may not be good candidates for vaccine. With these conventional approaches, it has not been possible to control different types of outbreaks of viral pathogens, such as recent avian and swine influenza strains, due to their time-consuming development process. Hence, the rapid in silico informatics-based approach has gained much popularity with the recent advancement in the sequencing of many pathogen genomes and protein sequence databases.8 The \u201cvaccinomics\u201d approach has already proven to be essential for combating diseases such as multiple sclerosis,9 malaria,10 and tumors.11 However, these methods of vaccine development usually work through the identification of human leukocyte antigens (HLA) ligands and T cell epitopes,12 which specify the selection of the potent vaccine candidates associated with the transporter of antigen presentation (TAP) molecules.13\u201316 Allergenicity assessment is one of the vital steps in the development of a peptide vaccine because when we provide the vaccine into the human body, it is detected as a foreign substance. As a result, inflammation occurs, demonstrating an allergic reaction. For the prediction of a B-cell epitope, hydrophilicity is an important criterion which is usually in the beta turns region. These assessments strengthen the possibility of the vaccine candidates. Therefore, our present study was undertaken to design an epitope-based peptide vaccine against HCoVs (229E, NL63, HKU1, EMC, and OC43) using the vaccinomics approach, with the wet lab researcher expected to validate our prediction.",
+            "cite_spans": [
+                {
+                    "start": 139,
+                    "end": 140,
+                    "mention": "7",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 850,
+                    "end": 851,
+                    "mention": "8",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 964,
+                    "end": 965,
+                    "mention": "9",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 974,
+                    "end": 976,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 988,
+                    "end": 990,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1139,
+                    "end": 1141,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1275,
+                    "end": 1277,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1278,
+                    "end": 1280,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "ViralZone, a database of the ExPASy Bioinformatics Resource Portal was used for the selection of HCoVs and their associated information, including their genus, family, host, transmission, disease, genome, and proteome.",
+            "cite_spans": [],
+            "section": "Viral strain selection ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The outer membrane protein (spike protein) sequences of HCoV were retrieved from the UniProtKB database.17 Then all the sequences were stored as a FASTA format for further analysis.",
+            "cite_spans": [
+                {
+                    "start": 104,
+                    "end": 106,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Protein sequence retrieval ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For the analysis of the evolutionary divergence in the membrane proteins of HCoV, a phylogenetic tree was constructed, using the ClustalW2 multiple sequence alignment tool.18",
+            "cite_spans": [
+                {
+                    "start": 172,
+                    "end": 174,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Evolution analysis ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "VaxiJen v2.0,19 a server for the prediction of protective antigens and subunit vaccines, was used for the determination of the most potent antigenic protein. Here, we used the default parameter of this server for the determination of the antigenic protein.",
+            "cite_spans": [
+                {
+                    "start": 13,
+                    "end": 15,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Antigenic protein identification ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The NetCTL 1.2 server was used for the identification of the T cell epitope.20 The prediction method integrated peptide major histocompatibility complex class I (MHC-I) binding; proteasomal C terminal cleavage, and TAP transport efficiency. The epitope prediction was restricted to 12 MHC-I supertypes. MHC-I binding and proteasomal cleavage were performed through artificial neural networks, and the weight matrix was used for TAP transport efficiency. The parameter we used for this analysis was set at threshold 0.5 to maintain sensitivity and specificity of 0.89 and 0.94, respectively. This allowed us to recruit more epitopes for further analysis. A combined algorithm of MHC-I binding, TAP transport efficiency, and proteasomal cleavage efficiency were selected to predict overall scores.",
+            "cite_spans": [
+                {
+                    "start": 76,
+                    "end": 78,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "T Cell epitope identification ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A tool from the Immune Epitope Database21 was used to predict the MHC-I binding. The stabilized matrix base method (SMM)22 was used to calculate the half-maximal inhibitory concentration (IC50) values of peptide binding to MHC-I molecules from different prediction methods. For the binding analysis, all the alleles were selected, and the length was set at 9.0 before prediction was done. For the selected epitopes, a web-based tool was used to predict proteasomal cleavage, TAP transport, and MHC-I.23 This tool combines predictors of proteasomal processing, TAP transport, and MHC-I binding to produce an overall score for each peptide\u2019s intrinsic potential as a T cell epitope. SMM was also implemented for this prediction.",
+            "cite_spans": [
+                {
+                    "start": 39,
+                    "end": 41,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 120,
+                    "end": 122,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 500,
+                    "end": 502,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "T Cell epitope identification ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For the analysis of the epitope conservancy, the web-based tool from IEDB24 analysis resource was used.",
+            "cite_spans": [
+                {
+                    "start": 73,
+                    "end": 75,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Epitope conservancy analysis ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Population coverage for each individual epitope was selected by the IEDB population coverage calculation tool analysis resource. Here we used the allelic frequency of the interacting HLA alleles for the prediction of the population coverage for the corresponding epitope.",
+            "cite_spans": [],
+            "section": "Prediction of population coverage ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The web-based AllerHunter server25 was used to predict the allergenicity of our proposed epitope for vaccine development. This server predicts allergenicity through a combinational prediction, by using both integration of the Food and Agriculture Organization (FAO)/World Health Organization (WHO) allergenicity evaluation scheme and support vector machines (SVM)-pairwise sequence similarity. AllerHunter predicts allergens as well as nonallergens with high specificity. This makes AllerHunter is a very useful program for allergen cross-reactivity prediction.26,27",
+            "cite_spans": [
+                {
+                    "start": 32,
+                    "end": 34,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 561,
+                    "end": 563,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 564,
+                    "end": 566,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Allergenicity assessment ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For the docking analysis, the KSSTGFVYF epitope was subjected to PEP-FOLD web-based server28 for 3D structure conversion, in order to analyze the interactions with different HLAs. This server modeled five 3D structures of the proposed epitope, and the best one was selected for the docking analysis.",
+            "cite_spans": [
+                {
+                    "start": 90,
+                    "end": 92,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Design of the three-dimensional (3D) epitope structure ::: Molecular docking analysis and HLA allele interaction ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To ensure the binding between HLA molecules and our predicted epitope, a docking study was performed using Molegro Virtual Docker, version 6.0 (CLC bio, Aarhus, Denmark).29 The HLA-B*15:01 was selected for docking on the basis of the available Protein Data Bank (PDB) structure deposited in the database, which interacted with our proposed epitope. The Protein Data Bank structure 1XR8, of Epstein \u2013 Barr virus EBNA-3 complexed with human UbcH6 peptide, was retrieved from the Research Collaboratory for Structural Bioinformatics (RCSB) protein database30 and simplified to HLA-B*15:01. Finally the docking was established at a grid of X: 24.81, Y: 29.16, and Z: 40.59.",
+            "cite_spans": [
+                {
+                    "start": 170,
+                    "end": 172,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 553,
+                    "end": 555,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Docking analysis ::: Molecular docking analysis and HLA allele interaction ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Prediction of potentially immunogenic epitopes in a given protein sequence may significantly reduce wet lab effort needed to discover the epitopes required for the design of vaccines and for immunodiagnostics. The aim of the prediction of the B cell epitope was to find the potential antigen that would interact with B lymphocytes and initiate an immunoresponse.31 Tools from IEDB were used to identify the B cell antigenicity, including the Kolaskar and Tongaonkar antigenicity scale,32 Emini surface accessibility prediction,33 Karplus and Schulz flexibility prediction,34 and Bepipred linear epitope prediction analysis.35 The Chou and Fasman beta turn prediction tool36 was used because the antigenic parts of a protein belong to the beta turn regions.37",
+            "cite_spans": [
+                {
+                    "start": 362,
+                    "end": 364,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 485,
+                    "end": 487,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 527,
+                    "end": 529,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 572,
+                    "end": 574,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 623,
+                    "end": 625,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 671,
+                    "end": 673,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 756,
+                    "end": 758,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Identification of the B cell epitope ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A total of 56 outer membrane protein (spike protein) sequences from the different variants belonging to five types (229E, NL63, HKU1, EMC, and OC43) of HCoVs were retrieved from the UniProtKB database. Then, the sequences were subjected to multiple sequence alignments in order to construct a phylogenetic tree (Figure S1). The phylogram showed evolutionary divergence among the different strains of HCoV.",
+            "cite_spans": [],
+            "section": "Divergence analysis of the retrieved sequences ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The VaxiJen server assessed all of the retrieved protein sequences in order to find the most potent antigenic protein. UniprotKB id: B2KKT9 was selected as the most potent antigenic protein, with a highest total prediction score of 0.6016. Then, the protein was used for further analysis.",
+            "cite_spans": [],
+            "section": "Antigenic protein prediction ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "In a preselected environment, the NetCTL server predicted the potent T cell epitopes from the selected protein sequence. Based on the high combinatorial score, the five best epitopes (Table 1) were selected for further analysis.",
+            "cite_spans": [],
+            "section": "T cell epitope identification ::: Results",
+            "ref_spans": [
+                {
+                    "start": 184,
+                    "end": 191,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "MHC-I binding prediction, which was run through SMM, predicted a wide range of MHC-I allele interactions with the five T cell epitopes. The MHC-I alleles for which the epitopes showed higher affinity (IC50 <200 nM) were selected for further analysis (Table 2).",
+            "cite_spans": [],
+            "section": "T cell epitope identification ::: Results",
+            "ref_spans": [
+                {
+                    "start": 251,
+                    "end": 258,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "MHC-I processing (proteasomal cleavage/TAP transport/MHC-I combined predictor) predicted an overall score for each peptide\u2019s intrinsic potential to be a T cell epitope from the protein sequence. Proteasome complex, which cleaved the peptide bonds, thus converted the proteins into peptides. The peptide molecules from proteasome cleavage associated with class-I MHC molecules, and the peptide-MHC molecule then were transported to the cell membrane where they were presented to T helper cells. Here, higher overall score for each peptide denotes higher processing capabilities (Table 2).",
+            "cite_spans": [],
+            "section": "T cell epitope identification ::: Results",
+            "ref_spans": [
+                {
+                    "start": 578,
+                    "end": 585,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Among the five T cell epitopes, a 9 mer epitope, KSSTGFVYF, was found to interact with most MHC-I alleles, including HLA-B*27:20; HLA-B*15:17; HLA-B*15:03; HLA-B*40:13; HLA-A*32:07; HLA-B*58:01; HLA-C*03:03; HLA-A*68:23; HLA-C*12:03; HLA-A*02:50; HLA-A*32:01; HLA-A*32:15; HLA-C*05:01; HLA-C*15:02; HLA-B*58:02; HLA-B*15:01 with higher affinity (Table 2).",
+            "cite_spans": [],
+            "section": "T cell epitope identification ::: Results",
+            "ref_spans": [
+                {
+                    "start": 346,
+                    "end": 353,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "The IEDB conservancy analysis tool analyzed the conservancy of the predicted epitopes, which are shown in Table 2. The population coverage of the predicted epitopes is depicted in Figure 2.",
+            "cite_spans": [],
+            "section": "Epitope conservancy and population coverage analysis ::: Results",
+            "ref_spans": [
+                {
+                    "start": 180,
+                    "end": 188,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 106,
+                    "end": 113,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "The sequence-based allergenicity prediction was precisely calculated using the AllerHunter tool, and the predicted queried epitope allergenicity score was 0.02 (sensitivity =93.0%, specificity =79.4%).",
+            "cite_spans": [],
+            "section": "Allergenicity assessment ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The predicted epitope bound in the groove of the HLA-B*15:01 with an energy of -17.662 kcal/mol. The docking interaction was visualized with the PyMOL molecular graphics system, version 1.5.0.4 (Schr\u00f6dinger, LLC, Portland, OR, USA), shown in Figure 3.",
+            "cite_spans": [],
+            "section": "Molecular docking analysis ::: Results",
+            "ref_spans": [
+                {
+                    "start": 242,
+                    "end": 250,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Here, we predicted amino acid scale-based methods for the identification of potential B-cell epitopes. According to this procedure we used different analysis methods for the prediction of a continuous B cell epitope.",
+            "cite_spans": [],
+            "section": "B cell epitope identification ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The Kolaskar and Tongaonkar32 antigenicity prediction method analyzed antigenicity on the basis of the physiochemical properties of amino acids and abundances in experimentally known epitopes. The average antigenic propensity of the protein was 1.058, with maximum of 1.240 and minimum of 0.920. The antigenic determination threshold for the protein was 1.00; all values greater than 1.00 were potential antigenic determinants. We found that seven epitopes satisfied the threshold value set prior to the analysis, and they had the potential to express the B cell response. The results are summarized in Table 3 and Figure 4.",
+            "cite_spans": [
+                {
+                    "start": 27,
+                    "end": 29,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "B cell epitope identification ::: Results",
+            "ref_spans": [
+                {
+                    "start": 615,
+                    "end": 623,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 603,
+                    "end": 610,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "To be a potent B cell epitope, it must have surface accessibility. Hence Emini surface accessibility prediction was obtained. The region 88 to 94 amino acid residues were more accessible. This is described in Figure 5 and Table 4.",
+            "cite_spans": [],
+            "section": "B cell epitope identification ::: Results",
+            "ref_spans": [
+                {
+                    "start": 209,
+                    "end": 217,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 222,
+                    "end": 229,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "The beta turns are often accessible and considerably hydrophilic in nature. These are two properties of antigenic regions of a protein.38 For this reason, Chou and Fasman beta-turn prediction was done. The region 73\u201395 (approximately 73\u201379 and 88\u201395) was considered as a \u03b2-turns region (Figure 6).",
+            "cite_spans": [
+                {
+                    "start": 135,
+                    "end": 137,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "B cell epitope identification ::: Results",
+            "ref_spans": [
+                {
+                    "start": 287,
+                    "end": 295,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "From the experimental evidence, it has been found that the flexibility of the peptide is correlated to antigenicity.39 Hence, the Karplus and Schulz34 flexibility prediction method was implemented. In this prediction method, the region of 75\u201395 was found to be the most flexible (Figure 7). Finally, we launched the Bepipred linear epitope prediction tool. This program is based on a Hidden Markov model, the best single method for predicting linear B-cell epitopes. The result of analysis with this method is summarized in Figure 8 and Table 5. By cross-referencing all the data, we predicted that the peptide sequences from 88\u201394 amino acids are capable of inducing the desired immune response as B cell epitopes.",
+            "cite_spans": [
+                {
+                    "start": 116,
+                    "end": 118,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 148,
+                    "end": 150,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "B cell epitope identification ::: Results",
+            "ref_spans": [
+                {
+                    "start": 280,
+                    "end": 288,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 524,
+                    "end": 532,
+                    "mention": "Figure 8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 537,
+                    "end": 544,
+                    "mention": "Table 5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "The development of a new vaccine in a timely fashion is very crucial for defending the ever rising global burden of disease.40\u201344 With the advancement of sequence-based technology, now we have enough information about the genomics and proteomics of different viruses. As a result, with the help of various bioinformatics tools, we can design peptide vaccines based on a neutralizing epitope. For example, the design of an epitope-based vaccine against rhinovirus,45 dengue virus,46 chikungunya virus,47 Saint Louis encephalitis virus,48 etc has already been suggested. Though epitope-based vaccine design has become a familiar concept, in the case of HCoV there has not yet been much work done. The HCoV is an RNA virus, which tends to mutate more frequently than the DNA viruses.49 These types of mutation mostly occur at the outer membrane protein, ie, at the spike protein.50 These types of mutation increase the sustainability of the HCoVs, by ensuring their escape from both the cell-mediated and humoral immune responses.51 Despite this, spike proteins have the most potential as a target for vaccine design because of their ability to induce a faster and longer-term mucosal immune response than that of the other proteins52 and for this reason, has gained much popularity with researchers.53,54 From this aspect, a universal HCoV vaccine needs to be designed, in order to overcome the adverse effects of this viral infection.",
+            "cite_spans": [
+                {
+                    "start": 124,
+                    "end": 126,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 127,
+                    "end": 129,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 463,
+                    "end": 465,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 479,
+                    "end": 481,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 500,
+                    "end": 502,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 534,
+                    "end": 536,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 780,
+                    "end": 782,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 876,
+                    "end": 878,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 1027,
+                    "end": 1029,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 1229,
+                    "end": 1231,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 1297,
+                    "end": 1299,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1300,
+                    "end": 1302,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "At present, vaccines are mostly based on B cell immunity. But recently, vaccine based on T cell epitope has been encouraged as the host can generate a strong immune response by CD8+ T cell against the infected cell.55 With time, due to antigenic drift, any foreign particle can escape the antibody memory response; however, the T cell immune response often provides long-lasting immunity. Here, we predicted both B cell and T cell epitopes for conferring immunity in different ways, but other recent studies about HCoV represented the T cell epitope only, and we want to express our greater findings here.56 There are several criteria that need to be fulfilled by a vaccine candidate epitope, and our predicted epitope fulfilled all the criteria. The initial criterion is the conservancy of the epitopes, which was measured by the IEDB conservancy analysis tool. Among the five potential T cell epitopes, all possessed the same conservancy, of 64.29%. We also found similar conservancy of the B cell epitope, which was 64.29%. Having the same conservancy for all the epitopes, the KSSTGFVYF epitope possessed the highest amount of interactions with the HLA alleles. A very recent study showed a highly conserved sequence in RNA directed RNA polymerase of HCoVs;56 nevertheless, our discovery of a spike protein with 64.29% conservancy among the 56 spike proteins has drawn much attention, and we consider this too as a epitope candidate for vaccine development.",
+            "cite_spans": [
+                {
+                    "start": 215,
+                    "end": 217,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 605,
+                    "end": 607,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 1261,
+                    "end": 1263,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Population coverage is another important factor in the development of a vaccine. For the all predicted epitopes, the cumulative percentage of population coverage was measured. We found the highest population coverage in South Ireland, which was 90.73%, followed by Italy and North America, with 87.13% and 75.68% coverage, respectively. The HCoV was first found in Europe,57,58 hence, we also observed the overall coverage in Europe and found this to be 82.59%. Oceania\u2019s region covered 79.08%. We also recorded 80.31% population coverage for the East Asian region, considered as one of the hot spots of this viral infection. It has been reported that in Hong Kong and the People\u2019s Republic of China, during 2001\u20132002 there were about 587 cases (among these, 26 children) of acute respiratory disease caused by different types of HCoV infection. Specifically, in Hong Kong, each year this virus caused about 224 hospitalizations per 100,000 population aged \u22646 years.59",
+            "cite_spans": [
+                {
+                    "start": 372,
+                    "end": 374,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 375,
+                    "end": 377,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 966,
+                    "end": 968,
+                    "mention": "59",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "However, allergenicity is one of the prominent obstacles in vaccine development. Today, most vaccines stimulate the immune system into an \u201callergic\u201d reaction,60 through induction of type 2 T helper T (Th2) cells and immunoglobulin E (IgE). The AllerHunter score value is the probability that a particular sequence is a cross-reactive allergen. However, the threshold for prediction of allergen cross-reactivity is adjusted such that a sequence is predicted as a cross-reactive allergen if its probability is >0.06. Here, our proposed epitope\u2019s allergenicity score was 0.02, and thus it was considered as a nonallergen. According to the FAO/WHO evaluation scheme of allergenicity prediction, a sequence is potentially allergenic if it either has an identity of at least six contiguous amino acids or >35 percent sequence identity over a window of 80 amino acids when compared to known allergens. Hence, our query epitopes did not fulfill the criteria for the FAO/WHO evaluation scheme of allergenicity prediction and was classified by this scheme as a nonallergen.",
+            "cite_spans": [
+                {
+                    "start": 158,
+                    "end": 160,
+                    "mention": "60",
+                    "ref_id": "BIBREF56"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "However, our predicted in silico results were based on diligent analysis of sequence and various immune databases. This type of study has recently received experimental validation,61 and for this reason, we have suggested that the proposed epitope would be able to trigger an efficacious immune response as a peptide vaccine in vivo.",
+            "cite_spans": [
+                {
+                    "start": 180,
+                    "end": 182,
+                    "mention": "61",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our study has shown that integrated computational approaches could be used for predicting vaccine candidates against pathogens such as HCoV, with previously described, validated procedures.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "In this way, in silico studies save both time and costs for researchers and can guide the experimental work, with higher probabilities of finding the desired solutions and with fewer trial and error repeats of assays.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: The selected epitopes, on the basis of their overall score predicted by the NetCTL server\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: The five potential T cell epitopes, along with their interacting MHC-I alleles and total processing score, and epitope conservancy result\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Kolaskar and Tongaonkar antigenicity analysis\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: Emini surface accessibility prediction of the peptides\n",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5: Bepipred linear epitope prediction\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Flow chart summarizing the protocols for the complete epitope prediction. Abbreviations: 3D, three dimensional; IC50, half-maximal inhibitory concentration; HCoV, human coronavirus; HLA, human leukocyte antigen; ; HLA-B, the-major histocompatibility complex, class I, B; IEDB, Immune Epitope Database; MHC, major histocompatibility complex; TAP, transporter of antigen presentation.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Population coverage, based on MHC-I restriction data. Different HCoV-affected regions were selected for evaluation of the population coverage of the proposed epitopes. Notes: In the graphs, the line (-o-) represents the cumulative percentage of population coverage of the epitopes; the bars represent the population coverage for each epitope. Abbreviations: HCoV, human coronavirus; HLA, human leukocyte antigen; MHC-I, major histocompatibility complex class I; PC90, 90% population coverage.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: HLA-B*15:01 and epitope KSSTGFVYF interaction analysis. (A) The three dimensional structure of the epitope KSSTGFVYF. (B) The epitope KSSTGFVYF binds in the groove of the HLA-B*15:01. Abbreviation: HLA-B, the-major histocompatibility complex, class I, B.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Kolashkar and Tongaonkar antigenicity prediction of the most antigenic protein, B2KKT9. Notes: The x-axis and y-axis represent the sequence position and antigenic propensity, respectively. The threshold value is 1.0. The regions above the threshold are antigenic, shown in yellow.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Emini surface accessibility prediction of the most antigenic protein, B2KKT9. Notes: The x-axis and y-axis represent the sequence position and surface probability, respectively. The threshold value is 1.000. The regions above the threshold are antigenic, shown in yellow.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: Karplus and Schulz flexibility prediction of the most antigenic protein, B2KKT9. Notes: The x-axis and y-axis represent the position and score, respectively. The threshold is 1.0. The flexible regions of the protein are shown in yellow color, above the threshold value.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7: Chou and Fasman beta-turn prediction of the most antigenic protein, B2KKT9. Notes: The x-axis and y-axis represent the position and score, respectively. The threshold is 1.041. The regions having beta turns in the protein are shown in yellow color, above the threshold value.",
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Figure 8: Bepipred linear epitope prediction of the most antigenic protein, B2KKT9. Notes: The x-axis and y-axis represent the position and score, respectively. The threshold is 0.35. The regions having beta turns are shown in yellow. The highest peak region indicates the most potent B cell epitope.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "A comparative sequence analysis to revise the current taxonomy of the family Coronaviridae",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Gonz\u00e1lez",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Gomez-Puertas",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Cavanagh",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Gorbalenya",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Enjuanes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Arch Virol",
+            "volume": "148",
+            "issn": "11",
+            "pages": "2207-2235",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "A synthetic malaria vaccine elicits a potent CD8(+) and CD4(+) T lymphocyte immune response in humans. Implications for vaccination strategies",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "L\u00f3pez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Weilenman",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Audran",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Eur J Immunol",
+            "volume": "31",
+            "issn": "7",
+            "pages": "1989-1998",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Immunization with a HER-2/neu helper peptide vaccine generates HER-2/neu CD8 T-cell immunity in cancer patients",
+            "authors": [
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Knutson",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Schiffman",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Disis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Clin Invest",
+            "volume": "107",
+            "issn": "4",
+            "pages": "477-484",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Computational immunology: The coming of age",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Petrovsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Brusic",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Immunol Cell Biol",
+            "volume": "80",
+            "issn": "3",
+            "pages": "248-254",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Computational methods for prediction of T-cell epitopes \u2013 a framework for modelling, testing, and applications",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Brusic",
+                    "suffix": ""
+                },
+                {
+                    "first": "VB",
+                    "middle": [],
+                    "last": "Bajic",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Petrovsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Methods",
+            "volume": "34",
+            "issn": "4",
+            "pages": "436-443",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Identifying MHC class I epitopes by predicting the TAP transport efficiency of epitope precursors",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bulik",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Tampe",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Van Endert",
+                    "suffix": ""
+                },
+                {
+                    "first": "HG",
+                    "middle": [],
+                    "last": "Holzh\u00fctter",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Immunol",
+            "volume": "171",
+            "issn": "4",
+            "pages": "1741-1749",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Analysis and prediction of affinity of TAP binding peptides using cascade SVM",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bhasin",
+                    "suffix": ""
+                },
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Raghava",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Protein Sci",
+            "volume": "13",
+            "issn": "3",
+            "pages": "596-607",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "The role of the proteasome in generating cytotoxic T-cell epitopes: insights obtained from improved predictions of proteasomal cleavage",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Lundegaard",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Lund",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Ke\u015fmir",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Immunogenetics",
+            "volume": "57",
+            "issn": "1\u20132",
+            "pages": "33-41",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "UniProt: the universal protein knowledgebase",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Apweiler",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bairoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res",
+            "volume": "32",
+            "issn": "Suppl 1",
+            "pages": "D115-D119",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Clustal W and Clustal X version 2.0",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Larkin",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Blackshields",
+                    "suffix": ""
+                },
+                {
+                    "first": "NP",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Bioinformatics",
+            "volume": "23",
+            "issn": "21",
+            "pages": "2947-2948",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "VaxiJen: a server for prediction of protective antigens, tumour antigens and subunit vaccines",
+            "authors": [
+                {
+                    "first": "IA",
+                    "middle": [],
+                    "last": "Doytchinova",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Flower",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Siddell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "The Coronaviridae",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Large-scale validation of methods for cytotoxic T-lymphocyte epitope prediction",
+            "authors": [
+                {
+                    "first": "MV",
+                    "middle": [],
+                    "last": "Larsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Lundegaard",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Lamberth",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Buus",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Lund",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Sensitive quantitative predictions of peptide-MHC binding by a \u2018Query by Committee\u2019 artificial neural network approach",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Buus",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Lauem\u00f8ller",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Worning",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Tissue Antigens",
+            "volume": "62",
+            "issn": "5",
+            "pages": "378-384",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Generating quantitative models describing the sequence specificity of biological processes with the stabilized matrix method",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sette",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "BMC Bioinformatics",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Modeling the MHC class I pathway by combining predictions of proteasomal cleavage, TAP transport and MHC class I binding",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tenzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bulik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Cell Mol Life Sci",
+            "volume": "62",
+            "issn": "",
+            "pages": "1025-1037",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Development of an epitope conservancy analysis tool to facilitate the design of epitope-based diagnostics and vaccines",
+            "authors": [
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Bui",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sidney",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Fusseder",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sette",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "AllerHunter: a SVM-pairwise system for assessment of allergenicity and allergic cross-reactivity in proteins",
+            "authors": [
+                {
+                    "first": "HC",
+                    "middle": [],
+                    "last": "Muh",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "MT",
+                    "middle": [],
+                    "last": "Tammi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "PLoS One",
+            "volume": "4",
+            "issn": "6",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Combining pairwise sequence similarity and support vector machines for detecting remote protein evolutionary and structural relationships",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "WS",
+                    "middle": [],
+                    "last": "Noble",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Comput Biol",
+            "volume": "10",
+            "issn": "6",
+            "pages": "857-868",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "",
+            "authors": [],
+            "year": 2005,
+            "venue": "A Better Gap Penalty for Pairwise-SVM: Proceedings of the 3rd Asia-Pacific Bioinformatics, Singapore, January 17\u201321, 2005",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "PEP-FOLD: an updated de novo structure prediction server for both linear and disulfide bonded cyclic peptides",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Th\u00e9venet",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Shen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Maupetit",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Guyon",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Derreumaux",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Tuff\u00e9ry",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res",
+            "volume": "40",
+            "issn": "Web Server issue",
+            "pages": "W288-W293",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "MolDock: a new technique for high-accuracy molecular docking",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Thomsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Christensen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Med Chem",
+            "volume": "49",
+            "issn": "11",
+            "pages": "3315-3321",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Genomic characterization of severe acute respiratory syndrome-related coronavirus in European bats and classification of coronaviruses based on partial RNA-dependent RNA polymerase gene sequences",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Drexler",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Gloza-Rausch",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Glende",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Virol",
+            "volume": "84",
+            "issn": "21",
+            "pages": "11336-11349",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "The protein data bank",
+            "authors": [
+                {
+                    "first": "HM",
+                    "middle": [],
+                    "last": "Berman",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Westbrook",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nucleic Acids Res",
+            "volume": "28",
+            "issn": "1",
+            "pages": "235-242",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Epitope recognition by diverse antibodies suggests conformational convergence in an antibody response",
+            "authors": [
+                {
+                    "first": "DT",
+                    "middle": [],
+                    "last": "Nair",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Singh",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Siddiqui",
+                    "suffix": ""
+                },
+                {
+                    "first": "BP",
+                    "middle": [],
+                    "last": "Nayak",
+                    "suffix": ""
+                },
+                {
+                    "first": "KV",
+                    "middle": [],
+                    "last": "Rao",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Salunke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Immunol",
+            "volume": "168",
+            "issn": "5",
+            "pages": "2371-2382",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "A semi-empirical method for prediction of antigenic determinants on protein antigens",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Kolaskar",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Tongaonkar",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "FEBS Lett",
+            "volume": "276",
+            "issn": "1\u20132",
+            "pages": "172-174",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Induction of hepatitis A virus-neutralizing antibody by a virus-specific synthetic peptide",
+            "authors": [
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Emini",
+                    "suffix": ""
+                },
+                {
+                    "first": "JV",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Perlow",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Boger",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "J Virol",
+            "volume": "55",
+            "issn": "3",
+            "pages": "836-839",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Prediction of chain flexibility in proteins",
+            "authors": [
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Karplus",
+                    "suffix": ""
+                },
+                {
+                    "first": "GE",
+                    "middle": [],
+                    "last": "Schulz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Naturwissenschaften",
+            "volume": "72",
+            "issn": "4",
+            "pages": "212-213",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Improved method for predicting linear B-cell epitopes",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Larsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Lund",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Immunome Res",
+            "volume": "2",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Empirical predictions of protein conformation",
+            "authors": [
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                },
+                {
+                    "first": "GD",
+                    "middle": [],
+                    "last": "Fasman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1978,
+            "venue": "Annu Rev Biochem",
+            "volume": "47",
+            "issn": "",
+            "pages": "251-276",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Structural evidence for induced fit as a mechanism for antibody-antigen recognition",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Rini",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Schulze-Gahmen",
+                    "suffix": ""
+                },
+                {
+                    "first": "IA",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Science",
+            "volume": "255",
+            "issn": "5047",
+            "pages": "959-965",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Turns in peptides and proteins",
+            "authors": [
+                {
+                    "first": "GD",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Gierasch",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Adv Protein Chem",
+            "volume": "37",
+            "issn": "",
+            "pages": "1-109",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Antigenic determinants in proteins coincide with surface regions accessible to large probes (antibody domains)",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Novotn\u00fd",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Handschumacher",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Haber",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "83",
+            "issn": "2",
+            "pages": "226-230",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Coronaviruses from pheasants (Phasianus colchicus) are genetically closely related to coronaviruses of domestic fowl (infectious bronchitis virus) and turkeys",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Cavanagh",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Mawditt",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Welchman Dde",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Britton",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Gough",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Avian Pathol",
+            "volume": "31",
+            "issn": "1",
+            "pages": "81-93",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Developing countries face double burden of disease",
+            "authors": [
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Marshall",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Bull World Health Organ",
+            "volume": "82",
+            "issn": "7",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Genome-derived vaccines",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "De Groot",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rappuoli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Expert Rev Vaccines",
+            "volume": "3",
+            "issn": "1",
+            "pages": "59-76",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Immunoinformatics comes of age",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Korber",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "LaBute",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Yusim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PLoS Comput Biol",
+            "volume": "2",
+            "issn": "6",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Emerging and re-emerging infectious diseases: influenza as a prototype of the host-pathogen balancing act",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Fauci",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Cell",
+            "volume": "124",
+            "issn": "4",
+            "pages": "665-670",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "More than one reason to rethink the use of peptides in vaccine design",
+            "authors": [
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Purcell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "McCluskey",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Rossjohn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat Rev Drug Discov",
+            "volume": "6",
+            "issn": "5",
+            "pages": "404-414",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "In silico vaccine design based on molecular simulations of rhinovirus chimeras presenting HIV-1 gp41 epitopes",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lapelosa",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Gallicchio",
+                    "suffix": ""
+                },
+                {
+                    "first": "GF",
+                    "middle": [],
+                    "last": "Arnold",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Arnold",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Levy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Mol Biol",
+            "volume": "385",
+            "issn": "2",
+            "pages": "675-691",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "A computational approach for identification of epitopes in dengue virus envelope protein: a step towards designing a universal dengue vaccine targeting endemic regions",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Chakraborty",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Chakravorty",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ahmed",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "In Silico Biol",
+            "volume": "10",
+            "issn": "5\u20136",
+            "pages": "235-246",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "A computational assay to design an epitope-based peptide vaccine against chikungunya virus",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Islam",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Sakib",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Zaman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Future Virol",
+            "volume": "7",
+            "issn": "10",
+            "pages": "1029-1042",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "A computational assay to design an epitope-based Peptide vaccine against Saint Louis encephalitis virus",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Hasan",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hossain",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Alam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Bioinform Biol Insights",
+            "volume": "7",
+            "issn": "",
+            "pages": "347-355",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Inferring the rate and time-scale of dengue virus evolution",
+            "authors": [
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Twiddy",
+                    "suffix": ""
+                },
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Holmes",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rambaut",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Mol Biol Evol",
+            "volume": "20",
+            "issn": "1",
+            "pages": "122-129",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "WHO investigates China\u2019s fall in SARS cases",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Parry",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "BMJ",
+            "volume": "326",
+            "issn": "7402",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Evolution of hypervariable region 1 of hepatitis C virus in primary infection",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Manzin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Solforosi",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Petrelli",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Virol",
+            "volume": "72",
+            "issn": "7",
+            "pages": "6271-6276",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Immune selection and genetic sequence variation in core and envelope regions of hepatitis C virus",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Christie",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Chapel",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Chapman",
+                    "suffix": ""
+                },
+                {
+                    "first": "WM",
+                    "middle": [],
+                    "last": "Rosenberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Hepatology",
+            "volume": "30",
+            "issn": "4",
+            "pages": "1037-1044",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Intranasal vaccination with recombinant receptor-binding domain of MERS-CoV spike protein induces much stronger local mucosal immune responses than subcutaneous immunization: Implication for designing novel mucosal MERS vaccines",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Vaccine",
+            "volume": "32",
+            "issn": "18",
+            "pages": "2100-2108",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "A DNA vaccine induces SARS coronavirus neutralization and protective immunity in mice",
+            "authors": [
+                {
+                    "first": "ZY",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Kong",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "428",
+            "issn": "6982",
+            "pages": "561-564",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Platform strategies for rapid response against emerging coronaviruses: MERS-CoV serologic and antigenic relationships in vaccine design",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Agnihothram",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gopal",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Yount",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J Infect Dis [serial on the Internet]",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Role of CD8+ T cells in control of West Nile virus infection",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Shrestha",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Diamond",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Virol",
+            "volume": "78",
+            "issn": "15",
+            "pages": "8312-8321",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "A highly conserved WDYPKCDRA epitope in the RNA directed RNA polymerase of human coronaviruses can be used as epitope-based universal vaccine design",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sharmin",
+                    "suffix": ""
+                },
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Islam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "BMC Bioinformatics",
+            "volume": "15",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Identification of a new human coronavirus",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "van der Hoek",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Pyrc",
+                    "suffix": ""
+                },
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Jebbink",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nat Med",
+            "volume": "10",
+            "issn": "4",
+            "pages": "368-373",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Human coronavirus NL63 employs the severe acute respiratory syndrome coronavirus receptor for cellular entry",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Hofmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Pyrc",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "van der Hoek",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Geier",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Berkhout",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "P\u00f6hlmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "102",
+            "issn": "22",
+            "pages": "7988-7993",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Human coronavirus NL63 infection and other coronavirus infections in children hospitalized with acute respiratory disease in Hong Kong, China",
+            "authors": [
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Chiu",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "KW",
+                    "middle": [],
+                    "last": "Chu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Clin Infect Dis",
+            "volume": "40",
+            "issn": "12",
+            "pages": "1721-1729",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "A single amino acid change within antigenic domain II of the spike protein of bovine coronavirus confers resistance to virus neutralization",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Yoo",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Deregt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Clin Diagn Lab Immunol",
+            "volume": "8",
+            "issn": "2",
+            "pages": "297-302",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Vaccination and allergic disease: a birth cohort study",
+            "authors": [
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "McKeever",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Lewis",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Hubbard",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Am J Public Health",
+            "volume": "94",
+            "issn": "6",
+            "pages": "985-989",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "In silico predicted mycobacterial epitope elicits in vitro T-cell responses",
+            "authors": [
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Khan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Zaman",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Chakraborty",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Mol Immunol",
+            "volume": "61",
+            "issn": "1",
+            "pages": "16-22",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Application of pharmacogenomics to vaccines",
+            "authors": [
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Poland",
+                    "suffix": ""
+                },
+                {
+                    "first": "IG",
+                    "middle": [],
+                    "last": "Ovsyannikova",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Jacobson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Pharmacogenomics",
+            "volume": "10",
+            "issn": "5",
+            "pages": "837-852",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Flower",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Bioinformatics for Vaccinology",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "A highly immunogenic trivalent T cell receptor peptide vaccine for multiple sclerosis",
+            "authors": [
+                {
+                    "first": "DN",
+                    "middle": [],
+                    "last": "Bourdette",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Edmonds",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Mult Scler",
+            "volume": "11",
+            "issn": "5",
+            "pages": "552-561",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

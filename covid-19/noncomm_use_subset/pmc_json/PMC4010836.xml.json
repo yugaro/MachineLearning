@@ -1,0 +1,1700 @@
+{
+    "paper_id": "PMC4010836",
+    "metadata": {
+        "title": "Middle East Respiratory Syndrome Coronavirus Quasispecies That Include Homologues of Human Isolates Revealed through Whole-Genome Analysis and Virus Cultured from Dromedary Camels in Saudi Arabia",
+        "authors": [
+            {
+                "first": "Thomas",
+                "middle": [],
+                "last": "Briese",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Nischay",
+                "middle": [],
+                "last": "Mishra",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Komal",
+                "middle": [],
+                "last": "Jain",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Iyad",
+                "middle": [
+                    "S."
+                ],
+                "last": "Zalmout",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Omar",
+                "middle": [
+                    "J."
+                ],
+                "last": "Jabado",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "William",
+                "middle": [
+                    "B."
+                ],
+                "last": "Karesh",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Peter",
+                "middle": [],
+                "last": "Daszak",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Osama",
+                "middle": [
+                    "B."
+                ],
+                "last": "Mohammed",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Abdulaziz",
+                "middle": [
+                    "N."
+                ],
+                "last": "Alagaili",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "W.",
+                "middle": [
+                    "Ian"
+                ],
+                "last": "Lipkin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Total nucleic acids from nasal swab, rectal swab or cell culture supernatant samples were extracted on a QiaCube with Cador reagent kits (Qiagen, Hilden, Germany). Superscript III and random hexamer primers were used to generate cDNA preparations (Life Technologies, Carlsbad, CA, USA). Second-strand cDNA synthesis for high-throughput sequencing was carried out by random primer extension with Klenow enzyme (New England Biolabs, Ipswich, MA, USA).",
+            "cite_spans": [],
+            "section": "Nucleic acid extraction, high-throughput sequencing, and PCR. ::: Observation",
+            "ref_spans": []
+        },
+        {
+            "text": "High-throughput sequencing was performed in parallel on random-primed cDNA preparations and MERS-CoV-enriched PCR product pools. To enrich for MERS-CoV sequences from total nucleic acid extracts, PCR amplifications employing a set of overlapping PCR primers spanning the whole genome in approximately 2.0- to 2.5-kb fragments were performed as described (15). PCR products were pooled and sequenced on both the Ion Torrent and Illumina platforms.",
+            "cite_spans": [
+                {
+                    "start": 355,
+                    "end": 357,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Nucleic acid extraction, high-throughput sequencing, and PCR. ::: Observation",
+            "ref_spans": []
+        },
+        {
+            "text": "Sequencing on the Illumina HiSeq 2500 platform (Illumina, San Diego, CA, USA) resulted in an average of approximately 20 to 50 million reads per sample. cDNA preparations were sheared (E210 sonicator; Covaris, Woburn, MA, USA) for an average fragment size of 200 bp and added to Agencourt AMPure XP beads (Beckman Coulter, Brea, CA, USA) for purification, and libraries were prepared with Kapa high-throughput library preparation kits (Kapa Biosystems, Wilmington, MA, USA). Sequencing was performed using a read length of 100 nt, followed by an independent read of the 6-nt bar code. Samples were demultiplexed using Illumina-supplied CASAVA software and exported as FastQ files. More than 90% of Illumina reads passed the Q30 filter. Demultiplexed FastQ files were mapped against GenBank scaffolds (KF600620 and KF186567) with Bowtie 2 mapper 2.0.6 (http://bowtie-bio.sourceforge.net [16]). Sequencing on the Ion Torrent PGM platform was performed with Ion PGM Sequencing 200 kits on Ion 318 chips (Life Technologies), yielding on average 1.5 to 2.5 million reads per sample with a mean length of approximately 166 nt. cDNA preparations were sheared (Ion Shear Plus kit; Life Technologies) for an average fragment size of 200 bp and added to Agencourt AMPure XP beads (Beckman Coulter, Brea, CA, USA) for purification, libraries were prepared with Kapa library preparation/Ion Torrent series kits (Kapa), and emulsion PCR was performed with Ion PGM Template OT2 200 kits (Life Technologies). Ion Torrent reads were demultiplexed and exported as FastQ files by the Ion Torrent PGM software. After bar code and adaptor trimming, length filtering, masking of low-complexity regions, and subtraction of ribosomal and host sequences, reads were mapped as described for Illumina data. Consensus sequences from mapping assemblies were generated by using SAMtools/BCFtools 0.1.19 software (http://samtools.sourceforge.net [17]).",
+            "cite_spans": [
+                {
+                    "start": 887,
+                    "end": 889,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1917,
+                    "end": 1919,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Nucleic acid extraction, high-throughput sequencing, and PCR. ::: Observation",
+            "ref_spans": []
+        },
+        {
+            "text": "Based on available sequence information, a set of 25 nested consensus primer sets were designed to generate overlapping PCR products of approximately 1.3 kb that comprise the full genome (see Table S1 in the supplemental material). Random-primed cDNA was PCR amplified with individual primer pairs and AmpliTaq Gold (Life Technologies). The PCR products were purified by agarose gel electrophoresis and QIAquick gel extraction kits (Qiagen) and subsequently sequenced on both strands by the dideoxynucleotide chain termination method (GeneWiz, South Plainfield, NJ, USA). Products from selected PCRs were also cloned into pGEM-T Easy plasmid vector (Life Technologies), and 16 individual clones were dideoxy sequenced in order to assess clonal sequence diversity.",
+            "cite_spans": [],
+            "section": "Nucleic acid extraction, high-throughput sequencing, and PCR. ::: Observation",
+            "ref_spans": []
+        },
+        {
+            "text": "Quantitative real-time PCR used OneStep Real-Time qPCR buffer (Life Technologies) and UpE primer/probes (18).",
+            "cite_spans": [
+                {
+                    "start": 105,
+                    "end": 107,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Nucleic acid extraction, high-throughput sequencing, and PCR. ::: Observation",
+            "ref_spans": []
+        },
+        {
+            "text": "One hundred fifty microliters of nasal swab in universal virus transport medium (Becton, Dickinson, Franklin Lakes, NJ, USA) was filtered (0.45 \u03bcm; Millipore, Billerica, MA, USA), and the filtrate was inoculated on Vero E6 cells grown to semiconfluence in T25 culture flasks with Dulbecco modified Eagle medium (DMEM)-10% fetal calf serum. The inoculum was removed after 2.5 h, cells were gently rinsed, and fresh medium was added (T-0). Supernatant was tested for MERS-CoV by quantitative real-time PCR after 48 h (T-48), and supernatant as well as cell homogenate harvested at 66 h postinfection (T-66).",
+            "cite_spans": [],
+            "section": "Virus isolation. ::: Observation",
+            "ref_spans": []
+        },
+        {
+            "text": "Sequence data were analyzed using software packages Geneious (Biomatters, Auckland, New Zealand), MEGA (http://www.megasoftware.net [19]), and Wisconsin GCG (Accelrys Inc., San Diego, CA). Phylogenetic analysis was performed by the neighbor-joining method implemented in MEGA 5.2, running 1,000 pseudoreplicate analyses to assess statistical support.",
+            "cite_spans": [
+                {
+                    "start": 133,
+                    "end": 135,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Bioinformatics and phylogenetic analysis. ::: Observation",
+            "ref_spans": []
+        },
+        {
+            "text": "Full genomic sequences of MERS-CoV from DC were deposited in GenBank under the indicated accession numbers: samples KSA-363-Taif-21, KJ713298; KSA-378-Taif-36, KJ713296; KSA-376-Taif-34, KJ713299; KSA-503-Taif-45, KJ713297; and KSA-505-Taif-47, KJ713295.",
+            "cite_spans": [],
+            "section": "Nucleotide sequence accession numbers. ::: Observation",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "TABLE\u00a01\u00a0: High-throughput sequencing of MERS-CoV from dromedary camels in Saudi Arabia\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "FIG\u00a01\u00a0: (A) Real-time PCR analysis of cell culture supernatant after inoculation of Vero cells with nasal swab samples KSA-363 and KSA-378. (B) Phylogenetic analysis of MERS-CoV sequences from dromedary camels in Saudi Arabia and other genome-length MERS-CoV sequences available on 7 April 2014. GenBank accession numbers are given in parentheses for each sequence (England2 sequence is available at http://www.hpa.org.uk/Topics/InfectiousDiseases/InfectionsAZ/MERSCoV/respPartialgeneticsequenceofnovelcoronavirus/); bootstrap values of >60% indicate statistical support for the respective nodes; the scale bar indicates the number of substitutions/site. (C) (i) Clippings from the multiple MERS-CoV sequence alignment indicating sequence variation among human MERS-CoV sequences and potential variation of sequences within individual DC samples (indicated by x). (ii) Sequences obtained by direct sequencing of PCR products from the same region. (iii) Sequence analysis of individual clones generated from the PCR amplification products. Two PCRs were performed, including nt 24190 to 24300 and 24510 to 2530.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Middle East respiratory syndrome coronavirus (MERS-CoV)\u2014update. WHO global alert and response",
+            "authors": [],
+            "year": 2014,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Middle East respiratory syndrome coronavirus infection in dromedary camels in Saudi Arabia",
+            "authors": [
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Alagaili",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Briese",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Mishra",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Kapoor",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Sameroff",
+                    "suffix": ""
+                },
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Burbelo",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "de Wit",
+                    "suffix": ""
+                },
+                {
+                    "first": "VJ",
+                    "middle": [],
+                    "last": "Munster",
+                    "suffix": ""
+                },
+                {
+                    "first": "LE",
+                    "middle": [],
+                    "last": "Hensley",
+                    "suffix": ""
+                },
+                {
+                    "first": "IS",
+                    "middle": [],
+                    "last": "Zalmout",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kapoor",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Epstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "WB",
+                    "middle": [],
+                    "last": "Karesh",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Daszak",
+                    "suffix": ""
+                },
+                {
+                    "first": "OB",
+                    "middle": [],
+                    "last": "Mohammed",
+                    "suffix": ""
+                },
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "mBio",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1128/mBio.00884-14"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Human infection with MERS coronavirus after exposure to infected camels, Saudi Arabia, 2013",
+            "authors": [
+                {
+                    "first": "ZA",
+                    "middle": [],
+                    "last": "Memish",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Cotton",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Meyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Watson",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Alsahafi",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Al Rabeeah",
+                    "suffix": ""
+                },
+                {
+                    "first": "VM",
+                    "middle": [],
+                    "last": "Corman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sieberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "HQ",
+                    "middle": [],
+                    "last": "Makhdoom",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Assiri",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Al Masri",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Bosch",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Beer",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "M\u00fcller",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Kellam",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Drosten",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Emerg. Infect. Dis.",
+            "volume": "20",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3201/eid2006.140402"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "MERS coronaviruses in dromedary camels, Egypt",
+            "authors": [
+                {
+                    "first": "DKW",
+                    "middle": [],
+                    "last": "Chu",
+                    "suffix": ""
+                },
+                {
+                    "first": "LLM",
+                    "middle": [],
+                    "last": "Poon",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Gomaa",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Shehata",
+                    "suffix": ""
+                },
+                {
+                    "first": "RAPM",
+                    "middle": [],
+                    "last": "Perera",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Zeid",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "El Rifay",
+                    "suffix": ""
+                },
+                {
+                    "first": "LY",
+                    "middle": [],
+                    "last": "Siu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Webby",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Ali",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Peiris",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Kayali",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Emerg. Infect. Dis.",
+            "volume": "20",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3201/eid2006.140299"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Quasispecies theory and the behavior of RNA viruses",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Lauring",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Andino",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Pathog.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.ppat.1001005"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Quasispecies diversity determines pathogenesis through cooperative interactions in a viral population",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Vignuzzi",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Stone",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Arnold",
+                    "suffix": ""
+                },
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Cameron",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Andino",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "439",
+            "issn": "",
+            "pages": "344-348",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature04388"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Full-genome deep sequencing and phylogenetic analysis of novel human betacoronavirus",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Cotten",
+                    "suffix": ""
+                },
+                {
+                    "first": "TT",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Watson",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Palser",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Petrova",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Grant",
+                    "suffix": ""
+                },
+                {
+                    "first": "OG",
+                    "middle": [],
+                    "last": "Pybus",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rambaut",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Pillay",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Kellam",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Nastouli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Emerg. Infect. Dis.",
+            "volume": "19",
+            "issn": "",
+            "pages": "736-742",
+            "other_ids": {
+                "DOI": [
+                    "10.3201/eid1905.130057"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Fast gapped-read alignment with Bowtie 2",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Langmead",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Salzberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nat. Methods",
+            "volume": "9",
+            "issn": "",
+            "pages": "357-359",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nmeth.1923"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "The Sequence Alignment/Map format and SAMtools",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Handsaker",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wysoker",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Fennell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ruan",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Homer",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Marth",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Abecasis",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Durbin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "",
+            "pages": "2078-2079",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btp352"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Detection of a novel human coronavirus by real-time reverse-transcription polymerase chain reaction",
+            "authors": [
+                {
+                    "first": "VM",
+                    "middle": [],
+                    "last": "Corman",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Eckerle",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Bleicker",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Zaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Landt",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eschbach-Bludau",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "van Boheemen",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gopal",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ballhause",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Bestebroer",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Muth",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Muller",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Drexler",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zambon",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Osterhaus",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Fouchier",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Drosten",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Euro Surveill.",
+            "volume": "17",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "MEGA6: molecular evolutionary genetics analysis version 6.0",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Tamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Stecher",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Peterson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Filipski",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Mol. Biol. Evol.",
+            "volume": "30",
+            "issn": "",
+            "pages": "2725-2729",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/molbev/mst197"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "State of knowledge and data gaps of Middle East respiratory syndrome coronavirus (MERS-CoV) in humans",
+            "authors": [],
+            "year": 2013,
+            "venue": "PLoS Curr.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/currents.outbreaks.0bf719e352e7478f8ad85fa30127ddb8"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Middle East respiratory syndrome coronavirus neutralising serum antibodies in dromedary camels: a comparative serological study",
+            "authors": [
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Reusken",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Haagmans",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "M\u00fcller",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Gutierrez",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Godeke",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Meyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Muth",
+                    "suffix": ""
+                },
+                {
+                    "first": "VS",
+                    "middle": [],
+                    "last": "Raj",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Smits-De Vries",
+                    "suffix": ""
+                },
+                {
+                    "first": "VM",
+                    "middle": [],
+                    "last": "Corman",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Drexler",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Smits",
+                    "suffix": ""
+                },
+                {
+                    "first": "YE",
+                    "middle": [],
+                    "last": "El Tahir",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "De Sousa",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "van Beek",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Nowotny",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "van Maanen",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Hidalgo-Hermoso",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Bosch",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Rottier",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Osterhaus",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Gort\u00e1zar-Schmidt",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Drosten",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Koopmans",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Lancet Infect. Dis.",
+            "volume": "13",
+            "issn": "",
+            "pages": "859-866",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1473-3099(13)70164-6"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Seroepidemiology for MERS coronavirus using microneutralisation and pseudoparticle virus neutralisation assays reveal a high prevalence of antibody in dromedary camels in Egypt, June 2013",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Perera",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Gomaa",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "El-Shesheny",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kandeil",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Bagato",
+                    "suffix": ""
+                },
+                {
+                    "first": "LY",
+                    "middle": [],
+                    "last": "Siu",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Shehata",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Kayed",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Moatasim",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "LL",
+                    "middle": [],
+                    "last": "Poon",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Webby",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Ali",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Peiris",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Kayali",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Euro Surveill.",
+            "volume": "18",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Middle East respiratory syndrome (MERS) coronavirus seroprevalence in domestic livestock in Saudi Arabia, 2010 to 2013",
+            "authors": [
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Hemida",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Perera",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Alhammadi",
+                    "suffix": ""
+                },
+                {
+                    "first": "LY",
+                    "middle": [],
+                    "last": "Siu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "LL",
+                    "middle": [],
+                    "last": "Poon",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Saif",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Alnaeem",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Peiris",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Euro Surveill.",
+            "volume": "18",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Middle East respiratory syndrome coronavirus (MERS-CoV) serology in major livestock species in an affected region in Jordan, June to September 2013",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Reusken",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ababneh",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Raj",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Meyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Eljarah",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Abutarbush",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Godeke",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Bestebroer",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Zutt",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Muller",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Bosch",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Rottier",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Osterhaus",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Drosten",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Haagmans",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Koopmans",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Euro Surveill.",
+            "volume": "18",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Middle East respiratory syndrome coronavirus in dromedary camels: an outbreak investigation",
+            "authors": [
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Haagmans",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Al Dhahiry",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Reusken",
+                    "suffix": ""
+                },
+                {
+                    "first": "VS",
+                    "middle": [],
+                    "last": "Raj",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Galiano",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Myers",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Godeke",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Jonges",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Farag",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Diab",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ghobashy",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Alhajri",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Al-Thani",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Al-Marri",
+                    "suffix": ""
+                },
+                {
+                    "first": "HE",
+                    "middle": [],
+                    "last": "Al Romaihi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Al Khal",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bermingham",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Osterhaus",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "AlHajri",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Koopmans",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Lancet Infect. Dis.",
+            "volume": "14",
+            "issn": "",
+            "pages": "140-145",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1473-3099(13)70690-X"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Middle East respiratory syndrome coronavirus antibody reactors among camels in Dubai, United Arab Emirates, in 2005",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Alexandersen",
+                    "suffix": ""
+                },
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Kobinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Soule",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Wernery",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Transbound. Emerg. Dis.",
+            "volume": "61",
+            "issn": "",
+            "pages": "105-108",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/tbed.12212"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Antibodies against MERS coronavirus in dromedary camels, United Arab Emirates, 2003 and 2013",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Meyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "M\u00fcller",
+                    "suffix": ""
+                },
+                {
+                    "first": "VM",
+                    "middle": [],
+                    "last": "Corman",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Reusken",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ritz",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Godeke",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Lattwein",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kallies",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Siemens",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "van Beek",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Drexler",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Muth",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Bosch",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Wernery",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Koopmans",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Wernery",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Drosten",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Emerg. Infect. Dis.",
+            "volume": "20",
+            "issn": "",
+            "pages": "552-559",
+            "other_ids": {
+                "DOI": [
+                    "10.3201/eid2004.131746"
+                ]
+            }
+        }
+    }
+}

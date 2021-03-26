@@ -1,0 +1,1868 @@
+{
+    "paper_id": "PMC2238867",
+    "metadata": {
+        "title": "CoVDB: a comprehensive database for comparative analysis of coronavirus genes and genomes",
+        "authors": [
+            {
+                "first": "Yi",
+                "middle": [],
+                "last": "Huang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Susanna",
+                "middle": [
+                    "K.",
+                    "P."
+                ],
+                "last": "Lau",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Patrick",
+                "middle": [
+                    "C.",
+                    "Y."
+                ],
+                "last": "Woo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Kwok-yung",
+                "middle": [],
+                "last": "Yuen",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Coronaviruses are found in a wide variety of animals and are associated with respiratory, enteric, hepatic and neurological diseases of varying severity. Based on genotypic and serological characterization, coronaviruses were divided into three distinct groups (1\u20133). As a result of the unique mechanism of viral replication, coronaviruses have a high frequency of recombination (2,4).",
+            "cite_spans": [
+                {
+                    "start": 262,
+                    "end": 265,
+                    "mention": "1\u20133",
+                    "ref_id": null
+                },
+                {
+                    "start": 380,
+                    "end": 381,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 382,
+                    "end": 383,
+                    "mention": "4",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The recent severe acute respiratory syndrome (SARS) epidemic, the discovery of SARS coronavirus (SARS-CoV) and identification of SARS-CoV-like viruses from Himalayan palm civets and a raccoon dog from wild live markets in China have led to a boost in interest on discovery of novel coronaviruses in both humans and animals (5\u20139) (Figure 1). For human coronaviruses, a novel group 1 human coronavirus, human coronavirus NL63 (HCoV-NL63) was reported in 2004 (10,11), while we described the discovery, complete genome sequence and genetic diversity of a novel group 2 human coronavirus, coronavirus HKU1 (CoV-HKU1) in 2005 (4,12\u201314). As for animal coronaviruses, six group 1 (15\u201317), four group 2, including bat SARS-CoV and two new subgroups of group 2 coronaviruses (6,8,18,19), and 11 group 3 (20\u201323) coronaviruses have recently been described.\n",
+            "cite_spans": [
+                {
+                    "start": 324,
+                    "end": 327,
+                    "mention": "5\u20139",
+                    "ref_id": null
+                },
+                {
+                    "start": 458,
+                    "end": 460,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 461,
+                    "end": 463,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 622,
+                    "end": 623,
+                    "mention": "4",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 624,
+                    "end": 629,
+                    "mention": "12\u201314",
+                    "ref_id": null
+                },
+                {
+                    "start": 674,
+                    "end": 679,
+                    "mention": "15\u201317",
+                    "ref_id": null
+                },
+                {
+                    "start": 767,
+                    "end": 768,
+                    "mention": "6",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 769,
+                    "end": 770,
+                    "mention": "8",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 771,
+                    "end": 773,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 774,
+                    "end": 776,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 795,
+                    "end": 800,
+                    "mention": "20\u201323",
+                    "ref_id": null
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 330,
+                    "end": 338,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "By July 2007, more than 3000 coronavirus sequence records, including a total of 264 complete genomes, are available in GenBank (24). Among the 25 coronavirus species with complete genome sequence available, six were sequenced by our group, including CoV-HKU1 and bat SARS-CoV (13,16,18,19). Furthermore, we defined two novel subgroups of group 2 coronavirus (18). During the process of batch sequence retrieval for comparative genome analysis of the coronavirus genomes that we sequenced, we encountered several major problems about the coronavirus sequences in GenBank as well as other coronavirus databases (Coronaviridae Bioinformatics Resource, http://athena.bioc.uvic.ca/database.php?db=coronaviridae; PATRIC http://patric.vbi.vt.edu) (25). First, in GenBank, the non-structural proteins in the polyprotein encoded by orf1ab were not annotated. Second, in all databases, for the non-structural proteins encoded by ORFs downstream to orf1ab, the annotations are often confusing because they are not annotated using a standardized system. Third, multiple accession numbers are often present for reference sequences (26). These problems often lead to confusion when sequence retrieval is performed. Fourth, coronaviruses, especially SARS-CoV, amplified from different specimens may contain the same genome or gene sequences. These sequences usually lead to redundant work when they are analyzed.",
+            "cite_spans": [
+                {
+                    "start": 128,
+                    "end": 130,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 277,
+                    "end": 279,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 280,
+                    "end": 282,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 283,
+                    "end": 285,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 286,
+                    "end": 288,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 359,
+                    "end": 361,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 741,
+                    "end": 743,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1119,
+                    "end": 1121,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In view of these problems, we started to develop our own database for coronavirus gene and genome sequences in 2005. In this database, CoVDB, we sought to create a user-friendly platform for efficient batch sequence retrieval, which is crucial for comparative genome analysis. In this article, we describe this comprehensive database of annotated coronavirus genes and genomes, which provides a central source of information about coronaviruses. To further increase the usefulness of CoVDB, commonly used bioinformatics tools were also included for analysis of the sequence data.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "CoVDB is a web-based coronavirus database. Data of CoVDB is stored and managed by MySQL database management system. By July 2007, CoVDB contains 3982 coronavirus sequences and one torovirus genome sequence. Two hundred and sixty-four of them are complete genomes and the rest are partial genomes or genes. All data were retrieved from GenBank using modules of bioperl. We annotated sequences without gene information or non-structural protein boundary and labeled the 5\u2032 and 3\u2032 untranslated regions (UTRs) of the genomes. By July 2007, CoVDB contains 12 344 genes and UTRs.",
+            "cite_spans": [],
+            "section": "Sequence data ::: Database description ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition to the two sequence retrieval pages, CoVDB collects information on coronavirus sequence characteristics, including genome organization, a brief description on each complete coronavirus genome, GC content, polyprotein cleavage sites, transcription regulatory sequences, acidic tandem repeat sequences and known RNA structures. These pieces of information can be accessed by clicking \u2018Genome\u2019 in the top menu bar of CoVDB. In the \u2018Tools\u2019 page, blast similarity search (27) against annotated coronavirus sequences in CoVDB can be performed and other commonly used tools are also provided.",
+            "cite_spans": [
+                {
+                    "start": 479,
+                    "end": 481,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Information on coronavirus genome characteristics ::: Database description ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The main goal for setting up CoVDB is to provide a convenient and efficient platform for retrieving batches of coronavirus gene sequences. The interfaces of the database are simple and user friendly. All genes and genomes contain links to GenBank and/or pubmed. CoVDB contains two main pages for sequence retrieval. From the homepage, one can enter the first main page for retrieval of complete genomes and their genes by clicking \u2018CoVDB\u2019 (Figure 2a). From this page, users can obtain genes from specific coronavirus species by selecting the corresponding check boxes. We defined one representative genome from each species as the \u2018Type strain\u2019. Most of the time, this \u2018Type strain\u2019 is the one assigned as the reference sequence in GenBank. By choosing the \u2018Type strain only\u2019 option, users can obtain one gene sequence per species and construct phylogenetic tree or perform other comparisons. An example of retrieving complete genome or a specific gene of complete genome of selected species is shown in Figure 2b and c.\n",
+            "cite_spans": [],
+            "section": "Batch sequence retrieval ::: Functionality of the database ::: MATERIALS AND METHODS",
+            "ref_spans": [
+                {
+                    "start": 440,
+                    "end": 448,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1004,
+                    "end": 1012,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "From the page for retrieval of complete genomes and their genes, one can enter the second main page for retrieval of all complete and/or incomplete genes of a coronavirus (Figure 3a) by clicking \u2018From all groups of genes\u2019. In this page, all the gene sequences are grouped vertically according to which coronavirus group and subgroup they belong to, and horizontally by the names of the genes. The option \u2018Exclude partial CDS\u2019 can be used if only complete genes are required. An example of retrieving all the sequence of a particular gene for a group of coronavirus is shown in Figure 3b. If the translated sequence of a selected gene has more than one stop codon which is probably due to sequencing error, the number in the \u2018Length\u2019 column of this gene will be marked in red.\n",
+            "cite_spans": [],
+            "section": "Batch sequence retrieval ::: Functionality of the database ::: MATERIALS AND METHODS",
+            "ref_spans": [
+                {
+                    "start": 172,
+                    "end": 180,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 577,
+                    "end": 585,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "In all coronavirus genomes, orf1ab occupies two-thirds of the genome and it is translated as a polyprotein. This polyprotein is post-translationally cleaved by 3C-like protease (3CLpro) and papain-like protease (PLpro) into 15\u201316 non-structural proteins. Some of the non-structural proteins, such as RNA-dependent RNA polymerase, helicase, 3CLpro and PLpro are essential for replication or virulence of the coronavirus, although the functions of others are still unclear. Due to the essentiality of the non-structural proteins, these sequences are often used for evolutionary analysis, primer design, etc. However, except for the reference sequences, detailed cleavage site information is not provided for the non-structural proteins in other sequences in GenBank. Since it has been shown that 3CLpro and PLpro of coronavirus cleave at conserved specific amino acids, the putative cleavage sites of the 15\u201316 non-structural proteins can be predicted by multiple sequence alignment. Using these pieces of information, we have annotated these non-structural proteins in all the coronavirus sequences for easy retrieval in CoVDB.",
+            "cite_spans": [],
+            "section": "Polyprotein annotation ::: Functionality of the database ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "By convention, all non-structural proteins in the polyprotein encoded by orf1ab are named as \u2018nsp\u2019, with each protein numbered consecutively starting from the 5\u2032 end (nsp1\u2013nsp16). The structural proteins after the polyprotein are hemagglutinin esterase (HE, in group 2a coronaviruses), spike glycoprotein (S), envelope protein (E), membrane protein (M) and nucleocapsid protein (N). However, there is no unified naming system for the non-structural proteins encoded by ORFs downstream to orf1ab. This lack of a unified system greatly reduces the stability and accuracy of ortholog retrieval.",
+            "cite_spans": [],
+            "section": "Protein/gene name unification ::: Functionality of the database ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "In CoVDB, with the aim of facilitating gene retrieval, we tried to unify the naming of these non-structural proteins from different groups of coronaviruses. On the other hand, we have also tried to avoid radical changes in the names that may lead to confusion. In CoVDB, these non-structural proteins are named as NS2a, NS3x, NS4x, NS5x and NS7x (x = a, b, c,\u2026). NS2a denotes the ORF between orf1ab and HE of group 2a coronaviruses. NS3x denotes the ORFs between S and E of groups 1, 2c, 2d and 3 coronaviruses. In most of these coronaviruses, there are two NS3x, named NS3a and NS3b. However, in group 1 coronaviruses, the genomes of some members (e.g. HCoV-NL63, PEDV) contain only one ORF between S and E. When we compared their putative amino acid sequences to the corresponding ones in other group 1 coronavirus genomes using BLAST, as well as searching for conserved domains using motifscan, results showed that the putative proteins encoded by these ORFs belonged to a protein family in Pfam originally assigned as \u2018Corona_NS3b\u2019 (accession number PF03053). Therefore, we named these ORFs as NS3b. NS4x denotes the ORFs between S and E of group 2a coronaviruses. NS5x denotes the ORFs between M and N of group 3 coronaviruses. One exception is NS5a of group 2a coronaviruses. Traditionally, this name denotes an ORF upstream of E in group 2a coronaviruses. Therefore, we have kept this name for that ORF in CoVDB. NS7x denotes the ORFs downstream of N gene. It is important to note that due to variations in genome organizations among different groups of coronaviruses (Table 1), NS genes with the same name in different coronavirus groups may not be orthologs of each other. The complete genome gene search page of CoVDB contains a link to a Gene synonyms page, which includes a list of synonymous names of the various genes in the coronavirus genomes.\n",
+            "cite_spans": [],
+            "section": "Protein/gene name unification ::: Functionality of the database ::: MATERIALS AND METHODS",
+            "ref_spans": [
+                {
+                    "start": 1576,
+                    "end": 1583,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Sequence redundancy is another problem of coronavirus sequences in public nucleotide databases. Different strains of the same species from samples collected in different locations or at different times may possess completely or partially identical sequences. These sequences, though containing important epidemiological information, increase the workload during sequence analysis. In CoVDB, we compared all nucleotide sequences and labeled the identical ones to mitigate this problem. Users can choose to show or not to show strains with identical sequences by clicking on the check boxes to the left of the page (Figure 3b).",
+            "cite_spans": [],
+            "section": "Identical sequence labeling ::: Functionality of the database ::: MATERIALS AND METHODS",
+            "ref_spans": [
+                {
+                    "start": 614,
+                    "end": 622,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "During the process of coronavirus gene sequences analysis, we encountered a major problem when coronavirus gene sequences, especially those of orf1ab, were used for blast search against GenBank or any other coronavirus databases. When part of the orf1ab gene (e.g. nsp5) is used as the query sequence, instead of getting the gene for the specific non-structural protein that the query sequence is homologous to, the results will only show that the hits are within orf1ab, or in some cases, shown to be within the entire coronavirus genome. Much time will be needed for further analyzing the results manually in order to locate the positions of the cleavage sites of the corresponding genes for the non-structural proteins, making it very inefficient for further downstream work.",
+            "cite_spans": [],
+            "section": "Blast similarity search ::: Functionality of the database ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "This problem has been overcome by the annotated sequences in CoVDB. The blast search page of CoVDB is an interface for facilitating coronavirus similarity search. The background support program, blastall, is from the NCBI Blast package. The blast search page can be entered by clicking \u2018Tools\u2019 in the top menu bar in any page of CoVDB. Since all sequences in CoVDB are annotated, they can be grouped into different datasets for blast search. Users can choose one of the three nucleotide and two protein sequence datasets as the database for comparison (Figure 4). The three nucleotide sequence datasets are: CoV genes (nsp + genes after 1ab), CoV genes (1ab + genes after 1ab) and CoV GenBank strains, which are the original sequences retrieved from GenBank. The two protein sequence datasets are the translated sequences of the first two nucleotide datasets: CoV proteins (nsp + aa after 1ab) and CoV proteins (1ab + aa after 1ab).\n",
+            "cite_spans": [],
+            "section": "Blast similarity search ::: Functionality of the database ::: MATERIALS AND METHODS",
+            "ref_spans": [
+                {
+                    "start": 553,
+                    "end": 561,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "\u2018MyBlast\u2019 employs the same blast program as the Blast page mentioned above. However, instead of selecting a predefined nucleotide or amino acid sequence database, multiple sequences can be pasted into the second sequence input box to generate a temporary sequence database. One or more query sequences can be pasted into the first sequence input box for blastn or blastp search against the temporary sequence database.",
+            "cite_spans": [],
+            "section": "MyBlast ::: Functionality of the database ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "This ORF finder is specifically designed for coronavirus genome analysis. The result page shows the positions and lengths of each putative ORF and the position of the putative ribosomal frameshift site for translation of orf1ab. The nucleotide or amino acid sequences of the ORFs can be shown by selecting the corresponding check boxes. To facilitate genome comparison and annotation, the most closely related coronavirus, which had been annotated in CoVDB, can be chosen from a pull-down list for comparison using blast search. This function is particularly useful for determining the range of nsp in orf1ab.",
+            "cite_spans": [],
+            "section": "ORF finder for coronavirus ::: Functionality of the database ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "CoVDB is constructed by the Department of Microbiology, the University of Hong Kong. It is available at no charge at http://covdb.microbiology.hku.hk.",
+            "cite_spans": [],
+            "section": "Availability ::: DISCUSSION",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Genome organization of different groups of coronavirus\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1.: Number of coronavirus sequences in GenBank from 1984 to 2006.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: Screenshots of CoVDB complete genome retrieval pages. (a) Specific gene can be retrieved using the pull-down list at the left lower corner. The number in brackets indicates the number of complete genomes for that coronavirus. (b) Example of showing genomes of selected species (some group 2a coronaviruses and SARS-CoV-related coronaviruses). Default is to show the \u2018Type strain\u2019 for each species only. The columns NCBIacc and PMID link to GenBank and pubmed, respectively. (c) Example of showing S gene of selected species by choosing S in the pull-down list. For genes downstream to orf1ab, sequences upstream to the initiation codons can also be retrieved from this result page. This function is particularly useful for the detection of transcription regulatory sequences.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: Screenshots of all gene retrieval pages. (a) Gene sequences are grouped vertically according to which coronavirus group and subgroup they belong to, and horizontally by the name of the genes. The numbers next to each checkbox indicates the number of that gene in CoVDB. The option \u2018Exclude partial CDS\u2019 can be used if only complete genes are required. (b) Example of showing the 15 sequences of nsp13 in group 3 coronaviruses. The first column is CoVDB gene id. In the Uniq column, \u2018Uniq\u2019 will be shown if there is no other identical sequence in CoVDB. Otherwise, gene id of the sequences identical to it will be shown.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: Screenshot of blast similarity search page. Five datasets can be chosen as the database for comparison.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Coronavirus genome structure and replication",
+            "authors": [
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Brian",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Baric",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Curr. Top. Microbiol. Immunol",
+            "volume": "287",
+            "issn": "",
+            "pages": "1-30",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "A previously undescribed coronavirus associated with respiratory disease in humans",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Fouchier",
+                    "suffix": ""
+                },
+                {
+                    "first": "NG",
+                    "middle": [],
+                    "last": "Hartwig",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Bestebroer",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Niemeyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "de Jong",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Simon",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Osterhaus",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "101",
+            "issn": "",
+            "pages": "6212-6216",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Identification of a new human coronavirus",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "van der Hoek",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Pyrc",
+                    "suffix": ""
+                },
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Jebbink",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Vermeulen-Oost",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Berkhout",
+                    "suffix": ""
+                },
+                {
+                    "first": "KC",
+                    "middle": [],
+                    "last": "Wolthers",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Wertheim-van Dillen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kaandorp",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Spaargaren",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nat. Med",
+            "volume": "10",
+            "issn": "",
+            "pages": "368-373",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "In silico analysis of ORF1ab in coronavirus HKU1 genome reveals a unique putative cleavage site of coronavirus HKU1 3C-like protease",
+            "authors": [
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Tsoi",
+                    "suffix": ""
+                },
+                {
+                    "first": "KY",
+                    "middle": [],
+                    "last": "Yuen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Microbiol. Immunol",
+            "volume": "49",
+            "issn": "",
+            "pages": "899-908",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Characterization and complete genome sequence of a novel coronavirus, coronavirus HKU1, from patients with pneumonia",
+            "authors": [
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Chu",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Tsoi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "BH",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Poon",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Cai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Virol",
+            "volume": "79",
+            "issn": "",
+            "pages": "884-895",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Clinical and molecular epidemiological features of coronavirus HKU1-associated community-acquired pneumonia",
+            "authors": [
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Tsoi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Poon",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Chu",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "WK",
+                    "middle": [],
+                    "last": "Luk",
+                    "suffix": ""
+                },
+                {
+                    "first": "GK",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Infect. Dis",
+            "volume": "192",
+            "issn": "",
+            "pages": "1898-1907",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Molecular diversity of coronaviruses in bats",
+            "authors": [
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Poon",
+                    "suffix": ""
+                },
+                {
+                    "first": "BH",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Tsoi",
+                    "suffix": ""
+                },
+                {
+                    "first": "BC",
+                    "middle": [],
+                    "last": "Yip",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Virology",
+            "volume": "351",
+            "issn": "",
+            "pages": "180-187",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Complete genome sequence of bat coronavirus HKU2 from Chinese horseshoe bats revealed a much smaller spike gene with a different evolutionary lineage from the rest of the genome",
+            "authors": [
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                },
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Virology",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Prevalence and genetic diversity of coronaviruses in bats from China",
+            "authors": [
+                {
+                    "first": "XC",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                },
+                {
+                    "first": "JX",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "XH",
+                    "middle": [],
+                    "last": "Fan",
+                    "suffix": ""
+                },
+                {
+                    "first": "LF",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "BQ",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Virol",
+            "volume": "80",
+            "issn": "",
+            "pages": "7481-7490",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Comparative analysis of twelve genomes of three novel group 2c and group 2d coronaviruses reveals unique group and subgroup features",
+            "authors": [
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Poon",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                },
+                {
+                    "first": "BH",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Tsoi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Virol",
+            "volume": "81",
+            "issn": "",
+            "pages": "1574-1585",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Severe acute respiratory syndrome coronavirus-like virus in Chinese horseshoe bats",
+            "authors": [
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                },
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Tsoi",
+                    "suffix": ""
+                },
+                {
+                    "first": "BH",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "102",
+            "issn": "",
+            "pages": "14040-14045",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "The molecular biology of coronaviruses",
+            "authors": [
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Cavanagh",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Adv. Virus Res",
+            "volume": "48",
+            "issn": "",
+            "pages": "1-100",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Coronaviruses from pheasants (Phasianus colchicus) are genetically closely related to coronaviruses of domestic fowl (infectious bronchitis virus) and turkeys",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Cavanagh",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Mawditt",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Welchman Dde",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Britton",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Gough",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Avian Pathol",
+            "volume": "31",
+            "issn": "",
+            "pages": "81-93",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Coronavirus infection of spotted hyenas in the Serengeti ecosystem",
+            "authors": [
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "East",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Moestl",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Benetka",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Pitra",
+                    "suffix": ""
+                },
+                {
+                    "first": "OP",
+                    "middle": [],
+                    "last": "Honer",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Wachter",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Hofer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Vet. Microbiol",
+            "volume": "102",
+            "issn": "",
+            "pages": "1-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Molecular identification and characterization of novel coronaviruses infecting graylag geese (Anser anser), feral pigeons (Columbia livia) and mallards (Anas platyrhynchos)",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Jonassen",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kofstad",
+                    "suffix": ""
+                },
+                {
+                    "first": "IL",
+                    "middle": [],
+                    "last": "Larsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lovland",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Handeland",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Follestad",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lillehaug",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Gen. Virol",
+            "volume": "86",
+            "issn": "",
+            "pages": "1597-1607",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Isolation of avian infectious bronchitis coronavirus from domestic peafowl (Pavo cristatus) and teal (Anas)",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Kong",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Shao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Cai",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Gen. Virol",
+            "volume": "86",
+            "issn": "",
+            "pages": "719-725",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "GenBank",
+            "authors": [
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Benson",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Karsch-Mizrachi",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ostell",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Wheeler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res",
+            "volume": "35",
+            "issn": "",
+            "pages": "D21-D25",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "PATRIC: the VBI PathoSystems Resource Integration Center",
+            "authors": [
+                {
+                    "first": "EE",
+                    "middle": [],
+                    "last": "Snyder",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Kampanya",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "EK",
+                    "middle": [],
+                    "last": "Nordberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "HR",
+                    "middle": [],
+                    "last": "Karur",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Shukla",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Soneja",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Tian",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Xue",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res",
+            "volume": "35",
+            "issn": "",
+            "pages": "D401-D406",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "NCBI reference sequences (RefSeq): a curated non-redundant sequence database of genomes, transcripts and proteins",
+            "authors": [
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Pruitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tatusova",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Maglott",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res",
+            "volume": "35",
+            "issn": "",
+            "pages": "D61-D65",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Basic local alignment search tool",
+            "authors": [
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Altschul",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Gish",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "EW",
+                    "middle": [],
+                    "last": "Myers",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "J. Mol. Biol",
+            "volume": "215",
+            "issn": "",
+            "pages": "403-410",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Molecular biology of severe acute respiratory syndrome coronavirus",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ziebuhr",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Curr. Opin. Microbiol",
+            "volume": "7",
+            "issn": "",
+            "pages": "412-419",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Comparative analysis of 22 coronavirus HKU1 genomes reveals a novel genotype and evidence of natural recombination in coronavirus HKU1",
+            "authors": [
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Yip",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Tsoi",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "KY",
+                    "middle": [],
+                    "last": "Yuen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Virol",
+            "volume": "80",
+            "issn": "",
+            "pages": "7136-7145",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Isolation and characterization of viruses related to the SARS coronavirus from animals in southern China",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "YQ",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "XL",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZX",
+                    "middle": [],
+                    "last": "Zhuang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Cheung",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "PH",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "302",
+            "issn": "",
+            "pages": "276-278",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "The Genome sequence of the SARS-associated coronavirus",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Marra",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Astell",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Holt",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Brooks-Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "YS",
+                    "middle": [],
+                    "last": "Butterfield",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Khattra",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Asano",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Barber",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1399-1404",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Coronavirus as a possible cause of severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Peiris",
+                    "suffix": ""
+                },
+                {
+                    "first": "ST",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                },
+                {
+                    "first": "LL",
+                    "middle": [],
+                    "last": "Poon",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "LY",
+                    "middle": [],
+                    "last": "Yam",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Nicholls",
+                    "suffix": ""
+                },
+                {
+                    "first": "WK",
+                    "middle": [],
+                    "last": "Yee",
+                    "suffix": ""
+                },
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Lancet",
+            "volume": "361",
+            "issn": "",
+            "pages": "1319-1325",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Characterization of a novel coronavirus associated with severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Rota",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Oberste",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Monroe",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Nix",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Campagnoli",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Icenogle",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Penaranda",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Bankamp",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Maher",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1394-1399",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Relative rates of non-pneumonic SARS coronavirus infection and SARS coronavirus pneumonia",
+            "authors": [
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Tsoi",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "BH",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "XY",
+                    "middle": [],
+                    "last": "Che",
+                    "suffix": ""
+                },
+                {
+                    "first": "VK",
+                    "middle": [],
+                    "last": "Tam",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Tam",
+                    "suffix": ""
+                },
+                {
+                    "first": "VC",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Lancet",
+            "volume": "363",
+            "issn": "",
+            "pages": "841-845",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

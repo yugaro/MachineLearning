@@ -1,0 +1,3310 @@
+{
+    "paper_id": "PMC4611031",
+    "metadata": {
+        "title": "Virome Capture Sequencing Enables Sensitive Viral Diagnosis and Comprehensive Virome Analysis",
+        "authors": [
+            {
+                "first": "Thomas",
+                "middle": [],
+                "last": "Briese",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Amit",
+                "middle": [],
+                "last": "Kapoor",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Nischay",
+                "middle": [],
+                "last": "Mishra",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Komal",
+                "middle": [],
+                "last": "Jain",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Arvind",
+                "middle": [],
+                "last": "Kumar",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Omar",
+                "middle": [
+                    "J."
+                ],
+                "last": "Jabado",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "W.",
+                "middle": [
+                    "Ian"
+                ],
+                "last": "Lipkin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Anne",
+                "middle": [],
+                "last": "Moscona",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Clinical virology and virus discovery in the 20th century focused chiefly on the identification of viruses through microscopy, serology, and cell or animal infection studies (1). With the advent of nucleic acid amplification, a wide range of molecular approaches for virus detection became available: PCR (2), consensus PCR (cPCR) and multiplex PCR systems (3\u201310), differential display (11), representational difference analysis (12, 13), subtractive cloning (14), domain-specific differential display (15), cDNA cloning (16\u201318), cDNA immunoscreening (19, 20), microarrays (21, 22), and, most recently, high-throughput sequencing (HTS). HTS has enabled unbiased pathogen discovery and facilitated virome analyses that have enhanced our understanding of the origin, evolution, and ecology of known and novel viruses (1). However, HTS has not been widely implemented in clinical diagnostic laboratories largely due to operational complexity, cost, and insensitivity with respect to agent-specific PCR assays.",
+            "cite_spans": [
+                {
+                    "start": 175,
+                    "end": 176,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 306,
+                    "end": 307,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 358,
+                    "end": 359,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 359,
+                    "end": 360,
+                    "mention": "\u2013",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 360,
+                    "end": 362,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 387,
+                    "end": 389,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 430,
+                    "end": 432,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 434,
+                    "end": 436,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 460,
+                    "end": 462,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 503,
+                    "end": 505,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 522,
+                    "end": 524,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 524,
+                    "end": 525,
+                    "mention": "\u2013",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 525,
+                    "end": 527,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 552,
+                    "end": 554,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 556,
+                    "end": 558,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 574,
+                    "end": 576,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 578,
+                    "end": 580,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 816,
+                    "end": 817,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Strategies to increase the sensitivity of HTS have focused on the enrichment of viral template through subtraction of host nucleic acid via nuclease digestion and depletion of rRNA. Although they are helpful, none has achieved the sensitivity required for clinical applications. To address this challenge, we have established a positive selection probe capture-based system to enrich sequence libraries for viral sequences. Here, we describe the virome capture sequencing platform for vertebrate viruses (VirCapSeq-VERT) and demonstrate its potential utility as a sensitive and specific HTS-based platform for clinical diagnosis and virome analysis.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Our objective was to target all known viruses that can infect vertebrate animals, including humans. Toward this end, oligonucleotides were selected to represent all viral taxa containing at least one virus known to infect vertebrates; virus families that include exclusively viruses infecting plants or insects were excluded (see Table S1 in the supplemental material). Coding sequences were extracted from the EMBL Coding Domain Sequence database, clustered at 96% sequence identity, and used to select 100-mer oligonucleotides spaced by approximately 25 to 50 nucleotides (nt) along each sequence. To address sequence variation, oligonucleotide mutant or variant sequences were retained if sequences diverged by more than 90%. Where technical complexity in oligonucleotide synthesis was challenging due to melting temperature (Tm) or homopolymer repeats, probe sequences were refined by shortening and adjusting their start/stop positions. The final library comprised 1,993,176 oligonucleotides ranging in length from 50 to 100 nt and in Tm from 58.7\u00b0C to 101\u00b0C (see Table S2 in the supplemental material).",
+            "cite_spans": [],
+            "section": "Probe design strategy. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "We evaluated in silico whether the selected probe library provides uniform coverage of the targeted virus sequences. Our analysis indicated that probe numbers were proportional to the amount of available sequence information, resulting in an 88 to 98% estimated coverage of target sequences when an \u201coutreach\u201d for each probe of approximately 100 nt to either side is assumed (see Table S3 in the supplemental material). We mapped the probe library against a database of 100 reference virus genome sequences representing double- and single-stranded DNA and RNA, positive and negative RNA, and circular, linear, and segmented viruses, using a minimum nucleotide identity of 90%. The probe library covered targeted genome sequences with probes spaced at <150-nt intervals (Fig. 1) but provided no coverage of noncoding regions (e.g., poliovirus 5\u2032 untranslated region [UTR]) (Fig. 1A). The highest probe coverage was evident in divergent genome regions (e.g., yellow fever virus E gene region; approximately position 1000 to 2500) (Fig. 1B). In silico analysis indicated that the VirCapSeq-VERT probe library included oligonucleotides that selectively hybridize to genomes of vertebrate viruses but not to those of bacteriophages or plant or fungal viruses.",
+            "cite_spans": [],
+            "section": "Probe design strategy. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 770,
+                    "end": 776,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 873,
+                    "end": 880,
+                    "mention": "Fig. 1A",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1029,
+                    "end": 1036,
+                    "mention": "Fig. 1B",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Nucleic acid (NA) extracts of human lung tissue or whole blood were spiked with various amounts of NAs representing large and small, positive- and negative-strand, segmented and nonsegmented, and DNA and RNA viruses (Table 1). Spiked lung (pool 1) and blood (pool 2) NA preparations were divided and processed in parallel using a standard Illumina HTS protocol or the VirCapSeq-VERT system, whereby viral sequences are enriched by positive selection. Each of the preparations was sequenced on an Illumina HiSeq 2500 sequencer, loading 2 lanes per pool. VirCapSeq-VERT resulted in a 100- to 1,000-fold increase in on-target (viral) reads and a reduction of host background reads from 99.7% to 68.2% in lung and from 99.4% to 38.5% in blood (Fig. 2; also, see Table S4 in the supplemental material). The average coverage also increased dramatically, with nearly full-length sequences (>95%) being obtained for all viruses (Table 2). Figure 3 shows selected examples of sequence recovery for West Nile virus (WNV), Cache Valley virus (CVV), and Middle East respiratory syndrome coronavirus (MERS-CoV).",
+            "cite_spans": [],
+            "section": "Experimental assessment of efficiency. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 740,
+                    "end": 746,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 931,
+                    "end": 939,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 217,
+                    "end": 224,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 921,
+                    "end": 928,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "To determine the threshold for detection of viral sequence, we used NA from lung tissue homogenate and EDTA-blood that contained different amounts of WNV and herpes simplex virus 1 (HHV-1) NA. Nearly complete genome recovery (>90%) was achieved for both viruses at input levels of 100 viral copies in 50 ng of blood NA or 1,000 viral copies in 100 ng lung NA (Fig. 4). Extrapolated to clinical samples, these values correspond to a blood specimen containing approximately 1,200 copies/ml or a tissue specimen containing approximately 16,000 copies/mg, assuming 100% extraction yield (see Table S5 in the supplemental material). Even at the lowest level of virus input tested, 10 viral copies per 50 ng background NA, corresponding to approximately 100 copies/ml blood, VirCapSeq-VERT enabled recovery of 45 kb (29%) of HHV-1 and 0.75 kb (7%) of WNV genome sequence. We then tested human blood and serum samples (1 ml) spiked with live enterovirus D68 (EV-D68) virus stock. VirCapSeq-VERT enabled detection in both sample types at a concentration of 10 copies/ml (Fig. 5), comparable to the sensitivity of real-time PCR (see Table S6 in the supplemental material).",
+            "cite_spans": [],
+            "section": "Experimental assessment of efficiency. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 360,
+                    "end": 366,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1063,
+                    "end": 1069,
+                    "mention": "Fig. 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Analysis of samples of human blood spiked with live EV-D68, HHV-1, and influenza A virus (FLUAV) stock indicated that VirCapSeq-VERT yielded up to a 10,000-fold increase in mapped read counts over samples treated after extraction with DNase and RiboZero rRNA depletion, individually or in combination, and then processed by standard HTS. VirCapSeq-VERT resulted in nearly full genome recovery for most viruses even with less than 1,000 copies of target input (Table 3; also, see Table S7 in the supplemental material).",
+            "cite_spans": [],
+            "section": "Comparison with other enrichment regimens. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 460,
+                    "end": 467,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Clinical specimens included a human nasal swab sample containing EV-D68 that was divided into three aliquots (i) treated with filtration and nuclease digestion prior to extraction and standard HTS, (ii) treated with filtration and nuclease digestion prior to extraction and VirCapSeq-VERT, or (iii) not treated prior to extraction and VirCapSeq-VERT. VirCapSeq-VERT with no prior treatment enabled the highest sequence recovery and depth (see Table S8 in the supplemental material).",
+            "cite_spans": [],
+            "section": "Comparison with other enrichment regimens. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Since fecal material is frequently challenging for viromic analyses, we tested a sample of fecal pellets from bats known to contain rotavirus sequences. The sample was divided into four aliquots and (i) treated with filtration and nuclease digestion prior to extraction, followed by standard HTS, (ii) treated with filtration and nuclease digest prior to extraction, followed by DNase digestion after extraction and standard HTS, (iii) treated with filtration and nuclease digestion prior to extraction and VirCapSeq-VERT, or (iv) not treated prior to extraction and VirCapSeq-VERT. VirCapSeq-VERT again yielded the highest mapped read count (see Table S9 in the supplemental material).",
+            "cite_spans": [],
+            "section": "Comparison with other enrichment regimens. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "The specificity of VirCapSeq-VERT for relevant targets was readily apparent in comparison with results obtained by conventional HTS. Whereas up to 36% of the viral reads found by conventional HTS represented insect-infecting dicistroviruses (Fig. 6), these reads were reduced to 15% by VirCapSeq-VERT. Vertebrate rotavirus, coronavirus, astrovirus, and circovirus sequences detected only at low levels in conventional HTS were increased 4-100 fold by VirCapSeq-VERT.",
+            "cite_spans": [],
+            "section": "Comparison with other enrichment regimens. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 242,
+                    "end": 248,
+                    "mention": "Fig. 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Since the precise sequence of the rotavirus present in bat samples was unknown, contigs obtained by de novo assembly were used to identify the closest GenBank match for each segment. Table 4 shows that nearly a full sequence was obtained for sequences differing by up to 25% from the known sequences used for VirCapSeq-VERT probe design. Partial sequence in conserved regions was obtained even for sequences differing by as much as 50% from known sequences (NSP1 and NSP4) (Table 4).",
+            "cite_spans": [],
+            "section": "Comparison with other enrichment regimens. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 183,
+                    "end": 190,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 474,
+                    "end": 481,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "To further test the capacity of VirCapSeq-VERT to detect novel viral sequences, we used an extract of a liver homogenate from a deer mouse experimentally infected with the rodent hepacivirus isolate RHVpl-01. The complete genome sequence of this isolate has a <65% global nucleotide sequence identity with the sequences used to design the VirCapSeq-VERT probes. Nonetheless, VirCapSeq-VERT selectively enriched RHVpl-01 sequence in conserved regions encoding the helicase and polymerase genes, for which bioinformatics analysis showed the presence of probes with up to 90% nucleotide identity in the VirCapSeq-VERT probe pool. We conclude therefore, from rotavirus and hepacivirus experiments, that while not an ideal platform for viral discovery, VirCapSeq-VERT can detect novel viruses through hybridization to short conserved sequence motifs within larger genome fragments.",
+            "cite_spans": [],
+            "section": "Detection of novel sequences. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "During the estimation of the limit of detection of VirCapSeq-VERT, we processed samples individually or together during hybridization capture. The results obtained with the samples processed individually were superior (see Table S5 in the supplemental material). This finding suggested that competition for probe populations may compromise application in diagnostic settings where patient samples may have widely divergent virus loads. We investigated the practical impact of this potential confounding factor in assays using 21 barcoded libraries representing samples containing seven different viruses at genome loads that varied from 102 to 108. One set represented the seven different viruses each at a concentration of approximately 104 genome copies/library. To mimic competition anticipated in some clinical samples, the second set contained the same seven libraries at 104 copies, combined with an additional 14 libraries prepared with the seven viruses at 102 and at 105 to 108 copies. Virus detection was not impaired in multiplex assays even with samples that varied up to 104 in target concentration (Table 5); however, genome coverage was typically higher in 7-plex than in 21-plex assays.",
+            "cite_spans": [],
+            "section": "Sample multiplexing. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 1113,
+                    "end": 1120,
+                    "mention": "Table 5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "To determine the utility of VirCapSeq-VERT in characterization of virome diversity and dynamics, we analyzed a set of 23 serum samples collected from multiply transfused hemophilia patients known to contain hepatitis C virus (HCV), GB virus C (GBV-C), human immunodeficiency virus (HIV), and torque teno virus (TTV). Samples were amplified using unique bar codes, and two pools were generated for VirCapSeq-VERT. Pool 1 contained 9 samples. Pool 2 contained the same 9 samples mixed with the remaining 14 samples. All viruses in the 9-plex as well as in the 23-plex sample pool were efficiently characterized (see Fig. S1 in the supplemental material).",
+            "cite_spans": [],
+            "section": "Sample multiplexing. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Sequencing approaches have enabled metagenomics, including virome studies, and are of increasing interest in the field of diagnostics. However, concerns regarding sensitivity, especially in high-host-background settings, cumbersome and time-consuming sample processing, and cost pose hurdles that would need to be overcome in order to realize the potential of HTS. Unlike 16S rRNA of bacteria, viruses lack universally conserved markers and have plastic genomes that easily generate mutants, strains, and variants. Virus variants differing in sequence, even by a single point mutation, can vary in host range, transmissibility and pathogenicity (23, 24). Accordingly, an ideal viral diagnostic platform should enable sensitive multiplexed detection of all viruses and their variants. Nucleic acid capture with oligonucleotides has been used to enhance the efficiency of HTS for characterizing host (25, 26) or selected microbial (27, 28) targets at low scale. However, to our knowledge, VirCapSeq-VERT is the first example wherein a positive selection method for HTS has been employed for comprehensive, sensitive application in microbial diagnostics and whole virome analysis.",
+            "cite_spans": [
+                {
+                    "start": 646,
+                    "end": 648,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 650,
+                    "end": 652,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 899,
+                    "end": 901,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 903,
+                    "end": 905,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 930,
+                    "end": 932,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 934,
+                    "end": 936,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Current virus diagnostic assays that are commonly based on PCR assays targeting one or a few specific agents may fail to detect virus variants and provide only limited genotypic information. VirCapSeq-VERT addresses many of the current challenges of PCR and HTS for diagnostics and virome analysis. The sensitivity and specificity of the VirCapSeq-VERT are comparable to those of agent-specific real-time PCR (see Table S6 in the supplemental material). Additionally, the 100- to 10,000-fold increase achieved in on-target reads enables leveraging of sequencing depth against costs in research applications. The approximately per-sample cost of 40 U.S. dollars (USD) of VirCapSeq-VERT in a 20-plex sample format compares favorably with costs of other enrichment procedures, such as rRNA depletion (approximately 65 USD per sample), particularly given its advantages in sensitivity, genome coverage, and ease of use. The capacity for highly multiplexed sample processing and simplified sample handling is cost-effective and reduces the risk of cross contamination.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The VirCapSeq-VERT system is not specifically designed for viral discovery; nonetheless, it enables sequencing of genomes with as little as 75% overall sequence identity. Results of our rotavirus and hepacivirus analyses indicate that where the goal is detection rather than comprehensive genome sequencing, VirCapSeq-VERT has the potential, through hybridization to conserved regions, to detect novel viruses with an overall nucleotide divergence in the range of 40%.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "In summary, VirCapSeq-VERT has promise as a tool for diagnostic and research applications. It has sensitivity similar to that obtained with targeted real-time PCR, with the advantage of detecting viral variants that would not be captured with specific PCR assays as well as the potential to provide the complete genome sequence needed for assessment of viral diversity and evolution for epidemiological and public health applications.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Facsimiles of clinical specimens were generated in a background of NA extracted from normal human lung tissue, EDTA-blood, or serum. The samples were spiked with viral NA and quantitated by virus-specific TaqMan real-time (reverse transcription) PCR (qPCR). NA from cell culture or blood, serum, or tissue samples was extracted using the easyMAG system (bioM\u00e9rieux, Marcy l\u2019Etoile, France) or AllPrep DNA/RNA kits (Qiagen, Hilden, Germany). Background NA was quantitated by NanoDrop (Wilmington, DE, USA) or Bioanalyzer 2100 (Agilent, Santa Clara, CA, USA) and mixed with variable quantities of viral NA derived from enterovirus D68 (EV-D68) (29), West Nile virus (WNV) (39), dengue virus 3 (DENV-3) (40), and Middle East respiratory syndrome coronavirus (MERS-CoV) (41), representing single-strand, positive-sense RNA viruses of different genome sizes; Ebola virus (EBOV) influenza A virus H3N2 (FLUAV, A/Moscow/10/99; WHO Influenza Centre, MRC, London, United Kingdom) and Cache Valley virus (CVV) (42), representing nonsegmented and segmented negative-strand RNA viruses; and herpes simplex virus 1 (HHV-1, ATCC VR-733), as a large double-strand DNA virus. Spiking was performed using NA stocks banked at the Center of Infection and Immunity originally derived from virus cultures or positive diagnostic specimens, with the exception of EBOV, which was provided as noninfectious nucleic acid extract by Peter Jahrling at the National Institute of Allergy and Infectious Diseases, National Institutes of Health. TaqMan PCR primer and probes for the various viruses are cited or available on request.",
+            "cite_spans": [
+                {
+                    "start": 643,
+                    "end": 645,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 671,
+                    "end": 673,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 701,
+                    "end": 703,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 767,
+                    "end": 769,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 1001,
+                    "end": 1003,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Samples and specimens. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "To determine the limit of detection and to assess VirCapSeq-VERT in comparison to conventional target enrichment procedures, normal human lung tissue homogenate, EDTA-blood, or serum samples were spiked with different amounts of live EV-D68, HHV-1, and FLUAV stock quantitated by qPCR.",
+            "cite_spans": [],
+            "section": "Samples and specimens. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Clinical samples included a human nasal swab sample known to be positive for EV-D68 (30), liver specimens from deer mice infected with deer mouse hepacivirus (31), a sample of bat feces pellets in which rotaviral sequences had been identified (unpublished), and serum samples from hemophilia patients coinfected with hepatitis C virus (HCV), GB virus C (GBV-C), human immunodeficiency virus (HIV), and torque teno virus (TTV).",
+            "cite_spans": [
+                {
+                    "start": 85,
+                    "end": 87,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 159,
+                    "end": 161,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Samples and specimens. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The EMBL Coding Domain Sequence database (release 122, December 2014; ftp://ftp.ebi.ac.uk/pub/databases/embl/cds/release/std/), containing 2,199,467 records was clustered at 96% sequence identity by CD-Hit (32), yielding a database of 401,716 representative sequences spanning all virus sequence records, excluding bacteriophages. A list of all virus genera known to infect vertebrates was generated from the master species list of the International Committee on Taxonomy of Viruses (ICTV; http://talk.ictvonline.org/files/ictv_documents/m/msl/5208.aspx). Through cross-referencing of protein IDs with NCBI taxonomy IDs, a set of 342,438 coding sequence records was identified for the selected virus genera. The sequences were broken into fragments, clustered at 90% sequence identity, and used to generate 100-nt probe sequences that were tiled across the genes at approximately 25- to 50-nt intervals. A library of 1,993,200 oligonucleotide probes was selected. The NimbleGen cleavable array platform was employed for synthesis of the biotinylated, soluble probe library (SeqCap EZ Choice; Roche/NimbleGen, Basel, Switzerland), and probe sequences were refined by adjusting their lengths to conform to NimbleGen synthesis parameters, such as maximum Tm or homopolymer repeat length.",
+            "cite_spans": [
+                {
+                    "start": 207,
+                    "end": 209,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Selection of probe sequences. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Conventional virus enrichment methods commonly used in metagenomic sequencing-based virus discovery include filtration and pre-extraction nuclease treatments, often combined with postextraction DNase I and/or depletion of ribosomal rRNA sequences. Briefly, samples (100 to 300 \u00b5l) were filtered through 0.45-\u03bcm-pore-size sterile disk filters (Merck/Millipore, Billerica, MA, USA) to enrich for viruses over cells or bacteria. The flowthrough was treated with 1 \u03bcl RNase A (10 mg/ml; Thermo, Fisher, Waltham, MA, USA) for 15 min at room temperature, followed by a cocktail of 8 U Turbo DNase (Thermo, Fisher), 250 U Benzonase (Merck/Millipore), and 10 mM MgCl2 for 45 min at room temperature to digest non-particle-protected NAs. Protected NAs, such as those in viral particles, were extracted by easyMAG (bioM\u00e9rieux) or AllPrep kits (Qiagen). Postextraction digestion by DNase I (2 U/\u00b5g DNA for 15 min at 37oC; Thermo, Fisher) was added in some instances to digest chromosomal DNA (cellular and bacterial), but it will also digest viral DNA (e.g., HHV-1 DNA), whereas mRNA transcripts generated from actively replicating cellular virus would be maintained. Depletion of nondesired host mRNA sequences was achieved using RiboZero magnetic kits (Illumina, San Diego, CA, USA). Enriched preparations were subjected to reverse transcription and sequence library preparation.",
+            "cite_spans": [],
+            "section": "Conventional target sequence enrichment procedures. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Total NA extracts were reverse transcribed using SuperScript III (Thermo, Fisher) with random hexamers. The cDNA was RNase H treated prior to second-strand synthesis with Klenow fragment (New England Biolabs, Ipswich, MA, USA). The generated double-stranded cDNA was sheared to an average fragment size of 200 bp using the manufacturer\u2019s standard settings (E210 focused ultrasonicator; Covaris, Woburn, MA, USA). Sheared product was purified (AxyPrep Mag PCR cleanup beads; Axygen/Corning, Corning, NY, USA), and libraries were constructed using KAPA library preparation kits (KAPA, Wilmington, MA, USA). For NA input quantities of 10 to 100 ng double-stranded cDNA, the cycle number of the final PCR amplification was increased to 12 cycles, instead of 9 cycles for samples with >100 ng double-stranded cDNA. Final products were purified (AxyPrep) and quantitated by Bioanalyzer (Agilent) for Illumina sequencing.",
+            "cite_spans": [],
+            "section": "Conventional HTS. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Libraries were prepared by essentially following the standard KAPA protocol but including viral sequence capture, following mainly the SeqCap RNA enrichment system protocol (Roche/NimbleGen). Briefly, total NA extract was reverse transcribed using SuperScript III (Thermo, Fisher) with random hexamers. The cDNA was RNase H treated prior to second-strand synthesis with Klenow fragment (New England Biolabs). The resulting double-stranded cDNA/DNA mix was sheared to an average fragment size of 200 bp using the manufacturer\u2019s standard settings (Covaris E210 focused ultrasonicator). Sheared product was purified (AxyPrep), and libraries were constructed using KAPA library preparation kits (KAPA) with Roche/NimbleGen adapter kits. The quality and quantity of libraries were checked using a Bioanalyzer (Agilent). The libraries were then mixed with a SeqCap HE universal oligonucleotide, SeqCap HE index oligonucleotides, and COT DNA and vacuum evaporated at 60\u00b0C for approximately 40 min. Dried samples were mixed with 2\u00d7 hybridization buffer and hybridization component A (Roche/NimbleGen) prior to denaturation at 95\u00b0C for 10 min. The VirCap probe library (4.5 \u03bcl) was added and hybridized at 47\u00b0C for 12 h in a standard PCR thermocycler. SeqCap Pure capture beads (Roche/NimbleGen) were washed twice, mixed with the hybridization mix, and kept at 47\u00b0C for 45 min with vortexing for 10 s every 10 to 15 min. The streptavidin capture beads complexed with biotinylated VirCapSeq-VERT probes were trapped (DynaMag-2 magnet; Thermo, Fisher) and washed once at 47\u00b0C and then twice more at room temperature with wash buffers of increasing stringency. Finally, beads were suspended in 50 \u00b5l water and directly subjected to posthybridization PCR (SeqCap EZ accessory kit V2; Roche/NimbleGen). The PCR products were purified (Agencourt Ampure DNA purification beads; Beckman Coulter, Brea, CA, USA) and quantitated by Bioanalyzer (Agilent) for Illumina sequencing.",
+            "cite_spans": [],
+            "section": "Virome capture sequencing. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Sequencing on the Illumina HiSeq 2500 platform (Illumina) resulted in an average of 210 million reads per lane. Samples were demultiplexed using Illumina software, and FastQ files were generated. Demultiplexed and Q30-filtered FastQ files were mapped against reference genomes from GenBank with Bowtie2 mapper 2.0.6 (http://bowtie-bio.sourceforge.net). SAMtools (v 0.1.19) (33) were used to generate the consensus genomes and coverage statistics. Integrative Genomics Viewer (v 2/3/55) (34) was used to generate coverage plots. Host background levels were determined from Bowtie2 mappings against the host genomes downloaded from the NCBI. Sequencing data obtained from the unknown samples was preprocessed using PRINSEQ (v 0.20.2) (35) software, and filtered reads were aligned against the host reference databases to remove the host background. The resulting reads were de novo assembled using MIRA (v 4.0) (36) or SOAPdenovo2 (v 2.04) (37) assemblers, and contigs and unique singletons were subjected to homology search using MegaBlast against the GenBank nucleotide database; sequences that showed poor or no homology at the nucleotide level were screened by BLASTX against the viral GenBank protein database. Viral sequences from BLASTX analysis were subjected to another round of BLASTX homology search against the entire GenBank protein database to correct for biased E values and taxonomic misassignments. Based on the contigs identified for different viral strains, GenBank sequences were downloaded and used for mapping the whole data set to recover partial or complete genomes. Viral read numbers were obtained from counting the number of reads mapping to contig sequences and unassembled singletons, and percentages were calculated in relation to the total read number obtained. Percentages were converted into heatmaps using MultiExperiment Viewer (MeV v4.9) (38).",
+            "cite_spans": [
+                {
+                    "start": 374,
+                    "end": 376,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 487,
+                    "end": 489,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 733,
+                    "end": 735,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 910,
+                    "end": 912,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 939,
+                    "end": 941,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1873,
+                    "end": 1875,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Data analysis and bioinformatics pipeline. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "TABLE\u00a01\u00a0: Assessment of VirCapSeq-VERT efficiency by using quantitated viral nucleic acids to spike lung and blood host nucleic acid\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "TABLE\u00a02\u00a0: VirCapSeq-VERT provides greater genome coverage and sequencing depth than HTS\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "TABLE\u00a03\u00a0: VirCapSeq-VERT performance compared to conventional enrichment procedures\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "TABLE\u00a04\u00a0: Capacity of VirCapSeq-VERT to detect divergent sequences\n",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "TABLE\u00a05\u00a0: Genome mapping and coverage in VirCapSeq-VERT multiplex assays\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "FIG\u00a01\u00a0: In silico validation of the VirCapSeq-VERT probe design. Probe depth and coverage of the VirCapSeq-VERT probe library are shown for poliovirus (A), yellow fever virus (B), and parvovirus B19 (C). Virus genomes are represented by black lines. The coding sequences are represented by green boxes. The probes are indicated by grey boxes. The top graph in each panel indicates probe depth at each locus. Colored lines in the probes indicate mismatch to the reference used for alignment (green, A; red, T; blue, C; orange, G). Line heights in the coverage track above indicate frequency of the mismatched bases.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "FIG\u00a02\u00a0: VirCapSeq-VERT enhances the performance of high-throughput sequencing by increasing the number of mapped viral reads recovered from high-background specimens. Eight different viral NAs were quantitated by qPCR and used to spike a background of lung-derived (3 viruses) or blood-derived (5 viruses) NA extracts. Samples were split in two and processed by standard HTS (blue) or with VirCapSeq-VERT (red). FLUAV, influenza A virus; EVD-68, enterovirus D68; MERS-CoV, MERS coronavirus; DENV, dengue virus; EBOV, Ebola virus; WNV, West Nile virus; CVV, Cache Valley virus; HHV-1, human herpesvirus 1.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "FIG\u00a03\u00a0: Read coverage versus probe coverage of VirCapSeq-VERT for West Nile virus (A), Cache Valley virus (B), and MERS coronavirus (C). Virus genomes are represented by horizontal black lines and coding sequence by black pointed boxes. The top graph in each panel indicates the read coverage obtained by VirCapSeq-VERT; probe coverage is shown below. Colored lines indicate mismatch to the reference used for alignment (green, A; red, T; blue, C; orange, G). Line heights indicate the frequency of the mismatched bases.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "FIG\u00a04\u00a0: Limit of detection for VirCapSeq-VERT. Total nucleic acid from blood or lung tissue was spiked with human herpesvirus 1 (HHV-1) and West Nile virus (WNV) nucleic acid. The two preparations were serially diluted to generate six samples containing both viruses at 5,000, 1,000, 300, 100, 30, or 10 copies in 100 ng lung tissue or 50 ng whole-blood nucleic acid. Samples were processed with VirCapSeq-VERT.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "FIG\u00a05\u00a0: Efficiency of viral read mapping with VirCapSeq-VERT. Human blood and serum were spiked with live enterovirus D68 virus stock quantitated by qPCR to generate samples with 500, 200, 100, or 10 copies/ml. Five hundred microliters of each sample was extracted and processed with VirCapSeq-VERT.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "FIG\u00a06\u00a0: Selective enhancement of vertebrate virus detection by VirCapSeq-VERT. Bat fecal sample material was divided in two and analyzed using HTS with filtration and nuclease digest combined with postextraction DNase treatment or using VirCapSeq-VERT alone. VirCapSeq-VERT reduced the number of nonvertebrate viral reads and efficiently sequenced vertebrate virus sequences detected only at low levels by conventional HTS.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Virus discovery in the 21st century",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kapoor",
+                    "suffix": ""
+                },
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "eLS",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Comparison of the Luminex respiratory virus panel fast assay with in-house real-time PCR for respiratory viral infection diagnosis",
+            "authors": [
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Gadsby",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hardie",
+                    "suffix": ""
+                },
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Claas",
+                    "suffix": ""
+                },
+                {
+                    "first": "KE",
+                    "middle": [],
+                    "last": "Templeton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Clin Microbiol",
+            "volume": "48",
+            "issn": "",
+            "pages": "2213-2216",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.02446-09"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Differential display of eukaryotic messenger RNA by means of the polymerase chain reaction",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                },
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Pardee",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Science",
+            "volume": "257",
+            "issn": "",
+            "pages": "967-971",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1354393"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Cloning the differences between two complex genomes",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Lisitsyn",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Lisitsyn",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Wigler",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Science",
+            "volume": "259",
+            "issn": "",
+            "pages": "946-951",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.8438152"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Identification of herpesvirus-like DNA sequences in AIDS-associated Kaposi\u2019s sarcoma",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Cesarman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Pessin",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Culpepper",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Knowles",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Science",
+            "volume": "266",
+            "issn": "",
+            "pages": "1865-1869",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.7997879"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Isolation and characterization of Borna disease agent cDNA clones",
+            "authors": [
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                },
+                {
+                    "first": "GH",
+                    "middle": [],
+                    "last": "Travis",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Carbone",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "87",
+            "issn": "",
+            "pages": "4184-4188",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.87.11.4184"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Identification of a Kunjin/West Nile-like flavivirus in brains of patients with New York encephalitis",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Briese",
+                    "suffix": ""
+                },
+                {
+                    "first": "XY",
+                    "middle": [],
+                    "last": "Jia",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Grady",
+                    "suffix": ""
+                },
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Lancet",
+            "volume": "354",
+            "issn": "",
+            "pages": "1261-1262",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0140-6736(99)04576-6"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "A virus discovery method incorporating DNase treatment and its application to the identification of two bovine parvovirus species",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Allander",
+                    "suffix": ""
+                },
+                {
+                    "first": "SU",
+                    "middle": [],
+                    "last": "Emerson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Engle",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Purcell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bukh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "98",
+            "issn": "",
+            "pages": "11609-11614",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.211424698"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Rapid identification of known and new RNA viruses from animal tissues",
+            "authors": [
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Victoria",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kapoor",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Dupuis",
+                    "suffix": ""
+                },
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Schnurr",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Delwart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS Pathog",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.ppat.1000163"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "A highly divergent picornavirus in a marine mammal",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kapoor",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Victoria",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Simmonds",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Shafer",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Nims",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Delwart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J Virol",
+            "volume": "82",
+            "issn": "",
+            "pages": "311-320",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.01240-07"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Isolation of a cDNA clone derived from a blood-borne non-A, non-B viral hepatitis genome",
+            "authors": [
+                {
+                    "first": "QL",
+                    "middle": [],
+                    "last": "Choo",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Kuo",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Weiner",
+                    "suffix": ""
+                },
+                {
+                    "first": "LR",
+                    "middle": [],
+                    "last": "Overby",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Bradley",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Houghton",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Science",
+            "volume": "244",
+            "issn": "",
+            "pages": "359-362",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.2523562"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Specific synthesis of DNA in vitro via a polymerase-catalyzed chain reaction",
+            "authors": [
+                {
+                    "first": "KB",
+                    "middle": [],
+                    "last": "Mullis",
+                    "suffix": ""
+                },
+                {
+                    "first": "FA",
+                    "middle": [],
+                    "last": "Faloona",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Methods Enzymol",
+            "volume": "155",
+            "issn": "",
+            "pages": "335-350",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Hepatitis E virus: cDNA cloning and expression",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Uchida",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Suzuki",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Hayashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Iida",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hara",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Oo",
+                    "suffix": ""
+                },
+                {
+                    "first": "CK",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Shikata",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ichikawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Rikihisa",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Microbiol Immunol",
+            "volume": "36",
+            "issn": "",
+            "pages": "67-79",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1348-0421.1992.tb01643.x"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Microarray-based detection and genotyping of viral pathogens",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Coscoy",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zylberberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Avila",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Boushey",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ganem",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "DeRisi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "99",
+            "issn": "",
+            "pages": "15687-15692",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.242579699"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Panmicrobial oligonucleotide array for diagnosis of infectious diseases",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Palacios",
+                    "suffix": ""
+                },
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Quan",
+                    "suffix": ""
+                },
+                {
+                    "first": "OJ",
+                    "middle": [],
+                    "last": "Jabado",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Conlan",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Hirschberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhai",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Renwick",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hui",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Hegyi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Grolla",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Strong",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Towner",
+                    "suffix": ""
+                },
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Geisbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "PB",
+                    "middle": [],
+                    "last": "Jahrling",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "B\u00fcchen-Osmond",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ellerbrok",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Sanchez-Seco",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lussier",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Formenty",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Nichol",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Feldmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Briese",
+                    "suffix": ""
+                },
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Emerg Infect Dis",
+            "volume": "13",
+            "issn": "",
+            "pages": "73-81",
+            "other_ids": {
+                "DOI": [
+                    "10.3201/eid1301.060837"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Point mutations involved in the attenuation/neurovirulence alternation in type 1 and 2 oral polio vaccine strains detected by site-specific polymerase chain reaction",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Guillot",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Otelea",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Delpeyroux",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Crainic",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Vaccine",
+            "volume": "12",
+            "issn": "",
+            "pages": "503-507",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0264-410X(94)90307-7"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Robustness against serum neutralization of a poliovirus type 1 from a lethal epidemic of poliomyelitis in the Republic of Congo in 2010",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Drexler",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Grard",
+                    "suffix": ""
+                },
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Lukashev",
+                    "suffix": ""
+                },
+                {
+                    "first": "LI",
+                    "middle": [],
+                    "last": "Kozlovskaya",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "B\u00f6ttcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Uslu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Reimerink",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Gmyl",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Taty-Taty",
+                    "suffix": ""
+                },
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "Lekana-Douki",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Nkoghe",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Eis-H\u00fcbinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Diedrich",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Koopmans",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Leroy",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Drosten",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "111",
+            "issn": "",
+            "pages": "12889-12894",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.1323502111"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Targeted sequencing for gene discovery and quantification using RNA CaptureSeq",
+            "authors": [
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Mercer",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Crawford",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Brunck",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Gerhardt",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Taft",
+                    "suffix": ""
+                },
+                {
+                    "first": "LK",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Dinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Mattick",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nat Protoc",
+            "volume": "9",
+            "issn": "",
+            "pages": "989-1009",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nprot.2014.058"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Quantitative gene profiling of long noncoding RNAs with targeted RNA sequencing",
+            "authors": [
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                },
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Mercer",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bussotti",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Leonardi",
+                    "suffix": ""
+                },
+                {
+                    "first": "KR",
+                    "middle": [],
+                    "last": "Haynes",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Crawford",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Brunck",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Cao",
+                    "suffix": ""
+                },
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Thomas",
+                    "suffix": ""
+                },
+                {
+                    "first": "WY",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Taft",
+                    "suffix": ""
+                },
+                {
+                    "first": "LK",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Enright",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Mattick",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Dinger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Nat Methods",
+            "volume": "12",
+            "issn": "",
+            "pages": "339-342",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nmeth.3321"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Enriching pathogen transcripts from infected samples: a capture-based approach to enhanced host-pathogen RNA sequencing",
+            "authors": [
+                {
+                    "first": "ZW",
+                    "middle": [],
+                    "last": "Bent",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Tran-Gyamfi",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Langevin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Brazel",
+                    "suffix": ""
+                },
+                {
+                    "first": "RY",
+                    "middle": [],
+                    "last": "Hamblin",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Branda",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Patel",
+                    "suffix": ""
+                },
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Lane",
+                    "suffix": ""
+                },
+                {
+                    "first": "VA",
+                    "middle": [],
+                    "last": "VanderNoot",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Anal Biochem",
+            "volume": "438",
+            "issn": "",
+            "pages": "90-96",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.ab.2013.03.008"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Specific capture and whole-genome sequencing of viruses from clinical samples",
+            "authors": [
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Depledge",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Palser",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Watson",
+                    "suffix": ""
+                },
+                {
+                    "first": "IY",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                },
+                {
+                    "first": "ER",
+                    "middle": [],
+                    "last": "Gray",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Grant",
+                    "suffix": ""
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "Kanda",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Leproust",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Kellam",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Breuer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0027805"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Seven strains of enterovirus D68 detected in the United States during the 2014 severe respiratory disease outbreak",
+            "authors": [
+                {
+                    "first": "BA",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Nix",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sheth",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Frace",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Oberste",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Genome Announc",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1128/genomeA.01201-14"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Detection and analysis of diverse herpesviral species by consensus primer PCR",
+            "authors": [
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "VanDevanter",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Warrener",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Bennett",
+                    "suffix": ""
+                },
+                {
+                    "first": "ER",
+                    "middle": [],
+                    "last": "Schultz",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Coulter",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Garber",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "J Clin Microbiol",
+            "volume": "34",
+            "issn": "",
+            "pages": "1666-1671",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Worldwide emergence of multiple clades of enterovirus 68",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Tokarz",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Madhi",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Howie",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Sall",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Haq",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Briese",
+                    "suffix": ""
+                },
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J Gen Virol",
+            "volume": "93",
+            "issn": "",
+            "pages": "1952-1958",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/vir.0.043935-0"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Identification of rodent homologs of hepatitis C virus and pegiviruses",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kapoor",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Simmonds",
+                    "suffix": ""
+                },
+                {
+                    "first": "TK",
+                    "middle": [],
+                    "last": "Scheel",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Hjelle",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Cullen",
+                    "suffix": ""
+                },
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Burbelo",
+                    "suffix": ""
+                },
+                {
+                    "first": "LV",
+                    "middle": [],
+                    "last": "Chauhan",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Duraisamy",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sanchez-Leon",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Jain",
+                    "suffix": ""
+                },
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Vandegrift",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Calisher",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Rice",
+                    "suffix": ""
+                },
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "mBio",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1128/mBio.00216-13"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Cd-hit: a fast program for clustering and comparing large sets of protein or nucleotide sequences",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Godzik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Bioinformatics",
+            "volume": "22",
+            "issn": "",
+            "pages": "1658-1659",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btl158"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "The Sequence Alignment/Map format and SAMtools",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Handsaker",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wysoker",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Fennell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ruan",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Homer",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Marth",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Abecasis",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Durbin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "",
+            "pages": "2078-2079",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btp352"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Integrative genomics viewer",
+            "authors": [
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Thorvaldsd\u00f3ttir",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Winckler",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Guttman",
+                    "suffix": ""
+                },
+                {
+                    "first": "ES",
+                    "middle": [],
+                    "last": "Lander",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Getz",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Mesirov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nat Biotechnol",
+            "volume": "29",
+            "issn": "",
+            "pages": "24-26",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nbt.1754"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Quality control and preprocessing of metagenomic datasets",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Schmieder",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "BioInformatics",
+            "volume": "27",
+            "issn": "",
+            "pages": "863-864",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btr026"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "Genome sequence assembly using trace signals and additional sequence information",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Chevreux",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Wetter",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Suhai",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Comput Sci Biol",
+            "volume": "99",
+            "issn": "",
+            "pages": "45-56",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "SOAPdenovo2: an empirically improved memory-efficient short-read de novo assembler",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Xie",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yuan",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Pan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Cheung",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Yiu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Peng",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Xiaoqian",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Gigascience",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/2047-217X-1-18"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "TM4: a free, open-source system for microarray data management and analysis",
+            "authors": [
+                {
+                    "first": "AI",
+                    "middle": [],
+                    "last": "Saeed",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Sharov",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bhagabati",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Braisted",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Klapa",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Currier",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Thiagarajan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sturn",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Snuffin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rezantsev",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Popov",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ryltsov",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Kostukovich",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Borisovsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vinsavich",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Trush",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Quackenbush",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Biotechniques",
+            "volume": "34",
+            "issn": "",
+            "pages": "374-378",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Detection of West Nile virus sequences in cerebrospinal fluid",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Briese",
+                    "suffix": ""
+                },
+                {
+                    "first": "WG",
+                    "middle": [],
+                    "last": "Glass",
+                    "suffix": ""
+                },
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Lancet",
+            "volume": "355",
+            "issn": "",
+            "pages": "1614-1615",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0140-6736(00)02220-0"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Detection of enteroviral RNA and specific DNA of herpesviruses by multiplex genome amplification",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Casas",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tenorio",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Echevarr\u00eda",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Klapper",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Cleator",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J Virol Methods",
+            "volume": "66",
+            "issn": "",
+            "pages": "39-50",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0166-0934(97)00035-9"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Air travel is associated with intracontinental spread of dengue virus serotypes 1\u20133 in Brazil",
+            "authors": [
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Nunes",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Palacios",
+                    "suffix": ""
+                },
+                {
+                    "first": "NR",
+                    "middle": [],
+                    "last": "Faria",
+                    "suffix": ""
+                },
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Sousa",
+                    "suffix": "Jr."
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Pantoja",
+                    "suffix": ""
+                },
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Rodrigues",
+                    "suffix": ""
+                },
+                {
+                    "first": "VL",
+                    "middle": [],
+                    "last": "Carvalho",
+                    "suffix": ""
+                },
+                {
+                    "first": "DB",
+                    "middle": [],
+                    "last": "Medeiros",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Savji",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Baele",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Suchard",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Lemey",
+                    "suffix": ""
+                },
+                {
+                    "first": "PF",
+                    "middle": [],
+                    "last": "Vasconcelos",
+                    "suffix": ""
+                },
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS Negl Trop Dis",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pntd.0002769"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "Middle East respiratory syndrome coronavirus quasispecies that include homologues of human isolates revealed through whole-genome analysis and virus cultured from dromedary camels in Saudi Arabia",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Briese",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Mishra",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Jain",
+                    "suffix": ""
+                },
+                {
+                    "first": "IS",
+                    "middle": [],
+                    "last": "Zalmout",
+                    "suffix": ""
+                },
+                {
+                    "first": "OJ",
+                    "middle": [],
+                    "last": "Jabado",
+                    "suffix": ""
+                },
+                {
+                    "first": "WB",
+                    "middle": [],
+                    "last": "Karesh",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Daszak",
+                    "suffix": ""
+                },
+                {
+                    "first": "OB",
+                    "middle": [],
+                    "last": "Mohammed",
+                    "suffix": ""
+                },
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Alagaili",
+                    "suffix": ""
+                },
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "mBio",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1128/mBio.01146-14"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "Natural M-segment reassortment in Potosi and Main drain viruses: implications for the evolution of orthobunyaviruses",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Briese",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Kapoor",
+                    "suffix": ""
+                },
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Arch Virol",
+            "volume": "152",
+            "issn": "",
+            "pages": "2237-2247",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00705-007-1069-z"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Evolutionary and taxonomic implications of conserved structural motifs between picornaviruses and insect picorna-like viruses",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Liljas",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Tate",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Christian",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Arch Virol",
+            "volume": "147",
+            "issn": "",
+            "pages": "59-84",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s705-002-8303-1"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Diagnostic system for rapid and sensitive differential detection of pathogens",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Briese",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Palacios",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kokoris",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Jabado",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Renwick",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Kapoor",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Casas",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Pozo",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Limberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Perez-Brena",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ju",
+                    "suffix": ""
+                },
+                {
+                    "first": "WI",
+                    "middle": [],
+                    "last": "Lipkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Emerg Infect Dis",
+            "volume": "11",
+            "issn": "",
+            "pages": "310-313",
+            "other_ids": {
+                "DOI": [
+                    "10.3201/eid1102.040492"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "Rapid identification of emerging pathogens: coronavirus",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sampath",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Hofstadler",
+                    "suffix": ""
+                },
+                {
+                    "first": "LB",
+                    "middle": [],
+                    "last": "Blyn",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Eshoo",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Hall",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Massire",
+                    "suffix": ""
+                },
+                {
+                    "first": "HM",
+                    "middle": [],
+                    "last": "Levene",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Hannis",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Harrell",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Neuman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Buchmeier",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Ranken",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Drader",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Samant",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Griffey",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "McNeil",
+                    "suffix": ""
+                },
+                {
+                    "first": "ST",
+                    "middle": [],
+                    "last": "Crooke",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Ecker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Emerg Infect Dis",
+            "volume": "11",
+            "issn": "",
+            "pages": "373-379",
+            "other_ids": {
+                "DOI": [
+                    "10.3201/eid1103.040629"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "Direct screening of clinical specimens for multiple respiratory pathogens using the Genaco respiratory panels 1 and 2",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Brunstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Thomas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Diagn Mol Pathol",
+            "volume": "15",
+            "issn": "",
+            "pages": "169-173",
+            "other_ids": {
+                "DOI": [
+                    "10.1097/01.pdm.0000210430.35340.53"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "Ibis T5000: a universal biosensor approach for microbiology",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Ecker",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sampath",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Massire",
+                    "suffix": ""
+                },
+                {
+                    "first": "LB",
+                    "middle": [],
+                    "last": "Blyn",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Hall",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Eshoo",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Hofstadler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nat Rev Microbiol",
+            "volume": "6",
+            "issn": "",
+            "pages": "553-558",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nrmicro1918"
+                ]
+            }
+        }
+    }
+}

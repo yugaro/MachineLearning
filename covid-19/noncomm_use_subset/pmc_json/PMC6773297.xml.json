@@ -1,0 +1,1596 @@
+{
+    "paper_id": "PMC6773297",
+    "metadata": {
+        "title": "Using population-wide administrative and laboratory data to estimate type- and subtype-specific influenza vaccine effectiveness: a surveillance protocol",
+        "authors": [
+            {
+                "first": "Allison",
+                "middle": [
+                    "Nicole"
+                ],
+                "last": "Scott",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Sarah",
+                "middle": [
+                    "A"
+                ],
+                "last": "Buchan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jeffrey",
+                "middle": [
+                    "C"
+                ],
+                "last": "Kwong",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Steven",
+                "middle": [
+                    "J"
+                ],
+                "last": "Drews",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Kimberley",
+                "middle": [
+                    "A"
+                ],
+                "last": "Simmonds",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Lawrence",
+                "middle": [
+                    "W"
+                ],
+                "last": "Svenson",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Influenza is a respiratory viral disease associated with significant morbidity and mortality globally. Infections range from relatively mild presentations (eg, cough, sore throat) to severe lower respiratory tract infections (eg, pneumonia). Severe cases may be associated with hospitalisation, intensive care admission and death; young children, the elderly and individuals with chronic conditions are at highest risk of severe outcomes.1 In Canada, rates of laboratory-confirmed influenza infections are, on average, approximately 200 cases per 100 000 population, with approximately 50% of cases occurring in patients aged \u226418 years.2 The causative agents, influenza A (subtypes H3N2 and H1N1pdm(09)) and influenza B (Yamagata and Victoria lineages), are under strong selective pressure to mutate genetically; significant genetic changes can occur in relatively short periods of time (ie <1 year).3\n",
+            "cite_spans": [
+                {
+                    "start": 438,
+                    "end": 439,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 636,
+                    "end": 637,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 900,
+                    "end": 901,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Influenza prevention relies, in part, on annual vaccination campaigns. Selection of viral strains for inclusion in the vaccine occurs approximately 9 months prior to the onset of the influenza season; by the time the vaccines are administered, the predominant circulating strains may have mutated to the point such that the effectiveness of the vaccine has diminished or has become completely ineffective.4 5\n",
+            "cite_spans": [
+                {
+                    "start": 405,
+                    "end": 408,
+                    "mention": "4 5",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Influenza vaccine effectiveness (VE) is commonly estimated using the test-negative design, a variation of the case-control design where cases and controls are selected from a pool of individuals who have been tested for influenza.6\u201310 Several research groups use sentinel physician networks to recruit patients: influenza testing is performed on patients who meet a case definition for influenza-like illness, and cases and controls are selected from that pool.6\u20138 While this has become an established method, there are some limitations to using sentinel physicians. As the physicians are often volunteers, there can be bias in the geographic distribution, leading to clustering of sampling in certain areas and not others. This can lead to inaccuracies as predominant circulating influenza strains vary geographically.7 11 Immunisation information is commonly self-reported, potentially leading to recall and social desirability biases12; volunteer physicians may be more likely to have strong views on influenza immunisation, potentially making it more difficult for the patient to admit to not being immunised. Finally, as these studies are labour-intensive for clinic staff, physician recruitment is often low, resulting in small sample sizes and wide confidence intervals (CI). Estimates are, therefore, typically available after the peak of the influenza season, decreasing their usefulness for public health messaging and resource and operational planning.6\u20138 11\n",
+            "cite_spans": [
+                {
+                    "start": 230,
+                    "end": 234,
+                    "mention": "6\u201310",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 461,
+                    "end": 464,
+                    "mention": "6\u20138",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 819,
+                    "end": 823,
+                    "mention": "7 11",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 936,
+                    "end": 938,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1463,
+                    "end": 1469,
+                    "mention": "6\u20138 11",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Using administrative data and routinely collected clinical specimens for estimating VE is currently under debate.13 VE estimates generated using linked health administrative and laboratory data in the province of Ontario have been shown to be comparable to previously published estimates.14 There has been one published estimate of Alberta-specific VE using a sentinel surveillance system11; however, because of the small sample size the CI was large, ranging from 8% to 72%. Estimating VE in a large jurisdiction with near-real-time data on all influenza laboratory testing and influenza vaccination in the population has the potential to provide more precise and timely VE estimates than has previously been possible. We present a protocol to estimate influenza VE using individually linked laboratory and administrative data.",
+            "cite_spans": [
+                {
+                    "start": 113,
+                    "end": 115,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 288,
+                    "end": 290,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 388,
+                    "end": 390,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Alberta is a province in Canada with a publicly funded universal healthcare system; each of the 4.25 million residents is assigned a unique personal health number (PHN) at birth or on immigration to the province.15 The PHN is recorded each time a person accesses the healthcare system, allowing for deterministic linkage across multiple administrative data sets held by the Ministry of Health.",
+            "cite_spans": [
+                {
+                    "start": 212,
+                    "end": 214,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Study setting ::: Methods and analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "In 2009, influenza vaccination became universally available to all Albertans aged \u22656 months, regardless of comorbidities or other risk conditions.16 Influenza vaccines are available at no cost to the patient at public health clinics, pharmacies, physician offices, long-term care facilities, university health centres, and workplaces. Annual vaccine campaigns begin in October, with approximately 60% of all influenza vaccinations given by the end of the second week of the campaign. While the peak of influenza activity has varied widely since 2010, the median influenza peak in Alberta is in mid-January, approximately 3 months after the vaccination campaigns begin.",
+            "cite_spans": [
+                {
+                    "start": 146,
+                    "end": 148,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Study setting ::: Methods and analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "All influenza testing in Alberta is performed at a single diagnostic lab, the Provincial Laboratory for Public Health (ProvLab) and stored in a single laboratory information system, along with test and patient identifiers. Clinical specimens (eg, nasopharyngeal swabs, nasopharyngeal aspirates, bronchoalveolar lavages) are processed at ProvLab using previously published protocols. Nucleic acid extraction utilises the easyMAG extractor and reagents (bioMerieux).17 Nucleic acid from clinical specimens is then tested using a series of respiratory detection assays as described below. Prior to May 2017, a real-time influenza A/B reverse-transcriptase PCR was used to diagnose influenza using a protocol previously described.18 19 After May 2017, ProvLab has been using a Luminex respiratory pathogen panel for the identification of influenza A (including subtype), influenza B and other respiratory viruses (eg, coronavirus and parainfluenza).15 Results of the laboratory testing were imported into specific laboratory information systems depending on the testing time period.",
+            "cite_spans": [
+                {
+                    "start": 464,
+                    "end": 466,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 726,
+                    "end": 731,
+                    "mention": "18 19",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 945,
+                    "end": 947,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Laboratory methods for influenza A and B detection and influenza A subtyping ::: Methods and analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "We will use the test-negative design to estimate VE for the 2011/12\u20132019/20 influenza seasons. The results of all respiratory virus tests conducted at ProvLab will be sent to the Ministry of Health for deterministic linkage to health administrative databases, in order to determine eligibility for inclusion in the analysis, influenza vaccination status and the following covariates: age, sex, socioeconomic status, geographic zone of residence, history of immunocompromising comorbidities, healthcare setting (inpatient or outpatient setting) and month at the time of specimen submission. The presence of a diagnostic code for an acute respiratory illness (ARI) at the time of specimen collection will be used in a sensitivity analysis.",
+            "cite_spans": [],
+            "section": "Study design ::: Methods and analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Isolates will be considered eligible for inclusion in the analysis if they meet all of the following criteria: a valid PHN is recorded, the isolate is not from a resident of a long-term care facility, the isolate was collected at least 4 weeks after the initiation of the public influenza vaccination programme and the isolate was collected during the influenza season, as determined using the method recommended by the WHO.20\u201322\n",
+            "cite_spans": [
+                {
+                    "start": 424,
+                    "end": 429,
+                    "mention": "20\u201322",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Study design ::: Methods and analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "It is important to ensure that the population has the chance to be exposed to influenza and that there is sufficient time for immunity to the vaccine to be developed. Residence in a long-term care facility will be determined via the Alberta Continuing Care Information System, which contains information on admissions and discharges from long-term care facilities.23 PHN validity will be assessed using the Alberta Health Care Insurance Plan (AHCIP) Adjusted Population Registry, which contains records of all individuals registered for healthcare insurance.23 24\n",
+            "cite_spans": [
+                {
+                    "start": 364,
+                    "end": 366,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 558,
+                    "end": 563,
+                    "mention": "23 24",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Study design ::: Methods and analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Individuals can have multiple laboratory tests over the course of their illness; therefore, only the first positive influenza test during the influenza season will be used, and potential control samples will be selected from among those who only tested negative for influenza during that influenza season, using the first negative test. Cases and controls tested <14 days after vaccination will be excluded from the analysis.",
+            "cite_spans": [],
+            "section": "Study design ::: Methods and analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Influenza vaccination status will be determined from the influenza vaccination registry. The registry combines data from four databases that record influenza vaccination events (see below).",
+            "cite_spans": [],
+            "section": "Study design ::: Methods and analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "The following administrative data sets will be used in this study.",
+            "cite_spans": [],
+            "section": "Study design ::: Methods and analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "VE data will be refreshed and the analysis completed every 2 weeks until the peak of the influenza season and monthly thereafter. We will use multivariable logistic regression to estimate influenza VE as (1 \u2013 adjusted OR) \u00d7 100% and will compare the results to historical values of VE for the predominate subtype. We will estimate VE separately by influenza season and influenza subtype (ie, A(H3N2), A(H1N1)pdm09, and influenza B).33 When there is a large enough sample size in a particular season to provide adequate power, VE will be estimated for specific age groups such as children under the age of 5 and seniors over the age of 65. The following covariates will be included in the adjusted model, regardless of statistical significance: age, sex, socioeconomic status, geographic zone of residence, history of immunocompromising comorbidities, healthcare setting (inpatient or outpatient setting) and month of specimen submission within the influenza season. SAS V.9.4 will be used for all statistical analysis (SAS Institute). VE estimates will be compared with published estimates of VE.6 7 11 13 34 35\n",
+            "cite_spans": [
+                {
+                    "start": 432,
+                    "end": 434,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1096,
+                    "end": 1111,
+                    "mention": "6 7 11 13 34 35",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Statistical analysis ::: Methods and analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "As shedding of influenza virus continues for approximately 4\u20135 days after symptom onset, bias can result if specimens that are collected too long after symptom onset are used.36 Most studies use a threshold of 7 days.37 To test the robustness of the findings, a sensitivity analysis will be performed; controls will be restricted to those specimens positive for a different respiratory virus (ie, coronavirus, human respiratory syncytial virus) (as suggested by Sullivan et al 2016).",
+            "cite_spans": [
+                {
+                    "start": 175,
+                    "end": 177,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 217,
+                    "end": 219,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Statistical analysis ::: Methods and analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "A potential limitation to this study is that the samples utilised here are clinical isolates taken through the course of normal patient care, and are not from a standard case definition as is utilised in some other studies.12 To test the robustness of the findings, the analysis will be repeated using only cases and controls that were given a diagnosis code for ARI on the same day as specimen collection, as per the SESE database or MACAR. Online supplementary appendix 3 lists the ICD-9 and ICD-10 codes used to define ARIs.",
+            "cite_spans": [
+                {
+                    "start": 223,
+                    "end": 225,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Statistical analysis ::: Methods and analysis",
+            "ref_spans": []
+        },
+        {
+            "text": "Patients and the public were not involved in the design of the study, including the development of the research question, outcomes measures, recruitment to or conduct of the study. The results of the study will be disseminated to the public as deemed appropriate by public health officials.",
+            "cite_spans": [],
+            "section": "Patient and public involvement",
+            "ref_spans": []
+        },
+        {
+            "text": "This protocol describes the estimation of seasonal influenza VE using specimens collected for routine influenza diagnostics as well as administrative data and vaccination records.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A key strength of this approach is the large sample size. This approach allows calculation of timely, precise influenza VE estimates weeks prior to the influenza season peak, creating an early warning system for public health if, as in the 2014\u20132015 season, the vaccine is found to have exceedingly low effectiveness. Early notification of VE can assist public health in determining policies, messaging and allocation of resources (antiviral agents, staffing emergency departments) to counter a potentially more severe influenza season.37 38 The large sample size also allows for stratified analyses of VE based on product, age group or region.",
+            "cite_spans": [
+                {
+                    "start": 536,
+                    "end": 541,
+                    "mention": "37 38",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Whereas sentinel physician networks rely primarily on self-reported measures of influenza vaccination,34 a significant strength of this study is the use of the near-real-time influenza vaccination registry that contains individual-level, linkable data for most influenza vaccinations administered in the province. Use of this registry reduces the likelihood of recall error and information biases such as social desirability bias and reduces non-differential misclassification, which would bias the OR towards the null, thus underestimating VE.12\n",
+            "cite_spans": [
+                {
+                    "start": 102,
+                    "end": 104,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 544,
+                    "end": 546,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Finally, we are certain to capture the results of all respiratory virus testing in the province, as all respiratory virus testing is centralised at ProvLab and there is limited use of point-of-care testing.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "There are some limitations to this methodology compared with the traditional method of VE estimation using sentinel physician networks, because a standardised clinical case definition cannot be applied to determine study eligibility. A sensitivity analysis restricting to healthcare encounters with a diagnosis code for ARI will be used as a proxy for a standard case definition.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "While the inclusion of confounders is important for VE estimate adjustment, not all known confounders can be measured using administrative data. Frailty has been demonstrated to be a potential confounder of VE.39\u201341 Frailty cannot be included in the multivariable model because no validated indices of frailty generated from standard administrative data exist at this time. However, this may not affect the results significantly as a previous study indicated that inclusion of frailty in the multivariate model increased VE estimates only slightly.42\n",
+            "cite_spans": [
+                {
+                    "start": 210,
+                    "end": 215,
+                    "mention": "39\u201341",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 548,
+                    "end": 550,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Laboratory requisitions in Alberta do not contain illness onset date. Ideally this would be used to ensure that the negative laboratory test results were representative of an acute infectious period and that test-negative specimens were not collected after viral shedding had ceased. Sullivan et al 2016 have indicated this bias may be accounted for by selecting influenza test-negative controls that were positive for another respiratory virus. Requiring controls to be positive for another virus excludes individuals who are tested long after their acute infectious period. However, a recent systematic review found no differences when using different groups of controls.43\n",
+            "cite_spans": [
+                {
+                    "start": 673,
+                    "end": 675,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Comparison of the VE results using administrative data to previously published studies, specifically sentinel surveillance for the same seasons (2011/12\u20132019/20), will help to identify further areas of refinement.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "This approach could successfully allow for the generation of early influenza VE estimates which could facilitate tailoring of public health messaging and assist in public health operations planning for the peak of the influenza season.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {},
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Populations at risk for severe or complicated influenza illness: systematic review and meta-analysis",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Mertz",
+                    "suffix": ""
+                },
+                {
+                    "first": "TH",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Johnstone",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "BMJ",
+            "volume": "347",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1136/bmj.f5061"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Effectiveness of vaccine against medical consultation due to laboratory-confirmed influenza: results from a sentinel physician pilot project in British Columbia, 2004-2005",
+            "authors": [],
+            "year": 2005,
+            "venue": "Can Commun Dis Rep",
+            "volume": "31",
+            "issn": "",
+            "pages": "181-91",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Interim estimates of 2016/17 vaccine effectiveness against influenza A(H3N2), Canada, January 2017",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chambers",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sabaiduc",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Eurosurveillance",
+            "volume": "22",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.2807/1560-7917.ES.2017.22.6.30460"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Evaluation of influenza vaccine effectiveness: a guide to the design and interpretation of observational studies",
+            "authors": [],
+            "year": 2017,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "1-47",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Variable influenza vaccine effectiveness by subtype: a systematic review and meta-analysis of test-negative design studies",
+            "authors": [
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Belongia",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Simpson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "King",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Lancet Infect Dis",
+            "volume": "16",
+            "issn": "",
+            "pages": "942-51",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1473-3099(16)00129-8"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Can routinely collected laboratory and health administrative data be used to assess influenza vaccine effectiveness? assessing the validity of the flu and other respiratory viruses research (forever) cohort",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Kwong",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Buchan",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Chung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2019,
+            "venue": "Vaccine",
+            "volume": "37",
+            "issn": "",
+            "pages": "4392-400",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.vaccine.2019.06.011"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Use of laboratory and administrative data to understand the potential impact of human parainfluenza virus 4 on cases of bronchiolitis, croup, and pneumonia in Alberta, Canada",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Fathima",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Simmonds",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Invik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "BMC Infect Dis",
+            "volume": "16",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s12879-016-1748-z"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "History of immunization in Alberta",
+            "authors": [],
+            "year": 2017,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Comparison of the Luminex xTAG respiratory viral panel with in-house nucleic acid amplification tests for diagnosis of respiratory virus infections",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Pabbaraju",
+                    "suffix": ""
+                },
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Tokaryk",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J Clin Microbiol",
+            "volume": "46",
+            "issn": "",
+            "pages": "3056-62",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.00878-08"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Design and validation of real-time reverse transcription-PCR assays for detection of pandemic (H1N1) 2009 virus",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Pabbaraju",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Clin Microbiol",
+            "volume": "47",
+            "issn": "",
+            "pages": "3454-60",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.01103-09"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Oseltamivir resistance in an influenza A (H3N2) virus isolated from an immunocompromised patient during the 2014-2015 influenza season in Alberta, Canada",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Chaudhry",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bastien",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Influenza Other Respi Viruses",
+            "volume": "10",
+            "issn": "",
+            "pages": "532-5",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/irv.12415"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "",
+            "authors": [],
+            "year": 2017,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Global epidemiological surveillance standards for influenza",
+            "authors": [],
+            "year": 2013,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "A manual for estimating disease burden associated with seasonal influenza",
+            "authors": [],
+            "year": 2015,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Alberta health seasonal influenza in Alberta 2016/2017 summary report",
+            "authors": [],
+            "year": 2017,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Overview of administrative health datasets",
+            "authors": [],
+            "year": 2017,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Secular trends in the epidemiology of shingles in Alberta",
+            "authors": [
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Russell",
+                    "suffix": ""
+                },
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Schopflocher",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Svenson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Epidemiol Infect",
+            "volume": "135",
+            "issn": "",
+            "pages": "908-13",
+            "other_ids": {
+                "DOI": [
+                    "10.1017/S0950268807007893"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "",
+            "authors": [],
+            "year": 2017,
+            "venue": "Immunization data submission and response guidelines",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Risk of febrile seizures after first dose of measles-mumps-rubella-varicella vaccine: a population-based cohort study",
+            "authors": [
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "MacDonald",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Dover",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Simmonds",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Can Med Assoc J",
+            "volume": "186",
+            "issn": "",
+            "pages": "824-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1503/cmaj.140078"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Alberta health claims assessment",
+            "authors": [],
+            "year": 2017,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Features of physician services databases in Canada",
+            "authors": [
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Lix",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Quan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Chronic Dis Inj Can",
+            "volume": "32",
+            "issn": "",
+            "pages": "186-93",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Quality of administrative health databases in Canada: a scoping review",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hinds",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Lix",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Can J Public Health",
+            "volume": "107",
+            "issn": "",
+            "pages": "e56-61",
+            "other_ids": {
+                "DOI": [
+                    "10.17269/cjph.107.5244"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Traditional and new influenza vaccines",
+            "authors": [
+                {
+                    "first": "S-S",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Webby",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Clin Microbiol Rev",
+            "volume": "26",
+            "issn": "",
+            "pages": "476-92",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/CMR.00097-12"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Validation of administrative health data for the pediatric population: a scoping review",
+            "authors": [
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Shiff",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jama",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Boden",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "BMC Health Serv Res",
+            "volume": "14",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1472-6963-14-236"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Mining administrative health databases to advance medical science: geographical considerations and untapped potential in Canada",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Quan",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bartlett-Esquilant",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Can J Cardiol",
+            "volume": "28",
+            "issn": "",
+            "pages": "152-4",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.cjca.2012.01.005"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Using physician billing claims from the Ontario health insurance plan to determine individual influenza vaccination status: an updated validation study",
+            "authors": [
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Schwartz",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Jembere",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Campitelli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "CMAJ Open",
+            "volume": "4",
+            "issn": "",
+            "pages": "E463-E470",
+            "other_ids": {
+                "DOI": [
+                    "10.9778/cmajo.20160009"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "\"Crude Vaccine Effectiveness\" Is a Misleading Term in Test-negative Studies of Influenza Vaccine Effectiveness",
+            "authors": [
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Sullivan",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Cowling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Epidemiology",
+            "volume": "26",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1097/EDE.0000000000000343"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Low 2012-13 influenza vaccine effectiveness associated with mutation in the egg-adapted H3N2 vaccine strain not antigenic drift in circulating viruses",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "NZ",
+                    "middle": [],
+                    "last": "Janjua",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "De Serres",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS One",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0092153"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Interim estimates of 2013/14 vaccine effectiveness against influenza A(H1N1)pdm09 from Canada s sentinel surveillance network, January 2014",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chambers",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sabaiduc",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Euro Surveill",
+            "volume": "19",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.2807/1560-7917.ES2014.19.5.20690"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "Theoretical basis of the test-negative study design for assessment of influenza vaccine effectiveness",
+            "authors": [
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Sullivan",
+                    "suffix": ""
+                },
+                {
+                    "first": "EJ",
+                    "middle": [],
+                    "last": "Tchetgen Tchetgen",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Cowling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Am J Epidemiol",
+            "volume": "184",
+            "issn": "",
+            "pages": "345-53",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/aje/kww064"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "The use of research evidence in public health decision making processes: systematic review",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Orton",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Lloyd-Williams",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Taylor-Robinson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0021704"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "The role of public health informatics in enhancing public health surveillance",
+            "authors": [
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Savel",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Foldy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "MMWR Suppl",
+            "volume": "61",
+            "issn": "",
+            "pages": "20-4",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "New strategies are needed to improve the accuracy of influenza vaccine effectiveness estimates among seniors",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Jackson",
+                    "suffix": ""
+                },
+                {
+                    "first": "NS",
+                    "middle": [],
+                    "last": "Weiss",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Clin Epidemiol",
+            "volume": "62",
+            "issn": "",
+            "pages": "687-94",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jclinepi.2008.06.014"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "A perfect storm: impact of genomic variation and serial vaccination on low influenza vaccine effectiveness during the 2014-2015 season",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chambers",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sabaiduc",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Clin Infect Dis",
+            "volume": "63",
+            "issn": "",
+            "pages": "21-32",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/cid/ciw176"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Evidence of bias in estimates of influenza vaccine effectiveness in seniors",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Jackson",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Jackson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Int J Epidemiol",
+            "volume": "35",
+            "issn": "",
+            "pages": "337-44",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/ije/dyi274"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "Functional status is a confounder of the association of influenza vaccine and risk of all cause mortality in seniors",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Jackson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Benson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Int J Epidemiol",
+            "volume": "35",
+            "issn": "",
+            "pages": "345-52",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/ije/dyi275"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "Evaluating the case-positive, control test-negative study design for influenza vaccine effectiveness for the frailty bias",
+            "authors": [
+                {
+                    "first": "HK",
+                    "middle": [],
+                    "last": "Talbot",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nian",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Vaccine",
+            "volume": "34",
+            "issn": "",
+            "pages": "1806-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.vaccine.2016.02.037"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Estimating influenza vaccine effectiveness with the test-negative design using alternative control groups: a systematic review and meta-analysis",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Cowling",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kelly",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Am J Epidemiol",
+            "volume": "187",
+            "issn": "",
+            "pages": "389-97",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/aje/kwx251"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Influenza update N\u00b0309",
+            "authors": [],
+            "year": 2018,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "1-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Association between the 2008-09 seasonal influenza vaccine and pandemic H1N1 illness during spring-summer 2009: four observational studies from Canada",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "De Serres",
+                    "suffix": ""
+                },
+                {
+                    "first": "NS",
+                    "middle": [],
+                    "last": "Crowcroft",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Med",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pmed.1000258"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "Interim estimates of 2015/16 vaccine effectiveness against influenza A(H1N1)pdm09, Canada, February 2016",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chambers",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Skowronski",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sabaiduc",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Euro Surveill",
+            "volume": "21",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.2807/1560-7917.ES.2016.21.11.30168"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "Vaccine effectiveness against laboratory-confirmed influenza hospitalizations among elderly adults during the 2010-2011 season",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Kwong",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Campitelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "JB",
+                    "middle": [],
+                    "last": "Gubbay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Clin Infect Dis",
+            "volume": "57",
+            "issn": "",
+            "pages": "820-7",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/cid/cit404"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "Field evaluation of vaccine efficacy",
+            "authors": [
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Orenstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Bernier",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Dondero",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Bull World Health Organ",
+            "volume": "63",
+            "issn": "",
+            "pages": "1055-68",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

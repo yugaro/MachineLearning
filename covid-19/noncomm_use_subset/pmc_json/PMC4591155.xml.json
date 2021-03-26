@@ -1,0 +1,861 @@
+{
+    "paper_id": "PMC4591155",
+    "metadata": {
+        "title": "Real time detection of farm-level swine mycobacteriosis outbreak using time\nseries modeling of the number of condemned intestines in abattoirs",
+        "authors": [
+            {
+                "first": "Yasumoto",
+                "middle": [],
+                "last": "ADACHI",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Kohei",
+                "middle": [],
+                "last": "MAKITA",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Study area and data collection: The Higashi-Mokoto Meat Inspection Center\nis located in Abashiri-Gun, Hokkaido, Japan, and has 2 abattoirs, which receive 150,000 to\n200,000 pigs annually for slaughtering, mainly from the eastern Hokkaido. At this facility,\npig carcasses are inspected by gross pathological examination, and the carcasses harboring\nintestines with nodular caseous necrosis are diagnosed with swine mycobacteriosis.",
+            "cite_spans": [],
+            "section": "MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "In this study, we used the data from both abattoirs within jurisdiction of the\nHigashi-Mokoto Meat Inspection Center, as collected from April 1, 2003, to May 27, 2013. The\nnumber of condemned intestines due to mycobacteriosis in swine (hereafter \u201cobserved data\u201d)\nand the names and townships of the corresponding producers were used to identify the farms\nwith high incidences of swine mycobacteriosis; these producers were informed of potential\noutbreaks as part of the Meat Inspection Center\u2019s mandate.",
+            "cite_spans": [],
+            "section": "MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The numbers of the observed data (dates of operation) used for the analysis consisted of\n1,922 days over roughly 8 years as a training period for the model and 788 days (roughly 2\nyears) as a validation period for the model.",
+            "cite_spans": [],
+            "section": "MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Analysis of periodicity: In order to understand the periodicity of the\nnumber of condemned carcasses, we performed Fast Fourier Transform (FFT) [28] to calculate a periodogram from the observed data\nobtained during the training period. As the observed data do not include non-operating days\nand are not completely serial, FFT could not be performed on the raw primary data.\nTherefore, we pretreated data before FFT as follows: (i) connecting observed data of\nweekdays without weekends and (ii) replacing missing data on non-operating weekdays with the\nmedians of each day of the week as dummy values, such that-5-day intervals constituted a\nnominal week. The variation in the number of condemned intestines among days of the week was\nassessed using a generalized linear model (GLM) with quasi-Poisson errors. All the\nstatistics in the present study were performed using statistic software R (version\n3.0.1).",
+            "cite_spans": [
+                {
+                    "start": 145,
+                    "end": 147,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Estimation of ARIMA model: For the estimation of the ARIMA model, week\nensemble averages were subtracted from observed data for each date of the weeks, and the\nresiduals including missing values were used. Three main parameters need to be selected when\nfitting an ARIMA model: the orders of autoregressive (AR), differencing or integration (I),\nand moving average (MA). Autoregressive terms relate the the observation made at time\nt in the series to the observation made at time t-1, or\nto the observation made at t-2 and so on. Moving average terms relate the\nerror (difference between observation and estimated value) at time t to the\nerror at times t-1, t-2, etc. If the time series data\ncontain a stochastic trend (that is, if the data contain a unit root), differencing is\nperformed to eliminate the trend and to obtain a stationary process. The introduction of the\nprinciple of ARIMA model is described briefly by Trottier et al. [27], and the detailed introduction to this method is\navailable in the textbook by Brockwell et al. [6]. We examined unit roots in residual data by using the Augmented Dickey\nFuller-test (ADF test) [8, 9]. These coefficients of the ARIMA model were estimated using the Arima\nfunction in R [13] by monitoring Akaike\u2019s information\ncriterion (AIC). The estimation used data obtained between April 2003 and March 2011 and was\nperformed under the conditions of AR (p) with 0\u2264p\u2264 5 and MA (q) with 0\u2264q\u22645.\nSince the ensemble average with overall mean was subtracted according to Brockwell\u2019s method,\nthe estimation was performed without a constant term. At the same time, we compared both\nconditions with and without drift on the basis of the AIC.",
+            "cite_spans": [
+                {
+                    "start": 937,
+                    "end": 939,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1037,
+                    "end": 1038,
+                    "mention": "6",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1135,
+                    "end": 1136,
+                    "mention": "8",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1138,
+                    "end": 1139,
+                    "mention": "9",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1226,
+                    "end": 1228,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The ARIMA model selected based on the AIC was checked using the Ljung-Box test [19] to ensure that the residuals were independent and\ntemporally equally distributed over time. Furthermore, the significance of the coefficients\nand the stationarity of AR (p) process were tested. The t values,\ncalculated by dividing the coefficients by the standard errors, were used to perform\nt-tests for the significance of the coefficients. The stationarity was\nchecked by calculating the roots for the characteristic polynomial using the polyroot\nfunction in R [14], confirming that the nontrivial\nroots (expressed as absolute values) were greater than 1. Finally, for the examinations of\npossible temporal effects other than week periodicity (see Results), the remaining residuals\nwere tested using the autocorrelation function (ACF) and partial autocorrelation function\n(PACF) [6], using missing-data-omitted residuals.",
+            "cite_spans": [
+                {
+                    "start": 80,
+                    "end": 82,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 549,
+                    "end": 551,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 867,
+                    "end": 868,
+                    "mention": "6",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Prediction of the expected condemned number of swine intestines: The model\ngenerated as described above was used to calculate the expected values and the confidence\nintervals for the interval between April 2011 and May 2013; validation was performed by\ncomparing the resulting values with the observed data for the same interval. The expected\nvalue of the condemned number for the specific day was calculated by summing the ensemble\naverage of the week and the ARIMA-predicted value of the day. The 95% confidence interval of\neach future day was calculated in the same manner. When the actual number of whole or\npartially condemned carcasses in the observed data exceeded the expected value, the\nproducers who sold the condemned carcasses were identified and the annual rate of\ncondemnation by Japanese fiscal year (April to March) was calculated.",
+            "cite_spans": [],
+            "section": "MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Test of the robustness of the model: The ARIMA model predicts the next\nday\u2019s value (for each day) using the records of the past several days, with the duration\ndetermined by the larger order of AR or MA. Therefore, there arises a critical question: how\nsensitive is the model to the very recent condemned numbers of carcasses used for the\nprediction? In order to prove the robustness of the model, we replaced the last actual\ncondemned numbers of the training phase (determined by either AR or MA) with an equal number\nof the numbers generated randomly as follows. The numbers were drawn from a Poisson\ndistribution with the shape parameter lambda (\u03bb) of the 8-year observed data at the training\nphase and were subtracted by week ensemble average. We then re-fitted the ARIMA model for\nthe updated AR and MA based on the least AIC. Then, the differences in deviance between the\n2 predicted models (model 1: predicted by using ensemble average-subtracted actual observed\ndata and model 2: the last few days of the training phase were replaced with randomly\ngenerated numbers as stated above) at the validation phase were tested for significance at a\nlevel of P<0.05 using chi-squared statistics. The statistical processing\nwas performed for 100 iterations.",
+            "cite_spans": [],
+            "section": "MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Analysis of periodicity: The periodograms calculated by FFT show the local\nmaximum value at the 1-week cycle (Fig.\n1). The number of data points replaced with the medians of the week of a day as dummy\nvalues was 145.",
+            "cite_spans": [],
+            "section": "RESULTS",
+            "ref_spans": [
+                {
+                    "start": 110,
+                    "end": 116,
+                    "mention": "Fig.\n1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Table 1 shows the numbers of pig slaughtered, average number of pigs slaughtered in\neach operating day with 2.5 and 97.5 percentiles, rate of condemnation due to\nmycobacteriosis and mean daily number of condemnation estimated in GLMs with quasi-Poisson\nerrors (dispersion parameter 7.1) with P-values for each day of a week. The\naverage numbers of intestines condemned on each day of a week were used in the modeling as\nweek ensemble averages.",
+            "cite_spans": [],
+            "section": "RESULTS",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 7,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Figures 2 and 3 show box plots of the daily numbers of condemned intestines and the rates of\ncondemnation per day, respectively, for the presentation of the variations. Although the\ndaily number of pigs slaughtered was consistent (Table\n1), the daily number of condemned intestines differed according to the day of a\nweek (Table 1, Fig. 2). The number of condemned intestines was highest on Mondays,\nfollowed by Tuesdays. When sub-set of the data consisting of the days which exceeded the\naverage condemnation rate (0.485%) was examined, a similar temporal pattern in the number of\ndays exceeded, and the daily number of condemned intestines among the days of a week was\nobserved (Table 2).",
+            "cite_spans": [],
+            "section": "RESULTS",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 9,
+                    "mention": "Figures 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 14,
+                    "end": 15,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 332,
+                    "end": 338,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 231,
+                    "end": 238,
+                    "mention": "Table\n1",
+                    "ref_id": null
+                },
+                {
+                    "start": 323,
+                    "end": 330,
+                    "mention": "Table 1",
+                    "ref_id": null
+                },
+                {
+                    "start": 681,
+                    "end": 688,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Table 3 shows total number of producers, total days and mean daily number of producers\nbrought pigs between April 1, 2003 and March 31, 2011. The 95% confidence limit overlapped\nbetween Monday and Friday, and no obvious clustering in the number of producers in\nparticular day of a week. Figure 4 shows the frequency of the producers brought pigs according to the annual number of\npigs sold. The median number of pigs brought by a producer in a year was 365.6, and the mean\nwas 1,717.0. The majority of producers brought less than 500 heads per year.",
+            "cite_spans": [],
+            "section": "RESULTS",
+            "ref_spans": [
+                {
+                    "start": 287,
+                    "end": 295,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 0,
+                    "end": 7,
+                    "mention": "Table 3",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Estimation of ARIMA model: The ADF test rejected the null hypothesis of a\nunit root. Thus, the order of differencing or integration (I) was identified as zero. As the\nresult of the estimation on the basis of least AIC, we selected ARIMA (3, 0, 4) with the\nmean zero. The result of the Ljung-Box test (P<0.05) showed that the\nresiduals were independent and evenly distributed over time. The t-tests\nfor significance of coefficients showed that the coefficients of all the options of AR: 1\u20133\nand MR: 1\u20134 were significantly different from zero (Table 4).",
+            "cite_spans": [],
+            "section": "RESULTS",
+            "ref_spans": [
+                {
+                    "start": 542,
+                    "end": 549,
+                    "mention": "Table 4",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Moreover, the roots for the characteristic polynomial were greater than 1, thus confirming\nthe stationarity of the ARIMA model. The ACF and PACF plots of the residuals of the\nweek-ensemble-average-deducted ARIMA model did not show any other peaks and were regarded as\nwhite noise (Fig. 5a and 5b).",
+            "cite_spans": [],
+            "section": "RESULTS",
+            "ref_spans": [
+                {
+                    "start": 281,
+                    "end": 295,
+                    "mention": "Fig. 5a and 5b",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Prediction of the expected condemned number of swine intestines: The\nnumber of days when the actual number of condemned intestines exceeded the upper limit of\nthe 95% confidence interval was three in fiscal year 2011 and 17 in fiscal year 2012 (Figs. 6 and 7). Because the lower limit of the 95% confidence intervals falls below zero, they are\nnot indicated in these figures. The minimum, median and maximum numbers of daily condemned\nintestines of these 20 days were 13, 18.5 and 49, respectively; these values exceeded the\noverall mean number (which was 2.05) for fiscal years 2011 and 2012. Total number of days,\nminimum, median and maximum, and the annual rates of condemnation of the three producers\nindicated in using the upper limit (UL) of the 95% confidence interval are indicated in\nTable 5.",
+            "cite_spans": [],
+            "section": "RESULTS",
+            "ref_spans": [
+                {
+                    "start": 245,
+                    "end": 252,
+                    "mention": "Figs. 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 257,
+                    "end": 258,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 793,
+                    "end": 800,
+                    "mention": "Table 5",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "On the days on which the confidence interval was exceeded, the suppliers of pigs\nslaughtered at the abattoirs included at least one of the three producers with the highest\nannual rates of condemnation due to mycobacteriosis for the respective fiscal year. The\nannual rates of condemnation of these producers were 8.1%, 10.0% and 13.6% (fiscal year\n2011), and 23.1%, 30.5% and 32.9% (fiscal year 2012). Therefore, farm-level outbreaks of\nmycobacteriosis in these producers were highly suspected, given the fact that annual overall\nrates were less than 1% at the Higashimokoto Meat Inspection Center. One producer with high\nannual condemnation rates was represented in the top 3 in both fiscal years.",
+            "cite_spans": [],
+            "section": "RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Test of the robustness of the model: The fitted ARIMA model was ARIMA (3,\n0, 4), meaning that the number of days used to feed the model was selected as the larger\norder of AR (3) or MA (4). Thus, the last 4 values of the observed data during the training\nperiod were used to calculate the first expected value in the validation period. Therefore,\nthese values were replaced with the randomly generated values from a Poisson distribution\nwith a \u03bb of 3.37. Out of the result of the estimations of ARIMA model using replaced data\nfor 100 iterations, ARIMA (3, 0, 4) was selected 99 times, and ARIMA (4, 0, 3) was selected\nonce on the basis of least AIC. Consequently, it became clear that the ARIMA (3, 0, 4) model\nwas appropriate for the next step. As the results of the repetition of \u03c72 test\n(df=4) to examine the difference between deviances for 100 iterations, the statistical\nsignificance (P<0.05) was not shown for 99 times and was shown once. We\nconcluded that the ARIMA (3, 0, 4) model was statistically robust for data analysis.",
+            "cite_spans": [],
+            "section": "RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "This study attempted to perform time series analysis of abattoir data to distinguish\noutbreaks of mycobacteriosis from sporadic cases. Although the prevalence at the animal\nlevel is quite low as it was shown in the results, sporadic cases of swine mycobacteriosis\noccur commonly at the farm level. Morita et al. reported that sporadic\ninfections of MAIC were detected in 870 of 1,200 piggeries (72.5%) between 1988 and 1990 at\na slaughterhouse in Gunma Prefecture, Japan [21].\nDistinguishing the outbreaks from sporadic cases based on daily raw abattoir data is\ntherefore not easy; however, a time series analysis in this study demonstrated the\nfeasibility of its practical application in the real-time detection. The detection of the\noutbreaks is important, because of the public health impact to consumers and economic impact\nto producers of the disease, as stated in the introduction. Komijn et al.\nsuggested that pigs may be an important vehicle for M. avium infections in\nhumans [16]. Real-time detection of the outbreak at\nthe farm level can minimize public health risks by careful detection of the rest of the\ncarcasses of the day and can help the responsible producer to improve farm hygiene\nimmediately. Such collaborative effort between meat inspection and livestock hygiene service\nwould be effective in controlling zoonotic diseases [1].",
+            "cite_spans": [
+                {
+                    "start": 472,
+                    "end": 474,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 985,
+                    "end": 987,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1346,
+                    "end": 1347,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Although this study dealt with only one disease, swine mycobacteriosis, such an analytical\nmethod potentially can be applied to many other diseases of concern in food animals,\npermitting detection of outbreaks at the production level.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "In the present study, we were able to identify the producers with elevated condemnation\nrates of diseased pigs brought into the abattoirs, specifically noting when the number of\ndaily condemned intestines exceeded the upper limit of a 95% confidence interval. These\noutlying events presumably correspond to outbreaks in the respective source farms\nimmediately on the day of inspection. Similar temporal patterns in the daily number of\ncondemned intestines among the days of a week seen in both the whole dataset between 2003\nand 2011, and the days which exceeded the average condemnation rate also supported the\nvalidity of this time series modeling. Traditionally, the statistical processing for\nabattoir data in Japan has been used only to calculate monthly and annual total incidences.\nHence, by the traditional statistical analysis, outbreaks of diseases might not be\nrecognized until total slaughter numbers were obtained, causing a lag in the potential\ndetection of non-sporadic events. Therefore, the application of time series analysis, as\nused in this study, may accelerate the rapid detection of outbreaks.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "While this study demonstrated the above-stated strengths, our analysis has three\nlimitations. First, sensitivity and specificity in diagnosis of mycobacteriosis are not\ntaken into account. The meat inspection for mycobacteriosis in swine intestines is based on\nvisual examination, and misdiagnosis may happen. However, restrictions in expense and time\nprecluded our investigation of the sensitivity and the specificity of the histopathology\nexaminations. In fact, unless molecular technology is used, classical tests would miss some\ninfections. A study using 239 lymph nodes from pig carcasses with caseous lesions showed\nsensitivity of 79.1% by Ziel-Neelsen stain (189 positive) and 69.5% by culture [16], and the kappa value (agreement) of these tests,\ncalculated from the published data, was 0.016, which is interpreted to be slight agreement\n[10]. Second, a separate (though related)\nlimitation is that the present study selected the number of condemned intestines in\nabattoirs due to mycobacteriosis as an objective variable. The prevalence rate among pigs\nslaughtered on a given day might be better variable for modeling to identify suspected\noutbreaks accurately, as disease is a binary response [12]. However, mycobacteriosis is a rare disease with low annual condemned rate\n(0.36% in fiscal year 2012), which makes the data heavily zero-inflated and over-dispersed.\nThird, the present model does not take background farm size into account in detecting\noutbreak of mycobacteriosis. There is a concern that the model may miss an outbreak of a\nsmall-scale farm, and on the other hand, it may be so sensitive against prevalence of the\ndisease in large-scale farm that even sporadic cases may be detected. However, as Fig. 6 showed, the level of detection is low enough to\ndetect outbreak even in the small-scale farms. Moreover, large-scale farms have multiple\nproduction units, and outbreaks can occur within a unit. Thus, the present model can detect\nsuch outbreaks at a sale to slaughterhouse, and we think this would not be a notable\nlimitation.",
+            "cite_spans": [
+                {
+                    "start": 702,
+                    "end": 704,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 847,
+                    "end": 849,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1204,
+                    "end": 1206,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 1722,
+                    "end": 1728,
+                    "mention": "Fig. 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "The periodogram showed the weekly periodicity of the condemned number in this study.\nSpecifically, the periodicity was indicated by the result of FFT without data for\nnon-operating days, and high condemnation numbers were observed on Mondays (Table 1, Fig.\n2), This weekly periodicity was not caused by the periodicity in the number of\nswine submitted for slaughter, as no particular day-specific pattern was detected in the\nnumber of swine brought to the abattoirs (Table\n1). We hypothesize that the producers with high mycobacteriosis prevalence rates\ntended to bring swine to the abattoirs for slaughter on one specific day of the week\n(Monday). However, specific (individual) producers bringing infected swine for slaughter on\nMondays in multiple weeks responsible for the increase were not able to be confirmed (data\nnot shown), and the actual cause of the pattern remains uncertain.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 252,
+                    "end": 258,
+                    "mention": "Fig.\n2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 243,
+                    "end": 250,
+                    "mention": "Table 1",
+                    "ref_id": null
+                },
+                {
+                    "start": 467,
+                    "end": 474,
+                    "mention": "Table\n1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The ARIMA model uses the last several values in time series data to predict the first\nsubsequent expected value and assigning the expected values sequentially to predict the\nsecond subsequent expected value and so on. Therefore, we evaluated the effect of\nstatistical randomness in these last several values by assessing the results for robustness.\nAs a result, replacement of last several actual numbers with random numbers did not affect\nthe model significantly, which in turn proved that the model takes preceded long term\ninformation into account well enough.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "In conclusion, although there are limitations, time series analysis appears to be useful in\nrapid detection of potential outbreaks of swine mycobacteriosis. In Higashi-Mokoto Meat\nInspection Center, this time-series model has been developed further into user-friendly\nsystem on EXCEL fed by R-programing model and just has been applied in daily meat inspection\nservice. This method can be applied to the other zoonotic food-borne diseases, thereby\npromoting increased food safety.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Fig. 1.: A periodogram of pretreated data with only week-days. X-axis shows weeks, and the\nhighest peak corresponds to weekly periodicity. The line at upper right corner\nrepresents 95% confidence interval.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig. 2.: Box plot showing daily number of condemned swine intestines.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Fig. 3.: Box plot showing the rate of condemnation per day.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Fig. 4.: Frequency of the producers brought pigs according to the annual number of pigs sold\nbetween April 1, 2003 and March 31, 2011.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Fig. 5.: ACF (a) and PACF (b) of the residuals of data subtracting a week average ensemble.\nX-axis shows lag day, and Y-axis shows correlation coefficient. The residuals are\ndistributed randomly over lag.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Fig. 6.: The observed condemned numbers of swine intestines due to mycobacteriosis and 95%\nconfidence interval of values predicted by the ARIMA model. A detection of exceeded\nnumber of condemnation was based on the expected value produced by the model, not on\nan optical judgment of the figure.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Fig. 7.: The enlarged view of Fig. 6 for the\ninterval between April 2011 and May 2013.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Effective utilization of the data\nobtained from inspections at the slaughterhouses\u2014Good combination with Livestock Hygiene\nService Center and Meat Inspection Center for farm\u2014",
+            "authors": [],
+            "year": 2013,
+            "venue": "J.\nVet. Epidemiol.",
+            "volume": "17",
+            "issn": "",
+            "pages": "10-14",
+            "other_ids": {
+                "DOI": [
+                    "10.2743/jve.17.10"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "",
+            "authors": [],
+            "year": 2009,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Using autoregressive integrated moving\naverage (ARIMA) models to predict and monitor the number of beds occupied during a SARS\noutbreak in a tertiary hospital in Singapore",
+            "authors": [],
+            "year": 2005,
+            "venue": "BMC Health\nServ. Res.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1472-6963-5-36"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "",
+            "authors": [],
+            "year": 2001,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Automatic time series forecasting: The\nforecast package for R",
+            "authors": [],
+            "year": 2008,
+            "venue": "J. Stat.\nSoftw.",
+            "volume": "27",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Algorithm 419 \u2212 Zeros of a complex\npolynomial",
+            "authors": [],
+            "year": 1972,
+            "venue": "Commun.\nACM",
+            "volume": "15",
+            "issn": "",
+            "pages": "97-99",
+            "other_ids": {
+                "DOI": [
+                    "10.1145/361254.361262"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Mycobacterium avium\ncomplex in patients with HIV infection in the era of highly active antiretroviral\ntherapy",
+            "authors": [],
+            "year": 2004,
+            "venue": "Lancet Infect.\nDis.",
+            "volume": "4",
+            "issn": "",
+            "pages": "557-565",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1473-3099(04)01130-2"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Prevalence of Mycobacterium\navium in slaughter pigs in The Netherlands and comparison of IS1245\nrestriction fragment length polymorphism patterns of porcine and human\nisolates",
+            "authors": [],
+            "year": 1999,
+            "venue": "J. Clin.\nMicrobiol.",
+            "volume": "37",
+            "issn": "",
+            "pages": "1254-1259",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Time series analysis of onchocerciasis\ndata from Mexico: a trend towards elimination",
+            "authors": [],
+            "year": 2013,
+            "venue": "PLoS\nNegl. Trop. Dis.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pntd.0002033"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Forecasting incidence of hemorrhagic\nfever with renal syndrome in China using ARIMA model",
+            "authors": [],
+            "year": 2011,
+            "venue": "BMC Infect. Dis.",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2334-11-218"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "On a measure of lack of fit in time\nseries models",
+            "authors": [],
+            "year": 1978,
+            "venue": "Biometrika",
+            "volume": "65",
+            "issn": "",
+            "pages": "297-303",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/biomet/65.2.297"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Time series analysis of cholera in\nMatlab, Bangladesh, during 1988\u20132001",
+            "authors": [],
+            "year": 2013,
+            "venue": "J. Health Popul.\nNutr.",
+            "volume": "31",
+            "issn": "",
+            "pages": "11-19",
+            "other_ids": {
+                "DOI": [
+                    "10.3329/jhpn.v31i1.14744"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "",
+            "authors": [],
+            "year": 2011,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Prevalence of atypical mycobacteriosis in\nslaughtered swine in Gunma Prefecture and the serovars of the isolates",
+            "authors": [],
+            "year": 1994,
+            "venue": "J. Vet. Med. Sci.",
+            "volume": "56",
+            "issn": "",
+            "pages": "475-479",
+            "other_ids": {
+                "DOI": [
+                    "10.1292/jvms.56.475"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Descriptive and temporal analysis of\npost-mortem lesions recorded in slaughtered pigs in New Zealand from 2000 to\n2010",
+            "authors": [],
+            "year": 2014,
+            "venue": "N. Z. Vet.\nJ.",
+            "volume": "62",
+            "issn": "",
+            "pages": "110-116",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/00480169.2013.853278"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Time series modeling for syndromic\nsurveillance",
+            "authors": [],
+            "year": 2003,
+            "venue": "BMC Med. Inform. Decis.\nMak.",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1472-6947-3-2"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Disease management with ARIMA model in\ntime series",
+            "authors": [],
+            "year": 2013,
+            "venue": "Einstein (Sao\nPaulo)",
+            "volume": "11",
+            "issn": "",
+            "pages": "128-131",
+            "other_ids": {
+                "DOI": [
+                    "10.1590/S1679-45082013000100024"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Modeling and predicting seasonal\ninfluenza transmission in warm regions using climatological parameters",
+            "authors": [],
+            "year": 2010,
+            "venue": "PLoS ONE",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0009450"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Forecasting daily attendances at an\nemergency department to aid resource planning",
+            "authors": [],
+            "year": 2009,
+            "venue": "BMC\nEmerg. Med.",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-227X-9-1"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Stochastic modeling of empirical time\nseries of childhood infectious diseases data before and after mass\nvaccination",
+            "authors": [],
+            "year": 2006,
+            "venue": "Emerg. Themes\nEpidemiol.",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1742-7622-3-9"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "",
+            "authors": [],
+            "year": 2002,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Evaluation of Swiss slaughterhouse data\nfor integration in a syndromic surveillance system",
+            "authors": [],
+            "year": 2014,
+            "venue": "BMC\nVet. Res.",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1746-6148-10-33"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Use of time-series analysis in infectious\ndisease surveillance",
+            "authors": [],
+            "year": 1998,
+            "venue": "Bull. World Health\nOrgan.",
+            "volume": "76",
+            "issn": "",
+            "pages": "327-333",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Mycobacterium\navium-intracellulare otomastoiditis in a young AIDS patient:\ncase report and review of the literature",
+            "authors": [],
+            "year": 2013,
+            "venue": "HIV AIDS\n(Auckl)",
+            "volume": "5",
+            "issn": "",
+            "pages": "61-66",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Development of temporal modelling for\nforecasting and prediction of malaria infections using time-series and ARIMAX analyses:\na case study in endemic districts of Bhutan",
+            "authors": [],
+            "year": 2010,
+            "venue": "Malar.\nJ.",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1475-2875-9-251"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Studies on atypical mycobacteria isolated\nfrom tuberculous lesions of the mesenteric lymph nodes of slaughtered\npigs",
+            "authors": [],
+            "year": 1973,
+            "venue": "Jpn. J. Vet.\nSci.",
+            "volume": "35",
+            "issn": "",
+            "pages": "459-471",
+            "other_ids": {
+                "DOI": [
+                    "10.1292/jvms1939.35.459"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "On time series analysis of public health\nand biomedical data",
+            "authors": [],
+            "year": 2006,
+            "venue": "Annu. Rev. Public\nHealth",
+            "volume": "27",
+            "issn": "",
+            "pages": "57-79",
+            "other_ids": {
+                "DOI": [
+                    "10.1146/annurev.publhealth.26.021304.144517"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Forecasting incidence of dengue in\nRajasthan, using time series analyses",
+            "authors": [],
+            "year": 2012,
+            "venue": "Indian J. Public\nHealth",
+            "volume": "56",
+            "issn": "",
+            "pages": "281-285",
+            "other_ids": {
+                "DOI": [
+                    "10.4103/0019-557X.106415"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "",
+            "authors": [],
+            "year": 1976,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "",
+            "authors": [],
+            "year": 2002,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Mycobacterium avium\ncomplex infection in HIV/AIDS patients",
+            "authors": [],
+            "year": 2008,
+            "venue": "Expert Rev. Anti\nInfect. Ther.",
+            "volume": "6",
+            "issn": "",
+            "pages": "351-363",
+            "other_ids": {
+                "DOI": [
+                    "10.1586/14787210.6.3.351"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "Distributions of the estimators for\nautoregressive time series with a unit root",
+            "authors": [],
+            "year": 1979,
+            "venue": "J. Am.\nStat. Assoc.",
+            "volume": "75",
+            "issn": "",
+            "pages": "427-431",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Likelihood ratio statistics for\nautoregressive time series with a unit root",
+            "authors": [],
+            "year": 1981,
+            "venue": "Econometrica",
+            "volume": "49",
+            "issn": "",
+            "pages": "1057-1072",
+            "other_ids": {
+                "DOI": [
+                    "10.2307/1912517"
+                ]
+            }
+        }
+    }
+}

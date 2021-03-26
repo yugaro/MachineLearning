@@ -1,0 +1,2328 @@
+{
+    "paper_id": "PMC4481840",
+    "metadata": {
+        "title": "Deep sequencing analysis of viral infection and evolution allows rapid and detailed characterization of viral mutant spectrum",
+        "authors": [
+            {
+                "first": "Ofer",
+                "middle": [],
+                "last": "Isakov",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Antonio",
+                "middle": [
+                    "V."
+                ],
+                "last": "Border\u00eda",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "David",
+                "middle": [],
+                "last": "Golan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Amir",
+                "middle": [],
+                "last": "Hamenahem",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Gershon",
+                "middle": [],
+                "last": "Celniker",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Liron",
+                "middle": [],
+                "last": "Yoffe",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Herv\u00e9",
+                "middle": [],
+                "last": "Blanc",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Marco",
+                "middle": [],
+                "last": "Vignuzzi",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Noam",
+                "middle": [],
+                "last": "Shomron",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The study of RNA virus populations is a challenging task. Each population of RNA virus is composed of a collection of different, yet related genomes often referred to as mutant spectra or quasispecies (Lauring and Andino, 2010). This genotypic diversity is the result of the high mutation rate of RNA viruses, which surpasses that of DNA organisms by orders of magnitude (Sanju\u00e1n et al., 2010). This intrinsic high error-rate is largely attributed to the viral RNA dependent RNA polymerases that replicate their genomes (Steinhauer and Holland, 1987). Recent studies demonstrate that this high-error rate is essential for viral adaptation and survival (Ahlquist, 2002; Crotty et al., 2001) and can have significant implications in vaccine and antiviral efficacy (Love et al., 2010; Woo and Reifman, 2012). Changes in the rate at which these errors occur may affect virus infectivity, fitness and pathogenesis (Coffey et al., 2011; Crotty and Andino, 2002; Gn\u00e4dig et al., 2012; Graham et al., 2012). Moreover, it was shown that the diversity within an RNA virus population enhances tissue tropism and dissemination, possibly by improving adaptability and mutual support (Vignuzzi et al., 2005). These studies suggest that characterizing RNA virus populations as a whole, rather than focusing on dominant viral haplotypes (e.g. sequences shared by a significant amount of members in the population) or consensus sequence is far more informative to study pathogenesis. Currently, RNA viruses are genetically characterized through a variety of techniques. The most basic and common method involves classic Sanger sequencing of cDNA produced by RT-PCR of total viral RNA (i.e. consensus sequencing). Although informative, the consensus sequence is the genetic average of all variants within the virus population and the limitations of this method include its low resolution and ability to detect only highly abundant variants. To increase sensitivity and obtain a small, representative sample of viral variants in a given population by Sanger sequencing, individual viruses can be isolated and amplified (biological clones) (Vignuzzi et al., 2005) or RT-PCR amplicons of the whole population can be subcloned into individual plasmids (molecular clones) (Levi et al., 2010; Sanju\u00e1n et al., 2010). An additional method is Single Genome Amplification in which viral RNA is extracted from a sample and copied into cDNA, which in turn is subjected to limiting dilution and PCR amplification. Thus the obtained PCR products are the result of the amplification of one single molecule of cDNA. These PCR products are then sequenced directly without cloning. Nevertheless, these three methods are time intensive and tedious. Furthermore, the limited coverage that can be sampled (generally <100 clones and 100 K nucleotides per population) is far from the range of variants (105\u2013109) typically found in virus samples. Newer high-throughput sequencing (HTS) technologies have expedited research in microbiology in general, including virology, due to their high throughput sequence data production (Capobianchi et al., 2013; Didelot et al., 2012; Radford et al., 2012; Shomron, 2013). The ultra-deep coverage afforded by HTS technologies provides obvious improvements to the characterization of RNA viruses. However, most HTS tools in virology are designed for virus discovery, de novo assembly of unknown viral genomes, and the characterization of viral biodiversity found in different organs, organisms or environments (virome) (Delwart, 2013; Foulongne et al., 2012; Hurwitz and Sullivan, 2013; Roux et al., 2012; Yin et al., 2012). More recently, researchers have begun characterizing the intra-host and intra-strain virus diversity and population dynamics for a variety of viruses of clinical or agricultural relevance. For example, some studies addressed the temporal evolution of variants, the pre-existing presence of drug resistant mutants and the dynamics and emergence of escape mutations in the presence of various types of pressure (Archer et al., 2012b; Barzon et al., 2011; Beerenwinkel and Zagordi, 2011; Bull et al., 2011; Escobar-Guti\u00e9rrez et al., 2012; Grad et al., 2014; Love et al., 2010; Mart\u00ednez et al., 2012; Selleri et al., 2012; T\u00f6pfer et al., 2013; Willerth et al., 2010; Wright et al., 2011). However, virologists using HTS technologies for the purpose of rare variant detection, face major obstacles when studying virus population dynamics, both experimentally and in natural settings due to the relatively high error rates of these technologies (Archer et al., 2012a; Watson et al., 2013; Wright et al., 2011). In order to overcome these hurdles several methods have been proposed (Acevedo et al., 2013; Eriksson et al., 2008; Flaherty et al., 2012; Ghedin et al., 2012; Jabara et al., 2011; Kinde et al., 2011; Macalalad et al., 2012; Mangul et al., 2014; Schmitt et al., 2012; Watson et al., 2013; Wilm et al., 2012; Wright et al., 2011; Wu et al., 2014; Zagordi et al., 2011). These methods can be split into two main categories. The first increases variant detection fidelity by modulating the library preparation step. Schmitt et al. tag and compare both strands of a DNA segment, efficiently pinpointing strand-discordant variants as errors. Jabara et al., Kinde et al., Mangul et al. and Wu et al. use unique identifiers for each sequenced template, facilitating the identification of PCR and sequencing introduced errors and biases. Acevedo et al. used circularized genomic RNA fragments to generate tandem repeats which originate from a single individual within the viral population. Variants that appear in every copy of a set of repeats are then considered true variants. The second category includes methods that utilize post-sequencing parameters in order to identify PCR and sequencing introduced errors. Ghedin et al. utilize the calculated overall baseline error rates while Flaherty et al. and Wilm et al. calculate these rates per sequenced base. Watson et al. apply a two step quality based filtration prior to variant calling and Macalalad et al. used covariation (i.e. phasing) between variants and an expectation maximization-based quality recalibration. Methods which aim to identify the genomes of individual haplotypes in the population (Eriksson et al., 2008; Zagordi et al., 2011) utilize clustering of overlapping reads and haplotype reconstruction in order to correct for sequencing errors. The performance of these methods depends upon the length of sequence reads with long reads enabling the reconstruction of entire viral genome sequences. Some methods (Ghedin et al., 2012; McElroy et al., 2013; Wilm et al., 2012) also include an additional test for strand bias (Guo et al., 2012) in order to further reduce false positive calls. Although these second category methods demonstrate very high specificity (positions without variance are correctly identified as such), sensitivity (pinpointing true variant positions) remains the major limiting factor (Wilm et al., 2012). All of the aforementioned tools focus on accurate variant detection and do not facilitate any downstream analysis and interpretation of the detected variants. Moreover, although the end-users for the aforementioned tools and methods are, for the most part, virologists studying highly diverse viral populations, these tools require the use of unix command line and other computational proficiencies which are not common in the field.",
+            "cite_spans": [
+                {
+                    "start": 202,
+                    "end": 226,
+                    "mention": "Lauring and Andino, 2010",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 372,
+                    "end": 392,
+                    "mention": "Sanju\u00e1n et al., 2010",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 521,
+                    "end": 549,
+                    "mention": "Steinhauer and Holland, 1987",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 653,
+                    "end": 667,
+                    "mention": "Ahlquist, 2002",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 669,
+                    "end": 688,
+                    "mention": "Crotty et al., 2001",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 763,
+                    "end": 780,
+                    "mention": "Love et al., 2010",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 782,
+                    "end": 803,
+                    "mention": "Woo and Reifman, 2012",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 910,
+                    "end": 929,
+                    "mention": "Coffey et al., 2011",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 931,
+                    "end": 954,
+                    "mention": "Crotty and Andino, 2002",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 956,
+                    "end": 975,
+                    "mention": "Gn\u00e4dig et al., 2012",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 977,
+                    "end": 996,
+                    "mention": "Graham et al., 2012",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1170,
+                    "end": 1191,
+                    "mention": "Vignuzzi et al., 2005",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 2120,
+                    "end": 2141,
+                    "mention": "Vignuzzi et al., 2005",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 2249,
+                    "end": 2266,
+                    "mention": "Levi et al., 2010",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 2268,
+                    "end": 2288,
+                    "mention": "Sanju\u00e1n et al., 2010",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 3083,
+                    "end": 3107,
+                    "mention": "Capobianchi et al., 2013",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 3109,
+                    "end": 3129,
+                    "mention": "Didelot et al., 2012",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 3131,
+                    "end": 3151,
+                    "mention": "Radford et al., 2012",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 3153,
+                    "end": 3166,
+                    "mention": "Shomron, 2013",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 3515,
+                    "end": 3528,
+                    "mention": "Delwart, 2013",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 3530,
+                    "end": 3552,
+                    "mention": "Foulongne et al., 2012",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 3554,
+                    "end": 3580,
+                    "mention": "Hurwitz and Sullivan, 2013",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 3582,
+                    "end": 3599,
+                    "mention": "Roux et al., 2012",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 3601,
+                    "end": 3617,
+                    "mention": "Yin et al., 2012",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 4030,
+                    "end": 4050,
+                    "mention": "Archer et al., 2012b",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 4052,
+                    "end": 4071,
+                    "mention": "Barzon et al., 2011",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 4073,
+                    "end": 4103,
+                    "mention": "Beerenwinkel and Zagordi, 2011",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 4105,
+                    "end": 4122,
+                    "mention": "Bull et al., 2011",
+                    "ref_id": "BIBREF67"
+                },
+                {
+                    "start": 4124,
+                    "end": 4154,
+                    "mention": "Escobar-Guti\u00e9rrez et al., 2012",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 4156,
+                    "end": 4173,
+                    "mention": "Grad et al., 2014",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 4175,
+                    "end": 4192,
+                    "mention": "Love et al., 2010",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 4194,
+                    "end": 4215,
+                    "mention": "Mart\u00ednez et al., 2012",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 4217,
+                    "end": 4237,
+                    "mention": "Selleri et al., 2012",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 4239,
+                    "end": 4258,
+                    "mention": "T\u00f6pfer et al., 2013",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 4260,
+                    "end": 4281,
+                    "mention": "Willerth et al., 2010",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 4283,
+                    "end": 4302,
+                    "mention": "Wright et al., 2011",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 4560,
+                    "end": 4580,
+                    "mention": "Archer et al., 2012a",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 4582,
+                    "end": 4601,
+                    "mention": "Watson et al., 2013",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 4603,
+                    "end": 4622,
+                    "mention": "Wright et al., 2011",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 4696,
+                    "end": 4716,
+                    "mention": "Acevedo et al., 2013",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 4718,
+                    "end": 4739,
+                    "mention": "Eriksson et al., 2008",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 4741,
+                    "end": 4762,
+                    "mention": "Flaherty et al., 2012",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 4764,
+                    "end": 4783,
+                    "mention": "Ghedin et al., 2012",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 4785,
+                    "end": 4804,
+                    "mention": "Jabara et al., 2011",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 4806,
+                    "end": 4824,
+                    "mention": "Kinde et al., 2011",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 4826,
+                    "end": 4848,
+                    "mention": "Macalalad et al., 2012",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 4850,
+                    "end": 4869,
+                    "mention": "Mangul et al., 2014",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 4871,
+                    "end": 4891,
+                    "mention": "Schmitt et al., 2012",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 4893,
+                    "end": 4912,
+                    "mention": "Watson et al., 2013",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 4914,
+                    "end": 4931,
+                    "mention": "Wilm et al., 2012",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 4933,
+                    "end": 4952,
+                    "mention": "Wright et al., 2011",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 4954,
+                    "end": 4969,
+                    "mention": "Wu et al., 2014",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 4971,
+                    "end": 4991,
+                    "mention": "Zagordi et al., 2011",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 6277,
+                    "end": 6298,
+                    "mention": "Eriksson et al., 2008",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 6300,
+                    "end": 6320,
+                    "mention": "Zagordi et al., 2011",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 6601,
+                    "end": 6620,
+                    "mention": "Ghedin et al., 2012",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 6622,
+                    "end": 6642,
+                    "mention": "McElroy et al., 2013",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 6644,
+                    "end": 6661,
+                    "mention": "Wilm et al., 2012",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 6712,
+                    "end": 6728,
+                    "mention": "Guo et al., 2012",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 6999,
+                    "end": 7016,
+                    "mention": "Wilm et al., 2012",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "1 Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to better integrate and utilize HTS technology in viral population studies, we developed a computational pipeline and web server, termed ViVan (Viral Variance Analysis). ViVan is a complete pipeline to facilitate the identification, characterization and comparison of sequence variance in deep sequenced virus populations (Fig. 1). ViVan performs per-sample allele rate analysis, translates the detected changes into amino acid changes, compares and outputs several informative metrics regarding each analyzed sample. Applying ViVan on deep sequenced data obtained from samples that were previously characterized by more classical approaches, we achieved superior sensitivity and uncovered novel and potentially crucial aspects of virus populations, which could not have been identified otherwise and in much shorter time scales. ViVan efficiently identified low-frequency minority variants across the entire viral genome and changes in population diversity that correlate with in vitro and in vivo data of previously described mutator and antimutator strains of RNA viruses. Additionally, it accurately determined dosage-dependent and drug-specific alterations in mutation frequency associated with mutagenic, antiviral compounds. More generally, we monitored temporal changes occurring within RNA virus populations during experimental evolution and pinpointed unique variable positions in viral genomes found in specific host environments that are indicative of positive selection and adaptation. Overall, we show that ViVan allows rapid characterization of the genetic composition and population dynamics of rapidly evolving viral mutant spectra.\n",
+            "cite_spans": [],
+            "section": "1 Introduction",
+            "ref_spans": [
+                {
+                    "start": 332,
+                    "end": 338,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Validation data-sets were generated and published by Wilm et al. (2012). LoFreq (Wilm et al., 2012) version 0.6.1 was run on the data using default parameters. Variants with a P-value lower than 0.05 were marked as positive calls, regardless of the strand-bias P-value. VPhaser2 (Yang et al.), was ran on the data using default parameters. In order to maximize sensitivity, all the variants found in the raw output file (without strand-bias or FDR corrections) were considered as positive. In the first data set, Pileup was included in the comparison and every detected non-reference allele was considered as a true variant.",
+            "cite_spans": [
+                {
+                    "start": 53,
+                    "end": 71,
+                    "mention": "Wilm et al. (2012)",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 81,
+                    "end": 98,
+                    "mention": "Wilm et al., 2012",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "2.1 Performance validation ::: 2 Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to test the hypothesis that the frequencies of variants detected only by one replicate (non-reproducible variant; NRV) are higher than expected in the other un-detected samples, for each NRV we counted the number of times its frequency is higher than the other non-reference, non-variant alleles in each replicate. If the NRV frequency is found to be higher in >3 of the replicates (P < 0.05) we determine false negative as the reason of non-reproducibility.",
+            "cite_spans": [],
+            "section": "2.2 Reproducibility confirmation ::: 2 Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The production and generation of DS libraries of passage 3 low fidelity variants is described previously (Gn\u00e4dig et al., 2012). The raw data were reanalyzed for this article. (For additional details see Supplementary Data 3).",
+            "cite_spans": [
+                {
+                    "start": 106,
+                    "end": 125,
+                    "mention": "Gn\u00e4dig et al., 2012",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "2.3 Measuring diversity of viral fidelity variants ::: 2 Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Correlation significance between samples was calculated using Pearson\u2019s correlation. An unpaired Student t-test was used for comparison between samples (temporal accumulation of variations).",
+            "cite_spans": [],
+            "section": "2.4 Statistical methods ::: 2 Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Our ViVan pipeline is composed of both established HTS data analysis tools and in-house Python scripts. The entire process, from raw sequencing data to analysis output can be divided into several steps: (i) quality control, (ii) alignment and Pileup, (iii) variant frequency collection and filtering, (iv) variant annotation, (v) per-sample metrics and supplements and (vi) group comparison. (For additional details see Supplementary Data 4)",
+            "cite_spans": [],
+            "section": "2.5 ViVan pipeline ::: 2 Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We have a sample with minor allele frequency (MAF) f at a genomic locus of interest. The sequencer generates n reads covering that locus. The ith read is denoted yi and is either 0 or 1, where 0 is a non-mutant allele and 1 is the mutant allele. Each read is associated with a quality score pi indicating the probability that it is incorrect. The probability of observing a minor allele is given by:\nP(yi=1;f)=f(1\u2212pi)+(1\u2212f)pi,\nand the probability of observing a reference allele is:\nP(yi=0;f)=1\u2212P(yi=1;f).\nBecause each yi is in fact a Bernoulli variable, we can write down the log of the likelihood function as a sum of log-likelihood functions:\nl(f)=\u2211i=1n[yilog(P(yi=1;f))+(1\u2212yi)log(P(yi=0;f))].\nThe optimum of the log-likelihood function has no closed form expression, but the function can be effectively optimized numerically to find its maximizer, denoted f^MLE, which is the maximum likelihood estimator of the MAF f in the sample. We can then construct a 1 \u2212 \u03b1 confidence set using Wilks\u2019 theorem:\nCI={f\u2208[0,1]|2(l(f^MLE)\u2212l(f))<X1,1\u2212\u03b12},\nwhere X1,1\u2212\u03b12 is the 1 \u2212 \u03b1 percentile of the chi-square distribution with one degree of freedom. This confidence set is consistent when the estimator is not on the boundary, and conservative when it is.",
+            "cite_spans": [],
+            "section": "2.6 Variant sites identification with allele frequency and confidence interval estimation from deep sequence data ::: 2 Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A P-value can be similarly derived using Wilks\u2019 theorem:\np.v.=1\u2212FX12(2(l(fMLE)\u2212l(0)))\nwhere FX12 is the cumulative distribution function of the chi-square distribution with one degree of freedom.",
+            "cite_spans": [],
+            "section": "2.6 Variant sites identification with allele frequency and confidence interval estimation from deep sequence data ::: 2 Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "This analysis is performed for every non-reference allele in every position with sufficient coverage (set at the start of the analysis). The variation rate at position i is defined as the proportion (F) of significant non-reference alleles (k) and is denoted Vi\n\nThe region-wide variation rate is the averaged variation rate across all covered positions in the region (denoted n).\nV=\u2211i=1nVin\n",
+            "cite_spans": [],
+            "section": "2.6 Variant sites identification with allele frequency and confidence interval estimation from deep sequence data ::: 2 Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Minority variants have been shown to be associated with various viral features, such as viral evolution, pathogenesis and the outcome of drug treatment (N\u00e1jera et al., 1995; Vignuzzi et al., 2005). To determine how accurately our method detects low-frequency variants in a viral population, and to demonstrate how it compares with currently available methods, we utilized published data generated by Wilm et al. (2012). We selected three data sets: (i) simulated dengue virus (DENV) population composed of 10 different in-silico generated haplotypes in varying rates (0.1\u201350%) and varying coverage levels (50\u00d7, 100\u00d7, 500\u00d7, 1000\u00d7, 5000\u00d7, 10 000\u00d7), (ii) simulated DENV population using six sequenced clinical samples sub-sampled at various rates. (iii) six library replicates of DENV2 TSV01 viruses. On each data set, we compared ViVan\u2019s performance with LoFreq (Wilm et al., 2012) and VPhaser2 (Yang et al., 2013). As the number of true negatives (non-variant alleles) greatly surpasses the number of true positives (resulting in high specificity values across methods), we chose to focus on positive predictive values (PPVs; Rate of true variants out of the total identified variants) instead of specificity for performance assessment. The first data set was used to test performance as a function of sequencing coverage. In this data set, we also tested SAMtools pileup\u2019s (Li et al., 2009) performance in order to mark the upper limit of sensitivity and to demonstrate the importance of variant significance testing. We demonstrated that ViVan presents a significantly higher sensitivity across coverage levels compared with LoFreq and VPhaser2 (P < 0.005; Fig. 2A and B), identifying 90 \u00b1 5% of the variants with frequencies <0.2% (64 and 0% in LoFreq and VPhaser2, respectively). The PPV cost of such an increase in sensitivity was found to be minor and significant only in low coverage levels (<500\u00d7; P < 0.01) with a PPV of 0.968 \u00b1 0.028 (specificity of 0.99995 \u00b1 0.00004) in 50\u00d7 coverage. Calling variants using pileup, resulted in the highest sensitivity across coverage levels, but with a much higher cost in PPV. pileup\u2019s PPV ranged from 0.376 \u00b1 0.022 in 50\u00d7 to 0.066 \u00b1 0.00003 in 10 000\u00d7 (93.4% of detected variants are false). This emphasizes the need for computational variant assessment methods such as those employed by ViVan, LoFreq and VPhaser2 in order to greatly reduce the number of false positive calls. The second data set, which includes real sequencing data, was used to demonstrate ViVan\u2019s performance in the context of coverage and quality biases (Fig. 2C). In this set, variants identified in positions that differ from the reference in any of the six virus strains composing the simulated population were considered true variants (Table 1.)\n\n\n",
+            "cite_spans": [
+                {
+                    "start": 153,
+                    "end": 172,
+                    "mention": "N\u00e1jera et al., 1995",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 174,
+                    "end": 195,
+                    "mention": "Vignuzzi et al., 2005",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 400,
+                    "end": 418,
+                    "mention": "Wilm et al. (2012)",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 861,
+                    "end": 878,
+                    "mention": "Wilm et al., 2012",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 894,
+                    "end": 911,
+                    "mention": "Yang et al., 2013",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 1374,
+                    "end": 1389,
+                    "mention": "Li et al., 2009",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "3.1 Performance validation ::: 3 Results",
+            "ref_spans": [
+                {
+                    "start": 1658,
+                    "end": 1664,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 2573,
+                    "end": 2579,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 2758,
+                    "end": 2765,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Because the coverage in this data set was low (100\u00d7) ViVan\u2019s PPV was the lowest (0.983, 0.995 and 0.99 for ViVan, LoFreq and VPhaser2, respectively). However, ViVan demonstrated the highest sensitivity out of the three methods (0.947, 0.828 and 0.803 for ViVan, LoFreq and VPhaser2, respectively), identifying all but one of the variants found in the other methods (n = 208), and detecting 24 additional true, low-frequency variants at the cost of four false positive variants. As we demonstrate using the first data-set, a coverage increase should compare ViVan\u2019s PPV to the other methods\u2019 while maintaining higher sensitivity.",
+            "cite_spans": [],
+            "section": "3.1 Performance validation ::: 3 Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The third and final data set, composed of six technical replicates of the same sequenced DENV population, was used to test ViVan\u2019s reproducibility. Reproducibility was calculated as the percentage of variants found in more than one replicate, out of the total number of detected variants. When limiting the minimal variant rate for detection, we see that ViVan demonstrates the highest reproducibility (>91.7%) among methods in variants with frequencies >0.5%. Lower variant frequencies thresholds resulted in lower reproducibility across tools, with ViVan detecting the highest number of variants but at the cost of lower reproducibility (Fig. 2D). We suspected that this decrease in reproducibility is due to coverage limitation and in fact represents false negative calls in extreme low frequency variants in the disagreeing replicates in oppose to false positive calls in the replicate with detected variant. We therefore reviewed the allele frequencies in the variants not reproduced and found that the majority of them (93/133) did demonstrate a higher frequency than expected in the disagreeing replicates (P < 0.05; For more details see Methods section), suggesting that they are in fact true variants. Simply put, ViVan managed to detect extreme low coverage variants in some of the replicates, which, given sufficient coverage, would have been reproduced in the other samples as well. This demonstrates that ViVan maintains high reproducibility (88.4%) even in low variant rates, given sufficient coverage (Fig. 2D).",
+            "cite_spans": [],
+            "section": "3.1 Performance validation ::: 3 Results",
+            "ref_spans": [
+                {
+                    "start": 640,
+                    "end": 646,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1517,
+                    "end": 1523,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Although HTS could be a less labor-intensive approach to quantifying diversity than more classic methods involving Sanger sequencing or biochemical incorporation assays, the relatively high error rate of the technology might prove to be too great to distinguish between subtle differences in the genetic diversity of populations. To test whether ViVan can detect such differences, we deep sequenced wild type CVB3 virus and two well-characterized low fidelity mutator strains, I230F and F232Y, that were shown by classical assays to generate 3-fold more mutations than wild type (Gn\u00e4dig et al., 2012). By molecular cloning, wild type virus was found to have a diversity measure of 0.00043 mutations/nucleotide, while the low fidelity variants presented roughly 3-fold more (0.00123 mutations/nucleotide each) (Fig. 3a). When all minority variants identified by ViVan were taken into account, regardless of their frequency (no cut-off threshold), the diversity of all three virus populations were significantly higher. Wild type virus, in particular, had higher than expected frequencies of 0.00107 mutations/nucleotide in the region previously sequenced by Gn\u00e4dig et al., and 0.000996 mutations/nucleotide across the entire genome. These data suggest that the higher sensitivity of HTS identifies more extremely low-frequency variants than would otherwise be detected by other available methods. Indeed, when cut-off thresholds of 0.005 or 0.01 were set, ViVan generated more conservative mutation profiles that more closely resembled previously reported values for wild type and low fidelity variants obtained by molecular clone sequencing(Gn\u00e4dig et al., 2012; Levi et al., 2010). Being able to identify subtle changes in population diversity is important for RNA viruses, because the naturally high mutation frequencies of these viruses confer susceptibility to conditions that further increase mutation rates above a maximal threshold. This increased mutation rate may result in extinction, also termed lethal mutagenesis (Bull et al., 2007; Vignuzzi et al., 2005).\n",
+            "cite_spans": [
+                {
+                    "start": 580,
+                    "end": 599,
+                    "mention": "Gn\u00e4dig et al., 2012",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1641,
+                    "end": 1660,
+                    "mention": "Gn\u00e4dig et al., 2012",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1662,
+                    "end": 1679,
+                    "mention": "Levi et al., 2010",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 2026,
+                    "end": 2043,
+                    "mention": "Bull et al., 2007",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 2045,
+                    "end": 2066,
+                    "mention": "Vignuzzi et al., 2005",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "3.2 Identifying differences in population diversity and mutagen effects ::: 3 Results",
+            "ref_spans": [
+                {
+                    "start": 810,
+                    "end": 816,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Chemical agents inducing mutations, i.e. mutagens, are being explored as possible antiviral agents (Crotty and Andino, 2002; Graci and Cameron, 2008). An improved characterization of the effect of RNA mutagens and the genetic modulations they induce may facilitate their development as antiviral drugs. With this in mind, we used ViVan to compare virus progeny from cells infected with CVB3 and treated with known mutagens, with an untreated control infection. The drugs tested were ribavirin (R, 400 \u00b5M), 5-azacytidine (AZC, 300 \u00b5M) and 5-fluorouracil (FU, 150 \u00b5M). Each base analog is known to induce different types of mutations, with biases that can be considered genetic signatures of treatment: ribavirin promotes G to A and C to U transitions (Crotty et al., 2000), 5-AZC promotes G to A transitions and G to C, C to G and C to A transversions, and 5-FU promotes U to C and A to G transitions (Grande-P\u00e9rez et al., 2002) (Fig. 3b). Using our pipeline to quantify the mutational bias across the entire viral genome, the untreated sample revealed that transition mutations are more common than transversions, as expected, and that the most commonly occurring transition mutations were A to G and U to C, as previously reported (Levi et al., 2010). For treatment with AZC, a significant increase in G to A transitions and in the three transversions, particularly for C to G, was observed. The deep sequence profile for FU treatment revealed the most commonly induced mutations to be the expected U to C and A to G transitions. Finally, the ribavirin treated population also presents the expected G to A and C to U transitions with the highest frequencies. Another aspect of mutagenic drug treatment that can be readily demonstrated by ViVan is dosage-dependence, characterization of which would normally require classic sequencing of hundreds of molecular clones (Levi et al., 2010). We compared a CVB3 sample without treatment, with infected samples treated with three concentrations of ribavirin (100, 200 and 400 \u00b5M). The results confirmed a dose-dependent increase in the ribavirin-associated transition mutations (C to U and G to A) compared with the other transition (A to G and U to C) and transversion mutations, which showed no dose dependent effect (Fig. 3c).",
+            "cite_spans": [
+                {
+                    "start": 100,
+                    "end": 123,
+                    "mention": "Crotty and Andino, 2002",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 125,
+                    "end": 148,
+                    "mention": "Graci and Cameron, 2008",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 751,
+                    "end": 770,
+                    "mention": "Crotty et al., 2000",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 901,
+                    "end": 926,
+                    "mention": "Grande-P\u00e9rez et al., 2002",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1233,
+                    "end": 1250,
+                    "mention": "Levi et al., 2010",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1868,
+                    "end": 1885,
+                    "mention": "Levi et al., 2010",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "3.2 Identifying differences in population diversity and mutagen effects ::: 3 Results",
+            "ref_spans": [
+                {
+                    "start": 929,
+                    "end": 935,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 2264,
+                    "end": 2270,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "For biologists interested in RNA virus evolution, a primary goal is to identify genotypes and mutations undergoing positive selection that would represent adaptive mutations to the experimental conditions, requiring comparison between numerous samples and controls. Precise comparison of viral population composition is difficult to carry out using common technologies as it requires either an immense amount of whole-genome sequencing of individuals from each population to be compared, or prior knowledge regarding the expected gene or allele targeted by selection. In order to demonstrate ViVan\u2019s efficiency in pinpointing these functional mutational hotspots in viral populations, we analyzed deep sequence data of samples produced in a previously published experimental evolution study (Coffey and Vignuzzi, 2011). In this work, wild type chikungunya virus that normally cycles between mosquito and mammalian hosts, was adapted to either only mammalian host cells, or cycled between mammalian and mosquito cells (Coffey and Vignuzzi, 2011). We Applied ViVan on three sequenced samples: the initial virus population (stock virus); following seven passages in HeLa cells (p7 HeLa); and after alternating passages between HeLa cells and mosquito C6/36 cells (p7 alt). In the original study using molecular cloning data (Coffey and Vignuzzi, 2011), mammalian-host adapted virus presented the highest amount of genetic diversity compared with the initial starting population, while mammalian-mosquito passage had an intermediate diversity. Analysis with ViVan corroborated these observations. Setting a diversity threshold of >0.005 we found that the stock virus had a total of 305 minority variants. This diversity increased to 443 after serial passage in HeLa cells, and 419 when alternating between HeLa and C6 cells. In the original article, the presence of a more or less diverse set of neutralizing antibody-resistant variants was used as a surrogate for overall genetic diversity that could not be measured by classic sequencing. With our new approach, we were able to ascertain the variant rate across the entire E2 sequence containing these epitopes, detecting variants in extreme low rates. In correlation with the measured neutralizing antibody escape in the original studies, we noticed a significantly higher total variance in the p7 HeLa mammalian cell passaged E2 protein (1.6603) when compared with the mammalian-insect alternating passage (1.4262) (one tailed t-test, P = 0.00004) and the starting stock virus (1.3587) (one tailed t-test, P = 0.00018). Another powerful feature of the ViVan pipeline, is the ease with which it allows comparing and identifying minority variants in one group of samples that are common to that group and not found in a second group of samples. In analyzing this batch of samples, we assessed all the positions across the viral genome in which there was a significant variant in the alternating passage sample that had cycled through mosquito cells, which was not found in any of the other samples (that encountered only mammalian cells) above a rate of 0.001. We detected 396 such variants (Table 2 and Supplementary Data 1). Interestingly, only nine variants had frequencies above 1% of the total population, and the variant exhibiting the highest rate (62%), was an aspargine to lysine change, position 112 of the non-structural protein 4 (nsp4). It is tempting to speculate that this mutation in the nsp4 polymerase may represent a mechanism of adaptation to retain replicative capacity in disparate hosts.\n",
+            "cite_spans": [
+                {
+                    "start": 792,
+                    "end": 817,
+                    "mention": "Coffey and Vignuzzi, 2011",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1018,
+                    "end": 1043,
+                    "mention": "Coffey and Vignuzzi, 2011",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1322,
+                    "end": 1347,
+                    "mention": "Coffey and Vignuzzi, 2011",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "3.3 Comparing between samples in evolutionary studies: identifying population-specific acquired mutations that correlate with phenotypic differences ::: 3 Results",
+            "ref_spans": [
+                {
+                    "start": 3140,
+                    "end": 3147,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "As RNA virus populations adapt to an environment, new mutations will amplify and eventually dominate the population to change the consensus sequence if the selective pressures remain constant over the long-term. However, with HTS technology the emergence of such mutations would expectedly be detectable long before dominating the viral population, a significant improvement to both experimental and clinical studies. As an example, the detection of low-frequency adaptive variants in an RNA viral population prior to and during antiretroviral drug treatment could result in more optimized HIV treatment protocols (N\u00e1jera et al., 1995). To validate ViVan in characterizing genome-wide temporal changes during virus evolution, we sequenced samples infected by three different coxsackie virus variants [WT, the A372V high fidelity, antimutator strain and the S299T low fidelity, mutator strain (Levi et al., 2010)] at three different time points (1, 60 and 120 replication cycles in HeLa cell culture), with each series performed as biologically independent triplicates. As with any RNA virus, we expected rapid generation of mutations throughout the viral population. We analyzed the variant rate for each sample and performed group comparisons based on time point and virus strain. The results demonstrated a significantly higher variation rates in the later passages, when comparing passage 1 against both passage 60 and 120, and comparing passage 60 against passage 120 (one tailed t-test, maximal P = 0.00016). This significant accumulation of mutations across viral genome was observed in all three coxsackie virus strains tested (Fig. 4) and is indicative of the temporal accumulation of variants in the sequenced viral population, regardless of the strain\u2019s intrinsic replication fidelity. Further highlighting the sensitivity of this pipeline, the high fidelity A372V variant and the low fidelity S299T variant, respectively maintained lower and higher diversity throughout the 120 replication cycles and in all triplicate series. We then asked which variants specifically demonstrated a constant increase in rate, as passages progressed, that could be indicative of positive selection and could help elucidate functional determinants throughout a genome. For this purpose, we reviewed the accumulated changes in each coxsackie virus variant (WT, A372V, S299T) over the three time points. Using ViVan, we were able to collect all the positions across each variant\u2019s genome which demonstrated a progressive increase in variant allele frequency. We then reviewed all the variants that either (i) accumulated in more than one population, or (ii) accumulated at the highest rate. Out of the four variants that accumulated in all three virus variants (Table 3), three occurred within viral capsid proteins VP3 and VP4, consistent with the higher evolutionary rates of viral structural proteins and the localization of many receptor binding and antigenic epitopes within the VP3 protein (Carson et al., 1997, 2011). The fourth variant occurred within the viral polymerase (3D; S452P).\n\n\n",
+            "cite_spans": [
+                {
+                    "start": 615,
+                    "end": 634,
+                    "mention": "N\u00e1jera et al., 1995",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 893,
+                    "end": 910,
+                    "mention": "Levi et al., 2010",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 2989,
+                    "end": 3008,
+                    "mention": "Carson et al., 1997",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 3010,
+                    "end": 3014,
+                    "mention": "2011",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "3.4 Comparing between samples in evolutionary studies: monitoring temporal changes and emerging variants during virus evolution ::: 3 Results",
+            "ref_spans": [
+                {
+                    "start": 1635,
+                    "end": 1641,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2754,
+                    "end": 2761,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Interestingly, the only accumulated variant in the viral 3B protein was found in five different population sets (all of the A372V populations and two of the WT). Out of the variant positions, common to more than one population and having a rate >5% in passage 120 (n = 11; Table 4), seven were within viral capsid proteins, two in 3D, one in 3A and one in 3B. The 3D mutations are the known natural fidelity variants of the polymerase (Levi et al., 2010): S299T, known to decrease viral replication fidelity, and A372V, known to increase viral replication fidelity. By passage 120, the S299T variant, accumulated to 5 and 1% of the A372V and WT populations, respectively. A372V accumulated in all three WT populations with an average rate of 37% at passage 120.\n",
+            "cite_spans": [
+                {
+                    "start": 436,
+                    "end": 453,
+                    "mention": "Levi et al., 2010",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "3.4 Comparing between samples in evolutionary studies: monitoring temporal changes and emerging variants during virus evolution ::: 3 Results",
+            "ref_spans": [
+                {
+                    "start": 273,
+                    "end": 280,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "These observations suggest that viral populations may fine tune their mutation rates during their infection cycles by generating mixed populations of fidelity variants, so as to increase adaptability (fidelity decrease) while maintaining genetic integrity (fidelity increase).",
+            "cite_spans": [],
+            "section": "3.4 Comparing between samples in evolutionary studies: monitoring temporal changes and emerging variants during virus evolution ::: 3 Results",
+            "ref_spans": []
+        },
+        {
+            "text": "It is becoming increasingly clear that studying only the consensus sequence of an RNA virus insufficiently summarizes the viral population. Often, increases in fitness and changes in adaptability are observed without changes in the consensus sequence (Coffey et al., 2008; Sanz-Ramos et al., 2008). This hints that minority variants within the viral population are responsible for this effect. Virus diversity represents a pool of randomly generated minority variants, available for adaptation and gradually amplified in frequency through selection. Only with the advent of HTS has studying such minorities become feasible but we are missing standard validated tools to mine, analyze and compare this information from multiple samples. Currently available tools require a high degree of computational savoir-faire, and for more detailed RNA virus population analysis, the user must write additional scripts.",
+            "cite_spans": [
+                {
+                    "start": 252,
+                    "end": 271,
+                    "mention": "Coffey et al., 2008",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 273,
+                    "end": 296,
+                    "mention": "Sanz-Ramos et al., 2008",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "4 Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our computational pipeline has several advantages over other methods. We use a robust algorithm, based on each variant allele's initial rate and read qualities, to differentiate between sequencing-introduced errors and actual population variants, facilitating accurate variant assessment even at extremely low rates. Another advantage of the pipeline is the set of different outputs we provide for analysis (Fig. 1, Supplementary Data 2). First, we provide a table of the synonymous and non-synonymous changes for each significantly variable position, organized by gene and position for the whole viral genome. Second, we provide a battery of metrics including nucleotide substitution matrix, transition/transversion frequencies and variant allele rates. We also include the consensus changes found to be different from the original reference, enabling reconstruction of the genuine consensus for a given sample. Third, we provide three files with pairwise comparisons supplying the mutations found to be different or common among samples. These outputs are rapid and powerful, enabling comprehensive analysis of large data sets. Importantly, we have made ViVan available and accessible for users without computational proficiency in the virology community through an easy-to-use web server, enabling a complete analysis given raw deep sequencing data.",
+            "cite_spans": [],
+            "section": "4 Discussion",
+            "ref_spans": [
+                {
+                    "start": 408,
+                    "end": 414,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Using low fidelity CVB3 variants that generate subtle, yet biologically confirmed, differences in mutant composition, we showed that detected variation frequencies correlated with the mutation frequencies obtained by molecular cloning in the original paper (Gn\u00e4dig et al., 2012). We also showed that sequence analysis of mutagen treated virus populations can identify the specific transition/transversion footprints for three different mutagens, as well as reveal dose-dependent effects. The increased ease and sensitivity of this approach could help identify new compounds with antiviral mutagenic activity and distinguish statistically significant changes that would otherwise be overlooked by classic methods. This may help answer the debate as to whether mutagens such as ribavirin have mutagenic activity at physiological concentrations, as in the treatment of chronic HCV infection (Dusheiko et al., 1996).",
+            "cite_spans": [
+                {
+                    "start": 258,
+                    "end": 277,
+                    "mention": "Gn\u00e4dig et al., 2012",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 889,
+                    "end": 910,
+                    "mention": "Dusheiko et al., 1996",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "4 Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition to comparing samples from different environmental conditions, we determined the sensitivity of the pipeline in detecting temporal changes in minority variant composition within the same virus population. We serially passaged wild type coxsackie, as well as naturally occurring high (A372V) and low (S299T) fidelity strains in a cell line to which the virus is already well adapted, to favor a general expansion of more neutral or high fitness variants in this highly permissive environment. Gene by gene analysis of variance corroborated with previous data on picornaviruses, where variability and mutation is seemingly most tolerated in the structural proteins (P1 region) and the P3 non-structural region; while the non-structural P2 region is less variable (Kistler et al., 2007). A very interesting and unexpected observation was the emergence of fidelity altering mutations in late passages of the wild type strain that is generally considered to be genetically stable. Unlike other fidelity altering mutations isolated in our lab (Gn\u00e4dig et al., 2012), these two alleles exist in some CVB3 isolates (Levi et al., 2010), but the natural emergence of fidelity variants has not been previously observed. That they emerge within the wild type population during longer-term experimental evolution raises the intriguing possibility that fidelity modulation may occur in natural settings, according to host environment. Such modulation of fidelity would be reminiscent of environment-dependent changes in bacterial mutation rates (Sniegowski et al., 1997). Our method is intended for high coverage short read data, it does not incorporate information regarding variants detected on the same read and therefore does not support haplotype reconstruction (Eriksson et al., 2008; Zagordi et al., 2011). Our method is also limited to per-position analysis and therefore it cannot directly account for compensatory mutations. If one wishes to identify such associated variants, we suggest an initial analysis using ViVan in order to identify significant variants followed by a deeper assessment of the data in regards to adjacent variants found within a read length of each other. The examples presented in this work were performed using virus references matching the molecular clone (plasmid) that is later used to produce the viruses themselves. These references are extremely well characterized and serve as a good template for variant analysis. In cases where such appropriate references are not available, we recommend either (i) an initial ViVan run on the data and then a re-run using the modified consensus sequence produced, or (ii) an initial assembly of the viral genome using appropriate assembly tools (Bankevich et al., 2012; Simpson et al., 2009; Zerbino and Birney, 2008) and using the assembled genome as input for ViVan.",
+            "cite_spans": [
+                {
+                    "start": 773,
+                    "end": 793,
+                    "mention": "Kistler et al., 2007",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1049,
+                    "end": 1068,
+                    "mention": "Gn\u00e4dig et al., 2012",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1118,
+                    "end": 1135,
+                    "mention": "Levi et al., 2010",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1542,
+                    "end": 1565,
+                    "mention": "Sniegowski et al., 1997",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 1764,
+                    "end": 1785,
+                    "mention": "Eriksson et al., 2008",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1787,
+                    "end": 1807,
+                    "mention": "Zagordi et al., 2011",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 2721,
+                    "end": 2743,
+                    "mention": "Bankevich et al., 2012",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 2745,
+                    "end": 2765,
+                    "mention": "Simpson et al., 2009",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 2767,
+                    "end": 2791,
+                    "mention": "Zerbino and Birney, 2008",
+                    "ref_id": "BIBREF64"
+                }
+            ],
+            "section": "4 Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In this article, we have presented a new bioinformatic pipeline for the study of HTS data. We hope this tool will help standardize and facilitate the analysis of data this technology provides. As we have illustrated with our experimental work, it can be used for studies ranging from the more practical, detection of resistant mutations and effects of antiviral treatments, to the more theoretical temporal characterization of the population in evolutionary studies. Our analysis pipeline provides an extremely low allele rate cut-off threshold to determine statistically significant minority variants, as well as several metrics and statistics on population diversity, transitions and transversions bias, synonymous and non-synonymous mutation distributions, gene-by-gene and whole-genome analysis. Furthermore, it readily performs group sample comparisons, a feature not currently available to the scientific community interested in experimental evolution or analysis of clinical and field samples. This set of outputs, coupled with an online web server, sets ViVan as an extensive analysis tool which can be readily used by the virology community.",
+            "cite_spans": [],
+            "section": "4 Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Performance comparison on simulated virus population:\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2.: Chikungunya alternating passages unique mutations\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3.: Allele rate change throughout replication passages\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4.: Variant positions, common to more than one population and having a rate >5% in passage 120\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Fig. 1.: Schematic of ViVan pipeline workflow. The analysis starts with raw sequence reads output by deep sequencing of a virus population sample. First, these raw reads undergo quality trimming where low quality bases are removed from both ends of the read. Second, these quality reads are aligned against a user-supplied reference sequence and a pileup is produced for each position. The pileup output is then analyzed, true variants are identified, variant frequencies are modified and confidence intervals calculated. From these modified significant variants, an assortment of variation metrics is produced, including information regarding the predicted amino acid change in each protein, the variation rates across the viral genome, transition/transversion rates and specific nucleotide change tables. Additionally, once variant frequencies have been calculated, a consensus sequence is produced, utilizing the major allele in each position. This modified consensus sequence can then be used for the alignment of the initial quality reads, hence improving overall alignment and accuracy. Once the analysis is done for each virus sequence sample, a comparison is performed between groups of samples in order to pinpoint both common and unique variants in each group",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig. 2.: Performance validation of ViVan using data sets compiled by Wilm et al.\n(A,B) Simulated sequencing of an in-silico generated virus population with varying coverage levels. Performance is demonstrated using sensitivity and the F1-score which incorporates both sensitivity and PPV (2*(Sensitivity*PPV)/(Sensitivity + PPV)). As coverage increases, low frequency variants are detected and sensitivity levels rise across methods. ViVan demonstrates high sensitivity and specificity across coverage levels with only a minor cost in PPV, maintaining an overall F1-score higher than the other methods. SAMtools pileup\u2019s decline in F1-score is the result of a decrease in PPV as coverage increases. (C) Simulated virus population, using sub-sampling of clinical samples with known variant locations. Comparing true positive variant calls between methods, ViVan demonstrated the highest sensitivity, identifying all but one of the variants detected by the other methods, and detecting 24 additional low-rate variants. (D) Reproducibility analysis using six libraries replicates of the same virus population. Reproducibility was defined as % of variants detected in more than one replicate. ViVan demonstrates high reproducibility in the higher frequency levels (>0.5%) which decreases as frequencies drop. This decrease in reproducibility is due to detection of extremely low frequency variants by ViVan only in some of the replicates and may be alleviated by sufficient coverage",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Fig. 3.: Monitoring population diversity and mutational profiles. (a) The diversity (mutations/nucleotide site) of wild type CBV3 and low fidelity variants I230F and F232Y as previously determined by molecular clone sequencing of a capsid coding region (Gn\u00e4dig et al), were determined by deep sequencing across the same region (capsid) or across thewhole genome (genome), setting a minimal rate threshold (>0.005 or >0.01) or without a threshold (no cut-off) (b) Transition and transversion biases resulting from mutagen drug treatment. HeLa cells were infected with CVB3 and treated with the mutagens, 5-AZC, 5-FU or ribavirin (R) or left untreated (control). The frequency (% of total virus population) presenting specific transitions and transversions in deep sequence data were classified by ViVan. (c) Dose-dependent effects of mutagen treatment detected by deep sequencing. HeLa cells were infected with CVB3 with increasing concentrations of ribavirin (0, 100, 200 and 400 \u00b5M) and the dose dependent increase in the frequency (% of total virus population) of specific transition (C > U, G > A, U > C, A > G; dashed lines) and transversion (labeled \u2018others\u2019; solid lines) were determined by ViVan",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Fig. 4.: Temporal accumulation of variants found in viral populations. The total number of minority variants found in each CVB3 strain (wild type WT, high fidelity A372V and low fidelity S299T) was calculated for each sequenced passage (1, 60 and 120 replication cycles). Variation rates (the average proportion of variant alleles across covered bases in the genome sequence) \u00b1 SEM are shown, from three biological replicates, (P < 0.0001)",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Mutational and fitness landscapes of an RNA virus revealed through population sequencing",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Acevedo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nature.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Next-generation sequencing technology in clinical virology",
+            "authors": [
+                {
+                    "first": "M.R.",
+                    "middle": [],
+                    "last": "Capobianchi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Clin. Microbiol. Infect.",
+            "volume": "19",
+            "issn": "",
+            "pages": "15-22",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Variations of coxsackievirus B3 capsid primary structure, ligands, and stability are selected for in a coxsackievirus and adenovirus receptor-limited environment",
+            "authors": [
+                {
+                    "first": "S.D.",
+                    "middle": [],
+                    "last": "Carson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Virol.",
+            "volume": "85",
+            "issn": "",
+            "pages": "3306-3314",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Purification of the putative coxsackievirus B receptor from HeLa cells",
+            "authors": [
+                {
+                    "first": "S.D.",
+                    "middle": [],
+                    "last": "Carson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Biochem. Biophys. Res. Commun.",
+            "volume": "233",
+            "issn": "",
+            "pages": "325-328",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Arbovirus high fidelity variant loses fitness in mosquitoes and mice",
+            "authors": [
+                {
+                    "first": "L.L.",
+                    "middle": [],
+                    "last": "Coffey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "108",
+            "issn": "",
+            "pages": "16038-16043",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Arbovirus evolution in\u00a0vivo is constrained by host alternation",
+            "authors": [
+                {
+                    "first": "L.L.",
+                    "middle": [],
+                    "last": "Coffey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "105",
+            "issn": "",
+            "pages": "6970-6975",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Host alternation of chikungunya virus increases fitness while restricting population diversity and adaptability to novel selective pressures",
+            "authors": [
+                {
+                    "first": "L.L.",
+                    "middle": [],
+                    "last": "Coffey",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Vignuzzi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Virol.",
+            "volume": "85",
+            "issn": "",
+            "pages": "1025-1035",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Implications of high RNA virus mutation rates: lethal mutagenesis and the antiviral drug ribavirin",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Crotty",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Andino",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Microbes Infect.",
+            "volume": "4",
+            "issn": "",
+            "pages": "1301-1307",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "RNA virus error catastrophe: direct molecular test by using ribavirin",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Crotty",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "98",
+            "issn": "",
+            "pages": "6895-6900",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "The broad-spectrum antiviral ribonucleoside ribavirin is an RNA virus mutagen",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Crotty",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nat. Med.",
+            "volume": "6",
+            "issn": "",
+            "pages": "1375-1379",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "A roadmap to the human virome",
+            "authors": [
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Delwart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "PLoS Pathog.",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "RNA-dependent RNA polymerases, viruses, and RNA silencing",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Ahlquist",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Science",
+            "volume": "296",
+            "issn": "",
+            "pages": "1270-1273",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Transforming clinical microbiology with bacterial genome sequencing",
+            "authors": [
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Didelot",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nat. Rev. Genet.",
+            "volume": "13",
+            "issn": "",
+            "pages": "601-612",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Ribavirin treatment for patients with chronic hepatitis C: results of a placebo-controlled study",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Dusheiko",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "J. Hepatol.",
+            "volume": "25",
+            "issn": "",
+            "pages": "591-598",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Viral population estimation using pyrosequencing",
+            "authors": [
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Eriksson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS Comput. Biol.",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Identification of hepatitis C virus transmission using a next-generation sequencing approach",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Escobar-Guti\u00e9rrez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Clin. Microbiol.",
+            "volume": "50",
+            "issn": "",
+            "pages": "1461-1463",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Ultrasensitive detection of rare mutations using next-generation targeted resequencing",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Flaherty",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res.",
+            "volume": "40",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Human skin microbiota: high diversity of DNA viruses identified on the human skin by high throughput sequencing",
+            "authors": [
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Foulongne",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Presence of oseltamivir-resistant pandemic A/H1N1 minor variants before drug therapy with subsequent selection and transmission",
+            "authors": [
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Ghedin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Infect. Dis.",
+            "volume": "206",
+            "issn": "",
+            "pages": "1504-1511",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Coxsackievirus B3 mutator strains are attenuated in\u00a0vivo",
+            "authors": [
+                {
+                    "first": "N.F.",
+                    "middle": [],
+                    "last": "Gn\u00e4dig",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "109",
+            "issn": "",
+            "pages": "E2294-E2303",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Therapeutically targeting RNA viruses via lethal mutagenesis",
+            "authors": [
+                {
+                    "first": "J.D.",
+                    "middle": [],
+                    "last": "Graci",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.E.",
+                    "middle": [],
+                    "last": "Cameron",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Future Virol.",
+            "volume": "3",
+            "issn": "",
+            "pages": "553-566",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Within-host whole-genome deep sequencing and diversity analysis of human respiratory syncytial virus infection reveals dynamics of genomic diversity in the absence and presence of immune pressure",
+            "authors": [
+                {
+                    "first": "Y.H.",
+                    "middle": [],
+                    "last": "Grad",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J. Virol.",
+            "volume": "88",
+            "issn": "",
+            "pages": "7286-7293",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Analysis of high-depth sequence data for studying viral diversity: a comparison of next generation sequencing platforms using Segminator II",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Archer",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "BMC Bioinformatics",
+            "volume": "13",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "A live, impaired-fidelity coronavirus vaccine protects in an aged, immunocompromised mouse model of lethal disease",
+            "authors": [
+                {
+                    "first": "R.L.",
+                    "middle": [],
+                    "last": "Graham",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nat. Med.",
+            "volume": "18",
+            "issn": "",
+            "pages": "1820-1826",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Molecular indetermination in the transition to error catastrophe: systematic elimination of lymphocytic choriomeningitis virus through mutagenesis does not correlate linearly with large increases in mutant spectrum complexity",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Grande-P\u00e9rez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "99",
+            "issn": "",
+            "pages": "12938-12943",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "The effect of strand bias in Illumina short-read sequencing data",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "BMC Genomics",
+            "volume": "13",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "The pacific ocean virome (POV): a marine viral metagenomic dataset and associated protein clusters for quantitative viral ecology",
+            "authors": [
+                {
+                    "first": "B.L.",
+                    "middle": [],
+                    "last": "Hurwitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.B.",
+                    "middle": [],
+                    "last": "Sullivan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "PLoS One",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Accurate sampling and deep sequencing of the HIV-1 protease gene using a Primer ID",
+            "authors": [
+                {
+                    "first": "C.B.",
+                    "middle": [],
+                    "last": "Jabara",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "108",
+            "issn": "",
+            "pages": "20166-20171",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Detection and quantification of rare mutations with massively parallel sequencing",
+            "authors": [
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Kinde",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "108",
+            "issn": "",
+            "pages": "9530-9535",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Genome-wide diversity and selective pressure in the human rhinovirus",
+            "authors": [
+                {
+                    "first": "A.L.",
+                    "middle": [],
+                    "last": "Kistler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Virol. J.",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Quasispecies Theory and the Behavior of RNA Viruses",
+            "authors": [
+                {
+                    "first": "A.S.",
+                    "middle": [],
+                    "last": "Lauring",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Andino",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Pathog.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Fidelity variants of RNA dependent rna polymerases uncover an indirect, mutagenic activity of amiloride compounds",
+            "authors": [
+                {
+                    "first": "L.I.",
+                    "middle": [],
+                    "last": "Levi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Pathog.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Fast and accurate short read alignment with Burrows-Wheeler transform",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Durbin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "",
+            "pages": "1754-1760",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Use of four next-generation sequencing platforms to determine HIV-1 coreceptor tropism",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Archer",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "The sequence alignment/map format and SAMtools",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "",
+            "pages": "2078-2079",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Mathematical modeling of ultradeep sequencing data reveals that acute CD8+ T-lymphocyte responses exert strong selective pressure in simian immunodeficiency virus-infected macaques but still fail to clear founder epitope sequences",
+            "authors": [
+                {
+                    "first": "T.M.T.",
+                    "middle": [],
+                    "last": "Love",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Virol",
+            "volume": "84",
+            "issn": "",
+            "pages": "5802-5814",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Highly sensitive and specific detection of rare variants in mixed viral populations from massively parallel sequence data",
+            "authors": [
+                {
+                    "first": "A.R.",
+                    "middle": [],
+                    "last": "Macalalad",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS Comput. Biol.",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Accurate viral population assembly from ultra-deep sequencing data",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Mangul",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Bioinformatics",
+            "volume": "30",
+            "issn": "",
+            "pages": "i329-i337",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Ultradeep sequencing analysis of population dynamics of virus escape mutants in RNAi-mediated resistant plants",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Mart\u00ednez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Mol. Biol. Evol.",
+            "volume": "29",
+            "issn": "",
+            "pages": "3297-3307",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Accurate single nucleotide variant detection in viral populations by combining probabilistic clustering with a statistical test of strand bias",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "McElroy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "BMC Genomics",
+            "volume": "14",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Pol gene quasispecies of human immunodeficiency virus: mutations associated with drug resistance in virus from patients undergoing no drug therapy",
+            "authors": [
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "N\u00e1jera",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "J. Virol.",
+            "volume": "69",
+            "issn": "",
+            "pages": "23-31",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Application of next-generation sequencing technologies in virology",
+            "authors": [
+                {
+                    "first": "A.D.",
+                    "middle": [],
+                    "last": "Radford",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Gen. Virol.",
+            "volume": "93",
+            "issn": "",
+            "pages": "1853-1868",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Assessing the diversity and specificity of two freshwater viral communities through metagenomics",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Roux",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Viral mutation rates",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Sanju\u00e1n",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Virol.",
+            "volume": "84",
+            "issn": "",
+            "pages": "9733-9748",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "SPAdes: a new genome assembly algorithm and its applications to single-cell sequencing",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Bankevich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Comput. Biol.",
+            "volume": "19",
+            "issn": "",
+            "pages": "455-477",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Hidden virulence determinants in a viral quasispecies in\u00a0vivo",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Sanz-Ramos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Virol.",
+            "volume": "82",
+            "issn": "",
+            "pages": "10465-10476",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Detection of ultra-rare mutations by next-generation sequencing",
+            "authors": [
+                {
+                    "first": "M.W.",
+                    "middle": [],
+                    "last": "Schmitt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "109",
+            "issn": "",
+            "pages": "14508-14513",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Detection of haemagglutinin D222 polymorphisms in influenza A(H1N1)pdm09-infected patients by ultra-deep pyrosequencing",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Selleri",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Clin. Microbiol. Infect.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Genetics research: jumping into the deep end of the pool",
+            "authors": [
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Shomron",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Genet. Res. (Camb)",
+            "volume": "95",
+            "issn": "",
+            "pages": "1-3",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "ABySS: a parallel assembler for short read sequence data",
+            "authors": [
+                {
+                    "first": "J.T.",
+                    "middle": [],
+                    "last": "Simpson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Genome Res.",
+            "volume": "19",
+            "issn": "",
+            "pages": "1117-1123",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Evolution of high mutation rates in experimental populations of E. coli.",
+            "authors": [
+                {
+                    "first": "P.D.",
+                    "middle": [],
+                    "last": "Sniegowski",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nature",
+            "volume": "387",
+            "issn": "",
+            "pages": "703-705",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Rapid Evolution of RNA Viruses",
+            "authors": [
+                {
+                    "first": "D.A.",
+                    "middle": [],
+                    "last": "Steinhauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.J.",
+                    "middle": [],
+                    "last": "Holland",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Annu. Rev. Microbiol.",
+            "volume": "41",
+            "issn": "",
+            "pages": "409-431",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Sequencing approach to analyze the role of quasispecies for classical swine fever",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "T\u00f6pfer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Virology",
+            "volume": "438",
+            "issn": "",
+            "pages": "14-19",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Quasispecies diversity determines pathogenesis through cooperative interactions in a viral population",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Vignuzzi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "439",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Viral population analysis and minority-variant detection using short read next-generation sequencing",
+            "authors": [
+                {
+                    "first": "S.J.",
+                    "middle": [],
+                    "last": "Watson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Philos. Trans. R. Soc. Lond., B, Biol. Sci.",
+            "volume": "368",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Applications of next-generation sequencing technologies to diagnostic virology",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Barzon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Int. J. Mol. Sci.",
+            "volume": "12",
+            "issn": "",
+            "pages": "7861-7884",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Development of a low bias method for characterizing viral populations using next generation sequencing technology",
+            "authors": [
+                {
+                    "first": "S.M.",
+                    "middle": [],
+                    "last": "Willerth",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS One",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "LoFreq: a sequence-quality aware, ultra-sensitive variant caller for uncovering cell-population heterogeneity from high-throughput sequencing datasets",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Wilm",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res.",
+            "volume": "40",
+            "issn": "",
+            "pages": "11189-11201",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "A quantitative quasispecies theory-based model of virus escape mutation under immune selection",
+            "authors": [
+                {
+                    "first": "H.-J.",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Reifman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "109",
+            "issn": "",
+            "pages": "12980-12985",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Beyond the consensus: dissecting within-host viral population diversity of foot-and-mouth disease virus by using next-generation genome sequencing",
+            "authors": [
+                {
+                    "first": "C.F.",
+                    "middle": [],
+                    "last": "Wright",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Virol.",
+            "volume": "85",
+            "issn": "",
+            "pages": "2266-2275",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "High-throughput profiling of influenza A virus hemagglutinin gene at single-nucleotide resolution",
+            "authors": [
+                {
+                    "first": "N.C.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Sci. Rep.",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "V-Phaser 2: variant inference for viral populations",
+            "authors": [
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "BMC Genomics",
+            "volume": "14",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "High-resolution deep sequencing reveals biodiversity, population structure, and persistence of HIV-1 quasispecies within host ecosystems",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Retrovirology",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "ShoRAH: estimating the genetic diversity of a mixed sample from next-generation sequencing data",
+            "authors": [
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Zagordi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "BMC Bioinformatics",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "Velvet: algorithms for de novo short read assembly using de Bruijn graphs",
+            "authors": [
+                {
+                    "first": "D.R.",
+                    "middle": [],
+                    "last": "Zerbino",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Birney",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Genome Res.",
+            "volume": "18",
+            "issn": "",
+            "pages": "821-829",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "Ultra-deep sequencing for the analysis of viral populations",
+            "authors": [
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Beerenwinkel",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Zagordi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Curr. Opin. Virol.",
+            "volume": "1",
+            "issn": "",
+            "pages": "413-418",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "Theory of lethal mutagenesis for viruses",
+            "authors": [
+                {
+                    "first": "J.J.",
+                    "middle": [],
+                    "last": "Bull",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Virol.",
+            "volume": "81",
+            "issn": "",
+            "pages": "2930-2939",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Sequential bottlenecks drive viral evolution in early acute hepatitis C virus infection",
+            "authors": [
+                {
+                    "first": "R.A.",
+                    "middle": [],
+                    "last": "Bull",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS Pathog.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

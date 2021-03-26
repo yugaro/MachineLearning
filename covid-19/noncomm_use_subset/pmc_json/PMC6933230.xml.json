@@ -1,0 +1,2104 @@
+{
+    "paper_id": "PMC6933230",
+    "metadata": {
+        "title": "Epidemics on networks: Reducing disease transmission using health emergency declarations and peer communication",
+        "authors": [
+            {
+                "first": "Asma",
+                "middle": [],
+                "last": "Azizi",
+                "suffix": "",
+                "email": "aazizibo@asu.edu",
+                "affiliation": {}
+            },
+            {
+                "first": "Cesar",
+                "middle": [],
+                "last": "Montalvo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Baltazar",
+                "middle": [],
+                "last": "Espinoza",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Yun",
+                "middle": [],
+                "last": "Kang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Carlos",
+                "middle": [],
+                "last": "Castillo-Chavez",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The decisions that individuals make over an epidemic outbreak depend on multiple factors. Here, they are assumed to depend on available information, misinformation, and the income/education of those making them (Del Valle, Hethcote, Hyman, & Castillo-Chavez, 2005; Fenichel et al., 2011; Herrera-Valdez, Cruz-Aponte, & Castillo-Chavez, 2011; Perrings et al., 2014; Towers et al., 2015). There are multiple possible scenarios that consider the decisions that individuals may make over the course of an outbreak. Individuals may modify their behaviors in order to reduce their environmental susceptibility to a disease by washing their hands frequently, avoiding handshakes and avoiding kissing salutes, not taking public transportation during rush hours, using masks and more. The frequency and effectiveness of these decisions may depend on the perceived risk of infection, a function of what each individual \u201cknows\u201d. In short, individual responses to new circumstances are adaptive and may depend on real or perceive risks of infection. Current disease prevalence, may become a marker or a tipping point, that when crossed, triggers individual or policy decisions. Whether or not individuals follow public health officials\u2019 recommendations may be a function of individuals\u2019 economic/educational status. The determination to make a drastic decision may be weakened or reinforced by each individual\u2019s networks of friends. Responses are altered by the opinions of work-related connections. Personal needs play a role, and they include the need to use public transportation or the desire to attend a social event.",
+            "cite_spans": [
+                {
+                    "start": 212,
+                    "end": 263,
+                    "mention": "Del Valle, Hethcote, Hyman, & Castillo-Chavez, 2005",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 265,
+                    "end": 286,
+                    "mention": "Fenichel et al., 2011",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 288,
+                    "end": 340,
+                    "mention": "Herrera-Valdez, Cruz-Aponte, & Castillo-Chavez, 2011",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 342,
+                    "end": 363,
+                    "mention": "Perrings et al., 2014",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 365,
+                    "end": 384,
+                    "mention": "Towers et al., 2015",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The landscape where behavioral decisions take place is not fixed. On the contrary, it may be altered from within (individual decisions) or by the use of preventive or active public health policy decisions or recommendations, some \u201cobvious\u201d like vaccination or quarantine, others drastic like mandated social distancing, as in the 2009\u201310 flu pandemic in Mexico (Herrera-Valdez, Cruz-Aponte, & Castillo-Chavez, 2009). Now, whether the dynamical changes experienced by the socio-epidemiological landscape are slow or fast, will depend on many factors. It is within this, often altered, complex adaptive dynamical system, that individual decisions such as individually-driven social distancing, the use of face masks, frequent hand washing, increased condom use, and or the routine use of non-pharmaceutical interventions, takes place (Wang, Andrews, Wu, Wang, & Bauch, 2015). It has been theoretically and computationally documented (Barrett et al., 2009; Funk, Gilad, Watkins, & Jansen, 2009; Funk & Jansen, 2013; Hyman & Li, 2007; Misra, Sharma, & Shukla, 2011; Perra, Balcan, Gon\u00e7alves, & Vespignani, 2011; Tracht, Del Valle, & Hyman, 2010) that massive behavioral changes can impact the patterns of infection spread, possibly playing a critical role in efforts to prevent or ameliorate disease transmission. Today policies are implemented regardless of our knowledge of who are the \u201cdrivers\u201d responsible for inducing behavioral changes. Modeling frameworks exist that allow for the systematic exploration of possible scenarios. Through a systematic exploratory analyses of appropriately selected classes of scenarios, it is possible to identify possibly effective (model-evaluated) public health policies. The use of highly detailed models including individual-based models has some advantages since they can incorporate individuals\u2019 awareness of risk based on available of local information. The evaluations carried out on the effectiveness of changes, at the individual level, can be used to assess, for example, the impact of non-pharmaceutical interventions in reducing disease prevalence.",
+            "cite_spans": [
+                {
+                    "start": 362,
+                    "end": 414,
+                    "mention": "Herrera-Valdez, Cruz-Aponte, & Castillo-Chavez, 2009",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 833,
+                    "end": 871,
+                    "mention": "Wang, Andrews, Wu, Wang, & Bauch, 2015",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 932,
+                    "end": 952,
+                    "mention": "Barrett et al., 2009",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 954,
+                    "end": 990,
+                    "mention": "Funk, Gilad, Watkins, & Jansen, 2009",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 992,
+                    "end": 1011,
+                    "mention": "Funk & Jansen, 2013",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1013,
+                    "end": 1029,
+                    "mention": "Hyman & Li, 2007",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1031,
+                    "end": 1060,
+                    "mention": "Misra, Sharma, & Shukla, 2011",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1062,
+                    "end": 1106,
+                    "mention": "Perra, Balcan, Gon\u00e7alves, & Vespignani, 2011",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1108,
+                    "end": 1140,
+                    "mention": "Tracht, Del Valle, & Hyman, 2010",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Models that couple disease dynamics and awareness to levels of infection risk have been proposed. These models have been used to explore the impact of behavioral changes on the spread of infection. In the review paper of Wang et al. (Wang et al., 2015) classify models as Rule-Based Models, those where individuals make their decision about changing behavior independently of others, and Economic-Epidemiology models (EE models), that is, models where individuals change their behavior in order to maximize their own utility function (what they value) subject to available resources. The EE models account for the responses that individuals take in response to infection risks on disease prevalence at the population level. The modeling and results reported in this manuscript are more closely related to those used in Rule-Based Models.",
+            "cite_spans": [
+                {
+                    "start": 234,
+                    "end": 251,
+                    "mention": "Wang et al., 2015",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Ruled-Based Models (Epstein, Parker, Cummings, & Hammond, 2008; Hyman & Li, 2007; Kiss, Cassell, Recker, & Simon, 2010; Misra et al., 2011; Perra et al., 2011; Poletti et al., 2009, 2011, 2012; Sahneh, Chowdhury, & Scoglio, 2012) vary from compartmental ODE models (Hyman & Li, 2007; Misra et al., 2011; Tracht et al., 2010) to individual-based network models (Funk et al., 2009; Granell, G\u00f3mez, & Arenas, 2013; Meloni et al., 2011; Wu, Fu, Small, & Xu, 2012). These models have been used to study the dynamics of highly diverse diseases including, for example, influenza and HIV (Fraser, Riley, Anderson, & Ferguson, 2004; Poletti et al., 2011), or in the study of generic infections (Kiss et al., 2010; Misra et al., 2011; Perra et al., 2011; Poletti et al., 2009, 2012). Compartmental models (often using a phenomenological approach) categories designed to capture levels of awareness of infection. Such approach that can be used to incorporate \u2018awareness\u2019 in network models, is the objective of this manuscript. Some models assume that \u201cawareness\u201d spreads along with the invading disease, that is, through identical contact networks. Here, it is assumed that the disease and information spread over the same social network (a drastic simplification). The possibility that awareness and responses to the presence of a new infection among a subset of the population at risk, may significantly alter regular temporal patterns of disease prevalence (lower highs) have been studied. Studies have also shown that epidemic thresholds can be altered (Perra et al., 2011; Poletti et al., 2009; Sahneh et al., 2012) in response to the effectiveness of non-pharmaceutical intervention. Here, the focus is on the role of policy decisions/recommendations in altering disease dynamics, possibly the final epidemic size, within a model where awareness (generated by official actions) spreads among those susceptible to infection and their \u2018friends\u2019.",
+            "cite_spans": [
+                {
+                    "start": 20,
+                    "end": 62,
+                    "mention": "Epstein, Parker, Cummings, & Hammond, 2008",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 64,
+                    "end": 80,
+                    "mention": "Hyman & Li, 2007",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 82,
+                    "end": 118,
+                    "mention": "Kiss, Cassell, Recker, & Simon, 2010",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 120,
+                    "end": 138,
+                    "mention": "Misra et al., 2011",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 140,
+                    "end": 158,
+                    "mention": "Perra et al., 2011",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 160,
+                    "end": 180,
+                    "mention": "Poletti et al., 2009",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 182,
+                    "end": 186,
+                    "mention": "2011",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 188,
+                    "end": 192,
+                    "mention": "2012",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 194,
+                    "end": 228,
+                    "mention": "Sahneh, Chowdhury, & Scoglio, 2012",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 266,
+                    "end": 282,
+                    "mention": "Hyman & Li, 2007",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 284,
+                    "end": 302,
+                    "mention": "Misra et al., 2011",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 304,
+                    "end": 323,
+                    "mention": "Tracht et al., 2010",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 361,
+                    "end": 378,
+                    "mention": "Funk et al., 2009",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 380,
+                    "end": 410,
+                    "mention": "Granell, G\u00f3mez, & Arenas, 2013",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 412,
+                    "end": 431,
+                    "mention": "Meloni et al., 2011",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 433,
+                    "end": 458,
+                    "mention": "Wu, Fu, Small, & Xu, 2012",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 581,
+                    "end": 622,
+                    "mention": "Fraser, Riley, Anderson, & Ferguson, 2004",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 624,
+                    "end": 644,
+                    "mention": "Poletti et al., 2011",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 686,
+                    "end": 703,
+                    "mention": "Kiss et al., 2010",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 705,
+                    "end": 723,
+                    "mention": "Misra et al., 2011",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 725,
+                    "end": 743,
+                    "mention": "Perra et al., 2011",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 745,
+                    "end": 765,
+                    "mention": "Poletti et al., 2009",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 767,
+                    "end": 771,
+                    "mention": "2012",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1547,
+                    "end": 1565,
+                    "mention": "Perra et al., 2011",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1567,
+                    "end": 1587,
+                    "mention": "Poletti et al., 2009",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1589,
+                    "end": 1608,
+                    "mention": "Sahneh et al., 2012",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this paper, we explore the impact of various, prevalence-dependent pre-selected thresholds (decisions made by public health officials) as triggers of possibly temporarily behavioral change. The time to a triggering event is assumed to depend on the prevalence of infection\u2013 a decision taken by health authorities (declaring some level of health emergency). We carry out simulations to explore the impact of variations on triggering prevalence-driven levels on the final epidemic size of a non-fatal infection under three distinct fixed artificial social structures modeled as, Erd\u0151s-R\u00e9nyi, Small-world, and Scale-free networks.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The network is denoted by G=(V,E) which includes a set N=|V| of nodes representing individuals V={i|i=1,2,3,\u2026N} together with a binary adjacency relation defined by the set of edges E={ij|i,j=1,2,3,\u2026N}, where ij denotes the edge between individual (node) i and individual (node) j. We make use of three network structures, namely, Erd\u0151s-R\u00e9nyi, Small-world, and Scale-free networks -defined in the Appendix-as models of our social landscape, the place where infection and awareness spread and behavioral change take place.",
+            "cite_spans": [],
+            "section": "Network structure ::: Modeling framework",
+            "ref_spans": []
+        },
+        {
+            "text": "After generating the network (Bollob\u00e1s et al., 2003; ERDdS & R&WI, 1959; Newman & Watts, 1999), we assign some attributes to the nodes (individuals) as follows: each node i is associated with a random variable xi\u2208[0,1], generated from a beta-distribution, denoting the level of education of individual i, values closer to 0 corresponding to higher levels of education while those close to 1 indicate limited education, an individual i is assigned a random number from a beta distribution with shape parameters \u03b1 and \u03b2.",
+            "cite_spans": [
+                {
+                    "start": 30,
+                    "end": 51,
+                    "mention": "Bollob\u00e1s et al., 2003",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 53,
+                    "end": 71,
+                    "mention": "ERDdS & R&WI, 1959",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 73,
+                    "end": 93,
+                    "mention": "Newman & Watts, 1999",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Network structure ::: Modeling framework",
+            "ref_spans": []
+        },
+        {
+            "text": "The underlying network G is weighted, where the weight 0<cij\u22641 for edge ij is the probability, of physical contact between neighbors i and j on any specific day. We assume that the values cij are randomly generated from a uniform distribution U[0.5,1]. For example if cij=57, that means that these two neighbors meet with probability 57 and do not meet with probability 27 on a specific day. We also assume that there are no birth or deaths in the population of nodes or edges, during the epidemic outbreak.",
+            "cite_spans": [],
+            "section": "Network structure ::: Modeling framework",
+            "ref_spans": []
+        },
+        {
+            "text": "\u03bb\u02dcjk(s) denotes the probability that an aware person Ska(s) will inform an unaware neighbor Sju(s) at time s via their contact: \u03bb\u02dcjk(s)=cjk\u03b2\u02dc. The value cjk denotes the probability of contact between neighbors j and k, with \u03b2\u02dc denoting the average probability that risk information will pass from an aware individual to an unaware neighbor. \u03b2\u02dc is the average of a first increasing and then decaying and waning function \u03b2(s,s*)\u02dc over the awareness period, that is, \u03b2\u02dc=\u03b3\u02dc\u222bs*s*+1\u03b3\u02dc\u03b2(s,s*)\u02dcds, where s*\u2265t* is the first day that a person becomes aware. \u03b2(s,s*)\u02dc is a function of s*, because before this time the person was unaware and therefore, incapable of spreading risk information. Fig. (2) helps visualize the probability function \u03b2(s,t*)\u02dc for t*=10, a function acting on initially aware individual, that is, individuals who became aware on the first day of awareness spread t*. After 10 days, information enters the system, people learn that an epidemic is taking place and the risk and severity of infection. The higher the value of P* the less effective the campaign in reducing the impact of information on the outbreak (see Fig. 3).",
+            "cite_spans": [],
+            "section": "Awareness spread probability ::: Dynamic of awareness among susceptible individuals ::: Modeling framework",
+            "ref_spans": [
+                {
+                    "start": 682,
+                    "end": 690,
+                    "mention": "Fig. (2)",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1130,
+                    "end": 1136,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "To determine the effectiveness of awareness spread, we compare the prevalence over time in the absence and presence of awareness. Fig. (4) shows the results for network structures GE, GW, and GS. We observe that all networks, with or without awareness, support an outbreak for the chosen parameters (that is, the probability of extinction is low or the results are conditioned on non-extinction). Due to a lack of epidemic threshold for Scale-free network (Chowell & Castillo-Chavez, 2003; May & Lloyd, 2001; Moreno, Pastor-Satorras, & Vespignani, 2002), we always observe an outbreak with severity that depends on the initial infected index. For the other network structures, we observe an epidemic threshold depends on the network topology; specifically, on the average number of neighbors and the levels of heterogeneity in the number of neighbors (mean and variance of degree distribution) (Kiss et al., 2017). For example, for the case of Small-world networks Moore et al. (Moore & Newman, 2000) derived an analytic expression for the percolation threshold pc, above which there will be an outbreak. For the case when the network is homogeneous (Erd\u0151s-R\u00e9nyi network), the epidemic threshold is proportional to the average number of neighbors (average degree) (Pastor-Satorras, Castellano, Van Mieghem, & Vespignani, 2015). Hence, for our simulation for both networks GE and GW we approximated the basic reproduction number using epidemic take-offs, when we had an outbreak, that is, whenever R0>1 (probability of extinction for the parameters used seemed to be negligible).",
+            "cite_spans": [
+                {
+                    "start": 457,
+                    "end": 488,
+                    "mention": "Chowell & Castillo-Chavez, 2003",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 490,
+                    "end": 507,
+                    "mention": "May & Lloyd, 2001",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 509,
+                    "end": 552,
+                    "mention": "Moreno, Pastor-Satorras, & Vespignani, 2002",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 895,
+                    "end": 912,
+                    "mention": "Kiss et al., 2017",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 979,
+                    "end": 999,
+                    "mention": "Moore & Newman, 2000",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1265,
+                    "end": 1325,
+                    "mention": "Pastor-Satorras, Castellano, Van Mieghem, & Vespignani, 2015",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Time series of infection ::: Simulations",
+            "ref_spans": [
+                {
+                    "start": 130,
+                    "end": 138,
+                    "mention": "Fig. (4)",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The spread of infection on Scale-free network GS is faster than for the other two network topologies. Moreno et al. (Moreno et al., 2002), modeled infection with immunity on Scale-free and Small-world networks, they observed that the spread of infection on Scale-free complex networks is faster than that of Small-world networks due to a lack of epidemic threshold for network GS; large connectivity fluctuations (heterogeneity in degree) on this network causes stronger outbreak incidence (Moreno et al., 2002). Our result is also related to (Chowell & Castillo-Chavez, 2003), in which Chowell et al. tested the severity of an outbreak using an SIR model over a family of Small-world networks and an Scale-free network found out that the worst case scenarios (highest infection rate) are observed in the most heterogeneous network, namely, Scale-free networks.",
+            "cite_spans": [
+                {
+                    "start": 117,
+                    "end": 136,
+                    "mention": "Moreno et al., 2002",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 491,
+                    "end": 510,
+                    "mention": "Moreno et al., 2002",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 544,
+                    "end": 575,
+                    "mention": "Chowell & Castillo-Chavez, 2003",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Time series of infection ::: Simulations",
+            "ref_spans": []
+        },
+        {
+            "text": "The speed for infection has an impact on efficiency of awareness spread: for Scale-free network GS awareness reduces the peak of infection by roughly 6%, but for GE and GW this reduction is around 19%. Since in GS network infection spreads faster, hubs (individuals with many neighbors) get infected faster and loosing the chance of transmitting or receiving awareness. Wu et al. (Wu et al., 2012) showed a similar result: global awareness (behavior change because of higher prevalence in the population) on Scale-free networks cannot be as effective as local awareness in reducing infection.",
+            "cite_spans": [
+                {
+                    "start": 381,
+                    "end": 396,
+                    "mention": "Wu et al., 2012",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Time series of infection ::: Simulations",
+            "ref_spans": []
+        },
+        {
+            "text": "The presence and spread of awareness are coupled to the presence of infection, with awareness spreading, by design, after the infection reaches the level P*. Therefore, there is a time-lag between starting time of infection and awareness spread. What should the value of P* be, if the goal is to reduce the final epidemic size? When the infection disperses fast-high basic reproduction number-people must be informed immediately, or the policy will have no effect. As noted, there is no threshold condition for GS network. We did not derive expressions for epidemic thresholds. Instead, we used epidemic take-offs to estimate the basic reproduction number as R0=1.8 and 2.01, numbers corresponding to GE and GS, respectively. Numbers that are not too high-such as that of the R0 for measles (Keeling & Rohani, 2011)- we are giving awareness a chance to be effective, since an epidemic with low R0 will reach the value P* much slower.",
+            "cite_spans": [
+                {
+                    "start": 792,
+                    "end": 814,
+                    "mention": "Keeling & Rohani, 2011",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Initiation of awareness ::: Simulations",
+            "ref_spans": []
+        },
+        {
+            "text": "Proceed to quantify the sensitivity of the final size of the outbreak as a function of the prevalence threshold P* over the network structures GE, GW, and GS, Fig. 5, for the simulated GE network that representing homogeneous random mixing and for the simulated GW network, we identify an optimal point for P* (the point that final size is minimized), that means awareness spread is most effective in reducing final size for these values of P*. For larger values of P*, the awareness policy is useless because it starts very late when many individuals got already infected, while for smaller values of P* is less effective because in this case, there is not enough infected cases in the population and therefore, individuals are not surrounded by infected contacts and consequently their social distancing for only one time and for a limited period wastes their protection, that is, they are protecting themselves when there is a small risk of catching infection, while later time when this risk increases they do not take any proper action, see subfigures (5a), and (5b).",
+            "cite_spans": [],
+            "section": "Initiation of awareness ::: Simulations",
+            "ref_spans": [
+                {
+                    "start": 159,
+                    "end": 165,
+                    "mention": "Fig. 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "For the simulated networks GS - in which network structure follows a power-law distribution - we observed that the sooner awareness gets started, the smaller the total number of infected individuals will be, see subfigures (5c) (see also (Chowell & Castillo-Chavez, 2003; Moreno et al., 2002)).",
+            "cite_spans": [
+                {
+                    "start": 239,
+                    "end": 270,
+                    "mention": "Chowell & Castillo-Chavez, 2003",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 272,
+                    "end": 291,
+                    "mention": "Moreno et al., 2002",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Initiation of awareness ::: Simulations",
+            "ref_spans": []
+        },
+        {
+            "text": "To investigate the impact of awareness on the previous result and on network GE, we vary the value of the awareness basic reproduction number R0\u02dc via changes in the average time of behavior change 1/\u03b3\u02dc. Fig. 6 shows that the value of the optimal prevalence threshold P* increases as the R0\u02dc increases. Accelerating awareness spread-increasing R0\u02dc - does not seem to change final awareness size trend (Fig. (5)). Nevertheless, it makes the prevalence threshold P* more effective at reducing infection final size.",
+            "cite_spans": [],
+            "section": "Initiation of awareness ::: Simulations",
+            "ref_spans": [
+                {
+                    "start": 203,
+                    "end": 209,
+                    "mention": "Fig. 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 401,
+                    "end": 409,
+                    "mention": "Fig. (5)",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "We used a network model to model the spread of infection and risk information within a population of individuals in different epidemiological states, education levels and information states. In our model infection spreads within an SIR framework while awareness disseminates only among susceptible individuals. Specifically, when a fraction of the infected people reaches a pre-determined threshold, public health officials start a massive information campaign on the risk and severity of infection. Information is transmitted by those not infected only. Awareness dynamics are triggered by public health authorities with the objective of conveying information about risk and severity of infection via aware susceptible individuals to unaware susceptible neighbors in the network. The level of awareness achieved is tied in to the educational level of each individual and the disease prevalence. Aware susceptible individuals can become indifferent, stop propagating information on the risk of infection, after sometime.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Simulations of the spread of infection or awareness are carried out on different network topologies. The patterns vary even when preserving some network properties such as the mean degree (Chowell & Castillo-Chavez, 2003; Moreno et al., 2002; Shirley & Rushton, 2005). We simulated the spread of awareness and disease over three different network structures, namely Erd\u0151s-R\u00e9nyi, Small world and Scale-free networks.",
+            "cite_spans": [
+                {
+                    "start": 189,
+                    "end": 220,
+                    "mention": "Chowell & Castillo-Chavez, 2003",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 222,
+                    "end": 241,
+                    "mention": "Moreno et al., 2002",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 243,
+                    "end": 266,
+                    "mention": "Shirley & Rushton, 2005",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The results of the infection-awareness model show that Scale-free networks support a fastest rate of infection with the impact of awareness having the lowest effect on transmission. Small-world and Erd\u0151s-R\u00e9nyi networks became less effective at disease transmission, and the role of information via aware individuals had a stronger impact in reducing transmission, Fig. (4). These result are somewhat similar to those obtained by Chowell et al. (Chowell & Castillo-Chavez, 2003) and Moreno et al. (Moreno et al., 2002) as they studied the rate of infection rate of growth on an SIR model over Small-world and Scale-free networks, in the absence of awareness. These researchers observed that the spread of infection on Scale-free complex networks is faster than in a Small-world one. Pastor et al. (Pastor-Satorras & Vespignani, 2002) and Dezs\u0151 et al. (Dezs\u0151 & Barab\u00e1si, 2002) focused on identifying the best strategy that can be used to control (reduce) an epidemic peak on a scale-free network. They concluded that in order to control infection public health workers needed to immunize the hubs at an early stage. Our results are somewhat related, that is, we find that in order to control an infection, public health workers need to start awareness spread soon, that is, before hubs play the role of super-spreaders.",
+            "cite_spans": [
+                {
+                    "start": 445,
+                    "end": 476,
+                    "mention": "Chowell & Castillo-Chavez, 2003",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 497,
+                    "end": 516,
+                    "mention": "Moreno et al., 2002",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 797,
+                    "end": 831,
+                    "mention": "Pastor-Satorras & Vespignani, 2002",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 851,
+                    "end": 873,
+                    "mention": "Dezs\u0151 & Barab\u00e1si, 2002",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 364,
+                    "end": 372,
+                    "mention": "Fig. (4)",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Infection final size is a function of network topology and prevalence threshold, P*, and the basic reproduction number R0. We observed that for Erd\u0151s-R\u00e9nyi and Small-world networks under small value of R0, an optimal P* can be found for which the infection final size is minimized. This optimal point is the value that provides the best outcome under the prevalence P* at the time, t*, the time when temporary protection was promoted by aware susceptible individuals, Fig. 5a and 5b. The existence of this optimal P* is because of lack of enough infected cases to spread the infection for prevalence less than P*, and lack of enough susceptible individuals to protect themselves against the infection for prevalence bigger than P*. This trend is observed for more homogeneous network structures as the infection spreads more slowly than in heterogeneous networks such as Scale-free ones. For Scale-free network, for which there is no epidemic threshold, a monotonic increasing function final size is observed, a function of the prevalence threshold P*, there is no optimal point P* that minimizes infection final size, Fig. 5c.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 468,
+                    "end": 474,
+                    "mention": "Fig. 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 1119,
+                    "end": 1125,
+                    "mention": "Fig. 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Infection network and awareness network: One of the big assumptions in our model is that the infection and awareness spread over the same network, ignoring the fact that individuals may have multiple sources of information outside their physical contact network. In fact, we know that information does flow through virtual neighbors such as facebook friends. How should we incorporate the role of physical network and virtual information? We are exploring possibilities.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Static network: Again, since we are focusing on single epidemic outbreak, we have assumed a short time frame in our simulation. We also assumed that the context network is static. The need to extend the model to a dynamic network where individuals are allowed to change neighbors is important in the study of disease spread over the longer time scale. The impact of awareness in such extended model would be prone to change as well.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "For sexually transmitted infections on Scale-free network (Liljeros, Edling, Amaral, Stanley, & \u00c5berg, 2001), waiting for enough people to become infected people before starting a campaign about risk of infection is not reasonable. For measles in children with basic reproduction numbers very high (Keeling & Rohani, 2011), waiting to reach pre-selected prevalence thresholds may also not be great idea. Our model results, highlight the importance of campaigns that warns a population about the risk and severity of infection for diseases that do not spread too fast, possibly including some flu infections or the severe acute respiratory syndrome (SARS). For disease with a basic reproduction number that it is not high (Keeling & Rohani, 2011), and assuming that these infections spread over a random homogeneous networks such as Erd\u0151s-R\u00e9nyi, it may not be unreasonable the existence of an optimal prevalence threshold to start and starting an awareness dynamic campaign.",
+            "cite_spans": [
+                {
+                    "start": 59,
+                    "end": 107,
+                    "mention": "Liljeros, Edling, Amaral, Stanley, & \u00c5berg, 2001",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 299,
+                    "end": 321,
+                    "mention": "Keeling & Rohani, 2011",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 722,
+                    "end": 744,
+                    "mention": "Keeling & Rohani, 2011",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Parameters and their baseline values assumed for simulations, unless stated otherwise.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Table of notation for a conventional network G in algorithms.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Fig.\u00a01: Flow diagram of the model.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig.\u00a02: Plot of the awareness probability function\u03b2(s,t*)\u02dcfort*=10: Before day t*=10 there is no awareness spread, \u03b2\u02dc=0. At day t*=10 initially aware individual start informing its neighbors about infection. Through time the desire to spread information wanes (Funk et al., 2009).",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Fig.\u00a03: Flow diagram of the analogous mean-field model: The parameters \u03bb\u02dc, \u03bbu and \u03bba denote for the average force of awareness, average force of infection for unaware, indifferent and aware individuals respectively. The parameters \u03b3 and \u03b3\u02dc denote the average recovery rates from, infection and awareness, respectively. Further, p denotes the fraction of infected population that follow self-quarantine (Iq).",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Fig.\u00a04: Prevalence of infection versus time for three different network structure: the curves are the mean of 100 different stochastic simulations seeding the same initial condition. The diffusion of infection happens faster and more intense in more heterogeneous network GS, and awareness diffusion has less impact on reducing peak of infection for GS (by 6%). For other networks reduction of peak is by 19%.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Fig.\u00a05: Infection Final Size and Incidence Rate Versus Prevalence Threshold: the circles are the mean of 100 stochastic simulations and error bars are 95% confidence interval. The impact of prevalence threshold on infection final size depends on network topology. For networks GE and GW there is an optimal P* to minimize infection final size, subfigures (5a, 5b). For the heterogeneous network GS the optimal point for P* disappears, subfigures (5c). The incidence rate forthe period of 100 days for Erd\u0151s-R\u00e9nyi and Small-world networks plotted in subfigures (5d) illustrates the reduction in speed of disease spread at values around optimal prevalence threshold.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Fig.\u00a06: Infection final size versusP*for different awarenessR0\u02dc: Increasing R0\u02dc via increasing the average period of awareness will make the impact of prevalence threshold on final size stronger.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Azizi",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Dewar",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Mac Hyman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Adaptive human behavior in epidemiological models",
+            "authors": [
+                {
+                    "first": "E.P.",
+                    "middle": [],
+                    "last": "Fenichel",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.G.",
+                    "middle": [],
+                    "last": "Ceddia",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.A.G.",
+                    "middle": [],
+                    "last": "Parra",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.J.",
+                    "middle": [],
+                    "last": "Hickling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Proceedings of the National Academy of Sciences",
+            "volume": "108",
+            "issn": "15",
+            "pages": "6306-6311",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Factors that make an infectious disease outbreak controllable",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.M.",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.M.",
+                    "middle": [],
+                    "last": "Ferguson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proceedings of the National Academy of Sciences",
+            "volume": "101",
+            "issn": "16",
+            "pages": "6146-6151",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "The spread of awareness and its impact on epidemic outbreaks",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Funk",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Gilad",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Watkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.A.",
+                    "middle": [],
+                    "last": "Jansen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Proceedings of the National Academy of Sciences",
+            "volume": "106",
+            "issn": "16",
+            "pages": "6872-6877",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Funk",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.A.",
+                    "middle": [],
+                    "last": "Jansen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Modeling the interplay between human behavior and the spread of infectious diseases",
+            "volume": "",
+            "issn": "",
+            "pages": "93-102",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Dynamical interplay between awareness and epidemic spreading in multiplex networks",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Granell",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "G\u00f3mez",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Arenas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Physical Review Letters",
+            "volume": "111",
+            "issn": "12",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Herrera-Valdez",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Cruz-Aponte",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Multiple outbreaks for the same pandemic: Local transportation and social distancing explain the different\u201d waves\u201d of a-h1n1pdm cases observed in m\u00e9xico during 2009",
+            "authors": [
+                {
+                    "first": "M.A.",
+                    "middle": [],
+                    "last": "Herrera-Valdez",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Cruz-Aponte",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Mathematical Biosciences and Engineering",
+            "volume": "8",
+            "issn": "1",
+            "pages": "21-48",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Infection-age structured epidemic models with behavior change or treatment",
+            "authors": [
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Hyman",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Journal of Biological Dynamics",
+            "volume": "1",
+            "issn": "1",
+            "pages": "109-131",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "M.J.",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Rohani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "The impact of information transmission on epidemic outbreaks",
+            "authors": [
+                {
+                    "first": "I.Z.",
+                    "middle": [],
+                    "last": "Kiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Cassell",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Recker",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.L.",
+                    "middle": [],
+                    "last": "Simon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Mathematical Biosciences",
+            "volume": "225",
+            "issn": "1",
+            "pages": "1-10",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Emergence of scaling in random networks",
+            "authors": [
+                {
+                    "first": "A.-L.",
+                    "middle": [],
+                    "last": "Barab\u00e1si",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Science",
+            "volume": "286",
+            "issn": "5439",
+            "pages": "509-512",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "I.Z.",
+                    "middle": [],
+                    "last": "Kiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.C.",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.L.",
+                    "middle": [],
+                    "last": "Simon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "The web of human sexual contacts",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Liljeros",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.R.",
+                    "middle": [],
+                    "last": "Edling",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.A.N.",
+                    "middle": [],
+                    "last": "Amaral",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.E.",
+                    "middle": [],
+                    "last": "Stanley",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "\u00c5berg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "411",
+            "issn": "6840",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Infection dynamics on scale-free networks",
+            "authors": [
+                {
+                    "first": "R.M.",
+                    "middle": [],
+                    "last": "May",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.L.",
+                    "middle": [],
+                    "last": "Lloyd",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Physical Review",
+            "volume": "64",
+            "issn": "6",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Modeling human mobility responses to the large-scale spreading of infectious diseases",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Meloni",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Perra",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Arenas",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "G\u00f3mez",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Moreno",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Scientific Reports",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Modeling and analysis of effects of awareness programs by media on the spread of infectious diseases",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Misra",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Sharma",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Shukla",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Mathematical and Computer Modelling",
+            "volume": "53",
+            "issn": "5\u20136",
+            "pages": "1221-1228",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Epidemics and percolation in small-world networks",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.E.",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Physical Review",
+            "volume": "61",
+            "issn": "5",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Epidemic outbreaks in complex heterogeneous networks",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Moreno",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Pastor-Satorras",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "The European Physical Journal B-Condensed Matter and Complex Systems",
+            "volume": "26",
+            "issn": "4",
+            "pages": "521-529",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Renormalization group analysis of the small-world network model",
+            "authors": [
+                {
+                    "first": "M.E.",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.J.",
+                    "middle": [],
+                    "last": "Watts",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Physics Letters A",
+            "volume": "263",
+            "issn": "4\u20136",
+            "pages": "341-346",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Epidemic processes in complex networks",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Pastor-Satorras",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castellano",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Van Mieghem",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Reviews of Modern Physics",
+            "volume": "87",
+            "issn": "3",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Immunization of complex networks",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Pastor-Satorras",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Physical Review",
+            "volume": "65",
+            "issn": "3",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "C.L.",
+                    "middle": [],
+                    "last": "Barrett",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Bisset",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Eubank",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Lewis",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.A.",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Fundamental problems in computing",
+            "volume": "",
+            "issn": "",
+            "pages": "477-507",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Towards a characterization of behavior-disease models",
+            "authors": [
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Perra",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Balcan",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Gon\u00e7alves",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "8",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Merging economics and epidemiology to improve the prediction and management of infectious disease",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Perrings",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Daszak",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.P.",
+                    "middle": [],
+                    "last": "Fenichel",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Finnoff",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "EcoHealth",
+            "volume": "11",
+            "issn": "4",
+            "pages": "464-475",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "The effect of risk perception on the 2009 h1n1 pandemic influenza dynamics",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Poletti",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Ajelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Merler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Risk perception and effectiveness of uncoordinated behavioral responses in an emerging epidemic",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Poletti",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Ajelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Merler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Mathematical Biosciences",
+            "volume": "238",
+            "issn": "2",
+            "pages": "80-89",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Spontaneous behavioural changes in response to epidemics",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Poletti",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Caprile",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Ajelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Pugliese",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Merler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Journal of Theoretical Biology",
+            "volume": "260",
+            "issn": "1",
+            "pages": "31-40",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "On the existence of a threshold for preventive behavioral responses to suppress epidemic spreading",
+            "authors": [
+                {
+                    "first": "F.D.",
+                    "middle": [],
+                    "last": "Sahneh",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.N.",
+                    "middle": [],
+                    "last": "Chowdhury",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.M.",
+                    "middle": [],
+                    "last": "Scoglio",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Scientific Reports",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "The impacts of network topology on disease spread",
+            "authors": [
+                {
+                    "first": "M.D.",
+                    "middle": [],
+                    "last": "Shirley",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.P.",
+                    "middle": [],
+                    "last": "Rushton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Ecological Complexity",
+            "volume": "2",
+            "issn": "3",
+            "pages": "287-299",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Mass media and the contagion of fear: The case of ebola in America",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Towers",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Afzal",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Bernal",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Bliss",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Espinoza",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "PLoS One",
+            "volume": "10",
+            "issn": "6",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Mathematical modeling of the effectiveness of facemasks in reducing the spread of novel influenza a (h1n1)",
+            "authors": [
+                {
+                    "first": "S.M.",
+                    "middle": [],
+                    "last": "Tracht",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.Y.",
+                    "middle": [],
+                    "last": "Del Valle",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Hyman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS One",
+            "volume": "5",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Effects of treatment and prevalence-dependent recruitment on the dynamics of a fatal disease",
+            "authors": [
+                {
+                    "first": "J.X.",
+                    "middle": [],
+                    "last": "Velasco-Hern\u00e1ndez",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Brauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Mathematical Medicine and Biology: A Journal of the IMA",
+            "volume": "13",
+            "issn": "3",
+            "pages": "175-192",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Bollob\u00e1s",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Borgs",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Chayes",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Riordan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proceedings of the fourteenth annual ACM-SIAM symposium on Discrete algorithms",
+            "volume": "",
+            "issn": "",
+            "pages": "132-139",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Coupled disease\u2013behavior dynamics on complex networks: A review",
+            "authors": [
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.A.",
+                    "middle": [],
+                    "last": "Andrews",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.-X.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.T.",
+                    "middle": [],
+                    "last": "Bauch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Physics of Life Reviews",
+            "volume": "15",
+            "issn": "",
+            "pages": "1-29",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Collective dynamics of \u2018small-world\u2019networks",
+            "authors": [
+                {
+                    "first": "D.J.",
+                    "middle": [],
+                    "last": "Watts",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.H.",
+                    "middle": [],
+                    "last": "Strogatz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Nature",
+            "volume": "393",
+            "issn": "6684",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "The impact of awareness on epidemic spreading in networks",
+            "authors": [
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Fu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Small",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.-J.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Chaos: An Interdisciplinary Journal of Nonlinear Science",
+            "volume": "22",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Bioterrorism: Mathematical modeling applications in homeland security",
+            "volume": "",
+            "issn": "",
+            "pages": "35-53",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Effects of behavioral changes in a smallpox attack model",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Del Valle",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Hethcote",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Hyman",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Mathematical Biosciences",
+            "volume": "195",
+            "issn": "2",
+            "pages": "228-251",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Halting viruses in scale-free networks",
+            "authors": [
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Dezs\u0151",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.-L.",
+                    "middle": [],
+                    "last": "Barab\u00e1si",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Physical Review",
+            "volume": "65",
+            "issn": "5",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Coupled contagion dynamics of fear and disease: Mathematical and computational explorations",
+            "authors": [
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Epstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Parker",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.A.",
+                    "middle": [],
+                    "last": "Hammond",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS One",
+            "volume": "3",
+            "issn": "12",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "On random graphs i",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "ERDdS",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "R&WI",
+                    "suffix": ""
+                }
+            ],
+            "year": 1959,
+            "venue": "Publ. Math. Debrecen",
+            "volume": "6",
+            "issn": "",
+            "pages": "290-297",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

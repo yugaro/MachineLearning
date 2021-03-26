@@ -1,0 +1,3595 @@
+{
+    "paper_id": "PMC3592391",
+    "metadata": {
+        "title": "Complete viral RNA genome sequencing of ultra-low copy samples by sequence-independent amplification",
+        "authors": [
+            {
+                "first": "Christine",
+                "middle": [
+                    "M."
+                ],
+                "last": "Malboeuf",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Xiao",
+                "middle": [],
+                "last": "Yang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Patrick",
+                "middle": [],
+                "last": "Charlebois",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "James",
+                "middle": [],
+                "last": "Qu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Aaron",
+                "middle": [
+                    "M."
+                ],
+                "last": "Berlin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Monica",
+                "middle": [],
+                "last": "Casali",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Kendra",
+                "middle": [
+                    "N."
+                ],
+                "last": "Pesko",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Christian",
+                "middle": [
+                    "L."
+                ],
+                "last": "Boutwell",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "John",
+                "middle": [
+                    "P."
+                ],
+                "last": "DeVincenzo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Gregory",
+                "middle": [
+                    "D."
+                ],
+                "last": "Ebel",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Todd",
+                "middle": [
+                    "M."
+                ],
+                "last": "Allen",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Michael",
+                "middle": [
+                    "C."
+                ],
+                "last": "Zody",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Matthew",
+                "middle": [
+                    "R."
+                ],
+                "last": "Henn",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Joshua",
+                "middle": [
+                    "Z."
+                ],
+                "last": "Levin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Massively parallel sequencing allows for rapid and low-cost deep sequencing of viral genomes and provides an opportunity to gain greater insight into viral evolution, fitness, emergence and transmission. Currently, reverse transcription followed by polymerase chain reaction (RT-PCR) with primers designed to amplify specific viral RNA sequences is the most common method for amplifying RNA viruses prior to sequencing and other downstream applications. Recent studies have used both 454 (1\u201311) (Newman et al., manuscript submitted) and Illumina (12\u201314) sequencing of RT-PCR amplicons for RNA viruses. However, standard RT-PCR methods are not adequate for the generation of templates suitable for sequencing low-copy viral RNA samples, where labor-intensive methods such as nested PCR (15) or single-genome amplification (SGA) (16,17) are typically required. Examples of low-copy viral RNA samples include the following: HIV controllers (capable of controlling the virus in the absence of antiretroviral therapy) (18), dengue virus (DENV) clinical samples collected after peak viremia (19), and West Nile virus (WNV) surveillance samples (20). Obtaining genomic sequence from such samples can provide valuable insights into viral attenuation, response to host immune pressure and drug treatment during infection, disease severity, transmission and epidemic spread.",
+            "cite_spans": [
+                {
+                    "start": 489,
+                    "end": 493,
+                    "mention": "1\u201311",
+                    "ref_id": null
+                },
+                {
+                    "start": 547,
+                    "end": 552,
+                    "mention": "12\u201314",
+                    "ref_id": null
+                },
+                {
+                    "start": 786,
+                    "end": 788,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 828,
+                    "end": 830,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 831,
+                    "end": 833,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1014,
+                    "end": 1016,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1086,
+                    "end": 1088,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1139,
+                    "end": 1141,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Development of high-throughput methods for viral sequencing from low-copy viral samples presents challenges. First, the method should be robust in generating sufficient material for sequencing libraries. Second, it should be broadly applicable to a variety of sample types. Finally, it should consistently generate sequence coverage for the entire target region, typically the protein coding region, CDS, of a viral genome.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Sequence-independent methods (21\u201325) are attractive for sequencing viral genomes in that they do not rely on prior viral sequence knowledge. This allows sequencing of viral genomes with little or no genomic information and of highly divergent viruses for which robust primers targeting conserved regions are difficult to design. To date these methods have difficulty with sequencing complete genomes from clinical samples due to high levels of host contamination and low viral amounts. The SISPA method described by Djikeng et al. is capable of capturing complete genomes from viral RNA samples, but requires high viral amounts and removal of host RNA contamination with RNases prior to viral RNA extraction (22). Work by Victoria et al. demonstrated the ability to capture complete genomes from stool samples, but it appears these samples had high viral titers (25). Recent work by Ninomiya et al. has demonstrated success of capturing hepatitis C virus (HCV) total RNA sequencing from clinical samples (23), but this method required 200 ng of input RNA which exceeds the amount typically present in most clinical samples. Moore et al. evaluated the sensitivity of detection of infectious agents using RNA sequencing (24). Their method worked well for detecting low amounts of virus but was limited to input amounts of 30,000 copies of viral RNA per sample.",
+            "cite_spans": [
+                {
+                    "start": 30,
+                    "end": 35,
+                    "mention": "21\u201325",
+                    "ref_id": null
+                },
+                {
+                    "start": 709,
+                    "end": 711,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 863,
+                    "end": 865,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1005,
+                    "end": 1007,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1219,
+                    "end": 1221,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In this study, we evaluated the use of a sequence-independent RNA amplification method, NuGEN\u2019s Ovation RNA-Seq system, for capturing complete target regions of viral genomes from low-copy HIV, respiratory syncytial virus (RSV) and WNV samples. Previously, this amplification method was used for cellular transcriptome analysis (26,27) with input amounts of 500 pg to 100 ng of total RNA. Here, using only femtograms to attograms of viral RNA with this amplification method in combination with Illumina sequencing and de novo assembly of viral reads, we successfully generated consensus sequence for the complete, or very nearly complete, CDS of viral genomes.",
+            "cite_spans": [
+                {
+                    "start": 329,
+                    "end": 331,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 332,
+                    "end": 334,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Plasma samples from HIV-1 chronically infected subjects were obtained from the Ragon Institute of MGH, MIT and Harvard in Boston, MA. All subjects gave written informed consent and the study was approved by the Massachusetts General Hospital Review Board. NL4-3 (28) virus stocks were produced by transfection of HEK293T cells (ATCC, Manassas, VA) with plasmid DNA encoding a full-length infectious HIV RNA using Polyfect transfection reagent (Qiagen, Valencia, CA) according to a modified manufacturer protocol. Briefly, 1 day prior to transfection, 2.8 \u00d7 106 cells were seeded in a T75 flask. For the transfection, 15 \u00b5g of plasmid DNA, at a minimum concentration of 1 \u00b5g/\u00b5l, was diluted to a 150-\u00b5l final volume in Dulbecco modified Eagle medium without supplements; 115 \u00b5l of Polyfect reagent was added, and the solution was mixed by gentle pipetting and incubated for 10 min at room temperature. During the incubation, medium was removed from the cells to be transfected followed by a single wash with cold phosphate-buffered saline (PBS), and then 7 ml of fresh medium was added. After this incubation, the transfection mixture was transferred to the flask, swirled gently to mix, and incubated for 3 hours at 37\u00b0C with 5% CO2. The medium was removed and discarded; the cells were washed once with cold PBS, and 7 ml of fresh medium was added before returning the cells to the incubator. Transfection supernatant was harvested after 72 hours, filtered through a 0.45-\u00b5m filter, and stored in aliquots at \u221280\u00b0C. NL4-3 viral titer was determined by HIV-1 p24 antigen enzyme-linked immunosorbent assay (Perkin-Elmer, Waltham, MA) per the manufacturer's protocol.",
+            "cite_spans": [
+                {
+                    "start": 263,
+                    "end": 265,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "HIV sample information ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "WNV was produced from an infectious cDNA clone according to methods described elsewhere (29). Briefly, hamster BHK-21 cells (ATCC) were transfected (transMessenger, Qiagen) with RNA transcribed in vitro from pFLWNV (29), using the mMessage mMachine T7 kit (Life Technologies, Carlsbad, CA). Cells were inspected daily and virus harvested after approximately 3 days of replication. Virus-containing tissue culture supernatant was supplemented with 20% FBS, stored at \u221280\u00b0C in 1 ml aliquots and used without subsequent passage.",
+            "cite_spans": [
+                {
+                    "start": 89,
+                    "end": 91,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 216,
+                    "end": 218,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "West Nile sample information ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Nasal washes were collected by study team members using similarly quantified-collection method as previously described (30). The study was conducted with the approval of the University of Tennessee Institutional Review Board and included appropriate informed consent, complying with all relevant federal guidelines and institutional policies.",
+            "cite_spans": [
+                {
+                    "start": 120,
+                    "end": 122,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "RSV sample information ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "For HIV clinical samples, 1.5 ml of plasma was thawed and centrifuged at 1500g for 10 min at 4\u00b0C to remove cellular debris. For HIV and WNV clone samples, 140 \u00b5l of cell culture supernatant was used for extraction. All samples were brought up to volume with 1\u00d7 PBS and centrifuged at 120 000g for 1.5 hours at 4\u00b0C after which the pellet was re-suspended in 140 \u00b5l of 1\u00d7 PBS and used as input for viral RNA extraction. For RSV clinical samples, 140 \u00b5l of nasal aspirate was used for extraction (without the 120 000g centrifugation step). Viral RNA was isolated using QIAamp Viral RNA Mini kit (Qiagen) per manufacturer\u2019s protocol with the exception that 5 \u00b5g of linear polyacrylamide (Life Technologies) was used as the carrier instead of the carrier RNA provided with the kit. Viral RNA was eluted with 60 \u00b5l of AVE buffer, aliquoted and stored at \u221280\u00b0C. All viral samples were treated with Turbo DNase (Life Technologies) using the manufacturer\u2019s rigorous treatment to ensure removal of DNA. For each HIV sample, quantitative RT-PCR (qRT-PCR) was used to measure the number of copies of HIV. These experiments were performed with the ABI 7900HT (Life Technologies) using HIV-1 gag SK145 (AGTGGGGGGACATCAAGCAGCCATGCAAAT) and SK431 (TGCTATGTCACTTCCCCTTGGTTCTCT) primers (31) at 300 nM final concentration and the SuperScript III Platinum SYBR Green One-Step qRT-PCR Kit (Life Technologies) per manufacturer\u2019s protocol. The quantification standards consisted of linear HIV-1 pNL4-3 plasmid. Similarly to HIV, the number of WNV copies in each sample was also quantified by qRT-PCR performed on the ABI 7900HT using forward primer (TCAGCGATCTCTCCACCAAAG), reverse primer (GGGTCAGCACGTTTGTCATTG), probe (FAM-TGCCCGACCATGGGAGAAGCTC-TAMRA) and the SuperScript III Platinum One-Step qRT-PCR Kit (Life Technologies) per manufacturer\u2019s protocol and previously described methods (32). In addition, the number of RSV copies in each sample was also quantified by qRT-PCR performed on the ABI 7900HT using forward primer (CATCCAGCAAATACACCATCCA), reverse primer (TTCTGCACATCATAATTAGGAGTATCAA), probe (FAM-CGGAGCACAGGAGAT-TAMRA) and the SuperScript III Platinum One-Step qRT-PCR Kit (Life Technologies) per manufacturer\u2019s protocol and previously described methods (33). Host 18S ribosomal RNA (rRNA) was quantified for all samples using the ABI 7900HT and the TaqMan ribosomal RNA primer and probes following the manufacturer\u2019s protocol (Life Technologies).",
+            "cite_spans": [
+                {
+                    "start": 1270,
+                    "end": 1272,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1869,
+                    "end": 1871,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 2250,
+                    "end": 2252,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "RNA isolation and quantification by quantitative RT-PCR ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "For both Ovation RNA-Seq version 1 and 2 systems (NuGEN, San Carlos, CA), viral RNA was amplified into dsDNA per manufacturer\u2019s protocol. Briefly, RNA was reversed transcribed into cDNA using oligo-dT and random primers, dsDNA was generated and amplified using single-primer isothermal linear amplification (SPIA), as previously described (34). The following modifications were performed. First, we used 1.4 volumes of AMPure RNA clean beads prior to SPIA amplification. Second, the final amplified products were purified using 0.8 volumes of AMPure XP beads (Beckman Coulter Genomics, Danvers, MA). Amplified products were eluted in 30 \u00b5l TE buffer (Life Technologies). Technical replicates were performed for HIV NL4-3 clone, HIV clinical samples and WNV clone dilutions samples.",
+            "cite_spans": [
+                {
+                    "start": 340,
+                    "end": 342,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "RNA amplification ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We prepared paired-end libraries for Illumina sequencing according to previously published methods (35). For Ovation RNA-Seq version 1 reactions, no shearing or size selection was performed since the majority of the amplified products were between 200 and 600 bp. For Ovation RNA-Seq version 2 reactions, amplified products were sheared in a single tube format using an adaptive focused acoustic shear technology (S2 machine, Covaris, Woburn, MA). Shearing conditions were as follows: time = 180 seconds, duty cycle = 10, intensity = 5; cycles per burst = 100, mode = frequency sweeping. Sheared samples were purified using 2.2 volumes of AMPure XP beads resulting in fragments between 150 and 500 bp. Briefly, libraries were prepared by end-repair of the products of the NuGEN reactions (sheared for version 2) followed by A-base addition, adapter ligation, and PCR. The following modifications were made. The libraries were generated with forked adapters containing unique 8-base index sequences. The number of PCR cycles varied from 8 to 15 cycles per sample, using the lowest number of cycles needed for sequencing. The PCR reactions were purified using 2 rounds of 0.7 volumes of AMPure XP beads. We sequenced the HIV and WNV indexed libraries in pools of 12 to 36 samples on a HiSeq 2000 (Illumina, Hayward, CA; 1 lane; 101 base paired-end reads). We sequenced the RSV indexed libraries in a pool of two samples on a MiSeq (Illumina; 101 base paired-end reads). Sequence reads were binned by index read prior to further analysis.",
+            "cite_spans": [
+                {
+                    "start": 100,
+                    "end": 102,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Illumina library construction and sequencing ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "As the Illumina reads generated from RNA processed with the Ovation RNA-Seq kit start with a variable number of bases derived from the kit primers, the first 18 bases of each read were trimmed prior to alignment. To analyse input data composition, we first employed an efficient Illumina aligner BWA-v0.5.9 (26) by aligning reads to viral and host reference genomes. For HIV clone and clinical samples, the reference genomes used were the concatenation of the human genome assembly (NCBI36/hg18), human rRNA sequences (NR_003286.1, NR_003287.1, V00589.1, NR_003285.2, gi|251831106:648-1601, gi|251831106:1671-3229) and the HIV HXB2 sequence (K03455.1). For WNV clone samples, the reference genomes used were the concatenation of preliminary and unpublished sequencing data from the golden hamster, Mesocricetus auratus, (K. Lindblad-Toh, personal communication), hamster rRNA sequences (NR_045212.1, NR_045133.1, NR_045213.1, D89009.1, DQ334843.1) and WNV NY99 reference (NC_009942.1). For RSV clinical samples, the reference genomes used were the concatenation of the human genome assembly (NCBI36/hg18), human rRNA sequences (NR_003286.1, NR_003287.1, V00589.1, NR_003285.2, gi|251831106:648-1601, gi|251831106:1671-3229) and the RSV A sequence (M74568.1). The alignment was carried out by first aligning each read independently using command: bwa aln (-q 5 -l 32 -k 2 -t 4 -o 1), then the read pair information was used by invoking command: bwa sampe (-a 100 000). MergeBamAlignments, from the picard package (v1.59) [http://picard.sourceforge.net/], were used to return the unmapped reads to the aligned BAM file. A custom script was used to count the number of reads aligning to each of the concatenated references. Compared with the BWA aligner, the Mosaik aligner (version 1.1.0013) (http://bioinformatics.bc.edu/marthlab/Mosaik) is slower but more accurate when aligning relatively long Illumina reads like the ones used in the current studies. To determine more accurate coverage information for our viral samples only, we used Mosaik (MosaikAligner -st illumina -hs 10 -act 15 -bw 29 -mmp 0.25 -minp 0.25) to align reads to the target viral reference genome and the consensus assembly results. Primer sequences were not trimmed since soft-clipping is tolerated by Mosaik.",
+            "cite_spans": [
+                {
+                    "start": 308,
+                    "end": 310,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Alignment to host and viral reference genomes ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "To determine the composition of unmapped reads (from BWA alignments discussed earlier), we carried out taxonomic analysis on the unmapped reads using the MEGAN package (version 4.62.3) (36) (http://www-ab.informatik.uni-tuebingen.de/software/megan) for sequence from HIV (NL4-3) and WNV clones. A random subset of 50 000 unmapped reads was selected and aligned to the nt database (megablast -v 1 -b 1 -e 1 e-10 -a 8 -m 7) (37). The results were visualized with the MEGAN package (36).",
+            "cite_spans": [
+                {
+                    "start": 186,
+                    "end": 188,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 423,
+                    "end": 425,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 480,
+                    "end": 482,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "MEGAN analysis ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We assembled Illumina data using the VICUNA assembly program (Yang et al., manuscript submitted). In short, VICUNA used the Ovation RNA-Seq primer sequence (inferred from several input datasets) for read trimming. Low complexity reads were discarded. Since some of the HIV, RSV and WNV datasets contained a large percentage of reads derived from the host, we invoked the optional target genome filter component of VICUNA. Based on sequence similarity, the remaining reads were clustered to form contigs, which were further validated such that each read in the contig had sufficient similarity compared with the consensus. Guided by paired reads, these contigs were compared using an efficient alignment algorithm. Any two contigs that shared a significant suffix\u2013prefix overlap were merged. The assembly process terminated when no further merging could be applied. In several cases, a viral reference genome was used to further extend the assembly. Briefly, raw contigs of >350 bases obtained by the assembler were aligned to a reference using MUSCLE (version 3.8) (38). Each contig was broken down in segments when there was a deletion of 30 or more nucleotides compared with the reference. The contigs were added to form the final assembly in decreasing order of length until either the whole assembly was covered or no contigs remained. Overlapping segments were merged together by concatenating the nucleotide sequence of each segment at the central position of overlap.",
+            "cite_spans": [
+                {
+                    "start": 1066,
+                    "end": 1068,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "De novo consensus assembly ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The comparison of the assemblies was performed by a custom script that first aligned them using MUSCLE (version 3.8) (38) and calculated their percent identity over the target region. The script then calculated the composition identity (i.e. the positions where the consensus bases either matched or were found as a non-dominant variant in the other sample) by comparing the nucleotide frequency tables using the alignment to match positions.",
+            "cite_spans": [
+                {
+                    "start": 118,
+                    "end": 120,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Comparison of consensus assemblies ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "All consensus genome assemblies generated as part of this project were submitted to NCBI\u2019s GenBank database (Accession numbers JX503071-JX503101). Illumina read data was submitted to NCBI\u2019s Short Read Archive under Trace Identifiers SRR513075, SRR513078, SRR513080, SRR513086-87, SRR513092, and SRR527699-726.",
+            "cite_spans": [],
+            "section": "Comparison of consensus assemblies ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We generated Illumina libraries for HIV, RSV and WNV samples using the Ovation RNA-Seq system with viral samples containing 500 ag to 240 fg (\u223c100 to \u223c30 000 copies) of viral RNA. The concentration of extracted RNA could not be quantified using standard RNA quantification methods; therefore the quantity of viral genomes from each extraction was determined by viral-specific qRT-PCR assays (Supplementary Table S1). For all samples, the amount of host RNA was determined by 18S rRNA qRT-PCR assays (Supplementary Table S1). We used Illumina sequencing to ensure that we obtained sufficient coverage to compensate for the high levels of host contamination (discussed later) in the clinical samples.",
+            "cite_spans": [],
+            "section": "Viral RNA amplification and Illumina library construction ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "We used both the Ovation RNA-Seq version 1 and 2 systems for HIV NL4-3 clone and clinical samples. As the input amounts for all these viral reactions was below the minimum recommended amount of 500 pg of RNA, we evaluated the success of the amplification reactions using HIV-specific qPCR assay (Supplementary Table S1). For WNV clone samples, Ovation RNA-Seq version 2 system reactions were performed using 100\u201310 000 copies of input RNA with technical duplicates. The success of each amplification reaction was determined using WNV-specific qPCR assay (Supplementary Table S1). For RSV clinical samples, Ovation RNA-Seq version 2 system reactions were performed using 1795 and 30 000 copies of input RNA. The success of each amplification reaction was determined using RSV-specific qPCR assay. All amplification reactions generated sufficient final products to make Illumina libraries. Illumina libraries were generated, pooled, and sequenced. We obtained 5.2\u201386.9 million reads per library (Supplementary Table S1).",
+            "cite_spans": [],
+            "section": "Viral RNA amplification and Illumina library construction ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "To determine the origin of the Illumina reads, we aligned reads to host, rRNA, and viral references. For the HIV clone samples, the majority of the reads (51\u201369%) aligned to the HIV reference and less than 6% of reads aligned to host (Table 1 and Supplementary Table S2). For the HIV clinical samples, the percent of HIV aligning reads was significantly lower (0.4\u20137.1%) while the majority of the reads (30\u201365%) aligned to host (Table 1 and Supplementary Table S2). The percent of reads aligning to HIV was higher in the version 1 than version 2 samples (Table 1 and Supplementary Table S2). This resulted in a higher average of coverage for the CDS for version 1 than version 2, 2830-fold versus 442-fold, respectively (Table 1 and Supplementary Table S2). For WNV clone samples, 13\u201331% of the reads align to WNV reference and 48\u201360% aligned to host (Table 1 and Supplementary Table S2). The average coverage of CDS was 7671-fold for WNV samples (Table 1 and Supplementary Table S2). For RSV clinical samples, the percent of RSV aligning reads were 10\u201317%, whereas the majority of the reads (63\u201369%) aligned to host (Table 1 and Supplementary Table S2). The average coverage of the CDS was 4492-fold for RSV samples.\n",
+            "cite_spans": [],
+            "section": "Composition of sequence data ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 235,
+                    "end": 242,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 429,
+                    "end": 436,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 555,
+                    "end": 562,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 721,
+                    "end": 728,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 852,
+                    "end": 859,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 948,
+                    "end": 955,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1118,
+                    "end": 1125,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "By further analysing the read data, we identified several types of artifacts of the Ovation RNA-Seq system. First, the majority of reads (>95%) contained a partial (>9 bp) Ovation RNA-Seq SPIA (single primer isothermal amplification) primer, which often appears in the start of the read. Second, a substantial fraction (up to 25%) of the reads did not align to the viral or host references. With a fraction of the unaligned reads (50 000), we used MEGAN to identify the composition of unaligned reads for the HIV and WNV clones (Supplementary Figure S3). For the HIV clone, the read composition was: 12% bacterial, 3% eukaryotic, 4% retrovirus, 33% not assigned and 48% no hit. The retrovirus hits were unaligned HIV sequences. The majority of the not assigned reads were bacterial rRNA and HIV hits that could not be classified to specific taxonomical group. The no hit reads were mostly simple sequence repeats and SPIA primer sequences. The high abundance of these reads might be due to the low input amounts, which led to the greater abundance of these non-specific by-products. For the WNV clone, the read composition was: 0.5% bacterial, 3% eukaryotic, 0.5% flavivirus, 2% not assigned and 95% no hit. The eukaryotic hits were mostly rat and mouse. The flavivirus hits were unaligned WNV sequences. Some of the no hits for WNV clone were simple sequence repeats and SPIA primer, but the majority of the no hit reads for WNV could not be identified as similar to known sequences. It is possible that these reads could be hamster-specific sequences that were not aligned to the preliminary golden hamster assembly.",
+            "cite_spans": [],
+            "section": "Composition of sequence data ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "To determine whether our method captured the entire target region (CDS), reads were aligned to the CDS of the viral references using the Mosaik alignment tool. For both HIV clone and clinical samples, reproducible coverage of the entire CDS was obtained (Figure 1A). In all 13 cases, complete coverage was obtained (Supplementary Figure S1). As previous reports using this system utilized only the version 1 system (39), we compared the coverage pattern between version 1 and version 2 systems for HIV clone and clinical samples (Figure 1B). For both HIV clone and clinical samples, version 2 had more even coverage than version 1 (Figure 1B) based on a lower coefficient of variation (CV) (Supplementary Table S3). More even coverage is highly desirable for sequencing viral samples and other applications; therefore the version 2 system would be the preferred system.\n",
+            "cite_spans": [
+                {
+                    "start": 416,
+                    "end": 418,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Complete coverage of viral coding region ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 255,
+                    "end": 263,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 530,
+                    "end": 538,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 632,
+                    "end": 640,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Next, we assessed the read coverage for the serial dilution of the WNV clone relative to a WNV reference. Our method captured the entire WNV CDS with as little as 100 copies of input RNA (Figure 1A). In all 16 dilutions of WNV clone RNA, complete coverage was obtained (Supplementary Figure S1). In addition, the pattern of variable coverage was very reproducible for WNV clone with input amounts of ranging from 100 to 10 000 copies (Supplementary Figure S2).",
+            "cite_spans": [],
+            "section": "Complete coverage of viral coding region ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 188,
+                    "end": 196,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Finally, we assessed the read coverage for two RSV clinical samples. Our method captured the entire RSV CDS for both samples (Supplementary Figure S1C). Similarly to HIV and WNV samples, the coverage is variable across the CDS.",
+            "cite_spans": [],
+            "section": "Complete coverage of viral coding region ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Due to the challenges of large amounts of host contamination, highly variable coverage and the presence of SPIA primer found in our sequence data, we used a newly developed assembler, VICUNA, to generate de novo assemblies for HIV, RSV and WNV low input samples (Yang et al., manuscript submitted). VICUNA is designed to assemble genetically heterogeneous viral genomes in the presence of large amounts of host contamination. To enable a direct comparison among all our viral libraries, we randomly sampled 5 million reads for each sample. This choice reflects a realistic sequencing process in production and allowed us to obtain a high average coverage (e.g. over 1000-fold) of the target region as well as sufficient coverage across the genome, given that up to 99% of the reads are non-viral sequences and coverage is uneven. For each HIV clinical sample, we generated consensus sequence that covers over 96% of the target region (Table 1). In 7 out of 10 clinical samples, we generated consensus sequence that covers 100% of the target region (Supplementary Table S2). For WNV clone samples, we generated a consensus sequence that covers over 99% of the target region (Table 1). In 15 out of 16 WNV samples, we generated a consensus sequences that covers 100% of the target region (Supplementary Table S2). For both RSV clinical samples, we generated a consensus sequence that covers 100% of the target region (Table 1).",
+            "cite_spans": [],
+            "section": "De novo assembly of nearly complete HIV and WNV consensus genomes ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 935,
+                    "end": 942,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1174,
+                    "end": 1181,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1416,
+                    "end": 1423,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "For selected samples from HIV, WNV and RSV, we compared the assembly statistics between three different assemblers: VICUNA, AV454 (10) and SOAPdenovo (40) (Supplementary Table S4). VICUNA outperformed the other assemblers by returning fewer and longer contigs that covered a larger part of the CDS. The percent of CDS covered by all contigs could not be calculated for SOAPdenovo due to the large number of short contigs which would require a second assembly in order to reconstitute a consensus sequence.",
+            "cite_spans": [
+                {
+                    "start": 131,
+                    "end": 133,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 151,
+                    "end": 153,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "De novo assembly of nearly complete HIV and WNV consensus genomes ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "During the assembly process, we observed in several cases that by invoking the optional reference guided merging component in VICUNA after the initial assembly, we could improve the final consensus. The majority of the clinical samples were assembled in only one or two contigs prior to reference guided merging. A significant portion of the viral genome was assembled into a single large contig (Supplementary Table S4) without the need for reference guided merging, but the reference guided merging increased the coverage of the final CDS to >96% of the viral genome (Table 1 and Supplementary Table S2). In addition, upon further investigation, we discovered an artifact that produced chimeric fragments, which might be caused by stem loops of RNA secondary structure (Supplementary Figure S4). This artifact complicated the de novo assembly by increasing the number of contigs and required reference guided merging of contigs.",
+            "cite_spans": [],
+            "section": "De novo assembly of nearly complete HIV and WNV consensus genomes ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 570,
+                    "end": 577,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "We next compared the consensus assembly between technical replicates for HIV clone and clinical samples (Table 2). First, we compared the nucleotide differences between the replicates (Assembly identity (%) in Table 2). For HIV clone replicates, the assemblies were 99.94% identical. For HIV clinical sample B, the assemblies were 99.26% and 98.55% identical for the 200 and 100 copy replicates, respectively. For WNV clone replicates, the assemblies were 99.98% and 100% identical for the 250 and 100 copy replicates, respectively. The discrepancies between assembled consensus sequences may be either caused by the differences in data generation or by the assembly process. To further evaluate the reproducibility of the method, we examined the nucleotide composition differences (Table 2) between any two assemblies. At each mismatch residue, the consensus base in the first assembly was considered to be consistent with the consensus base in the second assembly if the mismatch was supported by read alignments in the second assembly (Composition mismatches in Table 2). For HIV clone replicates, the assemblies were 99.98% identical when we include read support for any differences in the assembly. For HIV clinical sample B, the assemblies were 99.79% and 99.73% identical for the 200 and 100 copy replicates, respectively. For WNV clone replicates, the assemblies were 100% identical for both 250 and 100 copy replicates. Thus assemblies of both HIV and WNV consensus sequences are very reproducible.\n",
+            "cite_spans": [],
+            "section": "De novo assembly of nearly complete HIV and WNV consensus genomes ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 105,
+                    "end": 112,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 210,
+                    "end": 217,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 783,
+                    "end": 790,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 1065,
+                    "end": 1072,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "For point of comparison with our newly developed methods, we attempted to generate RT-PCR amplicons for HIV clone and clinical samples A and B and sequence them by 454 using previously described methods (10). For clinical sample B, we were not able to generate all four-overlapping PCR amplicons spanning the CDS after four attempts. With our newly developed methods, this sample was successful in all six attempts to generate consensus assembly covering >98% of the CDS (Supplementary Table S1). We did generate all four-overlapping PCR amplicons, sequence by 454 and built consensus assemblies for HIV clone and clinical sample A. For HIV clone, assemblies were 100% identical between the two methods (Table 3). For clinical sample A, the assemblies were 98.25 and 99.41 % identical at the nucleotide and composition levels, respectively (Table 3). Our newly developed methods generated assemblies for HIV clone and clinical samples that were highly similar to those generated using standard RT-PCR methods.\n",
+            "cite_spans": [
+                {
+                    "start": 204,
+                    "end": 206,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "De novo assembly of nearly complete HIV and WNV consensus genomes ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 704,
+                    "end": 711,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 841,
+                    "end": 848,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "In this study, we used a sequence-independent amplification method, coupled with Illumina sequencing to generate full genome assemblies for HIV, RSV and WNV samples with as little as 100 viral RNA genomes. Previous studies using Ovation RNA-Seq with HIV viral RNA used ex vivo amplification, large amounts of viral RNA, and utilized a reference-based assembly approach (39). For several reasons, these conditions are not ideal for sequencing from clinical samples. First, most clinical samples contain a few picograms or less of viral RNA. In our study, we were able to study viral samples with femtogram and attogram amounts of viral RNA (over 1 million times less material than had been previously used) as input to the Ovation RNA-Seq system and generate sufficient dsDNA for Illumina sequencing. Second, ex vivo amplification is laborious and could lead to bias in sample generation during the 9 days in culture. We were able to capture complete sequence coverage of the CDS directly from clinical samples therefore generating sequence data more representative of the dominant viral genome within the infected individual. Third, we utilized a recently developed de novo genome assembly algorithm, VICUNA, to assemble a full-length consensus (Yang et al., manuscript submitted). Previous studies have shown (10,41) that de novo assembly can significantly improve the accuracy of assembly and utilization of data compared with reference-based assembly approaches. In our study, VICUNA outperformed alternate assemblers (Supplementary Table S4) by returning the fewest and longest contigs.",
+            "cite_spans": [
+                {
+                    "start": 370,
+                    "end": 372,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1311,
+                    "end": 1313,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1314,
+                    "end": 1316,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Our method, like other sequence-independent methods (25), generates highly variable coverage across the viral genome. RNA viruses can have a large number of functional RNA secondary structures (42,43) which can result in stalling of cDNA synthesis (44). This uneven coverage may be due to viral secondary structure. The VICUNA assembler is able to work with this highly variable coverage to generate full-length consensus assemblies for the HIV, RSV and WNV samples.",
+            "cite_spans": [
+                {
+                    "start": 53,
+                    "end": 55,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 194,
+                    "end": 196,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 197,
+                    "end": 199,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 249,
+                    "end": 251,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "In our study, we were not able to use the Ovation RNA-Seq method to quantify the amount of viral RNA amounts in our clinical samples. For RSV and HIV clinical sample, the clinical samples with highest input viral RNA amounts had the highest percent of reads aligning to viral reference (Supplementary Table S1), but there was no correlation between input RNA and viral sequence coverage. This method may provide approximation of viral amounts in clinical sample, but it is not quantitative.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "A major disadvantage for sequence-independent amplification of viral RNA samples is the large amount of host contamination that is amplified using these methods. We tested several different RNA sequence-independent amplification kits to evaluate their utility with viral clinical samples (unpublished results). The TransPlex Whole Transcriptome Amplification (WTA1\u2014Sigma Aldrich, St. Louis, MO), Complete TransPlex Whole Transcriptome Amplification (WTA2\u2014Sigma Aldrich), and SMARTer cDNA synthesis (Clontech, Mountain View, CA) kits produced 10-fold fewer reads aligning to the HIV genome for clinical samples compared with the Ovation RNA-Seq system (C. Malboeuf, unpublished data). The Ovation RNA-Seq system performed best, in part, due to it having the lowest percent of reads aligning to host contamination, particularly rRNA, which comprises >80% of total RNA. In our Ovation RNA-Seq experiments, <37% of the total reads from HIV and RSV clinical samples aligned to rRNA (Table 1). This significant reduction in amplification of rRNA may have led to increased amplification of viral RNA thus allowing us to utilize only 5 million reads to generate full-length consensus assembles with >400-fold average coverage.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 978,
+                    "end": 985,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Our method has several advantages over standard RT-PCR based methods. It does not require prior viral sequence knowledge for primer design enabling the study of viruses with limited sequence data. The lack of viral-specific primers allows for identification of viral recombinants that might not be found with standard RT-PCR methods. Our method is capable of amplifying viral RNA genomes that are not successful by traditional RT-PCR methods. For HIV clinical sample B, four RT-PCR attempts were not successful in capturing the CDS, but in all six attempts with our method 97\u2013100% of the CDS was captured (Table 1). Furthermore, this method is easily applicable to multiple sample types. We applied the method to HIV, RSV and WNV samples without the need for optimization. Developing a robust RT-PCR process with viral specific primers can require a significant effort, up to several months (unpublished results), so that our method potentially speeds up viral genome sequencing projects. This method works with a highly variable virus such as HIV\u2014capturing the entire CDS of the genome starting from only 100 viral genomes (Table 1). In addition, the process from viral RNA to dsDNA requires only 4.5 hours. Furthermore if this method were coupled with Nextera Illumina library construction (45), one could generate an Illumina library in less than a single day. Although the Nextera method is very fast, the transposase-based method of Illumina library construction may introduce GC-bias compared with standard methods (46). As only 5 million reads were necessary to assemble complete viral genomes, MiSeq or Ion Torrent sequencing (47) could be used. This would allow a researcher to go from sample to sequence data in less than a week. Finally, the Ovation RNA-Seq method is available in automated format allowing for high-throughput processing of clinical samples. As only 5 million reads are needed per sample, one could pool up to 96 samples per lane of HiSeq2000.",
+            "cite_spans": [
+                {
+                    "start": 1293,
+                    "end": 1295,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1522,
+                    "end": 1524,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1635,
+                    "end": 1637,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 606,
+                    "end": 613,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1125,
+                    "end": 1132,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The methods described here have several promising applications. The sequence-independent amplification methods coupled with our de novo assembly of viral genomes provides a new methodology for sequencing viral genomes from many different sample types. These methods can generate next-generation sequencing data of pathogens allowing for greater insight into pathogen evolution, fitness, emergence and transmission as well as factors that are important for the development of new therapeutics and vaccines. In addition, these methods could be used to discover known or unknown pathogens in clinical samples, not limited to viruses. Likewise, these methods could also be used for surveillance to detect viral RNA from environmental sources, such as WNV in mosquito samples. This surveillance ability could provide valuable insight into what pathogens are circulating and provide an \u201cearly warning\u201d of future outbreaks (48). Additionally, one would be able to identify and study multiple viruses from a single sample. This could be beneficial in understanding the dynamics of viral co-infection, such as HIV/HCV. Furthermore, these methods could be applied to parasite, bacterial and fungal pathogen discovery by sequencing total RNA that contains expressed pathogen RNA. Expressed pathogens could be discovered incidentally through RNA-Seq data. Additionally, it may be more cost effective for some projects to sequence RNA rather than DNA to detect pathogens because greater sequencing depth may be needed for DNA than RNA (24). Morin et al. have demonstrated the capability of detecting expressed pathogen RNA through RNA sequencing (49).",
+            "cite_spans": [
+                {
+                    "start": 917,
+                    "end": 919,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 1523,
+                    "end": 1525,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1634,
+                    "end": 1636,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "In summary, we demonstrate that our method is reproducible and robust for generating full length genomes from challenging ultra-low copy viral RNA samples. We demonstrate success with HIV, RSV and WNV samples, but these methods can be applied to other viral samples with various viral RNA amounts and host contamination.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Supplementary Data are available at NAR Online: Supplementary Tables 1\u20134 and Supplementary Figures 1\u20134.",
+            "cite_spans": [],
+            "section": "SUPPLEMENTARY DATA",
+            "ref_spans": []
+        },
+        {
+            "text": "National Institute of Allergy and Infectious Disease, the National Institutes of Health and the Department of Health and Human Services [contracts HHSN272200900018C and HHSN272200900006C], and grant P01-AI074415 (to T.M.A.), and the Bill and Melinda Gates Foundation (to T.M.A. and M.R.H.). Funding for open access charge: NIAID [contract no. HHSN27220090018C].",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        },
+        {
+            "text": "Conflict of intertest statement. After the development of the lab method and initial sequencing results were obtained in April, 2011, Joshua Levin participated in a one day Medicinal/Clinical Sequencing Technology Advancement Summit at NuGEN and was compensated for his time and travel expenses.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Composition of sequence data and de novo assembly statistics\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2.: Comparison of HIV and WNV technical replicate assemblies\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3.: Comparison between Ovation RNA-Seq-Illumina and RT-PCR-454 assemblies\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1.: Complete sequence coverage of viral coding region. (A) Reproducibility of read coverage for technical replicates for HIV clone and clinical and WNV clone samples. (B) Comparison of read coverage for HIV clone and clinical samples between Ovation RNA-Seq version 1 (red) and version 2 (blue) systems. Reads were aligned to the CDS of the relevant viral reference using Mosaik. Coverage was computed as the total number of reads covering a given residue and was normalized by the total coverage summed across all residues; at each residue, the coverage was divided by the total coverage and sum of normalized coverage equals one.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Whole-genome characterization of human and simian immunodeficiency virus intrahost diversity by ultradeep pyrosequencing",
+            "authors": [
+                {
+                    "first": "BN",
+                    "middle": [],
+                    "last": "Bimber",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Dudley",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lauck",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Becker",
+                    "suffix": ""
+                },
+                {
+                    "first": "EN",
+                    "middle": [],
+                    "last": "Chin",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Lank",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Grunenwald",
+                    "suffix": ""
+                },
+                {
+                    "first": "NC",
+                    "middle": [],
+                    "last": "Caruccio",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Maffitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "NA",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Virol.",
+            "volume": "84",
+            "issn": "",
+            "pages": "12087-12092",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Whole genome deep sequencing of HIV-1 reveals the impact of early minor variants upon immune recognition during acute infection",
+            "authors": [
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Henn",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Boutwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Charlebois",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Lennon",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Power",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Macalalad",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Berlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Malboeuf",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Ryan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gnerre",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS Pathog.",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Genome-wide patterns of intra-human dengue virus diversity reveal associations with viral phylogenetic clade and inter-host diversity",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Parameswaran",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Charlebois",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Tellez",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nunez",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Ryan",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Malboeuf",
+                    "suffix": ""
+                },
+                {
+                    "first": "JZ",
+                    "middle": [],
+                    "last": "Levin",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Lennon",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Balmaseda",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Harris",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J Virol.",
+            "volume": "86",
+            "issn": "",
+            "pages": "8546-8558",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Rhinovirus genome evolution during experimental human infection",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cordey",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Junier",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Gerlach",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Gobbini",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Farinelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Zdobnov",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Winther",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Tapparel",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Kaiser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS One",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Infidelity of SARS-CoV Nsp14-exonuclease mutant virus replication is revealed by complete genome sequencing",
+            "authors": [
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Eckerle",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Becker",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Halpin",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Venter",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Scherbakova",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Graham",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Baric",
+                    "suffix": ""
+                },
+                {
+                    "first": "TB",
+                    "middle": [],
+                    "last": "Stockwell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Pathog.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Beyond the consensus: dissecting within-host viral population diversity of foot-and-mouth disease virus using next-generation genome sequencing",
+            "authors": [
+                {
+                    "first": "CF",
+                    "middle": [],
+                    "last": "Wright",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Morelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Thebaud",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Knowles",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Herzyk",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Paton",
+                    "suffix": ""
+                },
+                {
+                    "first": "DT",
+                    "middle": [],
+                    "last": "Haydon",
+                    "suffix": ""
+                },
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "King",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Virol.",
+            "volume": "85",
+            "issn": "",
+            "pages": "2266-2275",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Genetic characterization of human immunodeficiency virus type 1 in elite controllers: lack of gross genetic defects or common amino acid changes",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Miura",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Brockman",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Brumme",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZL",
+                    "middle": [],
+                    "last": "Brumme",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Carlson",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Pereyra",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Trocha",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Addo",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Block",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Rothchild",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Virol.",
+            "volume": "82",
+            "issn": "",
+            "pages": "8422-8430",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Multiple, linked human immunodeficiency virus type 1 drug resistance mutations in treatment-experienced patients are missed by standard genotype analysis",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Palmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kearney",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Maldarelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "EK",
+                    "middle": [],
+                    "last": "Halvas",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Bixby",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Bazmi",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Rock",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Falloon",
+                    "suffix": ""
+                },
+                {
+                    "first": "RT",
+                    "middle": [],
+                    "last": "Davey",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Dewar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Clin. Microbiol.",
+            "volume": "43",
+            "issn": "",
+            "pages": "406-413",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Deciphering human immunodeficiency virus type 1 transmission and early envelope diversification by single-genome amplification and sequencing",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Salazar-Gonzalez",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bailes",
+                    "suffix": ""
+                },
+                {
+                    "first": "KT",
+                    "middle": [],
+                    "last": "Pham",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Salazar",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Guffey",
+                    "suffix": ""
+                },
+                {
+                    "first": "BF",
+                    "middle": [],
+                    "last": "Keele",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Derdeyn",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Farmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Hunter",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Allen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Virol.",
+            "volume": "82",
+            "issn": "",
+            "pages": "3952-3970",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Human immunodeficiency virus controllers: mechanisms of durable virus control in the absence of antiretroviral therapy",
+            "authors": [
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Deeks",
+                    "suffix": ""
+                },
+                {
+                    "first": "BD",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Immunity",
+            "volume": "27",
+            "issn": "",
+            "pages": "406-416",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Kinetics of viremia and NS1 antigenemia are shaped by immune status and virus serotype in adults with dengue",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Tricou",
+                    "suffix": ""
+                },
+                {
+                    "first": "NN",
+                    "middle": [],
+                    "last": "Minh",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Farrar",
+                    "suffix": ""
+                },
+                {
+                    "first": "HT",
+                    "middle": [],
+                    "last": "Tran",
+                    "suffix": ""
+                },
+                {
+                    "first": "CP",
+                    "middle": [],
+                    "last": "Simmons",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS Negl. Trop. Dis.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Transmission of single HIV-1 genomes and dynamics of early immune escape revealed by ultra-deep sequencing",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Fischer",
+                    "suffix": ""
+                },
+                {
+                    "first": "VV",
+                    "middle": [],
+                    "last": "Ganusov",
+                    "suffix": ""
+                },
+                {
+                    "first": "EE",
+                    "middle": [],
+                    "last": "Giorgi",
+                    "suffix": ""
+                },
+                {
+                    "first": "PT",
+                    "middle": [],
+                    "last": "Hraber",
+                    "suffix": ""
+                },
+                {
+                    "first": "BF",
+                    "middle": [],
+                    "last": "Keele",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Leitner",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Gleasner",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Lo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS One",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Fundamental issues in mosquito surveillance for arboviral transmission",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Gu",
+                    "suffix": ""
+                },
+                {
+                    "first": "TR",
+                    "middle": [],
+                    "last": "Unnasch",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Katholi",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lampman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Novak",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Trans. R. Soc. Trop. Med. Hyg.",
+            "volume": "102",
+            "issn": "",
+            "pages": "817-822",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Evaluation of high-throughput sequencing for identifying known and unknown viruses in biological samples",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cheval",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Sauvage",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Frangeul",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Dacheux",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Guigon",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Dumey",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Pariente",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Rousseaux",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Dorange",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Berthet",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Clin. Microbiol.",
+            "volume": "49",
+            "issn": "",
+            "pages": "3268-3275",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Viral genome sequencing by random priming methods",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Djikeng",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Halpin",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kuzmickas",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Depasse",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Feldblyum",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Sengamalay",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Afonso",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "NG",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Ghedin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMC Genomics",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Use of illumina deep sequencing technology to differentiate hepatitis C virus variants",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ninomiya",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ueno",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Funayama",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Nagashima",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Nishida",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kondo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Inoue",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Kakazu",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Kimura",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Nakayama",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Clin. Microbiol.",
+            "volume": "50",
+            "issn": "",
+            "pages": "857-866",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "The sensitivity of massively parallel sequencing for detecting candidate infectious agents associated with human tissue",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Warren",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Freeman",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Gustavsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chenard",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Friedman",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Suttle",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Holt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Metagenomic analyses of viruses in stool samples from children with acute flaccid paralysis",
+            "authors": [
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Victoria",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kapoor",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Blinkova",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Slikas",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Naeem",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Zaidi",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Delwart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J. Virol.",
+            "volume": "83",
+            "issn": "",
+            "pages": "4642-4651",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Characterizing the impact of smoking and lung cancer on the airway transcriptome using RNA-Seq",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Beane",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Vick",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Schembri",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Anderlind",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gower",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Campbell",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "XH",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Xiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "YO",
+                    "middle": [],
+                    "last": "Alekseyev",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Cancer Prev. Res. (Phila)",
+            "volume": "4",
+            "issn": "",
+            "pages": "803-817",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Whole-transcriptome RNAseq analysis from minute amount of total RNA",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Tariq",
+                    "suffix": ""
+                },
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Jejelowo",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Pourmand",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nucleic Acids Res.",
+            "volume": "39",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Production of acquired immunodeficiency syndrome-associated retrovirus in human and nonhuman cells transfected with an infectious molecular clone",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Adachi",
+                    "suffix": ""
+                },
+                {
+                    "first": "HE",
+                    "middle": [],
+                    "last": "Gendelman",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Koenig",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Folks",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Willey",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rabson",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "J. Virol.",
+            "volume": "59",
+            "issn": "",
+            "pages": "284-291",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Infectious cDNA clone of the epidemic west nile virus from New York City",
+            "authors": [
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Tilgner",
+                    "suffix": ""
+                },
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Lo",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Kent",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Bernard",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J. Virol.",
+            "volume": "76",
+            "issn": "",
+            "pages": "5847-5856",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "DNA bar coding and pyrosequencing to identify rare HIV drug resistance mutations",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Hoffmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Minkah",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Leipzig",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "MQ",
+                    "middle": [],
+                    "last": "Arens",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Tebas",
+                    "suffix": ""
+                },
+                {
+                    "first": "FD",
+                    "middle": [],
+                    "last": "Bushman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res.",
+            "volume": "35",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Natural infection of infants with respiratory syncytial virus subgroups A and B: a study of frequency, disease severity, and viral load",
+            "authors": [
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Devincenzo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Pediatr. Res.",
+            "volume": "56",
+            "issn": "",
+            "pages": "914-917",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "The effects of internal primer-template mismatches on RT-PCR: HIV-1 model studies",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Christopherson",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sninsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kwok",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nucleic Acids Res.",
+            "volume": "25",
+            "issn": "",
+            "pages": "654-658",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Virus detection protocols for west nile virus in vertebrate and mosquito specimens",
+            "authors": [
+                {
+                    "first": "EB",
+                    "middle": [],
+                    "last": "Kauffman",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Dupuis",
+                    "suffix": "2nd"
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Ngo",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Bernard",
+                    "suffix": ""
+                },
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Kramer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J. Clin. Microbiol.",
+            "volume": "41",
+            "issn": "",
+            "pages": "3661-3667",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Comparison of a real-time reverse transcriptase PCR assay and a culture technique for quantitative assessment of viral load in children naturally infected with respiratory syncytial virus",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Perkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Webb",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Torrance",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "El Saleeby",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Harrison",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Aitken",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Patel",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "DeVincenzo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Clin. Microbiol.",
+            "volume": "43",
+            "issn": "",
+            "pages": "2356-2362",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Novel isothermal, linear nucleic acid amplification systems for highly multiplexed applications",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Kurn",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Heath",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kopf-Sill",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Stephens",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Clin. Chem.",
+            "volume": "51",
+            "issn": "",
+            "pages": "1973-1981",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Comprehensive comparative analysis of strand-specific RNA sequencing methods",
+            "authors": [
+                {
+                    "first": "JZ",
+                    "middle": [],
+                    "last": "Levin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Yassour",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Adiconis",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Nusbaum",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Friedman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gnirke",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Regev",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nat. Methods",
+            "volume": "7",
+            "issn": "",
+            "pages": "709-715",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Integrative analysis of environmental sequences using MEGAN4",
+            "authors": [
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Huson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mitra",
+                    "suffix": ""
+                },
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Ruscheweyh",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Weber",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Schuster",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Genome Res.",
+            "volume": "21",
+            "issn": "",
+            "pages": "1552-1560",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "A greedy algorithm for aligning DNA sequences",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Schwartz",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wagner",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J. Comput. Biol.",
+            "volume": "7",
+            "issn": "",
+            "pages": "203-214",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "MUSCLE: multiple sequence alignment with high accuracy and high throughput",
+            "authors": [
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Edgar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res.",
+            "volume": "32",
+            "issn": "",
+            "pages": "1792-1797",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Development of a low bias method for characterizing viral populations using next generation sequencing technology",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Willerth",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Pedro",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Pachter",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Humeau",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Arkin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DV",
+                    "middle": [],
+                    "last": "Schaffer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS One",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Low-abundance drug-resistant viral variants in chronically HIV-infected, antiretroviral treatment-naive patients significantly impact treatment outcomes",
+            "authors": [
+                {
+                    "first": "BB",
+                    "middle": [],
+                    "last": "Simen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Simons",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Hullsiek",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Novak",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Macarthur",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Baxter",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Lubeski",
+                    "suffix": ""
+                },
+                {
+                    "first": "GS",
+                    "middle": [],
+                    "last": "Turenchalk",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Braverman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J. Infect. Dis.",
+            "volume": "199",
+            "issn": "",
+            "pages": "693-701",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "De novo assembly of human genomes with massively parallel short read sequencing",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Zhu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ruan",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Qian",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Fang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Shan",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kristiansen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Genome Res.",
+            "volume": "20",
+            "issn": "",
+            "pages": "265-272",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "The evolutionary analysis of emerging low frequency HIV-1 CXCR4 using variants through time\u2014an ultra-deep approach",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Archer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rambaut",
+                    "suffix": ""
+                },
+                {
+                    "first": "BE",
+                    "middle": [],
+                    "last": "Taillon",
+                    "suffix": ""
+                },
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Harrigan",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lewis",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Robertson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Comput. Biol.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Architecture and secondary structure of an entire HIV-1 RNA genome",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Watts",
+                    "suffix": ""
+                },
+                {
+                    "first": "KK",
+                    "middle": [],
+                    "last": "Dang",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Gorelick",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Leonard",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Bess",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Swanstrom",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Burch",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Weeks",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nature",
+            "volume": "460",
+            "issn": "",
+            "pages": "711-716",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Conserved RNA secondary structures in viral genomes: a survey",
+            "authors": [
+                {
+                    "first": "IL",
+                    "middle": [],
+                    "last": "Hofacker",
+                    "suffix": ""
+                },
+                {
+                    "first": "PF",
+                    "middle": [],
+                    "last": "Stadler",
+                    "suffix": ""
+                },
+                {
+                    "first": "RR",
+                    "middle": [],
+                    "last": "Stocsits",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Bioinformatics",
+            "volume": "20",
+            "issn": "",
+            "pages": "1495-1499",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Pausing of reverse transcriptase on retroviral RNA templates is influenced by secondary structures both 5' and 3' of the catalytic site",
+            "authors": [
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Harrison",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Mayo",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Hunter",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Lever",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Nucleic Acids Res.",
+            "volume": "26",
+            "issn": "",
+            "pages": "3433-3442",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Rapid, low-input, low-bias construction of shotgun fragment libraries by high-density in vitro transposition",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Adey",
+                    "suffix": ""
+                },
+                {
+                    "first": "HG",
+                    "middle": [],
+                    "last": "Morrison",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Asan",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Xun",
+                    "suffix": ""
+                },
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "Kitzman",
+                    "suffix": ""
+                },
+                {
+                    "first": "EH",
+                    "middle": [],
+                    "last": "Turner",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Stackhouse",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "MacKenzie",
+                    "suffix": ""
+                },
+                {
+                    "first": "NC",
+                    "middle": [],
+                    "last": "Caruccio",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Genome Biol.",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Evaluation of a transposase protocol for rapid generation of shotgun high-throughput sequencing libraries from nanogram quantities of DNA",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Marine",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Polson",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ravel",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Hatfull",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Russell",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sullivan",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Syed",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Dumas",
+                    "suffix": ""
+                },
+                {
+                    "first": "KE",
+                    "middle": [],
+                    "last": "Wommack",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Appl. Environ. Microbiol.",
+            "volume": "77",
+            "issn": "",
+            "pages": "8071-8079",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "ten Bosch",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Deignan",
+                    "suffix": ""
+                },
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Grody",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Next-generation Sequencing in Clinical Molecular Diagnostics",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Emerging pathogens: challenges and successes of molecular diagnostics",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Olano",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "McBride",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Mol. Diagn.",
+            "volume": "10",
+            "issn": "",
+            "pages": "185-197",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Profiling the HeLa S3 transcriptome using randomly primed cDNA and massively parallel short-read sequencing",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Morin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bainbridge",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Fejes",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hirst",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Krzywinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Pugh",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "McDonald",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Varhol",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Marra",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Biotechniques",
+            "volume": "45",
+            "issn": "",
+            "pages": "81-94",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Quantitative deep sequencing reveals dynamic HIV-1 escape and large population shifts during CCR5 antagonist therapy in vivo",
+            "authors": [
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Tsibris",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Korber",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Arnaout",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Russ",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Lo",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Leitner",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Gaschen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Theiler",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Paredes",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Su",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "PLoS One",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Characterization of mutation spectra with ultra-deep pyrosequencing: application to HIV-1 drug resistance",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Mitsuya",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Gharizadeh",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ronaghi",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Shafer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Genome Res.",
+            "volume": "17",
+            "issn": "",
+            "pages": "1195-1201",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Hepatitis C virus transmission bottlenecks analyzed by deep sequencing",
+            "authors": [
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Sherrill-Mix",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Quince",
+                    "suffix": ""
+                },
+                {
+                    "first": "FD",
+                    "middle": [],
+                    "last": "Bushman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Virol.",
+            "volume": "84",
+            "issn": "",
+            "pages": "6218-6228",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Analysis of hepatitis C virus intrahost diversity across the coding region by ultradeep pyrosequencing",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lauck",
+                    "suffix": ""
+                },
+                {
+                    "first": "MV",
+                    "middle": [],
+                    "last": "Alvarado-Mora",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Becker",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Bhattacharya",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Striker",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "FJ",
+                    "middle": [],
+                    "last": "Carrilho",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "O'Connor",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Pinho",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Virol.",
+            "volume": "86",
+            "issn": "",
+            "pages": "3952-3960",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Internally deleted WNV genomes isolated from exotic birds in New Mexico: function in cells, mosquitoes, and mice",
+            "authors": [
+                {
+                    "first": "KN",
+                    "middle": [],
+                    "last": "Pesko",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Fitzpatrick",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Ryan",
+                    "suffix": ""
+                },
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Lennon",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Henn",
+                    "suffix": ""
+                },
+                {
+                    "first": "GD",
+                    "middle": [],
+                    "last": "Ebel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Virology",
+            "volume": "427",
+            "issn": "",
+            "pages": "10-17",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

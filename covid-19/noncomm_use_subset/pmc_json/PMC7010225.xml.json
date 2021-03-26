@@ -1,0 +1,2362 @@
+{
+    "paper_id": "PMC7010225",
+    "metadata": {
+        "title": "A novel loop-mediated isothermal amplification method for efficient and robust detection of EGFR mutations",
+        "authors": [
+            {
+                "first": "Sho",
+                "middle": [],
+                "last": "Horiuchi",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Yuichi",
+                "middle": [],
+                "last": "Saito",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Atsuka",
+                "middle": [],
+                "last": "Matsui",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Nobumasa",
+                "middle": [],
+                "last": "Takahashi",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Tomohiko",
+                "middle": [],
+                "last": "Ikeya",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Eishin",
+                "middle": [],
+                "last": "Hoshi",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Yoshihiko",
+                "middle": [],
+                "last": "Shimizu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Masanori",
+                "middle": [],
+                "last": "Yasuda",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Lung cancer has the highest morbidity and mortality of all malignancies in the USA in 2011 and 2013 (1,2). Non-small cell lung carcinoma (NSCLC) is the most common form of lung cancer, accounting for 70-85% of cases and is primarily treated using systemic chemotherapy (3). However, NSCLC treatment has evolved due to the development of therapy targeting the activation of mutations in the epidermal growth factor receptor (EGFR) (4).",
+            "cite_spans": [
+                {
+                    "start": 101,
+                    "end": 102,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 103,
+                    "end": 104,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 270,
+                    "end": 271,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 431,
+                    "end": 432,
+                    "mention": "4",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "EGFR activation is caused by genetic mutations, conferring susceptibility to EGFR tyrosine kinase inhibitor (TKI) treatment, and was first reported in 2004 (5). EGFR mutations of pulmonary adenocarcinoma are present in 5-15% of the Caucasian population and 40-55% of the East Asian population (6-8). Clinical trials have shown that patients with pulmonary adenocarcinoma with an EGFR mutation exhibit clinical responses to orally administered EGFR inhibitors (5,7,9). In 2016, Lin et al (4) reported that 20/137 (14.6%) patients with EGFR-mutant metastatic lung adenocarcinoma had a survival time of 5-years (4). Therefore, detection of EGFR mutations is an important step in the treatment-decision pathway for patients with pulmonary adenocarcinoma.",
+            "cite_spans": [
+                {
+                    "start": 157,
+                    "end": 158,
+                    "mention": "5",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 294,
+                    "end": 295,
+                    "mention": "6",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 296,
+                    "end": 297,
+                    "mention": "8",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 460,
+                    "end": 461,
+                    "mention": "5",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 462,
+                    "end": 463,
+                    "mention": "7",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 464,
+                    "end": 465,
+                    "mention": "9",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 488,
+                    "end": 489,
+                    "mention": "4",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 609,
+                    "end": 610,
+                    "mention": "4",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Previously, direct DNA sequencing was the standard method for detecting genetic mutations (10); however, at present, several alternative methods for mutation testing have been developed (11,12). For example, the Therascreen EGFR PCR kit\u00ae (Qiagen, Inc.) is a commercial quantitative (q)PCR kit and has been widely adopted for clinical practice; however, this method is time-consuming and possesses certain procedural complexities, for example, requiring several temperature changes during DNA amplification (11). Next-generation sequencing has improved the efficiency of oncogene testing by high-throughput sequencing, which can detect dozen of mutations at the same time, but the high-cost of this technique limits its clinical usage (13,14). Therefore, detecting oncogenic mutations using a simple, easy and highly reproducible method remains a challenge.",
+            "cite_spans": [
+                {
+                    "start": 91,
+                    "end": 93,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 187,
+                    "end": 189,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 190,
+                    "end": 192,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 507,
+                    "end": 509,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 735,
+                    "end": 737,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 738,
+                    "end": 740,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Loop-mediated isothermal amplification (LAMP) is a new PCR based method with high levels of specificity and amplification efficiency and utilizes six primers (15). This method is performed under isothermal conditions, thereby enabling rapid amplification. Due to the high specificity and rapid detection quality of LAMP, this method has been widely used in the fields of bacteriology (16) and virology (17,18). However, to the best of our knowledge, there are very few studies reporting the value of LAMP in determining EGFR mutations. Therefore, the present study aimed to detect EGFR mutations in surgically resected tumor tissues from patients with pulmonary adenocarcinoma using this method, as detection of EGFR mutations is one a key examination for patients with pulmonary adenocarcinoma (4,5,7,9). In addition, the sensitivity, specificity, positive predictive value, negative predictive value and accuracy of LAMP was evaluated and compared with the Therascreen EGFR PCR kit\u00ae.",
+            "cite_spans": [
+                {
+                    "start": 159,
+                    "end": 161,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 385,
+                    "end": 387,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 403,
+                    "end": 405,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 406,
+                    "end": 408,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 796,
+                    "end": 797,
+                    "mention": "4",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 798,
+                    "end": 799,
+                    "mention": "5",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 800,
+                    "end": 801,
+                    "mention": "7",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 802,
+                    "end": 803,
+                    "mention": "9",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The tumor tissues were surgically resected from 189 consecutive patients diagnosed with pulmonary adenocarcinoma by the expert pathologist at The Saitama Cardiovascular and Respiratory Center (Kumagaya, Japan) between January 2016 and October 2017. All pathological diagnosis was determined on the basis of the WHO classification version 8 (19) by an expert pathologist, who normally makes a diagnosis using HE-stained slides using light microscope (Nikon Co., ECLIPSE Ni-u) from a low magnification to a high magnification. The inclusion criteria were as follows: i) Surgically resected tissue of primary lung cancer; ii) pulmonary adenocarcinoma; iii) enough volume materials for molecular testing; and iv) informed written consent from patients. Conversely, cases with no informed consent or less volume sample were excluded. Clinical characteristics of the 59 patients are presented in Table I. The mean patient age was 69.6 years and included 28 males and 31 females. All samples were fixed with 10% buffer formalin at room temperature (24-36 h) to create formalin-fixed, paraffin-embedded (FFPE) tumor blocks at Department of Pathology in Saitama Cardiovascular and Respiratory Center. Hematoxylineosin staining was performed by the standard method using Tissue-Tek Prisma (Sakura Finetek Japan Co., Ltd.) according to the manufacturer's protocol. Prior to DNA extraction, the tumor content of each sample was assessed using light microscopy at \u00d710 and \u00d7100 magnification, to ensure efficient PCR amplification. After sections were deparaffinized with xylene and hydrated through a graded series of ethanol (100, 100, 85 and 70% ethanol), DNA from the tissue blocks was extracted using the QIAampTM DNA FFPE Tissue kit\u00ae (Qiagen, Inc.) and analyzed using a QIAcube Robot\u00ae (Qiagen, Inc.) according to the manufacturer's protocols (20).",
+            "cite_spans": [
+                {
+                    "start": 341,
+                    "end": 343,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1835,
+                    "end": 1837,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Tumor tissue samples ::: Materials and methods",
+            "ref_spans": [
+                {
+                    "start": 890,
+                    "end": 897,
+                    "mention": "Table I",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The presence of EGFR mutations was determined using a Therascreen EGFR PCR kit\u00ae (Qiagen, Inc.) according to the manufacturer's protocols (21).",
+            "cite_spans": [
+                {
+                    "start": 138,
+                    "end": 140,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Therascreen qPCR mutation analysis ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A primer set for LAMP amplification of the partial sequence of the EGFR gene (NG_007726) was designed using Primer Explorer (primerexplorer.jp/e/). Fig. 1 presents the sequences of the primers used with forward and backward outer primers (F3 and B3), forward and backward inner primers (FIP and BIP) and forward and back-loop primers (LF and LB). The primers were synthesized and purified by Eurofin Genomics. Block oligo and fluorophore-labelled probes were synthesized and purified by Japan Bio Services Co., Ltd., or Gene Design, Inc.",
+            "cite_spans": [],
+            "section": "Primer design ::: LAMP mutation analysis ::: Materials and methods",
+            "ref_spans": [
+                {
+                    "start": 148,
+                    "end": 154,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "LAMP assays were performed using the 25 reaction volume with 30 mM KCl, 1.8% Dextran, 14 mM Tricine-NaOH (pH 8.8), 0.1% n-heptyl, 0.5% Tween-20, 0.3% Fish collagen peptide, 1 mM DTT, 1.7 mM each dNTPs, 8.2 mM MgSO4, 1.6 \u00b5M each of the forward and backward inner primer, 0.8 \u00b5M each of the forward and backward loop primer, 0.2 \u00b5M forward and backward outer primer, 1.2 \u00b5M block oligo, 0.04 \u00b5M fluorophore-labelled probe, 0.0375 x Gel green and 12.3 units Bst DNA polymerase. KCl, Dextran, Trincine NaOH, n-heptyl, Tween-20, Fish collagen peptide, DTT, and MgSO4 were obtained from FUJIFILM Wako Pure Chemical Corporation (http://ffwk.fujifilm.co.jp/en/index.html). dNTPs were obtained from NIPPON GENE CO., Ltd. (https://www.nippongene.com/english/index.html). Gel green was obtained from Biotium (https://biotium.com/). Bst DNA polymerase was obtained from New England Biolabs Inc. (https://international.neb.com). The LAMP reaction was run for 120 min at 65\u00b0C using a LightCycler 480\u00ae (Roche Diagnostics K.K.).",
+            "cite_spans": [],
+            "section": "LAMP assay ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Melting curve analysis was used to detect LAMP products. The LAMP amplicons were denatured at 95\u00b0C for 5 min, followed by hybridization at 37\u00b0C for 5 min. Subsequently, the temperature was gradually raised to 80\u00b0C and the fluorescent intensity was measured 7 times per 1\u00b0C increment. The obtained data were analyzed by the LightCycler 480\u00ae software (version 1.5.1.62; https://lifescience.roche.com/global_en/products/lightcycler14301-480-software-version-15.html) to calculate melting peak.",
+            "cite_spans": [],
+            "section": "Detection of the LAMP products ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to evaluate the analytical sensitivity, an artificial gene harboring an EGFR L858R mutation (c.2573T>G) as a plasmid DNA was obtained from Eurofin Genomics. The plasmid DNA that had been linearized using EcoR V and Xho I were extracted and purified from 1% agarose gel after 40 min electrophoresis with 100 V. The agarose gel was stained by 0.5 \u00b5g/ml ethidium bromide (Tokyo Chemical Industry Co., Ltd.; https://www.tcichemicals.com/eshop/en/jp/commodity/E0370/) for 30 min and observed by LuminoGraph 2 (ATTO Corporation; https://www.atto.co.jp/eng). Then, this DNA fragment was added to human pooled genomic DNA (Promega Corporation) to prepare several spiked-in samples with different concentrations for a validation of lower limit of detection. In the present study, 1500.0, 150.0, 75.0, 15.0, 7.5, 3.0, and 1.5 copies of DNA fragment harboring EGFR L858R mutation were added to 1500 copies of genomic DNA, resulting in mutation rates of 50.00, 9.09, 4.76, 0.99, 0.50, 0.20, 0.10 and 0.00%, respectively. Genetic analysis of each of these samples was conducted three times using PCR and LAMP.",
+            "cite_spans": [],
+            "section": "Sensitivity of LAMP and Therascreen assays ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Direct sequencing of EGFR exon 19, S7681 and G719X regions were conducted by using BigDye\u00ae Direct Cycle Sequencing Kit (Thermo Fisher Scientific, Inc.) and a ABI PRISM 310 Genetic Analyzer\u00ae (Applied Biosystems; Thermo Fisher Scientific, Inc.) to confirm the EGFR mutation status in Case-X. The data were analyzed using Genetyx (version 13.0; https://www.genetyx.co.jp/) and FinchTV (version 1.4.0; https://digitalworldbiology.com/FinchTV). The primers had the following sequences: Exon 19, forward TCCCAGAAGGTGAGAAAGT, reverse: AGA GCT AGA AAG GGA AAG ACA; S768I:, forward: CCT CCA GGA AGC CTA CGT, reverse: GTC TTT GTG TTC CCG GAC AT; and G719X, forward: CCC TTG TCT CTG TGT TCT TG, reverse: TAC ACC GTG CCG AAC GC.",
+            "cite_spans": [],
+            "section": "Direct sequence method ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "All statistical analysis performed using SPSS version 24 for Windows\u00ae (IBM Corp). The clinical sensitivity, specificity, positive predictive value (PPV), negative predictive value (NPV) and accuracy of conventional PCR testing of the LAMP method were calculated through comparison with the Therascreen PCR, which was considered as the current gold standard test for detecting EGFR mutations in the present study.",
+            "cite_spans": [],
+            "section": "Statistical analysis ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Mean age of the 59 patients was 69.6 years and included 28 males and 31 females. Of these, 27 were non-smokers (45.8%). The number in pathological stage IA1, IA2, IA3, IB, IIA, IIB, IIIB was 14 (23.7%), 20 (33.9%), 6 (10.2%), 4 (6.8%), 1 (1.7%), 3 (5.1%), and 11 (18.6%), respectively. All patients had been diagnosed with pulmonary adenocarcinoma, including of 34 papillary predominant (57.6%), 7 solid predominant (11.9%), 3 acinar predominant (5.1%), 7 invasive mucinous (11.9%), 4 lepidic predominant (6.8%) and 4 minimally invasive adenocarcinoma cases (6.8%; all Table I).",
+            "cite_spans": [],
+            "section": "Characteristics of patients with pulmonary adenocarcinoma ::: Results",
+            "ref_spans": [
+                {
+                    "start": 569,
+                    "end": 576,
+                    "mention": "Table I",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Among 59 pulmonary tumors, there were 26 tumors with EGFR wild type and 33 tumors with EGFR mutations (Table II). Overall, 18 exon 21 L858R point mutations (54.5%), 12 exon 19 deletions (36.4%), 2 simultaneous exon 18 G719X point mutation/exon 20 S768I point mutation (6.1%) and 1 exon 20 SS761I point mutation (3.0%) were detected in the pulmonary tumors with EGFR mutations (Table II).",
+            "cite_spans": [],
+            "section": "Therascreen EGFR PCR mutation analysis ::: Results",
+            "ref_spans": [
+                {
+                    "start": 103,
+                    "end": 111,
+                    "mention": "Table II",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 377,
+                    "end": 385,
+                    "mention": "Table II",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "The LAMP assay detected 27 EGFR wild types and 32 EGFR mutations (Table II). Among 32 EGFR mutations, 18 exon 21 L858R point mutations (54.5%), 11 exon 19 deletions (33.3%), 2 simultaneous exon 18 G719X point mutation/exon 20 S768I point mutations (6.1%) and 1 exon 20 SS761I point mutation alone (3.0%) were identified (Table II).",
+            "cite_spans": [],
+            "section": "LAMP EGFR mutation analysis ::: Results",
+            "ref_spans": [
+                {
+                    "start": 66,
+                    "end": 74,
+                    "mention": "Table II",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 321,
+                    "end": 329,
+                    "mention": "Table II",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Table II demonstrates that 33 EGFR mutations in the LAMP assay (18 samples with exon 21 L858R, 11 samples with exon 19 deletions, 1 sample with exon 20 S768I, and 2 samples with exon 18 G719X and exon 20 S768I), and that 32 EGFR mutations in the Therascreen assay (18 samples with exon 21 L858R, 12 samples with exon 19 deletions, 1 sample with exon 20 S768I, and 2 samples with exon 18 G719X and exon 20 S768I); i.e., there was one case showing EGFR wild type of the LAMP but one deletion mutation in exon 19 of the Therascreen PCR (Table III). As assuming that the results of Therascreen PCR assay was true, qualitative analysis was performed for calculating sensitivity, specificity, PPV, NPV and accuracy of the LAMP assay. These values were 97.0%, 100.0, 100.0, 96.3 and 98.3%, respectively. Furthermore, a genetic analysis was performed to evaluate the detection rate of EGFR mutations in different concentrations. The minimum concentration for EGFR mutation detection was 4.8% of DNA sample in Therascreen assay (Table SI). On the other hand, 0.1% was the minimum concentration in LAMP assay, since LAMP assay demonstrated one success of the detection per 3 tests at the level of 0.1, 0.5 and 1.0% concentrations and all positive per 3 tests at >4.8% concentration (Table SI).",
+            "cite_spans": [],
+            "section": "Comparison of results of Therascreen PCR and LAMP assays ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Table II",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 534,
+                    "end": 543,
+                    "mention": "Table III",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "It was observed that a single case deviated in the identification of the mutation in exon 19 between Therascreen PCR and the LAMP assay. To confirm this result, direct sequencing of the target site of exon 19 was performed. Direct sequencing results demonstrated no mutation in exon 19 in Case X, which was concordant with the results of the LAMP assay.",
+            "cite_spans": [],
+            "section": "Direct sequencing of Case X ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To reconfirm the status of EGFR mutation in Case X, four additional FFPE tissue blocks in Case X were used to extract further DNA samples. The hematoxylineosin (HE) images of these FFPE blocks are presented in Fig. 2. Following removal of normal lung tissues, DNA samples were extracted as aforementioned, and investigated using Therascreen EGFR PCR and a LAMP assay. In all the four samples, the deletion mutation in exon 19 was identified using both Therascreen PCR and LAMP assays. Furthermore, direct sequencing revealed a novel exon 19 EGFR deletion mutation in samples a and b; NG_007726.3: g.160744_160761delinsGCA represented the deletion of nucleotides g.160744 to g.160761 (ATTAAGAGAAGCAACATC, data not shown), which were replaced by a GCA nucleotide triplet, changing GGAATTAAGAGAAGCAACATCTCC to GGAGCATCC (data not shown), resulting in shortening substation in the protein (p.Leu747_Ser752delinsHis).",
+            "cite_spans": [],
+            "section": "Direct sequencing of Case X ::: Results",
+            "ref_spans": [
+                {
+                    "start": 210,
+                    "end": 216,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "EGFR mutations in pulmonary adenocarcinoma are associated with sensitivity to TKI therapy. Hence the identification of EGFR mutations has become a standard analysis in the treatment pathway of patients with pulmonary adenocarcinoma. Although there are a number of methods available, there is no standardized approach to satisfy the practical clinical requirements of simplicity, rapid and cheap. Several PCR based methods have previously been used as a routine test for the detection of EGFR status in United States, European Union, Japan and China, including the Scorpion Amplification Refractory Mutation System (ARMS)\u00ae (22), such as Therascreen PCR assay. This method was approved by the FDA as a standard approach for EGFR gene analysis in lung cancer (fda.gov/medical-devices/recently-approved-devices/therascreenr-fgfr-rgq-pcr-kit-p180043); however, although stable and reliable, this approach has procedural complexities, including complex settings and controls for the temperature at several times using a thermal cycler. Alternatives, such as PCR-Invader\u00ae (23), peptide nucleic acid-locked nucleic acid (PNA-LNA) PCR clamp (24) and Cycleave PCR\u2122 (25), have been developed in Japan and are commercially used in centralized laboratories. The sensitivity of the PNA-LNA PCR clamp is >97% with 100% specificity (26) and the accuracy of Cycleave PCR is 96.7% (27), so it was the same for our results as it was those.",
+            "cite_spans": [
+                {
+                    "start": 623,
+                    "end": 625,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1066,
+                    "end": 1068,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1133,
+                    "end": 1135,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1156,
+                    "end": 1158,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1317,
+                    "end": 1319,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1364,
+                    "end": 1366,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "LAMP is a new PCR method and is considered to be a robust approach for gene analysis as it does not require sophisticated or expensive equipment, such as a thermal cycler necessary for PCR (15). Therefore, the LAMP method may have potential to decrease the costs of gene analysis. Previous studies have demonstrated the value of LAMP in field of bacteriology and virology (15,17,28,29); however, few studies have reported the value of LAMP in oncology. Ikeda et al (30) used LAMP assays to detect EGFR mutations in NSCLC, demonstrating the value of LAMP, but only the L858R mutation was studied. Therefore, the present study aimed to investigate other EGFR mutations, including those in exon 19, exon 21 and other minor mutations using LAMP assays.",
+            "cite_spans": [
+                {
+                    "start": 190,
+                    "end": 192,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 373,
+                    "end": 375,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 376,
+                    "end": 378,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 379,
+                    "end": 381,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 382,
+                    "end": 384,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 466,
+                    "end": 468,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The sensitivity, specificity, PPV, NPV and accuracy values of LAMP for EGFR mutations compared with the Therascreen assay method were 97, 100, 100, 96.3 and 98.3%, respectively, demonstrating the potential of LAMP as an efficient alternative approach t oncogene mutation analyses. To evaluate the sensitivity of these two assays, a genetic analysis was performed to investigate the minimum concentration of EGFR mutation detection in both methods. The minimum concentration for LAMP was 4.8% and there were no detection under 1.0% in the Therascreen assay. Therefore, the minimum concentration for the LAMP assay is ~50 times higher than 4.8% in the Therascreen assay. With almost equal efficiency, detection of the exon 19 mutation in Case X using the Therascreen method suggested that LAMP, as well as direct sequence methods, could identify false negatives. However, additional experiments investigating Case X tumor tissues demonstrated the presence of deletion mutations in exon 19. The direct sequence method has reported low sensitivity (31,32), whereas the Therascreen method was generally recognized as a promising method (11,12). However, the identified mutation should be simplified, and an improved, faster and cheaper method of identification should be developed for its clinical application.",
+            "cite_spans": [
+                {
+                    "start": 1045,
+                    "end": 1047,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1048,
+                    "end": 1050,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1132,
+                    "end": 1134,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1135,
+                    "end": 1137,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The additional Case X experiments also identified a novel EGFR mutation using direct sequencing which was not identified using Therascreen or LAMP; however, this mutation may have been detected as an exon 19 deletion by the primers of the similarly targeted mutation. However, the details of the primer of LAMP method could not be disclosed due to the policies of Eiken Co., Ltd., and further information concerning the primers of Therascreen EGFR PCR kit could not be obtained due to the patent. Furthermore, the present study noted that this novel mutation was not included in the COSMIC database and that no previous studies had reported this mutation. Therefore, the present study is the first report this EGFR mutation, to the best of our knowledge.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In conclusion, the LAMP method may be a valuable alternative for the identification of oncogenic mutations in lung cancer. Currently, the study group is developing a new method of detecting oncogenes using liquid biopsies (data not shown). In addition, a novel mutation, NG_007726.3:g.160744_16076 1delinsGCA, was identified exon 19 of EGFR. However, this needs further validation before clinical use.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table I: Clinical characteristics of patients with pulmonary adenocarcinoma.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table II: EGFR mutations possessed by patients with pulmonary adenocarcinoma identified using Therascreen and LAMP assays.\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table III: Association between the results between the LAMP assay and the Therascreen assay.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: A schematic view of the association between the EGFR gene and the primers of LAMP assay with forward and backward outer primers (F3 and B3), forward and backward inner primers (FIP and BIP) and forward and back-loop primers (LF and LB). EGFR, epidermal growth factor receptor; LAMP, loop-mediated isothermal amplification.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Low and high-power fields of HE-stained formalin-fixed and paraffin-embedded sections of Case X papillary adenocarcinoma. Each the tumor content ratio was ~100% after trimming along the tumor margin and removing normal lung tissue. The tumor margin is presented as a dotted line. (Initial) LAMP assay reported no EGFR mutation. (A-D) Additional experiments reported an EGFR mutation. (A and B) Direct sequence confirmed a novel EGFR mutation. HE, hematoxylin-eosin; LAMP, loop-mediated isothermal amplification; EGFR, epidermal growth factor receptor.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Global cancer statistics",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Jemal",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Bray",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Center",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ferlay",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Ward",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Forman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "CA Cancer J Clin",
+            "volume": "61",
+            "issn": "",
+            "pages": "69-90",
+            "other_ids": {
+                "DOI": [
+                    "10.3322/caac.20107"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Activity of epidermal growth factor receptor-tyrosine kinase inhibitors in patients with non-small cell lung cancer harboring rare epidermal growth factor receptor mutations",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "De Pas",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Toffalorio",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Manzotti",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Fumagalli",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Spitaleri",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Catania",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Delmonte",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Giovannini",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Spaggiari",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "de Braud",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Barberis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J Thorac Oncol",
+            "volume": "6",
+            "issn": "",
+            "pages": "1895-1901",
+            "other_ids": {
+                "DOI": [
+                    "10.1097/JTO.0b013e318227e8c6"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "First-line erlotinib versus gemcitabine/cisplatin in patients with advanced EGFR mutation-positive non-small-cell lung cancer: Analyses from the phase III, randomized, open-label, ENSURE study",
+            "authors": [
+                {
+                    "first": "YL",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "CK",
+                    "middle": [],
+                    "last": "Liam",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhong",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Ann Oncol",
+            "volume": "26",
+            "issn": "",
+            "pages": "1883-1889",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/annonc/mdv270"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Afatinib versus cisplatin-based chemotherapy for EGFR mutation-positive lung adenocarcinoma (LUX-Lung 3 and LUX-Lung 6): Analysis of overall survival data from two randomised, phase 3 trials",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "YL",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Schuler",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sebastian",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Popat",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Yamamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "CP",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "O'Byrne",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Lancet Oncol",
+            "volume": "16",
+            "issn": "",
+            "pages": "141-151",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1470-2045(14)71173-8"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Current and future molecular testing in NSCLC, what can we expect from new sequencing technologies?",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Garinet",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Laurent-Puig",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Blons",
+                    "suffix": ""
+                },
+                {
+                    "first": "JB",
+                    "middle": [],
+                    "last": "Oudart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "J Clin Med",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3390/jcm7060144"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Cost of cancer diagnosis using next-generation sequencing targeted gene panels in routine practice: A nationwide French study",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Marino",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Touzani",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Perrier",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Rouleau",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Kossi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhaomin",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Charrier",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Goardon",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Preudhomme",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Durand-Zaleski",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Eur J Hum Genet",
+            "volume": "26",
+            "issn": "",
+            "pages": "314-323",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41431-017-0081-3"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Loop-mediated isothermal amplification of DNA",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Notomi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Okayama",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Masubuchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Yonekawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Watanabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Amino",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hase",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nucleic Acids Res",
+            "volume": "28",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/28.12.e63"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Sensitive and rapid detection of mycoplasma pneumoniae by loop-mediated isothermal amplification",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Yoshino",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Annaka",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kojima",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ikedo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Kansenshogaku Zasshi",
+            "volume": "82",
+            "issn": "",
+            "pages": "168-176",
+            "other_ids": {
+                "DOI": [
+                    "10.11150/kansenshogakuzasshi1970.82.168"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Rapid detection of the severe acute respiratory syndrome (SARS) coronavirus by a loop-mediated isothermal amplification assay",
+            "authors": [
+                {
+                    "first": "LL",
+                    "middle": [],
+                    "last": "Poon",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Tashiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "KY",
+                    "middle": [],
+                    "last": "Yuen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Peiris",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Clin Chem",
+            "volume": "50",
+            "issn": "",
+            "pages": "1050-1052",
+            "other_ids": {
+                "DOI": [
+                    "10.1373/clinchem.2004.032011"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Rapid diagnosis of H5N1 avian influenza virus infection by newly developed influenza H5 hemagglutinin gene-specific loop-mediated isothermal amplification method",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Imai",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ninomiya",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Minekawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Notomi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ishizaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Van Tu",
+                    "suffix": ""
+                },
+                {
+                    "first": "NT",
+                    "middle": [],
+                    "last": "Tien",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Tashiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Odagiri",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Virol Methods",
+            "volume": "141",
+            "issn": "",
+            "pages": "173-180",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jviromet.2006.12.004"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "The IASLC lung cancer staging project: Proposals for revision of the TNM stage groupings in the forthcoming (eighth) edition of the TNM Classification for lung cancer",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Goldstraw",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Chansky",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Crowley",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rami-Porta",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Asamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "WE",
+                    "middle": [],
+                    "last": "Eberhardt",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Nicholson",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Groome",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Mitchell",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Bolejack",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "J Thorac Oncol",
+            "volume": "11",
+            "issn": "",
+            "pages": "39-51",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jtho.2015.09.009"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Cancer statics, 2013",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Siegel",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Naishadham",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Jemal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "CA Cancer J Clin",
+            "volume": "63",
+            "issn": "",
+            "pages": "11-30",
+            "other_ids": {
+                "DOI": [
+                    "10.3322/caac.21166"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "A commercial real-time PCR kit provides greater sensitivity than direct sequencing to detect KRAS mutations: A morphology-based approach in colorectal carcinoma",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Angulo",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Garc\u00eda-Garc\u00eda",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Mart\u00ednez",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Su\u00e1rez-Gauthier",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Conde",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hidalgo",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "L\u00f3pez-R\u00edos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Mol Diagn",
+            "volume": "12",
+            "issn": "",
+            "pages": "292-299",
+            "other_ids": {
+                "DOI": [
+                    "10.2353/jmoldx.2010.090139"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Efficiency of the Therascreen\u00ae RGQ PCR kit for the detection of EGFR mutations in non-small cell lung carcinomas",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vall\u00e9e",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Le Loupp",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Denis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Clin Chim Acta",
+            "volume": "429",
+            "issn": "",
+            "pages": "8-11",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.cca.2013.11.014"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Detection of epidermal growth factor receptor mutations in serum as a predictor of the response to gefitinib in patients with non-small-cell lung cancer",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kimura",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kasahara",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kawaishi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kunitoh",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Holloway",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Nishio",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Clin Cancer Res",
+            "volume": "12",
+            "issn": "",
+            "pages": "3915-3921",
+            "other_ids": {
+                "DOI": [
+                    "10.1158/1078-0432.CCR-05-2324"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Sensitive detection of DNA polymorphisms by the serial invasive signal amplification reaction",
+            "authors": [
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Hall",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Eis",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Law",
+                    "suffix": ""
+                },
+                {
+                    "first": "LP",
+                    "middle": [],
+                    "last": "Reynaldo",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Prudent",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Marshall",
+                    "suffix": ""
+                },
+                {
+                    "first": "HT",
+                    "middle": [],
+                    "last": "Allawi",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Mast",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Dahlberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Kwiatkowski",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "97",
+            "issn": "",
+            "pages": "8272-8277",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.140225597"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Genetic heterogeneity of the epidermal growth factor receptor in non-small cell lung cancer cell lines revealed by a rapid and sensitive detection system, the peptide nucleic acid-locked nucleic acid PCR clamp",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Nagai",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Miyazawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Huqun",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tanaka",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Udagawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kato",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Fukuyama",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Yokote",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kobayashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kanazawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hagiwara",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Cancer Res",
+            "volume": "65",
+            "issn": "",
+            "pages": "7276-7282",
+            "other_ids": {
+                "DOI": [
+                    "10.1158/0008-5472.CAN-05-0331"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "A rapid, sensitive assay to detect EGFR mutation in small biopsy specimens from lung cancer",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Yatabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hida",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Horio",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kosaka",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Takahashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Mitsudomi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Mol Diagn",
+            "volume": "8",
+            "issn": "",
+            "pages": "335-341",
+            "other_ids": {
+                "DOI": [
+                    "10.2353/jmoldx.2006.050104"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Reliability of the peptide nucleic acid-locked nucleic acid polymerase chain reaction clamp-based test for epidermal growth factor receptor mutations integrated into the clinical practice for non-small cell lung cancers",
+            "authors": [],
+            "year": 2007,
+            "venue": "Cancer Sci",
+            "volume": "98",
+            "issn": "",
+            "pages": "246-252",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1349-7006.2006.00377.x"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Accuracy of the cobas EGFR mutation assay in non-small-cell lung cancer compared with three laboratory-developed tests",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Nakamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Koizumi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sakai",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kimura",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Miyazawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Marushima",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Saji",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Takagi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Clin Lung Cancer",
+            "volume": "19",
+            "issn": "",
+            "pages": "170-174",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.cllc.2017.10.015"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Mycoplasma pneumoniae from the respiratory tract and beyond",
+            "authors": [
+                {
+                    "first": "KB",
+                    "middle": [],
+                    "last": "Waites",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Xiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Balish",
+                    "suffix": ""
+                },
+                {
+                    "first": "TP",
+                    "middle": [],
+                    "last": "Atlinson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Clin Microbiol Rev",
+            "volume": "30",
+            "issn": "",
+            "pages": "747-809",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/CMR.00114-16"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "An updated loop-mediated isothermal amplification method for rapid diagnosis of H5N1 avian influenza viruses",
+            "authors": [
+                {
+                    "first": "DT",
+                    "middle": [],
+                    "last": "Dinh",
+                    "suffix": ""
+                },
+                {
+                    "first": "MT",
+                    "middle": [],
+                    "last": "Le",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Vuong",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Hasebe",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Morita",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Trop Med Health",
+            "volume": "39",
+            "issn": "",
+            "pages": "3-7",
+            "other_ids": {
+                "DOI": [
+                    "10.2149/tmh.2010-21"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Introduction to the 2015 world health organization classification of tumors of the lung, pleura, thymus, and heart",
+            "authors": [
+                {
+                    "first": "WD",
+                    "middle": [],
+                    "last": "Travis",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Brambilla",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Burke",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Marx",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Nicholson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "J Thorac Oncol",
+            "volume": "10",
+            "issn": "",
+            "pages": "1240-1242",
+            "other_ids": {
+                "DOI": [
+                    "10.1097/JTO.0000000000000663"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Detection of gene point mutation in paraffin sections using in situ loop-mediated isothermal amplification",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ikeda",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Takabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Inagaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Funakoshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Suzuki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Pathol Int",
+            "volume": "57",
+            "issn": "",
+            "pages": "594-599",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1440-1827.2007.02144.x"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Non-isotopic silver-stained SSCP is more sensitive than automated direct sequencing for the detection of PTEN mutations in a mixture of DNA extracted from normal and tumor cells",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Fan",
+                    "suffix": ""
+                },
+                {
+                    "first": "FB",
+                    "middle": [],
+                    "last": "Furnari",
+                    "suffix": ""
+                },
+                {
+                    "first": "WK",
+                    "middle": [],
+                    "last": "Cavenee",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Castresana",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Int J Oncol",
+            "volume": "18",
+            "issn": "",
+            "pages": "1023-1026",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Epidermal growth factor receptor gene mutation in non-small cell lung cancer using highly sensitive and fast TaqMan PCR assay",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Endo",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Konishi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sasaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Takada",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Tanaka",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Okumura",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kawahara",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sugiura",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kuwabara",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Fukai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Lung Cancer",
+            "volume": "50",
+            "issn": "",
+            "pages": "375-384",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.lungcan.2005.08.009"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Five-year survival in EGFR-mutant metastatic lung adenocarcinoma treated with EGFR-TKIs",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cardarella",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Lydon",
+                    "suffix": ""
+                },
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "Dahlberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Jackman",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "J\u00e4nne",
+                    "suffix": ""
+                },
+                {
+                    "first": "BE",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "J Thorac Oncol",
+            "volume": "11",
+            "issn": "",
+            "pages": "556-565",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jtho.2015.12.103"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Activating mutations in the epidermal growth factor receptor underlying responsiveness of non-small-cell lung cancer to gefitinib",
+            "authors": [
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Lynch",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Bell",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sordella",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gurubhagavatula",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Okimoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Brannigan",
+                    "suffix": ""
+                },
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Harris",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Haserlat",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Supko",
+                    "suffix": ""
+                },
+                {
+                    "first": "FG",
+                    "middle": [],
+                    "last": "Haluska",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "N Engl J Med",
+            "volume": "350",
+            "issn": "",
+            "pages": "2129-2139",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMoa040938"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "RET fusion gene: Translation to personalized lung cancer therapy",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kohno",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Tsuta",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Tsuchihara",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Nakaoku",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Yoh",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Goto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Cancer Sci",
+            "volume": "104",
+            "issn": "",
+            "pages": "1396-1400",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/cas.12275"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "Chipping away at the lung cancer genome",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Pao",
+                    "suffix": ""
+                },
+                {
+                    "first": "KE",
+                    "middle": [],
+                    "last": "Hutchinson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nat Med",
+            "volume": "18",
+            "issn": "",
+            "pages": "349-351",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nm.2697"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "Genotyping and genomic profiling of non-small-cell lung cancer: Implications for current and future therapies",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Kung",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Mack",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Gandara",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J Clin Oncol",
+            "volume": "31",
+            "issn": "",
+            "pages": "1039-1049",
+            "other_ids": {
+                "DOI": [
+                    "10.1200/JCO.2012.45.3753"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "EGFR mutations in lung cancer: Correlation with clinical response to gefitinib therapy",
+            "authors": [
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Paez",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Janne",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tracy",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Greulich",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gabriel",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Herman",
+                    "suffix": ""
+                },
+                {
+                    "first": "FJ",
+                    "middle": [],
+                    "last": "Kaye",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Lindeman",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Boggon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Science",
+            "volume": "304",
+            "issn": "",
+            "pages": "1497-1500",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1099314"
+                ]
+            }
+        }
+    }
+}

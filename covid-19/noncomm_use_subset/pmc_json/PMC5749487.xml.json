@@ -1,0 +1,494 @@
+{
+    "paper_id": "PMC5749487",
+    "metadata": {
+        "title": "Effects of Timely Control Intervention on the Spread of Middle East Respiratory Syndrome Coronavirus Infection",
+        "authors": [
+            {
+                "first": "Ilsu",
+                "middle": [],
+                "last": "Choi",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Dong",
+                "middle": [
+                    "Ho"
+                ],
+                "last": "Lee",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Yongkuk",
+                "middle": [],
+                "last": "Kim",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The emergence of Middle East respiratory syndrome coronavirus (MERS-CoV) in South Korea in 2015 exerted huge social and economic tolls. Mathematical models are effective for understanding and controlling the spread of MERS-CoV, and so far, many attempts at applying mathematical models have been made to understand the MERS-CoV outbreak in Korea [1\u20139]. The control intervention was conducted during the MERS-CoV outbreak in Korea immediately after the confirmation of the index case. Using a mathematical model, we investigated whether the early risk communication with the general public and mass media is an effective preventive strategy.",
+            "cite_spans": [
+                {
+                    "start": 347,
+                    "end": 348,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 349,
+                    "end": 350,
+                    "mention": "9",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The SEIR (Susceptible, Exposed, Infectious, Recovered) model with estimated parameters from the time series data on the daily incidence of MERS-CoV in Korea was considered from May to December 2015. For the 10,000 stochastic simulations, the SEIR model was computed using the Gillespie algorithm. Depending on the time of control interventions on the 20th, 40th, and 60th days since the index case was identified, the box plots of MERS-CoV incidences in Korea were computed, and then analysis of variance (ANOVA) was used to analyze the results.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The following SEIR model by Lee et al. [10] that categorizes each individual into one of the six epidemiological classes was considered: susceptible (S), exposed (or high-risk latent) (E), symptomatic and infectious (I), infectious but asymptomatic (A), hospitalized (H), and recovered (R).",
+            "cite_spans": [
+                {
+                    "start": 40,
+                    "end": 42,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "1. The basic model for MERS-CoV dynamics ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "It was assumed that not only infectious and hospitalized individuals, but also asymptomatic individuals could infect others. The parameters \u03b2, l1, l2, \u03ba, \u03c1, \u03b3a, \u03b3I and \u03b3r represent human-to-human transmission rate per unit time, the relative transmissibility of asymptomatic and hospitalized classes, the rate of progression from exposed class E to symptomatic I or asymptomatic infectious class A, the proportion of symptomatic infections, the hospitalization rate of symptomatic individuals, the recovery rate without being hospitalized, and the recovery rate of hospitalized patients, respectively.",
+            "cite_spans": [],
+            "section": "1. The basic model for MERS-CoV dynamics ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We used the Gillespie algorithm to study random interactions occurring in the given system of equations. The stochastic simulation algorithm, suggested by Gillespie [11], is as follows:",
+            "cite_spans": [
+                {
+                    "start": 166,
+                    "end": 168,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "2. Stochastic simulation methods ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "For a set of coupled ordinary differential equations",
+            "cite_spans": [],
+            "section": "2. Stochastic simulation methods ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "we can construct an exact numerical realization of the process X(t):",
+            "cite_spans": [],
+            "section": "2. Stochastic simulation methods ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "For the 10,000 stochastic simulations, the SEIR model was computed by using the Gillespie algorithm with initial values S = 100,000; E = 10; I = A = H = R = 0 and the parameter values [10] \u03b2 = 0.085, l1 = 0.2, l2 = 10, \u03ba = 1/6.6, \u03c1 = 0.585, \u03b3a = 0.6403, \u03b3I = 1/5, and \u03b3r = 1/7. The control measure was used by changing the value l2 from 10 to 8.5. Figure 1 depicts the box plots of incidences I (t) + A (t) + H (t) of the MERS-CoV depending on the time of the control intervention on the 20th, 40th, and 60th days after the identification of the index case.",
+            "cite_spans": [
+                {
+                    "start": 185,
+                    "end": 187,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "RESULTS",
+            "ref_spans": [
+                {
+                    "start": 348,
+                    "end": 356,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The box plots showed that there was a significant difference between the non-intervention and intervention groups (the 20th day, 40th day, and 60th day groups) and seemed to show no significant difference based on the time of intervention. However, the ANOVA in Table 1 revealed a significant difference between the averages in the intervention groups and showed that early intervention promotes a good strategy to control the disease. In particular, these results were evident from the average and standard deviation, which were smaller in the early intervention period. The difference was markedly larger 100 days after the identification of the index case, and the difference in the effect of the intervention over time showed a decreasing trend.",
+            "cite_spans": [],
+            "section": "RESULTS",
+            "ref_spans": [
+                {
+                    "start": 262,
+                    "end": 269,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The control intervention was conducted during the MERS-CoV outbreak in Korea immediately after the confirmation of the index case and the control measures were carried out on the 20th day after the confirmation of the index case. Using the stochastic simulations of the SEIR model depending on the time of control interventions on the 20th, 40th, and 60th days after the confirmation of the index case, this study investigated whether early risk communication with the general public and mass media is an effective preventive strategy. As a result, the intervention on the 20th day after the identification of the index case was much better than the intervention on the 60th day. Therefore, we conclude that appropriate risk communication can secure the confidence of the general public in the public health authorities.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Results of the ANOVA according to the day of intervention after the identification of the index case\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Box plot for the control interventions according to the number of days (A, 100 days; B, 200 days; C, 300 days; D, 400 days) after the identification of the index case.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "2015 Middle East respiratory syndrome coronavirus (MERS-CoV) nosocomial outbreak in South Korea: insights from modeling",
+            "authors": [
+                {
+                    "first": "YH",
+                    "middle": [],
+                    "last": "Hsieh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "PeerJ",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.7717/peerj.1505"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Optimal control analysis for the MERS-CoV outbreak: South Korea perspectives",
+            "authors": [
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Masud",
+                    "suffix": ""
+                },
+                {
+                    "first": "BN",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "J KSIAM",
+            "volume": "21",
+            "issn": "",
+            "pages": "143-54",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Exact stochastic simulation of coupled chemical reactions",
+            "authors": [
+                {
+                    "first": "DT",
+                    "middle": [],
+                    "last": "Gillespie",
+                    "suffix": ""
+                }
+            ],
+            "year": 1977,
+            "venue": "J Phys Chem",
+            "volume": "81",
+            "issn": "",
+            "pages": "2340-61",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/j100540a008"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "The characteristics of Middle Eastern respiratory syndrome coronavirus transmission dynamics in South Korea",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Osong Public Health Res Perspect",
+            "volume": "7",
+            "issn": "",
+            "pages": "49-55",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.phrp.2016.01.001"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "A dynamic compartmental model for the Middle East respiratory syndrome outbreak in the Republic of Korea: A retrospective analysis on control interventions and superspreading events",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Jung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "J Theor Biol",
+            "volume": "408",
+            "issn": "",
+            "pages": "118-26",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jtbi.2016.08.009"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Estimating the risk of Middle East respiratory syndrome (MERS) death during the course of the outbreak in the Republic of Korea, 2015",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Mizumoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Saitoh",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Int J Infect Dis",
+            "volume": "39",
+            "issn": "",
+            "pages": "7-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.ijid.2015.08.005"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Epidemiological investigation of MERS-CoV spread in a single hospital in South Korea, May to June 2015",
+            "authors": [
+                {
+                    "first": "HY",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "EJ",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "YW",
+                    "middle": [],
+                    "last": "Ryu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Euro Surveill",
+            "volume": "20",
+            "issn": "",
+            "pages": "1-6",
+            "other_ids": {
+                "DOI": [
+                    "10.2807/1560-7917.ES2015.20.25.21169"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Theoretical examination of the pulse vaccination policy in the SIR epidemic model",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Stone",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Shulgin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Agur",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Math Comput Model",
+            "volume": "31",
+            "issn": "",
+            "pages": "207-15",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0895-7177(00)00040-6"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Comparison of incubation period distribution of human infections with MERS-CoV in South Korea and Saudi Arabia",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Virlogeux",
+                    "suffix": ""
+                },
+                {
+                    "first": "VJ",
+                    "middle": [],
+                    "last": "Fang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Sci Rep",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/srep35839"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Association between severity of MERS-CoV infection and incubation period",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Virlogeux",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Emerg Infect Dis",
+            "volume": "22",
+            "issn": "",
+            "pages": "526-8",
+            "other_ids": {
+                "DOI": [
+                    "10.3201/eid2203.151437"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Modeling the transmission of Middle East respirator syndrome corona virus in the Republic of Korea",
+            "authors": [
+                {
+                    "first": "ZQ",
+                    "middle": [],
+                    "last": "Xia",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "YK",
+                    "middle": [],
+                    "last": "Xue",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "PLoS One",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0144778"
+                ]
+            }
+        }
+    }
+}

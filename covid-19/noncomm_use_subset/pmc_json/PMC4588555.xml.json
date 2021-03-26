@@ -1,0 +1,742 @@
+{
+    "paper_id": "PMC4588555",
+    "metadata": {
+        "title": "Metagenomic ventures into outer sequence space",
+        "authors": [
+            {
+                "first": "Bas",
+                "middle": [
+                    "E"
+                ],
+                "last": "Dutilh",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Metagenomics is the untargeted sequencing of genetic material isolated from communities of micro-organisms and viruses. These communities may be derived from bioreactors, environmental, clinical, or industrial samples; in short, from anywhere in our unsterile biosphere. The classical questions in metagenomics that are asked about the sampled microbial community are \u201cWho is there?\u201d and \u201cWhat are they doing?.\"1 Originally an approach to answer these classical questions, metagenomics as a field has made great progress in the past decade. Applications include the use of metagenomics for the discovery of novel genetic functionality,2 for describing microbial ecosystems and tracking their variation,3 in untargeted medical diagnostics and forensics,4 and as a powerful tool to determine the genome sequences of rare, uncultivable microbes.5",
+            "cite_spans": [
+                {
+                    "start": 411,
+                    "end": 412,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 635,
+                    "end": 636,
+                    "mention": "2",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 702,
+                    "end": 703,
+                    "mention": "3",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 752,
+                    "end": 753,
+                    "mention": "4",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 842,
+                    "end": 843,
+                    "mention": "5",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "",
+            "ref_spans": []
+        },
+        {
+            "text": "Powered by advances in next-generation sequencing technology, metagenomics has the potential to venture beyond the limits of currently explored sequence space by sampling environmental microbes and viruses at an unprecedented scale and resolution. Quite literally, sequence space is defined as the multi-dimensional space of all possible nucleotide (or protein) sequences.6 Sequence space contains n dimensions; one dimension per residue that can take one of 4 (or 20, for proteins) states, with a total volume of \u03a34n sequences when summed over all possible sequence lengths n. Evolution may have largely explored this space,7 but it remains an open question how large the current biological sequence space is, i.e. the fraction occupied by extant life. Figuratively, and within the context of this paper, \u201couter sequence space\u201d is the remainder of this biological sequence space waiting to be explored by science.",
+            "cite_spans": [
+                {
+                    "start": 372,
+                    "end": 373,
+                    "mention": "6",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 625,
+                    "end": 626,
+                    "mention": "7",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "",
+            "ref_spans": []
+        },
+        {
+            "text": "Metagenomics has traditionally addressed the 2 classical questions listed above by aligning the sequencing reads in metagenomic data sets to a reference database containing known, annotated sequences. This allows the taxonomic and functional diversity of the sampled microbes to be described in terms of existing knowledge, allowing for straightforward interpretation of the results. However, a persistent concern in the analysis of metagenomes has been the unknown fraction, consisting of the reads that cannot be annotated by using database searches. The level of unknowns can range up to 99% of the metagenomic reads, depending on the sampled environment, the protocols used for nucleotide isolation and sequencing, the homology search algorithm, and the reference database.8",
+            "cite_spans": [
+                {
+                    "start": 777,
+                    "end": 778,
+                    "mention": "8",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "",
+            "ref_spans": []
+        },
+        {
+            "text": "Unknowns exist for 4 reasons that are not unrelated. The first reason is technical. Due to limitations of some next-generation sequencing platforms and library preparation protocols, spurious sequences may be generated that do not reflect true biological molecules. These artificial sequences include artifacts due to the sequencing technology9 and chimeras, i.e., sequences generated from separate genetic molecules derived from different organisms. Since chimeras frequently arise during PCR amplification, they are expected to be more abundant in environmental amplicon sequencing than in shotgun metagenomics, and can be detected using bioinformatic tools.10",
+            "cite_spans": [
+                {
+                    "start": 343,
+                    "end": 344,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 660,
+                    "end": 662,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "",
+            "ref_spans": []
+        },
+        {
+            "text": "The second reason that unknowns exist is biological, as they reflect the enormous natural diversity of microorganisms that we are only beginning to unveil with metagenomics. This is both overwhelming and exciting, highlighting how much remains to be discovered in biology. This genetic diversity has been referred to as biological \u201cdark matter,\"11,12 and is especially pronounced in viral metagenomes.8 This issue can only be resolved by expanding reference databases, as exemplified by recent studies of one of the most studied microbial ecosystems: the human gut. The first metagenomic snapshots of the microbiota in the human gut were taken from 2 healthy adults, and revealed a high inter-individual diversity and many unknowns.13 To a large extent, these unknowns were resolved when a reference catalog was created based on the sequences in the gut metagenomes themselves, decreasing the percentage of unknowns from \u223c85% to \u223c20%.14 Moreover, subsequent large scale sequencing efforts revealed that in fact, many people share a similar intestinal flora, regardless of whether these similarities are viewed as discrete enterotypes15 or as gradients.16 These results illustrate how unknowns can be depleted by expanding the databases with appropriate reference sequences. This not only requires increased sequencing effort of phylogenetically diverse isolates17 or single cells,11 but also mining of draft genomes from metagenomes,18 sampled from microbial environments around the globe.19 Thus, by mapping the global sequence space, we can provide reassurance that at least some level of sampling saturation can be achieved. For viruses, and particularly for bacteriophages, efforts to provide a denser sampling of sequence space are still lacking.",
+            "cite_spans": [
+                {
+                    "start": 345,
+                    "end": 350,
+                    "mention": "11,12",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 401,
+                    "end": 402,
+                    "mention": "8",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 732,
+                    "end": 734,
+                    "mention": "13",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 934,
+                    "end": 936,
+                    "mention": "14",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1133,
+                    "end": 1135,
+                    "mention": "15",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1152,
+                    "end": 1154,
+                    "mention": "16",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1361,
+                    "end": 1363,
+                    "mention": "17",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1380,
+                    "end": 1382,
+                    "mention": "11",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1433,
+                    "end": 1435,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1489,
+                    "end": 1491,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "",
+            "ref_spans": []
+        },
+        {
+            "text": "The third reason that unknowns exist is methodological. Because the advances in DNA sequencing technology have greatly outpaced improvements in computer power,20 bioinformatic approaches to analyze metagenomes often cut corners. For example, reference databases may be reduced to include only those references that are expected in the sample a priori. Moreover, read annotation may be limited to identifying almost exact sequence matches, as this can be computed much faster than if sequence variations needs to be taken into consideration in a permissive homology search. These issues lead to an inherent blind spot for discovering true novelty, such as sequences that are not expected in the sample, or organisms that have not been observed before. One way to, at least partially resolve this issue is by de novo assembly of the metagenome. Depending on the diversity of the sample, assembly can combine many short sequences (individual reads) into fewer, longer ones (assembled contigs). Reducing the number, and increasing the length of the sequences allows homology searches to be performed with more sensitive, computationally more expensive algorithms such as translated homology searches or profile searches, leading to more specific annotation and improved biological interpretation. Moreover, larger and more comprehensive reference databases can be used, allowing unexpected hits to be found.",
+            "cite_spans": [
+                {
+                    "start": 159,
+                    "end": 161,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "",
+            "ref_spans": []
+        },
+        {
+            "text": "The fourth reason that unknowns exist is logistical. Most research projects that generate metagenomic sequencing datasets deposit the read files in large repositories, provide an accession number in the associated publication, and move on. It is not unlikely that many of these data sets, consisting of files sometimes gigabytes in size, are never looked at again. Thus, while a certain sequence may have been \u201cseen\u201d in a metagenome and is thus strictly no longer \u201cdark matter,\" it will still not be recognized when it is observed again. Re-identification of this sequence would only be possible if the publishing researcher identified it as an interesting sequence in his or her (assembled) metagenome, and submitted it to a searchable database like Genbank.21 Because GenBank maintains very high standards for the sequences it accepts, submission can be a tedious process that is rarely worthwhile for unknown metagenomic contigs. An in depth investigation of the unknowns is rarely within the scope of a research project, and those sequences are thus first ignored and later forgotten. This is a waste of valuable resources: time, money, and work. The metagenomes available in public databases should be better exploited and mined for common sequences. To facilitate this, it is critical that metadata annotations of the metagenomes include a detailed description of the samples and sequencing protocol.22 Exploiting these datasets will allow us to create more comprehensive maps of sequence space, and greatly improve our understanding and interpretation of metagenomes.",
+            "cite_spans": [
+                {
+                    "start": 759,
+                    "end": 761,
+                    "mention": "21",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 1406,
+                    "end": 1408,
+                    "mention": "22",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "",
+            "ref_spans": []
+        },
+        {
+            "text": "In the short term, ignoring the unknowns can facilitate the interpretation of a metagenome. Because a taxonomic or functional description cannot be provided, the classical questions in metagenomics are left unanswered for the unknown fraction of the metagenome, and concentrating on the annotated sequences leads to a more straightforward answer. However, unexpected or novel sequences are quickly overlooked, even if they represent highly abundant or widespread organisms. Thus, in the long term, stockpiling the unknown sequencing reads in badly accessible bulk sequence repositories can severely slow down research, the discovery of novel species, and the charting of biological sequence space.",
+            "cite_spans": [],
+            "section": "",
+            "ref_spans": []
+        },
+        {
+            "text": "One striking example of a novel genome discovered among the unknown sequences is crAssphage, a bacteriophage whose genome uniquely aligned sequencing reads from 73% of the 466 analyzed human gut metagenomes, and constituted a total of 1.68% of those metagenomic reads.23 Like many bacteriophages, its genome sequence is highly divergent from everything that was present in the annotated part of the Genbank database, which is why it was not observed before. It has been suggested that the unknown fraction of metagenomes is enriched for viral sequences,8,24 because viral genomes are thought to evolve more rapidly than the genomes of cellular organisms, allowing them to explore a larger region of sequence space in the same amount of time.",
+            "cite_spans": [
+                {
+                    "start": 268,
+                    "end": 270,
+                    "mention": "23",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 553,
+                    "end": 557,
+                    "mention": "8,24",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "",
+            "ref_spans": []
+        },
+        {
+            "text": "To summarize, unknowns are genetic sequences that are difficult to identify using standard methods, such as by alignment to an annotated reference database. Unknowns remain a persistent elephant in the room in most metagenomics research projects, and exist for technical, biological, methodological, and logistical reasons. The most promising option to resolve the unknowns is by creating improved reference databases that chart biological sequence space, including the outer realms that remain unexplored by science (also known as dark matter). Besides sequencing reference strains or single cells, it may be expected that metagenomic sequencing, assembly, and binning will greatly add to improving these reference databases, for example by identifying common sequences in many metagenomes, and prioritizing them for targeted characterization. Characterizing unknowns will be vital to fully exploit the increasingly available metagenomic data sets from all ecosystems, toward understanding the roles of microbes and viruses in the biosphere. It remains an open question what is the actual size of biological sequence space, but the untargeted, shotgun nature of metagenomics makes it the most powerful tool to address this question.",
+            "cite_spans": [],
+            "section": "",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {},
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Metagenomics: application of genomics to uncultured microorganisms",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Handelsman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Microbiol Mol Biol Rev",
+            "volume": "68",
+            "issn": "",
+            "pages": "669-685",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/MMBR.68.4.669-685.2004"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Fermentation, hydrogen, and sulfur metabolism in multiple uncultivated bacterial phyla",
+            "authors": [
+                {
+                    "first": "KC",
+                    "middle": [],
+                    "last": "Wrighton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Science",
+            "volume": "337",
+            "issn": "",
+            "pages": "1661-1665",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1224041"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Human gut microbiome viewed across age and geography",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Yatsunenko",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nature",
+            "volume": "486",
+            "issn": "",
+            "pages": "222-227",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Isolation of a novel coronavirus from a man with pneumonia in Saudi Arabia",
+            "authors": [
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Zaki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "N Engl J Med",
+            "volume": "367",
+            "issn": "",
+            "pages": "1814-1820",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMoa1211721"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Genome sequences of rare, uncultured bacteria obtained by differential coverage binning of multiple metagenomes",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Albertsen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nat Biotechnol",
+            "volume": "31",
+            "issn": "",
+            "pages": "533-538",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nbt.2579"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Natural selection and the concept of a protein space",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 1970,
+            "venue": "Nature",
+            "volume": "225",
+            "issn": "",
+            "pages": "563-564",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/225563a0"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "How much of protein sequence space has been explored by life on Earth?",
+            "authors": [
+                {
+                    "first": "DT",
+                    "middle": [],
+                    "last": "Dryden",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J R Soc Interface",
+            "volume": "5",
+            "issn": "",
+            "pages": "953-956",
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rsif.2008.0085"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Metagenomics and future perspectives in virus discovery",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Mokili",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Curr Opin Virol",
+            "volume": "2",
+            "issn": "",
+            "pages": "63-77",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.coviro.2011.12.004"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "TagDust\u2013a program to eliminate artifacts from next generation sequencing data",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Lassmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "",
+            "pages": "2839-2840",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btp527"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "UCHIME improves sensitivity and speed of chimera detection",
+            "authors": [
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Edgar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Bioinformatics",
+            "volume": "27",
+            "issn": "",
+            "pages": "2194-2200",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btr381"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Insights into the phylogeny and coding potential of microbial dark matter",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Rinke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nature",
+            "volume": "499",
+            "issn": "",
+            "pages": "431-437",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature12352"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Youle",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Scratching the surface of biology's dark matter",
+            "volume": "",
+            "issn": "",
+            "pages": "61-81",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Metagenomic analysis of the human distal gut microbiome",
+            "authors": [
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Gill",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "312",
+            "issn": "",
+            "pages": "1355-1359",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1124234"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "A human gut microbial gene catalogue established by metagenomic sequencing",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Qin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nature",
+            "volume": "464",
+            "issn": "",
+            "pages": "59-65",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature08821"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Enterotypes of the human gut microbiome",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Arumugam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nature",
+            "volume": "473",
+            "issn": "",
+            "pages": "174-180",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature09944"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "A guide to enterotypes across the human body: meta-analysis of microbial community structures in human microbiome datasets",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Koren",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "PLoS Comput Biol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pcbi.1002863"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "A phylogeny-driven genomic encyclopaedia of Bacteria and Archaea",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nature",
+            "volume": "462",
+            "issn": "",
+            "pages": "1056-1060",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature08656"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Microbiology. Genomes from metagenomics",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Sharon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Science",
+            "volume": "342",
+            "issn": "",
+            "pages": "1057-1058",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1247023"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Meeting report: the terabase metagenomics workshop and the vision of an Earth microbiome project",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Gilbert",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Stand Genomic Sci",
+            "volume": "3",
+            "issn": "",
+            "pages": "243-248",
+            "other_ids": {
+                "DOI": [
+                    "10.4056/sigs.1433550"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "The pace and proliferation of biological technologies",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Carlson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Biosecur Bioterror",
+            "volume": "1",
+            "issn": "",
+            "pages": "203-214",
+            "other_ids": {
+                "DOI": [
+                    "10.1089/153871303769201851"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "GenBank",
+            "authors": [
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Benson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nucleic Acids Res",
+            "volume": "42",
+            "issn": "",
+            "pages": "D32-37",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkt1030"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "The minimum information about a genome sequence (MIGS) specification",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Field",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nat Biotechnol",
+            "volume": "26",
+            "issn": "",
+            "pages": "541-547",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nbt1360"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "A highly abundant bacteriophage discovered in the unknown sequences of human faecal metagenomes",
+            "authors": [
+                {
+                    "first": "BE",
+                    "middle": [],
+                    "last": "Dutilh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nat Commun",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ncomms5498"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "UMARS: Un-MAppable Reads Solution",
+            "authors": [
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "BMC Bioinformatics",
+            "volume": "12",
+            "issn": "Suppl 1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2105-12-S1-S9"
+                ]
+            }
+        }
+    }
+}

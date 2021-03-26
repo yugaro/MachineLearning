@@ -1,0 +1,1591 @@
+{
+    "paper_id": "PMC2686503",
+    "metadata": {
+        "title": "Rfam: updates to the RNA families database",
+        "authors": [
+            {
+                "first": "Paul",
+                "middle": [
+                    "P."
+                ],
+                "last": "Gardner",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jennifer",
+                "middle": [],
+                "last": "Daub",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "John",
+                "middle": [
+                    "G."
+                ],
+                "last": "Tate",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Eric",
+                "middle": [
+                    "P."
+                ],
+                "last": "Nawrocki",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Diana",
+                "middle": [
+                    "L."
+                ],
+                "last": "Kolbe",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Stinus",
+                "middle": [],
+                "last": "Lindgreen",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Adam",
+                "middle": [
+                    "C."
+                ],
+                "last": "Wilkinson",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Robert",
+                "middle": [
+                    "D."
+                ],
+                "last": "Finn",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Sam",
+                "middle": [],
+                "last": "Griffiths-Jones",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Sean",
+                "middle": [
+                    "R."
+                ],
+                "last": "Eddy",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Alex",
+                "middle": [],
+                "last": "Bateman",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Rfam is a database of sequence families of structural RNAs, including non-coding RNA genes as well as cis-regulatory RNA elements. Rfam release 9.0 contains 603 families, each represented by a multiple sequence alignment of known and predicted representative members of the family, annotated with a consensus base-paired secondary structure. This so-called SEED alignment is used to build a covariance model (CM) with the Infernal software (1). Each Rfam covariance model is searched against a nucleotide sequence database, producing a list of putative hits. Matches that score above a curated threshold are then aligned to the CM to produce a so-called FULL alignment. This process is outlined diagrammatically in Figure 1. The Rfam database was developed as a generic approach to the annotation of structured RNA families on genomic sequences (2,3), but it has been widely used as a source of reliable alignments and structures for the purposes of training and benchmarking RNA sequence and secondary structure analysis software.\n",
+            "cite_spans": [
+                {
+                    "start": 441,
+                    "end": 442,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 846,
+                    "end": 847,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 848,
+                    "end": 849,
+                    "mention": "3",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 715,
+                    "end": 723,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "All Rfam models are searched against an underlying nucleotide sequence database, known as RFAMSEQ, which is derived from the EMBL nucleotide sequence database (4). Prior to release 9.0, RFAMSEQ represented only the various species sections of EMBL. These sections contained only sequences that were considered to be of finished quality and excluded sequences from many important genomes. With release 9.0, RFAMSEQ has been expanded to include the whole genome shotgun (WGS) and environmental sequence (ENV) divisions. These changes have increased the number of sequences in RFAMSEQ by more than an order of magnitude (2 225 030 sequences in Rfam 8.0 versus 29 574 458 sequences in Rfam 9.0).",
+            "cite_spans": [
+                {
+                    "start": 160,
+                    "end": 161,
+                    "mention": "4",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "RFAMSEQ ::: DATA AND METHODOLOGICAL IMPROVEMENTS",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to make it feasible to search more than 120 gigabases of sequence with hundreds of covariance models in a reasonable time, we use sequence-based filters to prune the search space prior to applying the more accurate and more computationally expensive CMs. One of the primary limitations of the Rfam annotation pipe-line has been the use of BLAST-based sequence filters, which are likely to compromise search sensitivity. In order to address this issue at least partially, NCBI-BLAST has been replaced with a WU-BLAST search, which has been tuned for high sensitivity and low sequence similarity. A benchmark of several homology search tools has shown WU-BLAST to be the more accurate of the two methods on nucleotide data (5). Additionally, in order to make the BLAST filters more similar to profile HMMs, a sequence mask has been applied to each sequence in the alignment. Any nucleotide in an alignment column that has either a low frequency or is an insert relative to the majority of the rest of the sequences is \u2018soft masked\u2019 and not used for the BLAST word matches. These masked nucleotides do, however, still contribute to alignments that were seeded in the flanking regions. This approach has resulted in many fewer spurious hits with no detectable cost to sensitivity (data not shown), thus allowing E-value thresholds to be further relaxed. These observations together mean that the BLAST filters have been improved in terms of specificity and sensitivity.",
+            "cite_spans": [
+                {
+                    "start": 731,
+                    "end": 732,
+                    "mention": "5",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Sequence filters ::: DATA AND METHODOLOGICAL IMPROVEMENTS",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to improve the species and sequence depth of individual Rfam families, more than 370 families have been expanded by an \u2018iteration\u2019 process, in which some sequences in the FULL alignment are chosen for promotion to the SEED alignment. The sequences selected from FULL alignments for inclusion in the SEED must pass a series of stringent quality control requirements and be manually approved by a curator. The quality control steps include: ensuring that the sequence and secondary structure are consistent with the existing SEED sequences; the sequence identity with existing SEED sequences falls within 60\u201395%; the sequence is not truncated with respect to the SEED alignment. The curator also ensures that the new sequences make phylogenetic sense before allowing them to be incorporated into an updated SEED. An example of the utility of iteration is the snoRNA U103 SEED from Rfam 8.1 (accession: RF00188), which contained just three sequences and spanned two eutherian mammals (human and mouse). The SEED in Rfam 9.0 after iteration contains 42 sequences and spans Eutheria, Teleost (ray-finned fishes), Iguanidae, Monotremes, Marsupials, Placentals, Aves and Chondrichthyes (cartilaginous fishes).",
+            "cite_spans": [],
+            "section": "Iteration of families ::: DATA AND METHODOLOGICAL IMPROVEMENTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Phylogenetic trees have been estimated for both the SEED and FULL alignments. For the majority of the alignments we produced the trees using an accurate maximum-likelihood approach, which included models of indels (6). However, the computational complexity of tree estimation meant that maximum-likelihood was not always possible and hence, where the number of sequences in the alignment was greater than 64, a neighbour-joining method was used instead (7). Large alignments and trees are problematic, both in terms of the computational cost of generation and the challenges of displaying them. Therefore, where the number of sequences in the alignment was greater than 1024, the highly similar sequences were filtered by sequence similarity, resulting in relatively sparse and easily presented trees that required comparatively little computing power to generate.",
+            "cite_spans": [
+                {
+                    "start": 215,
+                    "end": 216,
+                    "mention": "6",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 454,
+                    "end": 455,
+                    "mention": "7",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Iteration of families ::: DATA AND METHODOLOGICAL IMPROVEMENTS",
+            "ref_spans": []
+        },
+        {
+            "text": "We are currently developing a new Rfam website, with the aim of improving the presentation of Rfam data and providing more and better tools for searching the data. The new site is now available from http://rfam.sanger.ac.uk/and can be used to access Rfam 9.0 data. The new site lacks some features of the old site, but we aim to add all existing features and add many new ones over the coming months. Note that, at time of writing, the new website was available only at the Wellcome Trust Sanger Institute (http://rfam.sanger.ac.uk/). The two mirror sites will be updated to run the same website to coincide with the release of Rfam 9.1. The new site provides detailed overviews of Rfam families, including: a snapshot of the latest community-contributed annotation from Wikipedia (see below); tools for viewing and downloading the sequence alignments in various formats; representations of predicted secondary structure (see below); the taxonomic tree for the family; and phylogenetic trees for the SEED and FULL alignments.",
+            "cite_spans": [],
+            "section": "Website redesign ::: PRESENTATION IMPROVEMENTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Additionally, we provide several search tools in the new site. We currently support interactive searches, allowing a single RNA sequence to be searched against the whole Rfam database, and a batch search tool for searching multiple sequences against Rfam, the results of which are returned to the user via email. A new taxonomy search tool allows the user to find Rfam families that are specific to a given taxonomic level, or those found in a set of taxonomic levels that are specified by a complex, boolean query. For example, the query \u2018Drosophila AND Caenorhabditis NOT Mammalia\u2019 returns the two Rfam families (RF00047 and RF00533) that contain sequences from both drosophila and caenorhabditis but no sequences from any mammalian species.",
+            "cite_spans": [],
+            "section": "Website redesign ::: PRESENTATION IMPROVEMENTS",
+            "ref_spans": []
+        },
+        {
+            "text": "New graphical representations of secondary structures have been added to the Rfam website, based on software from the Vienna RNA package (8). We now annotate several statistics directly on secondary structure diagrams, including sequence conservation, covariation, base-pair conservation and the maximum CM scores (Figure 2). The sequence conservation metric uses a metric computed for each column in the alignment; this is the frequency of the most common nucleotide in each column (Figure 2A). The covariation metric is based upon that used by RNAalifold (9). For each base pair in the consensus structure and for each pair of sequences in the alignment, the difference in structurally consistent and inconsistent mutations is taken. Each mutation is weighted using a tree-weighting scheme (10) and this value is then normalized by the number of possible mutations (Figure 2B). The base-pair conservation metric is the fraction of canonical base pairs (Watson\u2013Crick and G:U) in any two columns that correspond to a base pair in the consensus structure (Figure 2C). The maximum covariance model score and corresponding nucleotide/base pair is computed for each node in the CM. The resulting sequence, structure and bit-scores are used to produce a marked up secondary structure (Figure 2D).\n",
+            "cite_spans": [
+                {
+                    "start": 138,
+                    "end": 139,
+                    "mention": "8",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 558,
+                    "end": 559,
+                    "mention": "9",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 793,
+                    "end": 795,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Structure graphics ::: PRESENTATION IMPROVEMENTS",
+            "ref_spans": [
+                {
+                    "start": 315,
+                    "end": 323,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 484,
+                    "end": 492,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 868,
+                    "end": 876,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1055,
+                    "end": 1063,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1280,
+                    "end": 1288,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The Rfam website now draws textual annotation of RNA families directly from the scientific community, through the online encyclopedia Wikipedia. Any updates to relevant Wikipedia articles are downloaded on a nightly basis using the MediaWiki API, verified by members of the consortium and presented on the Rfam site (11). We consider the resulting articles to be a great improvement on the original static text because they are frequently updated, provide cross links to related articles and are generally considerably more comprehensive and informative than the original Rfam annotations that they replace.",
+            "cite_spans": [
+                {
+                    "start": 317,
+                    "end": 319,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Wikipedia ::: PRESENTATION IMPROVEMENTS",
+            "ref_spans": []
+        },
+        {
+            "text": "The rate of discovery of new RNA families is accelerating rapidly, facilitated by advancements in new sequencing technologies (12,13) and targeted computational screens (14\u201317). Keeping abreast of these updates whilst still ensuring the quality of alignments and secondary structures is an ongoing challenge for Rfam. We continue to evaluate new technologies and techniques as they emerge and will adopt new procedures for building and checking Rfam families as necessary.",
+            "cite_spans": [
+                {
+                    "start": 127,
+                    "end": 129,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 130,
+                    "end": 132,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 170,
+                    "end": 175,
+                    "mention": "14\u201317",
+                    "ref_id": null
+                }
+            ],
+            "section": "FUTURE CHALLENGES",
+            "ref_spans": []
+        },
+        {
+            "text": "We have been actively updating Rfam families and database crosslinks using more specialized RNA databases such as miRBase (18), IRESite (19), Pseudobase (20), snoRNABase (21), the plant snoRNA database (22), TransTerm (23) and the Yeast snoRNA database (24). As a result of these efforts, the next release of Rfam (version 9.1) will contain more than 700 entirely new families, bringing the total number of Rfam families to over 1300.",
+            "cite_spans": [
+                {
+                    "start": 123,
+                    "end": 125,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 137,
+                    "end": 139,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 154,
+                    "end": 156,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 171,
+                    "end": 173,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 203,
+                    "end": 205,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 219,
+                    "end": 221,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 254,
+                    "end": 256,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "FUTURE CHALLENGES",
+            "ref_spans": []
+        },
+        {
+            "text": "A new version of Infernal (v1.0) is now available (http://infernal.janelia.org) and we plan to use this latest version to prepare the next major release of Rfam. Testing suggests that, compared with the version used for Rfam 9 (v0.72), v1.0 is faster and slightly more sensitive, whilst introducing for the first time E-values for hits returned from database searches. Although the speed increase will not be sufficient to obviate the need for BLAST filters in the Rfam production pipeline, this remains a major goal for Infernal development. Importantly, Infernal v1.0 is not compatible with the Rfam 9 CM files. Rfam/Infernal users may wish to generate new CMs from Rfam 9 SEED or FULL alignment files.",
+            "cite_spans": [],
+            "section": "FUTURE CHALLENGES",
+            "ref_spans": []
+        },
+        {
+            "text": "We have mapped a subset of three-dimensional RNA structures found in the Protein DataBank (PDB) (25) (primarily SRP and ribosomal RNAs) to corresponding sequences in Rfam. In an initial feasibility study, we have demonstrated that RNA sequences can be retrieved from PDB files and mapped to Rfam sequences reliably. The mapping is currently performed using BLAT (26) to detect local regions of high similarity with high specificity. The positions of matches to Rfam entries are transferred to the PDB sequences, allowing us to colour three-dimensional structures as in Figure 3. We intend to roll-out this mapping across all Rfam families and PDB entries using both local similarities and global matches to Rfam models. This sequence-to-structure mapping will allow us to use determined tertiary structures to calculate secondary structure as a quality control for existing families, and catalogue interactions between RNA\u2013RNA and RNA\u2013protein families.",
+            "cite_spans": [
+                {
+                    "start": 97,
+                    "end": 99,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 363,
+                    "end": 365,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "FUTURE CHALLENGES",
+            "ref_spans": [
+                {
+                    "start": 569,
+                    "end": 577,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "A further area of active research at Rfam is how best to distribute genome annotations. We plan to make annotations available in a variety of formats including the distributed annotation service (DAS) (27), General Feature Format (GFF) (http://song.sourceforge.net/gff3.shtml) and EMBL format, together with links to relevant genome browsers, e.g. ENSEMBL, UCSC and Genome Reviews.\n",
+            "cite_spans": [
+                {
+                    "start": 202,
+                    "end": 204,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "FUTURE CHALLENGES",
+            "ref_spans": []
+        },
+        {
+            "text": "Wellcome Trust (to P.P.G., J.D., J.T., R.D.F. and A.B.) Howard Hughes Medical Institute (to E.P.N., D.L.K. and S.R.E); University of Manchester (to S.G.J.); University of Copenhagen (to S.L.). Funding for open access charge: The Wellcome Trust.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        },
+        {
+            "text": "Conflict of interest statement. None declared.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1.: An outline of the Rfam 9.0 databases and methods. RFAMSEQ is drawn from EMBL excluding only the EST, synthetic and patented divisions. There are 603 Rfam families in release 9.0, which are used to scan RFAMSEQ for homologues using first WU-BLAST filters followed by the more accurate CM-based methods cmsearch and cmalign. This results in 603 FULL alignments annotating 636 138 regions.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: An example of the new secondary markups used by Rfam. The coronavirus 3\u2032-UTR pseudoknot is shown (Rfam Accession RF00165). We display coloured markups of sequence conservation (A), covariation (B), base-pair conservation also known as the fraction of canonical base pairs (C) and CM scores (D).",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: An example of how PDB structures are displayed in Rfam. In this case, the structure 1l ng, containing the SRP19-7S.S RNA Complex from M. jannaschii, is rendered as cartoons using Jmol. Protein regions are coloured using the following scheme: beta-sheets (yellow), helices (magenta) and unstructured regions (white). RNA bases that match the Rfam model are coloured according to the key given in the web page (not shown here). In this structure, green represents a match to the eukaryotic SRP model, whereas those unmatched bases are coloured orange.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Query-dependent banding (QDB) for faster RNA similarity searches",
+            "authors": [
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Nawrocki",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Eddy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS Comput. Biol.",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Volume changes in protein evolution",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gerstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Sonnhammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chothia",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J. Mol. Biol.",
+            "volume": "236",
+            "issn": "",
+            "pages": "1067-1078",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "The RNA WikiProject: community annotation of RNA families",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Daub",
+                    "suffix": ""
+                },
+                {
+                    "first": "PP",
+                    "middle": [],
+                    "last": "Gardner",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Tate",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ramskld",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Manske",
+                    "suffix": ""
+                },
+                {
+                    "first": "WG",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Weinberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Griffiths-Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bateman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "RNA",
+            "volume": "14",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Deep sequencing analysis of small noncoding RNA and mRNA targets of the global post-transcriptional regulator, Hfq",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sittka",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lucchini",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Papenfort",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Sharma",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Rolle",
+                    "suffix": ""
+                },
+                {
+                    "first": "TT",
+                    "middle": [],
+                    "last": "Binnewies",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Hinton",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Vogel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS Genet.",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "The transcriptional landscape of the mammalian genome",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Carninci",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kasukawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Katayama",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Gough",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Frith",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Maeda",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Oyama",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ravasi",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Lenhard",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wells",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "309",
+            "issn": "",
+            "pages": "1559-1563",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Noncoding RNA gene detection using comparative sequence analysis",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Rivas",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Eddy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "BMC Bioinform.",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Consensus folding of aligned sequences as a new measure for the detection of functional RNAs by comparative genomics",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Washietl",
+                    "suffix": ""
+                },
+                {
+                    "first": "IL",
+                    "middle": [],
+                    "last": "Hofacker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Mol. Biol.",
+            "volume": "342",
+            "issn": "",
+            "pages": "19-30",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Fast and reliable prediction of noncoding RNAs",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Washietl",
+                    "suffix": ""
+                },
+                {
+                    "first": "IL",
+                    "middle": [],
+                    "last": "Hofacker",
+                    "suffix": ""
+                },
+                {
+                    "first": "PF",
+                    "middle": [],
+                    "last": "Stadler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "102",
+            "issn": "",
+            "pages": "2454-2459",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Identification and classification of conserved RNA secondary structures in the human genome",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Pedersen",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bejerano",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Siepel",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Rosenbloom",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Lindblad-Toh",
+                    "suffix": ""
+                },
+                {
+                    "first": "ES",
+                    "middle": [],
+                    "last": "Lander",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kent",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Haussler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "PLoS Comput. Biol.",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "miRBase: tools for microRNA genomics",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Griffiths-Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "HK",
+                    "middle": [],
+                    "last": "Saini",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "van Dongen",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Enright",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Res.",
+            "volume": "36",
+            "issn": "",
+            "pages": "D154-D158",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "IRESite: the database of experimentally verified IRES structures (www.iresite.org)",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mokrejs",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Vopalensky",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Kolenaty",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Masek",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Feketova",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Sekyrova",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Skaloudova",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Kriz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pospisek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res.",
+            "volume": "34",
+            "issn": "",
+            "pages": "D125-D130",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Rfam: an RNA family database",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Griffiths-Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bateman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Marshall",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Khanna",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Eddy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res.",
+            "volume": "31",
+            "issn": "",
+            "pages": "439-441",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "PseudoBase: structural information on RNA pseudoknots",
+            "authors": [
+                {
+                    "first": "FH",
+                    "middle": [],
+                    "last": "van Batenburg",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Gultyaev",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Pleij",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nucleic Acids Res.",
+            "volume": "29",
+            "issn": "",
+            "pages": "194-195",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "snoRNA-LBME-db, a comprehensive database of human H/ACA and C/D box snoRNAs",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Lestrade",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Weber",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res.",
+            "volume": "34",
+            "issn": "",
+            "pages": "D158-D162",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Plant snoRNA database",
+            "authors": [
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Echeverria",
+                    "suffix": ""
+                },
+                {
+                    "first": "LH",
+                    "middle": [],
+                    "last": "Qu",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Lowe",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Bachellerie",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "H\u00fcttenhofer",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Kastenmayer",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                },
+                {
+                    "first": "DF",
+                    "middle": [],
+                    "last": "Marshall",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res.",
+            "volume": "31",
+            "issn": "",
+            "pages": "432-435",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Transterm\u2013extended search facilities and improved integration with other databases",
+            "authors": [
+                {
+                    "first": "GH",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Stockwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Tate",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res.",
+            "volume": "34",
+            "issn": "",
+            "pages": "D37-D40",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "New bioinformatic tools for analysis of nucleotide modifications in eukaryotic rRNA",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Piekna-Przybylska",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Decatur",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Fournier",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "RNA",
+            "volume": "13",
+            "issn": "",
+            "pages": "305-312",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "The Protein Data Bank",
+            "authors": [
+                {
+                    "first": "HM",
+                    "middle": [],
+                    "last": "Berman",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Westbrook",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Gilliland",
+                    "suffix": ""
+                },
+                {
+                    "first": "TN",
+                    "middle": [],
+                    "last": "Bhat",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Weissig",
+                    "suffix": ""
+                },
+                {
+                    "first": "IN",
+                    "middle": [],
+                    "last": "Shindyalov",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Bourne",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nucleic Acids Res.",
+            "volume": "28",
+            "issn": "",
+            "pages": "235-242",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "BLAT\u2013the BLAST-like alignment tool",
+            "authors": [
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Kent",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Genome Res.",
+            "volume": "12",
+            "issn": "",
+            "pages": "656-664",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Integrating biological data \u2013 the Distributed Annotation System",
+            "authors": [
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Jenkinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Albrecht",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Birney",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Blankenburg",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Down",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Finn",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Hermjakob",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Hubbard",
+                    "suffix": ""
+                },
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Jimenez",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMC Bioinform.",
+            "volume": "9",
+            "issn": "Suppl 8",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Rfam: annotating non-coding RNAs in complete genomes",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Griffiths-Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Moxon",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Marshall",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Khanna",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Eddy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bateman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucleic Acids Res.",
+            "volume": "33",
+            "issn": "",
+            "pages": "D121-D124",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Priorities for nucleotide trace, sequence and annotation data capture at the Ensembl Trace Archive and the EMBL Nucleotide Sequence Database",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Cochrane",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Akhtar",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Aldebert",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Althorpe",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Baldwin",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Bates",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bhattacharyya",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bonfield",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Bower",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Browne",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Res.",
+            "volume": "36",
+            "issn": "",
+            "pages": "D5-D12",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Exploring genomic dark matter: a critical assessment of the performance of homology search methods on noncoding RNA",
+            "authors": [
+                {
+                    "first": "EK",
+                    "middle": [],
+                    "last": "Freyhult",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Bollback",
+                    "suffix": ""
+                },
+                {
+                    "first": "PP",
+                    "middle": [],
+                    "last": "Gardner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Genome Res.",
+            "volume": "17",
+            "issn": "",
+            "pages": "117-125",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Probabilistic phylogenetic inference with insertions and deletions",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Rivas",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Eddy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS Comput. Biol.",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "PHYLIP (Phylogeny Inference Package) version 3.6",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Felsenstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "The RNAz web server: prediction of thermodynamically stable and evolutionarily conserved RNA structures",
+            "authors": [
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Gruber",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Neub\u00f6ck",
+                    "suffix": ""
+                },
+                {
+                    "first": "IL",
+                    "middle": [],
+                    "last": "Hofacker",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Washietl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res.",
+            "volume": "35",
+            "issn": "",
+            "pages": "W335-W338",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Secondary structure prediction for aligned RNA sequences",
+            "authors": [
+                {
+                    "first": "IL",
+                    "middle": [],
+                    "last": "Hofacker",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Fekete",
+                    "suffix": ""
+                },
+                {
+                    "first": "PF",
+                    "middle": [],
+                    "last": "Stadler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J. Mol. Biol.",
+            "volume": "319",
+            "issn": "",
+            "pages": "1059-1066",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

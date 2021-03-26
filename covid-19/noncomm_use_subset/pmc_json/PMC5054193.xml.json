@@ -1,0 +1,804 @@
+{
+    "paper_id": "PMC5054193",
+    "metadata": {
+        "title": "Jackknife and Bootstrap Tests of the Composition Vector Trees",
+        "authors": [
+            {
+                "first": "Guanghong",
+                "middle": [],
+                "last": "Zuo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Zhao",
+                "middle": [],
+                "last": "Xu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Hongjie",
+                "middle": [],
+                "last": "Yu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Bailin",
+                "middle": [],
+                "last": "Hao",
+                "suffix": "",
+                "email": "hao@mail.itp.ac.cn",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Composition vector (CV) trees are inferred from whole-genome data by using an alignment-free and parameter-free method (1), implemented as a web server entitled CVTree 2, 3. The CV method has been successfully applied to infer phylogeny of viruses 4, 5, bacteria 1, 6, 7, chloroplast (8) and fungi (9). In all cases, the majority of branchings in the CVTrees agree well with the biologists\u2019 classification at all taxonomic ranks from phyla down to species while a few disagreements remain. They indicate strongly on possible taxonomic revisions debated by microbiologists since a long time ago (7). This overall agreement serves as a major and objective justification of the CVTrees.",
+            "cite_spans": [
+                {
+                    "start": 119,
+                    "end": 122,
+                    "mention": "(1)",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 168,
+                    "end": 169,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 171,
+                    "end": 172,
+                    "mention": "3",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 248,
+                    "end": 249,
+                    "mention": "4",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 251,
+                    "end": 252,
+                    "mention": "5",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 263,
+                    "end": 264,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 266,
+                    "end": 267,
+                    "mention": "6",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 269,
+                    "end": 270,
+                    "mention": "7",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 284,
+                    "end": 287,
+                    "mention": "(8)",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 298,
+                    "end": 301,
+                    "mention": "(9)",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 594,
+                    "end": 597,
+                    "mention": "(7)",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "However, traditionally phylogenetic trees obtained using various methods are subject to statistical re-sampling tests such as bootstrap or jackknife (10). In fact, due to the limited size of sampling space, most researchers could not afford to do jackknife tests and had to be content with bootstrap type tests. Nonetheless, even successful passing of these tests merely shows stability and self-consistency of the inferred trees with respect to certain variations in the original dataset. Objective judgment of the meaningfulness of trees must rely on arguments beyond trees themselves, say, by direct comparison with the efforts of many generations of taxonomists as ideally phylogeny and taxonomy should agree with each other. However, several anonymous referees of our previous publications and a few users of the CVTree web server 2, 3 have repeatedly raised the questions of statistical support of the CVTrees. Correspondingly, we have shown a few bootstrap results in Qi et al. (1) and Wang et al. (9) without giving details. In these papers, we described the method of our bootstrap, jackknife and anti-jackknife (see below) tests of CVTrees. We showed the results on the examples of virus, bacteria and fungi. Since full-fledged bootstrap/jackknife tests are extremely time-consuming and soon come the epoch of inferring phylogeny for thousands of species in not-too-distant future, our ultimate goal is to advocate the viewpoint that one may give up routine statistical re-sampling tests for the robust and stable CV method, and rely on direct comparison of phylogeny with taxonomy to justify the inferred trees.",
+            "cite_spans": [
+                {
+                    "start": 149,
+                    "end": 153,
+                    "mention": "(10)",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 836,
+                    "end": 837,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 839,
+                    "end": 840,
+                    "mention": "3",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 985,
+                    "end": 988,
+                    "mention": "(1)",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1005,
+                    "end": 1008,
+                    "mention": "(9)",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In the CV approach, each organism is represented by a composition vector made of K-peptide counts obtained from the organism\u2019s proteome. The K-value controls the resolution of the method. A subtraction procedure based on (K\u22122)-th order Markov prediction is introduced to suppress effect of neutral mutations and to highlight the shaping role of natural selection (1). The most suitable K-values depend on the overall size of the proteome of the group of organisms under study. Our previous work has shown that the \u201cbest\u201d Ks are 4 and 5 for viruses, 5 and 6 for prokaryotes, 6 and 7 for fungi. We will see that bootstrap tests provide another angle to look at these K-values.",
+            "cite_spans": [
+                {
+                    "start": 363,
+                    "end": 366,
+                    "mention": "(1)",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Thus our justification of CVTrees goes in two steps. First, we show that the CVTrees based on whole proteomes (to be called the original CVTrees hereafter) are robust, and the branchings agree well with the corresponding taxonomy. This has been done in our previous studies 1, 5, 6, 7, 8, 9. Second, in this paper, trees obtained by bootstrap or jackknife re-sampling of the datasets are compared to the original CVTrees at the same K in terms of topological distances between them. As CVTrees are calculated by Neighbor-Joining algorithm (11), which is a robust and quartet-based method (12), our strategy reminds what adopted by Rzhetsky and Nei (13) in estimating minimal-evolution trees by comparison with the corresponding NJ-tree. We make emphasis on topology, i.e., branching schemes, of the trees as they are directly related to taxonomy.",
+            "cite_spans": [
+                {
+                    "start": 274,
+                    "end": 275,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 277,
+                    "end": 278,
+                    "mention": "5",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 280,
+                    "end": 281,
+                    "mention": "6",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 283,
+                    "end": 284,
+                    "mention": "7",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 286,
+                    "end": 287,
+                    "mention": "8",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 289,
+                    "end": 290,
+                    "mention": "9",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 539,
+                    "end": 543,
+                    "mention": "(11)",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 588,
+                    "end": 592,
+                    "mention": "(12)",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 648,
+                    "end": 652,
+                    "mention": "(13)",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "As CV method does not use sequence alignment, statistical re-sampling cannot be carried out in the usual way of random choice of nucleotide or amino acid sites with replacement. Instead, we pick up proteins at random from the pool of all proteins in the genome of an organism. We used four datasets of protein sequences encoded in the genome:1.A collection of 124 double-strand DNA (dsDNA) virus genomes as studied and listed in Gao and Qi (5), denoted as \u201cVirus 124\u201d in Figure 1, Figure 2.2.A collection of 16 archaea, 87 bacteria, and 6 eukarya genomes, denoted as \u201cProkaryote 109\u201d in Figure 1, Figure 2. This 109-genome dataset was used in Qi et al. (1) and served as a touchstone for many further studies.3.A collection of 41 archaea, 401 bacteria, and 8 eukarya genomes, denoted as \u201cProkaryote 450\u201d in Figure 1, Figure 2. The list of these 450 genomes may be fetched from the authors\u2019 webpage (http://www.itp.ac.cn/~hao/450list.pdf).4.A collection of 82 fungal genomes plus 3 eukarya as outgroups. This dataset was used in Wang et al. (9) and denoted as \u201cFungi 85\u201d in Figure 1, Figure 2.",
+            "cite_spans": [],
+            "section": "Method",
+            "ref_spans": [
+                {
+                    "start": 471,
+                    "end": 479,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 481,
+                    "end": 489,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 587,
+                    "end": 595,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 597,
+                    "end": 605,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 807,
+                    "end": 815,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 817,
+                    "end": 825,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1073,
+                    "end": 1081,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1083,
+                    "end": 1091,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "On each of these datasets, jackknife and bootstrap tests are performed in the following way. In the CV method, a species is represented by a composition vector made of overlapping K-residues, designated as \u201cK-peptides\u201d hereafter, from all proteins in the genome. To do jackknife tests, we first take randomly 90% of proteins from the whole protein pool. This is done for all species and a CVTree is constructed by carrying out the crucial \u201csubtraction procedure\u201d (1). The topological distance between this tree and the original CVTree inferred from the whole protein pool is calculated. This re-sampling is performed 100 times and the average topological distance between these 100 trees and the original 100% CVTree at the same K is taken. Then the protein fraction is decreased to 80%, 70%, \u2026, 10% and the average topological distance at a given K is plotted against the protein fraction (Figure 1).",
+            "cite_spans": [
+                {
+                    "start": 463,
+                    "end": 466,
+                    "mention": "(1)",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Method",
+            "ref_spans": [
+                {
+                    "start": 891,
+                    "end": 899,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Suppose a species\u2019 genome contains M protein products. In order to do bootstrap tests, the same number M proteins are drawn at random from the pool. The drawing is done with replacement, i.e., some proteins may be drawn repeatedly and some others may be skipped at all. The topological distance between a bootstrap tree and the original CVTree with the same K is calculated. Again the average topological distance of 100 bootstrap trees is retained as the final result (see the discussion of Figure 2 below).",
+            "cite_spans": [],
+            "section": "Method",
+            "ref_spans": [
+                {
+                    "start": 492,
+                    "end": 500,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "In doing a bootstrap test, the probability that a designated protein is drawn at the first try is 1/M; the probability of its being skipped is 1\u2212/M. The probability of its being dropped at M tries is (1\u22121/M)M and the probability of being drawn is 1\u2212(1\u22121/M)M. At the limit of very big M, the latter goes to 1\u22121/e \u2248 0.63212, where e=2.71828 is the base of natural logarithm. This means that in performing a bootstrap test, though M proteins are drawn from the pool on average, only 63.21% of the protein assortment is kept. Therefore, we superimpose the results of bootstrap tests for various K conditionally against protein fraction 0.6321 in Figure 1 of jackknife tests.",
+            "cite_spans": [],
+            "section": "Method",
+            "ref_spans": [
+                {
+                    "start": 642,
+                    "end": 650,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We used the topological distance to measure the difference between phylogenetic trees. The definition of topological distance could be found in the previous literature 14, 15. An unrooted tree with N terminal leaves has N\u22123 internal edges. Cutting any of these internal edges defines a split of the set of leaves into two subsets. To measure the distance between two trees constructed for the same set of leaves, we compare the two lists of split-trees obtained by cutting each of the N\u22123 internal edges. If the two lists are identical up to reordering, the two trees have the same topology and the topological distance dT=0. In general, the topological distance is defined as (16):dT=2\u00d7(number of distinct split-trees)",
+            "cite_spans": [
+                {
+                    "start": 168,
+                    "end": 170,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 172,
+                    "end": 174,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 677,
+                    "end": 681,
+                    "mention": "(16)",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Method",
+            "ref_spans": []
+        },
+        {
+            "text": "The factor 2 was introduced to incorporate more general cases of multi-furcating nodes (CV method yields only bifurcating trees). Therefore, if the two trees have entirely different topologies, the topological distance between them reaches the maximal value dT = 2\u00d7(N\u22123). We have written a program to implement the definition of topological distance. In fact, we adopt a relative topological distance by dividing the calculated dT by its maximal possible value 2\u00d7(N\u22123), thus the factor 2 drops out and the relative distance varies between 0 and 1.",
+            "cite_spans": [],
+            "section": "Method",
+            "ref_spans": []
+        },
+        {
+            "text": "GZ and ZX collected data and performed most of the calculations. HY implemented the Penny-Hendy algorithm for calculating topological distance between trees. BH designed the whole work and performed the analysis. GZ and BH wrote the manuscript. All authors read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Authors\u2019 contributions ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The authors have declared that no competing interests exist.",
+            "cite_spans": [],
+            "section": "Competing interests ::: Results and Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Summary of jackknife tests for the four datasets. A. \u201cVirus 124\u201d dataset. B. \u201cProkaryote 109\u201d dataset. C. \u201cProkaryote 450\u201d dataset. D. \u201cFungi 85\u201d dataset. Solid triangles drawn near fraction of proteins 0.6321 show the results of bootstrap tests at different K-values as represented by the same color used for the jackknife tests.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Distribution of bootstrap results for \u201cVirus 124\u201d (A), \u201cProkaryote 109\u201d (B), \u201cProkaryote 450\u201d (C), and \u201cFungi 85\u201d (D) datasets. At each K-value shown are the median, the 25% and 75% margin, and the minimal and maximal distance.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Whole proteome prokaryote phylogeny without sequence alignment: a K-string composition approach",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Mol. Evol.",
+            "volume": "58",
+            "issn": "",
+            "pages": "1-11",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Felsenstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Inferring Phylogenies",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "The neighbor-joining method: a new method for reconstructing phylogenetic trees",
+            "authors": [
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Saitou",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Nei",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Mol. Biol. Evol.",
+            "volume": "4",
+            "issn": "",
+            "pages": "406-425",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Why neighbor-joining works?",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Mihaescu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Algorithmica",
+            "volume": "54",
+            "issn": "",
+            "pages": "1-24",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "A simple method for estimating and testing minimum-evolution trees",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Rzhetsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Nei",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Mol. Biol. Evol.",
+            "volume": "9",
+            "issn": "",
+            "pages": "945-967",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Comparison of phylogenetic trees",
+            "authors": [
+                {
+                    "first": "D.F.",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.R.",
+                    "middle": [],
+                    "last": "Foulds",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "Math. Biosci.",
+            "volume": "53",
+            "issn": "",
+            "pages": "131-147",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "The use of tree comparison metrics",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Penny",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Syst. Zool.",
+            "volume": "34",
+            "issn": "",
+            "pages": "75-82",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Nei",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Molecular Evolution and Phylogenetics",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Vertical heredity vs. horizontal gene transfer: a challenge to bacterial classification",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Hao",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J. Sys. Sci. Complex",
+            "volume": "16",
+            "issn": "",
+            "pages": "307-314",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Prokaryote phylogeny without sequence alignment: from avoidance signature to composition distance",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Hao",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Bioinform. Comput. Biol.",
+            "volume": "2",
+            "issn": "",
+            "pages": "1-19",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Simple Markov subtraction essentially improves prokaryote phylogeny",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "AAPPS Bull.",
+            "volume": "16",
+            "issn": "",
+            "pages": "3-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "CVTree: a phylogenetic tree reconstruction tool based on whole genomes",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res.",
+            "volume": "32",
+            "issn": "",
+            "pages": "W45-W47",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "",
+            "authors": [],
+            "year": 2008,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "CVTree update: a newly designed phylogenetic study platform using composition vectors and whole genomes",
+            "authors": [
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Hao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Res.",
+            "volume": "37",
+            "issn": "",
+            "pages": "W174-W178",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Molecular phylogeny of coronaviruses including human SARS-CoV",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Chin. Sci. Bull.",
+            "volume": "48",
+            "issn": "",
+            "pages": "1170-1174",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Whole genome molecular phylogeny of large dsDNA viruses using composition vector method",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Evol. Biol.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Prokaryote phylogeny meets taxonomy: an exhaustive comparison of composition vector trees with systematic bacteriology",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Sci. China C Life Sci.",
+            "volume": "50",
+            "issn": "",
+            "pages": "587-599",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Composition vector approach to whole-genome-based prokaryotic phylogeny: success and foundations",
+            "authors": [
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Biotechnol.",
+            "volume": "149",
+            "issn": "",
+            "pages": "115-119",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Origin and phylogeny of chloroplasts revealed by a simple correlation analysis of complete genomes",
+            "authors": [
+                {
+                    "first": "K.H.",
+                    "middle": [],
+                    "last": "Chu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol. Biol. Evol.",
+            "volume": "21",
+            "issn": "",
+            "pages": "200-206",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "A fungal phylogeny based on 82 complete genomes using the composition vector method",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "BMC Evol. Biol.",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

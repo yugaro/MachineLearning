@@ -1,0 +1,3633 @@
+{
+    "paper_id": "PMC3870239",
+    "metadata": {
+        "title": "Identification of RNase L-Dependent, 3\u2032-End-Modified, Viral Small RNAs in Sindbis Virus-Infected Mammalian Cells",
+        "authors": [
+            {
+                "first": "Erika",
+                "middle": [],
+                "last": "Girardi",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "B\u00e9atrice",
+                "middle": [],
+                "last": "Chane-Woon-Ming",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "M\u00e9lanie",
+                "middle": [],
+                "last": "Messmer",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Pasi",
+                "middle": [],
+                "last": "Kaukinen",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "S\u00e9bastien",
+                "middle": [],
+                "last": "Pfeffer",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "In order to successfully establish an infection, viruses engage in a continuous arms race with their hosts, the outcome of which might ultimately result in either viral persistence, clearance of the viral infection, or death of the infected cells. The arsenal of antiviral defenses and viral counter defense mechanisms is vast and very diverse among the different phyla of life. Plants, insects, nematodes, and fungi mostly (if not exclusively) rely upon an innate immune response, whereas mammals have evolved an adaptive response in addition to this first line of defense. In the former organisms, the antiviral component of the innate immune response is mainly based on a highly conserved process commonly referred to as RNA silencing, or RNA interference (RNAi). In this phenomenon, long double-stranded RNAs of viral origin are cleaved by the RNase Dicer into small interfering RNAs (siRNAs), which are then assembled into effector complexes that contain a member of the Argonaute (Ago) family; this results in targeted degradation of viral messenger or genomic RNAs (1).",
+            "cite_spans": [
+                {
+                    "start": 1073,
+                    "end": 1074,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In mammals, another type of innate immunity has evolved to control viruses (2). The initial recognition of nonself viral nucleic acids by extra- and intracellular sensors triggers the activation of type I interferons (IFNs) (3). This leads in turn to the upregulation of numerous IFN-stimulated genes (ISGs) (4), which either directly trigger a signaling cascade directed against the viral infection or mobilize other cells of the immune system. ISGs encode proteins involved in apoptosis induction, protein synthesis blocking, or in the regulation of mRNA editing or RNA degradation (5). One key factor involved in IFN type I-mediated host defense is RNase L, a latent cytoplasmic endoribonuclease that is activated by 2\u2032,5\u2032-oligoadenylates in response to double-stranded RNA (dsRNA) sensing and that cleaves both viral and cellular RNAs (6).",
+            "cite_spans": [
+                {
+                    "start": 76,
+                    "end": 77,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 225,
+                    "end": 226,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 309,
+                    "end": 310,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 585,
+                    "end": 586,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 840,
+                    "end": 841,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Although extensive deep sequencing analyses have been performed to identify siRNAs in mammalian cells infected with several RNA viruses, there is so far no good evidence for a possible antiviral role of RNAi in mammalian somatic cells (7). Nevertheless, another class of small noncoding RNAs, microRNAs (miRNAs), has been shown to play an important role during viral infection in mammals. miRNAs are evolutionarily conserved small RNAs derived from large primary transcripts, which are sequentially processed by the respective nuclear and cytoplasmic RNase III enzymes, Drosha and Dicer, to generate mature single-stranded ~21- or 22-nucleotide (nt) RNAs (8, 9). Similar to siRNAs, they are incorporated into an effector Ago-containing RNA-induced silencing complex (RISC), whereby they mediate posttranscriptional regulation of target mRNAs via partially complementary sites (10). On one hand, miRNAs of cellular origin can directly or indirectly regulate viral infections (11, 12). On the other hand, some viruses have evolved the capacity to encode their own miRNAs, which represent an ideal tool to stealthily modulate the cellular environment. To date, viral miRNAs have been almost exclusively identified in the genomes of DNA viruses, mostly herpesviruses (13\u201317), with the notable exception of bovine leukemia virus, a retrovirus with an RNA genome (18). It has been commonly assumed that cytoplasmic RNA viruses cannot encode miRNAs, not only because they do not have access to the nuclear biogenesis machinery but also because their genomic integrity would be destabilized by miRNA processing (19). Nevertheless, it has recently been demonstrated that the insertion of a cellular miRNA precursor into the 3\u2032-end nontranslated region (NTR) of Sindbis virus (SINV) genomic RNA leads to its cytoplasmic processing without affecting the viral replication (20, 21).",
+            "cite_spans": [
+                {
+                    "start": 236,
+                    "end": 237,
+                    "mention": "7",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 656,
+                    "end": 657,
+                    "mention": "8",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 659,
+                    "end": 660,
+                    "mention": "9",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 877,
+                    "end": 879,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 975,
+                    "end": 977,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 979,
+                    "end": 981,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1264,
+                    "end": 1266,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1267,
+                    "end": 1269,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1358,
+                    "end": 1360,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1604,
+                    "end": 1606,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1862,
+                    "end": 1864,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 1866,
+                    "end": 1868,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The arthropod-borne SINV is a small, enveloped, positive, single-stranded RNA virus and is the prototype for the alphavirus genus. Alphaviruses represent a group of widely distributed human and animal pathogens, which pose a serious public health threat (22). Some of them induce febrile and arthritogenic diseases, while others can cause highly debilitating diseases, such as encephalitis. The SINV genomic RNA is capped and polyadenylated and is infectious as naked RNA. Upon entry into the cytoplasm by endocytosis, the host translational machinery recognizes the genomic RNA, and four nonstructural proteins are produced (23). Their expression is sufficient for the establishment of replication complexes and the synthesis of a complementary antigenomic negative RNA strand. The antigenome is necessary for the replication of the viral genome and the production of a subgenomic RNA that ensures the translation of the structural proteins during the late phase of infection (24, 25).",
+            "cite_spans": [
+                {
+                    "start": 255,
+                    "end": 257,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 626,
+                    "end": 628,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 978,
+                    "end": 980,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 982,
+                    "end": 984,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "To date, SINV has not been shown to give rise to any small RNA species in mammalian cells. As such, we decided to investigate the small RNA profile of SINV-infected human and African green monkey cell lines. Using small RNA cloning and deep sequencing techniques, we provide evidence that the SINV genome is a source of small RNAs in infected mammalian cells. Some of these small RNAs accumulate to levels detected by Northern blot analysis. We set out to identify the factors involved in their biogenesis and show that they do not depend on the RNA silencing machinery, but rather, that they are downstream products of the cytoplasmic IFN-induced endoribonuclease RNase L. Finally, we also present experimental evidence that these viral small RNAs are modified at their 3\u2032 extremity. Altogether, our results indicate that the SINV-derived small RNAs could represent key markers of the host defense mechanism.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to investigate the presence and nature of virus-derived small RNAs in mammalian cells, we used a small RNA cloning and deep sequencing approach. We generated and analyzed small RNA libraries from both HEK293 and Vero cells infected with SINV or not infected with SINV.",
+            "cite_spans": [],
+            "section": "SINV-derived small RNAs accumulate in infected mammalian cells. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Total RNA was isolated from uninfected cells or cells infected with SINV at a multiplicity of infection (MOI) of 0.01 plaque forming units (PFU) per cell 16 h postinfection (hpi). Using these conditions, we could detect cells with a high viral load without observing any apparent cell death as assessed by propidium iodide staining (see Fig. S1 in the supplemental material). We also confirmed that until 24 hpi, cells were still actively proliferating (data not shown). High-throughput sequencing yielded 201,793 and 1,193,893 reads that mapped to the SINV genome in infected HEK293 and Vero cells, respectively (Fig. 1A); these two numbers of reads represented a percentage of 1.66 and 7.99%, respectively, of total mapped small RNAs in HEK293 and Vero cells. The greater fraction of viral reads in Vero cells is consistent with the fact that these cells are known to be more permissive to viral infections due to a defect in interferon production (26). The distribution of the reads on the viral genomic (positive) and antigenomic (negative) strands is indicated in Fig. 1A. Interestingly, the vast majority of the reads (98 to 99%) originate from the genomic strand of the virus. Nonetheless, we identified limited sequencing reads that were derived from the negative strand, albeit at extremely low levels in both libraries (Fig. 1A). Their genomic distribution showed a peak at the 3\u2032 end of the antigenome (see Fig. S2A in the supplemental material). This specific region corresponds to the viral promoter, necessary for the replication of the viral genome and is known to fold into a conserved 44-nt stem-loop structure (25). The length distribution of the antigenomic small RNA reads peaked at a size of 22 nt (Fig. S2B), which corresponds to the 5\u2032 arm of the stem-loop structure (Fig. S2C). Although we could validate the presence of the 44-nt-long RNA by Northern blot analysis, we were unable to detect the accumulation of the small 22-nt RNA as a discrete species (Fig. S2D).",
+            "cite_spans": [
+                {
+                    "start": 951,
+                    "end": 953,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1629,
+                    "end": 1631,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "SINV-derived small RNAs accumulate in infected mammalian cells. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 614,
+                    "end": 621,
+                    "mention": "Fig. 1A",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1069,
+                    "end": 1076,
+                    "mention": "Fig. 1A",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1330,
+                    "end": 1337,
+                    "mention": "Fig. 1A",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The size distribution of the main population of viral reads mapping on the positive strand of the virus was broad with no defined peak at a specific length (Fig. 1B). However, a closer inspection revealed that the overall size and genomic distribution of the viral reads were highly similar in both HEK293 and Vero cells (Fig. 1C). Moreover, a greater number of reads were found between nucleotides 7000 and 11700 of the viral genome, corresponding to the abundantly expressed subgenomic RNA.",
+            "cite_spans": [],
+            "section": "SINV-derived small RNAs accumulate in infected mammalian cells. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 157,
+                    "end": 164,
+                    "mention": "Fig. 1B",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 322,
+                    "end": 329,
+                    "mention": "Fig. 1C",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We selected 14 candidates among the most abundant peaks obtained in both cell types for validation by Northern blot analysis (see Fig. S3A in the supplemental material). We could detect several SINV-derived viral small RNAs (SvsRNAs) of 20 to 30 nt in length that were derived from all along the viral genome (Fig. S3B). Among them, SvsRNA-1, -2, and -3 were detected in both HEK293 and Vero cells (Fig. S3C). The presence of abundant larger bands accumulating between 40 and 100 nt was also evidenced. Of note, the expression of both larger and smaller viral RNAs increased proportionally to the accumulation of the viral genome during a time course of infection (Fig. 1D and E). The identification of SINV-derived small RNAs prompted us to analyze more closely their origin and biochemical properties.",
+            "cite_spans": [],
+            "section": "SINV-derived small RNAs accumulate in infected mammalian cells. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 665,
+                    "end": 678,
+                    "mention": "Fig. 1D and E",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The identification of small RNAs from RNA viruses could be seen either as a result of a productive mechanism for the pathogen (as for virus-encoded miRNAs) or as the consequence of a host response to control the infection by degrading viral RNAs. SINV expresses four enzymes that play key functions during the viral replicative cycle. However, none of these enzymes is known to possess an endoribonuclease activity (22) that could enable the processing of small RNAs from a viral RNA precursor. Therefore, cellular enzymes have to be involved in the biogenesis of SINV sRNAs. In order to identify them, we decided to knock down cytoplasmic enzymes with a known RNase activity. We first focused on proteins important for the production of small RNAs, such as miRNAs. Hence, we transfected siRNAs against Drosha, Dicer, or Ago2 followed by an infection with SINV and an analysis of viral small RNA accumulation. Although Drosha is known to be mostly nuclear, we also took it into consideration because it was recently shown to relocalize to the cytoplasm upon SINV infection (21). Although we were able to downregulate very efficiently Drosha, Dicer, and Ago2 (see Fig. S4A to C in the supplemental material), the knockdown of these factors neither affected the viral load nor the accumulation of SvsRNA-1, -2 and -3 (Fig. S4D to G). We also examined whether we could detect an siRNA signature among all viral reads by looking for small RNAs that could perfectly base pair on 19 or 20 nt and present a 2-nt overhang in 3\u2032. A very limited number of such duplexes could be found, but they were not more represented than larger duplexes presenting with 3\u2032 or 5\u2032 overhangs (data not shown). It has been reported that small RNAs, which are not generated by Dicer or Drosha cleavage, could nevertheless be assembled into Argonaute proteins (e.g., tRNA fragments [27]). We therefore immunoprecipitated Argonaute proteins followed by Northern blot analysis to see whether SvsRNAs could be detected within the RISC. However, although we could detect the accumulation of the cellular miRNA miR-16, using both an antibody specific for Ago2 (Fig. S4H, left panel) and an antibody able to recognize all four Ago proteins (Fig. S4H, right panel), we were unable to detect SvsRNAs within immunoprecipitated RISC.",
+            "cite_spans": [
+                {
+                    "start": 416,
+                    "end": 418,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1074,
+                    "end": 1076,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1855,
+                    "end": 1857,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "The production of SvsRNAs does not rely on the miRNA biogenesis machinery. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "We then hypothesized that an endoribonuclease involved in the antiviral response could be implicated in SvsRNA production. RNase L is a ubiquitous, cytoplasmic, interferon-induced endonuclease that plays a key role in the cellular response to viral infections. It cleaves single-stranded RNA regions after the dinucleotides UA/UU, thereby preventing virus accumulation (28). As such, we knocked down RNase L using siRNAs, before infecting the cells with SINV. As expected, RNase L knockdown (KD) resulted in the upregulation of the SINV genome by approximately 2.5-fold (Fig. 2A and B). Interestingly, it also resulted in a dramatic reduction of the viral small RNAs SvsRNA-1, -2, and -3 and their precursors (Fig. 2C).",
+            "cite_spans": [
+                {
+                    "start": 370,
+                    "end": 372,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "RNase L is involved in the production of SvsRNAs. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 571,
+                    "end": 584,
+                    "mention": "Fig. 2A and B",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 710,
+                    "end": 717,
+                    "mention": "Fig. 2C",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "In order to extend this observation and assess the role of RNase L in SvsRNA generation, we also produced small RNA libraries from HEK293 cells treated with a control or an RNase L-specific siRNA prior to SINV infection. In accordance with the striking effect seen on the three specific SvsRNAs, reduction in RNase L protein level decreased the entire population of clonable viral sequences from 2.75 to 1.19% (see Fig. S5A in the supplemental material). However, RNase L knockdown affected neither the size distribution of viral reads nor their genomic distribution (Fig. S5B and C).",
+            "cite_spans": [],
+            "section": "RNase L is involved in the production of SvsRNAs. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Given the cleavage properties of RNase L (see next section), it was unlikely that the identified small RNAs were direct products of this enzyme. We therefore looked for other factors implicated in RNA degradation that could affect SvsRNA accumulation. We used RNAi to downregulate the expression of the major cytoplasmic 5\u2032-3\u2032 exoribonuclease Xrn1 (Fig. 2D). As expected, the capped viral genome was not affected by downregulation of Xrn1 (Fig. 2E). However, the levels of SvsRNA-1, -2, and -3 and their precursors were stabilized (Fig. 2F). We then looked at the effect of combining knockdown of these factors (see Fig. S6 in the supplemental material). We found that the double knockdown of both RNase L and Dicer did not affect the accumulation of SvsRNA-1 compared to the single RNase L knockdown, which confirms that Dicer does not play a role (Fig. S6A). On the contrary, the accumulation of SvsRNA-1 upon double knockdown of both RNase L and Xrn1 increased compared to the single RNase L knockdown (Fig. S6A). This finding suggests that both RNase L and Xrn1 can act upon viral RNAs and have opposite activities in terms of generation and stabilization of the SvsRNAs. Xrn1 might act upstream of RNase L in degrading, for example, uncapped viral RNAs that would otherwise be a substrate for RNase L; alternatively, it could directly act upon the RNase L products. The former hypothesis is more likely though because Xrn1 has a preference for 5\u2032 phosphorylated RNAs, whereas RNase L leaves a 5\u2032 OH after cleavage. We also performed a high-molecular-weight Northern blot analysis to look at the effects of the various knockdowns on the accumulation of the genomic and subgenomic viral RNAs. The results confirm the quantitative PCR data, in that only the RNase L KD has an impact on the accumulation of both genomic and subgenomic RNAs (Fig. S6B).",
+            "cite_spans": [],
+            "section": "RNase L is involved in the production of SvsRNAs. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 349,
+                    "end": 356,
+                    "mention": "Fig. 2D",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 440,
+                    "end": 447,
+                    "mention": "Fig. 2E",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 532,
+                    "end": 539,
+                    "mention": "Fig. 2F",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "We also tested several cytoplasmic 3\u2032-5\u2032 exoribonucleases, including DIS3L, DIS3L2, and Rrp40 (also known as EXOSC3, a core subunit of the exosome); knockdown of these factors had no effect on SvsRNA accumulation (data not shown). This indicated that at least the main cytoplasmic 3\u2032-5\u2032 exoribonucleases do not seem to be implicated in the production of the viral small RNAs.",
+            "cite_spans": [],
+            "section": "RNase L is involved in the production of SvsRNAs. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "RNase L processing produces a typical signature: the enzyme leaves a 5\u2032 hydroxyl (OH) and a 3\u2032 phosphate (P) after cleavage (6). However, these features are not compatible with our small RNA cloning protocol (29), which strictly relies on the presence of a 5\u2032 P and a 3\u2032 OH on the small RNA extremities. This prompted us to characterize the extremities of SvsRNAs to better understand their biogenesis. We initially decided to restrict our analysis to SvsRNA-1 because it accumulated as a major form of 23 nt. The assay used for the analysis of RNA 5\u2032 ends involved digestion with the Terminator exonuclease, a processive 5\u2032-3\u2032 exonuclease that specifically targets and degrades RNAs with a 5\u2032 monophosphate, but not RNAs with 5\u2032 triphosphates, 5\u2032 OH, or a 5\u2032 CAP (30).",
+            "cite_spans": [
+                {
+                    "start": 125,
+                    "end": 126,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 209,
+                    "end": 211,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 765,
+                    "end": 767,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "The 3\u2032 extremity of SvsRNA-1 is modified. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "For a control, the Terminator reaction was carried out on both a 5\u2032 OH and a 5\u2032 P oligoribonucleotide with the same sequence as SvsRNA-1. Terminator treatment did not result in the degradation of the 5\u2032 OH synthetic oligoribonucleotide, whereas the 5\u2032 P RNA oligonucleotide was almost completely degraded. Accordingly, SvsRNA-1 is prone to degradation by the Terminator exonuclease, which is consistent with the presence of a monophosphate at the 5\u2032 end, while the accumulation of the precursor bands was less affected by the treatment (Fig. 3A).",
+            "cite_spans": [],
+            "section": "The 3\u2032 extremity of SvsRNA-1 is modified. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 537,
+                    "end": 544,
+                    "mention": "Fig. 3A",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Next, we performed sodium periodate (NaIO4) treatment followed by \u03b2-elimination to specifically examine the 3\u2032 end of SvsRNA-1. The presence of hydroxyl groups in positions 2\u2032 and 3\u2032 on the last ribose is needed for the periodate reaction. \u03b2-elimination of the oxidized RNA results in an RNA product one or two nucleotides shorter. On the contrary, the presence of modifications on the ribose of the 3\u2032 terminal residue renders the RNA insensitive to periodate oxidation and impairs the chain scission (31). For a control for the reaction, we measured its effect on the unmodified cellular miRNA miR-16. As expected, the electrophoretic mobility of the miRNA strongly changed after treatment (Fig. 3B). In contrast, SvsRNA-1 mobility was found to be insensitive to periodate oxidation and \u03b2-elimination (Fig. 3B). This indicated the presence of a modification on the terminal ribose, most likely in the 2\u2032 position, which is perfectly compatible with our cloning protocol. Interestingly, it also seems that the intermediate RNA products are insensitive to periodate oxidation and are consequently modified (see Fig. S7 in the supplemental material). Moreover, we were also able to assess the existence of a modified 3\u2032 end for other SvsRNAs by Northern blotting (Fig. S8).",
+            "cite_spans": [
+                {
+                    "start": 503,
+                    "end": 505,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "The 3\u2032 extremity of SvsRNA-1 is modified. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 693,
+                    "end": 700,
+                    "mention": "Fig. 3B",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 804,
+                    "end": 811,
+                    "mention": "Fig. 3B",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "In order to gain more insight into the nature of this modification, we treated our samples with calf intestinal phosphatase (CIP) (Fig. 3C, lanes 2, 4, 6, 8, 10, 12, 14, and 16) prior to \u03b2-elimination (Fig. 3C, lanes 4, 8, 12, and 16). The double treatment strongly affected the mobility of a control oligoribonucleotide with a 3\u2032 P (Fig. 3C, lane 4), while the mobility of the 3\u2032 OH oligonucleotide was affected independently of the CIP treatment (Fig. 3C, lanes 7 and 8). Of note, the combined reactions changed neither the mobility of a control oligoribonucleotide bearing a CIP-insensitive modification (methyl group in position 2\u2032 of the last ribose) (Fig. 3C, lane 12) nor the mobility of SvsRNA-1 (Fig. 3C, lane 16).",
+            "cite_spans": [],
+            "section": "The 3\u2032 extremity of SvsRNA-1 is modified. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 131,
+                    "end": 138,
+                    "mention": "Fig. 3C",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 202,
+                    "end": 209,
+                    "mention": "Fig. 3C",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 334,
+                    "end": 341,
+                    "mention": "Fig. 3C",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 449,
+                    "end": 456,
+                    "mention": "Fig. 3C",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 657,
+                    "end": 664,
+                    "mention": "Fig. 3C",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 705,
+                    "end": 712,
+                    "mention": "Fig. 3C",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Taken together, these results show that SvsRNA-1 is modified at its 3\u2032 extremity but that the modification is not due to a monophosphate group caused by a direct RNase L cut.",
+            "cite_spans": [],
+            "section": "The 3\u2032 extremity of SvsRNA-1 is modified. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "The presence of posttranscriptional modifications, such as 2\u2032-O-methylation, is a characteristic of several cellular RNAs in mammals, such as rRNAs (32), snRNAs (33), and Piwi-interacting RNAs (piRNAs) (34, 35). Recently, it has also been reported for several viruses that their genomic RNA can be 2\u2032-O-methylated at specific positions (36, 37). We hypothesized that the modification on the small RNA could be derived from a modification at the level of the genomic RNA, which is reasonable given the fact that SvsRNA-1 precursor RNAs also appear to be modified (see Fig. S7 in the supplemental material). We thus looked for modifications in the genomic region spanning SvsRNA-1 using the RTL-P (reverse transcription at low deoxyribonucleoside triphosphate concentrations followed by polymerase chain reaction) technique (38): the tendency of the reverse transcriptase to pause immediately before a 2\u2032-O-methylated nucleotide is exploited to establish the efficiency of retrotranscription by semiquantitative PCR, using differential deoxynucleoside triphosphate (dNTP) concentrations.",
+            "cite_spans": [
+                {
+                    "start": 149,
+                    "end": 151,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 162,
+                    "end": 164,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 203,
+                    "end": 205,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 207,
+                    "end": 209,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 337,
+                    "end": 339,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 341,
+                    "end": 343,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 823,
+                    "end": 825,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Viral genomic RNA is modified on A8333. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "As shown in Fig. 4A, we designed a reverse transcription primer specific for the viral genome, as well as primers for semiquantitative PCR in the region surrounding SvsRNA-1 (shown in red): one reverse primer (R) and three forward primers, upstream (FU) or downstream of the putative modification (FD1 and FD2). After retrotranscription with low and high dNTP concentrations, we performed multiplex PCR using primers FU/FD1 (in the SvsRNA-1 region) or primers FD1/FD2 (in the control region) and then compared the signal intensity ratios of PCR products amplified with different numbers of PCR cycles (Fig. 4B). Our data indicated that only the FU/FD1 ratio changed depending on the RT conditions (Fig. 4B, top panel), suggesting that at a low dNTP concentration, the reverse transcriptase paused in the SvsRNA-1 region, most probably due to the presence of a modification on the viral genome in the region of interest.",
+            "cite_spans": [],
+            "section": "Viral genomic RNA is modified on A8333. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 12,
+                    "end": 19,
+                    "mention": "Fig. 4A",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 602,
+                    "end": 609,
+                    "mention": "Fig. 4B",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 698,
+                    "end": 705,
+                    "mention": "Fig. 4B",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "To further strengthen this observation and to identify the precise position of the nucleotide modification, we performed primer extension assays on RNA isolated from either SINV-infected HEK293 or Vero cells (Fig. 4C). 2\u2032-O-methylation can cause reverse transcriptase to pause one nucleotide before and/or at the O-methylated nucleotide. Indeed, we identified two bands (RT stops) that correspond to nucleotides G8334 and A8333, the latter corresponding precisely to the 3\u2032 end of the SvsRNA-1 sequence (Fig. 4C).",
+            "cite_spans": [],
+            "section": "Viral genomic RNA is modified on A8333. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 209,
+                    "end": 216,
+                    "mention": "Fig. 4C",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 504,
+                    "end": 511,
+                    "mention": "Fig. 4C",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "These data imply that the 3\u2032-end modification of SvsRNA-1 was likely already present on the viral genome and might be a 2\u2032-O-methylation.",
+            "cite_spans": [],
+            "section": "Viral genomic RNA is modified on A8333. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Taken together, our observations indicate that the SINV genomic RNA is modified, and are therefore suggestive of a potential modification of SvsRNAs. We then decided to investigate to what extent reads mapping to the SINV genome were modified at the last nucleotide position. Small RNA libraries were prepared from noninfected or SINV-infected HEK293 cells using total RNA treated (or not) with NaIO4. This treatment specifically impairs the 3\u2032 adapter ligation to RNA species with unmodified 3\u2032 ends (2\u2032 and 3\u2032 OH), while RNAs bearing a modification at one of these positions are resistant to oxidation, and can therefore be ligated. Overnight ligation of the 3\u2032 adapter at 16\u00b0C was performed in order to enhance the cloning of 2\u2032-O modified small RNAs (39).",
+            "cite_spans": [
+                {
+                    "start": 755,
+                    "end": 757,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "3\u2032-end modification is a hallmark of SvsRNAs. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "After deep sequencing of these libraries, we mapped the total number of reads against both the human and SINV genome (Table 1). As expected, in both noninfected and infected cells, the NaIO4 treatment drastically reduced the number of clonable miRNA sequences (see also Fig. S9A in the supplemental material). In contrast, modified small RNAs (such as tRNA fragments) were preferentially cloned over miRNAs upon NaIO4 treatment (Fig. S9B). Strikingly, almost 75% of the viral reads were kept after oxidation (Table 1). The oxidation treatment did not dramatically change the genomic distribution of the viral reads compared to the nontreated sample (Fig. 5A). However, deep sequencing revealed some new peaks (Fig. 5A, arrows) that we could also validate by \u03b2-elimination and Northern blot analysis (see SvsRNA-15 and -16 in Fig. S8).",
+            "cite_spans": [],
+            "section": "3\u2032-end modification is a hallmark of SvsRNAs. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 650,
+                    "end": 657,
+                    "mention": "Fig. 5A",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 710,
+                    "end": 717,
+                    "mention": "Fig. 5A",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 118,
+                    "end": 125,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 509,
+                    "end": 516,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The size distribution of the viral reads remained unchanged before and after NaIO4 treatment, indicating that SINV-derived modified RNAs belonged to each length (Fig. 5B). Finally, we analyzed the nucleotide composition of the 3\u2032 end of SINV small RNAs and observed that we had enrichment in adenosine (A) at the 3\u2032 end after oxidation, which was not clearly discernible in the nontreated sample (Fig. 5C). This is in line with the specific 2\u2032-O-methylation occurring on internal adenosines recently identified on the genome of dengue virus (36).",
+            "cite_spans": [
+                {
+                    "start": 542,
+                    "end": 544,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "3\u2032-end modification is a hallmark of SvsRNAs. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 162,
+                    "end": 169,
+                    "mention": "Fig. 5B",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 397,
+                    "end": 404,
+                    "mention": "Fig. 5C",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Mammals have evolved a very sophisticated innate immune response to ward off pathogens that is based on the sensing of pathogen-associated molecular patterns (PAMPs) by dedicated pattern recognition receptors (PRRs). When it comes to viral infection, one of the most potent PAMPs is dsRNA. The recognition of dsRNA by PRRs triggers a signaling cascade that ultimately leads to the activation of interferon-sensitive genes (ISGs) (40). RNA silencing is another type of antiviral innate immunity, which, as of now, has mostly been demonstrated in plant and insect organisms (1). Nonetheless, a role for RNA silencing as a host defense system against mammalian viruses could reasonably be considered. Indeed, Dicer, the key enzyme for dsRNA cleavage is conserved in higher vertebrates, and although its main substrate in vivo is pre-miRNA molecules, it is able to process long dsRNA into short RNAs in vitro (41). However, the question as to which other types of dsRNA molecules mammalian Dicer can cleave in vivo has been the matter of intense research, and especially so when considering RNAs of viral origin. Here, we wanted to make our contribution to the field by studying the prototypical arbovirus, Sindbis virus. This type of virus can infect both insects and mammals, and as such is a useful tool to study the conservation of antiviral mechanisms in both phyla. Intriguingly, it has been shown for some members of the alphavirus genus that their genomic RNA can be processed into both siRNAs and piRNAs in insect somatic cells (42, 43).",
+            "cite_spans": [
+                {
+                    "start": 430,
+                    "end": 432,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 573,
+                    "end": 574,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 906,
+                    "end": 908,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 1534,
+                    "end": 1536,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 1538,
+                    "end": 1540,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "In this study, we generated small RNA libraries from two different mammalian cell lines infected with SINV. Although the percentage of sequences mapping to the viral genome was significant (~1.7 to ~8% in HEK293 and Vero cells, respectively), we were unable to detect either siRNA or piRNA signatures. On the contrary, the viral reads displayed a highly biased strand distribution. Although antigenomic (negative) strand-derived sequences represented a very small percentage of the total viral reads, they showed properties distinct from the genomic (positive) strand reads: their size distribution peaked at 22 nt, and their localization on the viral genome is restricted to the promoters required for the synthesis of both the genomic and subgenomic RNA. Although the cloned 22-nt sequences were not visible by Northern blot analysis, we could detect the accumulation of an ~44-nt product that in our knowledge has never been observed before. We hypothesize that these RNA species could be critical for viral replication, similarly to what has been previously reported for influenza virus (44).",
+            "cite_spans": [
+                {
+                    "start": 1092,
+                    "end": 1094,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Consistent with the relative abundance of the positive strand compared to the negative strand, the majority of reads were derived from the plus-strand RNA and more specifically from the region corresponding to the subgenomic RNA sequence. We could detect several hot spots of small RNA accumulation, indicating that discrete SINV-derived viral small RNA species (SvsRNAs) could be produced in infected mammalian cells. These SvsRNAs do not display any peak in size distribution and do not map to any alphavirus conserved regions. Nonetheless, we noticed that they originate from the same viral genomic positions in both infected African green monkey and human cells. In order to confirm that this was not solely due to a bias in the small RNA cloning protocol, we performed Northern blot analyses of several small RNA candidates. For some of the candidates, we were able to detect discrete bands, which increased in intensity throughout the time course of infection.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "We therefore focused on the characterization of the positive-strand-derived small RNAs. One hypothesis regarding their identity could be that some of these SvsRNAs are in fact virus-encoded miRNAs. Using bioinformatics tools such as miRDeep2 (45, 46) and miRanalyzer2 (47, 48), we excluded the possibility that putative miRNA precursor structures were present in the viral genome. Nonetheless, we tested whether the miRNA machinery was required for the production of viral small RNAs by knocking down Drosha, Dicer, and Ago2. The downregulation of these factors affected neither SINV replication nor accumulation of the three most abundant identified SvsRNAs, indicating that their production must involve another RNase. We discovered that the RNase L endonuclease is implicated in SvsRNA genesis. Indeed, its downregulation causes a dramatic reduction in the accumulation of Sindbis viral small RNAs detected by Northern blot analysis; this is accompanied by an upregulation of the viral genomic RNA. In order to extend this observation, we also generated small RNA libraries from HEK293 cells treated with siRNAs against RNase L and infected with SINV. We found that, under these conditions, the global population of SINV sRNAs was downregulated. RNase L is an endoribonuclease that is present in the cell in the form of an inactive monomer. Upon type I interferon induction, and more specifically 2\u2032-5\u2032 oligoadenylate synthetase activation (6), it can dimerize and then act upon its viral RNA targets. RNase L is known to play an antiviral role against viruses such as West Nile virus (49), hepatitis C virus (50), and SINV (51). We also looked at the involvement of exoribonucleases in the production of SvsRNAs and found that, indeed, the accumulation of these small RNAs is counteracted by the cellular 5\u2032-3\u2032 exonuclease Xrn1. This suggests that SvsRNAs represent stable viral products of cellular decay enzymes. We therefore hypothesize that RNase L is the enzyme primarily involved in the generation of small RNAs and that the further processing operated by other uncharacterized enzymes could give rise to the final 20- to 30-nt-long viral RNAs. It also remains possible that some of the fragments we detected are direct products of RNase L but are further modified by kinases and dephosphorylases, which would allow their cloning.",
+            "cite_spans": [
+                {
+                    "start": 243,
+                    "end": 245,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 247,
+                    "end": 249,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 269,
+                    "end": 271,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 273,
+                    "end": 275,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 1444,
+                    "end": 1445,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 1589,
+                    "end": 1591,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1613,
+                    "end": 1615,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 1628,
+                    "end": 1630,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The fact that RNA fragments generated by RNase L are detected implies that some of them must be stabilized. Indeed, we discovered that the viral small RNA candidates appear to be modified on the 3\u2032 proximal nucleotide. We could extend this peculiarity to the global small RNA population by cloning and sequencing small RNAs after an oxidation treatment designed to prevent ligation of nonmodified RNAs. Our data indicate that this modification is most likely a 2\u2032-O-methylation and seems to occur at the level of the viral genomic RNA, preferentially on adenosines. Thanks to a double approach of RTL-P and primer extension, we were able to map such a modification on position A8333 of the SINV viral genome. Moreover, our sequencing data indicate that there are most likely many others given the enrichment in A residues at the 3\u2032 end of small RNAs cloned after oxidative treatment.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The main protective mechanism against 3\u2032-5\u2032 degradation is a 2\u2032-O-methylation on the 3\u2032 proximal ribose, which prevents degradation by exoribonucleases and thus helps to stabilize small RNAs such as miRNAs and siRNAs in plants, piRNAs in animals, and siRNAs in Drosophila melanogaster (52). This suggests that RNA modification could have evolved as a response to protect the anti-pathogen small RNAs during infections. Posttranscriptional RNA modifications represent an important but not yet fully understood system to regulate transcripts. Cellular RNAs contain many distinct posttranscriptional modifications at thousands of sites. In the same way, RNA viruses take advantage of nucleoside modifications on the base or on the ribose of their genomic RNA (36, 53) as a host mimicry strategy to abrogate innate immune signaling (54).",
+            "cite_spans": [
+                {
+                    "start": 286,
+                    "end": 288,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 757,
+                    "end": 759,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 761,
+                    "end": 763,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 829,
+                    "end": 831,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The enzyme responsible for the methylation of SINV RNA remains unknown. However, it has been reported that the alphavirus nsP2 protein contains a putative methyltransferase (MT)-like domain, similar to dengue virus NS5 MTase (55). Although the activity of this domain has not been verified yet, nsP2-MTase mutant viruses exhibit a strong phenotype: negative-strand synthesis is continuous, and unstable viral replication complexes are produced. Surprisingly, RNase L-deficient cells infected with SINV display the same phenotype, suggesting that the two proteins function in similar events (55). For all these reasons, we propose that RNase L-dependent, 3\u2032-modified small RNAs from SINV could be involved as intermediates in this mechanism.",
+            "cite_spans": [
+                {
+                    "start": 226,
+                    "end": 228,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 591,
+                    "end": 593,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Altogether, our findings show a link between the host degradation pathway and stabilization of modified viral small RNAs. Clearly, not all the small RNAs identified by our deep sequencing approach correspond to RNase L downstream products. Nonetheless, the fact that at least some of these small RNAs are protected and detected might implicate them in signaling events, maybe upstream of the infection front, which might prove difficult to assess in cell culture. We hypothesized that by removing RNase L we might uncover signatures corresponding to other types of small RNAs, such as siRNAs or piRNAs, but it did not turn out to be the case. This could be due to the fact that other enzymes might also be involved in the production of RNA fragments and is an indication that it will make the detection of antiviral RNAi complicated in differentiated mammalian cells. An alternate hypothesis could also be that SINV encodes an RNA silencing suppressor that blocks Dicer activity but has no effect on RNase L. Finally, it is also possible that the antiviral RNAi response might be detected only in specific subtypes of cells in mammals, which would be different from the differentiated somatic cells we used for our study. Further investigation will be needed to answer these questions and to decipher the roles played by this type of virus-derived small RNAs, as well as their potential implication in the design of new antiviral therapeutic strategies.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Plasmid carrying wild-type (WT) and green fluorescent protein (GFP)-SINV genomic sequence (kindly provided by M. C. Saleh) was linearized with XhoI and used as a substrate for in vitro transcription using mMESSAGE mMACHINE capped RNA transcription kit (Ambion) following the manufacturer\u2019s instructions. Sindbis viral stock was prepared in BHK21 hamster kidney cells, and titers were measured by plaque assay. HEK293 and Vero cells were maintained in Dulbecco\u2019s modified Eagle medium (DMEM) (Gibco) supplemented with 10% fetal bovine serum (FBS) (Clontech) in a humidified atmosphere of 5% CO2 at 37\u00b0C. Cells were infected with SINV at an MOI of 0.01. Samples were harvested at 0, 4, 8, 12, 16, 24, and 48 h postinfection (hpi).",
+            "cite_spans": [],
+            "section": "Viral stocks, cell culture, and virus infection. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "For siRNA transfection, 0.4 \u00d7 105 HEK293 cells were seeded in 6-well plates. Transfections were carried out for 72 h using 20 nM ON-TARGET plus Smart Pool siRNAs (Dharmacon) for one-step depletion (human RNase L and Xrn1) or 100 nM ON-TARGET plus Smart Pool siRNAs (Dharmacon) for two-step depletion (human Drosha, Dicer, and Ago2) with Lipofectamine 2000 (Invitrogen) following the manufacturer\u2019s instructions. The ON-TARGET plus Nontargeting Pool siRNAs (Dharmacon) was used as a negative control. Cells were infected with SINV and harvested after 16 h for RNA and protein analysis.",
+            "cite_spans": [],
+            "section": "RNAi-mediated protein depletion. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "RNA was extracted from noninfected and SINV-infected HEK293 and Vero cells 16 hpi. Small RNA cloning was conducted with 10 or 20 \u00b5g of total RNA as previously described (14, 29). Small RNA libraries from SINV-infected HEK293 cells treated with control or RNase L-specific siRNAs were generated following the same protocol with some modifications. Mainly, small RNAs were ligated using degenerate 5\u2032 and 3\u2032 adapters to limit biases in the ligation step (56). This procedure was also used to prepare small RNA libraries after NaIO4 treatment of 100 \u00b5g of total RNA, as previously described (57), except that the 3\u2032 ligation was performed at 16\u00b0C overnight, in 12% polyethylene glycol 8000 (PEG 8000) to favor the cloning of modified small RNAs. Sequencing was performed at the IGBMC Microarray and Sequencing platform, Illkirch, France, using different Illumina instruments (Genome Analyzer IIx, HiSeq 2000, and HiSeq 2500) with a read length of 36 or 50 bp.",
+            "cite_spans": [
+                {
+                    "start": 170,
+                    "end": 172,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 174,
+                    "end": 176,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 453,
+                    "end": 455,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 589,
+                    "end": 591,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                }
+            ],
+            "section": "Small RNA cloning and sequencing. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "A detailed description of the deep sequencing data analysis is available in Text S1 in the supplemental material. ",
+            "cite_spans": [],
+            "section": "Small RNA cloning and sequencing. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The data discussed in this publication have been deposited in NCBI\u2019s Gene Expression Omnibus (58) and are accessible through GEO Series accession number GSE48831 (http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48831).",
+            "cite_spans": [
+                {
+                    "start": 94,
+                    "end": 96,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "Microarray data accession number. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "TABLE\u00a01 : Deep sequencing results of NalO4-treated and nontreated small RNA librariesa\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "FIG\u00a01\u00a0: Identification of SINV-derived small RNAs. (A) Virus-specific small RNA reads were recovered from each library (HEK293 cells infected with SINV [HEK293-SINV] and Vero-SINV) and were mapped to both positive (+) and negative (\u2212) strands of the viral genome. (B) Size distribution of SINV-derived small RNA populations. The proportion of viral sRNAs that were derived from the genomic sense strand in each size class is shown as a percentage of the total viral small RNA reads for this strand. (C) Distribution of viral reads mapping to the SINV genomic strand. The abundance of small RNAs was calculated and plotted as the sum of normalized reads (per 105 viral reads) in each single-nucleotide sliding window along the viral genome. The small black arrows indicate the peaks chosen for Northern blot validation (see Fig. S1 in the supplemental material). A schematic diagram represents the organization of SINV genome. The two open reading frames (ORF), which encode the nonstructural (ns) and structural proteins, are shown. The nontranslated region (NTR) at the 3\u2032 end of the virus is shown as a small black bar. (D) Northern blot validation of SINV candidates. Total RNA was isolated at the indicated time points from HEK293 cells infected with SINV at an MOI of 0.01. Noninfected cells (\u2212) were used as a negative control. U6 snRNA was used as a loading control. (E) Quantification of the SINV genome during infection by reverse transcription-quantitative PCR (RT-qPCR). The relative quantification is normalized to glyceraldehyde-3-phosphate dehydrogenase (GAPDH) levels and is represented on a logarithmic scale as a mean of three replicates. NI, not infected.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "FIG\u00a02\u00a0: Effects of RNase L and Xrn1 knockdown on SvsRNA accumulation. (A and D) RNase L and Xrn1 knockdown in SINV-infected HEK293 cells was verified by Western blotting. Tubulin (Tub) was used as a normalizer. sictrl, control siRNA; siRNaseL, RNase L-specific siRNA; siXrn1, Xrn1-specific siRNA. (B and E) SINV genomic RNA was quantified by RT-qPCR, before and after RNase L or Xrn1 KD. The relative quantification is normalized to GAPDH levels and is represented on a logarithmic scale as a mean of three replicates. (C and F) Northern blot analysis on total RNA from infected HEK293 cells before and after RNase L or Xrn1 KD. U6 was used as a normalizer.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "FIG\u00a03\u00a0: Characterization of 5\u2032 and 3\u2032 extremities of SvsRNA-1. (A) Synthetic oligonucleotides that have 5\u2032 OH or 5\u2032 P ends or total RNA were treated with Terminator exonuclease (+) or not treated with Terminator (\u2212) before being analyzed by Northern blotting. (B) \u03b2-elimination on HEK293-SINV total RNA followed by Northern blotting of SvsRNA-1 and miR-16 after migration on 17.5% polyacrylamide gel. Asterisks denote putative precursors of SvsRNA-1. (C) Synthetic SvsRNA-1 molecules that have 3\u2032 P, 3\u2032 OH, or 3\u2032 OH 2\u2032-O-me ends were treated with calf intestinal phosphatase (CIP) (lanes 2, 4, 6, 8, 10, 12, 14, and 16). Dephosphorylation was followed by \u03b2-elimination (lanes 4, 8, 12, and 16). oligo, oligonucleotide; me, methyl; elim, elimination.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "FIG\u00a04\u00a0: SINV genomic RNA is modified. (A) Schematic diagram of the primer design for RTL-P to detect the presence of 2\u2032-O-methylated nucleotides (m) on the viral genome. SvsRNA-1 is indicated in red. (B) Detection of methylation by RTL-P under both high and low dNTP concentrations and PCR cycles on SINV-infected HEK293 cells. The ratio of PCR signal intensity is indicated beneath each lane. (C) Primer extension mapping of 2\u2032-O-methylated nucleotides. Lanes U, G, C, and A represent dideoxy sequencing reactions performed on the in vitro transcript amplified for the same viral region. Asterisks indicate stops of the reverse transcriptase.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "FIG\u00a05\u00a0: Deep sequencing upon periodate oxidation in SINV-infected HEK293 cells. (A) Distribution of viral reads mapping to the SINV genome. The abundance of small RNAs was calculated and plotted as the sum of normalized reads (per 105 viral reads) in each single-nucleotide sliding window along the SINV RNA. The small black arrows indicate the peaks chosen for Northern blot validation. (B) Size distribution of SINV-derived small RNA populations. The percentage of viral sRNAs deriving from the genomic sense strand in each size class is shown as a percentage of the total viral small RNA reads for this strand. Data from SINV-infected HEK293 cell samples treated with NaIO4 or not treated with NaIO4 (NT) are shown. (C) Relative nucleotide frequency per position. The viral reads with 0 mismatch to the SINV positive strand were considered for this analysis. Only the last five nucleotides from the 3\u2032 end of each sequence are displayed.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Antiviral immunity directed by small RNAs",
+            "authors": [
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Voinnet",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Cell",
+            "volume": "130",
+            "issn": "",
+            "pages": "413-426",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "The widespread regulation of microRNA biogenesis, function and decay",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Krol",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Loedige",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Filipowicz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nat. Rev. Genet.",
+            "volume": "11",
+            "issn": "",
+            "pages": "597-610",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Interferon modulation of cellular microRNAs as an antiviral mechanism",
+            "authors": [
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Pedersen",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wieland",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Volinia",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Croce",
+                    "suffix": ""
+                },
+                {
+                    "first": "FV",
+                    "middle": [],
+                    "last": "Chisari",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "David",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nature",
+            "volume": "449",
+            "issn": "",
+            "pages": "919-922",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "A cellular microRNA mediates antiviral defense in human cells",
+            "authors": [
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Lecellier",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Dunoyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Arar",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lehmann-Che",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Eyquem",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Himber",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sa\u00efb",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Voinnet",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "308",
+            "issn": "",
+            "pages": "557-560",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Identification of virus-encoded microRNAs",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Pfeffer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zavolan",
+                    "suffix": ""
+                },
+                {
+                    "first": "FA",
+                    "middle": [],
+                    "last": "Gr\u00e4sser",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chien",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Russo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ju",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "John",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Enright",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Marks",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Sander",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tuschl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Science",
+            "volume": "304",
+            "issn": "",
+            "pages": "734-736",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Identification of microRNAs of the herpesvirus family",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Pfeffer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sewer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lagos-Quintana",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sheridan",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Sander",
+                    "suffix": ""
+                },
+                {
+                    "first": "FA",
+                    "middle": [],
+                    "last": "Gr\u00e4sser",
+                    "suffix": ""
+                },
+                {
+                    "first": "LF",
+                    "middle": [],
+                    "last": "van Dyk",
+                    "suffix": ""
+                },
+                {
+                    "first": "CK",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Shuman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chien",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Russo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ju",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Randall",
+                    "suffix": ""
+                },
+                {
+                    "first": "BD",
+                    "middle": [],
+                    "last": "Lindenbach",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Rice",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Simon",
+                    "suffix": ""
+                },
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zavolan",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tuschl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nat. Methods",
+            "volume": "2",
+            "issn": "",
+            "pages": "269-276",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Kaposi\u2019s sarcoma-associated herpesvirus expresses an array of viral microRNAs in latently infected cells",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Cai",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Gonzalez",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Damania",
+                    "suffix": ""
+                },
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "Cullen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc. Natl. Acad. Sci. U. S. A.",
+            "volume": "102",
+            "issn": "",
+            "pages": "5570-5575",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Cloning and identification of a microRNA cluster within the latency-associated region of Kaposi\u2019s sarcoma-associated herpesvirus",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Samols",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Skalsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Renne",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Virol.",
+            "volume": "79",
+            "issn": "",
+            "pages": "9301-9305",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Small RNA deep sequencing identifies microRNAs and other small noncoding RNAs from human herpesvirus 6B",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Tuddenham",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Jung",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Chane-Woon-Ming",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "D\u00f6lken",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Pfeffer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Virol.",
+            "volume": "86",
+            "issn": "",
+            "pages": "1638-1649",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "RNA virus microRNA that mimics a B-cell oncomiR",
+            "authors": [
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Kincaid",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Burke",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Sullivan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Proc. Natl. Acad. Sci. U. S. A.",
+            "volume": "109",
+            "issn": "",
+            "pages": "3077-3082",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Is RNA interference involved in intrinsic antiviral immunity in mammals?",
+            "authors": [
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "Cullen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nat. Immunol.",
+            "volume": "7",
+            "issn": "",
+            "pages": "563-567",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Innate immune recognition of viral infection",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kawai",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Akira",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nat. Immunol.",
+            "volume": "7",
+            "issn": "",
+            "pages": "131-137",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Noncanonical cytoplasmic processing of viral microRNAs",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Shapiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Varble",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Pham",
+                    "suffix": ""
+                },
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "tenOever",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "RNA",
+            "volume": "16",
+            "issn": "",
+            "pages": "2068-2074",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Evidence for a cytoplasmic microprocessor of pri-miRNAs",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Shapiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Langlois",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Pham",
+                    "suffix": ""
+                },
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "tenOever",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "RNA",
+            "volume": "18",
+            "issn": "",
+            "pages": "1338-1346",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Alphaviruses",
+            "authors": [
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Griffin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Fields virology",
+            "volume": "",
+            "issn": "",
+            "pages": "1023-1068",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Evasion of the innate immune response: the Old World alphavirus nsP2 protein induces rapid degradation of Rpb1, a catalytic subunit of RNA polymerase II",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Akhrymuk",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Kulemzin",
+                    "suffix": ""
+                },
+                {
+                    "first": "EI",
+                    "middle": [],
+                    "last": "Frolova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Virol.",
+            "volume": "86",
+            "issn": "",
+            "pages": "7180-7191",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "The alphaviruses: gene expression, replication, and evolution",
+            "authors": [
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Strauss",
+                    "suffix": ""
+                },
+                {
+                    "first": "EG",
+                    "middle": [],
+                    "last": "Strauss",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Microbiol. Rev.",
+            "volume": "58",
+            "issn": "",
+            "pages": "491-562",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "A structural and functional perspective of alphavirus replication and assembly",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Jose",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Snyder",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Future Microbiol.",
+            "volume": "4",
+            "issn": "",
+            "pages": "837-856",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Defectiveness of interferon production and of rubella virus interference in a line of African green monkey kidney cells (Vero)",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Desmyter",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Melnick",
+                    "suffix": ""
+                },
+                {
+                    "first": "WE",
+                    "middle": [],
+                    "last": "Rawls",
+                    "suffix": ""
+                }
+            ],
+            "year": 1968,
+            "venue": "J. Virol.",
+            "volume": "2",
+            "issn": "",
+            "pages": "955-961",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Extensive terminal and asymmetric processing of small RNAs from rRNAs, snoRNAs, snRNAs, and tRNAs",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Ender",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Meister",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "John",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res.",
+            "volume": "40",
+            "issn": "",
+            "pages": "6787-6799",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Interferon action: RNA cleavage pattern of a (2\u2032-5\u2032)oligoadenylate dependent endonuclease",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Floyd-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Slattery",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Lengyel",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "Science",
+            "volume": "212",
+            "issn": "",
+            "pages": "1030-1032",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Identification of virally encoded microRNAs",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Pfeffer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Methods Enzymol.",
+            "volume": "427",
+            "issn": "",
+            "pages": "51-63",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Pathogen recognition and innate immunity",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Akira",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Uematsu",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Takeuchi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Cell",
+            "volume": "124",
+            "issn": "",
+            "pages": "783-801",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Human RNA methyltransferase BCDIN3D regulates microRNA processing",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Xhemalce",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Robson",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kouzarides",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Cell",
+            "volume": "151",
+            "issn": "",
+            "pages": "278-288",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Use of specific chemical reagents for detection of modified nucleotides in RNA",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Behm-Ansmant",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Helm",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Motorin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Nucleic Acids",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.4061/2011/408053"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Small nucleolar RNAs direct site-specific synthesis of pseudouridine in ribosomal RNA",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ni",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Tien",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Fournier",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Cell",
+            "volume": "89",
+            "issn": "",
+            "pages": "565-573",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Biogenesis of small nuclear RNPs",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kiss",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Cell Sci.",
+            "volume": "117",
+            "issn": "",
+            "pages": "5949-5951",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Mouse Piwi-interacting RNAs are 2\u2032-O-methylated at their 3\u2032 termini",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kirino",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Mourelatos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat. Struct. Mol. Biol.",
+            "volume": "14",
+            "issn": "",
+            "pages": "347-348",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "The 3\u2032 termini of mouse Piwi-interacting RNAs are 2\u2032-O-methylated",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ohara",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Sakaguchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Suzuki",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ueda",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Miyauchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Suzuki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat. Struct. Mol. Biol.",
+            "volume": "14",
+            "issn": "",
+            "pages": "349-350",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "2\u2032-O methylation of internal adenosine by flavivirus NS5 methyltransferase",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "MHC",
+                    "middle": [],
+                    "last": "Hua",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "YH",
+                    "middle": [],
+                    "last": "Chionh",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Hia",
+                    "suffix": ""
+                },
+                {
+                    "first": "YH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Kukkaro",
+                    "suffix": ""
+                },
+                {
+                    "first": "S-M",
+                    "middle": [],
+                    "last": "Lok",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Dedon",
+                    "suffix": ""
+                },
+                {
+                    "first": "P-Y",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS Pathog.",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.ppat.1002642"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "Biochemical and structural insights into the mechanisms of SARS coronavirus RNA ribose 2\u2032-O-methylation by nsp16/nsp10 protein complex",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Su",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ke",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Jin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Tien",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ahola",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS Pathog.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.ppat.1002294"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "RTL-P: a sensitive approach for detecting sites of 2\u2032-O-methylation in RNA molecules",
+            "authors": [
+                {
+                    "first": "ZW",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Shao",
+                    "suffix": ""
+                },
+                {
+                    "first": "LT",
+                    "middle": [],
+                    "last": "Diao",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "LH",
+                    "middle": [],
+                    "last": "Qu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res.",
+            "volume": "40",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Optimization of enzymatic reaction conditions for generating representative pools of cDNA from small RNA",
+            "authors": [
+                {
+                    "first": "DB",
+                    "middle": [],
+                    "last": "Munaf\u00f3",
+                    "suffix": ""
+                },
+                {
+                    "first": "GB",
+                    "middle": [],
+                    "last": "Robb",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "RNA",
+            "volume": "16",
+            "issn": "",
+            "pages": "2537-2552",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Interferons at age 50: past, current and future impact on biomedicine",
+            "authors": [
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Borden",
+                    "suffix": ""
+                },
+                {
+                    "first": "GC",
+                    "middle": [],
+                    "last": "Sen",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Uze",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Silverman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Ransohoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Foster",
+                    "suffix": ""
+                },
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Stark",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat. Rev. Drug Discov.",
+            "volume": "6",
+            "issn": "",
+            "pages": "975-990",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Genetic analysis of resistance to viral infection",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Beutler",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Eidenschenk",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Crozat",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Imler",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Takeuchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Hoffmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Akira",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat. Rev. Immunol.",
+            "volume": "7",
+            "issn": "",
+            "pages": "753-766",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Dicing and slicing: the core machinery of the RNA interference pathway",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Hammond",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "FEBS Lett.",
+            "volume": "579",
+            "issn": "",
+            "pages": "5822-5829",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Production of virus-derived ping-pong-dependent piRNA-like small RNAs in the mosquito soma",
+            "authors": [
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Morazzani",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Wiley",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Murreddu",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZN",
+                    "middle": [],
+                    "last": "Adelman",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Myles",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS Pathog.",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.ppat.1002470"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Arbovirus-derived piRNAs exhibit a ping-pong signature in mosquito cells",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Vodovar",
+                    "suffix": ""
+                },
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Bronkhorst",
+                    "suffix": ""
+                },
+                {
+                    "first": "KW",
+                    "middle": [],
+                    "last": "van Cleef",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Miesen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Blanc",
+                    "suffix": ""
+                },
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "van Rij",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Saleh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0030861"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Influenza A virus expresses high levels of an unusual class of small viral leader RNAs in infected cells",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Umbach",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Yen",
+                    "suffix": ""
+                },
+                {
+                    "first": "LL",
+                    "middle": [],
+                    "last": "Poon",
+                    "suffix": ""
+                },
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "Cullen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "mBio",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1128/mBio.00204-10"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "Discovering microRNAs from deep sequencing data using miRDeep",
+            "authors": [
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Friedl\u00e4nder",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Adamidi",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Maaskola",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Einspanier",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Knespel",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Rajewsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nat. Biotechnol.",
+            "volume": "26",
+            "issn": "",
+            "pages": "407-415",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "miRDeep2 accurately identifies known and hundreds of novel microRNA genes in seven animal clades",
+            "authors": [
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Friedl\u00e4nder",
+                    "suffix": ""
+                },
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Mackowiak",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Rajewsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res.",
+            "volume": "40",
+            "issn": "",
+            "pages": "37-52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "miRanalyzer: a microRNA detection and analysis tool for next-generation sequencing experiments",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hackenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sturm",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Langenberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Falc\u00f3n-P\u00e9rez",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Aransay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Res.",
+            "volume": "37",
+            "issn": "",
+            "pages": "W68-W76",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "miRanalyzer: an update on the detection and analysis of microRNAs in high-throughput sequencing experiments",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hackenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Rodr\u00edguez-Ezpeleta",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Aransay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nucleic Acids Res.",
+            "volume": "39",
+            "issn": "",
+            "pages": "W132-W138",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "RNase L plays a role in the antiviral response to West Nile virus",
+            "authors": [
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Scherbik",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Paranjape",
+                    "suffix": ""
+                },
+                {
+                    "first": "BM",
+                    "middle": [],
+                    "last": "Stockman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Silverman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Brinton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Virol.",
+            "volume": "80",
+            "issn": "",
+            "pages": "2987-2999",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Identification of genes differentially regulated by interferon alpha, beta, or gamma using oligonucleotide arrays",
+            "authors": [
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Der",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Silverman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Proc. Natl. Acad. Sci. U. S. A.",
+            "volume": "95",
+            "issn": "",
+            "pages": "15623-15628",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "RNase L releases a small RNA from HCV RNA that refolds into a potent PAMP",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Malathi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Saito",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Crochet",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Barton",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gale",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Silverman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "RNA",
+            "volume": "16",
+            "issn": "",
+            "pages": "2108-2119",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Alphavirus minus-strand synthesis and persistence in mouse embryo fibroblasts derived from mice lacking RNase L and protein kinase R",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Sawicki",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Silverman",
+                    "suffix": ""
+                },
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                },
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Sawicki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J. Virol.",
+            "volume": "77",
+            "issn": "",
+            "pages": "1801-1811",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Regulation of small RNA stability: methylation and beyond",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Ji",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Cell Res.",
+            "volume": "22",
+            "issn": "",
+            "pages": "624-636",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "2\u2032-O methylation of the viral mRNA cap evades host restriction by IFIT family members",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Daffis",
+                    "suffix": ""
+                },
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Szretter",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Schriewer",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Youn",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Errett",
+                    "suffix": ""
+                },
+                {
+                    "first": "TY",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Schneller",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Zust",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Thiel",
+                    "suffix": ""
+                },
+                {
+                    "first": "GC",
+                    "middle": [],
+                    "last": "Sen",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Fensterl",
+                    "suffix": ""
+                },
+                {
+                    "first": "WB",
+                    "middle": [],
+                    "last": "Klimstra",
+                    "suffix": ""
+                },
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "Pierson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Buller",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gale",
+                    "suffix": ""
+                },
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Diamond",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nature",
+            "volume": "468",
+            "issn": "",
+            "pages": "452-456",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Overcoming the innate immune response to small interfering RNA",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Judge",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "MacLachlan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Hum. Gene Ther.",
+            "volume": "19",
+            "issn": "",
+            "pages": "111-124",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Role for conserved residues of Sindbis virus nonstructural protein 2 methyltransferase-like domain in regulation of minus-strand synthesis and development of cytopathic infection",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Mayuri",
+                    "suffix": ""
+                },
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Geders",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Virol.",
+            "volume": "82",
+            "issn": "",
+            "pages": "7284-7297",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Reducing ligation bias of small RNAs in libraries for next generation sequencing",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Sorefan",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Pais",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Hall",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kozomara",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Griffiths-Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Moulton",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Dalmay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Silence",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Molecular characterization of geminivirus-derived small RNAs in different plant species",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Akbergenov",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Si-Ammour",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Blevins",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Amin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Kutter",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Vanderschuren",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Gruissem",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Meins",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hohn",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Pooggin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res.",
+            "volume": "34",
+            "issn": "",
+            "pages": "462-471",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Gene Expression Omnibus: NCBI gene expression and hybridization array data repository",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Edgar",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Domrachev",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Lash",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nucleic Acids Res.",
+            "volume": "30",
+            "issn": "",
+            "pages": "207-210",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Mfold web server for nucleic acid folding and hybridization prediction",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zuker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res.",
+            "volume": "31",
+            "issn": "",
+            "pages": "3406-3415",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Viral encounters with 2\u2032,5\u2032-oligoadenylate synthetase and RNase L during the interferon antiviral response",
+            "authors": [
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Silverman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Virol.",
+            "volume": "81",
+            "issn": "",
+            "pages": "12720-12729",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Six RNA viruses and forty-one hosts: viral small RNAs and modulation of small RNA repertoires in vertebrate and invertebrate systems",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Parameswaran",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Sklan",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wilkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Burgon",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Samuel",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Ansel",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Heissmeyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Einav",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Jackson",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Doukas",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Paranjape",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Polacek",
+                    "suffix": ""
+                },
+                {
+                    "first": "FB",
+                    "middle": [],
+                    "last": "dos Santos",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Jalili",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Babrzadeh",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Gharizadeh",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Grimm",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kay",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Koike",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Sarnow",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ronaghi",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Harris",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chow",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Diamond",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kirkegaard",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Glenn",
+                    "suffix": ""
+                },
+                {
+                    "first": "AZ",
+                    "middle": [],
+                    "last": "Fire",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Pathog.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.ppat.1000764"
+                ]
+            }
+        },
+        "BIBREF57": {
+            "title": "A cellular function for the RNA-interference enzyme Dicer in the maturation of the let-7 small temporal RNA",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Hutv\u00e1gner",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "McLachlan",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Pasquinelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "B\u00e1lint",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tuschl",
+                    "suffix": ""
+                },
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Zamore",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Science",
+            "volume": "293",
+            "issn": "",
+            "pages": "834-838",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "The nuclear RNase III Drosha initiates microRNA processing",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Ahn",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yim",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Provost",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "R\u00e5dmark",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "VN",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nature",
+            "volume": "425",
+            "issn": "",
+            "pages": "415-419",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

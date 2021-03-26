@@ -1,0 +1,1931 @@
+{
+    "paper_id": "PMC5172477",
+    "metadata": {
+        "title": "SARS-CoV Genome Polymorphism: A Bioinformatics Study",
+        "authors": [
+            {
+                "first": "Gordana",
+                "middle": [
+                    "M."
+                ],
+                "last": "Pavlovi\u0107-La\u017eeti\u0107",
+                "suffix": "",
+                "email": "gordana@matf.bg.ac.yu",
+                "affiliation": {}
+            },
+            {
+                "first": "Nenad",
+                "middle": [
+                    "S."
+                ],
+                "last": "Miti\u0107",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Andrija",
+                "middle": [
+                    "M."
+                ],
+                "last": "Tomovi\u0107",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Mirjana",
+                "middle": [
+                    "D."
+                ],
+                "last": "Pavlovi\u0107",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Milo\u0161",
+                "middle": [
+                    "V."
+                ],
+                "last": "Beljanski",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Severe acute respiratory syndrome (SARS), potentially fatal atypical pneumonia, first appeared in Guangdong province of China in November 2002 and soon afterward, within six months, spreaded all over the world (30 countries including China, Singapore, Vietnam, Canada, and USA), killing more than 700 people (1). In less than four weeks after the global outbreak, a novel member of Coronaviridae family, namely SARS Coronavirus (SARS-CoV), was identified in the blood of respiratory specimens and stools of SARS patients, and confirmed as the causative agent of disease according to the Koch postulates (2). Soon afterwards, first fully sequenced genomes of viral isolates were published 3., 4.. In 2005 the number of fully sequenced viral isolates exceeds one hundred (http://www.ncbi.nlm.nih.gov/entrez).",
+            "cite_spans": [
+                {
+                    "start": 308,
+                    "end": 311,
+                    "mention": "(1)",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 603,
+                    "end": 606,
+                    "mention": "(2)",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 688,
+                    "end": 690,
+                    "mention": "3.",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 692,
+                    "end": 694,
+                    "mention": "4.",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "SARS-CoV probably originated due to genetic exchange (recombination) and/or mutations between viruses with different host specificities 5., 6.. Since coronaviruses are known to relatively easily jump among species, it was hypothesized that the new virus might have originated from wild animals. The analysis of SARS-CoV proteins supports and suggests possible past recombination event between mammalianlike and avian-like parent viruses (6). Common sequence variants define three distinct genotypes of the SARS-CoV: one linked with animal [palm civet (Paguma larvata)] SARS-like viruses and early human phase, the other two linked with middle and late human phases, respectively 7., 8.. SARS-CoV has a deleterious mutation of 29 nucleotides relative to the palm civet virus, indicating that if there was direct transmission, it went from civet to human, because deletions occur probably more easily than insertions (5). However, more recent reports indicate that SARS-CoV is distinct from the civet virus and it has not been answered so far whether the SARS-CoV originated from civet, or civet was infected from other species 9., 10.. The genome is relatively stable, since its mutation rate has been determined to be between 1.83\u00d710\u22126 and 8.26\u00d710\u22126 nucleotide substitutions per site per day (11).",
+            "cite_spans": [
+                {
+                    "start": 136,
+                    "end": 138,
+                    "mention": "5.",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 140,
+                    "end": 142,
+                    "mention": "6.",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 437,
+                    "end": 440,
+                    "mention": "(6)",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 679,
+                    "end": 681,
+                    "mention": "7.",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 683,
+                    "end": 685,
+                    "mention": "8.",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 1126,
+                    "end": 1128,
+                    "mention": "9.",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 1130,
+                    "end": 1133,
+                    "mention": "10.",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1292,
+                    "end": 1296,
+                    "mention": "(11)",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The SARS-CoV genome is approximately 30 Kb positive single strand RNA that corresponds to polycistronic mRNA, consisting of 5\u2019 and 3\u2019 untranslated regions (UTRs), 13 to 15 open reading frames (ORFs), and about 10 intergenic regions (IGRs) 9., 12., 13.. Its genome includes genes encoding two replicate polyproteins (RNA-dependant-RNA-polymerase, i.e., pp 1a and pp 1ab), encompassing two-thirds of the genome, and a set of ORFs at 3\u2019 end that code for four structural proteins: surface spike (S) glycoprotein (1,256 a.a.), envelope (E, 77 a.a.), matrix (M, 222 a.a.), and nucleocapsid (N, 423 a.a.) proteins. It also encodes for additional 8-9 predicted ORFs whose protein product functions are still under investigation (14; http://www.ncbi.nlm.nih.gov/entrez).",
+            "cite_spans": [
+                {
+                    "start": 239,
+                    "end": 241,
+                    "mention": "9.",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 243,
+                    "end": 246,
+                    "mention": "12.",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 248,
+                    "end": 251,
+                    "mention": "13.",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 722,
+                    "end": 724,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The S protein is the main surface antigen of the SARS-CoV and is involved in virus attachment on susceptible cells using mechanism similar to those of class I fusion proteins. The receptor for the SARS-CoV S protein is identified as angiotensin-converting enzyme 2 (ACE-2), which is a metallopeptidase (15). The receptor-binding domain (RBD) has been determined to lay between a.a. postions 270-625 in recent studies 16., 17., 18., 19., 20..",
+            "cite_spans": [
+                {
+                    "start": 302,
+                    "end": 306,
+                    "mention": "(15)",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 417,
+                    "end": 420,
+                    "mention": "16.",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 422,
+                    "end": 425,
+                    "mention": "17.",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 427,
+                    "end": 430,
+                    "mention": "18.",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 432,
+                    "end": 435,
+                    "mention": "19.",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 437,
+                    "end": 440,
+                    "mention": "20.",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Several epitope sites, defined by polyclonal or monoclonal antibodies, have been identified on the S protein, depending on experimental conditions, all lying within wide or narrow regions between a.a. 12-1,192 20., 21., 22., 23., 24., 25., 26., 27., 28., 29., 30., 31.. Defining conserved immunodominant epitope regions of the S protein is of crucial importance for future anti-SARS vaccine development.",
+            "cite_spans": [
+                {
+                    "start": 210,
+                    "end": 213,
+                    "mention": "20.",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 215,
+                    "end": 218,
+                    "mention": "21.",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 220,
+                    "end": 223,
+                    "mention": "22.",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 225,
+                    "end": 228,
+                    "mention": "23.",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 230,
+                    "end": 233,
+                    "mention": "24.",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 235,
+                    "end": 238,
+                    "mention": "25.",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 240,
+                    "end": 243,
+                    "mention": "26.",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 245,
+                    "end": 248,
+                    "mention": "27.",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 250,
+                    "end": 253,
+                    "mention": "28.",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 255,
+                    "end": 258,
+                    "mention": "29.",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 260,
+                    "end": 263,
+                    "mention": "30.",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 265,
+                    "end": 268,
+                    "mention": "31.",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The main goal of this work was twofold: to perform mutation analysis of SARS-CoV viral genomes, with special attention to the S protein; and to group them according to different aspects of sequence similarity, eventually pointing to phylogeny and epidemiological dynamics of SARS-CoV.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Nucleotide content of SARS-CoV isolates favors T and A nucleotides. The corresponding percentages of letters in non-UTR regions of all the 96 isolates were found to be as follows: T (30.7940%), A (28.4246%), G (20.8121%), C (19.9535%), N (G, A, T, C; 0.0143%), R (Pur; 0.0005%), K (G or T; 0.0001%), M (A or C; 0.0002%), S (G or C; 0.0001%), W (A or T; 0.0002%), and Y (Pyr; 0.0004%). The overall ratio of (A,T)/(G,C) in the dataset was almost 3:2 (1.45). The ratio of Pur vs. Pyr nucleotides was almost 1 (0.97).",
+            "cite_spans": [],
+            "section": "Nucleotide content ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The distribution of nucleotides (nt) over sequences of length 250 nt is given in Figure S1 (Supporting Online Material). It exhibits three peak-regions of T nucleotide in the second quarter of the genome (ORF 1a), and rather stable behavior in the third quarter of the genome (ORF 1b), as also observed by Pyrc et al. (32) for a group of coronaviruses (HCoV-NL63, HCoV-229E, SARS-CoV, and HCoV-OC43). Deviation of percentage of nucleotides over 250-nt blocks from the corresponding percentage in the whole dataset is given in Figure S2. Except for 3\u2019 UTR where T nucleotide is underrepresented with even about \u201413%, the highest excess from the average is about +10% in four peaks, which is exhibited again by T nucleotide, three of them being between positions 7,000 and 11,000 (ORF 1a), complementary with the nucleotide A represented with \u201410%, and the fourth one in the S protein. Otherwise the nucleotides\u2019 offset oscillates rather regularly between \u20145% and +5% from the average.",
+            "cite_spans": [
+                {
+                    "start": 318,
+                    "end": 322,
+                    "mention": "(32)",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Nucleotide content ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "There were 446 SNV sites and 1,006 SNVs in total in the dataset, with the substitution rate 1.49%, which is about three times higher (both the number of SNVs and the substitution rate) than the corresponding findings (33) for 17 isolates. An average number of SNVs per isolate was 10.48, giving an error rate of 3.6\u00d710\u22124 substitutions per nucleotide copied.",
+            "cite_spans": [
+                {
+                    "start": 217,
+                    "end": 221,
+                    "mention": "(33)",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Nucleotide variations: single nucleotide polymorphism ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "There was only one site with multiple base substitutions (the original nucleotide base on that position being T): at the relative (CLUSTAL X) position 8,441 (ORF 1a), isolate ZMY 1 has the nucleotide C (absolute position 8,403), and isolates ShanghaiQXC1, ShanghaiQXC2 have the nucleotide A (absolute positions 8,312 and 7,733, respectively).",
+            "cite_spans": [],
+            "section": "Nucleotide variations: single nucleotide polymorphism ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The smallest distance between the two neighboring SNV sites in the whole dataset was 1; the largest one was 23,988 (in case of TW3 and TW1), while an average distance between the neighboring SNV sites in the whole dataset was 1,987 positions (Figure S3). The distribution of isolates per SNV number (outside 5\u2019, 3\u2019 UTRs) showed regularity for up to 11 SNVs (almost Gaussian distribution) and irregular decrease for number of SNVs >11 (Figure S4). Thus the number of SNVs less than or equal to 11 per isolate was considered as a \u201csmall\u201d number of SNVs, and the number of SNVs greater than 11 was considered as a \u201clarge\u201d number of SNVs. Most SNVs are clustered within two regions in ORF la and one region at the 3\u2019 end of the viral genome that predominantly consists of small ORFs, leaving two small regions within ORF 1a, and a region that corresponds to ORF 1b as the most conservative ones (Figure 1B).",
+            "cite_spans": [],
+            "section": "Nucleotide variations: single nucleotide polymorphism ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 892,
+                    "end": 901,
+                    "mention": "Figure 1B",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The entropy of each genome nucleotide position was calculated, showing that the most conserved sites are the ones with the smallest entropy and that the least conserved sites are the ones with the highest entropy (34; Figure S5). The nine loci used for classification can be found among the sites with the highest entropy.",
+            "cite_spans": [
+                {
+                    "start": 214,
+                    "end": 216,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Nucleotide variations: single nucleotide polymorphism ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Percent of each category of substitution is given in Figure 2. There are 141 transversion sites and 306 transition sites, i.e., 31.54%:68.46%, with 261 transversions (2.72 in average per isolate) and 745 transitions (7.76 in average per isolate).",
+            "cite_spans": [],
+            "section": "Nucleotide variations: single nucleotide polymorphism ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 53,
+                    "end": 61,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Analysis of the SARS-CoV genome showed that long INDELs were concentrated close to the 3\u2019 end (except for the 579-nt deletion in the ShanghaiQXC2 isolate at the position 5,834, located in ORF 1a), while individual insertions were found along the whole genome, most in the second quarter, and individual deletions were quite rare. Density distribution of INDELs inside the SARS-CoV genome, and 5\u2019 UTR, 3\u2019 UTR length variations, are represented in Figures 1C, S6A and B, respectively. Figure S6C represents the region of the genome between positions 27,700 and 28,300 (ORFs 7b, 8a, 8b, part of N-protein, in HSR 1 annotation), which is especially abundant with INDELs. While individual INDELs are present both in longer and shorter ORFs, longer INDELs are (except for previously mentioned deletions in the ShanghaiQXC2) all located in short ORFs.",
+            "cite_spans": [],
+            "section": "Length variations, insertions and deletions ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 446,
+                    "end": 456,
+                    "mention": "Figures 1C",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Figure 3 represents comparison results of genome primary structure of the analyzed isolates, summarizing the following facts:",
+            "cite_spans": [],
+            "section": "Length variations, insertions and deletions ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Firstly, although the SARS-CoV genome has the established length of 29,727 nt (12), most isolates were shorter at the 5\u2019 end (for the first 15 positions, majority of isolates were \u201cempty\u201d), and had various length \u201cpoly-A\u201d strings at the 3\u2019 end, or both (Table 1). Several isolates had some short deletions inside the sequence, e.g., Sin2677, Sin2748, TWC, PUMC02, PUMC03, TWJ, WHU, Sino1-11, Sino3-11, TW11, and SinP5.",
+            "cite_spans": [
+                {
+                    "start": 78,
+                    "end": 82,
+                    "mention": "(12)",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Length variations, insertions and deletions ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 254,
+                    "end": 261,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "Secondly, there was a group of isolates that had insertions of length 29 nucleotides (GD01, SZ3, SZ16, GZ02, HSZ-Bb, HSZ-Bc, HSZ-Cb, and HSZ-Cc) at the relative position 27,995 (absolute position 27,869 in SZ3, SZ16, HSZ-Cc, and HSZ-Bc; protein BGI-PUP GZ29-nt-Ins, ORF 8a). Two of them were isolates from palm civet (SZ3 and SZ16) and the other six were isolates from human patients. This specific insertion is also treated as a deletion in all the other isolates, evolved from this early group (10).",
+            "cite_spans": [
+                {
+                    "start": 496,
+                    "end": 500,
+                    "mention": "(10)",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Length variations, insertions and deletions ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Thirdly, there were several groups of isolates that had long deletions: GZ-B, GZ-C (length 39 at the relative position 27,882, or absolute position 27,719 in GZ-C, ORF 7b), ZS-A, ZS-C (length 53 at the relative position 27,969, absolute 27,843 in ZS-A, ORF 8a), LC2, LC3, LC5 (length 386 at the relative position 27,829, absolute 27,704 in LC2, ORFs 7b, 8a, 8b), ShanghaiQXC2 (length 579 at the relative position 5959, absolute 5834, ORF la), Sin852, Sin849, and Sin846 (of length 57, 49, 137, respectively, at relative positions in region between 27,787 and 27,966, ORFs 7b, 8a) (Tables 1 and S2, Figure 3).",
+            "cite_spans": [],
+            "section": "Length variations, insertions and deletions ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 598,
+                    "end": 606,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 581,
+                    "end": 589,
+                    "mention": "Tables 1",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "Fourthly, a large number of individual INDELs were identified in ZJ01, ZMY 1, SinP2, and SinP3 (Tables 1 and S2, Figure 3).",
+            "cite_spans": [],
+            "section": "Length variations, insertions and deletions ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 113,
+                    "end": 121,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 96,
+                    "end": 104,
+                    "mention": "Tables 1",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "While the distribution of nucleotides over different distances from SNV sites did not exhibit any regularities, the distribution of different nucleotides on distance 1 left to SNV sites (\u22121) did exhibit significant difference from their overall percentage in the dataset. The corresponding right (+1) distance distribution of nucleotides is almost uniform (Table 2).",
+            "cite_spans": [],
+            "section": "Mutation analysis ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 357,
+                    "end": 364,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Figure S7 represents differences between the percentage of nucleotides at a given position and in the whole genome, for up to the distance 10 left and right from SNV sites. Figures S8A and B represent distribution of substitutions preceded by different nucleotide bases, and followed by different nucleotide bases, respectively. It can be seen that on the C\u2194T substitutions, both C\u2192T and T\u2192C are favored by the preceding A and the following \u03a4 (almost 40% of all the C\u2194T substitutions; Figure 2), while the substitution T\u2192C is almost prohibited by the preceding T (only 3%). Clustered substitutions of length 2 are rare (e.g., TC\u2192AA, GA\u2192CA).",
+            "cite_spans": [],
+            "section": "Mutation analysis ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 485,
+                    "end": 493,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Analysis of distribution of individual nucleotides over the three codon positions in annotated ORFs of all the annotated isolates showed that, except for short proteins such as E, M, and presumptive ORFs, all the codons exhibit the same tendency of T nucleotide dominating at the third codon position, and the G nucleotide dominating at the first codon position, while A and C appearing more often at the second codon position than elsewhere. Figure S9 represents distribution of nucleotides over the three codon positions in individual ORFs, and in total.",
+            "cite_spans": [],
+            "section": "Codon usage ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Analysis of codon usage demonstrated the same facts as the distribution of nucleotides over the three codon positions. In total, the third nucleotide favored T (40.10%) over A (24.83%), C (18.90%), and G (16.16%). It was especially true for four-codon families a.a. (Thr, Pro, Ala, Gly, and Val). The same held for four-codon subsets of six-codon families (Arg, Leu, and Ser), differring at the third codon position only. The above was true for the ORF lab, S and N proteins, but not for another two structural proteins (E and M). The codon usage for SARS-CoV genome proteins is represented by Table S3, and it is consistent with the results obtained for another human CoV genome, HCoV-NL63 (32).",
+            "cite_spans": [
+                {
+                    "start": 691,
+                    "end": 695,
+                    "mention": "(32)",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Codon usage ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Besides the number of SNVs, isolates differed in positions of SNVs, too. Table S4 represents positions where two or more SNVs occurred, for all the annotated isolates, along with nucleotides and ORFs (based on HSR 1 annotation), type of mutation (transition/transversion), a.a. position in ORF, a.a. change, a.a. property change, and nucleotide position in codon. Positions of multiple SNVs have been chosen in order to reduce the chance of erroneously determined SNV. There were 91 such SNV sites with 288 SNVs. It is interesting to notice that there were no multiple base substitutions (more than two different bases) in any of these positions. There were 227 transitions at 75 sites and 61 transversion at 16 sites, out of which 5 were in structural proteins: 2 in S, 2 in E, and 1 in M proteins. The most common mutation was C\u2194T mutation (45 sites or 50%), followed by A\u2194G (30 sites), A\u2194T and G\u2194T (7 sites each), and C\u2194A (2 sites). There was no mutation of the type C\u2194G.",
+            "cite_spans": [],
+            "section": "Changes in amino acids ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "There were 28 SNV sites corresponding to the first codon position (20 transitions and 8 transversions), 2 of which representing silent mutation sites (C\u2194T, Leu). There were 33 SNV sites corresponding to the second codon position (31 transitions and 2 transversions), all of which cause a.a. change. There were 30 SNV sites corresponding to the third codon position (25 transitions and 5 transversions), 29 of which representing silent mutation sites (the only non-silent one is G\u2194T, Leu \u2194 Phe).",
+            "cite_spans": [],
+            "section": "Changes in amino acids ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "There were 31 synonymous multiple substitution sites and 60 non-synonymous ones, with substitution rate 0.31% (91/29,228) and non-synonymous substitution rate 0.21%, which is consistent with the corresponding findings for 17 SASR-CoV isolates (33). The number of multiple substitutions was for about 30% lower than the number of the overall substitutions, and so were the substitution rate and non-synonymous substitution rate.",
+            "cite_spans": [
+                {
+                    "start": 243,
+                    "end": 247,
+                    "mention": "(33)",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Changes in amino acids ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Table S5 summarizes the above findings. It represents the number of transition and transversion sites and the number of SNVs (in the form N1/N2) per position in codon and per mutation type, as well as the percentage of SNVs, and the number of silent mutation sites and silent SNVs.",
+            "cite_spans": [],
+            "section": "Changes in amino acids ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Concerning non-synonymous sites, 35 are within pp lab, 5 within ORF 3, 1 within E protein, 3 within M protein, 1 within ORF 6, 1 within ORF 8a, 1 within ORF 8b, 1 within N protein, and 11 within S protein (only for two-or-more substitution sites, and only in annotated isolates).",
+            "cite_spans": [],
+            "section": "Changes in amino acids ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The S protein is of particular interest for mutation analysis, being the key for host range determination. Multiple sequence alignment of the S protein in all the 96 SARS-CoV isolates showed that five of them, namely ZMY 1, SinP2, SinP3, SinP4, and Sin3408L, had large discrepancies with all the others due to individual insertions or deletions in them. Since such significant mismatches in the S protein sequence seemed to be the result of erroneous sequencing, we eliminated these five isolates and analyzed the S protein in the remaining 91 isolates.",
+            "cite_spans": [],
+            "section": "Mutation analysis of the S protein ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "There were 34 isolates without SNVs in the S protein: TW2-TW11, Sino3-ll, AS, LC1, WHU, TWC3, PUMC01-PUMC03, CUHK-AG01, CUHK-AG3, Taiwan TC1-3, TWC, Sin2748, Sin2500, Sin2677, CUHK-Su10, HKU-39849, TWH, TWJ, TWK, TWY, and HSR 1. There were 62 SNV sites with 208 SNVs in total, and no multiple mutations. Table S6 represents SNV sites and all the SNVs in the S protein of the 91 isolates, along with nucleotides, type of mutation (transition/transversion), a.a. position in the protein, a.a. change, a.a. properties change, nucleotide position in codon, and number of SNVs at each SNV site. These findings overlap with the results reported in Song et al. (Ref. 7; concerning SNVs with multiple occurrences, in 103 S protein genes, some of which being nucleotide-identical, with 80% in common with our dataset), and are consistent on the intersecting data. Table 3 summarizes the results from Table S6.",
+            "cite_spans": [
+                {
+                    "start": 660,
+                    "end": 661,
+                    "mention": "7",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Mutation analysis of the S protein ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 855,
+                    "end": 862,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Out of 62 SNV sites, 19 were observed to be synonymous, with 58 synonymous SNVs in total, and 43 were observed to be non-synonymous substitution sites, with 150 non-synonymous SNVs in total (Table S6). Substitution rate was 1.65% (62/3,768) and non-synonymous substitution rate was 1.14% (43/3,768), which is consistent with findings for the whole genome in the enlarged dataset, and is about three times higher than the corresponding findings for 17 isolates in Bi et al. (Ref. 33; 22 substitution sites, 13 non-synonymous, substitution rates 0.58, 0.35, respectively). As represented on Figure 4, most non-synonymous a.a. substitutions are located in external domain (ED); 14 of non-synonymous substitution are in RBD, 3 of them in the most narrow intersecting range. As it concerns epitopes, 40 of non-synonymous a.a. substitutions are located in overall epitope domains determined by various researchers. Finally, one non-synonymous a.a. substitution is located in transmembrane domain (TM) and two in internal domain (ID).",
+            "cite_spans": [
+                {
+                    "start": 479,
+                    "end": 481,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Mutation analysis of the S protein ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 589,
+                    "end": 597,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The coefficients Ks (number of synonymous substitutions per synonymous site) and Ka (number of non-synonymous substitutions per non-synonymous site) were calculated for all the 91 S proteins in the dataset to be Ks = 0.00135, Ka = 0.00103, and the ratio Ka/Ks had the value 0.7629 < 1, which may be interpreted as evidence for the S protein not being subjected to the Darwinian selection. These findings are consistent with the similar analysis performed for 20 SARS-CoV isolates by Hu et al. (35) giving the ratio value of 0.65. Values of the corresponding coefficients and the ratio Ka/Ks for the 89 human patient isolates only, present even stronger evidence of the S protein being subject to negative selection: Ks = 0.00121, Ka = 0.00080, Ka/Ks = 0.661. The coefficients Ka, Ks, and the Ka/Ks ratio for all the human patients\u2019 isolates and each of the palm civet isolates as the outgroup, are represented in Table 4. These values indicated that the S gene was subjected to the Darwinian selection during virus evolution (transmission from animals to humans), which is consistent with the analysis performed by Yeh et al. (36), for 28 human isolates and the SZ3 palm civet as the outgroup, giving the corresponding ratio value of 1.657, and with the analysis performed by He et al. (8), indicating that the S gene showed the strongest positive selection pressures initially, with eventual stabilization.",
+            "cite_spans": [
+                {
+                    "start": 493,
+                    "end": 497,
+                    "mention": "(35)",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1126,
+                    "end": 1130,
+                    "mention": "(36)",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1286,
+                    "end": 1289,
+                    "mention": "(8)",
+                    "ref_id": "BIBREF44"
+                }
+            ],
+            "section": "Mutation analysis of the S protein ::: Genome polymorphism ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 913,
+                    "end": 920,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Phylogenetic tree, drawn using the PhyloDraw program for the CLUSTAL X output of aligning the 96 isolates, is represented in Figure 5. Its close relationship to the classification proposed in the paper suggests that classification of SARS-CoV isolates might be obtained by applying the computational analysis based on genome polymorphism.",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 125,
+                    "end": 133,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "All the isolates were classified according to their genome polymorphism\u2014SNVs and INDELs, the procedure being proposed in our previous paper (57). Since SNV contents turned out to be a more distinguishable property than the presence of INDELs, as the first classification criterion we took the number and positions of SNVs. For the \u201cprofile\u201d isolate, as the referent isolate, number of SNVs for different isolates varied from 0 (HSR 1, AS) to 78 (ZMY 1) (Table 1). All the isolates were classified into two groups based on the number of SNVs with the \u201cprofile\u201d\u2014those with less than or equal to 11 SNVs, and those having more than 11 SNVs. Thus, the first classification criterion resulted in two groups (Table 1):",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 454,
+                    "end": 461,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 703,
+                    "end": 710,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "Group A\u2014isolates with less than or equal to 11 SNVs (Tables 1 and S2);",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 53,
+                    "end": 61,
+                    "mention": "Tables 1",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "Group B\u2014isolates with more than 11 SNVs relative to the \u201cprofile\u201d isolate.",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Positions of SNVs moved several isolates between the two groups (SoD from B to A, since the most of its SNVs are in 3\u2019 UTR; CUHK-W1 from A to B, since its number of SNVs with the \u201cprofile\u201d of the A group is larger than the one of the B group; WHU from B to A; GZ50 from A to B; GD69 from B to A; and GZ-C from B to A).",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The second classification criterion was presence and position of long INDELs inside the basic A, B groups. We identified the following subgroups:",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A2, B2\u2014subgroups of the A, B groups, respectively, with long insertions. A2 remained empty, while B2 contained 8 isolates with 29-nt insertions.",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A3, B3\u2014subgroups of the A, B groups, respectively, with long deletions. A3 group consisted of 3-isolate subgroup (LC2, LC3, and LC5) with a deletion of length 386, Sin852 with a deletion of length 57, 2-isolates subgroup (GZ-B and GZ-C) with a deletion of length 39, Sin849 (deletion of length 49, embedded), and Sin846 (137, overlapping). B3 subgroup consisted of the isolates ZS-A (ZS-B) and ZS-C with the deletion of length 53.",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A4 and B4 were the subgroups with many individual INDELs (Table 1). The rests of the A, B groups were denoted as A1 and B1, respectively.",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 58,
+                    "end": 65,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "It can be noted that proposed grouping of 96 isolates, based on SNV and INDEL contents, conserved the earlier classification T-T-T-T/C-G-C-C (38), and partially coincided with the extension of this classification 39., 40.. The four loci (9,404, 17,564, 22,222, and 27,827), as the basis for this classification, fitted nicely into our grouping (basically A1 group coincided with T-T-T-T type, while B1 group coincided with C-G-C-C type), expressing two inter-types: T-G-C-C [isolates GZ50, HZS2-D, HZS2-E, HZS2-C, HGZ8L2, HSZ2-A, NS-1(BJ04), HZS2-Fc, HZS2-Fb, and TJF] and C-G-T-T (isolates ShanghaiQXC1 and ShanghaiQXC2) (Figure 5). We found that another five loci, which are among the most represented SNVs\u2019 loci (positions 3,852, 9,479, 11,493, 21,721, and 26,477; Figure 1), further refined our classification providing for sub-classification of the basic types.",
+            "cite_spans": [
+                {
+                    "start": 141,
+                    "end": 145,
+                    "mention": "(38)",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 213,
+                    "end": 216,
+                    "mention": "39.",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 218,
+                    "end": 221,
+                    "mention": "40.",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 623,
+                    "end": 631,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 768,
+                    "end": 776,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "There were two basic nine-locus types: TTTT/TTCGG and CGCC/TTCAT, mostly coinciding with the A1, B1 groups, and the two inter-groups: an inter-(A-B)-group had the inter-type TGCC/TTCGT, and a subgroup of the group B1 (two Shanghai isolates) represented another inter-type CGTT/TTCGT (Figure 5). The proposed extension to the two main sequence variants (TTTT, CGCC) for an enlarged set of isolates, is in accordance with the new insights into possible epidemiological spread, both in space and time 36., 38., 41.. Namely, positions 3,852 and 11,493 differentiated between the two subgroups of the group A1 (all of the TTTT type): Taiwan epidemic (nucleotides C, T) from the other late epidemic isolates (nucleotides T, C) (41), i.e., isolates closer to a Hong Kong virus unrelated to Hotel M (nucleotides C, T: isolates TW6-TW10, Taiwan TC1-TC3), and the others from the Hotel M lineage [nucleotides T, C: isolates from Canada (Tor2), Singapore (all Sin\u2019s), Frankfurt (FRA Fr 1), Taiwan (TW1-TW5), Hong Kong (HKU 39849), Italy (HSR 1), China (ZJ01), etc.]\n(36). Position 9,479 decomposed the B group [differentiated subgroup B1 (T) from the subgroups B2, B3 (C)], position 21,721 distinguished the group A from the group B. Precise characterization based on the nine loci, for all the isolates, is given in Table 1 and Figure 5.",
+            "cite_spans": [
+                {
+                    "start": 498,
+                    "end": 501,
+                    "mention": "36.",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 503,
+                    "end": 506,
+                    "mention": "38.",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 508,
+                    "end": 511,
+                    "mention": "41.",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 721,
+                    "end": 725,
+                    "mention": "(41)",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 1055,
+                    "end": 1059,
+                    "mention": "(36)",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 284,
+                    "end": 292,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1318,
+                    "end": 1326,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1306,
+                    "end": 1313,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "As compared to genotype clustering of SARS-CoV covering the epidemics from 2002 to 2004 7., 8., it can be noticed that the grouping we proposed was at most in accordance with it. Namely, the following correspondence between the two grouping schemes may be established:",
+            "cite_spans": [
+                {
+                    "start": 88,
+                    "end": 90,
+                    "mention": "7.",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 92,
+                    "end": 94,
+                    "mention": "8.",
+                    "ref_id": "BIBREF44"
+                }
+            ],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Firstly, genotype class CGCC/TCCAT (covering B2 and B3 subgroups), corresponded to human patients\u2019 isolates from the early phase 2002-2003 (ZS, HSZ, GD01, GZ02\u2014Guangzhou, China), and palm civet isolates (SZ3, SZ16\u2014Hong Kong).",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Secondly, genotype class TGCC/TTCGT, TGCC/TTCAT (small part of A1 group), as well as CGCC/TTCAT (B1 group), corresponded to human patients middle phase 2002-2003 (positions 3,852, 9,479, 11,493, 26,477 determined this subclass); Beijing (BJ01-BJ04), and Hong Kong (CUHK W1).",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Thirdly, genotype classes TTTT/NNNNN, CGTT/NNNNN (almost the entire A group and Shanghai part of the B1 group) corresponded to human patients late phase 2002-2003 (Figure 5)\u2014Singapore (Sin s), Taiwan (TW1-11), Shanghai (QX1, QX2), Italy (HSR 1), Canada (Tor2), Hanoi (Urbani), Hong Kong (HKU39849, CUHK-AG0x), China (ZJ01, WHU, PUMC0x), Frankfurt (FRA, Frankfurt 1), etc.",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 164,
+                    "end": 172,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The two basic groups, A and B, were rather contiguously mapped onto the phylogenetic tree, showing a high degree of accordance among the proposed grouping and the phylogenetic relationships. Exceptions represented the two isolates of the B4 group, with large number of SNVs and individual insertions (ZMY 1, ZJ01), as well as the two isolates of the Bl group (Shanghai QXC1 and QXC2), all of which being at large root-distances (Figure S10).",
+            "cite_spans": [],
+            "section": "Phylogenetic analysis ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Nucleotide sequences of 103 SARS-CoV complete genomes were taken from the PubMed NCBI Entrez database (http://www.ncbi.nlm.nih.gov/entrez) in GenBank and FASTA formats. Since there were 7 pairs of nucleotide-identical isolates, we considered the dataset to consist of 96 isolates (Tables 1 and S1). All the sequences are between 29,013 (ShanghaiQXC2) and 29,767 (Sin3408) in length. Out of all, 19 sequences have ambiguous nucleotide codes, i.e., N, M, R, Y, W, K, S (Table Si). Out of 96 isolates, 42 are fully or partially annotated. All the annotated isolates have the S protein annotated of length. 3,768 and the N protein of length 1,269 nucleotides, 4 isolates do not have the E protein (CUHK-Su10, PUMC01, PUMC02, PUMC03) of length 231 (except for Sino1-11 of length 228 nucleotides), 1 isolate does not have the M protein (CUHK-Su10) of length 666 nucleotides. Out of 42 annotated isolates, 13 have 5\u2019 UTR and 12 have 3\u2019 UTR determined. All the isolates are human sourced except for two isolated from palm civet (Paguma larvata), SZ3 and SZ16-",
+            "cite_spans": [],
+            "section": "Dataset ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 281,
+                    "end": 289,
+                    "mention": "Tables 1",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "The CLUSTAL X program, version 1.83 (42) has been applied to all the isolates from the dataset. The overall CLUSTAL X output had length of 29,903 nt. Then 5\u2019 UTR and 3\u2019 UTR were identified based on positions in annotated isolates. Coding region encompassed the interval (301, 29,528), and had the length of 29,228 nt.",
+            "cite_spans": [
+                {
+                    "start": 36,
+                    "end": 40,
+                    "mention": "(42)",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Genome polymorphism ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We developed a program in Perl language for analysis of a CLUSTAL X output. The program first calculated an \u201caverage\u201d isolate, the so called \u201cprofile\u201d, by counting, for each position in the CLUSTAL X output, the number of occurrences of each different letter (including dash), and by choosing the most represented one; positions containing dashes in the \u201cprofile\u201d are called \u201cempty positions\u201d, all the others being \u201cnon-empty\u201d ones. The program then counted SNVs, INDELs, and calculated their absolute and relative positions, for every isolate with respect to the \u201cprofile\u201d, and for different genome regions (ORFs, 5\u2019 UTR, 3\u2019 UTR, and IGRs).",
+            "cite_spans": [],
+            "section": "Genome polymorphism ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Substitution rate for the SARS-CoV genome and for the S protein for all the sequences in the dataset was calculated by dividing the total number of SNV sites by the length of the corresponding nucleotide sequence; non-synonymous substitution rate for the S protein was calculated by dividing the total number of non-synonymous SNV sites by the length of the S protein.",
+            "cite_spans": [],
+            "section": "Genome polymorphism ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The entropy of each site has been calculated based on number of SNVs at that site, in order to estimate the sites\u2019 conserveness. If we denote by p(b)\u2014probability of occurrence of the nucleotide b (b being A, C, G, or T), and under assumption of sites being independent, we calculated the entropy of positions by the following formula (43): E = - sum p(6)* log[p(6)] (sum over b). In this definition, p(b)* log[p(6)] is taken to be zero if p(6) = 0.",
+            "cite_spans": [
+                {
+                    "start": 334,
+                    "end": 338,
+                    "mention": "(43)",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Entropy of sites ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The first type of classification was performed the same way as in Pavlovic-Lazetic et al. (37). It is based on genome polymorphism (SNVs and INDELs). The distribution of isolates per SNV numbers (outside 5\u2019, 3\u2019 UTRs) was analyzed and the isolates were primarily classified into two groups\u2014isolates with \u201csmall\u201d number of SNVs and isolates with \u201clarge\u201d number of SNVs. The isolates \u201cclose to border\u201d were further tested (on the number of SNVs) against the profile isolates of each of the two groups, resulting in some isolates changing the group. A sub-classification was then performed on the presence of long or short INDELs inside each of the two groups.",
+            "cite_spans": [
+                {
+                    "start": 90,
+                    "end": 94,
+                    "mention": "(37)",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Phylogenetic investigations ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The second type of classification was performed based on contents of the most represented SNV sites. Except for earlier identified positions (9,404, 17,564, 22,222, 27,827) classifying isolates into TTTT/CGCC genotypes 38., 39., some other positions (genotypes) were identified as potential bases for sub-classification.",
+            "cite_spans": [
+                {
+                    "start": 219,
+                    "end": 222,
+                    "mention": "38.",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 224,
+                    "end": 227,
+                    "mention": "39.",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Phylogenetic investigations ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to compare the two classification schemes developed, with the existing programming systems for phylogenetic analysis, phylogenetic bootstrapped tree was produced using CLUSTAL X program and the Neighbor Joining (NJ) method. The NJ method, as well as parsimony and the probabilistic models, produces unrooted trees. In order to produce the consensus tree, bootstrapping is performed with random number generated seed 111 and number of trials in bootstrap 1000. The tree is drawn using the PhyloDraw program (44) and the proposed classification schemes were mapped onto it.",
+            "cite_spans": [
+                {
+                    "start": 515,
+                    "end": 519,
+                    "mention": "(44)",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Phylogenetic investigations ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "All the S protein sequences (those extracted from annotated isolates and the others we annotated using the publicly available program from PubMed tools for data mining; http://www.ncbi.nlm.nih.gov/gorf/gorf.html) have been aligned using CLUSTAL X program. Then the S protein was analyzed using the same methods as for the complete isolates.",
+            "cite_spans": [],
+            "section": "Annotation and analysis of the S protein ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Non-synonymous nucleotide substitution per non-synonymous site (Ka) and synonymous nucleotide substitution per synonymous site (Ks) were calculated using the DnaSP 4.0 program (45). It is based on a method defined by Nei and Gojovori (46) that estimates the numbers of synonymous and non-synonymous nucleotide substitutions between two DNA sequences by counting the number of such substitutions in the corresponding pairs of codons. It also takes into account different evolutionary pathways between pairs of codons. The DnaSP program may run with or without an outgroup. The ratio Ka/Ks is considered as a selection parameter (Ka/Ks > 1 is usually interpreted as an indicator of positive selection). The coefficients Ka, Ks, as well as the ratio Ka/Ks were calculated first for the S protein in all the isolates in the dataset, without an outgroup. Since among the 91 isolates there were 89 human patients\u2019 isolates and 2 palm civet isolates (SZ3, SZ16), we then calculated the Ka and Ks coefficients and the ratio Ka/Ks for the 89 human patients\u2019 isolates only, without an outgroup, too. Eventually, we ran the program for all the human patients\u2019 isolates and each of the palm civet isolates as the outgroup, in order to test the hypothesis that the S gene was subjected to positive selection during virus transmission from animals to humans.",
+            "cite_spans": [
+                {
+                    "start": 176,
+                    "end": 180,
+                    "mention": "(45)",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 234,
+                    "end": 238,
+                    "mention": "(46)",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "Mutation analysis of the S protein ::: Materials and Methods",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 2: Distribution of Nucleotides on Distance 1 Left and Right to SNV Sites\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 3: Mutation Analysis of the S Protein: Categories of Nucleotide Substitutions\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 4: Mutation Analysis of the S Protein: Coefficients Ka, Ks, and the Ratio Ka/Ks with An Outgroup\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 1: SARS-CoV Genome Polymorphism 20 Geno\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Fig. 1: Density distribution of SNVs (B), INDELs (C), mapped onto the gene map of the HSR 1 isolate, coinciding with the \u201cprofile\u201d (A). Central region of the genome is rather conserved (lower density of SNVs is exhibited in the second third of the genome, ORF 1b), while the rest of the genome features high SNVs density. SNV peaks are present at (absolute HSR 1) positions 3,852, 9,404, 9,479, 11,493, 17,564 (ORF lab), 21,721, 22,222 (S protein), 26,477 (M protein), and 27,827 (ORF 8a).",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig. 2: Distribution of nucleotide substitution categories. The most represented are the substitutions C\u2194T and the least represented are the substitutions C\u2194G.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Fig. 4: Positions of synonymous and non-synonymous a.a. substitutions plotted against S protein primary structure. The y-axis represents number of SNVs per positions. SP, signal peptide; ED, external domain; TM, trans-membrane domain; and ID, internal domain (http://expasy.org/). A. RBD determined by: 1. Babcock et al. (16), 2. Xiao et al. (17), 3. Wong et al. (18), 4. Zhao et al. (19), and 5. Zhou et al. (20); B. epitope regions determined by: 1. Wang et al. (31), 2. Chou et al. (29), 3. Greenough et al. (30), 4. Sui et al. (26), 5. van den Brink et al. (28), 6. Lu et al. (24), 7. Hua et al. (23), 8. Ren et al. (21), 9. He et al. (22), 10. Zhou et al. (20), 11. Zhang et al. (27), and 12. Keng et al. (25).",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Fig. 5: Three-level classification of 103 SARS-CoV genome isolates. Grouping of isolates is based on genome polymorphism, and classification is based on nine distinguished loci, mapped onto the bootstrapped phylogenetic tree obtained using CLUSTAL X and Neighbor Joining method, and drawn using PhyloDraw programs. Bootstrapping is performed with random number generated seed 111 and number of trials in bootstrap 1000. The two basic groups, A and B, are represented in yellow and blue, respectively. Types obtained according to the nine genome loci (9,404, 17,564, 22,222, 27,827 / 3,852, 9,479, 11,493, 21,721, 26,477) are labeled along the left edge of the figure and have the form NNNN / NNNNN, where N represents any nucleotide. Different subtypes are denoted by the corresponding substituted nucleotides in red. Dotted lines distinguish between the three epidemiological phases.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Fig. 3: Comparison of nucleotide structures of SARS-CoV complete genome isolates, represented in parts A and B of the figure according to similarity in their SNVs or INDELs positions.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "J.S.",
+                    "middle": [],
+                    "last": "Peiris",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nat. Med.",
+            "volume": "10",
+            "issn": "",
+            "pages": "S88-S97",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Tracing SARS-coronavirus variant with large genomic deletion",
+            "authors": [
+                {
+                    "first": "R.W.",
+                    "middle": [],
+                    "last": "Chiu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Emerg. Infect. Dis.",
+            "volume": "11",
+            "issn": "",
+            "pages": "168-170",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Mutational dynamics of the SARS coronavirus in cell culture and human populations isolated in 2003",
+            "authors": [
+                {
+                    "first": "V.B.",
+                    "middle": [],
+                    "last": "Vega",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "BMC Infect. Dis.",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Molecular biology of severe acute respiratory syndrome coronavirus",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Ziebuhr",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Curr. Opin. Microbiol.",
+            "volume": "7",
+            "issn": "",
+            "pages": "412-419",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Molecular mechanisms of severe acute respiratory syndrome (SARS)",
+            "authors": [
+                {
+                    "first": "D.A.",
+                    "middle": [],
+                    "last": "Groneberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Respir. Res.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Characterization of viral proteins encoded by the SARS-coronavirus genome",
+            "authors": [
+                {
+                    "first": "Y.J.",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Antiviral Res.",
+            "volume": "65",
+            "issn": "",
+            "pages": "69-78",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Angiotensin-converting enzyme 2 is a functional receptor for the SARS coronavirus",
+            "authors": [
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nature",
+            "volume": "426",
+            "issn": "",
+            "pages": "450-454",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Amino acids 270 to 510 of the severe acute respiratory syndrome coronavirus spike protein are required for interaction with receptor",
+            "authors": [
+                {
+                    "first": "G.J.",
+                    "middle": [],
+                    "last": "Babcock",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Virol.",
+            "volume": "78",
+            "issn": "",
+            "pages": "4552-4560",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "The SARS-CoV S glycoprotein: expression and functional characterization",
+            "authors": [
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Xiao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Biochem. Biophys. Res. Commun.",
+            "volume": "312",
+            "issn": "",
+            "pages": "1159-1164",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "A 193-amino acid fragment of the SARS coronavirus S protein efficiently binds angiotensin-converting enzyme 2",
+            "authors": [
+                {
+                    "first": "S.K.",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Biol. Chem.",
+            "volume": "279",
+            "issn": "",
+            "pages": "3197-3201",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Prokaryotic expression, refolding, and purification of fragment 450-650 of the spike protein of SARS-coronavirus",
+            "authors": [
+                {
+                    "first": "J.C.",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Protein Expr. Purif.",
+            "volume": "39",
+            "issn": "",
+            "pages": "169-174",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Aetiology: Koch\u2019s postulates fulfilled for SARS virus",
+            "authors": [
+                {
+                    "first": "R.A.",
+                    "middle": [],
+                    "last": "Fouchier",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nature",
+            "volume": "423",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "An exposed domain in the severe acute respiratory syndrome coronavirus spike protein induces neutralizing antibodies",
+            "authors": [
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Virol.",
+            "volume": "78",
+            "issn": "",
+            "pages": "7217-7226",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "A strategy for searching antigenic regions in the SARS-CoV spike protein",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Ren",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Geno. Prot. Bioinfo.",
+            "volume": "1",
+            "issn": "",
+            "pages": "207-215",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Identification of immunodominant sites on the spike protein of severe acute respiratory syndrome (SARS) coronavirus: implication for developing SARS diagnostics and vaccines",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Immunol.",
+            "volume": "173",
+            "issn": "",
+            "pages": "4050-4057",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Identification of two antigenic epitopes on SARS-CoV spike protein",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Hua",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biochem. Biophys. Res. Commun.",
+            "volume": "319",
+            "issn": "",
+            "pages": "929-935",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Immunological characterization of the spike protein of the severe acute respiratory syndrome coronavirus",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Clin. Microbiol.",
+            "volume": "42",
+            "issn": "",
+            "pages": "1570-1576",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Amino acids 1055 to 1192 in the S2 region of severe acute respiratory syndrome coronavirus S Protein induce neutralizing antibodies: implications for the development of vaccines and antiviral agents",
+            "authors": [
+                {
+                    "first": "C.T.",
+                    "middle": [],
+                    "last": "Keng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Virol.",
+            "volume": "79",
+            "issn": "",
+            "pages": "3289-3296",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Potent neutralization of severe acute respiratory syndrome (SARS) coronavirus by a human mAb to S1 protein that blocks receptor association",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Sui",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "101",
+            "issn": "",
+            "pages": "2536-2541",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Identification of an antigenic determinant on the S2 domain of the severe acute respiratory syndrome coronavirus spike glycoprotein capable of inducing neutralizing antibodies",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Virol.",
+            "volume": "78",
+            "issn": "",
+            "pages": "6938-6945",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Molecular and biological characterization of human monoclonal antibodies binding to the spike and nucleocapsid proteins of severe acute respiratory syndrome coronavirus",
+            "authors": [
+                {
+                    "first": "E.N.",
+                    "middle": [],
+                    "last": "van den Brink",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Virol.",
+            "volume": "79",
+            "issn": "",
+            "pages": "1635-1644",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "A novel cell-based binding assay system reconstituting interaction between SARS-CoV S protein and its cellular receptor",
+            "authors": [
+                {
+                    "first": "C.F.",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Virol. Methods",
+            "volume": "123",
+            "issn": "",
+            "pages": "41-48",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Characterization of a novel coronavirus associated with severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "P.A.",
+                    "middle": [],
+                    "last": "Rota",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1394-1399",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Development and characterization of a severe acute respiratory syndrome-associated coronavirus-neutralizing human monoclonal antibody that provides effective immunoprophylaxis in mice",
+            "authors": [
+                {
+                    "first": "T.C.",
+                    "middle": [],
+                    "last": "Greenough",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Infect. Dis.",
+            "volume": "191",
+            "issn": "",
+            "pages": "507-514",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Identification of two neutralizing regions on the severe acute respiratory syndrome coronavirus spike glycoprotein produced from the mammalian expression system",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Virol.",
+            "volume": "79",
+            "issn": "",
+            "pages": "1906-1910",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Genome structure and transcriptional regulation of human coronavirus NL63",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Pyrc",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Virol. J.",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Complete genome sequences of the SARS-CoV: the BJ group (Isolates BJ01-BJ04)",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Bi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Geno. Prot. Bioinfo.",
+            "volume": "1",
+            "issn": "",
+            "pages": "180-192",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "The functional importance of disease-associated mutation",
+            "authors": [
+                {
+                    "first": "S.D.",
+                    "middle": [],
+                    "last": "Mooney",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.E.",
+                    "middle": [],
+                    "last": "Klein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "BMC Bioinformatics",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Mutation analysis of 20 SARS virus genome sequences: evidence for negative selection in replicase ORF1b and spike gene",
+            "authors": [
+                {
+                    "first": "L.D.",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Acta Pharmacol. Sin.",
+            "volume": "24",
+            "issn": "",
+            "pages": "741-745",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Characterization of severe respiratory syndrome coronavirus genomes in Taiwan: molecular epidemiology and genome evolution",
+            "authors": [
+                {
+                    "first": "S.H.",
+                    "middle": [],
+                    "last": "Yeh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "101",
+            "issn": "",
+            "pages": "2542-2547",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Bioinformatics analysis of SARS coronavirus genome polymorphism",
+            "authors": [
+                {
+                    "first": "G.M.",
+                    "middle": [],
+                    "last": "Pavlovic-Lazetic",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "BMC Bioinformatics",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Comparative full-length genome sequence analysis of 14 SARS coronavirus isolates and common mutations associated with putative origins of infection",
+            "authors": [
+                {
+                    "first": "Y.J.",
+                    "middle": [],
+                    "last": "Ruan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Lancet",
+            "volume": "361",
+            "issn": "",
+            "pages": "1779-1785",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Genomic sequencing of a SARS coronavirus isolate that predated the Metropole Hotel case cluster in Hong Kong",
+            "authors": [
+                {
+                    "first": "S.S.",
+                    "middle": [],
+                    "last": "Chim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Clin. Chem.",
+            "volume": "50",
+            "issn": "",
+            "pages": "231-233",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "The genome sequence of the SARS-associated coronavirus",
+            "authors": [
+                {
+                    "first": "M.A.",
+                    "middle": [],
+                    "last": "Marra",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1399-1404",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Molecular biological analysis of genotyping and phylogeny of severe acute respiratory syndrome associated coronavirus",
+            "authors": [
+                {
+                    "first": "Z.G.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Chin. Med. J (Engl.)",
+            "volume": "117",
+            "issn": "",
+            "pages": "42-48",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Phylogenetic analysis and sequence comparison of structural and non-structural SARS coronavirus proteins in Taiwan",
+            "authors": [
+                {
+                    "first": "Y.C.",
+                    "middle": [],
+                    "last": "Lan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Infect. Genet. Evol.",
+            "volume": "5",
+            "issn": "",
+            "pages": "261-269",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "The CLUSTAL_X windows interface: flexible strategies for multiple sequence alignment aided by quality analysis tools",
+            "authors": [
+                {
+                    "first": "J.D.",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nucleic Acids Res.",
+            "volume": "24",
+            "issn": "",
+            "pages": "4876-4882",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "T.M.",
+                    "middle": [],
+                    "last": "Cover",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.A.",
+                    "middle": [],
+                    "last": "Thomas",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "PhyloDraw: a phylogenetic tree drawing system",
+            "authors": [
+                {
+                    "first": "J.H.",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Bioinformatics",
+            "volume": "16",
+            "issn": "",
+            "pages": "1056-1058",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "DnaSP, DNA polymorphism analyses by the coalescent and other methods",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Rozas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Bioinformatics",
+            "volume": "19",
+            "issn": "",
+            "pages": "2496-2497",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Simple methods for estimating the numbers of synonymous and nonsynonymous nucleotde substitutions",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Nei",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Gojovori",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Mol. Biol. Evol.",
+            "volume": "3",
+            "issn": "",
+            "pages": "418-426",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Isolation and characterization of viruses related to the SARS coronavirus from animals in southern China",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "302",
+            "issn": "",
+            "pages": "276-278",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Mosaic evolution of the severe acute respiratory syndrome coronavirus",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Stavrinides",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.S.",
+                    "middle": [],
+                    "last": "Guttman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Virol.",
+            "volume": "78",
+            "issn": "",
+            "pages": "76-82",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Cross-host evolution of severe acute respiratory syndrome coronavirus in palm civet and human",
+            "authors": [
+                {
+                    "first": "H.D.",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc. Natl. Acad. Sci. USA",
+            "volume": "102",
+            "issn": "",
+            "pages": "2430-2435",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Molecular evolution of the SARS coronavirus during the course of the SARS epidemic in China",
+            "authors": [
+                {
+                    "first": "J.F.",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Science",
+            "volume": "303",
+            "issn": "",
+            "pages": "1666-1669",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "SARS\u2014beginning to understand a new virus",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Stadler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nat. Rev. Microbiol.",
+            "volume": "1",
+            "issn": "",
+            "pages": "209-218",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

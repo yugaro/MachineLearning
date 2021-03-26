@@ -1,0 +1,4188 @@
+{
+    "paper_id": "PMC3488215",
+    "metadata": {
+        "title": "Crystal structure of RlmM, the 2\u2032O-ribose methyltransferase for C2498 of Escherichia coli 23S rRNA",
+        "authors": [
+            {
+                "first": "Avinash",
+                "middle": [
+                    "S."
+                ],
+                "last": "Punekar",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Tyson",
+                "middle": [
+                    "R."
+                ],
+                "last": "Shepherd",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Josefine",
+                "middle": [],
+                "last": "Liljeruhm",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Anthony",
+                "middle": [
+                    "C."
+                ],
+                "last": "Forster",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Maria",
+                "middle": [],
+                "last": "Selmer",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Ribosomal RNAs (rRNAs) form complex tertiary structures that in mature ribosomes are stabilized by numerous ribosomal proteins. Large rRNAs in all species carry post-transcriptional modifications, the number of which range from 14 in mycoplasma to more than a hundred in humans. In Escherichia coli, there are in total 36 rRNA modifications: C-, O- or N-methylated nucleosides, pseudouridines, dihydrouridine and hydroxycytidine (reviewed in (1\u20132), 3) clustered in functionally important regions such as contact areas with mRNA and tRNAs, the catalytic peptidyl transferase center (PTC), the peptide exit tunnel and the intersubunit bridges.",
+            "cite_spans": [
+                {
+                    "start": 443,
+                    "end": 446,
+                    "mention": "1\u20132",
+                    "ref_id": null
+                },
+                {
+                    "start": 449,
+                    "end": 450,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The functional importance of rRNA modifications has been studied using ribosomes containing in vitro\u2013transcribed rRNA. Although functional 30S subunits can be assembled using unmodified 16S rRNA (4,5), 50S subunits containing unmodified 23S rRNA are catalytically inactive. For assembly of catalytically active 50S subunits, it is necessary that nucleotides 2445\u20132523 (E. coli numbering used throughout) in the PTC region of domain V of E. coli 23S rRNA (Figure 1A) carry all or a subset of the native modifications (6).\n",
+            "cite_spans": [
+                {
+                    "start": 196,
+                    "end": 197,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 198,
+                    "end": 199,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 517,
+                    "end": 518,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 455,
+                    "end": 463,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "While eukaryotes and archaea use ribonucleoprotein (RNP) complexes to carry out guide RNA-mediated rRNA recognition and modification, bacteria use site-specific modification enzymes that, in general, recognize the structure of their targets rather than the sequence. Many rRNA modifications are not conserved between different bacteria and knockouts of individual rRNA-modifying enzymes are all viable and lead to mild or no phenotype (for example (7\u20139)). This suggests that the modifications in a certain region in combination with the rRNA sequence in that particular species may fine-tune the structure, stability and function of the ribosome.",
+            "cite_spans": [
+                {
+                    "start": 449,
+                    "end": 452,
+                    "mention": "7\u20139",
+                    "ref_id": null
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The ribosomal PTC is the target for numerous antibiotics (10,11). Most likely because the sequence conservation in this region is functionally critical, resistance to these antibiotics often comes through post-transcriptional modifications, for example, C8 methylation of A2503 by the Cfr enzyme (12) leading to resistance to several classes of antibiotics. In addition, in some cases knockouts of native modifications in this region lead to higher sensitivity to antibiotics, suggesting an evolutionary link to intrinsic resistance to natural antibiotics (10,13). There are still many remaining questions regarding the structure and function of these enzymes.",
+            "cite_spans": [
+                {
+                    "start": 58,
+                    "end": 60,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 61,
+                    "end": 63,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 297,
+                    "end": 299,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 557,
+                    "end": 559,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 560,
+                    "end": 562,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "RlmM, also called YgdE, was identified as the enzyme responsible for the stoichiometric 2\u2032O-ribose methylation of C2498 (9). Nucleoside 2498 is located at the start of a conserved sequence CXUCGAU in the central loop of domain V of 23S rRNA that has four modification sites (Figure 1A). In high-resolution crystal structures of ribosomes from different bacteria (14\u201316), C2498 and U2500 are base paired to G2454 and A2453, respectively, at the end of helix 89, and the modification site is surrounded by the peptidyl transferase loop, the 570 region and the 2031 region of 23S rRNA (Figure 1B). The 2\u2032O methylation adds hydrophobicity and has been suggested to stabilize the structure by filling a void in the packing between these regions (2). Sequence analysis showed that RlmM contains a C-terminal Rossmann-like fold methyltransferase (MTase) domain that uses S-adenosyl methionine (AdoMet) as a methyl donor. This class of enzymes contain a 2\u2032O-ribose MTase-specific consensus K-D-K-E/H catalytic tetrad necessary to perform methyl transfer from AdoMet to the 2\u2032OH of the target (17).",
+            "cite_spans": [
+                {
+                    "start": 121,
+                    "end": 122,
+                    "mention": "9",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 363,
+                    "end": 368,
+                    "mention": "14\u201316",
+                    "ref_id": null
+                },
+                {
+                    "start": 741,
+                    "end": 742,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1085,
+                    "end": 1087,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 275,
+                    "end": 283,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 583,
+                    "end": 591,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "RlmM has been shown to be active on protein-free 23S rRNA from an rlmM knockout strain but not on 50S subunits or 70S ribosomes from the same strain, suggesting that it acts early in ribosome assembly (9). Furthermore, in analysis of ribosome assembly intermediates accumulated in vivo in the presence of the antibiotics erythromycin or chloramphenicol, the C2498 modification appeared in the intermediate steps of 50S assembly. Thus, RlmM in vivo must also be active on 23S substrates that have bound a subset of the ribosomal proteins (18). Detailed structural information regarding 50S assembly intermediates is lacking, but the modification site is not accessible in the mature 50S subunit (Figure 1B). The knockout of RlmM is viable but leads to lower fitness compared with wild type in competition assays (9).",
+            "cite_spans": [
+                {
+                    "start": 202,
+                    "end": 203,
+                    "mention": "9",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 538,
+                    "end": 540,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 812,
+                    "end": 813,
+                    "mention": "9",
+                    "ref_id": "BIBREF65"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 695,
+                    "end": 703,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "In this work, we have solved the crystal structure of E. coli RlmM and its complex with AdoMet and demonstrated RlmM activity on in vitro-transcribed rRNA.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Unmodified 23S rRNA was prepared by T7 RNA polymerase transcription in vitro from pCW1 plasmid containing the E. coli rrlB 23S rRNA gene (plasmid constructed in (19)) cut with AflII (Fermentas). DNA template for domain V (nucleotides 2021\u20132625) of the 23S rRNA was obtained by polymerase chain reaction (PCR) from the pCW1 plasmid using the primers 5\u2032-TAATACGACTCACTATAGGGAACTCGCTGTGAAGATGC-3\u2032 and 5\u2032-CGTATGCAGCTTAAGCCCACGGCAGATAGGGAC-3\u2032. The resulting DNA was digested with AflII and gel purified (Qiagen). Transcription was carried out at 37\u00b0C for 6 h using 200 mM 4-(2-Hydroxyethyl)piperazine-1-ethanesulfonic acid (HEPES) pH 7.5, 4.4 mM each nucleotide triphosphate (NTP), 5 mM DL-Dithiothreitol, 2 mM spermidine, 30 mM MgCl2, 0.01% Triton X-100, 300 nM template DNA and 10 U of T7 RNA polymerase in 250 \u00b5l, followed by DNase I (Fermentas) treatment and phenol/chloroform extraction and ethanol precipitation. RNA was quantified by agarose gel electrophoresis. 23S rRNA from the wild-type BW25113 strain (20) was extracted using sodium dodecyl sulfate/phenol extraction and ethanol precipitation after cells were grown in Luria Broth (LB) at 37\u00b0C overnight.",
+            "cite_spans": [
+                {
+                    "start": 162,
+                    "end": 164,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1009,
+                    "end": 1011,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "In vitro transcription and RNA preparation ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "ASKA clone(\u2013) JW2777 containing the E. coli rlmM/ygdE gene was obtained from the ASKA clone collection (21). The rlmM gene was amplified by PCR using the primers 5\u2032-ATGAATAAGGTTGTATTGCTGTGCCG-3\u2032 and 5\u2032-GGATCGCTCGTCGCGACGAC-3\u2032 and subcloned into pEXP5-CT/TOPO (Invitrogen, USA) to generate a C-terminally His-tagged construct. The resulting plasmid, pAP01-rlmm, was verified by sequencing and used to transform E. coli BL21(DE3) cells. The cells were cultured in LB with 100 \u00b5g/ml ampicillin at 37\u00b0C to A600 of 0.5. Protein expression was induced with 0.5 mM isopropyl-\u03b2-thiogalactopyranoside at 18\u00b0C for 20 h. The cells were harvested by centrifugation, washed in 20 mM Tris\u2013HCl, pH 7.5, 200 mM NaCl and stored at \u221220\u00b0C. All purification steps were performed at room temperature. The cells were re-suspended in buffer A (20 mM Tris\u2013H2SO4, pH 8.5, 300 mM Na2SO4, 5% glycerol, 10 mM \u03b2-mercaptoethanol) supplemented with 0.1% Triton X-100, 5 mg lysozyme and complete protease inhibitor (Roche, Germany) and lysed using a cell disruptor (Constant Systems Ltd, UK). The lysate was cleared by centrifugation and loaded into a Bio-Rad Econo-Pac gravity flow column containing Ni-Sepharose\u2122 (GE Healthcare, Sweden) pre-equilibrated with buffer A containing 10 mM imidazole. After incubation for 1 h, the column was washed with 40 mM imidazole in buffer A, and the protein was eluted with 250 mM imidazole in buffer A. RlmM was further purified through a HiLoad\u2122 16/60 Superdex\u2122 75 prep grade column (GE Healthcare) equilibrated in buffer A. Peak fractions eluting at monomer size were pooled and concentrated to 10 mg/ml using a Vivaspin 30 kDa cut-off concentrator (Sartorius Stedim Biotech, Germany). Optimal buffer composition for the protein purification was identified by differential scanning fluorimetry (22), where Na2SO4 was identified as the salt that gave the highest thermal stability to RlmM.",
+            "cite_spans": [
+                {
+                    "start": 104,
+                    "end": 106,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1804,
+                    "end": 1806,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Cloning, protein expression and purification ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Prior to methylation reactions, 200 nM rRNA (23S in vitro transcript or transcribed domain V) was suspended in 40 mM HEPES pH 7.6, 100 mM NH4Cl, 10 mM MgCl2, 12 mM \u03b2-mercaptoethanol, 20% glycerol and 0.1% Triton X-100 and warmed for 10 min at 50\u00b0C followed by 15 min at 37\u00b0C (9). A final concentration of 1 mM AdoMet was then added as the methyl donor followed by addition of Ni-purified RlmM to a final concentration of 100 nM. The reaction was carried out at 37\u00b0C for 90 min or as noted otherwise. Reactions were quenched in 50:50 phenol:chloroform followed by ethanol precipitation. Precipitated RNA was dissolved in H2O prior to primer extension. For time course analysis, 10 \u00b5l aliquots were quenched in 50:50 phenol:chloroform at 0 s (before enzyme addition), 30 s, 1, 2, 4, 8, 20, 45 and 90 min. Primer extension analysis was used to detect the modification.",
+            "cite_spans": [
+                {
+                    "start": 276,
+                    "end": 277,
+                    "mention": "9",
+                    "ref_id": "BIBREF65"
+                }
+            ],
+            "section": "In vitro methylation assay ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "300 ng of oligodeoxyribonucleotide complimentary to the E. coli 23S rRNA nucleotide sequence 2540\u20132556 (5\u2032-CUUGUCGGUAUGGGAAC-3\u2032 (9)) was 32P-5\u2032-labeled by incubation with 15 U polynucleotide kinase (Fermentas) and 20 \u00b5Ci \u03b3-[32P]-adenosine triphosphate (ATP; 3000 Ci/mmol stock concentration; PerkinElmer) at 37\u00b0C for 45 min followed by inactivation by incubation at 95\u00b0C for 10 min (23). The labeled primer mix was purified using an Illustra G-50 spin column (GE Healthcare). Five nanograms of labeled primers were annealed to the rRNA in hybridization buffer (56 mM HEPES-KOH, pH 7 and 111 mM KCl) by heating to 85\u00b0C for 3 min followed by slow cooling to 37\u00b0C over 15 min and then put directly at 4\u00b0C (24). The hybridization mix was combined with 1U Avian Myeloblastosis Virus reverse transcriptase (NEB; 10-fold diluted in 50 mM Tris\u2013HCl, pH 8.4; 2 mM DTE and 50% (v/v) glycerol (24)) and extension mix (100 \u00b5M deoxy-ATP, deoxycytidine triphosphate, deoxythymidine triphosphate; 116 mM Tris\u2013HCl, pH 8.4; 9 mM MgCl2; 9 mM DTE; (24)) and 0.5 \u00b5M deoxyguanosine triphosphate (dGTP) (9) and incubated at 37\u00b0C for 45 min to generate cDNA complimentary to the rRNA. The reaction mixture was then ethanol precipitated with 30 \u00b5l 300 mM NaOAc, 1 mM ethylenediaminetetraacetic acid and 90 \u00b5l 100% ethanol (24). Dideoxy sequencing products were generated from pCW1 using DNA polymerase (Sequenase Version 2.0, USB). DNAs were separated on a 20 \u00d7 40 cm\u00d7 0.75 mm 6% polyacrylamide/7 M urea gel run at 30 W until the bromophenol blue dye reached the bottom. The gel was dried at 80\u00b0C under vacuum and analyzed by phosphoimaging (Bio-Rad FX).",
+            "cite_spans": [
+                {
+                    "start": 129,
+                    "end": 130,
+                    "mention": "9",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 383,
+                    "end": 385,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 703,
+                    "end": 705,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 882,
+                    "end": 884,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1029,
+                    "end": 1031,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1081,
+                    "end": 1082,
+                    "mention": "9",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 1298,
+                    "end": 1300,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Primer extension ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Quantity One software (Bio-Rad) was used to quantitate the band intensities corresponding to stops at nucleotides C2499, G2502, G2508 and U2511. Percent reaction of C2498 in the time course assay was estimated by taking the ratio of the intensity of the C2499 band against average intensity of G2502, G2508 and U2511 of the same lane.",
+            "cite_spans": [],
+            "section": "Primer extension ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "In initial crystallization trials, needle clusters were observed in 0.2 M ammonium tartrate dibasic pH 7.0, 20% PEG 3350 (PEG/Ion screen, Hampton Research). After optimization and streak seeding, clusters of rod-shaped crystals grew in 1 week at 20\u00b0C in sitting drop vapor diffusion experiments containing 1.5 \u03bcl RlmM (10 mg/ml) and 1.5 \u03bcl reservoir solution (0.3 M ammonium tartrate, pH 7.0 and 20% PEG 3350). Crystals were briefly soaked in reservoir solution containing 15% glycerol and vitrified in liquid nitrogen. All data were collected at 100 K at MAX-Lab, Lund, Sweden on MarCCD detectors. 1.9 \u00c5 diffraction data were collected at beamline I911-2 and processed in space group P31. Attempts to solve the structure by molecular replacement failed. A second crystal form obtained by streak seeding into drops containing 3.0% dextran sulfate sodium salt as an additive produced single crystals that grew to 100 \u00d7 100 \u00d7 50 \u00b5m in 1 week. Native data to 1.95 \u00c5 were collected on the same beamline and processed in space group P3121. These crystals were soaked in cryoprotectant solution containing 5 mM K2PtCl4 for 20 min and flash frozen in liquid nitrogen for collection of single-wavelength anomalous dispersion (SAD) data to 2.2 \u00c5 resolution at beamline I911-3. RlmM was co-crystallized with 5 mM AdoMet in the P3121 condition, and a 2.6 \u00c5 dataset was collected at beamline I911-2. All diffraction data were processed and scaled using XDS (25). Data statistics are summarized in Table 1.\n",
+            "cite_spans": [
+                {
+                    "start": 1446,
+                    "end": 1448,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Crystallization and data collection ::: MATERIALS AND METHODS",
+            "ref_spans": [
+                {
+                    "start": 1485,
+                    "end": 1492,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Using the Pt-SAD data in P3121, eight platinum sites were located using PHENIX (26). Heavy atom refinement, phasing and density modification were performed in PHENIX. The figure of merit was 0.36 (0.70 after density modification). The initial model was built using PHENIX AutoBuild (26) and improved by cycles of manual building in Coot (27) and refinement against the native RlmM data in PHENIX. Refinement statistics are presented in Table 1. The P31 structure was solved by molecular replacement in Phaser (28), using the separate domains of the P3121 structure as search models. The AdoMet complex structure was solved by the same method, using the complete P3121 structure as search model. The models were manually rebuilt in Coot and refined in PHENIX. Refinement statistics are presented in Table 1. The quality of the structures was assessed using MolProbity (29). The refined coordinates and the structure factors have been deposited in the protein data bank (PDB) with accession numbers 4ATN (P3121), 4AUK (P31) and 4B17 (P3121 AdoMet complex). Structure figures were prepared using PyMOL (The PyMOL Molecular Graphics System, Version 1.2r1, Schr\u00f6dinger, LLC).",
+            "cite_spans": [
+                {
+                    "start": 80,
+                    "end": 82,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 283,
+                    "end": 285,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 338,
+                    "end": 340,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 510,
+                    "end": 512,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 868,
+                    "end": 870,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Structure determination and refinement ::: MATERIALS AND METHODS",
+            "ref_spans": [
+                {
+                    "start": 436,
+                    "end": 443,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 798,
+                    "end": 805,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "BLAST was used to identify full-length homologues of E. coli RlmM. Multiple sequence alignment was performed in CLUSTALW2 (30).",
+            "cite_spans": [
+                {
+                    "start": 123,
+                    "end": 125,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Sequence analysis ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "To investigate whether RlmM can modify unmodified in vitro transcripts of full length 23S rRNA (IVT), we tested our purified, recombinant RlmM in the presence of excess AdoMet. Most RNA modifications, such as 2\u2032O methylation, can be detected directly using primer extension by reverse transcriptase and gel electrophoresis (24). Low dNTP concentrations cause reverse transcriptase to pause one nucleotide before a 2\u2032O methylation site (31) and the optimal dGTP concentration for Cm2498 detection reported by Purta et al. was also used here. A prominent C2499 band, induced by methylation on C2498, appeared after incubation of IVT with RlmM, showing RlmM does not rely on prior modifications to the 23S rRNA for activity (Figure 2A). Smaller fragments were also detected at G2502, G2508 and U2511 in all lanes, presumably due to strong secondary structure and limiting dGTP for the templated C that follows in each case. A reverse transcriptase stop on U2504 corresponding to wild-type methylation on A2503 can also be seen in the WT lane and not in the IVT lane, as expected (Figure 2A). Standardizing the intensity of the C2499 band to the average of band intensities of these smaller fragments allowed comparisons between lanes. On the basis of band intensity, the extent of modification in the in vitro reaction is nearly the same as found in the E. coli wild-type 23S rRNA (Figure 2A), which was previously determined to be stoichiometric on 23S rRNA (32). In addition, RlmM is capable of modifying unmodified 23S rRNA domain V alone to the same extent as full length IVT (Figure 2B). This demonstrates that RlmM recognition is neither dependent on other domains of the 23S rRNA nor other rRNA modifications.\n",
+            "cite_spans": [
+                {
+                    "start": 324,
+                    "end": 326,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 436,
+                    "end": 438,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1457,
+                    "end": 1459,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "RlmM modifies in vitro transcribed 23S rRNA at C2498 ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 722,
+                    "end": 730,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1077,
+                    "end": 1085,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1379,
+                    "end": 1387,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1578,
+                    "end": 1586,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Although the primer extension assay is not highly quantitative, it was possible to use it to measure methylation of IVT by RlmM over time, showing >80% reaction completion after 45 min with a rudimentary initial velocity (Figure 2C; Supplementary Figure S1) similar to other MTases under similar in vitro conditions (33\u201334).",
+            "cite_spans": [
+                {
+                    "start": 317,
+                    "end": 322,
+                    "mention": "33\u201334",
+                    "ref_id": null
+                }
+            ],
+            "section": "RlmM modifies in vitro transcribed 23S rRNA at C2498 ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 222,
+                    "end": 230,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "E. coli RlmM with a C-terminal His-tag was crystallized with polyethylene glycol and ammonium tartrate in two crystal forms belonging to space group P31 with two molecules per asymmetric unit and space group P3121 with one molecule in the asymmetric unit, respectively (Table 1). Molecular replacement trials with other Rossmann-like fold MTase domains failed to provide sufficient phase information to build the structure. The P3121 structure was solved by SAD phasing using a K2PtCl4 derivative and refined against the native data to 1.95 \u00c5 resolution. The resulting model was used to solve the 1.9 \u00c5 P31 structure by molecular replacement. The final refined structures of RlmM contain residues 1\u2013357. The C-terminal residues 358\u2013366 and the His-tag were disordered in all structures. RlmM was also co-crystallized with AdoMet in the P3121 crystal form and the resulting structure will be described below. On the basis of its profile on size exclusion chromatography, we believe RlmM to be a monomer in vivo.",
+            "cite_spans": [],
+            "section": "Structure determination of RlmM ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 270,
+                    "end": 277,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "RlmM forms a bi-lobed structure with the approximate dimensions of 62 \u00d7 41 \u00d7 33 \u00c53 (Figure 3A). The structure is organized into an N-terminal THUMP domain and a C-terminal Rossmann-like MTase domain (Figure 3B). The two domains are connected by a long loop containing a 310 helix. The loop forms hydrophobic interactions with residues from the C-terminal domain and the relative orientation of the two domains is stabilized by inter-domain hydrogen bonds and hydrophobic interactions. The buried surface area in the inter-domain interaction is roughly 900 \u00c52, corresponding to 10% of the area of the N-terminal domain.\n",
+            "cite_spans": [],
+            "section": "Overall structure ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 84,
+                    "end": 92,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 200,
+                    "end": 208,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The structures of RlmM in the two crystal forms are close to identical. In the P31 structure, molecules A and B superpose with a root mean square deviation (RMSD) of 0.55 \u00c5 for 355 C\u03b1 atoms, and the P3121 structure superposes onto molecules A and B of the P31 structure with RMSDs of 0.72 \u00c5 and 0.77 \u00c5, respectively, for 355 C\u03b1 atoms. Due to crystal packing, there are conformational differences in the loop preceding \u03b211 and the \u03b24-\u03b13 loop. However, when the P31 structures are superposed on the N-terminal domain of the P3121 structure, there is a minor rotational movement of the C-terminal domain, resulting in shifts of up to 3.4 \u00c5 at the outer edge of the C-terminal domain without affecting the inter-domain packing (Supplementary Figure S2). Below, unless stated otherwise, the P3121 structure will be described.",
+            "cite_spans": [],
+            "section": "Overall structure ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "A DALI search (35) for similar 3D structures identified several homologues to the N-and C-terminal domains, respectively (see subsequent sections), but did not identify the complete domain arrangement of RlmM in any other structure in the PDB.",
+            "cite_spans": [
+                {
+                    "start": 15,
+                    "end": 17,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Overall structure ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "RlmM was aligned to a representative set of full-length orthologs from gammaproteobacteria and betaproteo-bacteria, and the resulting gammaproteobacterial sequence alignment was used to identify conserved residues (Figure 4A). The sequence identity to E. coli RlmM ranges from 44% for the Xanthomonas oryzae protein to 94% for the Salmonella enterica protein.\n",
+            "cite_spans": [],
+            "section": "Sequence analysis ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 215,
+                    "end": 223,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Mapping of the degree of sequence conservation in all full-length homologs onto the RlmM structure using ConSurf (36) revealed a large conserved patch on one side of the MTase domain that extends toward the long helix \u03b14 in the THUMP domain (Figure 4A and B). Many of these conserved or conservatively substituted residues are arginines and lysines, resulting in a strong patch of positive charge that overlaps with the conserved surface (Figure 4C).",
+            "cite_spans": [
+                {
+                    "start": 114,
+                    "end": 116,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Sequence analysis ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 242,
+                    "end": 250,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 439,
+                    "end": 447,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The N-terminal domain (amino acids 1\u2013176) is a THUMP domain according to the classification in the SCOP database. It contains a seven-stranded mostly anti-parallel \u03b2-sheet (\u03b25 and \u03b26 are parallel) forming a half-barrel with one short and one longer helix on each side (Figure 3A and B). It can be further divided into a ferredoxin-like domain (FLD, amino acid 1\u201373) and a C-terminal \u2018minimal THUMP domain\u2019 (amino acid 74\u2013164) corresponding to the two sides of the half-barrel. The minimal THUMP domain is an RNA-binding fold containing a four-stranded mixed \u03b2-sheet that was identified on the sequence level and named after its predicted occurrence in thiouridine synthases, RNA methylases and pseudouridine synthases of all kingdoms of life (37). The minimal THUMP domain was first observed in the structure of the tRNA thiouridine synthase ThiI (38), where it is similarly fused to an N-terminal FLD. This arrangement was subsequently observed in several structures and is now classified as the THUMP domain family in the SCOP database. The \u2018minimal THUMP\u2019 has also been observed fused to an N-terminal helical domain in the pseudouridine synthase Pus10 (39).",
+            "cite_spans": [
+                {
+                    "start": 743,
+                    "end": 745,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 848,
+                    "end": 850,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1157,
+                    "end": 1159,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "N-terminal domain ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 269,
+                    "end": 277,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "In a DALI (35) search with the N-terminal domain, the most similar structures were the two tRNA:m2G6 MTases Trm14 from Pyrococcus furiosus (pdb 3tm5, RMSD 2.7 \u00c5 for 145 C\u03b1 atoms) and TrmN from Thermus thermophilus (pdb 3tma, RMSD 3.3 \u00c5 for 141 C\u03b1 atoms) (40) and the N-terminal part of the rRNA m2G2445 MTase RlmKL (pdb 3v8v, RMSD 2.8 \u00c5 for 135 C\u03b1 atoms) (41). Interestingly, in both of these enzymes, the THUMP domains are followed by catalytic Rossmann-like fold MTase domains, but in a different orientation compared with RlmM (further discussed in the subsequent sections). The same is true for a putative methylase from Clostridium difficile. THUMP domains only share 10\u201315% sequence identity, explaining why these domains were not detected in sequence analysis. The THUMP domain also occurs in combination with other catalytic domains; an N-terminal cytidine deaminase domain in the archaeal tRNA C8 deaminase CDAT8 (42) and a C-terminal PP-loop pyrophosphatase domain in ThiI (38). In TAN1, a protein essential for the ac4C modification in tRNA, a tRNA-binding THUMP domain occurs by itself and needs an un-identified catalytic subunit for modification activity (37,43). Thus, the THUMP domain has the role of RNA recognition in several different enzymes that act on rRNA or tRNA.",
+            "cite_spans": [
+                {
+                    "start": 11,
+                    "end": 13,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 255,
+                    "end": 257,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 356,
+                    "end": 358,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 923,
+                    "end": 925,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 984,
+                    "end": 986,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1170,
+                    "end": 1172,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1173,
+                    "end": 1175,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "N-terminal domain ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "In comparison with previously observed THUMP domains, RlmM has a few unique features (Figure 5A\u2013D). The strand \u03b24 is shorter than in the other structures, making only three hydrogen bonds to \u03b27 and thus making the half-barrel into two nearly separate \u03b2-sheets. The lengths of \u03b24 and \u03b27 at the center of the sheet affect the shape of the half-barrel, so that RlmM has more of a V-shape, whereas ThiI where both strands participate in the two sheets forms a shallow U and Trm14, TrmN and RlmKL, which have only \u03b24 bridging the two sheets are intermediate. In RlmM, helix \u03b14 is also longer than in the other structures in the direction of the barrel opening, which further contributes to the closing of the opening by pushing \u03b24 inwards. RlmM also contains an extra 310 helix that forms hydrophobic interactions with the center of the barrel. Each of the compared THUMP domains have unique structural features, such as an extra \u03b2-hairpin in Trm14 and a longer \u03b11 in ThiI, suggesting that the ancient THUMP domain (37) has evolved to form RNA-binding modules of different shape (Figure 5B\u2013D).\n",
+            "cite_spans": [
+                {
+                    "start": 1011,
+                    "end": 1013,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "N-terminal domain ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 86,
+                    "end": 94,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 1075,
+                    "end": 1083,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "The C-terminal domain of RlmM (residues 186\u2013356) adopts a Rossmann-like fold belonging to the Class I AdoMet-dependent MTases (44). This catalytic domain consists of a mixed seven-stranded \u03b2-sheet flanked by four helices on one side and two helices on the opposite side (Figure 3A and B). The sequence alignment revealed that conserved residues in RlmM cluster in and around the functional motifs I\u2013VIII and X in AdoMet-dependent MTases (Figure 4A) (45). Motifs I\u2013III are important for AdoMet binding, whereas motifs IV, VI, VIII and X form the 2\u2032O-ribose MTase-specific K-D-K-E/H catalytic tetrad (46). The second Lys is thought to act as a general base by deprotonating the ribose 2\u2032OH nucleophile that attacks the reactive methyl group of AdoMet, whereas the Asp stabilizes the positive charge on the sulfur (46) (Supplementary Figure S3).",
+            "cite_spans": [
+                {
+                    "start": 127,
+                    "end": 129,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 450,
+                    "end": 452,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 599,
+                    "end": 601,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 812,
+                    "end": 814,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "C-terminal domain ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 271,
+                    "end": 279,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 438,
+                    "end": 446,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "In a DALI (35) search with the C-terminal domain, the most similar structures were bacterial RNA 2\u2032O-ribose MTases YiiB and TlyA annotated as putative hemolysins (pdb 3opn, RMSD 2.3 \u00c5 for 154 C\u03b1 atoms and pdb 3hp7, RMSD 2.5 \u00c5 for 156 C\u03b1 atoms). The same structures were found in a BLAST search of the pdb with the RlmM sequence prior to solving the structure. Other DALI hits were archaeal fibrillarin FlpA (pdb 1nt2, RMSD 2.3 \u00c5 for 152 C\u03b1 atoms (47)) and the bacterial FtsJ/RrmJ (pdb 1eiz, RMSD 2.5 \u00c5 for 148 C\u03b1 atoms (48)). The DALI results also included rRNA base methylating enzymes with lower structural similarity such as ErmC\u2032 (49) and KsgA (50) and the flaviviral non-structural protein 5 (Nsp5) that performs ribose as well as base methylation on an mRNA substrate (51). The RlmM MTase domain shared 12\u201323% sequence identity with the top hits over 140\u2013156 residues.",
+            "cite_spans": [
+                {
+                    "start": 11,
+                    "end": 13,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 447,
+                    "end": 449,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 520,
+                    "end": 522,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 635,
+                    "end": 637,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 649,
+                    "end": 651,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 775,
+                    "end": 777,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "C-terminal domain ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Structures of the 2\u2032O-ribose MTases YiiB (pdb 3opn), FlpA (pdb 1nt2 (47)), RrmJ (pdb 1eiz (48)) and Nsp5 (pdb 2wa2 (51)) were superposed onto the RlmM MTase domain. Structure-based sequence alignment (Figure 6A) and structural superposition confirmed that the catalytic tetrad K191-D277-K306-E347 is present in the RlmM MTase domain. A closer look revealed that while residues K191, D277 and E347 of RlmM superimpose on the conserved K, D and E/H residues of all the 2\u2032O-ribose MTases, residue K306 of the RlmM MTase domain is shifted forward by two residues relative to RrmJ and Nsp5 and superimposes onto the corresponding lysine residues of FlpA and YiiB (Figure 6B). This shift in RlmM differs from the alignment reported based on the primary sequence, where the FXXK motif in RlmM was aligned to the same motif in RrmJ and Nsp5 (9). A previous bioinformatic and phylogenetic study identified the two-residue shift of the second catalytic K in fibrillarin (52), but the shift in YiiB/TlyA (Figure 6A and B) has not been reported before.\n",
+            "cite_spans": [
+                {
+                    "start": 69,
+                    "end": 71,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 91,
+                    "end": 93,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 116,
+                    "end": 118,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 834,
+                    "end": 835,
+                    "mention": "9",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 961,
+                    "end": 963,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                }
+            ],
+            "section": "C-terminal domain ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 201,
+                    "end": 209,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 659,
+                    "end": 667,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 994,
+                    "end": 1002,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Other differences between the MTase domain in RlmM and other 2\u2032O-ribose MTases can be seen in the relative lengths of helices \u03b1B, \u03b1C and \u03b1D that surround the AdoMet-binding site (Figure 6A and 7A). As discussed in the subsequent sections, these helices influence the shape of the AdoMet-binding pocket.\n",
+            "cite_spans": [],
+            "section": "C-terminal domain ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 179,
+                    "end": 187,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 193,
+                    "end": 194,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "Trials to soak AdoMet into pre-formed RlmM crystals gave only partial density for the ligand, indicating low occupancy and/or multiple conformations of the ligand. However, using co-crystallization in the P3121 crystal form, electron density for the complete AdoMet was observed at 2.6 \u00c5 resolution (Figure 6C). The RlmM AdoMet complex structure superposed on the apo structure with an RMSD of 0.19 \u00c5 for the entire protein (357 C\u03b1 atoms) as well as for the individual domains, showing that no global conformational change takes place upon AdoMet binding.",
+            "cite_spans": [],
+            "section": "Structure of the RlmM\u2013AdoMet complex ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 300,
+                    "end": 308,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "AdoMet binds in extended conformation to a shallow negatively charged pocket formed by the conserved residues in motifs I\u2013IV of the MTase domain (Figure 6C and Supplementary Figure S4). Comparison of the AdoMet-binding pocket in RlmM with AdoMet complex structures of FlpA (pdb 1nt2), RrmJ (pdb 1eiz) and Nsp5 (pdb 2wa2) (Figure 7A) reveals some differences. The shape of the AdoMet-binding pocket depends on the presence and length of helices \u03b1B, \u03b1C and \u03b1D that position the motif II and III loops to surround the adenine nucleobase and ribose moiety of AdoMet. Due to the short \u03b1B and \u03b1D and the missing \u03b1C, the AdoMet-binding pocket in RlmM is open and shallow (Figure 7B). In contrast, helices \u03b1B and \u03b1C in RrmJ, FlpA, YiiB and Nsp5 contribute to deeper AdoMet-binding pockets with narrow openings (Figure 7C\u2013E). In Nsp5, another monomer stabilizes the long motif II loop to form an enclosed AdoMet-binding pocket.",
+            "cite_spans": [],
+            "section": "Structure of the RlmM\u2013AdoMet complex ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 146,
+                    "end": 154,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 322,
+                    "end": 330,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 665,
+                    "end": 673,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 803,
+                    "end": 811,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "There are also differences in the motif II and III loops that interact with the base of AdoMet. In the RlmM\u2013AdoMet complex, the base binds to a hydrophobic surface formed by M278 in motif IV interacting with G261 in motif III, as in most related complex structures (Supplementary Figure S5). However, the base is normally partially or completely covered by a \u2018lid\u2019 residue from the motif II loop that narrows the opening of the AdoMet-binding pocket. In RlmM, the motif II loop (D240\u2013G242) has an open conformation in all our structures. In the P3121 structure, the motif II loop is involved in crystal packing, but there is no evidence for conformational changes in this loop upon AdoMet binding to other 2\u2032O-ribose MTases. The motif II loop would need to re-orient by 3.1 \u00c5 for N241 to be positioned to cover the adenine ring from the top as the corresponding Leu in RrmJ and Nsp5 (Supplementary Figure S5) and the Tyr in FlpA. There is no structure of YiiB or TlyA in complex with AdoMet, but in the apo YiiB structure, the Val of the motif II loop seems positioned to reach the AdoMet-binding site.",
+            "cite_spans": [],
+            "section": "Structure of the RlmM\u2013AdoMet complex ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Furthermore, in the adenine nucleobase, the N6 amino group makes a hydrogen bond interaction with the \u03b2-carboxyl group of D260, the N1 atom is oriented to make polar interactions with the \u03b2-carboxyl group and the backbone amide of G261 and the N3 atom makes a water-mediated hydrogen bond to N241 (Figure 6C and Supplementary Figure S4). The interactions of the ribose and the methionine moiety of AdoMet are similar to what is seen in other Class-I MTases. The ribose of AdoMet is stabilized by hydrogen bonds of the 2\u2032OH and 3\u2032OH with the conserved D240. The carboxylate group of the methionine moiety interacts with the side chains of S186 and S188 and the backbone amides of P222, G223 and G224. The amino group of the methionine moiety forms a hydrogen bond with the catalytic D277 in motif IV. At the C-terminal end of \u03b28, D217 extends to make water-mediated hydrogen bond to the carboxylate and amino groups of the methionine moiety.",
+            "cite_spans": [],
+            "section": "Structure of the RlmM\u2013AdoMet complex ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 298,
+                    "end": 306,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "On AdoMet binding, there is a slight shift of the catalytic tetrad so that K191 moves away from D277 and comes closer to E347 (Supplementary Figure S6). According to the reaction mechanism proposed for RrmJ (46), for catalysis to be possible, D277 would need to be close enough to stabilize the positive charge on the AdoMet sulfur (currently 4.64 \u00c5) and on K306 which will deprotonate the substrate 2\u2032OH (Supplementary Figure S3). This would be possible if motif II-mediated closure of the AdoMet-binding pocket would push the ligand closer to the catalytic tetrad. Since no such change is observed upon AdoMet binding, it is possible that RlmM cannot do this by itself.",
+            "cite_spans": [
+                {
+                    "start": 208,
+                    "end": 210,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "Structure of the RlmM\u2013AdoMet complex ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "The THUMP domain contains conserved surface-exposed residues in the \u03b21-\u03b11 loop, the N-terminal end of helix \u03b11 and the loop before \u03b24 (Figure 4A and B). Furthermore, there are three conserved basic residues in helix \u03b14 and another three in the linker to the catalytic domain. Together, the basic residues form a continuous positively charged surface (helix \u03b14, continuing with the \u03b21-\u03b11 loop, the N-terminus of \u03b11, the loop before \u03b24 and the linker between the N- and C-terminal domain; Figure 4C) connected to the conserved active site surface of the catalytic domain. The positively charged residues overlap with the conserved region, indicating their functional importance and suggesting that this surface is where RlmM binds to 23S rRNA.",
+            "cite_spans": [],
+            "section": "RNA-binding site of RlmM ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 135,
+                    "end": 143,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 487,
+                    "end": 495,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Trm14/TrmN and RlmKL also contain N-terminal THUMP domains followed by a Rossmann-like fold MTase domains (40,41). These two structures have close to identical packing between the two domains. In comparison, the catalytic domain in RlmM is rotated by \u223c90\u00b0 (Figure 8). Surface conservation of these structures (Figure 4B; (40)) suggest that both domain arrangements have evolved to bind to the RNA substrate and position it next to the active site on the catalytic domain, but using different parts of the THUMP domain.\n",
+            "cite_spans": [
+                {
+                    "start": 107,
+                    "end": 109,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 110,
+                    "end": 112,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 322,
+                    "end": 324,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "RNA-binding site of RlmM ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 257,
+                    "end": 265,
+                    "mention": "Figure 8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 310,
+                    "end": 318,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The only available structure of a ribose 2\u2032O MTase in complex with RNA is the fibrillarin subunit in the complete archaeal box C/D RNP in complex with substrate RNA and guide RNA (53). Superposition of the fibrillarin\u2013RNA complex from this structure (pdb 3pla) onto the RlmM MTase domain suggests that RlmM could make a minor groove interaction with an RNA double-helix placed across the catalytic domain. However, the comparison does not provide any clues regarding how the RNA potentially could influence the AdoMet-binding site.",
+            "cite_spans": [
+                {
+                    "start": 180,
+                    "end": 182,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                }
+            ],
+            "section": "RNA-binding site of RlmM ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "We were initially puzzled by seeing that the catalytic domain of RlmM was more similar to YiiB and TlyA, annotated as putative hemolysins, than to other known rRNA-modifying enzymes. However, TlyA from Mycobacterium tuberculosis has proven 2\u2032O-ribose MTase activity on C1409 of 16S rRNA and C1920 of 23S rRNA (54,55). In contrast, the suggested hemolytic activity is controversial (56,57).",
+            "cite_spans": [
+                {
+                    "start": 310,
+                    "end": 312,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 313,
+                    "end": 315,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 382,
+                    "end": 384,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 385,
+                    "end": 387,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                }
+            ],
+            "section": "Structural relatives of RlmM ::: DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Of the other similar structures, archaebacterial fibrillarins take part in guide-mediated ribose methylation in rRNA and tRNA, RrmJ is a bacterial 23S rRNA 2\u2032O-ribose MTase and Nsp5 is involved in capping of viral mRNAs. Thus, similar structures are used for ribose methylation of a variety of substrates in viruses, bacteria and archaea using different mechanisms of substrate recognition.",
+            "cite_spans": [],
+            "section": "Structural relatives of RlmM ::: DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "We observed that RlmM and YiiB/TlyA, like fibrillarin have a two-residue shift forward of the second catalytic lysine compared with most 2\u2032O MTases (Figure 6A and B). Although key catalytic residues are normally conserved among functionally related proteins, there are several examples of long- and short-distance migration of essential residues in the primary sequence (58). In these cases, although a residue is shifted in the sequence and structure, the positions of the atoms involved in catalysis are preserved. In 2\u2032O-ribose MTases, the position of the \u03b5-amino group of the second catalytic lysine is thought to be crucial for deprotonation of the ribose 2\u2032OH, enabling its nucleophilic attack on the AdoMet methyl group (46,59) (Supplementary Figure S3). In FlpA, binding of the substrate RNA re-orients the Lys so that its \u03b5-amino group can make the proper interaction with the 2\u2032OH of the ribose, whereas RlmM and YiiB without RNA and AdoMet adopt conformations where the side chains of K306 and K157 are positioned similarly to the FlpA complex with substrate RNA (Figure 6B). This suggests that two optimized variants of the catalytic site for 2\u2032O-ribose methylation have evolved and that further analysis of the evolutionary relationship between RlmM, FlpA, YiiB and RrmJ would be of interest.",
+            "cite_spans": [
+                {
+                    "start": 371,
+                    "end": 373,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 728,
+                    "end": 730,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 731,
+                    "end": 733,
+                    "mention": "59",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "A conserved catalytic site with a migrated Lys residue ::: DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 149,
+                    "end": 157,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1075,
+                    "end": 1083,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "We managed to co-crystallize RlmM with AdoMet in the P3121 crystal form, but not in the P31 crystal form. Perhaps crystal contacts of the open motif II loop in the P3121 crystal form have a stabilizing effect on the AdoMet-binding site. Another possibility is that the crystallization additive dextran sulfate affects binding of AdoMet. The AdoMet-binding site is open and shallow compared with other 2\u2032O MTases (Figure 7B\u2013E), and the ligand does not make the interactions with the catalytic tetrad that would be needed for catalysis. Therefore, we hypothesize that RlmM may be a partner-dependent MTase that forms the correct interactions with AdoMet only in presence of RNA substrate. As exemplified in the subsequent sections, there are several examples of RNA MTases that only bind AdoMet in optimal position for methyl transfer in the presence of an auxiliary protein or the RNA substrate.",
+            "cite_spans": [],
+            "section": "Is RlmM dependent on rRNA substrate for closing the AdoMet pocket? ::: DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 413,
+                    "end": 421,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Protein-mediated stabilization occurs in the archaebacterial fibrillarin-Nop5p complex. Nop5p stabilizes the motif II and III regions through interactions with \u03b1B and \u03b23 (Figure 6A and B), leading to a pre-ordered binding site for, and increased affinity to, AdoMet (60). Along the same line, the stimulatory subunit Nsp10 is essential for AdoMet binding and MTase activity of the SARS coronavirus-encoded Nsp16. Nsp16 has a flexible AdoMet-binding pocket surrounded by long loops that Nsp10 stabilizes through interactions with the motif II loop (61).",
+            "cite_spans": [
+                {
+                    "start": 267,
+                    "end": 269,
+                    "mention": "60",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 548,
+                    "end": 550,
+                    "mention": "61",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "Is RlmM dependent on rRNA substrate for closing the AdoMet pocket? ::: DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 171,
+                    "end": 179,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "RNA-mediated stabilization has been observed in the antibiotic resistance protein KsgA that dimethylates the bases of A1518 and A1519 in E. coli 16S rRNA. A recent crystal structure revealed that substrate binding triggers conformational changes that stabilize motifs I and VIII in conformations essential for efficient AdoMet binding (62).",
+            "cite_spans": [
+                {
+                    "start": 336,
+                    "end": 338,
+                    "mention": "62",
+                    "ref_id": "BIBREF58"
+                }
+            ],
+            "section": "Is RlmM dependent on rRNA substrate for closing the AdoMet pocket? ::: DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Activity assays with pure recombinant protein excludes the possibility that RlmM needs another protein for activity, suggesting that binding of the 23S rRNA substrate might be needed to induce the structural changes in the AdoMet-binding pocket necessary for methyl transfer. This hypothesis will be tested in future experiments.",
+            "cite_spans": [],
+            "section": "Is RlmM dependent on rRNA substrate for closing the AdoMet pocket? ::: DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Mapping of conserved surface residues and charge distribution demonstrate that RlmM in the crystal structures displays a conformation where the RNA-binding surface is nicely aligned with the catalytic site of the MTase domain (Figure 4B and C). Thus, we have no indication that global conformational changes in RlmM would be needed for RNA binding. The THUMP domains seem to have evolved different shapes from a common structural scaffold and distinct surfaces for RNA recognition in the different enzymes. In ThiI and RlmKL, a \u2018channel\u2019 formed by the THUMP beta half-barrel has been suggested to be used for RNA binding (38,41), but in RlmM, the corresponding groove is filled. Similar to proposals for Trm14/TrmN (40), the likely RNA-binding surface of RlmM involves both domains and a positively charged inter-domain linker; but in our model, RlmM would use a distinct surface of the THUMP domain for RNA binding compared with Trm14/TrmN and RlmKL. Thus, at least two different architectures using the THUMP domain together with the Rossmann-like fold MTase domain have arisen in evolution.",
+            "cite_spans": [
+                {
+                    "start": 622,
+                    "end": 624,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 625,
+                    "end": 627,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 716,
+                    "end": 718,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "RlmM interaction with its RNA substrate ::: DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 227,
+                    "end": 235,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The conserved basic residues in RlmM form a large surface; from the methyl group on AdoMet, the distance to K114 at the N-terminus of the long helix \u03b14 is roughly 25 \u00c5 and the distance along this helix to R128 is another 20 \u00c5 (Figure 4). Perhaps, RlmM uses a large binding surface to be able to recognize its target site in a flexible RNA or partly assembled ribosome.",
+            "cite_spans": [],
+            "section": "RlmM interaction with its RNA substrate ::: DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 227,
+                    "end": 235,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The available examples of THUMP domains display low sequence similarity and we postulate that more examples of THUMP domains are likely to be identified in structures of other enzymes acting on RNA. There is so far no structure of a THUMP domain in complex with RNA. Still, the available THUMP structures suggest that THUMP domains can bind RNA in several ways. Thus, we cannot at present predict why this particular domain has proven useful for recognition of structured RNA in all kingdoms of life.",
+            "cite_spans": [],
+            "section": "RlmM interaction with its RNA substrate ::: DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Our assays show that RlmM is active on in vitro transcribed 23S rRNA substrate as well as on the in vitro transcribed 604 nt domain V construct. Thus, we can conclude that RlmM activity does not depend on prior modifications to the substrate, as has been found for other rRNA MTases such as RlmD, RlmKL and RlmN (33,34,63). In addition, since RlmM can modify the domain V construct, the interaction between domain V and domain II right at the modification site is not needed for substrate recognition. Due to these interactions between domain V and domain II, C2498 is not accessible in the conformation of the crystallized ribosome structures. Thus, these interactions are likely to form after modification, suggesting that RlmM in vivo may act on a substrate where 23S domain V is folded but not yet making tertiary interactions with the other domains.",
+            "cite_spans": [
+                {
+                    "start": 313,
+                    "end": 315,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 316,
+                    "end": 318,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 319,
+                    "end": 321,
+                    "mention": "63",
+                    "ref_id": "BIBREF59"
+                }
+            ],
+            "section": "The RNA substrate of RlmM ::: DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The m8A2503 modification by Cfr in vivo leads to a decreased level of modification of C2498 by RlmM (64,65). Thus, Cfr acts prior or simultaneously with RlmM, and the modification has been suggested to hinder the interaction of RlmM with its target (9). In the structure of domain V in the context of the ribosome, the modification sites are 21 \u00c5 apart, and the most likely explanation for the interplay between the two modifications is that domain V in presence of the Cfr-catalyzed methylation prefers a conformation where the 2\u2032O of C2498 is no longer accessible for RlmM. In the mature ribosome, A2503 stacks between A2059 and G2061 at the opposite side of the peptidyl transferase loop, and possibly the methylation, apart from sterically hindering antibiotic binding, also increases the stability of the stacked structure.",
+            "cite_spans": [
+                {
+                    "start": 101,
+                    "end": 103,
+                    "mention": "64",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 104,
+                    "end": 106,
+                    "mention": "65",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 250,
+                    "end": 251,
+                    "mention": "9",
+                    "ref_id": "BIBREF65"
+                }
+            ],
+            "section": "The RNA substrate of RlmM ::: DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The RNA recognition mechanism used by RlmM remains to be clarified. The local RNA structure may change upon binding to the enzyme, but it would also be possible that RlmM acts on an available 50S assembly intermediate where the 2\u2032-oxygen of C2498 is accessible.",
+            "cite_spans": [],
+            "section": "The RNA substrate of RlmM ::: DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Pdb entries 4auk, 4atn, 4b17.",
+            "cite_spans": [],
+            "section": "ACCESSION NUMBERS",
+            "ref_spans": []
+        },
+        {
+            "text": "Supplementary Data are available at NAR Online: Supplementary Figures 1\u20136.",
+            "cite_spans": [],
+            "section": "SUPPLEMENTARY DATA",
+            "ref_spans": []
+        },
+        {
+            "text": "Wenner-Gren Foundation Postdoctoral Fellowship (to T.R.S.); W. M. Keck Foundation (to A.C.F.); Swedish Foundation for Strategic Research; the Swedish Research Council (project grant and URRC Linneaus center); KAW (RiboCORE); Hagbergs Foundation (to M.S.). Funding for open access charge: Swedish Research Council.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        },
+        {
+            "text": "Conflict of interest statement. None declared.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Summary of crystallographic data and refinement statistics\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1.: Location of residue C2498 in E. coli 23S rRNA. (A) Secondary structure of the central loop region of domain V of E. coli 23S rRNA based on pdb 2qam (14). Modifications found in wild-type E. coli 23S rRNA are shown in green. The 2\u2032O-methylcytosine 2498 is shown in red. An arrow indicates site of primer for extension analysis. (B). Structural surrounding of C2498 in the E. coli 70S ribosome (pdb 2qam (14)). The 2\u2032O position of C2498 is marked with an asterisk. The 570 region of domain II is shown in pale green, the 2031 region in pale cyan, the 2454 region in wheat and the 2498 region in light yellow. Helix 89 extends toward the bottom right in the figure.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: Primer extension analysis of in vitro methylation of C2498. Arrows denote stops at the nucleotide before Cm2498. (A) Recombinant RlmM modifies C2498 of IVT based on primer extension analysis. WT: 23S rRNA purified from wild-type E. coli; IVT: in vitro transcript of 23S rRNA; RlmM: IVT incubated with RlmM enzyme. U, A, C and G correspond to DNA sequencing lanes. (B) RlmM modifies C2498 of unmodified 23S rRNA domain V alone. Other labels as in A. (C) Time course of IVT methylation. Top: stars indicate bands used for comparing band intensities between lanes. Bottom: plot of modification time course. Intensity of the C2499 position at time 0 was subtracted from each time point.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: The overall structure of E. coli RlmM. (A) Cartoon representation showing the N-terminal THUMP domain with \u03b1-helices in blue and \u03b2-strands in orange and the C-terminal Rossmann-like MTase domain with \u03b1-helices in red and \u03b2-strands in yellow. (B) Topology diagram of E. coli RlmM, colored as in A.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: (A) Multiple sequence alignment of E. coli RlmM with seven gammaproteobacterial sequences of the RlmM family (image generated using ESPript (66)). Conserved residues are shown in white on red background and conservative substitutions are shown in red on white background. NCBI accession numbers: Escherichia coli (NP_417286.1), Salmonella enterica (NP_457375.1), Klebsiella pneumoniae (YP_002236829.1), Yersinia pestis (NP_670451.1), Haemophilus influenzae (YP_005179378.1), Shewanella putrefaciens (ADV53762.1), Pseudomonas aeruginosa (NP_250254.1), Xanthomonas oryzae (YP_452543.1). Motifs I\u2013IV, VI, VIII and X in the MTase domain (17) are indicated below the alignment. (B) Surface of RlmM colored according to sequence conservation using ConSurf (36). The color spectrum ranges from magenta (highest conservation) to cyan (lowest conservation). Orientation of top view as in Figure 3A. (C) Electrostatic surface potential of RlmM. The color spectrum ranges from deep red (\u20134 kT) to deep blue (+4 kT).",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5.: The THUMP domain of RlmM. (A) Overlay of the THUMP domain of RlmM (pink) with THUMP domains from Trm14 (pdb 3tm5, (40), green) and ThiI (pdb 2c5s (38), yellow). (B). THUMP domain of RlmM. (C) THUMP domain of Trm14. (D) THUMP domain of ThiI.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6.: Comparison of the RlmM MTase domain with homologues identified by the DALI search. (A) Structure-based sequence alignment of the RlmM MTase domain with YiiB from Lactococcus lactis (pdb 3opn), FlpA from Archaeoglobus fulgidus (pdb 1nt2 (47)), RrmJ from E. coli (pdb 1eiz (48)) and Nsp5 from Modoc virus (pdb 2wa2 (51)). \u03b1-helices (red background) and \u03b2-strands (yellow background) are labeled according to the RlmM MTase domain (numbers) and the consensus AdoMet-dependent MTases (letters). Strictly conserved residues are shown in deep-blue and similar residues in sky-blue. Residues forming the catalytic tetrad K-D-K-E/H are marked with an asterisk. The two-residue shift of the second catalytic K between RlmM, YiiB, FlpA and RrmJ & Nsp5 is indicated. The difference between FlpA and the other proteins in the fourth catalytic residue is highlighted. (B) Comparison of the second Lys of the catalytic tetrad in superposed structures of MTase domains of RlmM, FlpA, YiiB and RrmJ. RlmM is shown in grey. K306 in RlmM (pink), K157 in YiiB (cyan), K162 (green) and K182 (yellow) in FlpA exhibit a two-residue shift of the second lysine relative to K164 in RrmJ (salmon). The C\u03b1 atoms of the lysines are shown as spheres. In FlpA, the side chain of K162 (green) moves to the orientation of K182 (yellow) when bound to substrate RNA. (C) The AdoMet-binding site in RlmM. The simulated annealing Fo\u2013Fc omit map of AdoMet is contoured at 2.0 \u03c3. AdoMet is shown in yellow and the interacting residues are shown in grey and colored by atom type. Waters are shown as red spheres and hydrogen bonds as dotted lines.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7.: RlmM has an unusually open AdoMet-binding pocket. (A) Cartoon representation of the structural superposition of the AdoMet complexes of related MTase domains. Helices \u03b1B, \u03b1C and \u03b1D of the different structures are colored according to the respective structure: RlmM (pink), YiiB (yellow), FlpA (cyan), RrmJ (green) and Nsp5 (blue). (B\u2013E) AdoMet-binding site in the MTase domains. AdoMet is shown in yellow and the MTase domains in partially transparent surface representation. (B) RlmM. (C) FlpA. (D) RrmJ. (E) Nsp5.",
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Figure 8.: RlmM displays a novel orientation between the THUMP domain and the MTase domain. RlmM (A) and Trm14 (pdb 3tm5 (40), B) were superposed based on the N-terminal THUMP domain (left) and shown side by side. The Rossmann-like fold MTase domain of RlmM displays a 90\u00b0 rotation relative to the equivalent domain of Trm14. The conserved, putative RNA-binding surface of RlmM is visible in the bottom view, while the putative RNA-binding surface of Trm14 is visible in the top view (40).",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Expanding the nucleotide repertoire of the ribosome with post-transcriptional modifications",
+            "authors": [
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Chow",
+                    "suffix": ""
+                },
+                {
+                    "first": "TN",
+                    "middle": [],
+                    "last": "Lamichhane",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Mahto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "ACS Chem. Biol.",
+            "volume": "2",
+            "issn": "",
+            "pages": "610-619",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "The chemistry of peptidyltransferase center-targeted antibiotics: enzymatic resistance and approaches to countering resistance",
+            "authors": [
+                {
+                    "first": "KP",
+                    "middle": [],
+                    "last": "McCusker",
+                    "suffix": ""
+                },
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Fujimori",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "ACS Chem. Biol.",
+            "volume": "7",
+            "issn": "",
+            "pages": "64-72",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "The ribosomal peptidyl transferase center: structure, function, evolution, inhibition",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Polacek",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Mankin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Crit. Rev. Biochem. Mol. Biol.",
+            "volume": "40",
+            "issn": "",
+            "pages": "285-311",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "The Cfr rRNA methyltransferase confers resistance to Phenicols, Lincosamides, Oxazolidinones, Pleuromutilins, and Streptogramin A antibiotics",
+            "authors": [
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Long",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Poehlsgaard",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Kehrenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Schwarz",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Vester",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Antimicrob. Agents Chemother.",
+            "volume": "50",
+            "issn": "",
+            "pages": "2500-2505",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "An indigenous posttranscriptional modification in the ribosomal peptidyl transferase center confers resistance to an array of protein synthesis inhibitors",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Toh",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Mankin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Mol. Biol.",
+            "volume": "380",
+            "issn": "",
+            "pages": "593-597",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Structural basis for aminoglycoside inhibition of bacterial ribosome recycling",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Borovinskaya",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Pai",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Schuwirth",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Holton",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Hirokawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kaji",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kaji",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Cate",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat. Struct. Mol. Biol.",
+            "volume": "14",
+            "issn": "",
+            "pages": "727-732",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Structure of the 70S ribosome complexed with mRNA and tRNA",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Selmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Dunham",
+                    "suffix": ""
+                },
+                {
+                    "first": "FVt",
+                    "middle": [],
+                    "last": "Murphy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Weixlbaumer",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Petry",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Kelley",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Weir",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Ramakrishnan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "313",
+            "issn": "",
+            "pages": "1935-1942",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Structural basis for the interaction of antibiotics with the peptidyl transferase centre in eubacteria",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Schlunzen",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Zarivach",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Harms",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bashan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tocilj",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Albrecht",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Yonath",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Franceschi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "413",
+            "issn": "",
+            "pages": "814-821",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "An RNA cap (nucleoside-2\u2032-O-)-methyltransferase in the flavivirus RNA polymerase NS5: crystal structure and functional characterization",
+            "authors": [
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Egloff",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Benarroch",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Selisko",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Romette",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Canard",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "EMBO J.",
+            "volume": "21",
+            "issn": "",
+            "pages": "2757-2768",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Subribosomal particle analysis reveals the stages of bacterial ribosome assembly at which rRNA nucleotides are modified",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Siibak",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Remme",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "RNA",
+            "volume": "16",
+            "issn": "",
+            "pages": "2023-2032",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Cloning, in vitro transcription, and biological activity of Escherichia coli 23S ribosomal RNA",
+            "authors": [
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Weitzmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Cunningham",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ofengand",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Nucleic Acids Res.",
+            "volume": "18",
+            "issn": "",
+            "pages": "3515-3520",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Modifications of ribosomal RNA: From enzymes to function",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Sergiev",
+                    "suffix": ""
+                },
+                {
+                    "first": "AY",
+                    "middle": [],
+                    "last": "Golovina",
+                    "suffix": ""
+                },
+                {
+                    "first": "IV",
+                    "middle": [],
+                    "last": "Prokhorova",
+                    "suffix": ""
+                },
+                {
+                    "first": "OV",
+                    "middle": [],
+                    "last": "Sergeeva",
+                    "suffix": ""
+                },
+                {
+                    "first": "IA",
+                    "middle": [],
+                    "last": "Osterman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MV",
+                    "middle": [],
+                    "last": "Nesterchuk",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Burakovsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Bogdanov",
+                    "suffix": ""
+                },
+                {
+                    "first": "OA",
+                    "middle": [],
+                    "last": "Dontsova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Ribosomes Structure, Function, and Dynamics",
+            "volume": "",
+            "issn": "",
+            "pages": "97-110",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Construction of Escherichia coli K-12 in-frame, single-gene knockout mutants: the Keio collection",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Baba",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ara",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hasegawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Takai",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Okumura",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Baba",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Datsenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Tomita",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Wanner",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Mori",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mol. Syst. Biol.",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Complete set of ORF clones of Escherichia coli ASKA library (a complete set of E. coli K-12 ORF archive): unique resources for biological research",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kitagawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ara",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Arifuzzaman",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ioka-Nakamichi",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Inamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Toyonaga",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Mori",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "DNA Res.",
+            "volume": "12",
+            "issn": "",
+            "pages": "291-299",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "The use of differential scanning fluorimetry to detect ligand interactions that promote protein stability",
+            "authors": [
+                {
+                    "first": "FH",
+                    "middle": [],
+                    "last": "Niesen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Berglund",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Vedadi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat. Protoc.",
+            "volume": "2",
+            "issn": "",
+            "pages": "2212-2221",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "The methyltransferase YfgB/RlmN is responsible for modification of adenosine 2503 in 23S rRNA",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Toh",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Xiong",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Bae",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Mankin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "RNA",
+            "volume": "14",
+            "issn": "",
+            "pages": "98-106",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Structural analysis of RNA using chemical and enzymatic probing monitored by primer extension",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Stern",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Moazed",
+                    "suffix": ""
+                },
+                {
+                    "first": "HF",
+                    "middle": [],
+                    "last": "Noller",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Methods Enzymol.",
+            "volume": "164",
+            "issn": "",
+            "pages": "481-489",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Xds",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Kabsch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Acta Crystallogr. D Biol. Crystallogr.",
+            "volume": "66",
+            "issn": "",
+            "pages": "125-132",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "PHENIX: a comprehensive Python-based system for macromolecular structure solution",
+            "authors": [
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Adams",
+                    "suffix": ""
+                },
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Afonine",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bunkoczi",
+                    "suffix": ""
+                },
+                {
+                    "first": "VB",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "IW",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Echols",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Headd",
+                    "suffix": ""
+                },
+                {
+                    "first": "LW",
+                    "middle": [],
+                    "last": "Hung",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Kapral",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Grosse-Kunstleve",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Acta Crystallogr. D Biol. Crystallogr.",
+            "volume": "66",
+            "issn": "",
+            "pages": "213-221",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Features and development of Coot",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Emsley",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Lohkamp",
+                    "suffix": ""
+                },
+                {
+                    "first": "WG",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Cowtan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Acta Crystallogr. D Biol. Crystallogr.",
+            "volume": "66",
+            "issn": "",
+            "pages": "486-501",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Phaser crystallographic software",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "McCoy",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Grosse-Kunstleve",
+                    "suffix": ""
+                },
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Adams",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Winn",
+                    "suffix": ""
+                },
+                {
+                    "first": "LC",
+                    "middle": [],
+                    "last": "Storoni",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Read",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Appl. Crystallogr.",
+            "volume": "40",
+            "issn": "",
+            "pages": "658-674",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "MolProbity: all-atom structure validation for macromolecular crystallography",
+            "authors": [
+                {
+                    "first": "VB",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "WB",
+                    "middle": [],
+                    "last": "Arendall",
+                    "suffix": "3rd"
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Headd",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Keedy",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Immormino",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Kapral",
+                    "suffix": ""
+                },
+                {
+                    "first": "LW",
+                    "middle": [],
+                    "last": "Murray",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Richardson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Richardson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Acta Crystallogr. D Biol. Crystallogr.",
+            "volume": "66",
+            "issn": "",
+            "pages": "12-21",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Identification of 5-hydroxycytidine at position 2501 concludes characterization of modified nucleotides in E. coli 23S rRNA",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Havelund",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Giessing",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rasmussen",
+                    "suffix": ""
+                },
+                {
+                    "first": "LG",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Kirpekar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Mol. Biol.",
+            "volume": "411",
+            "issn": "",
+            "pages": "529-536",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Clustal W and Clustal X version 2.0",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Larkin",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Blackshields",
+                    "suffix": ""
+                },
+                {
+                    "first": "NP",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Chenna",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "McGettigan",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "McWilliam",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Valentin",
+                    "suffix": ""
+                },
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Wallace",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wilm",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lopez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Bioinformatics",
+            "volume": "23",
+            "issn": "",
+            "pages": "2947-2948",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Classical and novel approaches to the detection and localization of the numerous modified nucleotides in eukaryotic ribosomal RNA",
+            "authors": [
+                {
+                    "first": "BE",
+                    "middle": [],
+                    "last": "Maden",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Corbett",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Heeney",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Pugh",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Ajuh",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Biochimie.",
+            "volume": "77",
+            "issn": "",
+            "pages": "22-29",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Methylation sites in Escherichia coli ribosomal RNA: localization and identification of four new sites of methylation in 23S rRNA",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Cooperman",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Mitchell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Biochemistry",
+            "volume": "31",
+            "issn": "",
+            "pages": "10825-10834",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Characterization of the 23 S ribosomal RNA m5U1939 methyltransferase from Escherichia coli",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Agarwalla",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Kealey",
+                    "suffix": ""
+                },
+                {
+                    "first": "DV",
+                    "middle": [],
+                    "last": "Santi",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Stroud",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J. Biol. Chem.",
+            "volume": "277",
+            "issn": "",
+            "pages": "8835-8840",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Base methylations in the double-stranded RNA by a fused methyltransferase bearing unwinding activity",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kimura",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ikeuchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kitahara",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Sakaguchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Suzuki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res.",
+            "volume": "40",
+            "issn": "",
+            "pages": "4071-4085",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Dali server: conservation mapping in 3D",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Holm",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Rosenstrom",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nucleic Acids Res.",
+            "volume": "38",
+            "issn": "",
+            "pages": "W545-W549",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "ConSurf 2010: calculating evolutionary conservation in sequence and structure of proteins and nucleic acids",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ashkenazy",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Erez",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Martz",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Pupko",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Ben-Tal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nucleic Acids Res.",
+            "volume": "38",
+            "issn": "",
+            "pages": "W529-W533",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "THUMP\u2014a predicted RNA-binding domain shared by 4-thiouridine, pseudouridine synthases and RNA methylases",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Aravind",
+                    "suffix": ""
+                },
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Trends Biochem. Sci.",
+            "volume": "26",
+            "issn": "",
+            "pages": "215-217",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Crystal structure of Bacillus anthracis ThiI, a tRNA-modifying enzyme containing the predicted RNA-binding THUMP domain",
+            "authors": [
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Waterman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ortiz-Lombardia",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Fogg",
+                    "suffix": ""
+                },
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Antson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Mol. Biol.",
+            "volume": "356",
+            "issn": "",
+            "pages": "97-110",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Crystal structure of human Pus10, a novel pseudouridine synthase",
+            "authors": [
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "McCleverty",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hornsby",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Spraggon",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kreusch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Mol. Biol.",
+            "volume": "373",
+            "issn": "",
+            "pages": "1243-1254",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "In vitro synthesis of 16S ribosomal RNA containing single base changes and assembly into a functional 30S ribosome",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Krzyzosiak",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Denman",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Nurse",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Hellmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Boublik",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Gehrke",
+                    "suffix": ""
+                },
+                {
+                    "first": "PF",
+                    "middle": [],
+                    "last": "Agris",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ofengand",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Biochemistry",
+            "volume": "26",
+            "issn": "",
+            "pages": "2353-2364",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Crystal structures of the tRNA:m2G6 methyltransferase Trm14/TrmN from two domains of life",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Fislage",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Roovers",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Tuszynska",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Bujnicki",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Droogmans",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Versees",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids. Res.",
+            "volume": "40",
+            "issn": "",
+            "pages": "5149-5161",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Structure of the bifunctional methyltransferase YcbY (RlmKL) that adds the m7G2069 and m2G2445 modifications in Escherichia coli 23S rRNA",
+            "authors": [
+                {
+                    "first": "KT",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Desmolaize",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Nan",
+                    "suffix": ""
+                },
+                {
+                    "first": "XW",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "LF",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Douthwaite",
+                    "suffix": ""
+                },
+                {
+                    "first": "XD",
+                    "middle": [],
+                    "last": "Su",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res.",
+            "volume": "40",
+            "issn": "",
+            "pages": "5138-5148",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "A cytidine deaminase edits C to U in transfer RNAs in Archaea",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Randau",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Stanley",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kohlway",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Mechta",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Xiong",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Soll",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Science",
+            "volume": "324",
+            "issn": "",
+            "pages": "657-659",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "The Saccharomyces cerevisiae TAN1 gene is required for N4-acetylcytidine formation in tRNA",
+            "authors": [
+                {
+                    "first": "MJO",
+                    "middle": [],
+                    "last": "Johansson",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Bystrom",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "RNA",
+            "volume": "10",
+            "issn": "",
+            "pages": "712-719",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "AdoMet-dependent methylation, DNA methyltransferases and base flipping",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nucleic Acids Res.",
+            "volume": "29",
+            "issn": "",
+            "pages": "3784-3795",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Structure-guided analysis reveals nine sequence motifs conserved among DNA amino-methyltransferases, and suggests a catalytic mechanism for these enzymes",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Malone",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Blumenthal",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "J. Mol. Biol.",
+            "volume": "253",
+            "issn": "",
+            "pages": "618-632",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Active site in RrmJ, a heat shock-induced methyltransferase",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hager",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Staker",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Bugl",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Jakob",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J. Biol. Chem.",
+            "volume": "277",
+            "issn": "",
+            "pages": "41978-41986",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Structure and function of archaeal box C/D sRNP core proteins",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Aittaleb",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rashid",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Palmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Daniels",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nat. Struct. Biol.",
+            "volume": "10",
+            "issn": "",
+            "pages": "256-263",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "RNA methylation under heat shock control",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Bugl",
+                    "suffix": ""
+                },
+                {
+                    "first": "EB",
+                    "middle": [],
+                    "last": "Fauman",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Staker",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Kushner",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Saper",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Bardwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Jakob",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Mol. Cell.",
+            "volume": "6",
+            "issn": "",
+            "pages": "349-360",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "The 2.2 A structure of the rRNA methyltransferase ErmC' and its complexes with cofactor and cofactor analogs: implications for the reaction mechanism",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Schluckebier",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Zhong",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Stewart",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Kavanaugh",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Abad-Zapatero",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J. Mol. Biol.",
+            "volume": "289",
+            "issn": "",
+            "pages": "277-291",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Reassembly of active 30S ribosomal subunits with an unmethylated in vitro transcribed 16S rRNA",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Melancon",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gravel",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Boileau",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Brakier-Gingras",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Biochem. Cell Biol.",
+            "volume": "65",
+            "issn": "",
+            "pages": "1022-1030",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Crystal structure of KsgA, a universally conserved rRNA adenine dimethyltransferase in Escherichia coli",
+            "authors": [
+                {
+                    "first": "HC",
+                    "middle": [],
+                    "last": "O'Farrell",
+                    "suffix": ""
+                },
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Scarsdale",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Rife",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Mol. Biol.",
+            "volume": "339",
+            "issn": "",
+            "pages": "337-353",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Structure of the methyltransferase domain from the Modoc virus, a flavivirus with no known vector",
+            "authors": [
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Jansson",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Jakobsson",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Johansson",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Lantez",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Coutard",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "de Lamballerie",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Unge",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Acta Crystallogr. D Biol. Crystallogr.",
+            "volume": "65",
+            "issn": "",
+            "pages": "796-803",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Molecular phylogenetics of the RrmJ/fibrillarin superfamily of ribose 2'-O-methyltransferases",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Feder",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Pas",
+                    "suffix": ""
+                },
+                {
+                    "first": "LS",
+                    "middle": [],
+                    "last": "Wyrwicz",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Bujnicki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Gene",
+            "volume": "302",
+            "issn": "",
+            "pages": "129-138",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Structural basis for site-specific ribose methylation by box C/D RNA protein complexes",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Jia",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Ye",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nature",
+            "volume": "469",
+            "issn": "",
+            "pages": "559-563",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Capreomycin binds across the ribosomal subunit interface using tlyA-encoded 2'-O-methylations in 16S and 23S rRNAs",
+            "authors": [
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Johansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Maus",
+                    "suffix": ""
+                },
+                {
+                    "first": "BB",
+                    "middle": [],
+                    "last": "Plikaytis",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Douthwaite",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mol. Cell.",
+            "volume": "23",
+            "issn": "",
+            "pages": "173-182",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Molecular characterization of tlyA gene product, Rv1694 of Mycobacterium tuberculosis: a non-conventional hemolysin and a ribosomal RNA methyl transferase",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rahman",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Srivastava",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sneh",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Ahmed",
+                    "suffix": ""
+                },
+                {
+                    "first": "MV",
+                    "middle": [],
+                    "last": "Krishnasastry",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "BMC Biochem",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Mycobacterium tuberculosis can utilize heme as an iron source",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Niederweis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Bacteriol.",
+            "volume": "193",
+            "issn": "",
+            "pages": "1767-1770",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Molecular modeling and in silico characterization of Mycobacterium tuberculosis TlyA: possible misannotation of this tubercle bacilli-hemolysin",
+            "authors": [
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Arenas",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Salazar",
+                    "suffix": ""
+                },
+                {
+                    "first": "CY",
+                    "middle": [],
+                    "last": "Soto",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Vizcaino",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Patarroyo",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Patarroyo",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gomez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "BMC Struct. Biol.",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Plasticity of enzyme active sites",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Todd",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Orengo",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Thornton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Trends Biochem. Sci.",
+            "volume": "27",
+            "issn": "",
+            "pages": "419-426",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Flavivirus RNA cap methyltransferase: structure, function, and inhibition",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ling",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Front Biol.",
+            "volume": "5",
+            "issn": "",
+            "pages": "286-303",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "In vitro complementation analysis localizes 23S rRNA posttranscriptional modifications that are required for Escherichia coli 50S ribosomal subunit assembly and function",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "HF",
+                    "middle": [],
+                    "last": "Noller",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "RNA",
+            "volume": "2",
+            "issn": "",
+            "pages": "1011-1021",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Structural and thermodynamic evidence for a stabilizing role of Nop5p in S-adenosyl-L-methionine binding to fibrillarin",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Aittaleb",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Visone",
+                    "suffix": ""
+                },
+                {
+                    "first": "MO",
+                    "middle": [],
+                    "last": "Fenley",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Biol. Chem.",
+            "volume": "279",
+            "issn": "",
+            "pages": "41822-41829",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Biochemical and structural insights into the mechanisms of SARS coronavirus RNA ribose 2'-O-methylation by nsp16/nsp10 protein complex",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Su",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ke",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Jin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Tien",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS Pathog.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Structural basis for binding of RNA and cofactor by a KsgA methyltransferase",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Tu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Tropea",
+                    "suffix": ""
+                },
+                {
+                    "first": "BP",
+                    "middle": [],
+                    "last": "Austin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Court",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Waugh",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Ji",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Structure",
+            "volume": "17",
+            "issn": "",
+            "pages": "374-385",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "RlmN and Cfr are radical SAM enzymes involved in methylation of ribosomal RNA",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "LaMarre",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rohrich",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wiesner",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Jomaa",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Mankin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Fujimori",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "132",
+            "issn": "",
+            "pages": "3953-3964",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "A new mechanism for chloramphenicol, florfenicol and clindamycin resistance: methylation of 23S ribosomal RNA at A2503",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Kehrenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Schwarz",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Jacobsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "LH",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Vester",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Mol. Microbiol.",
+            "volume": "57",
+            "issn": "",
+            "pages": "1064-1073",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Identification of 8-methyladenosine as the modification catalyzed by the radical SAM methyltransferase Cfr that confers antibiotic resistance in bacteria",
+            "authors": [
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Giessing",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Jensen",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rasmussen",
+                    "suffix": ""
+                },
+                {
+                    "first": "LH",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gondela",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Long",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Vester",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Kirpekar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "RNA",
+            "volume": "15",
+            "issn": "",
+            "pages": "327-336",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "ESPript: analysis of multiple sequence alignments in PostScript",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Gouet",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Courcelle",
+                    "suffix": ""
+                },
+                {
+                    "first": "DI",
+                    "middle": [],
+                    "last": "Stuart",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Metoz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Bioinformatics",
+            "volume": "15",
+            "issn": "",
+            "pages": "305-308",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Isolation of mutants of Escherichia coli lac king 5-methyluracil in transfer ribonucleic acid or 1-methylguanine in ribosomal RNA",
+            "authors": [
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Bjork",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Isaksson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1970,
+            "venue": "J. Mol. Biol.",
+            "volume": "51",
+            "issn": "",
+            "pages": "83-100",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "Identification of two Escherichia coli pseudouridine synthases that show multisite specificity for 23S RNA",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ku",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pookanjanatavip",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Gu",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Greene",
+                    "suffix": ""
+                },
+                {
+                    "first": "DV",
+                    "middle": [],
+                    "last": "Santi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Biochemistry",
+            "volume": "37",
+            "issn": "",
+            "pages": "15951-15957",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "YgdE is the 2\u2032-O-ribose methyltransferase RlmM specific for nucleotide C2498 in bacterial 23S rRNA",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Purta",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "O'Connor",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Bujnicki",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Douthwaite",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Mol. Microbiol.",
+            "volume": "72",
+            "issn": "",
+            "pages": "1147-1158",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

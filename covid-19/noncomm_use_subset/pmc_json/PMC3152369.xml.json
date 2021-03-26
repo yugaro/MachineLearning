@@ -1,0 +1,2106 @@
+{
+    "paper_id": "PMC3152369",
+    "metadata": {
+        "title": "A rapid, inexpensive yeast-based dual-fluorescence assay of programmed\u20141 ribosomal frameshifting for high-throughput screening",
+        "authors": [
+            {
+                "first": "Rasa",
+                "middle": [],
+                "last": "Rakauskait\u0117",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Pei-Yu",
+                "middle": [],
+                "last": "Liao",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Michael",
+                "middle": [
+                    "H.",
+                    "J."
+                ],
+                "last": "Rhodin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Kelvin",
+                "middle": [],
+                "last": "Lee",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jonathan",
+                "middle": [
+                    "D."
+                ],
+                "last": "Dinman",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Programmed \u22121 ribosomal frameshifting (\u22121 PRF) is a mechanism by which cis-acting elements in an mRNA can direct elongating ribosomes to shift reading frame by 1 base in the 5\u2032 direction (1\u20133). Many RNA viruses utilize \u22121 PRF, including most Retroviruses, Coronaviruses, Flaviviruses and Totiviruses. In Retroviruses and Totiviruses, the open reading frame (ORF) encoding the major viral nucleocapsid proteins (e.g. Gag) is located at the 5\u2032-end of the mRNA whereas the ORFs encoding proteins with enzymatic functions (typically Pro and Pol) are located 3\u2032 of, and out of frame with, the Gag ORF. The mRNAs transcribed from these viral templates contain two overlapping ORFs. The enzymatic proteins are only translated as a result of a programmed ribosomal frameshift event that occurs with an efficiency of 1\u201340% depending on the specific virus and assay system employed (4). Thus, the majority of translational events result in the production of the Gag protein, while a minority of frameshifts yield viral enzymatic proteins. The ratio of Gag to Gag-pol synthesized in viruses as a consequence of programmed frameshifting varies between a narrow window of 20:1 to 60:1 (2). In Coronaviruses and Flaviviruses, frameshift events occur over a wider dynamic range to regulate the relative ratios of non-structural proteins (5\u20137).",
+            "cite_spans": [
+                {
+                    "start": 188,
+                    "end": 191,
+                    "mention": "1\u20133",
+                    "ref_id": null
+                },
+                {
+                    "start": 873,
+                    "end": 874,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1173,
+                    "end": 1174,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1323,
+                    "end": 1326,
+                    "mention": "5\u20137",
+                    "ref_id": null
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The importance of maintaining precise ratios of viral proteins on virus propagation has been demonstrated in Retroviruses, Coronaviruses, Flavivriuses and in two endogenous viruses of the yeast Saccharomyces cerevisiae (5\u20138). Starting with the yeast \u2018killer\u2019 virus, we have extensively documented that small alterations in programmed frameshifting efficiencies promote rapid loss of the yeast dsRNA L-A \u2018killer\u2019 virus (9\u201320). In L-A, Gag-pol dimerization nucleates formation of the virus particle (21\u201324). Increasing the amount of Gag-pol protein synthesized may cause too many particles to initiate non-productively while producing too little may prevent efficient dimerization (9). Similarly, increasing or decreasing the efficiency of the +1 ribosomal frameshift in the Ty1 retrotransposable element of yeast results in reduced retrotransposition frequencies (11,17,25\u201330). Proteolytic processing of the TyA-TyB (Gag-pol equivalent) polyprotein of Ty1 is analogous to Gag-pol processing in retroviruses. In Ty1, increasing the amount of Gag-pol protein synthesized inhibited proteolytic processing of the polyprotein (25). As a consequence, formation of the mature forms of RNase H, integrase and reverse transcriptase is blocked (25). Similarly, changing the ratio of Gag to Gag-pol proteins in retroviruses like HIV or Moloney Murine Leukemia Virus interferes with virus-particle formation (31\u201336). In these cases, over-expression of the Gag-pol protein results in inefficient processing of the polyprotein and inhibition of virus production. Although the products produced by \u22121 PRF are different in Coronaviruses and Flaviviruses, the consequences of changes in \u22121 PRF efficiency are similar: in Coronaviruses, small changes in \u22121 PRF negatively impact on production of infectious virus (7), while in the Japanese encephalitis flavivirus, changes in \u22121 PRF are important for neuroinvasiveness (5). In sum, viral PRF efficiencies have been finely tuned to deliver the precise ratios of proteins required for efficient viral particle assembly: too much or too little frameshifting alters this ratio, with detrimental consequences.",
+            "cite_spans": [
+                {
+                    "start": 220,
+                    "end": 223,
+                    "mention": "5\u20138",
+                    "ref_id": null
+                },
+                {
+                    "start": 419,
+                    "end": 423,
+                    "mention": "9\u201320",
+                    "ref_id": null
+                },
+                {
+                    "start": 498,
+                    "end": 503,
+                    "mention": "21\u201324",
+                    "ref_id": null
+                },
+                {
+                    "start": 680,
+                    "end": 681,
+                    "mention": "9",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 863,
+                    "end": 865,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 866,
+                    "end": 868,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 869,
+                    "end": 874,
+                    "mention": "25\u201330",
+                    "ref_id": null
+                },
+                {
+                    "start": 1121,
+                    "end": 1123,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1234,
+                    "end": 1236,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1396,
+                    "end": 1401,
+                    "mention": "31\u201336",
+                    "ref_id": null
+                },
+                {
+                    "start": 1795,
+                    "end": 1796,
+                    "mention": "7",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 1901,
+                    "end": 1902,
+                    "mention": "5",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Based on these studies, it has been proposed that \u22121 PRF presents a novel target for prevention of viral propagation (8). To this end, development of simple, cost effective assay systems would hasten identification of therapeutic agents that target this molecular mechanism. A number of quantitative assays have been employed to monitor \u22121 PRF. Cell free in vitro translation assays have the advantage of directly monitoring product formation, providing accurate readouts of the amounts and molecular weights of frameshift products. However, direct product monitoring presents numerous roadblocks to high-throughput screening (HTS) applications including the requirement for in vitro translation systems and radioactive labeling, the relatively small amount of products and the requirement for multiple secondary processing steps including SDS-PAGE, autoradiography, and/or immunoprecipitation. Mass spectrophotometric methods, while highly accurate, are also problematic for the same reasons. Enzymatic assays have been the preferred route, as they can be performed in either live cells or cell extracts, they do not require direct monitoring of the frameshift products, and they do not require use of radioactive materials or extensive handling. The first such assays employing monocistronic reporter systems were confounded by effects on reporter mRNA stability, producing false positive results; this was corrected by development of dual-reporter constructs which internally control for effects on mRNA stability and differences in rates of transcription (37\u201339). These second generation systems utilize lacZ and/or luciferases as reporter enzymes, which poses two drawbacks with regard to their utility in high-throughput screens: they require numerous manipulation steps, and they are not cost-effective. More recently, a mammalian cell in vivo dual-fluorescent protein-based system was described that enables rapid and accurate screening of compounds without the requirement for labor-intensive manipulations and expensive reagents (40). However the costs associated with producing and maintaining reporter cells using this system remain prohibitive. Here, we describe the development of a yeast-based dual-fluorescence system that can accurately detect even very slight changes in \u22121 PRF caused by mutations and drugs. This single plate assay is rapid, inexpensive and amenable to HTS applications.",
+            "cite_spans": [
+                {
+                    "start": 118,
+                    "end": 119,
+                    "mention": "8",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1560,
+                    "end": 1565,
+                    "mention": "37\u201339",
+                    "ref_id": null
+                },
+                {
+                    "start": 2040,
+                    "end": 2042,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "JD932 (MATa ade 2-1 trp1-1 ura3-1 leu2-3, 112 his3-11, 15 can1-100) was used for anisomycin studies. The wild-type L11 yeast strain was JD1381 (MAT\u03b1 ura3-52 leu2\u03941 trp1\u039463 his3\u0394200 rpl11a::HIS3 rpl11b::HIS3 + YCpRPL11B-TRP1). Isogenic rpl11 mutant strains were based on JD1381, but contained low copy TRP1-CEN6-based plasmids expressing mutant versions of ribosomal protein L11. These were: JD1382 (rpl11-Y52\u0394), and JD1433 (rpl11-92-6A). All dual fluorescence plasmids used in this study were based on pRS426 (41), a high copy 2\u00b5, URA3 vector. Transcription was directed from a yeast G6PD promoter into the monomeric Ds-Red ORF followed by the EGFP ORF reporter mRNAs. In pJD0980, the Ds-Red ORF was followed by the yeast L-A virus derived \u22121 PRF signal, which was in turn followed by the EGFP ORF, which was in the \u22121 reading frame relative to Ds-Red, so that synthesis of EGFP protein was contingent upon a \u22121 PRF event. pJD0981 was the same as pJD0980 except that one nucleotide was inserted immediately 5\u2032 of the L-A \u22121 PRF signal, inactivating the \u22121 PRF signal and placing the EGFP ORF in the same frame as Ds-Red: this was used as the 0-frame control). Similarly, pJD1197 harbored the HIV-1 M type -1 PRF signal with EGFP in the \u22121 frame, while and pJD1198 was used as the HIV-1 M type 0-frame control. pJD0395 (a.k.a. pRS426) was used as the empty vector control.",
+            "cite_spans": [
+                {
+                    "start": 510,
+                    "end": 512,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Yeast strains and plasmids ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Yeast cells were transformed with empty vector plasmid (vector without fluorescence protein-coding sequences or frameshifting signal), control reporter plasmid (0-frame) and test reporter plasmid (\u22121 frame). Transformants were selected for on H-Ura plates for 3 days at 30\u00b0C. Colonies were transferred to 2 ml of liquid H-Ura medium and grown overnight in a 30\u00b0C shaker. Cultures were diluted 50-fold in H-Ura medium with or without 60 \u00b5g/ml anisomycin, mixed and aliquots of 150 \u00b5l were placed in 96-well plates. In the assays presented here, each reporter was represented by six replicates per plate per strain. The outer wells of each plate did not contain samples, but were filled instead with 150 \u00b5l of water to evenly account for evaporation and condensation rates among sample wells. Plates were covered with lids, sealed with parafilm and incubated in a Synergy HT microplate reader at 30\u00b0C for 46 h without shaking. Cell density was monitored by absorbance at 595 nm every 20 min over a period of 46 h. Simultaneously, green (excitation 485 nm, emission 530 nm) and red (excitation 550 nm, emission 640 nm) fluorescence readings were taken.",
+            "cite_spans": [],
+            "section": "Dual fluorescence assay ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "\u22121 PRF (FS%) was calculated as follows:\n\nwhere G is the green fluorescence for yeast transformed with test or control vector; Gev is green fluorescence for yeast transformed with empty vector; R is red fluorescence for yeast transformed with test or control vector; Rev is red fluorescence for yeast transformed with empty vector; OD is the optical density of cells transformed with reporter plasmid, and ODev is optical density of cells transformed with empty vector.",
+            "cite_spans": [],
+            "section": "Dual fluorescence assay ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Yeast were transformed with the Renilla-firefly dual luciferase control and test plasmids: pJD0419 (L-A 0 frame control), pJD420 (L-A \u22121 PRF tester), pJD0375 (HIV 0 frame control) and pJD0378 (HIV \u22121 PRF tester) (39). Yeast were plated onto selective media for 3 days and then transferred to 4 ml of selective media with or without 60 \u00b5g/ml anisomycin. Cells were incubated overnight in a 30\u00b0C shaker till mid-logarithmic growth at an OD595 of 0.6\u20131.5. Yeast were washed three times and lysed with PBS plus 1 mM PMSF using 0.5 mm glass beads and a bead beater followed by centrifugation to clarify the lysate. Each strain was measured seven times for each reporter by sequentially mixing 10 \u00b5l of lysate with 50 \u00b5l of Promega\u2019s LARII reagent followed by 50 \u00b5l of Stop and Glo dual luciferase reagent, quantifying each step using a 96-well plate-reading Turner BioSystems Modulus microplate luminometer. Assays of \u22121 PRF and statistical analyses were performed as previously described (42).",
+            "cite_spans": [
+                {
+                    "start": 213,
+                    "end": 215,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 985,
+                    "end": 987,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Dual luciferase assays ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "While the dual luciferase reporters are excellent for monitoring \u22121 PRF in small numbers of samples, there are three reasons why it is not particularly amenable for HTS applications. The first is cost: each sample costs approximately $2 ($1 each for test and control). Second, it is labor and time intensive: cells have to be lysed and cleared, lysates have to be spectrophotometrically read and normalized for protein content and two sets of reagents have to be sequentially introduced into lysates and read. With these limitations in mind, we developed a dual-fluorescent \u22121 PRF assay system for use in live yeast cells. A control reporter, in which monomeric Ds-Red and EGFP are in frame, provides baseline data (Figure 1A). In the frameshift reporter plasmid, EGFP production is dependent on \u22121 PRF, while Ds-Red serves as the internal control (Figure 1B). Figure 1C shows that high levels of Ds-Red and EGFP can be expressed using these vectors.\n",
+            "cite_spans": [],
+            "section": "A simple and inexpensive assay of \u22121 PRF in yeast ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 716,
+                    "end": 724,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 849,
+                    "end": 857,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 861,
+                    "end": 869,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Figure 2A shows a timecourse experiment monitoring HIV-1 promoted \u22121 PRF monitored every 20 min for a total of 46 h in the presence (pink traces) or absence (blue traces) of 60 \u00b5g/ml anisomycin, a drug that inhibits \u22121 PRF (13). Note that the signals were extremely noisy during the first \u223c12 h. This is likely due to a combination of two factors: low cell densities and the time-dependent requirement for the two reporter proteins to mature, especially in the low-oxygen environment of this assay. As the proteins matured and densities increased, frameshift efficiencies began to become discernable, tending to stabilize at \u223c30 h. At the 46-h endpoint, HIV-1 promoted \u22121 PRF efficiency in untreated cells leveled off at \u223c13%, a value that is comparable to \u22121 PRF measured using the dual luciferase reporter in yeast cells (39). Notably, this assay was also able to recapitulate the inhibitory effect of anisomycin, which promoted \u223c8% \u22121 PRF at the 46-h timepoint. Figure 2B shows a plot of the effects of anisomycin on \u22121 PRF as fold wild-type levels, demonstrating that this drug inhibits \u22121 PRF by \u223c40%, consistent with previous findings (13).\n",
+            "cite_spans": [
+                {
+                    "start": 224,
+                    "end": 226,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 824,
+                    "end": 826,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1142,
+                    "end": 1144,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "A simple and inexpensive assay of \u22121 PRF in yeast ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 965,
+                    "end": 973,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Next, we tested the ability of this system to identify changes in \u22121 PRF encoded by the yeast L-A virus \u22121 PRF signal due to either the presence of 60 \u00b5g/ml anisomycin or consequent to cellular mutations known to affect \u22121 PRF. Specifically, anisomycin and the yeast rpl11-92-96A mutant were expected to promote decreased rates of \u22121 PRF, while the rpl11-Y52\u0394 mutant was expected to promote increased \u22121 PRF (43, M.H.J. Rhodin and J.D. Dinman, unpublished data). Figure 3A shows a plot of \u22121 PRF (as fold wild-type) monitored every 20 min for 46 h. Again, the system was noisy for the first \u223c12 h and began to stabilize at \u223c30 h. Taking 46 h as the endpoint, Figure 3B shows that the system produced the expected results. Specifically, anisomycin inhibited both HIV-1 (data duplicated from Figure 2B) and L-A-mediated \u22121 PRF. Further, L-A-mediated \u22121 PRF was decreased in the rpl11-92-96A mutant, and it was increased in the rpl11-Y52\u0394 strain.\n",
+            "cite_spans": [
+                {
+                    "start": 409,
+                    "end": 411,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "A simple and inexpensive assay of \u22121 PRF in yeast ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 463,
+                    "end": 471,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 659,
+                    "end": 667,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 790,
+                    "end": 798,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The experiments were repeated using our previously described dual luciferase assay system (39) to compare the results obtained using the dual fluorescent reporter system. Side by side comparisons shown in Figure 3B demonstrate strong agreement between the two assay systems. These results match our previous findings for these conditions where 60 \u00b5g/ml anisomycin inhibited \u22121 PRF, rpl11-Y52\u0394 promoted increased \u22121 PRF and rpl11-92-6A promoted decreased \u22121 PRF. This independent validation underscores the potential for the less expensive and scalable dual fluorescence methodology to accurately detect changes in frameshifting.",
+            "cite_spans": [
+                {
+                    "start": 91,
+                    "end": 93,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "The dual-fluorescent reporter system recapitulates data obtained using a dual-luciferase reporter system ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 205,
+                    "end": 213,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The findings described here demonstrate the production of a robust and inexpensive assay that faithfully reproduces changes in \u22121 PRF due to cellular mutations and addition of drugs. An advantage to using the multiple well format is that it enables the data collected by the reader to be directly transferred into an excel spreadsheet, where \u22121 PRF rates are automatically calculated (42). Importantly, this software also determines standard errors, and flags samples with statistically significant Z-scores, rendering it ideal for HTS applications. Features inherent in the calculation of \u22121 PRF efficiency using the yeast-based in vivo dual-fluorescence assay also have two critical built in advantages with respect to counter screening. First, since the assay requires normalization of cell density by measuring OD595, this parameter can be used to monitor the effects of compounds on cell growth, that is, to flag potential cell toxicity. Second, since it requires normalization to an in-frame control, these measurements can be used to identify deleterious effects on overall protein synthesis.",
+            "cite_spans": [
+                {
+                    "start": 385,
+                    "end": 387,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "While we have only monitored \u22121 PRF from the L-A and HIV-1 frameshift signals, the modular nature of the reporter vectors renders insertion of \u22121 PRF signals from other human pathogenic viruses e.g. HTLV-I (Retrovirus family), SARS-CoV (Coronavirus family), the Semliki Forest virus (Alphavirus family) and the NS2A-coding sequences of Flaviruses such as Japanese encephalitis virus, Eastern equine encephalitis virus and West Nile virus quite simple. As we and others have empirically determined that even very small changes in \u22121 PRF have strongly deleterious effects on virus propagation [reviewed in (8)], we suggest that initial cut-offs be set at >1.2-fold and <0.8-fold of wild type. These liberal cut-off values allow for a higher rate of false positives rather than false negatives, thus allowing false positives to be identified later with secondary assays. In addition, this basic format should be amenable for assays of other translational recoding mechanisms, for example, +1 PRF and termination codon suppression.",
+            "cite_spans": [
+                {
+                    "start": 605,
+                    "end": 606,
+                    "mention": "8",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Once candidates are identified using this platform, secondary assays will be required to validate hits. Here we suggest two such assays. (i) Maintenance of the yeast \u2018killer\u2019 virus. We have shown that maintenance of this virus is critically dependent on \u22121 PRF, and have extensively used this property to validate changes in \u22121 PRF due to cellular mutations and drugs (8,44). Importantly, this assay provides an independent means to screen for antiviral effects of compounds that can be correlated with effects due to changes in \u22121 PRF. The killer assay involves replica-plating test cells onto a lawn of uninfected indicator yeast cells seeded onto 4.7 MB plates (yeast rich medium containing 0.5% methylene blue, pH 4.7). Cells are grown at 20\u00b0C for 4 days, and then visually inspected for the presence of a zone of growth inhibition due to production of the virus-encoded killer toxin. These assays are very simple and inexpensive, requiring only yeast cells, media and petri dishes. Currently, the dual fluorescence assay can screen up to 20 samples per 96-well plate if forgoing multiple replicates. Assuming initial identification of 500 compounds, these assays could be performed on as few as 25 plates when controls are included. The killer assay can be either performed manually (in the case of a few hits), or can be scaled up for high-throughput robotic screening. We believe that robotic technology currently used for high-throughput yeast 2-hybrid screens can be adapted to the killer assay. A potential disadvantage of this assay is that it may require serial passage of yeast cells to multiple rounds of drug exposure. For example, we have found that curing of killer by anisomycin requires at least two serial passages in the presence of this drug. Loss of the killer virus is further validated by extracting total RNA from cells, followed by non-denaturing 1.2% agarose gel electrophoresis, which detects the presence or absence of the viral dsRNA genome. (ii) Dual luciferase assays. In order to validate potential hits, \u22121 PRF values can be determined using both in vivo (live yeast cells and in HeLa cells), in vitro (rabbit reticulocyte lysates) dual-luciferase assays as previously described (39,45). These can be used to confirm the \u22121 PRF data obtained using dual-fluorescence reporters. The dual-luminescence assay as a secondary assay is also advantageous in that it enables identification of compounds that truly affect \u22121 PRF, as opposed to those that affect production or activity of the Ds-Red or EGFP reporter proteins. A further advantage of the in vitro assay is that it can identify compounds that directly affect \u22121 PRF as opposed to compounds that affect transcription of the reporter mRNAs.",
+            "cite_spans": [
+                {
+                    "start": 369,
+                    "end": 370,
+                    "mention": "8",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 371,
+                    "end": 373,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 2215,
+                    "end": 2217,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 2218,
+                    "end": 2220,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "There are a number of parameters that remain to be refined. One is automation, specifically plate seeding. In an industrial setting, this can easily be addressed using a robotic pipettor. Robotic pipetting can also solve the problem of interference of OD and fluorescence readings due to the presence of condensation on the plate lid at the end of the incubation period. Robotic transfer of cells to new plates just prior to reading will solve this problem. Data integrity is another problem that can be addressed by automation coupled with plate bar-coding, which will also assure that the worklist downloaded to the robot has 100% integrity. The data also have to be organized into a query-able format. However, the software that we developed to flag statistically significant Z-scores address this issue, and can also address the issue of operator bias. Process bottlenecks are also a common problem with HTS. In this case, the major bottleneck is the time required for maturation of the reporter proteins, hence the decision to take the 46 h endpoint. However, growth conditions may be further optimizable by incubating in a more humid and oxygenated environment, potentially reducing the time required for signal stabilization. Additionally, parallel processing of multiple plates can speed this process, rendering this bottleneck insignificant. For HTS, each plate must contain internal controls. We suggest that rpl11-Y52\u0394 mutant cells and rpl11-92-6A mutant cells or a sample containing anisomycin can be used as quality control for up- and down-frameshifting, respectively. Pooling is also commonly used in HTS. Although the idea is attractive, our experience is that this leads to mistakes, and we would recommend against this approach. Cell wall permeability is a common issue associated with yeast-based HTS because yeast cell walls are impermeable to many small molecules. However, yeast cells easily tolerate DMSO to concentrations of up to 0.8%. Thus, this reagent could be used to rectify this potential problem. Finally, most HTS technologies utilize 384 or 1536 well plates, and thus there are questions about ability to scale up this assay. However, there is a priori no reason for why scaling up to more wells will not work, although it is possible that scaling-up to higher density formats may present issues with oxygen transfer needed to support cell growth for this in vivo assay. Assuming this oxygen limitation is a problem, the incubator could easily be designed to increase the ambient oxygen content, thus mitigating any such problem.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Funding for open access charge: National Institutes of Health (grant R01 GM058859 to J.D.D.).",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        },
+        {
+            "text": "Conflict of interest statement. Preliminary disclosure documents have been filed with the University of Maryland and University of Delaware in pursuit of a patent application for this assay system.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1.: Dual-fluorescence reporter system. (A) Read-through control plasmid contains Ds-Red and EGFP ORFs. Note that insertion of one nucleotide 5\u2032 of the \u22121 PRF signal inactivates frameshifting, and places the EGFP ORF in frame with the Ds-Red ORF to produce the Ds-Red/EGFP fusion protein. (B) \u22121 PRF test plasmid is the same as the control plasmid except that the EGFP ORF is in the \u22121 frame with respect to the Ds-Red ORF. No frameshift results in production of Ds-Red only, while a frameshift event results in production of the Ds-Red/EGFP fusion protein. (C) Microscopic images of cells transformed with the control plasmid.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: (A) Time course assay of HIV-1-promoted \u22121 PRF in yeast cells in the presence or absence of 60 \u00b5g/ml anisomycin. Error bars indicate standard error. (B) The effect of 60 \u00b5g/ml anisomycin on HIV-1 \u22121 PRF determined as fold untreated cells.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: Effects of anisomycin and host cell mutants on HIV-1 and L-A promoted \u22121 PRF. (A) Time course assay. Wild-type cells harboring either HIV-1 or L-A \u22121 PRF reporters were treated with 60 \u00b5g/ml anisomycin. In parallel, isogenic rpl11 mutant strains were assayed using the L-A \u22121 PRF reporter. Data are normalized to no-drug or isogenic wild-type RPL11 cells. (B) Comparison of data obtained using dual fluorescence or dual luciferase reporters. Solid colored bars indicate 46-h endpoint measurements of \u22121 PRF expressed as fold wild-type or untreated cells. Striped bars represent fold wild-type results using dual luciferase reporter system for same cell types and testing conditions. Error bars indicate standard error.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Regulation of Termination and Recoding",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Berry",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Translational Control in Biology and Medicine",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Translational maintenance of frame: mutants of Saccharomyces cerevisiae with altered -1 ribosomal frameshifting efficiencies",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Genetics",
+            "volume": "136",
+            "issn": "",
+            "pages": "75-86",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "5S rRNA is involved in fidelity of translational reading frame",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Genetics",
+            "volume": "141",
+            "issn": "",
+            "pages": "95-105",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "mof4-1 is an allele of the UPF1/IFS2 gene which affects both mRNA turnover and -1 ribosomal frameshifting efficiency",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Cui",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Peltz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "EMBO J.",
+            "volume": "15",
+            "issn": "",
+            "pages": "5726-5736",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Peptidyl transferase inhibitors have antiviral properties by altering programmed -1 ribosomal frameshifting efficiencies: development of model systems",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Ruiz-Echevarria",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Czaplinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Peltz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "94",
+            "issn": "",
+            "pages": "6606-6611",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "The Upf3p is a component of the surveillance complex that monitors both translation and mRNA turnover and affects viral maintenance",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Ruiz-Echevarria",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Yasenchak",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Peltz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "95",
+            "issn": "",
+            "pages": "8721-8726",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "The Mof2/Sui1 protein is a general monitor of translational accuracy",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Cui",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Kinzy",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Peltz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Mol. Cell Biol.",
+            "volume": "18",
+            "issn": "",
+            "pages": "1506-1516",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Ribosomal protein L3 mutants alter translational fidelity and promote rapid loss of the yeast killer virus",
+            "authors": [
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Peltz",
+                    "suffix": ""
+                },
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Hammell",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Cui",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yasenchak",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Puljanowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Mol. Cell Biol.",
+            "volume": "19",
+            "issn": "",
+            "pages": "384-391",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Ribosomal protein L5 helps anchor peptidyl-tRNA to the P-site in Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meskauskas",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "RNA",
+            "volume": "7",
+            "issn": "",
+            "pages": "1084-1096",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "New targets for antivirals: the ribosomal A-site and the factors that interact with it",
+            "authors": [
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Kinzy",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Harger",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Carr-Schmid",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kwon",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Shastry",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Justice",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Virology",
+            "volume": "300",
+            "issn": "",
+            "pages": "60-70",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Decreased peptidyltransferase activity correlates with increased programmed -1 ribosomal frameshifting and viral maintenance defects in the yeast Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meskauskas",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Harger",
+                    "suffix": ""
+                },
+                {
+                    "first": "KLM",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "RNA",
+            "volume": "9",
+            "issn": "",
+            "pages": "982-992",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Farabaugh",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Programmed Alternative Reading of the Genetic Code",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Delayed rRNA processing results in significant ribosome biogenesis and functional defects",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meskauskas",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Baxter",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Carr",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yasenchak",
+                    "suffix": ""
+                },
+                {
+                    "first": "JEG",
+                    "middle": [],
+                    "last": "Gallagher",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Baserga",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Mol. Cell Biol.",
+            "volume": "23",
+            "issn": "",
+            "pages": "1602-1613",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Virus-like particle of yeast",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Bruenn",
+                    "suffix": ""
+                }
+            ],
+            "year": 1980,
+            "venue": "Annu. Rev. Microbiol.",
+            "volume": "34",
+            "issn": "",
+            "pages": "49-68",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Three different M1 RNA-containing viruslike particle types in Saccharomyces cerevisiae: in vitro M1 double-stranded RNA synthesis",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Esteban",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Mol. Cell Biol.",
+            "volume": "6",
+            "issn": "",
+            "pages": "1552-1561",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Fungal virus capsids, cytoplasmic compartments for the replication of double-stranded RNA, formed as icosahedral shells of asymmetric Gag dimers",
+            "authors": [
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Caston",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Gu",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Baker",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Bozarth",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Trus",
+                    "suffix": ""
+                },
+                {
+                    "first": "BN",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J. Mol. Biol.",
+            "volume": "244",
+            "issn": "",
+            "pages": "255-258",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Structure of L-A virus: a specialized compartment for the transcription and replication of double-stranded RNA",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Caston",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Trus",
+                    "suffix": ""
+                },
+                {
+                    "first": "FP",
+                    "middle": [],
+                    "last": "Booy",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Wall",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Steven",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J. Cell Biol.",
+            "volume": "138",
+            "issn": "",
+            "pages": "975-985",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "A rare tRNA-Arg(CCU) that regulates Ty1 element ribosomal frameshifting is essential for Ty1 retrotransposition in Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kawakami",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Paned",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Faioa",
+                    "suffix": ""
+                },
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Boeke",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Farabaugh",
+                    "suffix": ""
+                },
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Strathern",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Nakamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Garfinkel",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Genetics",
+            "volume": "135",
+            "issn": "",
+            "pages": "309-320",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Spermidine deficiency increases +1 ribosomal frameshifting efficiency and inhibits Ty1 retrotransposition in Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Balasundaram",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Tabor",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Tabor",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "91",
+            "issn": "",
+            "pages": "172-176",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Translational misreading: Mutations in translation elongation factor 1\u03b1 differentially affect programmed ribosomal frameshifting and drug sensitivity",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Kinzy",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "RNA",
+            "volume": "3",
+            "issn": "",
+            "pages": "870-881",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Pokeweed antiviral protein specifically inhibits Ty1 directed +1 ribosomal frameshifting and Ty1 retrotransposition in Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Tumer",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Parikh",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J. Virol.",
+            "volume": "72",
+            "issn": "",
+            "pages": "1036-1042",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Ty1 retrotransposition and programmed +1 ribosomal frameshifting require the integrity of the protein synthetic translocation step",
+            "authors": [
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Harger",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meskauskas",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Justice",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Virology",
+            "volume": "286",
+            "issn": "",
+            "pages": "216-224",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Programmed ribosomal frameshifting in HIV-1 and the SARS-CoV",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                },
+                {
+                    "first": "FJ",
+                    "middle": [],
+                    "last": "Dos Ramos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Virus Res.",
+            "volume": "119",
+            "issn": "",
+            "pages": "29-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "A C-terminal deletion mutant of pokeweed antiviral protein inhibits programmed +1 ribosomal frameshifting and Ty1 retrotransposition without depurinating the sarcin/ricin loop of rRNA",
+            "authors": [
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Hudak",
+                    "suffix": ""
+                },
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Hammell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yasenchak",
+                    "suffix": ""
+                },
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Tumer",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Virology",
+            "volume": "279",
+            "issn": "",
+            "pages": "292-301",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Overexpression of the gag-pol precursor from human immunodeficiency virus type-I proviral genomes results in efficient proteolytic processing in the absence of virion production",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Morrow",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "J. Virol.",
+            "volume": "65",
+            "issn": "",
+            "pages": "5111-5117",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Expression of the gag-pol fusion protein of moloney murine leukemia virus without gag protein does not induce viron formation or proteolytic processing",
+            "authors": [
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Felsenstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Goff",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "J. Virol.",
+            "volume": "62",
+            "issn": "",
+            "pages": "2179-2182",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Overexpression of the HIV-1 gag-pol polyprotein results in intracellular activation of HIV-1 protease and inhibition of assembly and budding of virus-like particles",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Karacostas",
+                    "suffix": ""
+                },
+                {
+                    "first": "EJ",
+                    "middle": [],
+                    "last": "Wolffe",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Nagashima",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Gonda",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Moss",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "Virology",
+            "volume": "193",
+            "issn": "",
+            "pages": "661-671",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Importance of ribosomal frameshifting for human immumodeficiency virus type 1 assembly and replication",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hung",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Patel",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J. Virol.",
+            "volume": "72",
+            "issn": "",
+            "pages": "4819-4824",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Analysis of natural variants of the human immunodeficiency virus type 1 gag-pol frameshift stem-loop structure",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Telenti",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Martinez",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Munoz",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bleiber",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Greub",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Sanglard",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J. Virol.",
+            "volume": "76",
+            "issn": "",
+            "pages": "7868-7873",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "The human immunodeficiency virus type 1 ribosomal frameshifting site is an invariant sequence determinant and an important target for antiviral therapy",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Biswas",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Pacchia",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Dougherty",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Peltz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Virol.",
+            "volume": "78",
+            "issn": "",
+            "pages": "2082-2087",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "A dual-luciferase reporter system for studying recoding signals",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Grentzmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Ingram",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Kelly",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "RNA",
+            "volume": "4",
+            "issn": "",
+            "pages": "479-486",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Nonsense-mediated decay mutants do not affect programmed -1 frameshifting",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Bidou",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Stahl",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Hatin",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Namy",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Rousset",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Farabaugh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "RNA",
+            "volume": "6",
+            "issn": "",
+            "pages": "952-961",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "An in vivo dual-luciferase assay system for studying translational recoding in the yeast Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Harger",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "RNA",
+            "volume": "9",
+            "issn": "",
+            "pages": "1019-1024",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Ribosomal frameshifting on viral RNAs",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "J.Gen.Virol.",
+            "volume": "76",
+            "issn": "",
+            "pages": "1885-1892",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "A homogeneous cell-based bicistronic fluorescence assay for high-throughput identification of drugs that perturb viral gene recoding and read-through of nonsense stop codons",
+            "authors": [
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Cardno",
+                    "suffix": ""
+                },
+                {
+                    "first": "ES",
+                    "middle": [],
+                    "last": "Poole",
+                    "suffix": ""
+                },
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Mathew",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Graves",
+                    "suffix": ""
+                },
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Tate",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "RNA",
+            "volume": "15",
+            "issn": "",
+            "pages": "1614-1621",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Multifunctional yeast high-copy-number shuttle vectors",
+            "authors": [
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Christianson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Sikorski",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Dante",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Shero",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Hieter",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Yeast",
+            "volume": "110",
+            "issn": "",
+            "pages": "119-122",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Systematic analysis of bicistronic reporter assay data",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res.",
+            "volume": "32",
+            "issn": "",
+            "pages": "e160-e170",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "A flexible loop in yeast ribosomal protein L11 coordinates P-site tRNA binding",
+            "authors": [
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Rhodin",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nucleic Acids Res.",
+            "volume": "38",
+            "issn": "",
+            "pages": "8377-8389",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Ribosomal frameshifting in yeast viruses",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Yeast",
+            "volume": "11",
+            "issn": "",
+            "pages": "1115-1127",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Comparative study of the effects of heptameric slippry site composition on -1 frameshifting among different translational assay systems",
+            "authors": [
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Plant",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "RNA",
+            "volume": "12",
+            "issn": "",
+            "pages": "666-673",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "NS1' of flaviviruses in the Japanese encephalitis virus serogroup is a product of ribosomal frameshifting and plays a role in viral neuroinvasiveness",
+            "authors": [
+                {
+                    "first": "EB",
+                    "middle": [],
+                    "last": "Melian",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Hinzman",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Nagasaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Wills",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Nouwens",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Blitvich",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Funk",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J.Virol.",
+            "volume": "84",
+            "issn": "",
+            "pages": "1641-1647",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Evidence for ribosomal frameshifting and a novel overlapping gene in the genomes of insect-specific flaviviruses",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Blitvich",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Wills",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Virology",
+            "volume": "399",
+            "issn": "",
+            "pages": "153-166",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Achieving a golden mean: mechanisms by which coronaviruses ensure synthesis of the correct stoichiometric ratios of viral proteins",
+            "authors": [
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Plant",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rakauskaite",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Taylor",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J.Virol.",
+            "volume": "84",
+            "issn": "",
+            "pages": "4330-4340",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Translating old drugs into new treatments: Identifying compounds that modulate programmed -1 ribosomal frameshifting and function as potential antiviral agents",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Ruiz-Echevarria",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Peltz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Trends Biotech.",
+            "volume": "16",
+            "issn": "",
+            "pages": "190-196",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Ribosomal frameshifting efficiency and Gag/Gag-pol ratio are critical for yeast M1 double-stranded RNA virus propagation",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "J.Virol.",
+            "volume": "66",
+            "issn": "",
+            "pages": "3669-3676",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

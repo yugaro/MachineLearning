@@ -1,0 +1,1282 @@
+{
+    "paper_id": "PMC6590882",
+    "metadata": {
+        "title": "Analysis of Women\u2019s Health Online News Articles Using Topic Modeling",
+        "authors": [
+            {
+                "first": "Kyoung",
+                "middle": [
+                    "Won"
+                ],
+                "last": "Cho",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Shine",
+                "middle": [
+                    "Young"
+                ],
+                "last": "Kim",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Young",
+                "middle": [
+                    "Woon"
+                ],
+                "last": "Woo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "In Korea, women\u2019s health has been discussed for a long time regarding on population control, enhancement of pregnancy and childbirth, and qualitative development of populations only (education, crime, nutrition, race, social class, wealth, wellbeing). For this reason, matters involving women\u2019s health have focused primarily on pregnancy and childbirth of fertile women, and other related issues have been under the radar of public healthcare services and the medical field [1]. However, women have other health problems, such as cancers specific to women and infection caused by sexually transmitted diseases. Changes in lifestyle and environment have a greater negative effect on women\u2019s health than men\u2019s health. Demographics and physical characteristics, education, economics, labor, culture, social environments, and women\u2019s role in the family all factor [2].",
+            "cite_spans": [
+                {
+                    "start": 475,
+                    "end": 476,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 861,
+                    "end": 862,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "There have been studies on health-related articles that analyzed healthcare problems, but most studies focused on only 1 health-related issue. For example, in 2008 Jung analyzed the news framing journalism perspectives of acquired immunodeficiency syndrome and human immunodeficiency virus in the 1990s [3]. The concept of framing is related to the agenda-setting tradition but expands the research by focusing on the essence of the issues at hand rather than on a particular topic. The basis of framing theory is that the media focuses attention on certain events and then places them within a field of meaning. In 2001, Andsager reported on making sense of breast cancer and breast implants [4]. In 2013, depression and mental health coverage in the media were analyzed [5] and factors involved in the stigma of suicide prevention were studied [6].",
+            "cite_spans": [
+                {
+                    "start": 304,
+                    "end": 305,
+                    "mention": "3",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 694,
+                    "end": 695,
+                    "mention": "4",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 773,
+                    "end": 774,
+                    "mention": "5",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 847,
+                    "end": 848,
+                    "mention": "6",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "There have been analysis of women\u2019s overall health in the media (pregnancy, childbirth, and infertility) by the National Survey on Fertility, Family Health and Welfare which publish periodically. In 2014, Kim and Kim [7] analyzed infertility-related reports from 1962 to 2013, and consequently this may have led to diverse studies on women\u2019s health policies have been conducted.",
+            "cite_spans": [
+                {
+                    "start": 218,
+                    "end": 219,
+                    "mention": "7",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "However, these studies focused on individual health issues influencing women\u2019s health. Therefore, integral health issues that specifically relate to women were difficult to identify. Thus, this study collected and analyzed articles on women\u2019s health in general and asessed how the media reported on major health issues in Korea to determine importance (objective methodology was used).",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "A web scraping method has recently been developed and data mining is actively used to collect and analyze large-scale web documents automatically [8]. This is enabled by many open-source libraries available for data mining where it is possible to analyze big data with only a small amount of coding necessary.",
+            "cite_spans": [
+                {
+                    "start": 147,
+                    "end": 148,
+                    "mention": "8",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Text mining is not only a good method for identifying the structure of a text and extracting concepts, but also useful for visualization [9]. Text mining is being employed in the analysis of trends of journals [10], social network services such as Twitter and blogs [11,12], customer online reviews [13,14], and the discourse of big data in news outlets [15].",
+            "cite_spans": [
+                {
+                    "start": 138,
+                    "end": 139,
+                    "mention": "9",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 211,
+                    "end": 213,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 267,
+                    "end": 269,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 270,
+                    "end": 272,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 300,
+                    "end": 302,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 303,
+                    "end": 305,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 355,
+                    "end": 357,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Topic modeling is a type of big data analysis methodology for discovering abstract topics that repeatedly occur in a collection of documents. When an author has a specific keyword in mind, this keyword is repeated throughout the article. The collection of keywords is modeled as a finite mixture over an underlying set of topic probabilities, and then provides a latent topic in a specific document [16].",
+            "cite_spans": [
+                {
+                    "start": 400,
+                    "end": 402,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Research using topic modeling of news articles is becoming active in diverse fields. In 2007 Falinouss reported that stock market prediction\u2019s could be made using data mining techniques [17]. Textual documents and time series can be mined concurrently to predict the movements of stock prices based on the contents of news articles. The relationship between the contents of the news stories and trends on stock prices are learned through the Support Vector Machine. The accuracy of the prediction model is 83%, which means the model has increased its accuracy by 30% [17].",
+            "cite_spans": [
+                {
+                    "start": 187,
+                    "end": 189,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 568,
+                    "end": 570,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In 2013, DiMaggio used LDA to analyze how 1 policy domain (government assistance to artists and arts organizations) was framed in almost 8,000 articles. The authors illustrated the strengths of topic modeling to analyze large text corpora, discussed the correct choice of models and interpretation of model results, described the means of validating topic-model solutions, and demonstrated the use of topic models in combination with other statistical tools to estimate differences between newspapers in the prevalence of different frames [18].",
+            "cite_spans": [
+                {
+                    "start": 540,
+                    "end": 542,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Studies involved in the analysis of news articles on women\u2019s health frequently focus on 1 health issues that influence women, which means that there are limitations in understanding the general topics of women\u2019s health-related social issues. Therefore, in the present study, we have systematically collected and analyzed articles that discuss women\u2019s health-related topics. In order to maintain objectivity and draw meaningful results, topic modeling methodology was introduced to perform a chronological examination of how social issues relate to women\u2019s health and diseases, and have changed with changes in the social environment. The outcome of the present study may be used as basic data for effective introduction of women\u2019s health policies and financial management.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Figure 1 shows the overall process for the analysis of women\u2019s health-related online news articles. In Step 1, the online news articles were collected from 1 selected news website (Table 1), and the collected news articles were saved as text files in comma separated values file format. In Step 2, the saved data were preprocessed (First, special terms related to gynecology were appended to dictionary using gynecological medical terminology, in order to extract special terms as well as general nouns. Second, general nouns not related to women\u2019s healthcare topics, were removed.) so that the analysis of the results in Step 3 could be accurately derived. In Step 3, the preprocessed data were analyzed using the LDA algorithm [19,20]. In Step 4, the major topics of health-related online news were extracted from the LDA analysis. In Step 5, topic trends by year and period were analyzed using the extracted topics, and interrelationships of the extracted topics were also analyzed.",
+            "cite_spans": [
+                {
+                    "start": 730,
+                    "end": 732,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 733,
+                    "end": 735,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "1. Overall process ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 181,
+                    "end": 188,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "As shown in Table 1, Chosunilbo (http://www.chosun.com/) was ranked in the top 3 for online news websites by 3 website ranking sites, implying that the data gathered from this online news site would be reliable. This was the third most popular online newspaper read by Koreans in 2015.",
+            "cite_spans": [],
+            "section": "2. Data collection ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 12,
+                    "end": 19,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "To identify women\u2019s health-related topics, 3 search terms were used to collect online news articles in a test search; \u201cwomen health\u201d, \u201cwomen disease\u201d and \u201cwomen illness\u201d. Analysis revealed that the search terms \u201cwomen disease\u201d and \u201cwomen illness\u201d was not satisfactory because more advertising articles were retrieved than news articles. Therefore, we used \u201cwomen health\u201d to collect women\u2019s health-related news articles. Article titles and full-text were extracted after removing irrelevant text such as unique phrases and text for hyperlinking to other articles.",
+            "cite_spans": [],
+            "section": "2. Data collection ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As shown in Table 2, the number of total collected articles was 7,710. The articles had been published over a 23-year period between 1993 to 2015, with 418 articles collected from 1993 to 2000, 643 from 2001 to 2005, 2,437 from 2006 to 2010, and 4,212 from 2011 to 2015.",
+            "cite_spans": [],
+            "section": "2. Data collection ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 12,
+                    "end": 19,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "The data were preprocessed in 4 steps. In Step 1, a basic dictionary for extracting Korean words was selected. In this study, the Hangul morpheme dictionary (NIADic) provided by the National Information Society Agency (https://www.nia.or.kr) for morphological analysis was used. This dictionary has more than 900,000 built-in words, which is the largest among domestic dictionaries and has an advantage that it can be used directly in the R, a computer programming language. In Step 2, a dictionary of gynecological medical terminology was used in order to increase the probability of extracting terminology related to women\u2019s health, because terminology such as various names for diseases related to women\u2019s health cannot be extracted with only a basic dictionary. In Step 3, only Korean nouns from article sentences were extracted (using the SimplePos22 morphological analysis function provided in the KoNLP library [21]) and stored for each article. In Step 4, general nouns (e.g., \u201cmost\u201d, \u201cthis year\u201d, \u201clast year\u201d, \u201cwomen\u201d, \u201cillness\u201d, \u201ccase\u201d, \u201cperson\u201d, and \u201cdegree\u201d) were deleted that were not related to women\u2019s healthcare topics, and only the remaining words from the Step 4 were stored for each article to be part of the final data set.",
+            "cite_spans": [
+                {
+                    "start": 919,
+                    "end": 921,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "3. Data preprocess ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to perform the LDA analysis, the number of topics must first be determined. In general, it is important to determine a reasonable number of topics in topic modeling using LDA. In novels without a clear unit of source data, the decision what should be done as a document unit is one of the most important decisions [22]. However, in newspaper articles, each article is usually used as a document, and the level of difficulty involved in determining the number of topics depends mainly on the interpretability of the topics [23]. In the present study, the number of topics was extracted and analyzed from 5 to 30 to determine the appropriate number. As a result, the number of topics was set at 10, taking into account interpretability and meaningfulness. After determining the number of topics, the top 20 most frequent words were extracted for each topic using the collapsed Gibbs sampling technique for the LDA analysis algorithm [18,24]. In particular, in the present study, LDA analysis was performed for each period before 2000, 2001\u20132005, 2006\u20132010, and since 2011, and topics of each period were obtained. Through this analysis, (1) the representative topics of women\u2019s health-related issues by period and year and (2) how the topics have changed were identified.",
+            "cite_spans": [
+                {
+                    "start": 324,
+                    "end": 326,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 532,
+                    "end": 534,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 941,
+                    "end": 943,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 944,
+                    "end": 946,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "4. LDA analysis, topic extraction, and topic trend analysis ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The period 1993\u20132000 had 10 representative topics on women\u2019s health were identified: \u201chealthcare\u201d, \u201chealth consultation\u201d, \u201cpregnancy and childbirth\u201d, \u201cAIDS\u201d, \u201curinary health\u201d, \u201cmortality statistics\u201d, \u201cfoot health\u201d, \u201cwomen\u2019s life\u201d, \u201cnew technology\u201d, and \u201cmental health\u201d.",
+            "cite_spans": [],
+            "section": "1. Period from 1993\u20132000 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Table 3 shows the results of topic modeling from 1993\u20132000. The first topic of \u201chealthcare\u201d contained the following words: \u201ctreatment\u201d, \u201cpatient\u201d, \u201cabnormal\u201d, \u201cexercise\u201d, \u201csymptom\u201d, \u201cprofessor\u201d, \u201ceffect\u201d, \u201chealthcare\u201d, \u201cbreast cancer\u201d, \u201ccause\u201d, \u201chospital\u201d, \u201cskin\u201d, \u201cbody\u201d, \u201cheart\u201d, \u201chormone\u201d \u201ccholesterol\u201d, \u201calcohol\u201d, \u201cman\u201d.",
+            "cite_spans": [],
+            "section": "1. Period from 1993\u20132000 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 7,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "The second topic \u201cmortality statistics\u201d contained the following words: \u201cdisease\u201d, \u201cfemale\u201d, \u201cmale\u201d, \u201cmean\u201d, \u201cdeath\u201d, \u201clast year\u201d, \u201cUSA\u201d, \u201ccause of death\u201d, \u201csmoking\u201d, \u201cdeath\u201d \u201clung cancer\u201d, \u201clife expectancy\u201d, \u201cpopulation, man\u201d, \u201cmortality\u201d, \u201ctuberculosis\u201d, \u201cworld\u201d, \u201ctobacco\u201d, \u201cdeveloped country\u201d, \u201crespiratory\u201d.",
+            "cite_spans": [],
+            "section": "1. Period from 1993\u20132000 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "An examination of the proportions of the topics revealed that most of the articles were focused on the topic of \u201chealthcare\u201d. The proportions of articles focused on the other 9 topics were relatively small. Topic trends for 1993\u20132000 are shown in Figure 2.",
+            "cite_spans": [],
+            "section": "1. Period from 1993\u20132000 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 247,
+                    "end": 255,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The period 2001\u20132005 had 10 representative topics on women\u2019s health were identified: \u201ccerebrovascular disease\u201d, \u201carthropathy\u201d, \u201cskin health\u201d, \u201cmedical service\u201d, \u201ckidney disease\u201d, \u201cdietary supplement\u201d, \u201cthyroid disease\u201d, \u201cpregnancy and childbirth\u201d, \u201clifestyle disease and prevention\u201d, \u201curinary health\u201d.",
+            "cite_spans": [],
+            "section": "2. Period from 2001\u20132005 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Table 4 shows the results of topic modeling from 2001\u20132005. The first topic of \u201cmedical service\u201d contained the following words: \u201cpatient\u201d, \u201ctreatment\u201d, \u201cabnormal\u201d, \u201csurgery\u201d, \u201cprofessor\u201d, \u201chospital\u201d, \u201cpain\u201d, \u201cmedicine\u201d, \u201csymptom\u201d, \u201cproblem\u201d, \u201cdoctor\u201d, \u201cUSA\u201d, \u201ctest\u201d, \u201ccause\u201d, \u201chealth\u201d, \u201cresult\u201d, \u201cself\u201d, \u201cdirector\u201d, \u201cdepression\u201d, \u201cdisease\u201d.",
+            "cite_spans": [],
+            "section": "2. Period from 2001\u20132005 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 7,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "The second topic of \u201cdietary supplement\u201d contained the following words: \u201cproduct\u201d, \u201cingredient\u201d, \u201cvitamin\u201d, \u201cwater\u201d, \u201ctaste\u201d, \u201ceffect\u201d, \u201cfood\u201d, \u201cprotein\u201d, \u201cmarket\u201d, \u201clast year\u201d, \u201cpopularity\u201d, \u201cprevention\u201d, \u201ccontaining\u201d, \u201cadvertising\u201d, \u201cdiverse\u201d, \u201cfunction\u201d, \u201cnutrition\u201d, \u201caction\u201d, \u201cskin\u201d, \u201cuse\u201d.",
+            "cite_spans": [],
+            "section": "2. Period from 2001\u20132005 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "An examination of the proportions of the topics revealed that most of the articles were focused on the topics of \u201cmedical service\u201d and \u201cdietary supplement\u201d, and some specific topics were characterized as being of high interests (e.g., \u201chealthcare\u201d in the 1990s). Topic trends for 2001\u20132005 are shown in Figure 3.",
+            "cite_spans": [],
+            "section": "2. Period from 2001\u20132005 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 303,
+                    "end": 311,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The period 2006\u20132010 had 10 representative topics on women\u2019s health were identified: \u201cclimacterium health\u201d, \u201cpregnancy and childbirth\u201d, \u201cwomen disease\u201d, \u201cbeauty treatment\u201d, \u201cmedical service\u201d, \u201cskin health\u201d, \u201clifestyle disease\u201d, \u201chair loss\u201d, \u201cjoint disease\u201d, \u201cskin care\u201d.",
+            "cite_spans": [],
+            "section": "3. Period from 2006\u20132010 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Table 5 shows the results of topic modeling from 2006\u20132010. The first topic of \u201cskin health\u201d contained the following words: \u201cskin\u201d, \u201cwater\u201d, \u201catopy\u201d, \u201ccosmetic\u201d, \u201codor\u201d, \u201cgerms\u201d, \u201csweat\u201d, \u201cfoot\u201d, \u201cproduct\u201d, \u201ceye\u201d, \u201ctemperature\u201d \u201ckeratin\u201d, \u201ccold\u201d, \u201chand\u201d, \u201cclean\u201d, \u201cuse\u201d, \u201callergy\u201d, \u201cusing\u201d, \u201cmoisture\u201d, \u201csummer\u201d.",
+            "cite_spans": [],
+            "section": "3. Period from 2006\u20132010 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 7,
+                    "mention": "Table 5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "The second topic of \u201chair loss\u201d contained the following words: \u201chair loss\u201d, \u201cscalp\u201d, \u201chair\u201d, \u201chairs\u201d, \u201chead\u201d, \u201cstress\u201d, \u201ctreatment\u201d, \u201cmale hormone\u201d, \u201cmale\u201d, \u201cblood circulation\u201d, \u201csite\u201d, \u201chormone\u201d, \u201cgene\u201d, \u201cproduct\u201d, \u201cnutrition\u201d, \u201cprogress\u201d, \u201cmassage\u201d, \u201ceffect\u201d, \u201cfacilitation\u201d, \u201cgenetic\u201d.",
+            "cite_spans": [],
+            "section": "3. Period from 2006\u20132010 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The third topic of \u201cmedical service\u201d contained the following words: \u201cpatient\u201d, \u201cgame\u201d, \u201cUSA\u201d, \u201csurgery\u201d, \u201cvoice\u201d, \u201cchild\u201d, \u201cKorea\u201d, \u201cprofessor\u201d, \u201cdomestic\u201d, \u201cgoods\u201d, \u201chospital\u201d, \u201chusband\u201d, \u201ctreatment\u201d, \u201cself\u201d, \u201cSeoul\u201d, \u201cworld\u201d, \u201cservice\u201d, \u201cwife\u201d, \u201cthoughts\u201d, \u201cchildren\u201d.",
+            "cite_spans": [],
+            "section": "3. Period from 2006\u20132010 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The fourth topic of \u201cbeauty treatment\u201d contained the following words: \u201cvitamin\u201d, \u201cfood\u201d, \u201cexercise\u201d, \u201cbody\u201d, \u201cintake\u201d, \u201cfat\u201d, \u201cdiet\u201d, \u201cwater\u201d, \u201ccalcium\u201d, \u201ctaste\u201d, \u201cingredient\u201d, \u201cnutrient\u201d, \u201cgrocery\u201d, \u201ceffect\u201d, \u201cprotein\u201d, \u201cmilk\u201d, \u201chelp\u201d, \u201chealth\u201d, \u201cstress\u201d, \u201cfruit\u201d.",
+            "cite_spans": [],
+            "section": "3. Period from 2006\u20132010 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The fifth topic of \u201clifestyle disease\u201d contained the following words: \u201ctest\u201d, \u201cstudy\u201d, \u201cpatient\u201d, \u201crisk\u201d, \u201chypertension\u201d, \u201cresult\u201d, \u201cdiabetes\u201d, \u201ccholesterol\u201d, \u201cresearch team\u201d, \u201chepatitis\u201d, \u201cmale\u201d, \u201cbrother\u201d, \u201cheart disease\u201d, \u201cdeath\u201d, \u201cswine flu\u201d, \u201cUSA\u201d, \u201cstroke\u201d, \u201cabnormal\u201d, \u201cprofessor\u201d, \u201ccolon cancer\u201d.",
+            "cite_spans": [],
+            "section": "3. Period from 2006\u20132010 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "An examination of the proportions of the topics revealed that the proportion of articles on the topic of \u201cskin health\u201d had been steadily decreasing from 2006\u20132010. This decrease was also observed in several other topics, such as \u201cbeauty treatment\u201d, \u201chair loss\u201d, and \u201cskin care\u201d, as various topics in the field of \u201cskin health\u201d were subdivided. In addition, articles on the topic of \u201cjoint disease\u201d continued to increase for 5 years. This increase reflects social issues with regard to the aging population. Topic trends for 2006\u20132010 are shown in Figure 4.",
+            "cite_spans": [],
+            "section": "3. Period from 2006\u20132010 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 547,
+                    "end": 555,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The period 2011\u20132015 had 10 representative topics on women\u2019s health were identified: \u201cwomen\u2019s cancers\u201d, \u201cskin health\u201d, \u201cgynecology\u201d, \u201cmedical service\u201d, \u201clifestyle disease\u201d, \u201cdietary supplement\u201d, \u201cjoint disease\u201d, \u201cinfectious disease\u201d, \u201cskin care\u201d, \u201cclimacterium\u201d.",
+            "cite_spans": [],
+            "section": "4. Period from 2011\u20132015 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Table 6 shows the results of topic modeling from 2011\u20132015. The first topic of \u201cdietary supplement\u201d contained the following words: \u201cvitamin\u201d, \u201cfood\u201d, \u201cintake\u201d, \u201ccalcium\u201d, \u201cgrocery\u201d, \u201cingredient\u201d, \u201cprotein\u201d, \u201cnutrient\u201d, \u201cmilk\u201d, \u201cfruit\u201d, \u201ctaste\u201d, \u201chealth\u201d, \u201cwater\u201d, \u201cvegetable\u201d, \u201chelp\u201d, \u201cefficacy\u201d, \u201cgarlic\u201d, \u201ccholesterol\u201d, \u201cdiet\u201d, \u201ccontaining\u201d.",
+            "cite_spans": [],
+            "section": "4. Period from 2011\u20132015 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 7,
+                    "mention": "Table 6",
+                    "ref_id": "TABREF5"
+                }
+            ]
+        },
+        {
+            "text": "The second topic of \u201clifestyle disease\u201d contained the following words: \u201cdiabetes\u201d, \u201costeoporosis\u201d, \u201chypertension\u201d, \u201cexercise\u201d, \u201crisk\u201d, \u201ccholesterol\u201d, \u201cobesity\u201d, \u201cblood vessels\u201d, \u201cblood pressure\u201d, \u201cmetabolic syndrome\u201d, \u201cabnormal\u201d, \u201cstroke\u201d, \u201cgout\u201d, \u201cbone\u201d, \u201cstudy\u201d, \u201cfat\u201d, \u201cintake\u201d, \u201csmoking\u201d, \u201cweight\u201d, and \u201cfracture\u201d.",
+            "cite_spans": [],
+            "section": "4. Period from 2011\u20132015 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The third topic of \u201cclimacterium\u201d contained the following words: \u201chormone\u201d, \u201cclimacterium\u201d, \u201cvoice\u201d, \u201csymptom\u201d, \u201cdepression\u201d, \u201csurgery\u201d, \u201cerectile dysfunction\u201d, \u201cchest\u201d, \u201cheadache\u201d, \u201cstress\u201d, \u201cpain\u201d, \u201ctreatment\u201d, \u201cthyroid\u201d, \u201cfemale hormone\u201d, \u201cmenopause\u201d, \u201cabnormal\u201d, \u201cbrain\u201d, \u201cdementia\u201d, \u201csyndrome\u201d, \u201cdisorder\u201d.",
+            "cite_spans": [],
+            "section": "4. Period from 2011\u20132015 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The fourth topic of \u201cjoint disease\u201d contained the following words: \u201cjoint\u201d, \u201cpain\u201d, \u201cknee\u201d, \u201cback\u201d, \u201carthritis\u201d, \u201cfoot\u201d, \u201cspine\u201d, \u201cleg\u201d, \u201cexercise\u201d, \u201cmuscle\u201d, \u201cshoulder\u201d, \u201cbone\u201d, \u201ccartilage\u201d, \u201cposture\u201d, \u201cdisk\u201d, \u201cshoe\u201d, \u201csurgery\u201d, \u201cligament\u201d, \u201cvaricose vein\u201d, \u201chigh heel\u201d.",
+            "cite_spans": [],
+            "section": "4. Period from 2011\u20132015 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The fifth topic \u201cinfectious disease\u201d contained the following words: \u201cMERS (Middle East Respiratory Syndrome)\u201d, \u201cpatient\u201d, \u201cinfection\u201d, \u201cvirus\u201d, \u201chospital\u201d, \u201cdeath\u201d, \u201clarge\u201d, \u201cdomestic\u201d, \u201cpatient\u201d, \u201cconfirmation\u201d, \u201cwork\u201d, \u201coccurrence\u201d, \u201csuspicion\u201d, \u201cmale\u201d, \u201ccase\u201d, \u201cpossibility\u201d, \u201csymptom\u201d, \u201cafternoon\u201d.",
+            "cite_spans": [],
+            "section": "4. Period from 2011\u20132015 ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "An examination of the proportions of the topics revealed that differences in proportion among the topics were not large after 2011. \u201cDietary supplement\u201d consistently showed high interest, and the articles related to MERS were highly reported on because of the MERS incident that first occurred in Korea in 2015. Before then, even though some articles related to infectious diseases were retrieved, MERS was not classified as a topic because its numbers were insignificant compared with other topics, but related words were grouped into 1 topic due to the surge in MERS articles. Topic trends for 2011\u20132015 are shown in Figure 5.",
+            "cite_spans": [],
+            "section": "4. Period from 2011\u20132015 ::: Results",
+            "ref_spans": [
+                {
+                    "start": 619,
+                    "end": 627,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "LDA analysis showed that the period 1993\u20132000 had 10 representative topics on women\u2019s health that were identified: \u201chealthcare\u201d, \u201chealth consultation\u201d, \u201cpregnancy and childbirth\u201d, \u201cAIDS\u201d, \u201curinary health\u201d, \u201cmortality statistics\u201d, \u201cfoot health\u201d, \u201cwomen\u2019s life\u201d, \u201cnew technology\u201d, and \u201cmental health\u201d. The topics of \u201ccerebrovascular disease\u201d, \u201cskin health\u201d, \u201ckidney disease\u201d, \u201cdietary supplement\u201d, \u201cthyroid disease\u201d, and \u201clifestyle disease and prevention\u201d were the newly emerging topics related to women\u2019s health since 2000. Although \u201cpregnancy and childbirth\u201d and \u201curinary health\u201d were extracted as the same representative topics as before, the previous topic \u201chealth consultation\u201d was expanded to \u201cmedical service\u201d and the previous topic \u201cfoot health\u201d to \u201carthropathy\u201d.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Examining the main topics in 2006\u20132010, \u201chair loss\u201d, \u201cskin care\u201d, and \u201cbeauty treatment\u201d were new topics. This indicated that this period was when interest in healthcare and beauty increased which may coincide with an overall improvement in the standard of living. \u201cPregnancy and childbirth\u201d, \u201cjoint disease\u201d, \u201cskin health\u201d, \u201cdietary supplement\u201d, and \u201clifestyle disease\u201d were extracted as representative topics as before 2006. However, the previous topics of \u201ccerebrovascular disease\u201d and \u201cthyroid disease\u201d were expanded to \u201cclimacterium health\u201d and \u201cwomen disease\u201d. In particular, in the topic related to \u201clifestyle disease\u201d, several words were related to the prevention of infection against swine flu and were associated with an epochal event.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Examining the main topics of 2011\u20132015, \u201cinfectious disease\u201d was observed to be a new topic. This result also indicated that the social and personal interest in the MERS infection peaked interest for a while. The previous words \u201cskin health\u201d, \u201cgynecology\u201d, \u201cmedical service\u201d, \u201clifestyle disease\u201d, \u201cjoint disease\u201d, \u201cskin care\u201d, and \u201cclimacterium\u201d were extracted as representative topics as before. It was confirmed that the previous topic \u201cwomen disease\u201d tended to become specialized as \u201cwomen\u2019s cancers\u201d, and the previous topic \u201chair loss\u201d and \u201cskin care\u201d were integrated into \u201cskin care\u201d.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The characteristics of the 1990s were that healthcare was mainstream, and there were fewer specialized articles on topic areas. However, over time, articles on various topics were distributed in similar proportions, and the topics were expanded to medically specialized topics.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In the early 2000s, the topic related to beauty was \u201cdietary supplement\u201d. By the late 2000s, however, beauty-related topics began to be subdivided into \u201cskin health\u201d, \u201chair loss\u201d, and \u201cbeauty treatment\u201d. In addition, although \u201cskin health\u201d was classified as an independent topic in the early 2000s, the number of articles related to \u201cskin health\u201d, which had a small proportion, increased in the late 2000s. This study observed significant changes in the topic of healthcare as shown in Table 7.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 486,
+                    "end": 493,
+                    "mention": "Table 7",
+                    "ref_id": "TABREF6"
+                }
+            ]
+        },
+        {
+            "text": "In the 1990s, readers were using keywords to search for articles on hospitals or medical counseling possibly to receive medical services. We observed that the healthcare service was represented by keywords for hospitals and support groups in the early 2000s, so it could be postulated that the proportion of families in the support group may have increased in the late 2000s. The expansion of access to the internet since the 2000s may account for the medical service expansion within society and government by 2010; e-health was available and people began using online communities to obtain health-related information.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "This study observed changes in the topic of \u201cmental health\u201d. When words presented in the articles related to \u201cmental health\u201d in the 1990s were examined, it was observed that \u201cgrandmother\u201d was highly ranked. In addition, words such as \u201cstress\u201d, \u201cthought\u201d, and \u201ctalking\u201d were presented together. The word \u201cclimacterium\u201d which refers to the menopause, has only recently been discussed in relation to women\u2019s health, and did not appear in the articles until the early 2000s. Considering that the birth rate of women in their 20s has fallen from 88% to 29% over the last 30 years, most of the women currently in their 50s became grandmother in the 1990s and are recent climacterium women. According to the Korean Society of Menopause, about 89% of Korean women in their 50s suffer from climacterium symptoms. In the 1990s women in their 50s would have had the same symptoms however, recently it has been termed the climacterium period. More social consideration and support is available for women. Women\u2019s climacterium symptoms often include difficulty sleeping, stress, and tension. The fact that the words \u201cnight\u201d, \u201cstress\u201d, and \u201canxiety\u201d were presented together in the topic that included \u201cgrandmother\u201d for the 1990s supports this result.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "With regard to depression, it has been reported that women are twice as likely to develop depression as men, regardless of culture and have higher incidence rates in middle age. It has been shown that depression is derived by the interaction of personal characteristics that are susceptible to depression and negative stress [25]. This is similar to the result of the words related to depression in this study.",
+            "cite_spans": [
+                {
+                    "start": 326,
+                    "end": 328,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Changes in topics related to women\u2019s disease were not clearly distinguished in the 1990s, but in the early 2000s, \u201cthyroid disease\u201d emerged. In the late 2000s, there were many articles on the topic of \u201cwomen disease\u201d using words such as \u201cuterus\u201d, \u201cthyroid\u201d, and \u201cbreast\u201d. Since the 2010s, articles related to \u201cwomen disease\u201d changed to articles on the topic of women\u2019s cancers\u201d including \u201ccervical cancer\u201d, \u201cbreast cancer\u201d, and \u201ccolon cancer\u201d. In the late 2000s, the keyword was \u201cmuscle\u201d, in the early 2010s the keywords were \u201cmuscle\u201d, \u201cprotein\u201d, \u201ccalcium\u201d, and \u201costeoporosis\u201d.",
+            "cite_spans": [],
+            "section": "Conclusions",
+            "ref_spans": []
+        },
+        {
+            "text": "Future studies should analyze the diagnosis rate of diseases that occur in women by using big data from the National Health Insurance Service and the Health Insurance Review & Assessment Service.",
+            "cite_spans": [],
+            "section": "Conclusions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Representative online news sites by website rank sites.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Number of news article by periods.\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Analysis results of topic modeling from 1993 to 2000.\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: Analysis results of topic modeling from 2001 to 2005.\n",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5: Analysis results of topic modeling from 2006 to 2010.\n",
+            "type": "table"
+        },
+        "TABREF5": {
+            "text": "Table 6: Analysis results of topic modeling from 2011 to 2015.\n",
+            "type": "table"
+        },
+        "TABREF6": {
+            "text": "Table 7: Change of topic trends by period.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Overall process of topic trends analysis. LDA = latent Dirichlet allocation.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Topic trends from 1993 to 2000.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Topic trends from 2001 to 2005.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Topic trends from 2006 to 2010.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Topic trends from 2011 to 2015.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Women\u2019s health issues from the 4th Korean national health and nutrition examination survey (KNHANES 2007), focusing on quality of life, smoking, drinking, nutrition and exercise",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Jo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Korean J Womens Health",
+            "volume": "10",
+            "issn": "1",
+            "pages": "115-52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Popular Research Topics in Marketing Journals, 1995\u20132014",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Cho",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Fu",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "J Interact Mark",
+            "volume": "40",
+            "issn": "",
+            "pages": "52-72",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.intmar.2017.06.003"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Dissemination of health information through social networks: twitter and antibiotics",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Scanfeld",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Scanfeld",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Larson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Am J Infect Control",
+            "volume": "38",
+            "issn": "3",
+            "pages": "182-8",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.ajic.2009.11.004"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Discovering users\u2019 topics of interest on twitter: a first look",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Michelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Macskassy",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "73-80",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "The determinants of online customer ratings: a combined domain ontology and topic text analytics approach",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Electron Commer Res",
+            "volume": "17",
+            "issn": "1",
+            "pages": "31-50",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s10660-016-9243-6"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Qiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "A Domain Oriented LDA Model for Mining Product Defects from Online Customer Reviews",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Flaounas",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sudhahar",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Lansdall-Welfare",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Big Data Analysis of News and Social Media Content",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Latent dirichlet allocation",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Blei",
+                    "suffix": ""
+                },
+                {
+                    "first": "AY",
+                    "middle": [],
+                    "last": "Ng",
+                    "suffix": ""
+                },
+                {
+                    "first": "MI",
+                    "middle": [],
+                    "last": "Jordan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Mach Learn Res",
+            "volume": "3",
+            "issn": "Jan",
+            "pages": "993-1022",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Falinouss",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Stock trend prediction using news articles: A text mining approach",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Exploiting affinities between topic modeling and the sociological perspective on culture: Application to newspaper coverage of US government arts funding",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "DiMaggio",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nag",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Blei",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Poetics",
+            "volume": "41",
+            "issn": "6",
+            "pages": "570-606",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.poetic.2013.08.004"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Silge",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Text Mining with R: A tidy approach",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Life-cycle specific comprehensive women\u2019s health and maternal child health",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ahn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J Korean Soc Matern Child Health",
+            "volume": "18",
+            "issn": "1",
+            "pages": "1-12",
+            "other_ids": {
+                "DOI": [
+                    "10.21896/jksmch.2014.18.1.1"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Analysis of Issues on the College and University Structural Reform Evaluation Using Text Big Data Analytics",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Baek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Asian J Educ",
+            "volume": "17",
+            "issn": "3",
+            "pages": "409-36",
+            "other_ids": {
+                "DOI": [
+                    "10.15753/aje.2016.09.17.3.409"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Jeon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Introduction to KoNLP API",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Jockers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Text analysis with R for students of literature",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Topicmodels: An R package for fitting topic models",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Gr\u00fcn",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hornik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J Stat Softw",
+            "volume": "40",
+            "issn": "13",
+            "pages": "1-30",
+            "other_ids": {
+                "DOI": [
+                    "10.18637/jss.v040.i13"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "LDA models for finding trends in technical knowledge domain",
+            "authors": [
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Shiryaev",
+                    "suffix": ""
+                },
+                {
+                    "first": "AV",
+                    "middle": [],
+                    "last": "Dorofeev",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Fedorov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Young Researchers in Electrical and Electronic Engineering (EIConRus)",
+            "volume": "",
+            "issn": "",
+            "pages": "551-4",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Living with a depressed spouse",
+            "authors": [
+                {
+                    "first": "NR",
+                    "middle": [],
+                    "last": "Benazon",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Coyne",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Fam Psychol",
+            "volume": "14",
+            "issn": "1",
+            "pages": "71-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1037/0893-3200.14.1.71"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "AIDS News Framing Analysis: Focusing on Critical Health Journalism Perspectives",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Jung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Korean J Journal Commun Stud",
+            "volume": "52",
+            "issn": "4",
+            "pages": "223-49",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Framing women\u2019s health with a sense-making approach: Magazine coverage of breast cancer and implants",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Andsager",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Powers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Health Commun",
+            "volume": "13",
+            "issn": "2",
+            "pages": "163-85",
+            "other_ids": {
+                "DOI": [
+                    "10.1207/S15327027HC1302_3"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Analyzing Online News Media Coverage of Depression",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Roh",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Yoon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Korean J Commun Inf",
+            "volume": "61",
+            "issn": "",
+            "pages": "5-27",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Analysis on Stigma factors of Suicide Prevention News",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ahn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Korean J Journal Commun Stud",
+            "volume": "57",
+            "issn": "4",
+            "pages": "27-47",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Women\u2019s Overall Health Status: Life Expectancy, Self-Rated Health Status, Activity Limitations",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Health Welf Policy Forum",
+            "volume": "210",
+            "issn": "",
+            "pages": "5-16",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Mitchell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Web Scraping with Python: Collecting Data from the Modern Web",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Visualization of text\u2019s polysingularity using network analysis",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Paranyushkin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Prototype Lett",
+            "volume": "2",
+            "issn": "3",
+            "pages": "256-78",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

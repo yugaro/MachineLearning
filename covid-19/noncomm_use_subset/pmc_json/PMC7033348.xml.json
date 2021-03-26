@@ -1,0 +1,1462 @@
+{
+    "paper_id": "PMC7033348",
+    "metadata": {
+        "title": "Real-time forecasts of the COVID-19 epidemic in China from February 5th to February 24th, 2020",
+        "authors": [
+            {
+                "first": "K.",
+                "middle": [],
+                "last": "Roosa",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Y.",
+                "middle": [],
+                "last": "Lee",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "R.",
+                "middle": [],
+                "last": "Luo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "A.",
+                "middle": [],
+                "last": "Kirpich",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "R.",
+                "middle": [],
+                "last": "Rothenberg",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "J.M.",
+                "middle": [],
+                "last": "Hyman",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "P.",
+                "middle": [],
+                "last": "Yan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "G.",
+                "middle": [],
+                "last": "Chowell",
+                "suffix": "",
+                "email": "gchowell@gsu.edu",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The ongoing epidemic of the novel coronavirus (SARS-CoV-2) is primarily affecting mainland China and can be traced back to a cluster of severe pneumonia cases identified in Wuhan, China in December 2019 (Li et al., 2020; World Health Organization, 2020). Early cases of the disease have been linked to a live animal seafood market in Wuhan, pointing to a zoonotic origin of the epidemic. However, human-to-human transmission has driven its rapid spread with a total of 37,289 confirmed cases, including 813 deaths, in China and 302 confirmed cases imported in multiple countries as of February 9, 2020 (Chinese National Health Committee). While the early transmission potential of this novel coronavirus appeared similar to that of severe acute respiratory syndrome (SARS) (Riou & Althaus, 2020), the current tally of the epidemic has already surpassed the total cases reported for the SARS outbreaks in 2002\u20132003 (W. World Health Organization, 2003; Wu, Leung, & Leung, 2020; Zhang et al., 2020).",
+            "cite_spans": [
+                {
+                    "start": 204,
+                    "end": 219,
+                    "mention": "Li et al., 2020",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 221,
+                    "end": 252,
+                    "mention": "World Health Organization, 2020",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 603,
+                    "end": 636,
+                    "mention": "Chinese National Health Committee",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 774,
+                    "end": 794,
+                    "mention": "Riou & Althaus, 2020",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 918,
+                    "end": 949,
+                    "mention": "World Health Organization, 2003",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 951,
+                    "end": 975,
+                    "mention": "Wu, Leung, & Leung, 2020",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 977,
+                    "end": 995,
+                    "mention": "Zhang et al., 2020",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The timing and location of the outbreak facilitated the rapid transmission of the virus within a highly mobile population. The initial reporting of observed cases occurred during the traditional Chinese New Year, when the largest population movement takes place every year (Ai et al., 2020). Further, Wuhan is a highly populated city with more than 11 million residents and is connected to many cities in China through public transportation, such as buses, trains, and flights (Lai et al., 2020; Read, Bridgen, Cummings, Ho, & Jewell, 2020). In the absence of pharmaceutical interventions, rapid action was required by the Chinese government to mitigate transmission within and outside of Wuhan.",
+            "cite_spans": [
+                {
+                    "start": 274,
+                    "end": 289,
+                    "mention": "Ai et al., 2020",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 478,
+                    "end": 494,
+                    "mention": "Lai et al., 2020",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 496,
+                    "end": 539,
+                    "mention": "Read, Bridgen, Cummings, Ho, & Jewell, 2020",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "On January 23, 2020, the Chinese government implemented a strict lockdown of Wuhan, followed by several nearby cities in subsequent days; the lockdowns include temporarily suspending all public transportation and advising residents to remain at home (Du et al., 2020; Wu et al., 2020). Further, many high-speed rail stations and airports have implemented screening measures to detect travelers with a fever, specifically those traveling from Wuhan, and those with a fever are referred to public hospitals (Lai et al., 2020; Wu et al., 2020). Within hospitals, patients who fulfill clinical and epidemiological characteristics of 2019-nCoV are immediately isolated.",
+            "cite_spans": [
+                {
+                    "start": 251,
+                    "end": 266,
+                    "mention": "Du et al., 2020",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 268,
+                    "end": 283,
+                    "mention": "Wu et al., 2020",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 506,
+                    "end": 522,
+                    "mention": "Lai et al., 2020",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 524,
+                    "end": 539,
+                    "mention": "Wu et al., 2020",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The number of 2019-nCoV cases in Wuhan quickly outnumbered the available number of beds in hospitals, putting a substantial burden on the healthcare system. Consequently, the government rapidly built and launched two new hospitals with capacity for 1,600 and 1,000 beds, respectively, in Wuhan in addition to the existing 132 quarantine sites with more than 12,500 beds (Steinbuch, 2020). To anticipate additional resources to combat the epidemic, mathematical and statistical modeling tools can be useful to generate timely short-term forecasts of reported cases. These predictions can include estimates of expected morbidity burden that can help guide public health officials preparing the medical care and other resources needed to confront the epidemic. Short-term forecasts can also guide the intensity and type of interventions needed to mitigate an epidemic (Funk, Camacho, Kucharski, Eggo, & Edmunds, 2016; Shanafelt, Jones, Lima, Perrings, & Chowell, 2017). In the absence of vaccines or antiviral drugs for 2019-nCoV, the effective implementation of nonpharmaceutical interventions, such as personal protection and social distancing, will be critical to bring the epidemic under control.",
+            "cite_spans": [
+                {
+                    "start": 371,
+                    "end": 386,
+                    "mention": "Steinbuch, 2020",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 866,
+                    "end": 913,
+                    "mention": "Funk, Camacho, Kucharski, Eggo, & Edmunds, 2016",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 915,
+                    "end": 964,
+                    "mention": "Shanafelt, Jones, Lima, Perrings, & Chowell, 2017",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this emerging epidemic, the epidemiological data is limited, and the epidemiological parameters needed to calibrate elaborate mechanistic transmission models are not yet fully elucidated. Real-time short-term forecasts must be based on dynamic phenomenological models that have been validated during previous outbreaks (Chowell et al., 2016; Pell, Kuang, Viboud, & Chowell, 2018)(B\u00fcrger, Chowell, & Lara-D\u00ed\u0131az, 2019). We employ several dynamic models to generate and assess 5, 10, and 15 day ahead forecasts of the cumulative number of confirmed cases in Hubei province, the epicenter of the epidemic, and the overall trajectory of the epidemic in China excluding the province of Hubei.",
+            "cite_spans": [
+                {
+                    "start": 323,
+                    "end": 343,
+                    "mention": "Chowell et al., 2016",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 345,
+                    "end": 381,
+                    "mention": "Pell, Kuang, Viboud, & Chowell, 2018",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 383,
+                    "end": 418,
+                    "mention": "B\u00fcrger, Chowell, & Lara-D\u00ed\u0131az, 2019",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "We obtained daily updates of the cumulative number of reported confirmed cases for the 2019-nCoV epidemic across provinces in China from the National Health Commission of China website (Chinese National Health Commission). The data contains 34 areas, including provinces, municipalities, autonomous regions, and special administrative regions; here we refer to the regions collectively as provinces. Data updates were collected daily at 12 p.m. (GMT-5), between January 22, 2020 and February 9, 2020. The short time-series is affected by irregularities and reporting lags, so the cumulative curves are more stable and likely yield more stable and reliable estimates. Therefore, we analyze the cumulative trajectory of the epidemic in Hubei province, the epicenter of the outbreak, as well as the cumulative aggregate trajectory of all other provinces.",
+            "cite_spans": [
+                {
+                    "start": 186,
+                    "end": 220,
+                    "mention": "Chinese National Health Commission",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Data ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We generate short-term forecasts in real-time using three phenomenological models that have been previously used to derive short-term forecasts for a number of epidemics for several infectious diseases, including SARS, Ebola, pandemic influenza, and dengue (Chowell, Tariq, & Hyman, 2019; Pell et al., 2018; Wang, Wu, & Yang, 2012). The generalized logistic growth model (GLM) extends the simple logistic growth model to accommodate sub-exponential growth dynamics with a scaling of growth parameter, p (Viboud, Simonsen, & Chowell, 2016). The Richards model also includes a scaling parameter, a, to allow for deviation from the symmetric logistic curve (Chowell, 2017; Richards, 1959; Wang et al., 2012). We also include a recently developed sub-epidemic wave model that supports complex epidemic trajectories, including multiple peaks (i.e., SARS in Singapore (Chowell et al., 2019)). In this approach, the observed reported curve is assumed to be the aggregate of multiple underlying sub-epidemics (Chowell et al., 2019). A detailed description for each of the models is included in the Supplement.",
+            "cite_spans": [
+                {
+                    "start": 258,
+                    "end": 287,
+                    "mention": "Chowell, Tariq, & Hyman, 2019",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 289,
+                    "end": 306,
+                    "mention": "Pell et al., 2018",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 308,
+                    "end": 330,
+                    "mention": "Wang, Wu, & Yang, 2012",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 504,
+                    "end": 537,
+                    "mention": "Viboud, Simonsen, & Chowell, 2016",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 655,
+                    "end": 668,
+                    "mention": "Chowell, 2017",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 670,
+                    "end": 684,
+                    "mention": "Richards, 1959",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 686,
+                    "end": 703,
+                    "mention": "Wang et al., 2012",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 863,
+                    "end": 883,
+                    "mention": "Chowell et al., 2019",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1002,
+                    "end": 1022,
+                    "mention": "Chowell et al., 2019",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Models ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We calibrate each model to the daily cumulative reported case counts for Hubei and other provinces (all except Hubei). While the outbreak began in December 2019, available data on cumulative case counts are available starting on January 22, 2020. Therefore, the first calibration process includes 15 observations: from January 22, 2020 to February 5, 2020. Each subsequent calibration period increases by one day with each new published daily data, with the last calibration period between January 22, 2020 and February 9, 2020 (19 data points).",
+            "cite_spans": [],
+            "section": "Short-term forecasts ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We estimate the best-fit model solution to the reported data using nonlinear least squares fitting. This process yields the set of model parameters \u0398 that minimizes the sum of squared errors between the model f(t,\u0398) and the data yt; where \u0398GLM = (r, p, K), \u0398Rich = (r, a, K), and \u0398Sub = (r, p, K0, q, Cthr) correspond to the estimated parameter sets for the GLM, the Richards model, and the sub-epidemic model, respectively; parameter descriptions are provided in the Supplement. Thus, the best-fit solution f(t,\u0398\u02c6) is defined by the parameter set \u0398\u02c6=argmin\u2211t=1n(f(t,\u0398)\u2212yt)2. We fix the initial condition to the first data point.",
+            "cite_spans": [],
+            "section": "Short-term forecasts ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We then use a parametric bootstrap approach to quantify uncertainty around the best-fit solution, assuming a Poisson error structure. A detailed description of this method is provided in prior studies (Chowell, 2017; Roosa & Chowell, 2019). The models are refitted to the M = 200 bootstrap datasets to obtain M parameter sets, which are used to define 95% confidence intervals for each parameter. Each of the M model solutions to the bootstrap curves is used to generate m = 30 simulations extended through a forecasting period of 15 days. These 6000 (M \u00d7 m) curves construct the 95% prediction intervals for the forecasts.",
+            "cite_spans": [
+                {
+                    "start": 202,
+                    "end": 215,
+                    "mention": "Chowell, 2017",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 217,
+                    "end": 238,
+                    "mention": "Roosa & Chowell, 2019",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Short-term forecasts ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Our results for Hubei province indicate that the parameter estimates for the three models tend to stabilize and decrease in uncertainty as more data become available (Supplemental Table 1). In particular, the growth rate r decreases and appears to be converging over time, particularly for the GLM and sub-epidemic model. Parameter K also follows this general trend, with prediction intervals decreasing significantly in width as more data become available. Importantly, the p estimates from the GLM indicate that the epidemic growth in Hubei is close to exponential (p = 0.99 (95% CI: 0.98, 1) \u2013 February 9th). Further, growth rate and scaling parameter estimates have remained relatively stable over the last three reporting dates, while estimates of K are still declining. This may correlate with the effectiveness of control measures or the slowing of the epidemic.",
+            "cite_spans": [],
+            "section": "Model calibration ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "For the trajectory that aggregates all other provinces (excluding Hubei), the parameter estimates follow trends that differ from those for Hubei (Supplemental Table 2). While the three models estimated stable and nearly equivalent growth rates in Hubei, the estimated growth rates for other provinces vary across models and do not follow a distinct trend as more data become available. However, the scaling and size parameters remain relatively stable across all dates. Further, the p estimates from the GLM reveal a consistent sub-exponential growth pattern in other provinces (p = 0.67 (95% CI: 0.64, 0.70) \u2013 February 9th).",
+            "cite_spans": [],
+            "section": "Model calibration ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The latest 5-day ahead forecasts, generated on February 9, 2020, estimate an average of 34,509\u201334,596 total cumulative cases in Hubei by February 14, 2020 across the three models (Fig. 1a). For other provinces, the models predict an average range of 11,317\u201312,118 cumulative cases by February 14 (Fig. 1b). Based on cumulative reported cases as of February 9th, these estimates correspond with an average of 7409\u20137496 additional cases in Hubei and 1128\u20131929 additional cases in other provinces within the next 5 days.",
+            "cite_spans": [],
+            "section": "5-days ahead forecasts ::: Results",
+            "ref_spans": [
+                {
+                    "start": 180,
+                    "end": 186,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 297,
+                    "end": 303,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Comparing the 5-day ahead forecasts generated daily on February 5\u20139, 2020, the GLM and Richards models yield comparable prediction intervals in Hubei, while the sub-epidemic model yields wider intervals than the other models. Also, 5 day ahead forecasts from the sub-epidemic model on February 5th and 6th predict significantly higher case counts in Hubei compared to forecasts generated on February 7th and beyond (Fig. 1a). For other provinces, the GLM and Richards model yield intervals of similar widths, but the GLM predicts higher case counts than the Richards model across all dates (Fig. 1b). Further, the sub-epidemic model has significantly wider prediction intervals compared to the other models for all forecasts for other provinces. While the uncertainty of the predictions decreases as more data became available in Hubei, the uncertainty of the predictions for other provinces remain relatively stable, compared to forecasts from earlier dates.",
+            "cite_spans": [],
+            "section": "5-days ahead forecasts ::: Results",
+            "ref_spans": [
+                {
+                    "start": 416,
+                    "end": 422,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 591,
+                    "end": 597,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The 10 day ahead forecasts generated on February 9, 2020 from the three models estimate between 36,854 and 37,230 cumulative cases, on average, in Hubei by February 19, 2020 (Fig. 2a). For other provinces, the latest 10 day ahead forecasts predict average cumulative case counts between 11,549 and 13,069 cases across the three models (Fig. 2b). These estimates correspond with an additional 9754\u201310,130 cases in Hubei and an additional 1360\u20132880 cases reported in other provinces on average in the next 10 days.",
+            "cite_spans": [],
+            "section": "10-days ahead forecasts ::: Results",
+            "ref_spans": [
+                {
+                    "start": 175,
+                    "end": 181,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 336,
+                    "end": 342,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "10 day ahead forecasts of case counts in Hubei generated on February 5th show significantly different results between the GLM and Richards versus the sub-epidemic model, with the sub-epidemic model predicting significantly higher case counts (Fig. 2a). For forecasts generated after February 5th, the prediction intervals of the three models are comparable, with the GLM intervals having the lowest uncertainty, followed by the Richards model (Fig. 2a). For other provinces, the sub-epidemic model yields significantly wider prediction intervals than the other two models. Like the 5 day ahead forecasts, the 10 day ahead prediction intervals become increasingly narrow for Hubei when including more data, but uncertainty remains relatively stable in other provinces.",
+            "cite_spans": [],
+            "section": "10-days ahead forecasts ::: Results",
+            "ref_spans": [
+                {
+                    "start": 243,
+                    "end": 249,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 444,
+                    "end": 450,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The latest 15 day ahead forecasts predict a cumulative reported case count between 37,415 and 38,028 cases, on average, in Hubei by February 24, 2020. Further, the latest 15 day ahead forecasts suggest an average cumulative case count between 11,588 and 13,499 cases for other provinces. These forecasts correspond with an additional 10,315\u201310,928 cases in Hubei and an additional 1399\u20133310 cases in other provinces within the next 15 days.",
+            "cite_spans": [],
+            "section": "15-days ahead forecasts ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Again, the sub-epidemic model yields significantly higher forecasts for Hubei on February 5th, compared to the other models and compared to subsequent prediction intervals on following dates (Fig. 3a). The width of prediction intervals decreases as more data are included for each of the models in both Hubei and other provinces. This is consistent with shorter-term forecasts in Hubei but differs from the pattern of shorter-term forecasts in other provinces.",
+            "cite_spans": [],
+            "section": "15-days ahead forecasts ::: Results",
+            "ref_spans": [
+                {
+                    "start": 192,
+                    "end": 198,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "In this report, we provide timely short-term forecasts of the cumulative number of reported cases of the 2019-nCoV epidemic in Hubei province and other provinces in China as of February 9, 2020. As the epidemic continues, we are also publishing online daily 10day ahead forecasts including each of the models presented here (Roosa & Chowell, 2020). Based on the three models calibrated to data up until February 9, 2020, we forecast a cumulative number of reported cases between 37,415 and 38,028 in Hubei Province and 11,588\u201313,499 in other provinces by February 24, 2020.",
+            "cite_spans": [
+                {
+                    "start": 325,
+                    "end": 346,
+                    "mention": "Roosa & Chowell, 2020",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our models yield a good visual fit to the epidemic curves, based on residuals, with the sub-epidemic model outperforming the other models in terms of mean squared error (MSE) (Supplemental Tables 1 and 2). Parameter estimation results from the GLM consistently show that the epidemic growth is near exponential in Hubei and sub-exponential in other provinces.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Overall, models predict similar ranges of short-term forecasts, except for those generated on February 5th, where the sub-epidemic model predicts significantly higher case counts than the other two models (Figs. 1\u20133). The sub-epidemic model predicts similar ranges to the other models for subsequent dates, so the higher ranges on February 5th may indicate that more data are required to inform the parameters of the sub-epidemic model.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 206,
+                    "end": 213,
+                    "mention": "Figs. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We observe that the width of the prediction intervals decreases on average as more data are included for forecasts in Hubei; however, this pattern is not obvious for our analysis based on other provinces. This can, in part, be attributed to the smaller case counts and smaller initial prediction interval range seen in other provinces. Mean predictions and associated uncertainty remain relatively stable in other provinces though, while the mean estimates of 10 and 15 days ahead decrease significantly in Hubei (Fig. 2, Fig. 3). This suggests that the epidemic lasts longer in Hubei compared to other provinces (Fig. 4, Fig. 5, Fig. 6), which may be attributed to intensive control efforts and large-scale social distancing interventions. Therefore, it is not necessarily surprising that estimates from earlier dates, specifically prior to saturation, yield predictions with higher uncertainty.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 514,
+                    "end": 520,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 522,
+                    "end": 528,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 614,
+                    "end": 620,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 622,
+                    "end": 628,
+                    "mention": "Fig. 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 630,
+                    "end": 636,
+                    "mention": "Fig. 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "We retrieve the data from the Chinese media conglomerate Tencent (Chinese National Health Commission); however, the data show small differences in case counts compared to data of the epidemic reported by other sources (Johns Hopkins University Center for Systems Science and Engineering, 2020). Importantly, the curves of confirmed cases that we employ in our study are reported according to reporting date and could be influenced by testing capacity and other related factors. Further, there may be significant delays in identifying, isolating, and reporting cases in Hubei due to the magnitude of the epidemic, which could influence our predictions. Incidence curves according to the date of symptom onset could provide a clearer picture of the transmission dynamics during an epidemic. We also note that we analyzed the epidemic curves starting on January 22, 2020, but the epidemic started in December 2019. Hence, the first data point accumulates cases up until January 22, 2020, as data were not available prior to this date.",
+            "cite_spans": [
+                {
+                    "start": 66,
+                    "end": 100,
+                    "mention": "Chinese National Health Commission",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 219,
+                    "end": 292,
+                    "mention": "Johns Hopkins University Center for Systems Science and Engineering, 2020",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The 2019-nCoV outbreak in China presents a significant challenge for modelers, as there are limited data available on the early growth trajectory, and epidemiological characteristics of the novel coronavirus have not been fully elucidated. Our timely short-term forecasts based on phenomenological models can be useful for real-time preparedness, such as anticipating the required number of hospital beds and other medical resources, as they provide an estimate of the number of cases hospitals will need to prepare for in the coming days. In future work, we plan to report the results of a retrospective analysis of forecasting performance across models based on various performance metrics. Of note, the case definition changed on February 12, 2020 to count clinical cases that have not been laboratory tested. As a result in this change in reporting, the province of Hubei experienced a jump in the nuber of cases on February 13th, 2020. This change in reporting will need to be taken into account in order to assess the accuracy of the forecasts reported here.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In conclusion, our most recent forecasts, based on data for the last three days (February 7th \u2013 9th, 2020), remained relatively stable. These models predict that the epidemic has reached a saturation point for both Hubei and other provinces. This likely reflects the impact of the wide spectrum of social distancing measures implemented by the Chinese government, which likely helped stabilize the epidemic. The forecasts presented are based on the assumption that current mitigation efforts will continue.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "GC is supported by NSF grants 1610429 and 1633381.",
+            "cite_spans": [],
+            "section": "Funding",
+            "ref_spans": []
+        },
+        {
+            "text": "Not applicable.",
+            "cite_spans": [],
+            "section": "Ethics",
+            "ref_spans": []
+        },
+        {
+            "text": "Data will be made available in an online repository upon acceptance of manuscript.",
+            "cite_spans": [],
+            "section": "Data, code and materials",
+            "ref_spans": []
+        },
+        {
+            "text": "KR and GC conducted forecasts and data analysis; YL retrieved and managed data; All authors contributed to writing and revising subsequent versions of the manuscript. All authors read and approved the final manuscript.",
+            "cite_spans": [],
+            "section": "Author contributions",
+            "ref_spans": []
+        },
+        {
+            "text": "Authors declare no competing interests.",
+            "cite_spans": [],
+            "section": "Declaration of competing interest",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Fig.\u00a01: Forecasting results for 5-days ahead estimates, generated daily from February 5\u20139, 2020, of cumulative reported cases in Hubei (a) and other provinces (b). The mean case estimate is represented by the dots, while the lines represent the 95% prediction intervals for each model.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig.\u00a02: Forecasting results for 10-days ahead estimates, generated daily from February 5\u20139, 2020, of cumulative reported cases in Hubei (a) and other provinces (b). The mean case estimate is represented by the dots, while the lines represent the 95% prediction intervals for each model.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Fig.\u00a03: Forecasting results for 15-days ahead estimates, generated daily from February 5\u20139, 2020, of cumulative reported cases in Hubei (a) and other provinces (b). The mean case estimate is represented by the dots, while the lines represent the 95% prediction intervals for each model.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Fig.\u00a04: 15-day ahead GLM forecasts of cumulative reported 2019-nCoV cases in China \u2013 Hubei and other provinces \u2013 generated on February 9, 2020.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Fig.\u00a05: 15-day ahead Richards forecasts of cumulative reported 2019-nCoV cases in China \u2013 Hubei and other provinces \u2013 generated on February 9, 2020.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Fig.\u00a06: 15-day ahead sub-epidemic model forecasts of cumulative reported 2019-nCoV cases in China \u2013 Hubei and other provinces \u2013 generated on February 9, 2020.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Population movement, city closure and spatial transmission of the 2019-nCoV infection in China",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Ai",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Zhu",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Tian",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1101/2020.02.04.20020339"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Bogoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Ruktanonchai",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Watts",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Tatem",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Early transmission dynamics in Wuhan, China, of novel coronavirus-infected pneumonia",
+            "authors": [
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "New England Journal of Medicine",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Using phenomenological models for forecasting the 2015 Ebola challenge",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Pell",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Kuang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Viboud",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Epidemics",
+            "volume": "22",
+            "issn": "",
+            "pages": "62-70",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Novel coronavirus 2019-nCoV: Early estimation of epidemiological parameters and epidemic predictions",
+            "authors": [
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Read",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.R.E.",
+                    "middle": [],
+                    "last": "Bridgen",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.A.T.",
+                    "middle": [],
+                    "last": "Cummings",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Ho",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.P.",
+                    "middle": [],
+                    "last": "Jewell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1101/2020.01.23.20018549"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "A\u00a0flexible growth function for empirical use",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Richards",
+                    "suffix": ""
+                }
+            ],
+            "year": 1959,
+            "venue": "Journal of Experimental Botany",
+            "volume": "10",
+            "issn": "2",
+            "pages": "290-301",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Pattern of early human-to-human transmission of Wuhan 2019-nCoV",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Riou",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.L.",
+                    "middle": [],
+                    "last": "Althaus",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1101/2020.01.23.917351"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Assessing parameter identifiability in compartmental dynamic models using a computational approach: Application to infectious disease transmission models",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Roosa",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2019,
+            "venue": "Theoretical Biology and Medical Modelling",
+            "volume": "16",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Coronavirus incidence forecasts",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Roosa",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Forecasting the 2001 foot-and-mouth disease epidemic in the UK",
+            "authors": [
+                {
+                    "first": "D.W.",
+                    "middle": [],
+                    "last": "Shanafelt",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Lima",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Perrings",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "EcoHealth",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "China opens second new hospital for coronavirus patients. New York Post",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Steinbuch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Reported cases of 2019-nCoV",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "A\u00a0generalized-growth model to characterize the early ascending phase of infectious disease outbreaks",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Viboud",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Simonsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Epidemics",
+            "volume": "15",
+            "issn": "",
+            "pages": "27-37",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Richards model revisited: Validation by and application to infection dynamics",
+            "authors": [
+                {
+                    "first": "X.-S.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Journal of Theoretical Biology",
+            "volume": "313",
+            "issn": "",
+            "pages": "12-19",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Consensus document on the epidemiology of severe acute respiratory syndrome (SARS)",
+            "authors": [
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "World Health Organization",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Novel coronavirus (2019-nCoV) situation reports",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "World Health Organization",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Nowcasting and forecasting the potential domestic and international spread of the 2019-nCoV outbreak originating in Wuhan, China: A modelling study",
+            "authors": [
+                {
+                    "first": "J.T.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.M.",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "The Lancet",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Transmission and epidemiological characteristics of Novel Coronavirus (2019-nCoV)-Infected Pneumonia(NCIP):preliminary evidence obtained in comparison with 2003-SARS",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1101/2020.01.30.20019836"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Comparative analysis of phenomenological growth models applied to epidemic outbreaks",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "B\u00fcrger",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Lara-D\u00ed\u0131az",
+                    "suffix": ""
+                }
+            ],
+            "year": 2019,
+            "venue": "Math Biosci Eng",
+            "volume": "16",
+            "issn": "5",
+            "pages": "4250-4273",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Reported cases of 2019-nCoV",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Fitting dynamic models to epidemic outbreaks with quantified uncertainty: A primer for parameter uncertainty, identifiability, and forecasts",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Infectectious Disease Modelling",
+            "volume": "2",
+            "issn": "",
+            "pages": "379-398",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Hincapie-Palacio",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Ospina",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Pell",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Tariq",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Dahal",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Viboud",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Public library of science",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "A\u00a0novel sub-epidemic modeling framework for short-term forecasting epidemic waves",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Tariq",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Hyman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2019,
+            "venue": "BMC Medicine",
+            "volume": "17",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Risk of 2019 novel coronavirus importations throughout China prior to the Wuhan quarantine",
+            "authors": [
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Du",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Cauchemez",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Cowling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1101/2020.01.28.20019299"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Real-time forecasting of infectious disease dynamics with a stochastic semi-mechanistic model",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Funk",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Camacho",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.J.",
+                    "middle": [],
+                    "last": "Kucharski",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.M.",
+                    "middle": [],
+                    "last": "Eggo",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.J.",
+                    "middle": [],
+                    "last": "Edmunds",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Epidemics",
+            "volume": "22",
+            "issn": "",
+            "pages": "56-61",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Hopkins University",
+                    "suffix": ""
+                }
+            ],
+            "year": 2020,
+            "venue": "Center for systems science and engineering",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

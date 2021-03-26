@@ -1,0 +1,4559 @@
+{
+    "paper_id": "PMC4465343",
+    "metadata": {
+        "title": "Antibody engineering for increased potency, breadth and half-life",
+        "authors": [
+            {
+                "first": "Stuart",
+                "middle": [
+                    "A."
+                ],
+                "last": "Sievers",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Louise",
+                "middle": [],
+                "last": "Scharf",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Anthony",
+                "middle": [
+                    "P."
+                ],
+                "last": "West",
+                "suffix": "Jr",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Pamela",
+                "middle": [
+                    "J."
+                ],
+                "last": "Bjorkman",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "HIV-1 effectively evades antibody-mediated responses due to rapid mutation of gp120 and gp41, the two glycoproteins that comprise the envelope (Env) spike (Fig. 1) [1\u25aa,2\u25aa,4\u25aa], and structural features that enable Env to hide conserved epitopes, including a shield of host-derived carbohydrates [5], conformational masking [6], steric occlusion [7\u201310] and flexible variable loops [8,11]. The low number and density of envelope spikes on HIV-1 virions may also contribute to the ability of HIV-1 to evade antibodies by preventing most IgGs from binding simultaneously with both Fabs [12,13\u25aa]. These features usually result in production of strain-specific antibodies. However, recent advances in single-cell cloning techniques have led to the identification of extremely potent, broadly neutralizing HIV-1 IgG antibodies (bNAbs) from infected donors [14\u201316]. When delivered passively in animal models of HIV-1 infection, anti-HIV-1 bNAbs can prevent [17\u201320] or suppress infection [21\u201324], prompting efforts to improve their potency and/or breadth in order to increase their efficacy as therapeutics. Characterization of bNAbs through structural and bioinformatic approaches has identified epitopes on HIV-1 Env, including the gp120 V1V2 and V3 loops, the CD4-binding site (CD4bs), the gp41 membrane proximal external region (MPER) and sites bridging gp120 and gp41 (Fig. 1) [25\u201330].",
+            "cite_spans": [
+                {
+                    "start": 165,
+                    "end": 167,
+                    "mention": "1\u25aa",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 168,
+                    "end": 170,
+                    "mention": "2\u25aa",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 171,
+                    "end": 173,
+                    "mention": "4\u25aa",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 294,
+                    "end": 295,
+                    "mention": "5",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 322,
+                    "end": 323,
+                    "mention": "6",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 344,
+                    "end": 345,
+                    "mention": "7",
+                    "ref_id": "BIBREF79"
+                },
+                {
+                    "start": 346,
+                    "end": 348,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 379,
+                    "end": 380,
+                    "mention": "8",
+                    "ref_id": "BIBREF90"
+                },
+                {
+                    "start": 381,
+                    "end": 383,
+                    "mention": "11",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 581,
+                    "end": 583,
+                    "mention": "12",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 584,
+                    "end": 587,
+                    "mention": "13\u25aa",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 848,
+                    "end": 850,
+                    "mention": "14",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 851,
+                    "end": 853,
+                    "mention": "16",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 948,
+                    "end": 950,
+                    "mention": "17",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 951,
+                    "end": 953,
+                    "mention": "20",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 978,
+                    "end": 980,
+                    "mention": "21",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 981,
+                    "end": 983,
+                    "mention": "24",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1372,
+                    "end": 1374,
+                    "mention": "25",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1375,
+                    "end": 1377,
+                    "mention": "30",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 161,
+                    "end": 162,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1368,
+                    "end": 1369,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "This review will discuss engineering efforts to create more potent anti-HIV-1 antibodies, using both traditional IgG and modified architectures. We also consider how engineering efforts can result in polyreactivity, the ability of an antibody to bind to more than one antigen, which can lead to autoreactivity and/or decreased in vivo half-life.  ",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Techniques to improve IgG affinities [31\u25aa,32], broaden their specificity to related antigens [33\u201335] and improve their expression and solubility [32] include computational techniques [36\u201339] and directed mutagenesis to introduce diversity coupled with selection techniques, for example phage, yeast, mRNA and ribosome display [32]. Early library-based engineering efforts to improve HIV-1 antibodies involved b12, one of the first HIV-1 bNAbs. The affinity of b12 was enhanced by nearly 400-fold by selecting for gp120 binding from libraries of phage-displayed mutants in complementarity-determining regions (CDRs) [40]. These studies demonstrated that increasing affinity through in-vitro evolution could also increase breadth [41]. The engineering of the HIV-1 m9 antibody used a modified approach termed sequential antigen planning to improve both affinity and breadth: a single-chain variable fragment (scFv) library of a CD4-induced (CD4i) antibody was screened against sequentially changing antigens, ultimately identifying m9 [42]. Although antibodies recently isolated from donors are more promising therapeutically than earlier bNAbs [43,44\u25aa], library-based methods may be important to improve the new generation of antibodies, as they can introduce beneficial changes that might not be anticipated from inspection of antibody\u2013antigen complex structures. However, the large number of HIV-1 strains, including the diversity of the viral swarm within a single infected individual, makes it difficult to select for antibodies that maintain breadth across viral strains while increasing binding to one or a few Env specificities.",
+            "cite_spans": [
+                {
+                    "start": 38,
+                    "end": 41,
+                    "mention": "31\u25aa",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 42,
+                    "end": 44,
+                    "mention": "32",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 94,
+                    "end": 96,
+                    "mention": "33",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 97,
+                    "end": 99,
+                    "mention": "35",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 146,
+                    "end": 148,
+                    "mention": "32",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 184,
+                    "end": 186,
+                    "mention": "36",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 187,
+                    "end": 189,
+                    "mention": "39",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 327,
+                    "end": 329,
+                    "mention": "32",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 616,
+                    "end": 618,
+                    "mention": "40",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 729,
+                    "end": 731,
+                    "mention": "41",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1034,
+                    "end": 1036,
+                    "mention": "42",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 1144,
+                    "end": 1146,
+                    "mention": "43",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 1147,
+                    "end": 1150,
+                    "mention": "44\u25aa",
+                    "ref_id": "BIBREF51"
+                }
+            ],
+            "section": "ENGINEERING HIV-1 ANTIBODIES",
+            "ref_spans": []
+        },
+        {
+            "text": "Of relevance to prospects for improving anti-HIV-1 antibodies is the fact that bNAbs isolated from HIV-1 infected individuals, especially the most potent, recently discovered bNAbs, often show high levels of somatic hypermutation [43,44\u25aa,45\u25aa]. Somatic mutations in HIV-1 bNAbs can include insertions/deletions in framework regions (FWRs) and the more variable CDRs. Taken together, the VH domain alone can include 40\u2013100 nucleotide mutations [14,45\u25aa,46\u201351]. Many of the FWR mutations, even those not directly contacting antigen, appear to be important for bNAb function, as reverting mutated noninteracting FWR residues to germline residues resulted in reduced neutralization potency and breadth [45\u25aa]. Efforts to identify a minimal set of FWR mutations required for bNAbs VRC01 and 10E8 showed that it was possible to revert up to 78% of VRC01 and up to 89% of 10E8 FWR mutations to germline residues while maintaining much of the original potency and breadth [52\u25aa]. Interestingly, reverting 50% of the light chain FWR mutations to germline improved the potency of VRC01 [52\u25aa]. Thus, although FWR mutations can contribute antigen contacts in addition to stabilizing CDR conformations and allowing conformational flexibility [45\u25aa], not all FWR mutations are required for bNAb potency and breadth, and some may even be deleterious.",
+            "cite_spans": [
+                {
+                    "start": 231,
+                    "end": 233,
+                    "mention": "43",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 234,
+                    "end": 237,
+                    "mention": "44\u25aa",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 238,
+                    "end": 241,
+                    "mention": "45\u25aa",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 443,
+                    "end": 445,
+                    "mention": "14",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 446,
+                    "end": 449,
+                    "mention": "45\u25aa",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 450,
+                    "end": 452,
+                    "mention": "46",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 453,
+                    "end": 455,
+                    "mention": "51",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 697,
+                    "end": 700,
+                    "mention": "45\u25aa",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 962,
+                    "end": 965,
+                    "mention": "52\u25aa",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 1073,
+                    "end": 1076,
+                    "mention": "52\u25aa",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 1226,
+                    "end": 1229,
+                    "mention": "45\u25aa",
+                    "ref_id": "BIBREF52"
+                }
+            ],
+            "section": "ENGINEERING HIV-1 ANTIBODIES",
+            "ref_spans": []
+        },
+        {
+            "text": "Some of the most potent antibodies against HIV-1 that are the focus of engineering efforts are VRC01-class antibodies, which target the CD4bs using a VH1-2\u221702 derived heavy chain to mimic CD4 recognition of gp120 [8,15,16,46,53,54\u25aa\u25aa]. A structure-based approach was taken to improve NIH45-46 [46], a more potent clonal variant of VRC01 [15]. Structural and mutagenesis studies demonstrated that a four-residue insertion within the NIH45-46 CDRH3 loop accounted for its increased potency [55]. Although VRC01-like bNAbs effectively mimic CD4 [48], both VRC01 and NIH45-46 fail to fill a hydrophobic pocket within gp120 to mimic the burying of a hydrophobic CD4 residue, Phe43CD4. Mutants were created by substituting the Phe43CD4-equivalent residue in NIH45-46, Gly54NIH45-46, and improved potencies were found for Trp, Phe, Tyr and His substitutions [55]. The most promising mutant, NIH45-46G54W, showed an overall 10-fold increase in neutralization potency and neutralized some NIH45-46 resistant strains [55]. Residue 54 is a Trp in some VRC01-related bNAbs that are less potent than VRC01 or NIH45-46, for example VRC03 [48], demonstrating that a Gly-to-Trp substitution at position 54 is a possible somatic mutation in this bNAb lineage, but that maximal increased potency from this substitution requires other features of a VRC01-like bNAb, most likely the CDRH3 loop insertion.",
+            "cite_spans": [
+                {
+                    "start": 214,
+                    "end": 215,
+                    "mention": "8",
+                    "ref_id": "BIBREF90"
+                },
+                {
+                    "start": 216,
+                    "end": 218,
+                    "mention": "15",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 219,
+                    "end": 221,
+                    "mention": "16",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 222,
+                    "end": 224,
+                    "mention": "46",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 225,
+                    "end": 227,
+                    "mention": "53",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 228,
+                    "end": 230,
+                    "mention": "54",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 293,
+                    "end": 295,
+                    "mention": "46",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 337,
+                    "end": 339,
+                    "mention": "15",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 488,
+                    "end": 490,
+                    "mention": "55",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 542,
+                    "end": 544,
+                    "mention": "48",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 851,
+                    "end": 853,
+                    "mention": "55",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 1007,
+                    "end": 1009,
+                    "mention": "55",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 1124,
+                    "end": 1126,
+                    "mention": "48",
+                    "ref_id": "BIBREF55"
+                }
+            ],
+            "section": "ENGINEERING HIV-1 ANTIBODIES",
+            "ref_spans": []
+        },
+        {
+            "text": "A follow-up study [56\u25aa] used structure-based design to reduce available routes of HIV-1 escape from antibody pressure. Bioinformatic analysis identified gp120 sequence correlates for resistance to VRC01-class antibodies by noting that variations at highly conserved gp120 residues 279gp120\u2013280gp120 and 458gp120\u2013459gp120 (the \u2018NNGG\u2019 motif, named for the Asn and Gly residues at these positions) lead to resistance [53]; these predictions were experimentally verified in vitro[53] and in HIV-1 infected humanized mice [22]. To counteract the effects of gp120 escape mutations, rational design was used to create two new mutants: 45\u201346m2 (S28YLC), which introduces contacts with an Asn276gp120-linked glycan, as seen in VRC01/gp120 complexes, but not NIH45\u201346/gp120 complexes [48,55], and 45\u201346m7 (W47 VHC), which removes steric clashes with gp120 substitutions in the GG motif [56\u25aa]. 45\u201346m2 neutralized nearly 96% of viruses, an improvement over other CD4bs bNAbs, which typically neutralize nearly 90% of strains. In vivo experiments demonstrated that viral escapes were no longer found in the GG motif when HIV-1 infected animals were treated with 45\u201346m2/45\u201346m7, and a resulting A281Tgp120 escape variant had reduced viral fitness [56\u25aa]. These studies demonstrate that even highly somatically mutated bNAbs are not necessarily optimal as isolated from donors, and that even if it is impossible to completely prevent HIV-1 escape from bNAbs, it might be possible to drive the evolution of viruses with reduced fitness that could be more easily combated by host defense mechanisms.",
+            "cite_spans": [
+                {
+                    "start": 19,
+                    "end": 22,
+                    "mention": "56\u25aa",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 415,
+                    "end": 417,
+                    "mention": "53",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 476,
+                    "end": 478,
+                    "mention": "53",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 518,
+                    "end": 520,
+                    "mention": "22",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 775,
+                    "end": 777,
+                    "mention": "48",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 778,
+                    "end": 780,
+                    "mention": "55",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 877,
+                    "end": 880,
+                    "mention": "56\u25aa",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 1236,
+                    "end": 1239,
+                    "mention": "56\u25aa",
+                    "ref_id": "BIBREF64"
+                }
+            ],
+            "section": "ENGINEERING HIV-1 ANTIBODIES",
+            "ref_spans": []
+        },
+        {
+            "text": "A similar effort to improve a bNAb is represented by development of a more potent variant of a VRC01-class antibody that was isolated from the VRC01/NIH45\u201346 donor [54\u25aa\u25aa]. First, 454 pyrosequencing of B cell antibody gene transcripts allowed identification of a heavy chain clonal variant that was closely related to NIH45\u201346 and contained the same four-residue CDRH3 insert. When combined with the VRC01 light chain, the new bNAb, VRC07, was about two-fold more potent than VRC01. Although not antibody engineering per se, this result illustrates that deeper searching of bNAb donor repertoires can identify more potent clonal relatives; other examples include variants of PGT121 [47,57,58], PGT141 [59] and 8ANC195 [26]. Next, all 20 amino acids were evaluated at VRC07 heavy chain position 54. Similar to results for NIH45\u201346 Gly54HC mutants [55], substitution of VRC07 Gly54 to larger residues, including Trp, Tyr, Phe and His, increased neutralization potency and breadth, but substitutions for large aromatic residues resulted in polyreactive recognition of non-HIV-1 antigens [54\u25aa\u25aa]. A Gly54His substitution showed the least increase in polyreactivity while still increasing potency. The antibody light chain was also shortened to address observations that the V5 loop of gp120 interferes with the binding of VRC01-like antibodies [60]. On the basis of results from a screen of light chain truncations and modifications, a two-residue N-terminal truncation as well as a Val3SerLC mutation was selected [54\u25aa\u25aa]. For in vivo experiments, mutations in the Fc region to improve plasma half-life through enhanced binding to FcRn (M428L/N434S, the \u2018LS\u2019 mutant [61]) were introduced. Additional framework mutation reversions and solubility-enhancing mutations were investigated, but the antibody selected after in vivo half-life determinations, VRC07-523-LS, did not contain these mutations. VRC07-523 and VRC07-523-LS were five- to eight-fold more potent than VRC01 and neutralized 96% of tested HIV-1 strains in vitro. Viral challenge experiments in macaques verified that the increased in vitro potency correlated with improved protection from infection in vivo[54\u25aa\u25aa]. Taken together, the NIH45-46 and VRC07 examples illustrate the potential to improve the activity of VRC01-class bNAbs by filling the hydrophobic Phe43CD4 pocket on gp120.",
+            "cite_spans": [
+                {
+                    "start": 165,
+                    "end": 167,
+                    "mention": "54",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 682,
+                    "end": 684,
+                    "mention": "47",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 685,
+                    "end": 687,
+                    "mention": "57",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 688,
+                    "end": 690,
+                    "mention": "58",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 701,
+                    "end": 703,
+                    "mention": "59",
+                    "ref_id": "BIBREF67"
+                },
+                {
+                    "start": 718,
+                    "end": 720,
+                    "mention": "26",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 846,
+                    "end": 848,
+                    "mention": "55",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 1084,
+                    "end": 1086,
+                    "mention": "54",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 1339,
+                    "end": 1341,
+                    "mention": "60",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 1510,
+                    "end": 1512,
+                    "mention": "54",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 1661,
+                    "end": 1663,
+                    "mention": "61",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 2164,
+                    "end": 2166,
+                    "mention": "54",
+                    "ref_id": "BIBREF62"
+                }
+            ],
+            "section": "ENGINEERING HIV-1 ANTIBODIES",
+            "ref_spans": []
+        },
+        {
+            "text": "In a different approach, features of clonally related antibodies with similar specificities can sometimes be combined into one antibody to increase breadth and/or potency. For example, a chimeric version of glycan-dependent bNAbs 10-1074 and PGT121 [14,57] was constructed by grafting five PGT121 heavy chain residues identified as contacting a complex-type N-linked glycan into the 10-1074 heavy chain [57]. The chimera (10-1074GM) exhibited improved potency and neutralized some viral strains resistant to wildtype 10-1074. In the case of PG9 and PG16, members of a family of bNAbs targeting the V1V2 loop and glycans at positions Asn160gp120 and Asn176gp120[14], three PG16LC residues that contact a complex or hybrid-type N-glycan at Asn176gp120 were grafted onto LCPG9 to create PG9-PG16-RSH [62]. The resulting chimeric antibody had improved potency compared with PG9 [62]. In both examples, grafting residues contacting complex-type N-glycans onto a family member that favors a high-mannose N-glycan at the same Env position seemed to allow the antibody to accommodate different types of glycoforms. In another example, the neutralization potency of the MPER antibody 4E10 was improved nearly two-fold by engineering its CDRH3 to mimic lipid-binding properties observed for 10E8 [63].",
+            "cite_spans": [
+                {
+                    "start": 250,
+                    "end": 252,
+                    "mention": "14",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 253,
+                    "end": 255,
+                    "mention": "57",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 404,
+                    "end": 406,
+                    "mention": "57",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 661,
+                    "end": 663,
+                    "mention": "14",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 798,
+                    "end": 800,
+                    "mention": "62",
+                    "ref_id": "BIBREF71"
+                },
+                {
+                    "start": 875,
+                    "end": 877,
+                    "mention": "62",
+                    "ref_id": "BIBREF71"
+                },
+                {
+                    "start": 1287,
+                    "end": 1289,
+                    "mention": "63",
+                    "ref_id": "BIBREF72"
+                }
+            ],
+            "section": "ENGINEERING HIV-1 ANTIBODIES",
+            "ref_spans": []
+        },
+        {
+            "text": "Antibodies raised against foreign antigens such as HIV-1 Env can be polyreactive or autoreactive, that is they can bind to more than one antigen (polyreactivity) and/or to self proteins (autoreactivity) [64\u201366]. Although B cells with autoreactive and polyreactive B cell receptors are largely removed as they pass through tolerance checkpoints [67,68], a fraction of mature B cells remain polyreactive or autoreactive in healthy individuals [69]. Polyreactive antibodies produced by these cells may be generally useful for fighting bacterial infection and enhancing the phagocytosis of apoptotic cells [70,71]. Indeed, some bacterial and viral infections are associated with higher serum levels of autoreactive and polyreactive antibodies [65].",
+            "cite_spans": [
+                {
+                    "start": 204,
+                    "end": 206,
+                    "mention": "64",
+                    "ref_id": "BIBREF73"
+                },
+                {
+                    "start": 207,
+                    "end": 209,
+                    "mention": "66",
+                    "ref_id": "BIBREF75"
+                },
+                {
+                    "start": 345,
+                    "end": 347,
+                    "mention": "67",
+                    "ref_id": "BIBREF76"
+                },
+                {
+                    "start": 348,
+                    "end": 350,
+                    "mention": "68",
+                    "ref_id": "BIBREF77"
+                },
+                {
+                    "start": 442,
+                    "end": 444,
+                    "mention": "69",
+                    "ref_id": "BIBREF78"
+                },
+                {
+                    "start": 603,
+                    "end": 605,
+                    "mention": "70",
+                    "ref_id": "BIBREF80"
+                },
+                {
+                    "start": 606,
+                    "end": 608,
+                    "mention": "71",
+                    "ref_id": "BIBREF81"
+                },
+                {
+                    "start": 740,
+                    "end": 742,
+                    "mention": "65",
+                    "ref_id": "BIBREF74"
+                }
+            ],
+            "section": "ENGINEERING ANTIBODIES CAN AFFECT POLYREACTIVITY AND IN VIVO HALF-LIFE",
+            "ref_spans": []
+        },
+        {
+            "text": "The presence of autoreactive/polyreactive antibodies has been associated with HIV-1 infection for more than 25 years [72\u201374]. Polyreactivity was first characterized in detail for the 4E10 and 2F5 MPER bNAbs [75]. These bNAbs were described as interacting with cardiolipin, a negatively charged mitochondrial phospholipid [75\u201380]. Further studies confirmed that binding of 2F5 and 4E10 to HIV-1 Env is enhanced by the presence of the host-derived viral membrane, which would include negatively charged phospholipids [81]. Recent studies have identified human proteins, kynureninase, type 1 inositol trisphosphate receptor and splicing factor 3b subunit 3 as potential self-antigens recognized by 2F5 and 4E10 [82,83]. Another MPER antibody, 10E8, does not exhibit polyreactivity in standard assays [84], yet binds tightly to a self-antigen, FAM84A (family with sequence similarity 84, member A) [85\u25aa\u25aa]. In a comprehensive study, a majority of more than 200 anti-HIV-1 Env antibodies isolated from HIV-1 infected donors exhibited binding to both self and nonself antigens, with anti-gp41 antibodies showing the most polyreactivity, particularly against lipid antigens [86,87]. In general, broadly neutralizing anti-HIV-1 antibodies exhibit a higher frequency of polyreactivity than nonneutralizing antibodies [85\u25aa\u25aa].",
+            "cite_spans": [
+                {
+                    "start": 118,
+                    "end": 120,
+                    "mention": "72",
+                    "ref_id": "BIBREF82"
+                },
+                {
+                    "start": 121,
+                    "end": 123,
+                    "mention": "74",
+                    "ref_id": "BIBREF84"
+                },
+                {
+                    "start": 208,
+                    "end": 210,
+                    "mention": "75",
+                    "ref_id": "BIBREF85"
+                },
+                {
+                    "start": 322,
+                    "end": 324,
+                    "mention": "75",
+                    "ref_id": "BIBREF85"
+                },
+                {
+                    "start": 325,
+                    "end": 327,
+                    "mention": "80",
+                    "ref_id": "BIBREF91"
+                },
+                {
+                    "start": 516,
+                    "end": 518,
+                    "mention": "81",
+                    "ref_id": "BIBREF92"
+                },
+                {
+                    "start": 709,
+                    "end": 711,
+                    "mention": "82",
+                    "ref_id": "BIBREF93"
+                },
+                {
+                    "start": 712,
+                    "end": 714,
+                    "mention": "83",
+                    "ref_id": "BIBREF94"
+                },
+                {
+                    "start": 798,
+                    "end": 800,
+                    "mention": "84",
+                    "ref_id": "BIBREF95"
+                },
+                {
+                    "start": 895,
+                    "end": 897,
+                    "mention": "85",
+                    "ref_id": "BIBREF96"
+                },
+                {
+                    "start": 1167,
+                    "end": 1169,
+                    "mention": "86",
+                    "ref_id": "BIBREF97"
+                },
+                {
+                    "start": 1170,
+                    "end": 1172,
+                    "mention": "87",
+                    "ref_id": "BIBREF98"
+                },
+                {
+                    "start": 1308,
+                    "end": 1310,
+                    "mention": "85",
+                    "ref_id": "BIBREF96"
+                }
+            ],
+            "section": "ENGINEERING ANTIBODIES CAN AFFECT POLYREACTIVITY AND IN VIVO HALF-LIFE",
+            "ref_spans": []
+        },
+        {
+            "text": "Polyreactivity may not necessarily be a problem for anti-HIV-1 antibodies, especially as it is a common property of donor-derived bNAbs; however, a correlation between increased polyreactivity and an increased rate of antibody clearance in vivo has been observed for IgGs [88]. IgG half-lives are normally extended beyond other serum proteins due to interactions with FcRn, the receptor that protects serum IgG from a default degradative pathway in vascular endothelial cells [89,90]. However, mutations known to increase the half-life of nonpolyreactive IgGs through enhanced interactions with FcRn, such as the LS mutation [61] that was introduced into VRC01 and VRC07\u2013523 [54\u25aa\u25aa,91], do not generally improve the half-lives of polyreactive IgGs. This is likely because increased FcRn function cannot compensate for IgG loss due to off-target binding, which absorbs polyreactive IgGs and leads to their rapid clearance [88].",
+            "cite_spans": [
+                {
+                    "start": 273,
+                    "end": 275,
+                    "mention": "88",
+                    "ref_id": "BIBREF99"
+                },
+                {
+                    "start": 477,
+                    "end": 479,
+                    "mention": "89",
+                    "ref_id": "BIBREF100"
+                },
+                {
+                    "start": 480,
+                    "end": 482,
+                    "mention": "90",
+                    "ref_id": "BIBREF102"
+                },
+                {
+                    "start": 626,
+                    "end": 628,
+                    "mention": "61",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 676,
+                    "end": 678,
+                    "mention": "54",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 681,
+                    "end": 683,
+                    "mention": "91",
+                    "ref_id": "BIBREF103"
+                },
+                {
+                    "start": 921,
+                    "end": 923,
+                    "mention": "88",
+                    "ref_id": "BIBREF99"
+                }
+            ],
+            "section": "ENGINEERING ANTIBODIES CAN AFFECT POLYREACTIVITY AND IN VIVO HALF-LIFE",
+            "ref_spans": []
+        },
+        {
+            "text": "In antibody engineering efforts, it has been observed that improving the breadth and potency of antibodies can lead to increased polyreactivity and/or reduced solubility and increased aggregation propensity [54\u25aa\u25aa,92\u201394]; in studies described above, many of the Gly54HC substitutions into NIH45\u201346 and VRC07 derivatives resulted in increased polyreactivity and decreased in vivo half-lives [54\u25aa\u25aa,94]. In addition, the more potent version of 10\u20131074, 10\u20131074GM, exhibited increased polyreactivity compared with its PGT121 and 10\u20131074 parents (H. Mouquet, L. Scharf, P.J. Bjorkman and M.C. Nussenzweig, unpublished data).",
+            "cite_spans": [
+                {
+                    "start": 208,
+                    "end": 210,
+                    "mention": "54",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 213,
+                    "end": 215,
+                    "mention": "92",
+                    "ref_id": "BIBREF104"
+                },
+                {
+                    "start": 216,
+                    "end": 218,
+                    "mention": "94",
+                    "ref_id": "BIBREF106"
+                },
+                {
+                    "start": 390,
+                    "end": 392,
+                    "mention": "54",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 395,
+                    "end": 397,
+                    "mention": "94",
+                    "ref_id": "BIBREF106"
+                }
+            ],
+            "section": "ENGINEERING ANTIBODIES CAN AFFECT POLYREACTIVITY AND IN VIVO HALF-LIFE",
+            "ref_spans": []
+        },
+        {
+            "text": "Strategies being used to improve properties such as poor solubility and aggregation profiles that could lead to polyreactivity include switching the IgG isotype, inserting N-linked glycosylation sites, and making targeted mutations to reduce surface-exposed hydrophobic residues [92\u201397]. For example, in the engineering of VRC07-523, variants such as VRC07-G54W not only showed increased breadth and potency, but also polyreactivity and poor pharmacokinetics [54\u25aa\u25aa]. Similar characteristics were observed for NIH45\u201346G54W[94]. In both cases, a histidine substitution (G54H) reduced polyreactivity [54\u25aa\u25aa,94]. Similarly, several mutations intended to eliminate clashes with the gp120 V5 loop resulted in VRC07 variants with increased polyreactivity, but mutations were identified that yielded a variant exhibiting a favorable pharmacokinetic profile [54\u25aa\u25aa]. In another study, a structure-based approach guided by cataloguing variations in solubility in clonal relatives of 10E8 was used to improve the solubility of 10E8 nearly 10-fold while maintaining comparable potency, an important step towards making this antibody useful clinically [98].",
+            "cite_spans": [
+                {
+                    "start": 280,
+                    "end": 282,
+                    "mention": "92",
+                    "ref_id": "BIBREF104"
+                },
+                {
+                    "start": 283,
+                    "end": 285,
+                    "mention": "97",
+                    "ref_id": "BIBREF109"
+                },
+                {
+                    "start": 460,
+                    "end": 462,
+                    "mention": "54",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 522,
+                    "end": 524,
+                    "mention": "94",
+                    "ref_id": "BIBREF106"
+                },
+                {
+                    "start": 598,
+                    "end": 600,
+                    "mention": "54",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 603,
+                    "end": 605,
+                    "mention": "94",
+                    "ref_id": "BIBREF106"
+                },
+                {
+                    "start": 849,
+                    "end": 851,
+                    "mention": "54",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 1138,
+                    "end": 1140,
+                    "mention": "98",
+                    "ref_id": "BIBREF110"
+                }
+            ],
+            "section": "ENGINEERING ANTIBODIES CAN AFFECT POLYREACTIVITY AND IN VIVO HALF-LIFE",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition to traditional IgG architectures (Fig. 2a), other scaffolds have been used to achieve bispecific recognition. Small molecules can be conjugated to IgGs to create bifunctional reagents (Fig. 2b); for example conjugating cholesterol to the light chains of the anti-MPER bNAbs 2F5 and D5 enhanced their potencies through cholesterol-mediated interactions with the viral membrane [99]. In another study, a small-molecule inhibitor of viral entry, aplaviroc, was conjugated to the Fc to enhance neutralization potency [100].",
+            "cite_spans": [
+                {
+                    "start": 389,
+                    "end": 391,
+                    "mention": "99",
+                    "ref_id": "BIBREF111"
+                },
+                {
+                    "start": 526,
+                    "end": 529,
+                    "mention": "100",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "BISPECIFIC REAGENTS",
+            "ref_spans": [
+                {
+                    "start": 51,
+                    "end": 52,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 202,
+                    "end": 203,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "An early example of a bispecific anti-HIV-1 reagent fused the gp120-binding domains of CD4 to an scFv version of a CD4i antibody. CD4i antibodies recognize the conserved coreceptor-binding site on gp120 after it is exposed as a result of CD4 binding [101]. As IgGs, CD4i antibodies exhibit limited neutralization potencies because of steric constraints when gp120 is bound to CD4 on the target cell [7]. The broadly neutralizing reagent sCD4-17b was created by fusing CD4 to the variable regions of a CD4i antibody, 17b, thereby solving the steric problem because the epitope was exposed by CD4 binding when the virion was not bound to the target cell (Fig. 2c) [101]. The CD4-17b reagent was recently expressed in a chimeric antigen receptor (CAR) format on T cells to target and kill HIV-1-infected cells [102\u25aa]. Later versions of CD4-CD4i reagents used an IgG architecture by N-terminally fusing CD4 to the Fabs of CD4i antibodies [103]. Despite containing only two CD4 moieties, the IgG-based CD4-CD4i reagents showed increased potencies compared with CD4-IgG2 (PRO542), a tetravalent CD4-Fc fusion protein [104]. A more recent reagent of this class combined a CD4 variant with m36, a CD4i single variable domain selected against different HIV-1 envelope proteins (Fig. 2d) [105\u25aa,106].",
+            "cite_spans": [
+                {
+                    "start": 251,
+                    "end": 254,
+                    "mention": "101",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 400,
+                    "end": 401,
+                    "mention": "7",
+                    "ref_id": "BIBREF79"
+                },
+                {
+                    "start": 663,
+                    "end": 666,
+                    "mention": "101",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 808,
+                    "end": 812,
+                    "mention": "102\u25aa",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 935,
+                    "end": 938,
+                    "mention": "103",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1112,
+                    "end": 1115,
+                    "mention": "104",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1279,
+                    "end": 1283,
+                    "mention": "105\u25aa",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1284,
+                    "end": 1287,
+                    "mention": "106",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "BISPECIFIC REAGENTS",
+            "ref_spans": [
+                {
+                    "start": 658,
+                    "end": 659,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1274,
+                    "end": 1275,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Bispecific IgGs containing variable regions from two different IgGs have been produced using the crossMab platform in which heavy chain heterodimerization occurs using a \u2018knob-into-hole\u2019 Fc architecture and VH and VL domains are swapped in one half of the reagent to ensure proper heavy chain\u2013light chain pairing [107] (Fig. 2e). Other architectures, such as dual variable domain constructs, attach a second Ig variable domain N-terminal to an IgG (Fig. 2f). A promising reagent of this class was created from bNAbs against gp120 and gp41 [108]. Another potent chimeric reagent was constructed as an Fc fusion with CD4- and coreceptor-mimetic peptides attached to the Fc, thus targeting both the receptor and coreceptor sites on HIV-1 Env (Fig. 2g) [109\u25aa]. Bispecific reagents generally function by binding of one or the other Env-targeting component at a time. Simultaneous binding of both components of bispecific reagents to single Env trimers was recently shown to result in synergistic in vitro neutralization improvements of two to three orders of magnitude [13\u25aa], suggesting a promising strategy for achieving potency, breadth and resistance to viral mutations. Synergistic neutralization resulting in extremely high in vitro potencies was also observed for reagents combining anti-Env and antihost specificities (see Ho and Markowitz, this issue). For example, attaching the scFv of PG9 or PG16 to the N-terminus of ibalizumab (anti-CD4) yielded synergistic reagents, PG9-iMab and PG16-iMab, of exceptional potency that neutralized 100% of a 118-virus panel, with the majority of IC50s less than 0.01 \u03bcg/ml (Fig. 2h) [110\u25aa\u25aa]. Another broad and potent bispecific reagent, iMabm36, joined m36 with ibalizumab [111]. This reagent neutralized 96% of a 118-member multiclade pseudovirus panel at a concentration of 10 \u03bcg/ml.",
+            "cite_spans": [
+                {
+                    "start": 314,
+                    "end": 317,
+                    "mention": "107",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 540,
+                    "end": 543,
+                    "mention": "108",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 750,
+                    "end": 754,
+                    "mention": "109\u25aa",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1065,
+                    "end": 1068,
+                    "mention": "13\u25aa",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1626,
+                    "end": 1629,
+                    "mention": "110",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1716,
+                    "end": 1719,
+                    "mention": "111",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "BISPECIFIC REAGENTS",
+            "ref_spans": [
+                {
+                    "start": 325,
+                    "end": 326,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 454,
+                    "end": 455,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 745,
+                    "end": 746,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1621,
+                    "end": 1622,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Although an effective HIV-1 vaccine remains an elusive goal, newly discovered potent HIV-1 bNAbs and advances in engineering antibodies offer possibilities for improved passive delivery strategies to prevent or treat HIV-1. More potent bNAbs could be used therapeutically at a lower concentration and thus reduce cost and/or production time, increase the number of patients being treated and lower the potential for immunogenicity or other side effects related to bNAb administration. There also remains a need to create reagents to combat viral mutation and the natural sequence diversity of HIV-1, which may be possible by identifying common pathways of viral escape and then using structure-based design to engineer resistance to these pathways. Library-based strategies designed to enhance affinity can also lead to increased breadth and block escape. Bispecific reagents and chemically conjugated reagents offer other ways to target multiple sites to prevent viral escape strategies and combat HIV-1 diversity. Although increased polyreactivity associated with some improved bNAbs may not necessarily be dangerous, polyreactivity correlates with shortened plasma half-life and represents an indicator that a reagent needs to be optimized to improve its biophysical and pharmacokinetic properties. Recent successes in creating bispecific, conjugate and engineered antibody reagents with minimal polyreactivity may be important therapeutically, particularly if gene therapy strategies, such as vector-mediated gene transfer (see Balasz and Baltimore, this issue) [112], are used to deliver antibodies and antibody-like reagents.",
+            "cite_spans": [
+                {
+                    "start": 1567,
+                    "end": 1570,
+                    "mention": "112",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "CONCLUSION",
+            "ref_spans": []
+        },
+        {
+            "text": "This work was supported by a Collaboration for AIDS Vaccine Discovery (CAVD) grant from the Bill and Melinda Gates Foundation (Grant ID: 1040753 to P.J.B.), National Institutes of Health grant HIVRAD P01 AI100148 (P.J.B.) and award number DP1OD006961 (to P.J.B.), the American Cancer Society (Grant PF-13-076-01-MPC to L.S.), California HIV/AIDS Research Program (CHRP grant F12-CT-214 to S.A.S.).",
+            "cite_spans": [],
+            "section": "Financial support and sponsorship ::: Acknowledgements",
+            "ref_spans": []
+        },
+        {
+            "text": "A.P. West and P.J. Bjorkman have patent applications pending on improving CD4-binding site antibodies. The remaining authors have no conflicts of interest.",
+            "cite_spans": [],
+            "section": "Conflicts of interest ::: Acknowledgements",
+            "ref_spans": []
+        },
+        {
+            "text": "Papers of particular interest, published within the annual period of review, have been highlighted as:\u25aa of special interest\u25aa\u25aa of outstanding interest",
+            "cite_spans": [],
+            "section": "REFERENCES AND RECOMMENDED READING",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "FIGURE 1: Location of bNAb epitopes on HIV-1 Env trimer. The approximate location of epitopes (shown only once per trimer) are highlighted on a surface representation of Env derived from electron microscopy, structure EMD-5782 [1\u25aa]: CD4-binding site Ab epitope (red), V1/V2 loop/Asn160 Ab epitope (green), V3 loop/Asn332 Ab epitope (blue), 8ANC195 epitope (yellow), 35O22 epitope (cyan), PGT151 epitope (pink), MPER epitope (gray). N-linked glycans shown as grey sticks were added to all potential N-linked glycosylation sites present in the coordinates for BG505 SOSIP Env (PDB 4NCO) [2\u25aa] using Glyprot [3]. Representative bNAbs targeting each epitope are listed.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "FIGURE 2: Architectures of bispecific anti-HIV-1 reagents. (a) Domain nomenclature for IgG. (b) Conjugate of small molecule antiretroviral aplaviroc with an IgG. (c) Fusion of CD4 D1-D2 with CD4i scFv 17b. (d) Reagent 2Dm2m constructed from CD4-mimetic mD1.22 and m36 single domain antibody. (e) The CrossMab technology allows for specific heavy chain heterodimerization using \u2018knob-into-hole\u2019 mutations to combine heavy chains from two IgGs, A and B. Domain exchange of CH1 with CL from the second IgG, labeled CH1B and CLB, ensure unique light chain pairing. (f) Dual-variable domain IgG that contains a second set of VH/VL domains. The two variable domains from a second antibody, labeled VHB and VLB, are added N-terminally to the variable domains of the first IgG, VHA and VLA. (g) 16-Fc, CD4 and CCR5 mimetic peptides are attached to an Fc. (h) PG9/PG16-iMab, containing scFvs attached to anti-CD4 antibody ibalizumab. CH1\u20133, the heavy chain constant domains; CL, light chain constant domain; VH, variable heavy chain domain; VL, variable light chain domain.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Box 1: no caption available",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Cryo-EM structure of a fully glycosylated soluble cleaved HIV-1 envelope trimer",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Lyumkis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Julien",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "de Val",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Science",
+            "volume": "342",
+            "issn": "",
+            "pages": "1484-1490",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Antibody cross-competition analysis of the human immunodeficiency virus type 1 gp120 exterior envelope glycoprotein",
+            "authors": [
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sodroski",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "J Virol",
+            "volume": "70",
+            "issn": "",
+            "pages": "1863-1872",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Antibody conjugation approach enhances breadth and potency of neutralization of anti-HIV-1 antibodies and CD4-IgG",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Gavrilyuk",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ban",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Uehara",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J Virol",
+            "volume": "87",
+            "issn": "",
+            "pages": "4985-4993",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Neutralization of human immunodeficiency virus type 1 by sCD4-17b, a single-chain chimeric protein, based on sequential interaction of gp120 with CD4 and coreceptor",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Dey",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Del Castillo",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Berger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Virol",
+            "volume": "77",
+            "issn": "",
+            "pages": "2859-2865",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Towards a functional cure of HIV Infection using a novel CD4-based chimeric antigen receptor",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Dey",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Patel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J Antivir Antiretrovir",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Evaluation of CD4-CD4i antibody architectures yields potent, broadly cross-reactive antihuman immunodeficiency virus reagents",
+            "authors": [
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "West",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Galimidi",
+                    "suffix": ""
+                },
+                {
+                    "first": "CP",
+                    "middle": [],
+                    "last": "Foglesong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Virol",
+            "volume": "84",
+            "issn": "",
+            "pages": "261-269",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Expression and characterization of CD4-IgG2, a novel heterotetramer that neutralizes primary HIV type 1 isolates",
+            "authors": [
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Allaway",
+                    "suffix": ""
+                },
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Davis-Bruno",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Beaudry",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "AIDS Res Hum Retroviruses",
+            "volume": "11",
+            "issn": "",
+            "pages": "533-539",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Exceptionally potent and broadly cross-reactive, bispecific multivalent HIV-1 inhibitors based on single human CD4 and antibody domains",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Prabakaran",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J Virol",
+            "volume": "88",
+            "issn": "",
+            "pages": "1125-1139",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Human domain antibodies to conserved sterically restricted regions on gp120 as exceptionally potent cross-reactive HIV-1 neutralizers",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Dimitrov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "105",
+            "issn": "",
+            "pages": "17121-17126",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Immunoglobulin domain crossover as a generic approach for the production of bispecific IgG antibodies",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Schaefer",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Regula",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bahner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "108",
+            "issn": "",
+            "pages": "11187-11192",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Anti-HIV double variable domain immunoglobulins binding both gp41 and gp120 for targeted delivery of immunoconjugates",
+            "authors": [
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Craig",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Summa",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Corti",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Pincus",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "A double-mimetic peptide efficiently neutralizes HIV-1 by bridging the CD4- and coreceptor-binding sites of gp120",
+            "authors": [
+                {
+                    "first": "BD",
+                    "middle": [],
+                    "last": "Quinlan",
+                    "suffix": ""
+                },
+                {
+                    "first": "VR",
+                    "middle": [],
+                    "last": "Joshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Gardner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J Virol",
+            "volume": "88",
+            "issn": "",
+            "pages": "3353-3358",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Identification and characterization of conserved and variable regions in the envelope gene of HTLV-III/LAV, the retrovirus of AIDS",
+            "authors": [
+                {
+                    "first": "BR",
+                    "middle": [],
+                    "last": "Starcich",
+                    "suffix": ""
+                },
+                {
+                    "first": "BH",
+                    "middle": [],
+                    "last": "Hahn",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Cell",
+            "volume": "45",
+            "issn": "",
+            "pages": "637-648",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Bispecific antibodies directed to CD4 domain 2 and HIV envelope exhibit exceptional breadth and picomolar potency against HIV-1",
+            "authors": [
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Pace",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Ochsenbauer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "110",
+            "issn": "",
+            "pages": "13540-13545",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Rational design and characterization of the novel, broad and potent bispecific HIV-1 neutralizing antibody iMabm36",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Pace",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Yao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J Acquir Immune Defic Syndr",
+            "volume": "66",
+            "issn": "",
+            "pages": "473-483",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Adeno-associated virus delivery of broadly neutralizing antibodies",
+            "authors": [
+                {
+                    "first": "BC",
+                    "middle": [],
+                    "last": "Schnepp",
+                    "suffix": ""
+                },
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Curr Opin HIV AIDS",
+            "volume": "9",
+            "issn": "",
+            "pages": "250-256",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Few and far between: how HIV may be evading antibody avidity",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Klein",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Bjorkman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Pathog",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Intra-spike crosslinking overcomes antibody evasion by HIV-1",
+            "authors": [
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Galimidi",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Klein",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Politzer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Cell",
+            "volume": "160",
+            "issn": "",
+            "pages": "433-446",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Broad and potent neutralizing antibodies from an African donor reveal a new HIV-1 vaccine target",
+            "authors": [
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Phogat",
+                    "suffix": ""
+                },
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Chan-Hui",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Science",
+            "volume": "326",
+            "issn": "",
+            "pages": "285-289",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Rational design of envelope identifies broadly neutralizing human monoclonal antibodies to HIV-1",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZY",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Science",
+            "volume": "329",
+            "issn": "",
+            "pages": "856-861",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Broad diversity of neutralizing antibodies isolated from memory B cells in HIV-infected individuals",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Scheid",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Mouquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Feldhahn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nature",
+            "volume": "458",
+            "issn": "",
+            "pages": "636-640",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Human neutralizing monoclonal antibodies of the IgG1 subtype protect against mucosal simian-human immunodeficiency virus infection",
+            "authors": [
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Baba",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Liska",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Hofmann-Lehmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nat Med",
+            "volume": "6",
+            "issn": "",
+            "pages": "200-206",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Antibody-based protection against HIV infection by vectored immunoprophylaxis",
+            "authors": [
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Balazs",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Hong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nature",
+            "volume": "48",
+            "issn": "",
+            "pages": "81-88",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Vector-mediated gene transfer engenders long-lived neutralizing activity and protection against SIV infection in monkeys",
+            "authors": [
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "BC",
+                    "middle": [],
+                    "last": "Schnepp",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nat Med",
+            "volume": "15",
+            "issn": "",
+            "pages": "901-906",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Crystal structure of a soluble cleaved HIV-1 envelope trimer",
+            "authors": [
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Julien",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Cupo",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Sok",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Science",
+            "volume": "342",
+            "issn": "",
+            "pages": "1477-1483",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Protection of macaques against vaginal transmission of a pathogenic HIV-1/SIV chimeric virus by passive infusion of neutralizing antibodies",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Mascola",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Stiegler",
+                    "suffix": ""
+                },
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "VanCott",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nat Med",
+            "volume": "6",
+            "issn": "",
+            "pages": "207-210",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Therapeutic efficacy of potent neutralizing HIV-1-specific monoclonal antibodies in SHIV-infected rhesus monkeys",
+            "authors": [
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Barouch",
+                    "suffix": ""
+                },
+                {
+                    "first": "JB",
+                    "middle": [],
+                    "last": "Whitney",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Moldt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nature",
+            "volume": "503",
+            "issn": "",
+            "pages": "224-228",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "HIV therapy by a combination of broadly neutralizing antibodies in humanized mice",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Klein",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Halper-Stromberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Horwitz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nature",
+            "volume": "492",
+            "issn": "",
+            "pages": "118-122",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Antibody-mediated immunotherapy of macaques chronically infected with SHIV suppresses viraemia",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Shingai",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Nishimura",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Klein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nature",
+            "volume": "503",
+            "issn": "",
+            "pages": "277-280",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Broadly neutralizing antibodies and viral inducers decrease rebound from HIV-1 latent reservoirs in humanized mice",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Halper-Stromberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Klein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Cell",
+            "volume": "158",
+            "issn": "",
+            "pages": "989-999",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Human antibodies that neutralize HIV-1: identification, structures, and B cell ontogenies",
+            "authors": [
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Kwong",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Mascola",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Immunity",
+            "volume": "37",
+            "issn": "",
+            "pages": "412-425",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Antibody 8ANC195 reveals a site of broad vulnerability on the HIV-1 envelope spike",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Scharf",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Scheid",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Cell Rep",
+            "volume": "7",
+            "issn": "",
+            "pages": "785-795",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Structural delineation of a quaternary, cleavage-dependent epitope at the gp41-gp120 interface on intact HIV-1 Env trimers",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Blattner",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Sliepen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Immunity",
+            "volume": "40",
+            "issn": "",
+            "pages": "669-680",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Broadly neutralizing HIV antibodies define a glycan-dependent epitope on the prefusion conformation of gp41 on cleaved envelope trimers",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Falkowska",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Le",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ramos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Immunity",
+            "volume": "40",
+            "issn": "",
+            "pages": "657-668",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Identification and characterization of a broadly cross-reactive HIV-1 human monoclonal antibody that binds to both gp120 and gp41",
+            "authors": [
+                {
+                    "first": "MY",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Yuan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "GlyProt: in silico glycosylation of proteins",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bohne-Lang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "von der Lieth",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucleic Acids Res",
+            "volume": "33",
+            "issn": "",
+            "pages": "W214-219",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Broad and potent HIV-1 neutralization by a human antibody that binds the gp41-gp120 interface",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "BH",
+                    "middle": [],
+                    "last": "Kang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pancera",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nature",
+            "volume": "515",
+            "issn": "",
+            "pages": "138-142",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Protein engineering strategies for the development of viral vaccines and immunotherapeutics",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Koellhoffer",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Higgins",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Lai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "FEBS Lett",
+            "volume": "588",
+            "issn": "",
+            "pages": "298-307",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Engineering the variable region of therapeutic IgG antibodies",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Igawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Tsunoda",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kuramochi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "MAbs",
+            "volume": "3",
+            "issn": "",
+            "pages": "243-252",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Further improvement of broad specificity hapten recognition with protein engineering",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Korpimaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Rosenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Virtanen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Protein Eng",
+            "volume": "16",
+            "issn": "",
+            "pages": "37-46",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Molecular evolution of antibody cross-reactivity for two subtypes of type A botulinum neurotoxin",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Garcia-Rodriguez",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Levy",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Arndt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat Biotechnol",
+            "volume": "25",
+            "issn": "",
+            "pages": "107-116",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Broadening of neutralization activity to directly block a dominant antibody-driven SARS-coronavirus evolution pathway",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sui",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Aird",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tamin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS Pathog",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Affinity enhancement of an in vivo matured therapeutic antibody using structure-based computational design",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Boriack-Sjodin",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Eldredge",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Protein Sci",
+            "volume": "15",
+            "issn": "",
+            "pages": "949-960",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Affinity maturation of antibodies assisted by in silico modeling",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Barderas",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Desmet",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Timmerman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "105",
+            "issn": "",
+            "pages": "9029-9034",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Progress in computational protein design",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Lippow",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Tidor",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Curr Opin Biotechnol",
+            "volume": "18",
+            "issn": "",
+            "pages": "305-311",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Computational design of antibody-affinity improvement beyond in vivo maturation",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Lippow",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Wittrup",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Tidor",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat Biotechnol",
+            "volume": "25",
+            "issn": "",
+            "pages": "1171-1176",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Structure and immune recognition of trimeric prefusion HIV-1 Env",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pancera",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Druz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nature",
+            "volume": "514",
+            "issn": "",
+            "pages": "455-461",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "CDR walking mutagenesis for the affinity maturation of a potent human anti-HIV-1 antibody into the picomolar range",
+            "authors": [
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Pinz-Sweeney",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "J Mol Biol",
+            "volume": "254",
+            "issn": "",
+            "pages": "392-403",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "In vitro evolution of a neutralizing human antibody to human immunodeficiency virus type 1 to enhance affinity and broaden strain cross-reactivity",
+            "authors": [
+                {
+                    "first": "CF",
+                    "middle": [],
+                    "last": "Barbas",
+                    "suffix": "3rd"
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Dunlop",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "91",
+            "issn": "",
+            "pages": "3809-3813",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Improved breadth and potency of an HIV-1-neutralizing human single-chain antibody by random mutagenesis and sequential antigen panning",
+            "authors": [
+                {
+                    "first": "MY",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Shu",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Rudolph",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Mol Biol",
+            "volume": "335",
+            "issn": "",
+            "pages": "209-219",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Broadly neutralizing antibodies and the search for an HIV-1 vaccine: the end of the beginning",
+            "authors": [
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Kwong",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Mascola",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Nabel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nat Rev Immunol",
+            "volume": "13",
+            "issn": "",
+            "pages": "693-701",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Structural insights on the role of antibodies in HIV-1 vaccine and therapy",
+            "authors": [
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "West",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Scharf",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Scheid",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Cell",
+            "volume": "156",
+            "issn": "",
+            "pages": "633-648",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Somatic mutations of the immunoglobulin framework are generally required for broad and potent HIV-1 neutralization",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Klein",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Diskin",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Scheid",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Cell",
+            "volume": "153",
+            "issn": "",
+            "pages": "126-138",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Sequence and structural convergence of broad and potent HIV antibodies that mimic CD4 binding",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Scheid",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Mouquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Ueberheide",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Science",
+            "volume": "333",
+            "issn": "",
+            "pages": "1633-1637",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Broad neutralization coverage of HIV by multiple highly potent antibodies",
+            "authors": [
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Huber",
+                    "suffix": ""
+                },
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Doores",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nature",
+            "volume": "477",
+            "issn": "",
+            "pages": "466-470",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Structural basis for broad and potent neutralization of HIV-1 by antibody VRC01",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Georgiev",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Science",
+            "volume": "329",
+            "issn": "",
+            "pages": "811-817",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Analysis of memory B cell responses and isolation of novel monoclonal antibodies with neutralizing breadth from HIV-1-infected individuals",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Corti",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Langedijk",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hinz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS One",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Antibody neutralization and escape by HIV-1",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wei",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Decker",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nature",
+            "volume": "422",
+            "issn": "",
+            "pages": "307-312",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Focused evolution of HIV-1 neutralizing antibodies revealed by structures and deep sequencing",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Science",
+            "volume": "333",
+            "issn": "",
+            "pages": "1593-1602",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Maturation pathways of cross-reactive HIV-1 neutralizing antibodies",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Xiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Dimitrov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Viruses",
+            "volume": "1",
+            "issn": "",
+            "pages": "802-817",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "Antibodies VRC01 and 10E8 neutralize HIV-1 with high breadth and potency even with Ig-framework regions substantially reverted to germline",
+            "authors": [
+                {
+                    "first": "IS",
+                    "middle": [],
+                    "last": "Georgiev",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Rudicell",
+                    "suffix": ""
+                },
+                {
+                    "first": "KO",
+                    "middle": [],
+                    "last": "Saunders",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J Immunol",
+            "volume": "192",
+            "issn": "",
+            "pages": "1100-1106",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Structural basis for germ-line gene usage of a potent class of antibodies targeting the CD4-binding site of HIV-1 gp120",
+            "authors": [
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "West",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Diskin",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Nussenzweig",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Bjorkman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "109",
+            "issn": "",
+            "pages": "E2083-E2090",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "Enhanced potency of a broadly neutralizing HIV-1 antibody in vitro improves protection against lentiviral infection in vivo",
+            "authors": [
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Rudicell",
+                    "suffix": ""
+                },
+                {
+                    "first": "YD",
+                    "middle": [],
+                    "last": "Kwon",
+                    "suffix": ""
+                },
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Ko",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J Virol",
+            "volume": "88",
+            "issn": "",
+            "pages": "12669-12682",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Increasing the potency and breadth of an HIV antibody by using structure-based rational design",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Diskin",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Scheid",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Marcovecchio",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Science",
+            "volume": "334",
+            "issn": "",
+            "pages": "1289-1293",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "Restricting HIV-1 pathways for escape using rationally designed anti-HIV-1 antibodies",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Diskin",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Klein",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Horwitz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J Exp Med",
+            "volume": "210",
+            "issn": "",
+            "pages": "1235-1249",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "Complex-type N-glycan recognition by potent broadly neutralizing HIV antibodies",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Mouquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Scharf",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Euler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "109",
+            "issn": "",
+            "pages": "E3268-E3277",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "Structural evolution of glycan recognition by a family of potent HIV antibodies",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Garces",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Sok",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Kong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Cell",
+            "volume": "159",
+            "issn": "",
+            "pages": "69-79",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Recombinant HIV envelope trimer selects for quaternary-dependent antibodies targeting the trimer apex",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Sok",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "van Gils",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pauthner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "111",
+            "issn": "",
+            "pages": "17624-17629",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "HIV-1 evades antibody-mediated neutralization through conformational masking of receptor-binding sites",
+            "authors": [
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Kwong",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Doyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Casper",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nature",
+            "volume": "420",
+            "issn": "",
+            "pages": "678-682",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "Mechanism of neutralization by the broadly neutralizing HIV-1 monoclonal antibody VRC01",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "O\u2019Dell",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Walker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J Virol",
+            "volume": "85",
+            "issn": "",
+            "pages": "8954-8967",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF70": {
+            "title": "Enhanced antibody half-life improves in vivo activity",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zalevsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Chamberlain",
+                    "suffix": ""
+                },
+                {
+                    "first": "HM",
+                    "middle": [],
+                    "last": "Horton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nat Biotechnol",
+            "volume": "28",
+            "issn": "",
+            "pages": "157-159",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF71": {
+            "title": "Structural basis for diverse N-glycan recognition by HIV-1-neutralizing V1-V2-directed antibody PG16",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pancera",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Shahzad-Ul-Hussan",
+                    "suffix": ""
+                },
+                {
+                    "first": "NA",
+                    "middle": [],
+                    "last": "Doria-Rose",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nat Struct Mol Biol",
+            "volume": "20",
+            "issn": "",
+            "pages": "804-813",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF72": {
+            "title": "Mechanism of HIV-1 neutralization by antibodies targeting a membrane-proximal region of gp41",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Frey",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Peng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J Virol",
+            "volume": "88",
+            "issn": "",
+            "pages": "1249-1258",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF73": {
+            "title": "Evolving concepts of specificity in immune reactions",
+            "authors": [
+                {
+                    "first": "HN",
+                    "middle": [],
+                    "last": "Eisen",
+                    "suffix": ""
+                },
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Chakraborty",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "107",
+            "issn": "",
+            "pages": "22373-22380",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF74": {
+            "title": "Polyreactive antibodies in adaptive immune responses to viruses",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Mouquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Nussenzweig",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Cell Mol Life Sci",
+            "volume": "69",
+            "issn": "",
+            "pages": "1435-1445",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF75": {
+            "title": "Polyreactivity of antibody molecules",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Notkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Trends Immunol",
+            "volume": "25",
+            "issn": "",
+            "pages": "174-179",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF76": {
+            "title": "Cellular and genetic mechanisms of self tolerance and autoimmunity",
+            "authors": [
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Goodnow",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sprent",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Fazekas de St Groth",
+                    "suffix": ""
+                },
+                {
+                    "first": "CG",
+                    "middle": [],
+                    "last": "Vinuesa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "435",
+            "issn": "",
+            "pages": "590-597",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF77": {
+            "title": "A checkpoint for autoreactivity in human IgM+ memory B cell development",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Tsuiji",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Yurasov",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Velinzon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Exp Med",
+            "volume": "203",
+            "issn": "",
+            "pages": "393-400",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF78": {
+            "title": "Predominant autoantibody production by early human B cell precursors",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Wardemann",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Yurasov",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Schaefer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "301",
+            "issn": "",
+            "pages": "1374-1377",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF79": {
+            "title": "Access of antibody molecules to the conserved coreceptor binding site on glycoprotein gp120 is sterically restricted on primary human immunodeficiency virus type 1",
+            "authors": [
+                {
+                    "first": "AF",
+                    "middle": [],
+                    "last": "Labrijn",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Poignard",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Raja",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Virol",
+            "volume": "77",
+            "issn": "",
+            "pages": "10557-10565",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF80": {
+            "title": "Polyreactive antibodies plus complement enhance the phagocytosis of cells made apoptotic by UV-light or HIV",
+            "authors": [
+                {
+                    "first": "ZH",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Wild",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Xiong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Sci Rep",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF81": {
+            "title": "The broad antibacterial activity of the natural antibody repertoire is due to polyreactive antibodies",
+            "authors": [
+                {
+                    "first": "ZH",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "YF",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Cell Host Microbe",
+            "volume": "1",
+            "issn": "",
+            "pages": "51-61",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF82": {
+            "title": "HIV and autoimmunity",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Zandman-Goddard",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Shoenfeld",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Autoimmun Rev",
+            "volume": "1",
+            "issn": "",
+            "pages": "329-337",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF83": {
+            "title": "Association of human immunodeficiency virus infection and autoimmune phenomena",
+            "authors": [
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Kopelman",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Zolla-Pazner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Am J Med",
+            "volume": "84",
+            "issn": "",
+            "pages": "82-88",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF84": {
+            "title": "Acquired immune deficiency syndrome (AIDS) and autoimmunity - mutually exclusive entities?",
+            "authors": [
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Solinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "LE",
+                    "middle": [],
+                    "last": "Adams",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Friedman-Kien",
+                    "suffix": ""
+                },
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Hess",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "J Clin Immunol",
+            "volume": "8",
+            "issn": "",
+            "pages": "32-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF85": {
+            "title": "Cardiolipin polyspecific autoreactivity in two broadly neutralizing HIV-1 antibodies",
+            "authors": [
+                {
+                    "first": "BF",
+                    "middle": [],
+                    "last": "Haynes",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Fleming",
+                    "suffix": ""
+                },
+                {
+                    "first": "EW",
+                    "middle": [],
+                    "last": "St Clair",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "308",
+            "issn": "",
+            "pages": "1906-1908",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF86": {
+            "title": "Isolation of a human anti-HIV gp41 membrane proximal region neutralizing antibody by antigen-specific single B cell sorting",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Morris",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Alam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF87": {
+            "title": "Initial antibodies binding to HIV-1 gp41 in acutely infected subjects are polyreactive and highly mutated",
+            "authors": [
+                {
+                    "first": "HX",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Munshaw",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J Exp Med",
+            "volume": "208",
+            "issn": "",
+            "pages": "2237-2249",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF88": {
+            "title": "The role of antibody polyspecificity and lipid reactivity in binding of broadly neutralizing anti-HIV-1 envelope human monoclonal antibodies 2F5 and 4E10 to glycoprotein 41 membrane proximal envelope epitopes",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Alam",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "McAdams",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Boren",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Immunol",
+            "volume": "178",
+            "issn": "",
+            "pages": "4424-4435",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF89": {
+            "title": "Lipid binding properties of 4E10, 2F5, and WR304 monoclonal antibodies that neutralize HIV-1",
+            "authors": [
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Matyas",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Beck",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Karasavvas",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Alving",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Biochim Biophys Acta",
+            "volume": "1788",
+            "issn": "",
+            "pages": "660-665",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF90": {
+            "title": "Structure of an HIV gp120 envelope glycoprotein in complex with the CD4 receptor and a neutralizing human antibody",
+            "authors": [
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Kwong",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Wyatt",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Nature",
+            "volume": "393",
+            "issn": "",
+            "pages": "648-659",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF91": {
+            "title": "Nonneutralizing HIV-1 gp41 envelope cluster II human monoclonal antibodies show polyreactivity for binding to phospholipids and protein autoantigens",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Dennison",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Anasti",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Scearce",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J Virol",
+            "volume": "85",
+            "issn": "",
+            "pages": "1340-1347",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF92": {
+            "title": "Structure and mechanistic analysis of the antihuman immunodeficiency virus type 1 antibody 2F5 in complex with its gp41 epitope",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Ofek",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sambor",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Virol",
+            "volume": "78",
+            "issn": "",
+            "pages": "10724-10737",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF93": {
+            "title": "Identification of autoantigens recognized by the 2F5 and 4E10 broadly neutralizing HIV-1 antibodies",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Holl",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J Exp Med",
+            "volume": "210",
+            "issn": "",
+            "pages": "241-256",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF94": {
+            "title": "Autoreactivity and exceptional CDR plasticity (but not unusual polyspecificity) hinder elicitation of the anti-HIV antibody 4E10",
+            "authors": [
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Finton",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Larimore",
+                    "suffix": ""
+                },
+                {
+                    "first": "HB",
+                    "middle": [],
+                    "last": "Larman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "PLoS Pathog",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF95": {
+            "title": "Broad and potent neutralization of HIV-1 by a gp41-specific human antibody",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Ofek",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Laub",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nature",
+            "volume": "491",
+            "issn": "",
+            "pages": "406-412",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF96": {
+            "title": "Polyreactivity and autoreactivity among HIV-1 antibodies",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Wiehe",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "J Virol",
+            "volume": "89",
+            "issn": "",
+            "pages": "784-798",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF97": {
+            "title": "Polyreactivity increases the apparent affinity of anti-HIV antibodies by heteroligation",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Mouquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Scheid",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Zoller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nature",
+            "volume": "467",
+            "issn": "",
+            "pages": "591-595",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF98": {
+            "title": "Memory B cell antibodies to HIV-1 gp140 cloned from individuals infected with clade A and B viruses",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Mouquet",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Klein",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Scheid",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF99": {
+            "title": "A strategy for risk mitigation of antibodies with fast clearance",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Hotzel",
+                    "suffix": ""
+                },
+                {
+                    "first": "FP",
+                    "middle": [],
+                    "last": "Theil",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Bernstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "MAbs",
+            "volume": "4",
+            "issn": "",
+            "pages": "753-760",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF100": {
+            "title": "Abnormally short serum half-lives of IgG in beta 2-microglobulin-deficient mice",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Ghetie",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Hubbard",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Eur J Immunol",
+            "volume": "26",
+            "issn": "",
+            "pages": "690-696",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF101": {
+            "title": "Analysis of the interaction of the human immunodeficiency virus type 1 gp120 envelope glycoprotein with the gp41 transmembrane glycoprotein",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Wyatt",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Desjardin",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Olshevsky",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J Virol",
+            "volume": "71",
+            "issn": "",
+            "pages": "9722-9731",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF102": {
+            "title": "Increased clearance of IgG in mice that lack beta 2-microglobulin: possible protective role of FcRn",
+            "authors": [
+                {
+                    "first": "EJ",
+                    "middle": [],
+                    "last": "Israel",
+                    "suffix": ""
+                },
+                {
+                    "first": "DF",
+                    "middle": [],
+                    "last": "Wilsker",
+                    "suffix": ""
+                },
+                {
+                    "first": "KC",
+                    "middle": [],
+                    "last": "Hayes",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Immunology",
+            "volume": "89",
+            "issn": "",
+            "pages": "573-578",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF103": {
+            "title": "Enhanced neonatal Fc receptor function improves protection against primate SHIV infection",
+            "authors": [
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Ko",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pegu",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Rudicell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nature",
+            "volume": "514",
+            "issn": "",
+            "pages": "642-645",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF104": {
+            "title": "Development of motavizumab, an ultra-potent antibody for the prevention of respiratory syncytial virus infection in the upper and lower respiratory tract",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Pfarr",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Mol Biol",
+            "volume": "368",
+            "issn": "",
+            "pages": "652-665",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF105": {
+            "title": "Improving the solubility of anti-LINGO-1 monoclonal antibody Li33 by isotype switching and targeted mutagenesis",
+            "authors": [
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Pepinsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Silvian",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Berkowitz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Protein Sci",
+            "volume": "19",
+            "issn": "",
+            "pages": "954-966",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF106": {
+            "title": "Engineering antibodies to enhance activity and increase half-life",
+            "authors": [
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Sievers",
+                    "suffix": ""
+                },
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Patel",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Bennett",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "AIDS Res Human Retroviruses",
+            "volume": "30",
+            "issn": "",
+            "pages": "A210-A1210",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF107": {
+            "title": "Design of therapeutic proteins with enhanced stability",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Chennamsetty",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Voynov",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Kayser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "106",
+            "issn": "",
+            "pages": "11937-11942",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF108": {
+            "title": "Aggregation-resistant domain antibodies engineered with charged mutations near the edges of the complementarity-determining regions",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Perchiacca",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Ladiwala",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bhattacharya",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Tessier",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Protein Eng Des Sel",
+            "volume": "25",
+            "issn": "",
+            "pages": "591-601",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF109": {
+            "title": "Optimal charged mutations in the complementarity-determining regions that prevent domain antibody aggregation are dependent on the antibody scaffold",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Perchiacca",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Tessier",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Protein Eng Des Sel",
+            "volume": "27",
+            "issn": "",
+            "pages": "29-39",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF110": {
+            "title": "Enhancing the solubility of HIV-1-neutralizing Antibody 10E8",
+            "authors": [
+                {
+                    "first": "YD",
+                    "middle": [],
+                    "last": "Kwon",
+                    "suffix": ""
+                },
+                {
+                    "first": "IS",
+                    "middle": [],
+                    "last": "Georgiev",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "AIDS Res Human Retroviruses",
+            "volume": "30",
+            "issn": "",
+            "pages": "A150-A1150",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF111": {
+            "title": "Dramatic potentiation of the antiviral activity of HIV antibodies by cholesterol conjugation",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Lacek",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Urbanowicz",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Troise",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J Biol Chem",
+            "volume": "289",
+            "issn": "",
+            "pages": "35015-35028",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

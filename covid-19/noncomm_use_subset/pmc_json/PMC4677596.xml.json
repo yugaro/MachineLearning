@@ -1,0 +1,3966 @@
+{
+    "paper_id": "PMC4677596",
+    "metadata": {
+        "title": "Identification of potential drug targets by subtractive genome analysis of Escherichia coli O157:H7: an in silico approach",
+        "authors": [
+            {
+                "first": "Shakhinur",
+                "middle": [
+                    "Islam"
+                ],
+                "last": "Mondal",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Sabiha",
+                "middle": [],
+                "last": "Ferdous",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Nurnabi",
+                "middle": [
+                    "Azad"
+                ],
+                "last": "Jewel",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Arzuba",
+                "middle": [],
+                "last": "Akter",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Zabed",
+                "middle": [],
+                "last": "Mahmud",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Md",
+                "middle": [
+                    "Muzahidul"
+                ],
+                "last": "Islam",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Tanzila",
+                "middle": [],
+                "last": "Afrin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Nurul",
+                "middle": [],
+                "last": "Karim",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Enteropathogenic Escherichia coli and enterohemorrhagic E. coli (EHEC) infections in humans are a major source of morbidity and mortality in both developing and developed countries.1 Among various pathogenic E. coli strains that cause intestinal or extra-intestinal diseases in humans, the most devastating are shiga toxins producing EHEC strains, because they cause not only diarrhea and hemorrhagic colitis but also life-threatening hemolytic uremic syndrome and encephalopathy.2 Over 100 serotypes of shiga toxin-producing E. coli have been associated with human infections and the most common serotype is E. coli O157:H7. Several deadly outbreaks of E. coli O157:H7 were reported in Canada, United States, Great Britain, and Japan.3\u20135 However, the massive outbreak in Sakai city, Japan, in 1996 is of great concern as a number of deaths from the infection were reported.6",
+            "cite_spans": [
+                {
+                    "start": 181,
+                    "end": 182,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 480,
+                    "end": 481,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 735,
+                    "end": 736,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 737,
+                    "end": 738,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 874,
+                    "end": 875,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The genome of EHEC O157:H7 Sakai strain was sequenced in 2001.7 The sequence analysis revealed that this strain contains 18 prophages (Sp1 to Sp18), six prophage-like elements (SpLE1 to SpLE6), and two plasmids (pO157 and pOSAKl). To know the mechanism underlying pathogenicity of this bacterium, a substantial number of virulence-related genes or functions associated with various stages of infection have been identified.7 However, lack of details of functional annotations often limit the possibility to use them as targets for designing new drugs against this pathogen.",
+            "cite_spans": [
+                {
+                    "start": 62,
+                    "end": 63,
+                    "mention": "7",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 423,
+                    "end": 424,
+                    "mention": "7",
+                    "ref_id": "BIBREF66"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The treatment of E. coli O157:H7 mostly relies on conventional antibiotic therapy although some studies have highlighted that there is no evidence that this improves the course of disease and antibiotic treatment of patients with E. coli O157:H7 infection increases the risk of hemolytic\u2013uremic syndrome.8,9 Moreover, an increase of antibiotic resistance has been reported in E. coli O157:H7 over the last 30 years which is also alarming.10\u201314 The accumulated results strongly suggest that there is an urgent and continuing need to find new drug and vaccine candidates to tackle this deadly pathogen.",
+            "cite_spans": [
+                {
+                    "start": 304,
+                    "end": 305,
+                    "mention": "8",
+                    "ref_id": "BIBREF77"
+                },
+                {
+                    "start": 306,
+                    "end": 307,
+                    "mention": "9",
+                    "ref_id": "BIBREF88"
+                },
+                {
+                    "start": 438,
+                    "end": 440,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 441,
+                    "end": 443,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Drug target identification is the first step in the drug discovery process.15 However, traditional drug discovery methods are time-consuming, expensive, and often yield few drug targets. In contrast, advances in complete genome sequencing, bioinformatics, and cheminformatics represent an attractive alternative approach to identify drug targets worthy of experimental follow-up. Because of the availability of both pathogen and host\u2013genome sequences, it has become easier to identify drug targets at the genomic level for any given pathogen.16,17 In recent years, computational methods have been used widely for the identification of potential drug and vaccine targets in different pathogenic microorganisms.18\u201321 Subtractive and comparative genomics approach combined with metabolic pathway analysis was found to be an efficient way to identify the protein-set essential for the pathogen\u2019s survival but absent in the host.22 Subtraction of the host genome from essential genes of pathogens helps in searching for non-human homologous targets which ensures no interaction of drugs with human targets. On the other hand, comparative genomics method emphasizes the selection of conserved proteins amongst several species as most favorable targets.23\u201326 The use of advanced bioinformatics tools with integrated genomics, proteomics, and metabolomics may ensure the discovery of potential drug targets for most of the infectious diseases. Once the target(s) have been identified, the in silico virtual screening of different chemical databases could provide unprecedented opportunity to select and design the best possible inhibitor(s).27",
+            "cite_spans": [
+                {
+                    "start": 75,
+                    "end": 77,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 542,
+                    "end": 544,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 545,
+                    "end": 547,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 709,
+                    "end": 711,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 712,
+                    "end": 714,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 924,
+                    "end": 926,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1246,
+                    "end": 1248,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1249,
+                    "end": 1251,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1633,
+                    "end": 1635,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this study, we took an in-depth in silico approach to identify novel therapeutic targets in E. coli O157:H7 Sakai strain by combining analysis of metabolomics and genomics data. Instead of analysis of whole genome, we particularly considered the key essential or survival proteins of the pathogen which are non-homologous to the host. We elucidated a good number of novel targets in E. coli O157:H7 to design effective drugs against broad-spectrum pathogenic bacteria. Moreover, we provided a modeled 3D structure of DNA polymerase III alpha (dnaE) which was selected as the best possible target for inhibition and designing potential drugs. To the best of our knowledge this was the first in silico identification of drug targets in E. coli O157:H7.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Figure 1 showed the strategies for identification of suitable drug targets and prediction of inhibitor used. The Kyoto Encyclopedia of Genes and Genomes (KEGG) database28,29 was searched for metabolic pathways for both human genomes and E. coli O157:H7 Sakai strain. The identification numbers of all pathways from both organisms were listed. A manual comparison was made, and pathways that did not appear in the human genomes but were present in the pathogen, according to the KEGG database annotations, were selected as unique to E. coli O157:H7, while the remaining pathways were listed as common. Amino acid sequences of proteins from common and unique pathways were obtained from UniprotKB.30",
+            "cite_spans": [
+                {
+                    "start": 168,
+                    "end": 170,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 171,
+                    "end": 173,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 695,
+                    "end": 697,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Pathway analysis and protein retrieval ::: Materials and methods",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Database of Essential Genes (DEG)31 was used to identify the essential proteins involved in host-pathogen pathways. The DEG 6.8 database was retrieved from http://www.tubic.tju.edu.cn/deg/. The BioEdit Sequence Alignment Editor (version 7.1.3) was used for Protein Basic Local Alignment Search Tool (BLASTP) search to screen for and eliminate the probable essential proteins of the organism setting e-value cut off 10\u22124, sequence identity >35%, bit score >100 and others as default.",
+            "cite_spans": [
+                {
+                    "start": 33,
+                    "end": 35,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Identification of essential proteins and non-homologous proteins in humans ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "All human protein sequences were retrieved from Refseq database ftp site (ftp://ftp.ncbi.nlm.nih.gov/genomes/H_sapiens/protein/) and essential proteins were subjected to BLASTP search against the human proteins with BioEdit. Only the non-hit proteins at e-value cut off 10\u221210, were selected as non-homologous proteins to avoid any functional similarity with host proteome.",
+            "cite_spans": [],
+            "section": "Identification of essential proteins and non-homologous proteins in humans ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Subcellular localization prediction of the essential non-human proteins was done by PSORTb version 3.0.2,32 which predicts three types of localization such as: cytoplasmic, membrane, and extracellular proteins for Gram-negative bacteria. The potential drug targets were evaluated by several molecular and structural criteria33 for prioritizing suitable drug targets. Drug targets\u2019 prioritization involved calculation of molecular weight (MW) using computational tools and drug targets associated literature available at Swiss-Prot database. Protein Data Bank and ModBase (http://www.salilab.org/modbase) databases were searched for identifying experimentally and computationally solved 3D structures respectively.34 The selected protein was searched for any structural identity with the 3D ligand binding site of any human protein structure on the web server SMAP-WS at a cut off value of 30% sequence identity.35",
+            "cite_spans": [
+                {
+                    "start": 105,
+                    "end": 107,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 324,
+                    "end": 326,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 713,
+                    "end": 715,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 911,
+                    "end": 913,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Subcellular localization prediction and targets\u2019 prioritization ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Moreover, druggability is another important prioritization criterion for therapeutic targets; that is defined as the likelihood of being able to modulate the activity of the therapeutic target protein with a small-molecule drug.36,37 The druggability of identified drug targets was measured by mining DrugBank contents. BLASTP with default parameters was performed against the list of targets of compounds found within DrugBank to align the potential drug targets from E. coli O157:H7. Alignments with e-values less significant than 10\u221225 were removed as described previously as selection criteria for filtering BLAST results in identifying drug targets of bacterial genomes.38",
+            "cite_spans": [
+                {
+                    "start": 228,
+                    "end": 230,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 231,
+                    "end": 233,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 675,
+                    "end": 677,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Subcellular localization prediction and targets\u2019 prioritization ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To identify novel targets among the potential targets, databases DrugBank, SuperTarget, and Therapeutic Target Database, were searched for similarity with the cytoplasmic proteins.39\u201341 Parameters were set as e-value <10\u22125, sequence identity >35%, and bit score >100. The non-hit proteins at the threshold value were selected as novel drug targets. To search for the common proteins amongst pathogenic bacteria, all protein sequences of 73 different strains of pathogenic bacteria were retrieved from PATRIC database.42 The novel targets were subjected to BLASTP against these proteomes at e-value cut off 10\u22125, sequence identity >35%, bit score >100 with BioEdit software. The proteins that were found to be common in at least 40 pathogenic strain proteomes were listed as broad-spectrum targets. Different bacterial species were used as references.",
+            "cite_spans": [
+                {
+                    "start": 180,
+                    "end": 182,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 183,
+                    "end": 185,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 517,
+                    "end": 519,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Identification of novel targets and searching for common proteins ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As no exact protein data bank (PDB) structure was available for dnaE in PDB, it was subjected to BLAST search against PDB structures using 0.001 e-value cut off. The template for homology modeling was chosen considering X-ray diffraction resolution and highest sequence similarity. Homology modeling was done on ESyPred3D server.43",
+            "cite_spans": [
+                {
+                    "start": 329,
+                    "end": 331,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Homology modeling ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The modeled structure was assessed through SWISS-MODEL structure assessment tool44 and ANOLEA (atomic non-local environment assessment)45 assessing the packing quality of the models. PROCHECK suite of programs46 checked the stereochemical quality of protein structures. Energy minimization was carried out by GROMOS96 with default parameters implemented in Swiss PDB Viewer (version 4.0.4).47 Active site of the modeled structure was determined by CASTp server.48",
+            "cite_spans": [
+                {
+                    "start": 80,
+                    "end": 82,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 135,
+                    "end": 137,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 209,
+                    "end": 211,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 390,
+                    "end": 392,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 461,
+                    "end": 463,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Structure validation and active site prediction ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For visual analysis and comparison of the active site interaction with the ligands, 24 ligand molecules of E. coli K-12 dnaE subunit were extracted from BindingDB database and docked with the subject receptor.49 Virtual screening was done with a total 6,460 molecules, 5,040 experimental and 1,447 approved molecules deposited in DrugBank, based on selected active sites into the dnaE. Virtual screening was performed on Linux (Ubuntu 10.04) based cluster with 32 core systems. The top 100 molecules were selected based on lowest binding energy after being docked several times. The selected molecules were analyzed by Lipinski\u2019s rule of five. The ligand interaction analysis and visualization was done with the help of Pymol and Discovery Studio (Accelrys, San Diego, CA, USA). Absorption, distribution, metabolism, excretion, and toxicity (ADMET) prediction was carried out with PreADMET server. PreADMET predicts mutagenicity and carcinogenicity of a compound and helps to avoid toxic compound. Oral bioavailability was predicted with FAF-Drugs2 program of Mobyle@RPBS server.50",
+            "cite_spans": [
+                {
+                    "start": 209,
+                    "end": 211,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1079,
+                    "end": 1081,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Virtual screening, drug likeliness, and toxicity analysis ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Here we report the first computational comparative and subtractive genomics analysis of different metabolic pathways from E. coli O157:H7, for the identification of potential drug targets. A systematic workflow was defined involving several bioinformatics tools, databases, and drug target prioritization parameters (Figure 1), with the goal of obtaining information about proteins that were involved in various metabolic pathways of E. coli O157:H7, but absent in its host, therefore avoiding any potential side effects. When we searched the KEGG database for pathogen metabolic pathways, a total of 105 different pathways appeared. In order to identify drug targets involved in pathogen-specific metabolic pathways, comparative analysis of the metabolic pathways of the host and pathogen was performed. Detailed pathways analyses revealed that a total of 35 pathways were present only in the pathogen and termed as pathogen-specific pathways, and the remaining 70 pathogen pathways were defined as common host-pathogen pathways as listed in Table 1.",
+            "cite_spans": [],
+            "section": "Identification of pathogen-specific pathways ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 317,
+                    "end": 325,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1043,
+                    "end": 1050,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "To be an effective drug target, the protein should be crucial for the survival of pathogen in the host body but non- homologous to human proteins and this criterion is a prerequisite for avoiding cross binding of drugs with human proteins, and drug side effect probability.51 Unique pathways are those that are specific to the pathogen but absent in its host. Proteins in these pathways can also be considered as unique to the pathogen and might serve as potential drug and vaccine targets.34 Moreover, several unique proteins are known to be present in common pathways as identified during our analysis of E. coli O157:H7 (data not shown) and in several previous studies on other bacteria.19,20,52",
+            "cite_spans": [
+                {
+                    "start": 273,
+                    "end": 275,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 490,
+                    "end": 492,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 690,
+                    "end": 692,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 693,
+                    "end": 695,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 696,
+                    "end": 698,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                }
+            ],
+            "section": "Identification of non-homologous essential proteins ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Additionally, we also identified that a single unique protein can also take part in multiple pathways. Proteins that are involved in more than one pathway could be more effective drug targets when, in addition, they are non-homologous proteins. Nevertheless, being unique or non-human and involved in metabolic pathways are not the sole criteria for selecting favorable drug targets. It is possible that a bacterial protein showing no similarity to host proteins might be involved in multiple metabolic pathways, but its disruption might be of no therapeutic benefit. The reasons may include presence of paralogs, isoenzymes, and most importantly, being non-essential for the pathogen\u2019s survival. Again, not all essential proteins are non-homologous in nature. Therefore, pathogen proteins that fulfill the criteria of being unique and essential at the same time represent more attractive drug targets.34",
+            "cite_spans": [
+                {
+                    "start": 902,
+                    "end": 904,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Identification of non-homologous essential proteins ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Based on the criteria discussed above, we identified 780 probable essential proteins from host\u2013pathogen common pathways, and 234 from pathogen unique pathways (Supplementary materials). These proteins showed good similarity with the experimentally proven essential proteins recorded in DEG database. BLASTP search against human proteome narrowed down the target proteome to only 220 and 130 proteins from common pathways and unique pathways respectively resulting in 350 proteins which were essential for the pathogen\u2019s survival and non-homologous to the host (Supplementary materials).",
+            "cite_spans": [],
+            "section": "Identification of non-homologous essential proteins ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Localization of the proteins in the cell is an important factor for identification of suitable and effective drug targets. Membrane localized proteins are difficult to purify and assay53 and therefore, cytoplasmic proteins are more favorable as drug targets. Other major factors are: accessibility value of a target protein; preferably low MW (<100 kDa); whether a potential drug is a transmembrane protein; and availability of 3D structural information.20 Based on these essential features, the identified non-homologous essential proteins of E. coli O157:H7 were further characterized. Most of the proteins had MW less than 100 kDa indicating the possibility to experimentally study these proteins for drug development.",
+            "cite_spans": [
+                {
+                    "start": 184,
+                    "end": 186,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 454,
+                    "end": 456,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Subcellular localization and prediction of drug target prioritization ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "From the common pathways, 152 proteins were found to be cytoplasmic, 54 proteins to be membrane localized, and the other 14 proteins to be of unknown localization. From pathogen unique pathways, 70, 52, and eight proteins were found to be cytoplasmic, membrane localized, and of unknown localization respectively (Supplementary materials). Based on these results, 152 and 70 cytoplasmic proteins from common pathways and unique pathways respectively were considered for further analysis to identify suitable drug targets (Figure 2).",
+            "cite_spans": [],
+            "section": "Subcellular localization and prediction of drug target prioritization ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 522,
+                    "end": 530,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The DrugBank is a unique bioinformatics and cheminformatics resource which combines detailed drug data with comprehensive information about drug targets. By utilizing the DrugBank database, druggability of non-homologous essential proteins of E. coli O157:H7 was measured by sequence similarity to the targets of small-molecule drugs and BLASTP search was performed to align the non-homologous essential proteins to the list of drug-targeted proteins from DrugBank. A total of 129 proteins of E. coli O157:H7 showed high similarities with the binding partners of US Food and Drug Administration (FDA)-approved drugs, experimental small-molecule compounds, or nutraceutical compounds supporting the potential of comparative genomics in drug discovery. Among these, 80 proteins and 49 proteins were from common and unique pathways respectively (Supplementary materials).",
+            "cite_spans": [],
+            "section": "Subcellular localization and prediction of drug target prioritization ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "By this comparison with drug-targeted proteins additionally a list of approved drug and drug-like compounds was identified that bind to proteins with similar sequences to those of E. coli O157:H7. It is reasonable that careful filtering of this set could reveal a number of potential compounds that were primed for optimization and derivatization using traditional medicinal chemistry although protein sequence similarity does not guarantee identical structures or binding pockets.38 We searched the presence of 3D structures of the non-host essential proteins of E. coli O157:H7. Such information could greatly facilitate a structure-based drug design, including homology modeling, docking, virtual screening or pharmacophore-based screening.54 The PDB and ModBase were used as sources for the 3D structural information. Out of 350 non-host essential proteins, ten proteins were identified as having experimentally determined 3D structures in PDB and 312 were found to have 3D models in ModBase (Supplementary materials).",
+            "cite_spans": [
+                {
+                    "start": 481,
+                    "end": 483,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 743,
+                    "end": 745,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "Subcellular localization and prediction of drug target prioritization ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Proteins which showed significant similarity with the databases were discarded and the remaining protein sequences were taken as novel targets. Forty-four proteins from pathogen unique pathways and 76 proteins from common pathways totaling 120 proteins were defined as novel proteins (Supplementary materials). Metabolic pathway analysis indicated that these 120 proteins were involved in 12 biological processes unique to pathogens and 49 biological processes that were common in both host and pathogen. Moreover, all of these 61 biological processes were classified into 12 classes: amino acid metabolism, carbohydrate metabolism, energy metabolism, glycan biosynthesis and metabolism, lipid metabolism, metabolism of cofactors and vitamins, metabolism of other amino acids, nucleotide metabolism, genetic information processing, environmental information processing, cellular processes, and others (Supplementary materials). Figure 3 showed the percentage distribution of novel drug targets involved in different biological process.",
+            "cite_spans": [],
+            "section": "Novel targets\u2019 identification ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 928,
+                    "end": 936,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Our study revealed that 44 proteins were uniquely involved in pathogen-specific 12 unique pathways and these were lipopolysaccharide (LPS) biosynthesis, peptidoglycan biosynthesis, methane metabolism, C5-branched dibasic acid metabolism, nitrogen metabolism, phosphonate and phosphinate metabolism, bacterial secretion system, phosphotransferase system (PTS), flagellar assembly, two-component system, biosynthesis of siderophore group non-ribosomal peptides, and bacterial chemotaxis.",
+            "cite_spans": [],
+            "section": "Novel targets in pathogens\u2019 unique pathways ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Three enzymes of LPS core biosynthesis and three enzymes of lipid A pathway were found uniquely present in LPS biosynthesis pathway (KEGG Pathway: map00540). In LPS of the Enterobacteriaceae, the core oligosaccharide is responsible for many of the biological properties of the antigenic O-polysaccharide.55 On the other hand, enzymes of lipid A pathway required for bacterial growth could be excellent targets for the development of new antibiotics.56 Moreover, murF; EC 6.3.2.10 was the only enzyme present in peptidoglycan biosynthesis (KEGG Pathway: map00550). In Gram-positive bacteria, the cell wall composed of peptidoglycan macromolecules and many surface proteins of Gram-positive bacteria is thought to be important for survival within an infected host.57",
+            "cite_spans": [
+                {
+                    "start": 304,
+                    "end": 306,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 449,
+                    "end": 451,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 762,
+                    "end": 764,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                }
+            ],
+            "section": "Novel targets in pathogens\u2019 unique pathways ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In methane metabolism (KEGG Pathway: map00680), AckA; EC 2.7.2.1 was found to be uniquely present. Methanotrophs involved in the global methane cycle consume methane as their sole source of carbon and energy for growing58 whereas methanogens can obtain energy for growth by converting a limited number of substrates to methane.59 The protein ilvH, acetolactate synthase III small subunit, is a unique protein present in C5-branched dibasic acid metabolism (KEGG Pathway: map00660) which provides alternative sources of carbon and energy.60",
+            "cite_spans": [
+                {
+                    "start": 219,
+                    "end": 221,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 327,
+                    "end": 329,
+                    "mention": "59",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 537,
+                    "end": 539,
+                    "mention": "60",
+                    "ref_id": "BIBREF56"
+                }
+            ],
+            "section": "Novel targets in pathogens\u2019 unique pathways ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "There was a unique presence of four proteins in nitrogen metabolism (KEEG Pathway: map00910). In the nitrogen cycle, different reductive or oxidative reactions are utilized by prokaryotes for energy conservation.61 In case of oxygen deprived growth conditions for E. coli, anaerobic respiration nitrate is the preferred electron acceptor.62 The putative resistance protein was identified as unique protein present in phosphonate and phosphinate metabolism (KEGG Pathway: map00440). Natural products containing carbon-phosphorous bonds, so-called C-P compounds have been found in many organisms, but only protists and bacteria, mostly actinobacteria, have biosynthetic capacity. Moreover, the secB; protein-export protein secB and etpN; type 4 prepilin-like proteins leader peptide-processing enzyme, that are the parts of bacterial secretion system (KEGG Pathway: map03070), were found as unique. Many proteins implicated in efflux of different toxins and drugs; virulence and biogenesis of different organelles (pili and flagella) are secreted.63 The secB is involved in efficient export of proteins across the cytoplasmic membrane in E. coli.64 In PTS (KEGG Pathway: map02060), n9 proteins were found to be uniquely present. It has been known that PTS is involved in transportation of more than 20 carbohydrates in bacteria and plays a major role in phosphorylation and uptake of carbohydrates and controlling their metabolism.65,66 Flagellar FliJ protein which is part of flagellar assembly (KEGG Pathway: map02040) as well as a putative general chaperone and cytoplasmic protein67 was identified as unique in the pathogen. The bacterial flagellum extending from the cytoplasm to the cell exterior serves as both a motor organelle and a protein export/assembly apparatus.68 A total of 19 proteins were identified as unique in the pathogen-specific pathway in a two-component system (KEGG Pathway: map02020). Bacterial two-component system is required for adaptation to external stimuli and can affect changes in cellular physiology.69 A single protein was identified to be involved in biosynthesis of siderophore group non-ribosomal peptides pathway. Polyketide synthases and non-ribosomal polypeptide synthetases are known to be responsible for the biosynthesis of several siderophores such as enterobactin in E. coli.70 Two proteins were detected in case of bacterial chemotaxis. In chemotaxis, bacteria sense chemical gradients in the environment and move toward favorable conditions. The pathway is arguably best characterized in the case of E. coli.71",
+            "cite_spans": [
+                {
+                    "start": 212,
+                    "end": 214,
+                    "mention": "61",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 338,
+                    "end": 340,
+                    "mention": "62",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 1045,
+                    "end": 1047,
+                    "mention": "63",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 1144,
+                    "end": 1146,
+                    "mention": "64",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 1429,
+                    "end": 1431,
+                    "mention": "65",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 1432,
+                    "end": 1434,
+                    "mention": "66",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 1582,
+                    "end": 1584,
+                    "mention": "67",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 1774,
+                    "end": 1776,
+                    "mention": "68",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 2035,
+                    "end": 2037,
+                    "mention": "69",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 2322,
+                    "end": 2324,
+                    "mention": "70",
+                    "ref_id": "BIBREF67"
+                },
+                {
+                    "start": 2557,
+                    "end": 2559,
+                    "mention": "71",
+                    "ref_id": "BIBREF68"
+                }
+            ],
+            "section": "Novel targets in pathogens\u2019 unique pathways ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We also identified 76 proteins in 49 host\u2013pathogen common metabolic pathways as novel targets. The pathways were grouped as metabolism of amino acid, carbohydrate, energy, lipid, other amino acids, nucleotide, cofactors and vitamins, and genetic information processing, environmental information processing, cellular processes, and others (Supplementary materials).",
+            "cite_spans": [],
+            "section": "Novel targets in common host-pathogen pathways ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Common proteins among several species would be well broad-spectrum antibiotic targets.72 We used 73 species as reference and proteins which were common in at least 40 different species were listed as broad-spectrum targets (Supplementary materials). Forty-four proteins were identified as broad-spectrum targets (Supplementary materials). In addition, broad-spectrum proteins involved in multiple pathways would be better targets as their inhibition of activity will hamper more than one system in the pathogen.73 dnaE subunit and AckA were involved in a maximum number of pathways. AckA catalyzes the reversible reaction of formation of acetyl phosphate from acetate and ATP. Whereas dnaE participates in some critical pathways of the pathogen like purine metabolism, pyrimidine metabolism, DNA replication, mismatch repair, and homologous recombination. There is no resolved X-ray crystallography structure for both dnaE (E. coli O157:H7 Sakai strand) and AckA (E. coli O157:H7 Sakai strand) as we intended to do homology modeling. However, dnaE subunit (Uniprot ID: Q8X8X5) was preferred over AckA (Uniprot ID: P0A6A5) based on suitability of homology modeling and docking studies. During the BLAST search against PDB structures (threshold e-value <0.001), dnaE subunit showed 98% sequence identity with E. coli replicative dnaE subunit (PDB ID: 2HNH), whereas 94% for AckA with Salmonella enterica subspecies enterica serovar Typhimurium AckA (PDB ID: 3SK3 and 3SLC) (data not shown). Furthermore, an inter-domain motion during ligand binding as well as a ligand binding pocket located at the dimeric interface of form-II AckA has been reported74 that is very hard to address through in silico docking software. In case of dnaE subunit, literature searching helped us to identify the pocket for ligand binding as well as important and conserved residues within the pocket that are important for catalytic activity.75",
+            "cite_spans": [
+                {
+                    "start": 86,
+                    "end": 88,
+                    "mention": "72",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 511,
+                    "end": 513,
+                    "mention": "73",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 1648,
+                    "end": 1650,
+                    "mention": "74",
+                    "ref_id": "BIBREF71"
+                },
+                {
+                    "start": 1918,
+                    "end": 1920,
+                    "mention": "75",
+                    "ref_id": "BIBREF72"
+                }
+            ],
+            "section": "Identification of broad-spectrum targets ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Moreover, we conducted BLAST searching for dnaE (Uniprot ID: Q8X8X5) with e-value cut off of 0.001 against UniprotKB. We selected the organisms whose proteins showed at least 75% sequence identity with dnaE. The organisms were searched in PATRIC database to check their host and pathogenicity. Only the human hosts were considered and predicted to be pathogenic if involved in disease(s) according to PATRIC database.42 We found that all the organisms are pathogenic except Lelliottia, Kluyvera, Hafnia, Ewingella, Cedecea, and Yokenella. However, literature searching helped us to conclude that Kluyvera, Yokenella, Ewingella, Hafnia, and Cedecea are also involved in diseases.76\u201381 We did not find sufficient information about Lelliottia. Thus it is clearly demonstrated that E. coli O157:H7 dnaE does not share any sequence similarity with non-pathological bacterial dnaE. Therefore, due to the above advantages, dnaE was selected for homology modeling and subsequent structure-based drug designing.",
+            "cite_spans": [
+                {
+                    "start": 417,
+                    "end": 419,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 678,
+                    "end": 680,
+                    "mention": "76",
+                    "ref_id": "BIBREF73"
+                },
+                {
+                    "start": 681,
+                    "end": 683,
+                    "mention": "81",
+                    "ref_id": "BIBREF79"
+                }
+            ],
+            "section": "Identification of broad-spectrum targets ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "DNA polymerase III holo-enzyme has ten different peptides arranged in an asymmetric dimer and contains a 3\u2032-5\u2032 exonuclease activity. The alpha subunit is at the core enzyme and mainly functions in the polymerase activity. The best hit of similarity search identified the crystal structure of the catalytic alpha subunit of E. coli replicative dnaE DNA polymerase III (PDB ID: 2HNH).82 It showed 99.98% sequence similarity with our target sequence and was used as the template for homology modeling. The modeled structure was shown in Figure 4.",
+            "cite_spans": [
+                {
+                    "start": 382,
+                    "end": 384,
+                    "mention": "82",
+                    "ref_id": "BIBREF80"
+                }
+            ],
+            "section": "Homology modeling ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 534,
+                    "end": 542,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Advancing toward the way of in silico drug design with protein models depends largely on the quality of the models. Inspection of the Psi/Phi Ramachandran plot analysis showed that the model built by ESyPred3D has residues in most favored regions 92.4%, residues in additional allowed regions 7.1%, and residues in generously allowed regions 0.3%. A good quality model would be expected to have over 90% in the most favored regions (Figure 5A).",
+            "cite_spans": [],
+            "section": "Structure validation and energy minimization ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 433,
+                    "end": 442,
+                    "mention": "Figure 5A",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "This structure was also verified with ANOLEA. The y-axis of the plot represents the energy for each amino acid of the protein chain and it showed that maximum residues are in favorable energy environment (Figure 5B). As a result the structure modeled was considered as a good quality model for further analysis. To obtain a better refined model energy minimization was done using Swiss PDB viewer. It minimizes energy using GROMOS96. The force-field energies of the overall structure before and after minimization were \u221213,816.546 KJ/mol and \u221236,224.391 KJ/mol respectively.",
+            "cite_spans": [],
+            "section": "Structure validation and energy minimization ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 205,
+                    "end": 214,
+                    "mention": "Figure 5B",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Active site is the region on the surface of an enzyme to which a specific substrate (ligand) or set of substrates (ligands) binds. The properties of the active site are determined by the sequences of amino acids and the 3D arrangement of the polypeptide chains of the enzyme. Identification of the active site of E. coli O157:H7 Sakai strain dnaE was done by CASTp server. This server calculates the surface area and volume of the pocket of the given structure. In addition, it also shows the active site residues. The active site residues with a volume of 17,116 were shown in Figure 6. Literature searching helped us to identify the important residues within the pocket. The structure of catalytic alpha subunit of E. coli is known to have three conserved residues of aspartate (Asp 402, Asp 404, and Asp 556 in our model, ensured by aligning with the reference structure, data not shown) and four conserved positive residues (Arg 391, Arg 397, Arg 710, and Arg 711) in this structure (Arg 390, Arg 396, Arg 709, and Arg 710 in the reference structure) that are important in catalysis83 and proposed to interact with the negatively charged triphosphate tail of the incoming nucleotide respectively. Moreover, two aromatic residues, Tyr 754 and Phe 756, that could potentially interact with the nascent base pair resembles Tyr 755 and Phe 757 in our modeled structure. These residues were therefore considered as important in inhibition of DNA binding and catalysis of the dnaE subunit.",
+            "cite_spans": [
+                {
+                    "start": 1086,
+                    "end": 1088,
+                    "mention": "83",
+                    "ref_id": "BIBREF81"
+                }
+            ],
+            "section": "Active site analysis ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 578,
+                    "end": 586,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Twenty-four ligand molecules of E. coli K-12 obtained from BindingDB database were docked on the receptor. Molecules showing lowest binding energy were listed in Table 2. The 251D molecule is a potent inhibitor of the bacterial replicative dnaE.84 Information on these molecules\u2019 binding interaction was taken as reference to predict convenient inhibitors of dnaE of E. coli O157:H7 Sakai strand from the molecules of DrugBank (Figure 7A). The top 100 hits from DrugBank showing lower binding energies after being docked five times were filtered for Lipinski\u2019s rule of five85 that reduced the compounds to 59. To avoid off target binding, the compounds having human targets were excluded. The top two hits showed stable or nearly stable binding energy and good clustering performances from the docking results (Table 3) and structures are shown in Figure 8. Among the final high affinity binding molecules, DB04118 (N-coeleneterazine) and DB04698 (N-(1,4-dihydro-5H-tetrazol-5-ylidene)-9-oxo-9H-xanthene-2-sulfonamide) were found to interact with important residues (Figure 7B) required for DNA binding and catalysis. According to DrugBank database, both molecules are experimental drugs. DB04118 has no specific target yet. However, 3-dehydroquinate dehydratase of Helicobacter pylori (American Type Culture Collection strain 700392/26695), that catalyzes a trans-dehydration via an enolate intermediate, is the target for DB04698. These molecules could be proposed as potential inhibitors of the E. coli O157:H7 Sakai strand dnaE. For the identification of potential drug candidates human intestinal absorption is imperative.86 By using PreADMET we found human intestinal absorption was 95.36% and 88.10% for DB04118 and DB04698 respectively, indicating well-absorbed compounds (70%~100% according to PreADMET) that is desirable for drug candidates. As only the unbound drug is necessary for diffusion or transport across the cell membranes and target-drug interaction, we predicted percent drug bound in plasma protein. Plasma protein binding prediction results showed 99.28% and 100.00% plasma protein binding for DB04118 and DB04698 respectively, indicating strongly bound chemicals which are not desirable. Caco-2 cell model serves as a reliable in vitro model for the prediction of oral drug absorption. PreADMET predicted 17.45 (nm/second) and 0.36 (nm/second) Caco-2 cell permeability for DB04118 and DB04698 respectively that are considered middle and low permeability respectively. Both drugs exhibit good oral bioavailability and mostly negative result in Ames test as predicted by FAF-Drugs2 and PreADMET toxicity prediction (data not shown) and no evidence of carcinogenic activity for only DB04698 as predicted by PreADMET rodent carcinogenicity prediction. We also analyzed other ADMET properties like blood\u2013brain barrier penetration, skin permeability, MDCK cell, and P-gp inhibition, and in all of these cases results are positive for our proposed compounds (data not shown).",
+            "cite_spans": [
+                {
+                    "start": 245,
+                    "end": 247,
+                    "mention": "84",
+                    "ref_id": "BIBREF82"
+                },
+                {
+                    "start": 573,
+                    "end": 575,
+                    "mention": "85",
+                    "ref_id": "BIBREF83"
+                },
+                {
+                    "start": 1627,
+                    "end": 1629,
+                    "mention": "86",
+                    "ref_id": "BIBREF84"
+                }
+            ],
+            "section": "Virtual screening, drug likeliness, and toxicity analysis ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 428,
+                    "end": 437,
+                    "mention": "Figure 7A",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 848,
+                    "end": 856,
+                    "mention": "Figure 8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 1067,
+                    "end": 1076,
+                    "mention": "Figure 7B",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 162,
+                    "end": 169,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 811,
+                    "end": 818,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "The overall picture emerging from this study was the identification of broad-spectrum antibiotic target as well as prediction of potential inhibitors of DNA III alpha of deadly pathogen E.coli 0157:H7 using extensive in silico tools. Bacterial replicative dnaE is a member of C family of polymerases87,88 that are unique in terms of sequence. Bacterial replicative DNA polymerase III share no sequence similarity and is strikingly different from canonical DNA polymerases including those of eukaryotic replicative polymerases.89 It has been reported that DNA polymerases are responsible for pathogen survival and drug resistance so they have been considered to be a drug target in a broad group of Gram-positive pathogens such as Staphylococcus, Streptococcus, Enterococcus, and Mycoplasma.90 It has also been reported that DNA polymerase III inactivation would impede survival of Mycobacterium tuberculosis within the host.91",
+            "cite_spans": [
+                {
+                    "start": 299,
+                    "end": 301,
+                    "mention": "87",
+                    "ref_id": "BIBREF85"
+                },
+                {
+                    "start": 302,
+                    "end": 304,
+                    "mention": "88",
+                    "ref_id": "BIBREF86"
+                },
+                {
+                    "start": 526,
+                    "end": 528,
+                    "mention": "89",
+                    "ref_id": "BIBREF87"
+                },
+                {
+                    "start": 790,
+                    "end": 792,
+                    "mention": "90",
+                    "ref_id": "BIBREF89"
+                },
+                {
+                    "start": 924,
+                    "end": 926,
+                    "mention": "91",
+                    "ref_id": "BIBREF90"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Since bacterial evolution aims to acquire resistance against single or multiple antibiotics to ensure their survival in the environment, the development, not only of new conventional antibiotics but also of novel compounds and alternative strategies for the battle against bacterial infections, is becoming a topical and widely recognized need. In this study, a number of criteria such as essentiality of proteins, dissimilarity with host, conservation among pathogens, availability in drug databases, virtual screening etc, were utilized to explore potential drug targets as well as to predict a drug that can block dnaE of deadly E coli O157:H7 strain. This in silico strategy can be used for screening novel and alternative targets in a way to design and develop new drugs against other emerging human pathogens.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Host\u2013pathogen common and pathogen-specific pathways from KEGG database\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Lowest docking energies and important residues of the binding site observed to be interactive with the ligands from BindingDB database\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Lowest docking energies, important residues of the binding site observed to be interactive with the ligands from DrugBank, percentage of human intestinal absorption and plasma protein binding, Caco-2 cell permeability and carcinogenicity in rats\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: A schematic representation of the workflow of computational drug target identification and prediction of putative inhibitors of the selected target. Abbreviations: BLASTP, Protein Basic Local Alignment Search Tool; TTD, Therapeutic Target Database.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Comparative subcellular localization of proteins from the common host-pathogen pathways and pathogen-specific pathways.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Percentage distribution of novel drug targets involved in different metabolic pathways or biological processes.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Homology modeled structure of the Escherichia coli O157:H7 Sakai strand DNA polymerase III alpha, modeled with ESyPred3D server.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Structure validation and energy minimization. Notes: (A) Result of PROCHECK verification program, showing number and percentages of residues in most favored regions (red); additional allowed regions (yellow); generously allowed regions (creamy white); and in disallowed regions (white). Based on an analysis of 118 structures of resolution of at least 2.0 angstroms and R-factor no greater than 20%, a good quality model would be expected to have over 90% in the most favored regions. (B) Result of the 3D structure verification tool ANOLEA. This figure shows residues in favorable energy environment (green) and residues in unfavorable energy (red). Abbreviation: ANOLEA, atomic non-local environment assessment.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: Active site residues (shown in green) of the Escherichia coli O157:H7 Sakai strand DNA polymerase III alpha. Note: Figure prepared by CASTp server.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7: Three-dimensional representation. Notes: Three-dimensional representation of the interactive residues on the binding site of the protein when it interacts with (A) active inhibitors (ligands) respectively with CID 9809878; ZINC 5117079 and ZINC 28356629 and (B) top binding affinity molecules DB04118 and DB04698. The color indicator on the left side shows the types of interaction of particular residues.",
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Figure 8: Structure of top hit compounds by in silico screening. Notes: (A) DB04118 (N-Coeleneterazine), (B) DB04698 (N-(1,4-Dihydro-5H-tetrazol-5-ylidene)-9-oxo-9H-xanthene-2-sulfonamide).",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Pathogenic Escherichia coli",
+            "authors": [
+                {
+                    "first": "JB",
+                    "middle": [],
+                    "last": "Kaper",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Nataro",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Mobley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nat Rev Microbiol",
+            "volume": "2",
+            "issn": "2",
+            "pages": "123-140",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Antimicrobial resistance of Shiga toxin (verotoxin)-producing Escherichia coli O157:H7 and non-O157 strains isolated from humans, cattle, sheep and food in Spain",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Mora",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Blanco",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Blanco",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Res Microbiol",
+            "volume": "156",
+            "issn": "7",
+            "pages": "793-806",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Antibiotic resistance of Escherichia coli O157:H7 and O157:NM isolated from animals, food, and humans",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Meng",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Doyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Joseph",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Food Prot",
+            "volume": "61",
+            "issn": "11",
+            "pages": "1511-1514",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Antibiotic resistance and distribution of tetracycline resistance genes in Escherichia coli O157:H7 isolates from humans and bovines",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wilkerson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Samadpour",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "van Kirk",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Antimicrob Agents Chemother",
+            "volume": "48",
+            "issn": "3",
+            "pages": "1066-1067",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Characteristics of antibiotic-resistant Escherichia coli O157:H7 in Washington State, 1984\u20131991",
+            "authors": [
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Samadpour",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Grimm",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J Infect Dis",
+            "volume": "170",
+            "issn": "6",
+            "pages": "1606-1609",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Antimicrobial resistance of Escherichia coli O157 isolated from humans, cattle, swine, and food",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Schroeder",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "DebRoy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Appl Environ Microbiol",
+            "volume": "68",
+            "issn": "2",
+            "pages": "576-581",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Recent advances and method development for drug target identification",
+            "authors": [
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Nislow",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Emili",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Trends Pharmacol Sci",
+            "volume": "31",
+            "issn": "2",
+            "pages": "82-88",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Bacterial genome sequencing and drug discovery",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Allsop",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Curr Opin Biotechnol",
+            "volume": "9",
+            "issn": "6",
+            "pages": "637-642",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Deductive genomics: a functional approach to identify innovative drug targets in the post-genome era",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Stumm",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Russ",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nehls",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Am J Pharmacogenomics",
+            "volume": "2",
+            "issn": "4",
+            "pages": "263-271",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Putative drug and vaccine target protein identification using comparative genomic analysis of KEGG annotated metabolic pathways of Mycoplasma hyopneumoniae",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Damte",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Suh",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Yohannes",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Hossain",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Genomics",
+            "volume": "102",
+            "issn": "1",
+            "pages": "47-56",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "In silico identification of common putative drug targets in Leptospira interrogans",
+            "authors": [
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Amineni",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Pradhan",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Marisetty",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Chem Biol",
+            "volume": "3",
+            "issn": "4",
+            "pages": "165-173",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Virulence factors of Escherichia coli O157 and other Shiga toxin-producing E. coli",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Law",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Appl Microbiol",
+            "volume": "88",
+            "issn": "5",
+            "pages": "729-745",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "In silico identification of candidate drug and vaccine targets from various pathways in Neisseria gonorrhoeae",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Barh",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "In Silico Biol",
+            "volume": "9",
+            "issn": "4",
+            "pages": "225-231",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Design of an epitope-based peptide vaccine against spike protein of human coronavirus: an in silico approach",
+            "authors": [
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Oany",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Emran",
+                    "suffix": ""
+                },
+                {
+                    "first": "TP",
+                    "middle": [],
+                    "last": "Jyoti",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Drug Des Devel Ther",
+            "volume": "8",
+            "issn": "",
+            "pages": "1139-1149",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Identification of potential drug targets by subtractive genome analysis of Bacillus anthracis A0248: An in silico approach",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Rahman",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Noore",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Hasan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Comput Biol Chem",
+            "volume": "52",
+            "issn": "",
+            "pages": "66-72",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Searching for drug targets in microbial genomes",
+            "authors": [
+                {
+                    "first": "MY",
+                    "middle": [],
+                    "last": "Galperin",
+                    "suffix": ""
+                },
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Curr Opin Biotechnol",
+            "volume": "10",
+            "issn": "6",
+            "pages": "571-578",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "A genomic perspective on protein families",
+            "authors": [
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Tatusov",
+                    "suffix": ""
+                },
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Science",
+            "volume": "278",
+            "issn": "5338",
+            "pages": "631-637",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Beyond complete genomes: from sequence to structure and function",
+            "authors": [
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Tatusov",
+                    "suffix": ""
+                },
+                {
+                    "first": "MY",
+                    "middle": [],
+                    "last": "Galperin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Curr Opin Struct Biol",
+            "volume": "8",
+            "issn": "3",
+            "pages": "355-363",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Essential Bacillus subtilis genes",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kobayashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Ehrlich",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Albertini",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "100",
+            "issn": "8",
+            "pages": "4678-4683",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Virtual screening strategies in drug discovery: a critical review",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Lavecchia",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Di Giovanni",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Curr Med Chem",
+            "volume": "20",
+            "issn": "23",
+            "pages": "2839-2860",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "From genomics to chemical genomics: new developments in KEGG",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kanehisa",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Goto",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hattori",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res",
+            "volume": "34",
+            "issn": "Database issue",
+            "pages": "D354-D357",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "KEGG for representation and analysis of molecular networks involving diseases and drugs",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kanehisa",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Goto",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Furumichi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Tanabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hirakawa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nucleic Acids Res",
+            "volume": "38",
+            "issn": "Database issue",
+            "pages": "D355-D360",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "A statewide outbreak of Escherichia coli O157:H7 infections in Washington State",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Ostroff",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Griffin",
+                    "suffix": ""
+                },
+                {
+                    "first": "RV",
+                    "middle": [],
+                    "last": "Tauxe",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Am J Epidemiol",
+            "volume": "132",
+            "issn": "2",
+            "pages": "239-247",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "UniProt Knowledgebase: a hub of integrated protein data",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Magrane",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Consortium",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Database (Oxford)",
+            "volume": "2011",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "DEG 5.0, a database of essential genes in both prokaryotes and eukaryotes",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Res",
+            "volume": "37",
+            "issn": "Database issue",
+            "pages": "D455-D458",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "PSORTb 3.0: improved protein subcellular localization prediction with refined localization subcategories and predictive capabilities for all prokaryotes",
+            "authors": [
+                {
+                    "first": "NY",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Wagner",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Laird",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Bioinformatics",
+            "volume": "26",
+            "issn": "13",
+            "pages": "1608-1615",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Genomic-scale prioritization of drug targets: the TDR Targets database",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Aguero",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Al-Lazikani",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Aslett",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nat Rev Drug Discov",
+            "volume": "7",
+            "issn": "11",
+            "pages": "900-907",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Comparative genomics analysis of Mycobacterium ulcerans for the identification of putative essential genes and therapeutic candidates",
+            "authors": [
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Butt",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Nasrullah",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tahir",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "8",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "SMAP-WS: a parallel web service for structural proteome-wide ligand-binding site comparison",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ren",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Xie",
+                    "suffix": ""
+                },
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Bourne",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nucleic Acids Res",
+            "volume": "38",
+            "issn": "Web Server issue",
+            "pages": "W441-W444",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Structure-based maximal affinity model predicts small-molecule druggability",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Coleman",
+                    "suffix": ""
+                },
+                {
+                    "first": "KT",
+                    "middle": [],
+                    "last": "Smyth",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat Biotechnol",
+            "volume": "25",
+            "issn": "1",
+            "pages": "71-75",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "A practical view of \u2018druggability\u2019",
+            "authors": [
+                {
+                    "first": "TH",
+                    "middle": [],
+                    "last": "Keller",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pichota",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Curr Opin Chem Biol",
+            "volume": "10",
+            "issn": "4",
+            "pages": "357-361",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Computational prediction of essential genes in an unculturable endosymbiotic bacterium, Wolbachia of Brugia malayi",
+            "authors": [
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Holman",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Foster",
+                    "suffix": ""
+                },
+                {
+                    "first": "CK",
+                    "middle": [],
+                    "last": "Carlow",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "BMC Microbiol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "DrugBank 3.0: a comprehensive resource for \u2018omics\u2019 research on drugs",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Knox",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Law",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Jewison",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nucleic Acids Res",
+            "volume": "39",
+            "issn": "Database issue",
+            "pages": "D1035-D1041",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "The epidemiology of infections caused by Escherichia coli O157:H7, other enterohemorrhagic E. coli, and the associated hemolytic uremic syndrome",
+            "authors": [
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Griffin",
+                    "suffix": ""
+                },
+                {
+                    "first": "RV",
+                    "middle": [],
+                    "last": "Tauxe",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Epidemiol Rev",
+            "volume": "13",
+            "issn": "",
+            "pages": "60-98",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "SuperTarget goes quantitative: update on drug-target interactions",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Hecker",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ahmed",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "von Eichborn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res",
+            "volume": "40",
+            "issn": "Database issue",
+            "pages": "D1113-D1117",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Therapeutic target database update 2012: a resource for facilitating target-oriented drug discovery",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Zhu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Qin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res",
+            "volume": "40",
+            "issn": "Database issue",
+            "pages": "D1128-D1136",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "PATRIC: the comprehensive bacterial bioinformatics resource with a focus on human pathogenic species",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Gillespie",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Wattam",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Cammer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Infect Immun",
+            "volume": "79",
+            "issn": "11",
+            "pages": "4286-4298",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "ESyPred3D: Prediction of proteins 3D structures",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Lambert",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Leonard",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "De Bolle",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Depiereux",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Bioinformatics",
+            "volume": "18",
+            "issn": "9",
+            "pages": "1250-1256",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "The SWISS-MODEL workspace: a web-based environment for protein structure homology modelling",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Arnold",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Bordoli",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kopp",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Schwede",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Bioinformatics",
+            "volume": "22",
+            "issn": "2",
+            "pages": "195-201",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Assessing protein structures with a non-local atomic interaction energy",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Melo",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Feytmans",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Mol Biol",
+            "volume": "277",
+            "issn": "5",
+            "pages": "1141-1152",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "PROCHECK: A program to check the stereochemical quality of protein structures",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [
+                        "MM"
+                    ],
+                    "last": "Laskowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Moss",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Thornton",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "J Appl Cryst",
+            "volume": "26",
+            "issn": "",
+            "pages": "283-291",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "SWISS-MODEL and the Swiss-PdbViewer: an environment for comparative protein modeling",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Guex",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Peitsch",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Electrophoresis",
+            "volume": "18",
+            "issn": "15",
+            "pages": "2714-2723",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "CASTp: Computed Atlas of Surface Topography of proteins",
+            "authors": [
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Binkowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Naghibzadeh",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Liang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res",
+            "volume": "31",
+            "issn": "13",
+            "pages": "3352-3355",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "BindingDB: a web-accessible database of experimentally determined protein-ligand binding affinities",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wen",
+                    "suffix": ""
+                },
+                {
+                    "first": "RN",
+                    "middle": [],
+                    "last": "Jorissen",
+                    "suffix": ""
+                },
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Gilson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res",
+            "volume": "35",
+            "issn": "Database issue",
+            "pages": "D198-D201",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "An outbreak of diarrhea and hemolytic uremic syndrome from Escherichia coli O157:H7 in fresh-pressed apple cider",
+            "authors": [
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Besser",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Lett",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Weber",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "JAMA",
+            "volume": "269",
+            "issn": "17",
+            "pages": "2217-2220",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "RPBS: a web resource for structural bioinformatics",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Alland",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Moreews",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Boens",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucleic Acids Res",
+            "volume": "33",
+            "issn": "Web Server issue",
+            "pages": "W44-W49",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "A novel genomics approach for the identification of drug targets in pathogens, with special reference to Pseudomonas aeruginosa",
+            "authors": [
+                {
+                    "first": "KR",
+                    "middle": [],
+                    "last": "Sakharkar",
+                    "suffix": ""
+                },
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Sakharkar",
+                    "suffix": ""
+                },
+                {
+                    "first": "VT",
+                    "middle": [],
+                    "last": "Chow",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "In silico Biol",
+            "volume": "4",
+            "issn": "3",
+            "pages": "355-360",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "In silico analysis of Burkholderia pseudomallei genome sequence for potential drug targets",
+            "authors": [
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Chong",
+                    "suffix": ""
+                },
+                {
+                    "first": "BS",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nathan",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Mohamed",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "In Silico Biol",
+            "volume": "6",
+            "issn": "4",
+            "pages": "341-346",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Predicting conserved essential genes in bacteria: in silico identification of putative drug targets",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Duffield",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "McAlister",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bayliss",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ford",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Oyston",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Mol Biosyst",
+            "volume": "6",
+            "issn": "12",
+            "pages": "2482-2489",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "A comparative chemogenomics strategy to predict potential drug targets in the metazoan pathogen, Schistosoma mansoni",
+            "authors": [
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Caffrey",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rohwer",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Oellien",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "PLoS One",
+            "volume": "4",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Molecular basis for structural diversity in the core regions of the lipopolysaccharides of Escherichia coli and Salmonella enterica",
+            "authors": [
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Heinrichs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Yethon",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Whitfield",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Mol Microbiol",
+            "volume": "30",
+            "issn": "2",
+            "pages": "221-232",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Discovery of new biosynthetic pathways: the lipid A story",
+            "authors": [
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Raetz",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "BO",
+                    "middle": [],
+                    "last": "Ingram",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Lipid Res",
+            "volume": "50",
+            "issn": "Suppl",
+            "pages": "S103-S108",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Surface proteins of gram-positive bacteria and mechanisms of their targeting to the cell wall envelope",
+            "authors": [
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Navarre",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Schneewind",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Microbiol Mol Biol Rev",
+            "volume": "63",
+            "issn": "1",
+            "pages": "174-229",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Facultative methanotrophs revisited",
+            "authors": [
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Theisen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Murrell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Bacteriol",
+            "volume": "187",
+            "issn": "13",
+            "pages": "4303-4305",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Loss of the mtr operon in Methanosarcina blocks growth on methanol, but not methanogenesis, and reveals an unknown methanogenic pathway",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Welander",
+                    "suffix": ""
+                },
+                {
+                    "first": "WW",
+                    "middle": [],
+                    "last": "Metcalf",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "102",
+            "issn": "30",
+            "pages": "10664-10669",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Massive outbreak of Escherichia coli O157:H7 infection in schoolchildren in Sakai City, Japan, associated with consumption of white radish sprouts",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Michino",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Araki",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Minami",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Am J Epidemiol",
+            "volume": "150",
+            "issn": "8",
+            "pages": "787-796",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "The conservation and evolutionary modularity of metabolism",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Peregrin-Alvarez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Sanford",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Parkinson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Genome Biol",
+            "volume": "10",
+            "issn": "6",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Nitrate reduction and the nitrogen cycle in archaea",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Cabello",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Roldan",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Moreno-Vivian",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Microbiology",
+            "volume": "150",
+            "issn": "Pt 11",
+            "pages": "3527-3546",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "NapGH components of the periplasmic nitrate reductase of Escherichia coli K-12: location, topology and physiological roles in quinol oxidation and redox balancing",
+            "authors": [
+                {
+                    "first": "TH",
+                    "middle": [],
+                    "last": "Brondijk",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nilavongse",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Filenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Richardson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Cole",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biochem J",
+            "volume": "379",
+            "issn": "Pt 1",
+            "pages": "47-55",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Mechanisms of protein export across the bacterial outer membrane",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kostakioti",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                },
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Thanassi",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Stathopoulos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Bacteriol",
+            "volume": "187",
+            "issn": "13",
+            "pages": "4306-4314",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "Escherichia coli SecB protein associates with exported protein precursors in vivo",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Kumamoto",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "86",
+            "issn": "14",
+            "pages": "5320-5324",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Identification of a phosphotransferase system of Escherichia coli required for growth on N-acetylmuramic acid",
+            "authors": [
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Dahl",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Jaeger",
+                    "suffix": ""
+                },
+                {
+                    "first": "BT",
+                    "middle": [],
+                    "last": "Nguyen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Sattler",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Mayer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Bacteriol",
+            "volume": "186",
+            "issn": "8",
+            "pages": "2385-2392",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "Bacterial phosphotransferase system (PTS) in carbohydrate uptake and control of carbon metabolism",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Kotrba",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Inui",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Yukawa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Biosci Bioeng",
+            "volume": "92",
+            "issn": "6",
+            "pages": "502-517",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Analysis of an engineered Salmonella flagellar fusion protein, FliR-FlhB",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Van Arnam",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "McMurry",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kihara",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Macnab",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Bacteriol",
+            "volume": "186",
+            "issn": "8",
+            "pages": "2495-2498",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "How bacteria assemble flagella",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Macnab",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Annu Rev Microbiol",
+            "volume": "57",
+            "issn": "",
+            "pages": "77-100",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "Functional characterization in vitro of all two-component signal transduction systems from Escherichia coli",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Yamamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hirao",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Oshima",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Aiba",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Utsumi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ishihama",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Biol Chem",
+            "volume": "280",
+            "issn": "2",
+            "pages": "1448-1456",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "Complete genome sequence of enterohemorrhagic Escherichia coli O157:H7 and genomic comparison with a laboratory strain K-12",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hayashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Makino",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ohnishi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "DNA Res",
+            "volume": "8",
+            "issn": "1",
+            "pages": "11-22",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "The myxochelin iron transport regulon of the myxobacterium Stigmatella aurantiaca Sg a15",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Silakowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Kunze",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Nordsiek",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Blocker",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Hofle",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Muller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Eur J Biochem",
+            "volume": "267",
+            "issn": "21",
+            "pages": "6476-6485",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "The molecular basis of excitation and adaptation during chemotactic sensory transduction in bacteria",
+            "authors": [
+                {
+                    "first": "CV",
+                    "middle": [],
+                    "last": "Rao",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Ordal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Contrib Microbiol",
+            "volume": "16",
+            "issn": "",
+            "pages": "33-64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "Comparative genomic assessment of novel broad-spectrum targets for antibacterial drugs",
+            "authors": [
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "White",
+                    "suffix": ""
+                },
+                {
+                    "first": "DB",
+                    "middle": [],
+                    "last": "Kell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Comp Funct Genomics",
+            "volume": "5",
+            "issn": "4",
+            "pages": "304-327",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF70": {
+            "title": "In Silico Subtractive Genomics for Target Identification in Human Bacterial Pathogens",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [
+                        "TS"
+                    ],
+                    "last": "Barh",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Jain",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ali",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Drug Development Research",
+            "volume": "72",
+            "issn": "",
+            "pages": "162-177",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF71": {
+            "title": "Structural and mechanistic investigations on Salmonella typhimurium acetate kinase (AckA): identification of a putative ligand binding pocket at the dimeric interface",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Chittori",
+                    "suffix": ""
+                },
+                {
+                    "first": "HS",
+                    "middle": [],
+                    "last": "Savithri",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Murthy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "BMC Struct Biol",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF72": {
+            "title": "Crystal structure of the catalytic \u03b1 subunit of E. coli replicative DNA polymerase III",
+            "authors": [
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Lamers",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Georgescu",
+                    "suffix": ""
+                },
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "O\u2019Donnell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kuriyan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Cell",
+            "volume": "126",
+            "issn": "5",
+            "pages": "881-892",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF73": {
+            "title": "Yokenella regensburgei infection in India mimicking enteric fever",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jain",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gaind",
+                    "suffix": ""
+                },
+                {
+                    "first": "KB",
+                    "middle": [],
+                    "last": "Gupta",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J Med Microbiol",
+            "volume": "62",
+            "issn": "Pt 6",
+            "pages": "935-939",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF74": {
+            "title": "Infections caused by Kluyvera species in humans",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Sarria",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Vidal",
+                    "suffix": ""
+                },
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Kimbrough",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Clin Infect Dis",
+            "volume": "33",
+            "issn": "7",
+            "pages": "E69-E74",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF75": {
+            "title": "Hafnia alvei in stool specimens from patients with diarrhea and healthy controls",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ridell",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Siitonen",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Paulin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Mattila",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Korkeala",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J Clin Microbiol",
+            "volume": "32",
+            "issn": "9",
+            "pages": "2335-2337",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF76": {
+            "title": "Gangrenous cholecystitis caused by Hafnia alvei: a case report and review of literature",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Palaniswamy",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Selvaraj",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Selvaraj",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Am Med Dir Assoc",
+            "volume": "10",
+            "issn": "5",
+            "pages": "361-363",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF77": {
+            "title": "Effect of subinhibitory concentrations of antibiotics on extracellular Shiga-like toxin I",
+            "authors": [
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Walterspiel",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ashkenazi",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Morrow",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Cleary",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Infection",
+            "volume": "20",
+            "issn": "1",
+            "pages": "25-29",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF78": {
+            "title": "Ewingella americana: an emerging true pathogen",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Hassan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Amer",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Mittal",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sharma",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Case Rep Infect Dis",
+            "volume": "2012",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF79": {
+            "title": "Atrophic rhinitis caused by Cedecea davisae with accompanying mucocele",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Bayir",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Yildirim",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Saylam",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Yuksel",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ozdek",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Korkmaz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Kulak Burun Bogaz Ihtis Derg",
+            "volume": "25",
+            "issn": "4",
+            "pages": "249-253",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF80": {
+            "title": "Crystal structure of the catalytic alpha subunit of E. coli replicative DNA polymerase III",
+            "authors": [
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Lamers",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Georgescu",
+                    "suffix": ""
+                },
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "O\u2019Donnell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kuriyan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Cell",
+            "volume": "126",
+            "issn": "5",
+            "pages": "881-892",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF81": {
+            "title": "Identification of the acidic residues in the active site of DNA polymerase III",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Pritchard",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "McHenry",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Mol Biol",
+            "volume": "285",
+            "issn": "3",
+            "pages": "1067-1080",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF82": {
+            "title": "Antibacterial activity and mechanism of action of a novel anilinouracil-fluoroquinolone hybrid compound",
+            "authors": [
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Butler",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Lamarr",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Foster",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Antimicrob Agents Chemother",
+            "volume": "51",
+            "issn": "1",
+            "pages": "119-127",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF83": {
+            "title": "Experimental and computational approaches to estimate solubility and permeability in drug discovery and development settings",
+            "authors": [
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Lipinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Lombardo",
+                    "suffix": ""
+                },
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Dominy",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Feeney",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Adv Drug Deliv Rev",
+            "volume": "46",
+            "issn": "1\u20133",
+            "pages": "3-26",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF84": {
+            "title": "Evaluation of human intestinal absorption data and subsequent derivation of a quantitative structure\u2013activity relationship (QSAR) with the Abraham descriptors",
+            "authors": [
+                {
+                    "first": "YH",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Le",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Abraham",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Pharm Sci",
+            "volume": "90",
+            "issn": "6",
+            "pages": "749-784",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF85": {
+            "title": "Structure and mechanism of DNA polymerases",
+            "authors": [
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Rothwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Waksman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Adv Protein Chem",
+            "volume": "71",
+            "issn": "",
+            "pages": "401-440",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF86": {
+            "title": "DNA polymerase III holoenzyme: structure and function of a chromosomal replicating machine",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Kelman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "O\u2019Donnell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Annu Rev Biochem",
+            "volume": "64",
+            "issn": "1",
+            "pages": "171-200",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF87": {
+            "title": "Distinct double-and single-stranded DNA binding of E. coli replicative DNA polymerase III \u03b1 subunit",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "McCauley",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Shokri",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sefcikova",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Venclovas",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Beuning",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "ACS Chem Biol",
+            "volume": "3",
+            "issn": "9",
+            "pages": "577-587",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF88": {
+            "title": "The risk of the hemolytic-uremic syndrome after antibiotic treatment of Escherichia coli O157:H7 infections",
+            "authors": [
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jelacic",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Habeeb",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Watkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "PI",
+                    "middle": [],
+                    "last": "Tarr",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "N Engl J Med",
+            "volume": "342",
+            "issn": "26",
+            "pages": "1930-1936",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF89": {
+            "title": "DNA polymerase III of Gram-positive eubacteria is a zinc metalloprotein conserving an essential finger-like domain",
+            "authors": [
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Barnes",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Leo",
+                    "suffix": ""
+                },
+                {
+                    "first": "NC",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Biochemistry",
+            "volume": "37",
+            "issn": "44",
+            "pages": "15254-15260",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF90": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Jadaun",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Sudhakar",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Subbarao",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Dixit",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "In Silico Screening for Novel Inhibitors of DNA Polymerase III Alpha Subunit of Mycobacterium tuberculosis (Mtb DnaE2, H 37 R v)",
+            "volume": "10",
+            "issn": "3",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

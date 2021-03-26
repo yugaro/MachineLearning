@@ -1,0 +1,1186 @@
+{
+    "paper_id": "PMC6115208",
+    "metadata": {
+        "title": "Artificial Intelligence in Public Health and Epidemiology",
+        "authors": [
+            {
+                "first": "Rodolphe",
+                "middle": [],
+                "last": "Thi\u00e9baut",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Frantz",
+                "middle": [],
+                "last": "Thiessard",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "\nAs quoted in the synopsis of the Public Health and Epidemiology Informatics section of the 2017 IMIA Yearbook\n1\n, precision public/global health and digital epidemiology are terms that are still in use in 2018\n2\n3\n. The first term is about providing the right intervention to the right population at the right time\n2\n. The second term is about the use of digital data, especially those that were not collected on purpose, to answer epidemiologic questions\n3\n. Both refer to the unforeseen opportunities provided by our digital world and new technologies. Although genomics (and more broadly any \u201c-omics\u201d) data continue to contribute, as it is the case for precision medicine, there are many other sources of information that can be used: social networks, internet search engines, cell phone data, electronic health data, and more. The challenge today is to analyze these big data in a meaningful way. One recently improved method that showed very nice success especially in image analysis is deep learning\n4\n. Applications of this method appear to be only limited by the quantity of information available. Predicting the unplanned readmission at the hospital within 6 months based on electronic health data\n5\n, de-identifying electronic health records (EHRs)\n6\n, analyzing social media\n7\n8\n9\nare various types of applications relevant in epidemiology and public health. But artificial intelligence covers many other techniques, such as machine learning approaches and statistical learning that offer a panel of methods which usefulness is only limited by pairing them with the right question; the two best papers of this year section are very good examples\n6\n7\n. Naively mining any large dataset will not give immediate answers. Epidemiologic approaches start with clever and appropriate questions, careful collection of relevant data with the most appropriate design, and validation of the results.\n",
+            "cite_spans": [
+                {
+                    "start": 111,
+                    "end": 112,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 211,
+                    "end": 212,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 213,
+                    "end": 214,
+                    "mention": "3",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 316,
+                    "end": 317,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 457,
+                    "end": 458,
+                    "mention": "3",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1007,
+                    "end": 1008,
+                    "mention": "4",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1208,
+                    "end": 1209,
+                    "mention": "5",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1260,
+                    "end": 1261,
+                    "mention": "6",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1287,
+                    "end": 1288,
+                    "mention": "7",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1289,
+                    "end": 1290,
+                    "mention": "8",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1291,
+                    "end": 1292,
+                    "mention": "9",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 1658,
+                    "end": 1659,
+                    "mention": "6",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1660,
+                    "end": 1661,
+                    "mention": "7",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "A comprehensive literature search was performed using two bibliographic databases, Pubmed/Medline (from NCBI, National Center for Biotechnology Information), and Web of Science\u00ae (from Thomson Reuters). The search was targeted at public health and epidemiology papers that involve computer science or the massive amount of web-generated data. References addressing the topics of the other sections of the Yearbook, such as those related to interoperability between data providers were excluded from our search. The study was performed at the beginning of January 2018, and the search over the year 2017 returned a total of 843 references.",
+            "cite_spans": [],
+            "section": "Paper Selection",
+            "ref_spans": []
+        },
+        {
+            "text": "\nArticles were separately reviewed by the two section editors, and were first classified into three categories: keep, discard, or leave pending. Then, the \u201ckeep\u201d and \u201cleave pending\u201d lists of references built by the two section editors were merged, yielding 97 references. The two section editors jointly reviewed the 97 references and drafted a consensual list of 14 candidate best papers. All pre-selected 14 papers were then peer-reviewed by Yearbook editors and external reviewers (at least four reviewers per paper). Two papers were finally selected as best papers (\nTable 1\n). A content summary of these selected papers can be found in the appendix of this synopsis. Lamy et al.\n10\ndescribe the whole selection process.\n",
+            "cite_spans": [
+                {
+                    "start": 684,
+                    "end": 686,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Paper Selection",
+            "ref_spans": [
+                {
+                    "start": 571,
+                    "end": 578,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "\nAs expected in this section of the Yearbook, the use of digital sources for infectious diseases surveillance leads to many research reports\n11\n. The originality here is the use of data coming from the EHR\n12\n, Twitter\n8\n, or the climate data produced by the US National Aeronautics and Space Administration (NASA) with software\n13\ndedicated to following the occurrence of infectious disease epidemics of either influenza\n8\n12\nor malaria\n13\n. All these studies demonstrating the feasibility of new approaches for the surveillance of infectious diseases still need to be validated for confirming their predictive accuracy and generaliz-ability. Interestingly, we also found studies reporting the results of the surveillance of non-infectious diseases, e.g., road trafic crashes\n14\nand elevated blood pressure\n15\n. Road traffic injuries represent a public health issue in low-income countries\n16\n. Therefore, improvement of surveillance systems is required. Bonnet et al.\n14\nhave experimented a simple affordable approach based on the city's National Police road crash intervention service equipped with geotracers that geolocalized the crash sites and sent their positions by short message service (SMS) to a surveillance platform developed by using the open-source tool, Ushahidi. This system implemented in partnership with the National Police in the city of Ouagadougou required acceptance by oficers and authorities. In the other study, the authors showed a new validation of the use of EHR for public health purposes. Here they reproduced the seasonability of blood pressure variations (with a peak in summer) based on the data extracted from EHRs\n15\n.\n",
+            "cite_spans": [
+                {
+                    "start": 141,
+                    "end": 143,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 206,
+                    "end": 208,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 219,
+                    "end": 220,
+                    "mention": "8",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 329,
+                    "end": 331,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 422,
+                    "end": 423,
+                    "mention": "8",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 424,
+                    "end": 426,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 438,
+                    "end": 440,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 777,
+                    "end": 779,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 808,
+                    "end": 810,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 891,
+                    "end": 893,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 970,
+                    "end": 972,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1652,
+                    "end": 1654,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Outlook and Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "\nThe other topic covered by several of the papers selected by the review process concerned the analysis of online social media to better understand the attitudes and beliefs toward a given topic, such as vaccination. A social network analysis of Twitter messages (\u201ctweets\u201d) revealed a semantic network for positive, negative, and neutral vaccine sentiment\n9\n. Beyond this type of analysis, it is fruitful to predict and understand the dynamics of vaccinating behavior. In another paper, Pananos et al. modeled the interaction between vaccination decisions and disease dynamics where one inluences another in a nonlinear feedback loop\n17\n. They used the theory of critical transitions to derive indicators that may help public health oficials anticipate when resistance to vaccination might develop and intensify. They applied their approach to data from tweets and Google searches around the Disneyland measles outbreak that occurred in 2015 in California\n17\n. One of the two best papers described below, analyzed the relationship between Middle East Respiratory Syndrome (MERS), mass media, and public emotions during an outbreak in 2015 in Korea\n7\n.\n",
+            "cite_spans": [
+                {
+                    "start": 356,
+                    "end": 357,
+                    "mention": "9",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 634,
+                    "end": 636,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 956,
+                    "end": 958,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1148,
+                    "end": 1149,
+                    "mention": "7",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Outlook and Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "\nDigital materials such as tweets are also a potential tool for communication in public health\n18\n19\nwith hopefully an improvement of knowledge and attitudes. However, the indicators and the methods to be used for evaluating social media must be adapted to this specific context. Digital tools used in epidemiology need to be validated as any other measure\n20\n.\n",
+            "cite_spans": [
+                {
+                    "start": 95,
+                    "end": 97,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 98,
+                    "end": 100,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 357,
+                    "end": 359,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Outlook and Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "\nLast but not least, it is important to question how interventions and new knowledge generate corresponding changes in public health performance. This is where indicators, measures are needed\n21\n.\n",
+            "cite_spans": [
+                {
+                    "start": 192,
+                    "end": 194,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Outlook and Conclusion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {},
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Public Health and Epidemiology Informatics",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Thi\u00e9baut",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Thiessard",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Yearb Med Inform",
+            "volume": "26",
+            "issn": "",
+            "pages": "248-50",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Toward a Formalization of the Process to Select IMIA Yearbook Best Papers",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [
+                        "B"
+                    ],
+                    "last": "Lamy",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "S\u00e9roussi",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Griffon",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Kerdelhu\u00e9",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "C"
+                    ],
+                    "last": "Jaulent",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bouaud",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Methods Inf Med",
+            "volume": "54",
+            "issn": "",
+            "pages": "135-44",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Applications of information and communications technologies to public health: A scoping review using the MeSH term \u201cpublic health informatics\u201d",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [
+                        "K"
+                    ],
+                    "last": "Bhattarai",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Zarrin",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Online J Public Health Inform",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Leveraging hospital big data to monitor flu epidemics",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bouzill\u00e9",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Poirier",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Campillo-Gimenez",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "Aubert",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chabot",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Chazard",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Comput Methods Programs Biomed",
+            "volume": "154",
+            "issn": "",
+            "pages": "153-60",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Integrating malaria surveillance with climate data for outbreak detection and forecasting: The EPIDEMIA system",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "Merkord",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Mihretie",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Gebrehiwot",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Awoke",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bayabil",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Malar J",
+            "volume": "16",
+            "issn": "",
+            "pages": "1-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Technological solutions for an effective health surveillance system for road traffic crashes in Burkina Faso",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bonnet",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Niki\u00e9ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Traor\u00e9",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sidbega",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Ridde",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Glob Health Action",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Bridging the gap between clinical practice and public health: Using EHR data to assess trends in the seasonality of blood-pressure control",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [
+                        "O"
+                    ],
+                    "last": "Amoah",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "Y"
+                    ],
+                    "last": "Angell",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Byrnes-Enoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Amirfar",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Maa",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Prev Med Reports",
+            "volume": "6",
+            "issn": "",
+            "pages": "369-75",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Road Traffic Injury Is an Escalating Burden in Africa and Deserves Proportionate Research Efforts",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Lagarde",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS Med",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Critical dynamics in population vaccinating behavior",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [
+                        "D"
+                    ],
+                    "last": "Pananos",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Bury",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Schonfeld",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "P"
+                    ],
+                    "last": "Mohanty",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Nyhan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Proc Natl Acad Sci",
+            "volume": "114",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Measuring Audience Engagement for Public Health Twitter Chats: Insights From #LiveFitNOLA",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Rabarison",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Croston",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [
+                        "K"
+                    ],
+                    "last": "Englar",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "L"
+                    ],
+                    "last": "Bish",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Flynn",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "C"
+                    ],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "JMIR Public Health Surveill",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Tweet for Behavior Change: Using Social Media for the Dissemination of Public Health Messages",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gough",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [
+                        "F"
+                    ],
+                    "last": "Hunter",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Ajao",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Jurek",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "McKeown",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "JMIR Public Health Surveill",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Precision global health in the digital age",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Flahault",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Geissbuhler",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Guessous",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Gu\u00e9rin",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Bolon",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Salath\u00e9",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Swiss Med Wkly",
+            "volume": "147",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Value of Free-Text Comments for Validating Cancer Cases Using Primary-Care Data in the UK",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [
+                        "V"
+                    ],
+                    "last": "Margulis",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Fortuny",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "A"
+                    ],
+                    "last": "Kaye",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Calingaert",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Reynolds",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Plana",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Epidemiology",
+            "volume": "29",
+            "issn": "",
+            "pages": "308-13",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Informatics Metrics and Measures for a Smart Public Health Systems Approach: Information Science Perspective",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Carney",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Shea",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Comput Math Methods Med",
+            "volume": "2017",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Digital epidemiology: what is it, and where is it going?",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Salath\u00e9",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Life Sci Soc Policy",
+            "volume": "14",
+            "issn": "",
+            "pages": "1-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Deep learning",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Lecun",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Bengio",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Hinton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Nature",
+            "volume": "521",
+            "issn": "",
+            "pages": "436-44",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Deepr: A Convolutional Net for Medical Records",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Nguyen",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tran",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Wickramasinghe",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Venkatesh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "IEEE J Biomed Health Inform",
+            "volume": "21",
+            "issn": "",
+            "pages": "22-30",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "De-identification of patient notes with recurrent neural networks",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Dernoncourt",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "Y"
+                    ],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Uzuner",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Szolovits",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "J Am Med Inform Assoc",
+            "volume": "24",
+            "issn": "",
+            "pages": "596-606",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Large-scale machine learning of media outlets for understanding public reactions to nation-wide viral infection outbreaks",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [
+                        "G"
+                    ],
+                    "last": "Kang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Min",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [
+                        "S"
+                    ],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Yoon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Methods Inf Med",
+            "volume": "129",
+            "issn": "",
+            "pages": "50-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Enhancing seasonal influenza surveillance: Topic analysis of widely used medicinal drugs using twitter data",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Kagashe",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Suheryani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "J Med Internet Res",
+            "volume": "19",
+            "issn": "",
+            "pages": "1-14",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Semantic network analysis of vaccine sentiment in online social media",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [
+                        "J"
+                    ],
+                    "last": "Kang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [
+                        "R"
+                    ],
+                    "last": "Ewing-Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Mackey",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [
+                        "T"
+                    ],
+                    "last": "Schlitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Marathe",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [
+                        "M"
+                    ],
+                    "last": "Abbas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Vaccine",
+            "volume": "35",
+            "issn": "",
+            "pages": "3621-38",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

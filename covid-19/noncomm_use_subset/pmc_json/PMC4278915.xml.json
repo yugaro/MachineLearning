@@ -1,0 +1,2856 @@
+{
+    "paper_id": "PMC4278915",
+    "metadata": {
+        "title": "Pathway and Network Approaches for Identification of Cancer Signature Markers from Omics Data",
+        "authors": [
+            {
+                "first": "Jinlian",
+                "middle": [],
+                "last": "Wang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Yiming",
+                "middle": [],
+                "last": "Zuo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Yan-gao",
+                "middle": [],
+                "last": "Man",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Itzhak",
+                "middle": [],
+                "last": "Avital",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Alexander",
+                "middle": [],
+                "last": "Stojadinovic",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Meng",
+                "middle": [],
+                "last": "Liu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Xiaowei",
+                "middle": [],
+                "last": "Yang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Rency",
+                "middle": [
+                    "S."
+                ],
+                "last": "Varghese",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Mahlet",
+                "middle": [
+                    "G"
+                ],
+                "last": "Tadesse",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Habtom",
+                "middle": [
+                    "W"
+                ],
+                "last": "Ressom",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "A better understanding of disease associated with biomarkers could potentially start a new area for uncovering the mechanism of cancer progression, development and offer better targets for drug development 1. Studies on single gene/protein/metabolite molecular signatures offer limited insight into the complex interplay among the molecules responsible for progression of complex diseases such as cancer. Thus, there is a shift toward the identification of a panel of genes that interact directly or indirectly in the form of pathway or complex network to evaluate their association to cancer 2,3. This is accomplished through massive data derived by high throughput omic technologies such as next generation sequencing, microarray, and mass spectrometry. Although thousands of candidate biomarkers have been discovered by these technologies, few of them have been transferred into practical application in clinical setting and new drug production. The challenges lie in (1) high false positive rate of the candidate biomarkers identified from omics data; (2) Lack of attention on the study of the context of biomarkers who are interacting each other in the form of pathway or network associated with cancer; (3) Fragmental and incomplete information based on biomarkers identified from solely omics platform; (4) Lack of effective algorithms that allow integration of diverse omics data sources to simulate the biological pathway and networks. To meet these challenges, a number of pathway and network based approaches have been introduced. This review article evaluates the advantages and limitations of these methods.",
+            "cite_spans": [
+                {
+                    "start": 206,
+                    "end": 207,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 593,
+                    "end": 594,
+                    "mention": "2",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 595,
+                    "end": 596,
+                    "mention": "3",
+                    "ref_id": "BIBREF69"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The traditional approaches that individual and a panel of cancer biomarkers are selected by analytic methods such as analysis of variance (ANOVA), Lasso, pairwise, information theory and support vector machine (SVM) do not explicitly consider interaction between genes, proteins and metabolites. Compared to traditional methods, pathway and network centric methods naturally provide a way to understand the underlying pathways and the interactions between individual signature markers and non-markers. With the large-scale generation and integration of genomic, transcriptomic, proteomic, and metabolomic data, pathway/network-based methods provide a more effective and accurate means for cancer biomarker discovery. Increasingly, pathway and network-based analyses are applied to omics data to gain more insight into the underlying biological function and processes, such as cell signaling and metabolic pathways as well as gene regulatory networks 4-6. A number of pathway /network approaches have also been used for improving the prediction of cancer outcome, providing novel hypotheses for pathways involved tumor progression 7, and exploring cancer associated biomarkers 8. For example, Taylor et al. 9 combined gene expression data with physical protein-protein interaction data to identify subnetwork markers for the prognosis of breast cancer and lymphoma patients. Torkamani and Schork 10 used gene co-expression network to infer cancer-initiating genes in breast, colorectal cancer, and glioblastoma. Kim et al. applied the MAPIT (Multi Analyte Pathway Inference Tool) algorithm to identify prognostic network markers to predict GBM patient survival time using multi-analyte network markers discovered by integrating gene expression profile, epigenomic profile, and protein-protein interactome 11. Goh et al. 12 built a human disease network (HDN) by linking hereditary disease that share a disease-causing gene recorded in Mendelian Inheritance in Man (OMIM) database. Although the functional connections in the HDN remain to be further demonstrated, it inspires us to systematically study the relationships among diseases by constructing a network. More detailed descriptions of relationships between human disease and network essential for understanding of human have been recently summarized in reviews 2, 12-14.",
+            "cite_spans": [
+                {
+                    "start": 950,
+                    "end": 951,
+                    "mention": "4",
+                    "ref_id": "BIBREF80"
+                },
+                {
+                    "start": 952,
+                    "end": 953,
+                    "mention": "6",
+                    "ref_id": "BIBREF102"
+                },
+                {
+                    "start": 1130,
+                    "end": 1131,
+                    "mention": "7",
+                    "ref_id": "BIBREF113"
+                },
+                {
+                    "start": 1176,
+                    "end": 1177,
+                    "mention": "8",
+                    "ref_id": "BIBREF124"
+                },
+                {
+                    "start": 1206,
+                    "end": 1207,
+                    "mention": "9",
+                    "ref_id": "BIBREF135"
+                },
+                {
+                    "start": 1395,
+                    "end": 1397,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1804,
+                    "end": 1806,
+                    "mention": "11",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 1819,
+                    "end": 1821,
+                    "mention": "12",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 2317,
+                    "end": 2318,
+                    "mention": "2",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 2320,
+                    "end": 2322,
+                    "mention": "12",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 2323,
+                    "end": 2325,
+                    "mention": "14",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this review, we provide some pathway and network centric computational approaches and their applications for biomarker discovery.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Statistical methods test scientific theories when observations, processes or boundary conditions are subject to stochasticity. For examples, the classical t-test has been extensively used for testing differential gene expression in microarray data 35. However, this kind of procedure relies on reasonable estimates of reproducibility or within-gene error, requiring a large number of replicated arrays. Thus, several methods for improving estimates of variability and statistical tests of differential expression have been proposed. For example, Significance Analysis of Microarrays (SAM) aimed to improve the unstable error estimation in the two-sample t-test by adding a variance stabilization factor which minimizes the variance variability across different intensity ranges 36, 37. ANOVA model approach is widely used in multiple kinds of omic data. For example, it was used to model microarray data with the effects of array, condition, and condition-array interaction and then to fit the residuals with the effects of gene, gene-condition interaction, and gene-array interaction 38,39. Also, it was applied to capture the effects of controlled groups, batches, condition, alias of experimental equipment, and condition-metabolite interaction separately on LC-MS data 40. To improve the accuracy and sensitivity of analytic results, false discovery rate (FDR) 41 and its refinement, q-value, (q-value package, www.bioconductor.org) have been rapidly adopted for genomic, proteomics and metabolic data analysis including the widely-used SAM, DAVID 42 and other approaches 36. Another statistics method for biomarker discovery is linear discriminant analysis (LDA), one of the classical statistical classification techniques based on the multivariate normal distribution assumption, is quite robust and powerful to discover biomarker or pathways between omics data for many different applications despite the distributional assumption. Compared to LDA, quadratic discriminant analysis (QDA) requires more observations to estimate each variance-covariance matrix for each class 43. In addition, logistic regression analysis has been successfully used to evaluate biomarker performance of prostate cancer with mRNA profiling 44. Logistic regression (LR) model based on the regression fit on probabilistic odds between comparing conditions requires no specific distribution assumption (e.g. Gaussian distribution) but is often found to be less sensitive than other approaches42,43.",
+            "cite_spans": [
+                {
+                    "start": 248,
+                    "end": 250,
+                    "mention": "35",
+                    "ref_id": "BIBREF75"
+                },
+                {
+                    "start": 778,
+                    "end": 780,
+                    "mention": "36",
+                    "ref_id": "BIBREF76"
+                },
+                {
+                    "start": 782,
+                    "end": 784,
+                    "mention": "37",
+                    "ref_id": "BIBREF77"
+                },
+                {
+                    "start": 1085,
+                    "end": 1087,
+                    "mention": "38",
+                    "ref_id": "BIBREF78"
+                },
+                {
+                    "start": 1088,
+                    "end": 1090,
+                    "mention": "39",
+                    "ref_id": "BIBREF79"
+                },
+                {
+                    "start": 1273,
+                    "end": 1275,
+                    "mention": "40",
+                    "ref_id": "BIBREF81"
+                },
+                {
+                    "start": 1365,
+                    "end": 1367,
+                    "mention": "41",
+                    "ref_id": "BIBREF82"
+                },
+                {
+                    "start": 1552,
+                    "end": 1554,
+                    "mention": "42",
+                    "ref_id": "BIBREF83"
+                },
+                {
+                    "start": 1576,
+                    "end": 1578,
+                    "mention": "36",
+                    "ref_id": "BIBREF76"
+                },
+                {
+                    "start": 2080,
+                    "end": 2082,
+                    "mention": "43",
+                    "ref_id": "BIBREF84"
+                },
+                {
+                    "start": 2226,
+                    "end": 2228,
+                    "mention": "44",
+                    "ref_id": "BIBREF85"
+                },
+                {
+                    "start": 2475,
+                    "end": 2477,
+                    "mention": "42",
+                    "ref_id": "BIBREF83"
+                },
+                {
+                    "start": 2478,
+                    "end": 2480,
+                    "mention": "43",
+                    "ref_id": "BIBREF84"
+                }
+            ],
+            "section": "Statistics methods ::: Summary of pathways and networks centric approaches for cancer biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "The modeling fundamentals of graph theory are often used to describe the global topology, structure or the community of a complex system. It emphasizes on entities (e.g, genes, proteins, diseases, biological process) and the relations between them. The complexity of graphical modeling can be either simple only with nodes and edges or more complex where edges have weights, and nodes and edges can be of different types. Recent publications have applied graphical modeling in computational biology to study biological networks, enhance the ability to draw causal inferences from functional MRI experiments, support the early detection of disconnection and the modeling of pathology spread in neurodegenerative disease such as Alzheimer's disease 45-49. For example, in mammalian cells, Bleris et al. have had early success in characterizing the dynamics of key feed forward modules and motifs, helping to enable the circuit design of adaptive gene expression 50. Using graph based approaches, Ma'ayan et al. model cellular machinery including genes, proteins and other subcellular compartments 51, in which the interactions between components are drawn as edge connections between the relevant nodes 51. Gene expression data combined with network analysis can yield important information on how expression variation relates to differences between observed states 52. As closely connected genes tend to be involved in similar functions, network annotation can complement clusters obtained via fold change analysis 7. A standard systems-based approach to biomarker and drug target discovery consists of placing putative or known biomarkers in the context of a network of biological interactions, followed by different 'guilt-by-association' analyses 53.",
+            "cite_spans": [
+                {
+                    "start": 747,
+                    "end": 749,
+                    "mention": "45",
+                    "ref_id": "BIBREF86"
+                },
+                {
+                    "start": 750,
+                    "end": 752,
+                    "mention": "49",
+                    "ref_id": "BIBREF90"
+                },
+                {
+                    "start": 960,
+                    "end": 962,
+                    "mention": "50",
+                    "ref_id": "BIBREF92"
+                },
+                {
+                    "start": 1095,
+                    "end": 1097,
+                    "mention": "51",
+                    "ref_id": "BIBREF93"
+                },
+                {
+                    "start": 1201,
+                    "end": 1203,
+                    "mention": "51",
+                    "ref_id": "BIBREF93"
+                },
+                {
+                    "start": 1364,
+                    "end": 1366,
+                    "mention": "52",
+                    "ref_id": "BIBREF94"
+                },
+                {
+                    "start": 1514,
+                    "end": 1515,
+                    "mention": "7",
+                    "ref_id": "BIBREF113"
+                },
+                {
+                    "start": 1749,
+                    "end": 1751,
+                    "mention": "53",
+                    "ref_id": "BIBREF95"
+                }
+            ],
+            "section": "Graph theory based network and visualization ::: Summary of pathways and networks centric approaches for cancer biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "The goal of visualization is to find patterns and structures that remain hidden in the raw unstructured datasets. Graph visualization is key to display directly the various relationships between entities (e.g., genes, proteins). Challenges of graph visualization lie in 1) the high false positive rate of incorporating heterogeneous multi-omic datasets; 2) Visual representation of the logical structure transformed from the raw data; 3) Graph manipulation and layout algorithm for representing the complicated relationships between biological entities. 4) Heterogeneous omic data from different level visualization needs more flexibility for layered representation. A number of commercial and free sourced graph visualization tools and platforms have been extensively developed. For example, Cytoscape 31, one of the free open source platforms providing biological network analysis and visualization with more than 172 registered plugins contributed by the community, is very versatile in network applications, such as network importing, network integrating, inference customization, literature mining, topological clustering, functional enrichment, network comparison, and programmatic access 54. 3DScapeCS, a Cytoscape plugin providing three-dimensional, dynamic, parallel network visualization for Mass Spectrometry (MS) molecular network 55. IPA 56, a commercial software tool for pathway analysis with omics data provides powerful graphical visualized pathways and networks overlaid by diseases, drugs and biological process etc. PathwayStudio provide abstractive graphical interface for users to analyze gene expression, protein interaction and metabolic data to analyze and explore the pathways and networks identified from data. STRING not only gives the graphical visualized protein interaction of both known and predicted but also quantifies each pair of proteins by their interaction types such as physical interaction and gene fusion etc. 57.",
+            "cite_spans": [
+                {
+                    "start": 803,
+                    "end": 805,
+                    "mention": "31",
+                    "ref_id": "BIBREF71"
+                },
+                {
+                    "start": 1195,
+                    "end": 1197,
+                    "mention": "54",
+                    "ref_id": "BIBREF96"
+                },
+                {
+                    "start": 1343,
+                    "end": 1345,
+                    "mention": "55",
+                    "ref_id": "BIBREF97"
+                },
+                {
+                    "start": 1351,
+                    "end": 1353,
+                    "mention": "56",
+                    "ref_id": "BIBREF98"
+                },
+                {
+                    "start": 1952,
+                    "end": 1954,
+                    "mention": "57",
+                    "ref_id": "BIBREF99"
+                }
+            ],
+            "section": "Graph theory based network and visualization ::: Summary of pathways and networks centric approaches for cancer biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "Bayesian methods allow informative priors so that prior knowledge or results of a previous model can be used to inform the current model. In cancer bioinformatics and systems biology, the primary application of Bayesian methods include Bayesian inference, Bayesian network, Naive Bayes classifier and Bayesian variable selection. Among these methods, Bayesian network is one of the most common modeling tools for pathway and network analysis 19. Bayesian network is a form of directed statistical modeling designed to capture conditional dependencies between probabilistic events 58. It consists of a dependency structure and local probability model also named probabilistic graph models which include Hierarchical Bayesian Networks (HBN), Probabilistic Boolean Networks (PBN), Hidden Markov Models (HMM), and Markov Logic Networks (MLN) 59-61. The dependency structure specifies how the variables are related to each other by drawing directed edges between the variables without creating directed cycles. Each variable depends on a possibly set of other variables, termed \"parents.\" Compared with other pathway/network centric method, Bayesian network model is capable of integrating heterogeneous data, missing value and dependent relationships between variables 62.",
+            "cite_spans": [
+                {
+                    "start": 442,
+                    "end": 444,
+                    "mention": "19",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 580,
+                    "end": 582,
+                    "mention": "58",
+                    "ref_id": "BIBREF100"
+                },
+                {
+                    "start": 838,
+                    "end": 840,
+                    "mention": "59",
+                    "ref_id": "BIBREF101"
+                },
+                {
+                    "start": 841,
+                    "end": 843,
+                    "mention": "61",
+                    "ref_id": "BIBREF104"
+                },
+                {
+                    "start": 1265,
+                    "end": 1267,
+                    "mention": "62",
+                    "ref_id": "BIBREF105"
+                }
+            ],
+            "section": "Bayesian methods and its derivatives ::: Summary of pathways and networks centric approaches for cancer biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "In a Bayesian network model, probabilities define the relationship between the current node and its predecessor or parent in a graph 63. The power of these methods lies in their ability to facilitate the reverse engineering of multiplex networks based on molecular expression, molecular activity and/or cell behavior data, serving as a precursor to synthetic modifications of existing molecular pathways 64. Bayesian inference is one of the very important Bayesian methods widely used in cancer biomarker discovery, signaling pathway and network inference 65,66. It has previously been applied to gene expression data for inference of gene regulatory networks 67,68, infer both protein signaling networks 69,70 and gene regulatory networks 71. To incorporate an explicit time element, dynamic Bayesian Inference was proposed to interrogate dynamic signaling responses within a Bayesian framework, with existing signaling biology incorporated through an informative prior distribution on networks 66. In addition, Bayesian variable selection aims at solving the problems of \u201clarge p, small n\u201d existing in omic data set and using prior knowledge such as pathway and protein interaction to estimate the posterior probability by Markov Chain Monte Carlo (MCMC) also widely used to infer functional interactions in biochemical pathway, model the interactions between different functional modules of a biological network 72 and pathway based cancer biomarker discovery 73,74. For example, Yang et al. 21 used a Bayesian network to construct HCC cell networks and identify functional modules and interactions between these modules. Stochastic simulation models offer an alternative, but they are hitherto associated with a major disadvantage: their likelihood functions cannot be calculated explicitly, and thus it is difficult to couple them to well-established statistical theory such as maximum likelihood and Bayesian statistics. A number of new methods, among them Approximate Bayesian Computing and Pattern-Oriented Modeling, bypass this limitation. The difference between Bayesian and frequentist inference lies in the following: 1) Bayesian inference provides answers conditional on the observed data and not based on the distribution of estimators or test statistics over imaginary samples not observed (Rossi et al., 2005, p. 4); 2) It includes uncertainty in the probability model, yielding more realistic predictions. 3) It safeguards against overfitting by integrating over model parameters. But the quality of the prior information directly impacts the performance of the Bayesian methods. Also, they are unable to account for feed- back regulation, a hallmark of signaling networks.",
+            "cite_spans": [
+                {
+                    "start": 133,
+                    "end": 135,
+                    "mention": "63",
+                    "ref_id": "BIBREF106"
+                },
+                {
+                    "start": 404,
+                    "end": 406,
+                    "mention": "64",
+                    "ref_id": "BIBREF107"
+                },
+                {
+                    "start": 556,
+                    "end": 558,
+                    "mention": "65",
+                    "ref_id": "BIBREF108"
+                },
+                {
+                    "start": 559,
+                    "end": 561,
+                    "mention": "66",
+                    "ref_id": "BIBREF109"
+                },
+                {
+                    "start": 660,
+                    "end": 662,
+                    "mention": "67",
+                    "ref_id": "BIBREF110"
+                },
+                {
+                    "start": 663,
+                    "end": 665,
+                    "mention": "68",
+                    "ref_id": "BIBREF111"
+                },
+                {
+                    "start": 705,
+                    "end": 707,
+                    "mention": "69",
+                    "ref_id": "BIBREF112"
+                },
+                {
+                    "start": 708,
+                    "end": 710,
+                    "mention": "70",
+                    "ref_id": "BIBREF114"
+                },
+                {
+                    "start": 740,
+                    "end": 742,
+                    "mention": "71",
+                    "ref_id": "BIBREF115"
+                },
+                {
+                    "start": 996,
+                    "end": 998,
+                    "mention": "66",
+                    "ref_id": "BIBREF109"
+                },
+                {
+                    "start": 1415,
+                    "end": 1417,
+                    "mention": "72",
+                    "ref_id": "BIBREF116"
+                },
+                {
+                    "start": 1463,
+                    "end": 1465,
+                    "mention": "73",
+                    "ref_id": "BIBREF117"
+                },
+                {
+                    "start": 1466,
+                    "end": 1468,
+                    "mention": "74",
+                    "ref_id": "BIBREF118"
+                },
+                {
+                    "start": 1495,
+                    "end": 1497,
+                    "mention": "21",
+                    "ref_id": "BIBREF60"
+                }
+            ],
+            "section": "Bayesian methods and its derivatives ::: Summary of pathways and networks centric approaches for cancer biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "With the growth of information in literature and biomedical databases, biological and clinical scientists need efficient means of handling and extracting diagnostic methods and prognostic terms and information from scientific literature. For this purpose, text mining that comprises the discovery and extraction of knowledge from free text to generate new hypotheses particularly relevant and helpful in biomedical research 14. Text mining complements the reading of scientific literature by individual researchers, allows rapid access to information contained in large volume of documents and increases the reproducibility of literature searches by enabling users to process all documents for a specific result. The primary application of text-mining in biomedical research roughly lies in three aspects: 1) Simple text-mining such as transforming textual information into database content and integrating with existing knowledge resources to suggest novel hypotheses; 2) Literature analysis including clustering and classification of entities or diseases; 3) Integrative biology for producing or testing hypotheses against knowledge bases.",
+            "cite_spans": [
+                {
+                    "start": 424,
+                    "end": 426,
+                    "mention": "14",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Text mining ::: Summary of pathways and networks centric approaches for cancer biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "Currently, text mining is being successfully applied to the identification of molecular causes of diseases using facts from databases and literature 75-77. For example, text-mining has been used to suggest disease biomarkers from the scientific literature, and made on the basis of the assumption that two proteins are likely to interact with each other if they share a substantial amount of contextual information 78,79. By defining a gene of interest, a network is constructed from all scientific publications related to the query-defined gene. The results can be browsed by navigating through the visualized network. CoPub makes uses of lexical resources for genes, proteins, Gene Ontology labels, diseases, pathways, drugs and tissues to identify and statistically to qualify the significance of a specific term for a gene or a set of genes 80. The results return a set of annotations for their genes of interest. Besides, text mining has been widely used in industrial large scale knowledge base for query genes, proteins, metabolic compounds and drugs functional analysis. To visualize knowledge contained in the scientific literature, software tools have been developed that provide improved integration of text-mining results with other data resources. For example, IPA (Ingenuity) 56, KEGG 81, Pathway Studio 82 and HPRD 83 use text-mining to integrate gene/protein-phenotype associations linking genes and protein variants to the diseases, toxic effects and drug response to their knowledge databases.",
+            "cite_spans": [
+                {
+                    "start": 149,
+                    "end": 151,
+                    "mention": "75",
+                    "ref_id": "BIBREF119"
+                },
+                {
+                    "start": 152,
+                    "end": 154,
+                    "mention": "77",
+                    "ref_id": "BIBREF121"
+                },
+                {
+                    "start": 415,
+                    "end": 417,
+                    "mention": "78",
+                    "ref_id": "BIBREF122"
+                },
+                {
+                    "start": 418,
+                    "end": 420,
+                    "mention": "79",
+                    "ref_id": "BIBREF123"
+                },
+                {
+                    "start": 845,
+                    "end": 847,
+                    "mention": "80",
+                    "ref_id": "BIBREF125"
+                },
+                {
+                    "start": 1290,
+                    "end": 1292,
+                    "mention": "56",
+                    "ref_id": "BIBREF98"
+                },
+                {
+                    "start": 1299,
+                    "end": 1301,
+                    "mention": "81",
+                    "ref_id": "BIBREF126"
+                },
+                {
+                    "start": 1318,
+                    "end": 1320,
+                    "mention": "82",
+                    "ref_id": "BIBREF127"
+                },
+                {
+                    "start": 1330,
+                    "end": 1332,
+                    "mention": "83",
+                    "ref_id": "BIBREF128"
+                }
+            ],
+            "section": "Text mining ::: Summary of pathways and networks centric approaches for cancer biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "Depending on the tasks researchers address, text-mining can achieve different objectives. This include primarily the following: 1) retrieval information from relevant documents; 2) Identification of entities such as genes, diseases, complex relationship between entities and diseases and interactions between proteins and genes 80; 3) Deposit extracted information into database or used to support manual database curation efforts 15; 4) Generation hypothesis 79 and test novel research questions 78. The trend of text-mining technique is shifting from the analysis of only abstracts to the full text of papers, from the analysis of gene and protein-related information to the information about cells, tissues and whole organisms. The most prominent shift is to integrate information from the literature with data sets from other domains such as gene expression profiles 84, genome-wide association studies (GWASs), biochemistry and phenotype 84,85. Text-mining is prone to integration with machine learning, statistical techniques. In the future, text-mining might face several major challenges such as improve literature analysis, integrate to existing knowledge base, visualization of extracted information.",
+            "cite_spans": [
+                {
+                    "start": 328,
+                    "end": 330,
+                    "mention": "80",
+                    "ref_id": "BIBREF125"
+                },
+                {
+                    "start": 431,
+                    "end": 433,
+                    "mention": "15",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 460,
+                    "end": 462,
+                    "mention": "79",
+                    "ref_id": "BIBREF123"
+                },
+                {
+                    "start": 497,
+                    "end": 499,
+                    "mention": "78",
+                    "ref_id": "BIBREF122"
+                },
+                {
+                    "start": 871,
+                    "end": 873,
+                    "mention": "84",
+                    "ref_id": "BIBREF129"
+                },
+                {
+                    "start": 943,
+                    "end": 945,
+                    "mention": "84",
+                    "ref_id": "BIBREF129"
+                },
+                {
+                    "start": 946,
+                    "end": 948,
+                    "mention": "85",
+                    "ref_id": "BIBREF130"
+                }
+            ],
+            "section": "Text mining ::: Summary of pathways and networks centric approaches for cancer biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "Machine learning methods have been used for the biomarker discovery from high-throughput omics data, inferring causal relations between mutations and diseases 21 , interactions between genes and proteins 86-88 and relations between environmental features and cancer 89 as well as pathway and network modeling. There are two kinds of basic machine learning techniques, one is unsupervised machine learning such as hierarchical clustering, self-organizing mapping (SOM) etc. 90. The other is supervised machine learning which needs known knowledge from data train a model and then apply this model to predict the output variables 3. A number of machine learning such as SVM 14, Artificial Neural Network 91, decision tree and random forests (RFs) etc. have been widely for various applications including identification of breast cancer biomarkers 92, diagnosis biomarker of Parkinson disorders 93, subcellular locations of proteins 94,95, the prediction of protein functions on the basis of protein structures 96,97, the annotation of mutations 98,99. For example, Han proposed a machine learning based derivative component analysis method to select implicit feature by capturing subtle data behaviors and removing system noises from a proteomic profile to overcome the reproducibility problem for biomarker discovery in proteomics 100. Another interesting study by Hoshida et al 101 combined eight independent cohorts of gene expression profiles to reveal the subclass of HCC and their related pathways using unsupervised machine learning methods. They found that three common subclasses (S1-S3) of hepatocellular carcinoma (HCC) were significantly correlated to Wnt pathway, MYC, AKT and hepatocyte differentiation respectively. Westen blotting; knockout and immunohistochemical staining were used for experimental validation of their discovery. Another framework called knowledge-driven matrix factorization (KMF) proposed by Yang et al. was used to reconstruct phenotype-specific modular gene networks 21.",
+            "cite_spans": [
+                {
+                    "start": 159,
+                    "end": 161,
+                    "mention": "21",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 204,
+                    "end": 206,
+                    "mention": "86",
+                    "ref_id": "BIBREF131"
+                },
+                {
+                    "start": 207,
+                    "end": 209,
+                    "mention": "88",
+                    "ref_id": "BIBREF133"
+                },
+                {
+                    "start": 266,
+                    "end": 268,
+                    "mention": "89",
+                    "ref_id": "BIBREF134"
+                },
+                {
+                    "start": 473,
+                    "end": 475,
+                    "mention": "90",
+                    "ref_id": "BIBREF136"
+                },
+                {
+                    "start": 628,
+                    "end": 629,
+                    "mention": "3",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 672,
+                    "end": 674,
+                    "mention": "14",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 702,
+                    "end": 704,
+                    "mention": "91",
+                    "ref_id": "BIBREF137"
+                },
+                {
+                    "start": 845,
+                    "end": 847,
+                    "mention": "92",
+                    "ref_id": "BIBREF138"
+                },
+                {
+                    "start": 892,
+                    "end": 894,
+                    "mention": "93",
+                    "ref_id": "BIBREF139"
+                },
+                {
+                    "start": 930,
+                    "end": 932,
+                    "mention": "94",
+                    "ref_id": "BIBREF140"
+                },
+                {
+                    "start": 933,
+                    "end": 935,
+                    "mention": "95",
+                    "ref_id": "BIBREF141"
+                },
+                {
+                    "start": 1008,
+                    "end": 1010,
+                    "mention": "96",
+                    "ref_id": "BIBREF142"
+                },
+                {
+                    "start": 1011,
+                    "end": 1013,
+                    "mention": "97",
+                    "ref_id": "BIBREF143"
+                },
+                {
+                    "start": 1043,
+                    "end": 1045,
+                    "mention": "98",
+                    "ref_id": "BIBREF144"
+                },
+                {
+                    "start": 1046,
+                    "end": 1048,
+                    "mention": "99",
+                    "ref_id": "BIBREF145"
+                },
+                {
+                    "start": 1330,
+                    "end": 1333,
+                    "mention": "100",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1378,
+                    "end": 1381,
+                    "mention": "101",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 2004,
+                    "end": 2006,
+                    "mention": "21",
+                    "ref_id": "BIBREF60"
+                }
+            ],
+            "section": "Machine learning ::: Summary of pathways and networks centric approaches for cancer biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "Integration of data from multiple omic studies not only can help unravel the underlying molecular mechanism of carcinogenesis but also identify the signature of signaling pathway/networks characteristic for specific cancer types that can be used for diagnosis, prognosis and guidance for targeted therapy. The methods described in Sections A-E have proven useful for discovering biomarkers from high-throughput omic data, analyzing protein-protein, protein-DNA, and kinase-substrate interactions, as well as for genetic interactions among genes 102. These efforts have yielded good results in cancer biomarker discovery, protein interaction and interaction between genotype and diseases 103. However, current omic technologies provide only limited fragmented reality of the biological functions within cell or cancer mechanism. Separate analysis of the data generated from each of these technologies is limited to revealing only partial aberrant molecular changes, because the interaction of multiple molecules cannot be modeled by isolated analysis of genes, proteins or metabolites. Furthermore, limitations such as intrinsic high noise, incomplete data, small sample-size, bias have motivated the use of integrative omic analysis and use of prior biological knowledge and information bases, rather than as mere collections of single large-scale omic studies 14, 34, 104. However, integration of multiple disparate data types remains a significant challenge in systems biology research. Most recently, attempts at integration of multiple high-throughput omics data have concentrated on capturing regulatory associations between genes and proteins by comparing expression patterns across multiple conditions 105-107, combining functional characterization and quantitative evidence extracted from different data sources of all levels of gene products, mRNA, proteins and metabolites, as well as their interaction 108-110. Some previous works 81, 111-113 in integrative analysis utilize pathways in the form of connected routes through a graph-based representation of the metabolic network 114. Other approaches focus on the functional module of protein interaction network and analyze experimental data in the context of pathways using multiple source omics data 14,115,116. We and others have developed advanced bioinformatics tools and algorithms to facilitate the integration of diverse data types 34, 110, 117-120.",
+            "cite_spans": [
+                {
+                    "start": 545,
+                    "end": 548,
+                    "mention": "102",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 687,
+                    "end": 690,
+                    "mention": "103",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1361,
+                    "end": 1363,
+                    "mention": "14",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 1365,
+                    "end": 1367,
+                    "mention": "34",
+                    "ref_id": "BIBREF74"
+                },
+                {
+                    "start": 1369,
+                    "end": 1372,
+                    "mention": "104",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1709,
+                    "end": 1712,
+                    "mention": "105",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1713,
+                    "end": 1716,
+                    "mention": "107",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1913,
+                    "end": 1916,
+                    "mention": "108",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1917,
+                    "end": 1920,
+                    "mention": "110",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1942,
+                    "end": 1944,
+                    "mention": "81",
+                    "ref_id": "BIBREF126"
+                },
+                {
+                    "start": 1946,
+                    "end": 1949,
+                    "mention": "111",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1950,
+                    "end": 1953,
+                    "mention": "113",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 2089,
+                    "end": 2092,
+                    "mention": "114",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 2263,
+                    "end": 2265,
+                    "mention": "14",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 2266,
+                    "end": 2269,
+                    "mention": "115",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 2270,
+                    "end": 2273,
+                    "mention": "116",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 2401,
+                    "end": 2403,
+                    "mention": "34",
+                    "ref_id": "BIBREF74"
+                },
+                {
+                    "start": 2405,
+                    "end": 2408,
+                    "mention": "110",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 2410,
+                    "end": 2413,
+                    "mention": "117",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 2414,
+                    "end": 2417,
+                    "mention": "120",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Integrative methods ::: Summary of pathways and networks centric approaches for cancer biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "Different biological types of data, such as sequences, protein structures and families, proteomics data, ontologies, gene expression and other experimental data sets show a growing complexity produced by numerous heterogeneous application areas. The integration of heterogeneous data is therefore becoming more and more important. In order to gain insights into the complexity and dynamics of biological systems, the information stored in these data repositories needs to be linked and combined in efficient ways.",
+            "cite_spans": [],
+            "section": "Integrative methods ::: Summary of pathways and networks centric approaches for cancer biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "Hepatocellular carcinoma (HCC) is the fifth most common malignancy and the third leading cause of cancer death in the world, with the five-year survival rate approaching 7% 33. Treatments of HCC include surgical resection and transplantation, ablation and transarterial chemoembolization, and systemic chemotherapy. Even so, no existing systemic chemotherapy is effective for advanced HCC 121,122. For example, Lovet et al. 123 reported that targeted therapy with sorafenib which inhibits multiple tyrosine kinase receptors (RAS/VEGFR) may prolong survival by about three months. However, due to the redundancy and compensation of the signaling network in HCC, a significant reorganization of the signaling network observed such as down regulation of tumor suppressors (p53 and CHK1 when XIAP silenced or p-RB when CDK6 silenced) and upregulation of tumor promoting proteins (ETS1 when XIAP silenced or p-CREB when CDK6 silenced) may confer the growth benefit for cancer cells 124. This example suggests providing pathways and network information may improve the efficacy of systemic chemotherapy of HCC. Chang et al 125 partitioned the complex oncogenic signaling networks into basic units, or functional modules, of signaling activity (e.g., a protein phosphorylating another protein to activate its kinase activity) and demonstrated that gene expression signatures based on these modules can predict the effectiveness of pathway-specific therapeutics 125. Except for surgical resection/transplantation of early stage HCC, the survival time is not significantly prolonged by any of these treatments. Added to pathway and network centric method making use of omics data with systematic chemotherapy will benefit the development of newer therapeutic targets for HCC treatment.",
+            "cite_spans": [
+                {
+                    "start": 173,
+                    "end": 175,
+                    "mention": "33",
+                    "ref_id": "BIBREF73"
+                },
+                {
+                    "start": 389,
+                    "end": 392,
+                    "mention": "121",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 393,
+                    "end": 396,
+                    "mention": "122",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 424,
+                    "end": 427,
+                    "mention": "123",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 977,
+                    "end": 980,
+                    "mention": "124",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1117,
+                    "end": 1120,
+                    "mention": "125",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1454,
+                    "end": 1457,
+                    "mention": "125",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Application of biomarker discovery in HCC",
+            "ref_spans": []
+        },
+        {
+            "text": "In recent years, computational methods for models take more and more important roles in the HCC investigations 114,126,127. Some computer systems have also been developed. For example, Shannon et al. 128 developed a java based tool Gaggle by integrating diverse databases (e.g., KEGG, BioCyc, String) and software (e.g., Cytoscape, R ) to simultaneously explore the experimental data (e.g., mRNA and protein abundance, protein-protein and protein-DNA interactions), functional associations, metabolic pathways (KEGG) and Pubmed abstracts. Recently, Zheng et al 129 identified the molecular events underlying the development of HCV induced HCC by integrating gene expression profile and protein interaction data. To get the subnetworks, they refined the network by removing a network component if the number of nodes is smaller than five. They found four subnetworks called normal-cirrhosis, cirrhosis-dysplasia, dysplasia-early and early-advanced HCC networks. From each of the sub networks they identified functional modules and hub genes. By comparing the pathways in each sub networks, they observed changes of pathways and network activities. Their findings were validated by literature. Even though the types of omics data they used only include gene expression and protein interactions, they provide a way to study the changes of network activities by analysis of omic data. Zhang et al. used systematical method including partial least squares, literature mining technique and with GeneGO Meta-Core to discover the biomarkers of HCC with gene expression as well as protein data. Based on these marker genes, they constructed down regulated and up regulated networks. In the former, they identified 10 up regulated hub genes (MAPK1, SP1, HDAC1, YY1, ABL1, PTK2, SMAD2, NCOA3; CDC25A and NCOA2). They identified 7 hub genes (FOS, ESR1, JUNB, EGFR, SOCS3; FOLH1 and IGF1) in the latter. Partial least squares were employed to construct a classifier with these biomarkers. They used five-fold cross-validation and two independent datasets to evaluate the performance of the classifier. Furthermore, they used experimental immunohistochemistry and western blot measurements to verify the marker genes predicted by the classifier. Their results show that the network-based approach facilitates biomarker identification and improves classification accuracy 130. Hollywod et al 131 identified driver genes which are potent diagnosis markers and mechanism study of HCC using t-statistic map (TM) and transcriptome correlation map (TCM) approaches with integration of DNA copy number measured by genomics CGH array and gene expression. They found 50 driver genes with significant prognostic relevance to HCC key signaling pathways such as mTOR, AMPK, and EGFR. siRNA-mediated knockdown experiments was used to evaluate the functional significance of the 50 driver genes 131.",
+            "cite_spans": [
+                {
+                    "start": 111,
+                    "end": 114,
+                    "mention": "114",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 115,
+                    "end": 118,
+                    "mention": "126",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 119,
+                    "end": 122,
+                    "mention": "127",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 200,
+                    "end": 203,
+                    "mention": "128",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 561,
+                    "end": 564,
+                    "mention": "129",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 2357,
+                    "end": 2360,
+                    "mention": "130",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 2377,
+                    "end": 2380,
+                    "mention": "131",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 2867,
+                    "end": 2870,
+                    "mention": "131",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Application of biomarker discovery in HCC",
+            "ref_spans": []
+        },
+        {
+            "text": "Even though collection of diverse omics data to analyze the relationships between HCC phenotype and biological entities within the cell has been proved powerful enough, such integration is still fragmentary, incomplete and inadequate to reflect the whole picture of the cancer information and development. The amount of omics data from genomics, proteomics, metabolomics and interactomics is increasing. In pace with the explosion of omics data, a number of open-access databases, containing comprehensive gene, protein interaction, biological pathway and network information, are being developed to provide biologists with valuable tools for analyzing the data from complex biological systems. These include IntAct, BioGRID, MINT, KEGG, PID, STRING and REACTOME etc. all of which provide very useful qualitative mappings of functional associations between key components in canonical pathways 14. Table 2 summarizes primary data source and URLs specific to HCC.",
+            "cite_spans": [
+                {
+                    "start": 894,
+                    "end": 896,
+                    "mention": "14",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Application of biomarker discovery in HCC",
+            "ref_spans": [
+                {
+                    "start": 904,
+                    "end": 905,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "With wide applications of omics technique, more accurate and ubiquitous biomarkers have been identified, but only few have been brought to clinical setting and many have proved to be irreproducible 140. One of the concerns is that biomarkers identified suffer from low diagnostic specificity and sensitivity which leads to current cancer biomarkers have not yet made a major impact in reducing cancer burden. For instance, serum alpha-fetoprotein (AFP) is the most widely used biomarkers for detecting and monitoring of HCC, but the false negative rate with AFP levels may be high as 40% for patients with early stage of HCC, for advances patients, the AFP levels remain small in 15%-30% of patients 141.",
+            "cite_spans": [
+                {
+                    "start": 198,
+                    "end": 201,
+                    "mention": "140",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 700,
+                    "end": 703,
+                    "mention": "141",
+                    "ref_id": "BIBREF47"
+                }
+            ],
+            "section": "Limitations of omics based biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "One of the important limitations is possible artifacts in conducing biological experiments such as instrument variability. Others include bias in sample collection and sample handling which lead to cohort differences. For example, Sreekumar et al. 142 reported sarcosine as a prostate cancer biomarker through metabolomics analysis. However, subsequent validation study done by Jentzmik et al. 143 concluded that the levels of sarcosine measured by GC-MS could not differentiate malignant from nonmalignant tissue. Collestelli et al. reported no statistically significant difference between prostate cancer and healthy controls in the sarcosine to creatinine ratios and that the levels of sarcosine were about 11.7% higher in the healthy controls 144. Another important limitation relates to lack of computational methods that can extract knowledge from omic data involving substantial amount of noise, high dimensionality, missing values, etc.",
+            "cite_spans": [
+                {
+                    "start": 248,
+                    "end": 251,
+                    "mention": "142",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 394,
+                    "end": 397,
+                    "mention": "143",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 747,
+                    "end": 750,
+                    "mention": "144",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "Limitations of omics based biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "Although the use of pathway and network-based approaches and the integration of prior biological knowledge with omic data are promising in addressing some of the computational challenges, they too have some limitations as outlined below:mRNA levels and DNA alterations may not accurately reflect the corresponding protein levels and fail to reveal changes in posttranscriptional protein modulation (e.g., phosphorylation, acetylation, methylation, ubiquitination, etc.) or protein degradation rates. Correlation of mRNA with its associated protein expression can be relatively low. The signaling network constructed using these approaches does not reflect the dynamic signal flow in a spatial relationship. Also, the genomic changes (mRNA level, SNP, CNV, methylation) ultimately affect protein expression, activation and inactivation, which, in turn, controls cellular behavior.Current proteomic technologies provide only limited coverage of the proteome and more sensitive technologies are needed to identify and quantitate low abundant proteins 145,146.Interpretation of pathway mapping results from the fact that pathway annotations currently take little consideration of tissue specificities of genes or proteins in the pathway. This limits the tissue and/or isoform specificity in pathway annotations. Thus, specific steps of a pathway may not be actually active in tissues/cells from which the omics data may be generated. In some cases, this may occur because protein isoforms or splice variants have been annotated as a protein class or a canonical protein sequence, respectively, in the pathway while they may be expressed differentially in different tissues/cells.Because biological pathways are inherently complex and dynamic, pathway annotations in different pathway databases vary significantly in pathway models and in a number of other aspects, e.g., specific protein forms, dynamic complex formation, subcellular locations, and pathway cross talks.",
+            "cite_spans": [
+                {
+                    "start": 1048,
+                    "end": 1051,
+                    "mention": "145",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 1052,
+                    "end": 1055,
+                    "mention": "146",
+                    "ref_id": "BIBREF52"
+                }
+            ],
+            "section": "Limitations of omics based biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "Current computational methods thus need to provide a solution to these issues including revealing patterns within the data, modeling heterogeneity, profiling of disease classes and subclasses, producing a predictive of patients' classification, etc.. Biomarker discovery is now changing research away from identification of individual biomarkers to searching for perturbed pathways and network activities.",
+            "cite_spans": [],
+            "section": "Limitations of omics based biomarker discovery",
+            "ref_spans": []
+        },
+        {
+            "text": "Early detection of cancer improves survival and enhances quality of life. An ideal marker would be one that can be measured easily and reliably using an assay with high sensitivity and specificity and undergo rigorous validation before they are introduced into routine clinical care. Currently, the treatment of most cancers is based on the tissue types and clinical stages. This approach is often ineffective due to the heterogeneity of the tumors. Pathway and network based method have taken more important role in analysis of high-throughput data. Pathway and network based methods provide a global and systematical way to explore the relationships between biomarkers and their interacting partners. Thus, future work is likely to focus on using pathway and network based methods for biomarker discovery.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "It is our expectation that methods discussed above will become a component in a shared infrastructure of biomedical resources that can be used by researchers to identify and to retrieve the most relevant work, to formulate hypothesis, to find supporting and contradicting evidence for hypotheses, to integrate research results into a framework of whole biological systems and to support the translation of research results across domains and into clinical applications.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Computational methods for biomarker discovery categorized by their application, examplary tools and URLs.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Data sources and URLs for HCC databases.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: The pipeline of pathway/networks centric approach for cancer biomarker discovery. A variety of computational tools and algorithms have been proposed for biomarker discovery based on pathway and network methods. The most commonly used methods are categorized roughly into statistical 17, graph theory 18, Bayesian methods 19, text mining 20, machine learning 21-23 and integrative methods summarized in Table 1.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "A pathway-based view of human diseases and disease relationships",
+            "authors": [],
+            "year": 2009,
+            "venue": "PLoS One",
+            "volume": "4",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Identification of rare cancer driver mutations by network reconstruction",
+            "authors": [],
+            "year": 2009,
+            "venue": "Genome Res",
+            "volume": "19",
+            "issn": "9",
+            "pages": "1570-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "A novel profile biomarker diagnosis for mass spectral proteomics",
+            "authors": [],
+            "year": 2014,
+            "venue": "Pac Symp Biocomput",
+            "volume": "19",
+            "issn": "",
+            "pages": "340-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Integrative transcriptome analysis reveals common molecular subclasses of human hepatocellular carcinoma",
+            "authors": [],
+            "year": 2009,
+            "venue": "Cancer Res",
+            "volume": "69",
+            "issn": "18",
+            "pages": "7385-92",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Differential network biology",
+            "authors": [],
+            "year": 2012,
+            "venue": "Mol Syst Biol",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Global physiological understanding and metabolic engineering of microorganisms based on omics studies",
+            "authors": [],
+            "year": 2005,
+            "venue": "Appl Microbiol Biotechnol",
+            "volume": "68",
+            "issn": "5",
+            "pages": "567-79",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Transcriptomic profiling reveals hepatic stem-like gene signatures and interplay of miR-200c and epithelial-mesenchymal transition in intrahepatic cholangiocarcinoma",
+            "authors": [],
+            "year": 2012,
+            "venue": "Hepatology",
+            "volume": "56",
+            "issn": "5",
+            "pages": "1792-803",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Large-scale mapping and validation of Escherichia coli transcriptional regulation from a compendium of expression profiles",
+            "authors": [],
+            "year": 2007,
+            "venue": "PLoS Biol",
+            "volume": "5",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Topological analysis of protein co-abundance networks identifies novel host targets important for HCV infection and pathogenesis",
+            "authors": [],
+            "year": 2012,
+            "venue": "BMC Syst Biol",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Bottlenecks and hubs in inferred networks are important for virulence in Salmonella typhimurium",
+            "authors": [],
+            "year": 2009,
+            "venue": "J Comput Biol",
+            "volume": "16",
+            "issn": "2",
+            "pages": "169-80",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Gene expression-based chemical genomics identifies potential therapeutic drugs in hepatocellular carcinoma",
+            "authors": [],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "11",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Integrative genomics: liver regeneration and hepatocellular carcinoma",
+            "authors": [],
+            "year": 2013,
+            "venue": "J Cell Biochem",
+            "volume": "113",
+            "issn": "7",
+            "pages": "2179-84",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Multi-analyte network markers for tumor prognosis",
+            "authors": [],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "12",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "A network integration approach to predict conserved regulators related to pathogenicity of influenza and SARS-CoV respiratory viruses",
+            "authors": [],
+            "year": 2013,
+            "venue": "PLoS One",
+            "volume": "8",
+            "issn": "7",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Global Metabolomic and Network analysis of Escherichia coli Responses to Exogenous Biofuels",
+            "authors": [],
+            "year": 2013,
+            "venue": "J Proteome Res",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Co-regulation of metabolic genes is better explained by flux coupling than by network distance",
+            "authors": [],
+            "year": 2008,
+            "venue": "PLoS Comput Biol",
+            "volume": "4",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Network-based prediction of human tissue-specific metabolism",
+            "authors": [],
+            "year": 2008,
+            "venue": "Nat Biotechnol",
+            "volume": "26",
+            "issn": "9",
+            "pages": "1003-10",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "MetaRoute: fast search for relevant metabolic routes for interactive network navigation and visualization",
+            "authors": [],
+            "year": 2008,
+            "venue": "Bioinformatics",
+            "volume": "24",
+            "issn": "18",
+            "pages": "2108-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Integration of expression data in genome-scale metabolic network reconstructions",
+            "authors": [],
+            "year": 2012,
+            "venue": "Front Physiol",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Systems analysis of the NCI-60 cancer cell lines by alignment of protein pathway activation modules with \"-OMIC\" data fields and therapeutic response signatures",
+            "authors": [],
+            "year": 2013,
+            "venue": "Mol Cancer Res",
+            "volume": "11",
+            "issn": "6",
+            "pages": "676-85",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Integrative identification of Arabidopsis mitochondrial proteome and its function exploitation through protein interaction network",
+            "authors": [],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Integrating the Alzheimer's disease proteome and transcriptome: a comprehensive network model of a complex disease",
+            "authors": [],
+            "year": 2012,
+            "venue": "Omics",
+            "volume": "16",
+            "issn": "1-2",
+            "pages": "37-49",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Data merging for integrated microarray and proteomic analysis",
+            "authors": [],
+            "year": 2006,
+            "venue": "Brief Funct Genomic Proteomic",
+            "volume": "5",
+            "issn": "4",
+            "pages": "261-72",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "The human disease network",
+            "authors": [],
+            "year": 2007,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "104",
+            "issn": "21",
+            "pages": "8685-90",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "MetaboSearch: tool for mass-based metabolite identification using multiple databases",
+            "authors": [],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "6",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Design and endpoints of clinical trials in hepatocellular carcinoma",
+            "authors": [],
+            "year": 2008,
+            "venue": "J Natl Cancer Inst",
+            "volume": "100",
+            "issn": "10",
+            "pages": "698-711",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Novel advancements in the management of hepatocellular carcinoma in 2008",
+            "authors": [],
+            "year": 2008,
+            "venue": "J Hepatol",
+            "volume": "48",
+            "issn": "Suppl 1",
+            "pages": "S20-37",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Sorafenib in advanced hepatocellular carcinoma",
+            "authors": [],
+            "year": 2008,
+            "venue": "N Engl J Med",
+            "volume": "359",
+            "issn": "4",
+            "pages": "378-90",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Proteomics, pathway array and signaling network-based medicine in cancer",
+            "authors": [],
+            "year": 2009,
+            "venue": "Cell Div",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "A genomic strategy to elucidate modules of oncogenic pathway signaling networks",
+            "authors": [],
+            "year": 2009,
+            "venue": "Mol Cell",
+            "volume": "34",
+            "issn": "1",
+            "pages": "104-14",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "LS-CAP: an algorithm for identifying cytogenetic aberrations in hepatocellular carcinoma using microarray data",
+            "authors": [],
+            "year": 2006,
+            "venue": "Front Biosci",
+            "volume": "11",
+            "issn": "",
+            "pages": "1311-22",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "A tumor progression model for hepatocellular carcinoma: bioinformatic analysis of genomic data",
+            "authors": [],
+            "year": 2006,
+            "venue": "Gastroenterology",
+            "volume": "131",
+            "issn": "4",
+            "pages": "1262-70",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "The Protein Information and Property Explorer 2: gaggle-like exploration of biological proteomic data within one webpage",
+            "authors": [],
+            "year": 2012,
+            "venue": "Proteomics",
+            "volume": "11",
+            "issn": "1",
+            "pages": "154-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "CD133 positive hepatocellular carcinoma cells possess high capacity for tumorigenicity",
+            "authors": [],
+            "year": 2007,
+            "venue": "Int J Cancer",
+            "volume": "120",
+            "issn": "7",
+            "pages": "1444-50",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Systems biology and the future of medicine",
+            "authors": [],
+            "year": 2011,
+            "venue": "Wiley Interdiscip Rev Syst Biol Med",
+            "volume": "3",
+            "issn": "6",
+            "pages": "619-27",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "A systems biology-based classifier for hepatocellular carcinoma diagnosis",
+            "authors": [],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "7",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Metabolomics: current technologies and future trends",
+            "authors": [],
+            "year": 2006,
+            "venue": "Proteomics",
+            "volume": "6",
+            "issn": "17",
+            "pages": "4716-23",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Detection of the inferred interaction network in hepatocellular carcinoma from EHCO (Encyclopedia of Hepatocellular Carcinoma genes Online)",
+            "authors": [],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "OncoDB.HCC: an integrated oncogenomic database of hepatocellular carcinoma revealed aberrant cancer target genes and loci",
+            "authors": [],
+            "year": 2007,
+            "venue": "Nucleic Acids Res",
+            "volume": "35",
+            "issn": "Database issue",
+            "pages": "D727-31",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "HCVpro: hepatitis C virus protein interaction database",
+            "authors": [],
+            "year": 2011,
+            "venue": "Infect Genet Evol",
+            "volume": "11",
+            "issn": "8",
+            "pages": "1971-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "The euHCVdb suite of in silico tools for investigating the structural impact of mutations in hepatitis C virus proteins",
+            "authors": [],
+            "year": 2009,
+            "venue": "Infect Disord Drug Targets",
+            "volume": "9",
+            "issn": "3",
+            "pages": "272-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Development and public release of a comprehensive hepatitis virus database",
+            "authors": [],
+            "year": 2008,
+            "venue": "Hepatol Res",
+            "volume": "38",
+            "issn": "3",
+            "pages": "234-43",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "The Los Alamos hepatitis C sequence database",
+            "authors": [],
+            "year": 2005,
+            "venue": "Bioinformatics",
+            "volume": "21",
+            "issn": "3",
+            "pages": "379-84",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "LiverAtlas: a unique integrated knowledge database for systems-level research of liver and hepatic disease",
+            "authors": [],
+            "year": 2013,
+            "venue": "Liver Int",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "dbHCCvar: a comprehensive database of human genetic variations in hepatocellular carcinoma",
+            "authors": [],
+            "year": 2011,
+            "venue": "Hum Mutat",
+            "volume": "32",
+            "issn": "12",
+            "pages": "E2308-16",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Identification of aberrant pathways and network activities from high-throughput data",
+            "authors": [],
+            "year": 2012,
+            "venue": "Brief Bioinform",
+            "volume": "13",
+            "issn": "4",
+            "pages": "406-19",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Proteomics research to discover markers: what can we learn from Netflix?",
+            "authors": [],
+            "year": 2011,
+            "venue": "Clin Chem",
+            "volume": "56",
+            "issn": "2",
+            "pages": "172-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Molecular and serum markers in hepatocellular carcinoma: predictive tools for prognosis and recurrence",
+            "authors": [],
+            "year": 2011,
+            "venue": "Crit Rev Oncol Hematol",
+            "volume": "82",
+            "issn": "2",
+            "pages": "116-40",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Metabolomic profiles delineate potential role for sarcosine in prostate cancer progression",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nature",
+            "volume": "457",
+            "issn": "7231",
+            "pages": "910-4",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Sarcosine in prostate cancer tissue is not a differential metabolite for prostate cancer aggressiveness and biochemical progression",
+            "authors": [],
+            "year": 2011,
+            "venue": "J Urol",
+            "volume": "185",
+            "issn": "2",
+            "pages": "706-11",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Re: Florian Jentzmik, Carsten Stephan, Kurt Miller, et al. Sarcosine in urine after digital rectal examination fails as a marker in prostate cancer detection and identification of aggressive tumours",
+            "authors": [],
+            "year": 2010,
+            "venue": "Eur Urol",
+            "volume": "58",
+            "issn": "",
+            "pages": "12-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Metabolomics approaches for discovering biomarkers of drug-induced hepatotoxicity and nephrotoxicity",
+            "authors": [],
+            "year": 2010,
+            "venue": "Toxicol Appl Pharmacol",
+            "volume": "243",
+            "issn": "2",
+            "pages": "154-66",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Significance of DNA polymerase delta catalytic subunit p125 induced by mutant p53 in the invasive potential of human hepatocellular carcinoma",
+            "authors": [],
+            "year": 2010,
+            "venue": "Oncology",
+            "volume": "79",
+            "issn": "3-4",
+            "pages": "229-37",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Integrating text mining into the MGI biocuration workflow",
+            "authors": [],
+            "year": 2009,
+            "venue": "Database (Oxford)",
+            "volume": "2009",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "\"Omics\" data and levels of evidence for biomarker discovery",
+            "authors": [],
+            "year": 2009,
+            "venue": "Genomics",
+            "volume": "93",
+            "issn": "1",
+            "pages": "13-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "A statistical framework for Illumina DNA methylation arrays",
+            "authors": [],
+            "year": 2010,
+            "venue": "Bioinformatics",
+            "volume": "26",
+            "issn": "22",
+            "pages": "2849-55",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "A directed protein interaction network for investigating intracellular signal transduction",
+            "authors": [],
+            "year": 2011,
+            "venue": "Sci Signal",
+            "volume": "4",
+            "issn": "189",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "A framework for elucidating regulatory networks based on prior information and expression data",
+            "authors": [],
+            "year": 2007,
+            "venue": "Ann N Y Acad Sci",
+            "volume": "1115",
+            "issn": "",
+            "pages": "240-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "The future of model organisms in human disease research",
+            "authors": [],
+            "year": 2011,
+            "venue": "Nat Rev Genet",
+            "volume": "12",
+            "issn": "8",
+            "pages": "575-82",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Creating and analyzing pathway and protein interaction compendia for modelling signal transduction networks",
+            "authors": [],
+            "year": 2012,
+            "venue": "BMC Syst Biol",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "EpCAM-positive hepatocellular carcinoma cells are tumor-initiating cells with stem/progenitor cell features",
+            "authors": [],
+            "year": 2009,
+            "venue": "Gastroenterology",
+            "volume": "136",
+            "issn": "3",
+            "pages": "1012-24",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Non Linear Programming (NLP) formulation for quantitative modeling of protein signal transduction pathways",
+            "authors": [],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "11",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "MicroRNA-mRNA interaction network using TSK-type recurrent neural fuzzy network",
+            "authors": [],
+            "year": 2013,
+            "venue": "Gene",
+            "volume": "515",
+            "issn": "2",
+            "pages": "385-90",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Cloud-based solution to identify statistically significant MS peaks differentiating sample categories",
+            "authors": [],
+            "year": 2013,
+            "venue": "BMC Res Notes",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "Circulating transcriptome reveals markers of atherosclerosis",
+            "authors": [],
+            "year": 2005,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "102",
+            "issn": "9",
+            "pages": "3423-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "Predicting the clinical status of human breast cancer by using gene expression profiles",
+            "authors": [],
+            "year": 2001,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "98",
+            "issn": "20",
+            "pages": "11462-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "Partial least squares proportional hazard regression for application to DNA microarray survival data",
+            "authors": [],
+            "year": 2002,
+            "venue": "Bioinformatics",
+            "volume": "18",
+            "issn": "12",
+            "pages": "1625-32",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Gene assessment and sample classification for gene expression data using a genetic algorithm/k-nearest neighbor method",
+            "authors": [],
+            "year": 2001,
+            "venue": "Comb Chem High Throughput Screen",
+            "volume": "4",
+            "issn": "8",
+            "pages": "727-39",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "Pathways of matrix metalloproteinase induction in heart failure: bioactive molecules and transcriptional regulation",
+            "authors": [],
+            "year": 2006,
+            "venue": "Cardiovasc Res",
+            "volume": "69",
+            "issn": "3",
+            "pages": "666-76",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "The genetics of autoimmune diseases: a networked perspective",
+            "authors": [],
+            "year": 2009,
+            "venue": "Curr Opin Immunol",
+            "volume": "21",
+            "issn": "6",
+            "pages": "596-605",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF70": {
+            "title": "dmGWAS: dense module searching for genome-wide association studies in protein-protein interaction networks",
+            "authors": [],
+            "year": 2011,
+            "venue": "Bioinformatics",
+            "volume": "27",
+            "issn": "1",
+            "pages": "95-102",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF71": {
+            "title": "Cytoscape: a software environment for integrated models of biomolecular interaction networks",
+            "authors": [],
+            "year": 2003,
+            "venue": "Genome Res",
+            "volume": "13",
+            "issn": "11",
+            "pages": "2498-504",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF72": {
+            "title": "BABELOMICS: a systems biology perspective in the functional annotation of genome-scale experiments",
+            "authors": [],
+            "year": 2006,
+            "venue": "Nucleic Acids Res",
+            "volume": "34",
+            "issn": "Web Server issue",
+            "pages": "W472-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF73": {
+            "title": "A method for integrating and ranking the evidence for biochemical pathways by mining reactions from text",
+            "authors": [],
+            "year": 2013,
+            "venue": "Bioinformatics",
+            "volume": "29",
+            "issn": "13",
+            "pages": "i44-i52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF74": {
+            "title": "Network analysis of epidermal growth factor signaling using integrated genomic, proteomic and phosphorylation data",
+            "authors": [],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "3",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF75": {
+            "title": "Local-pooled-error test for identifying differentially expressed genes with a small number of replicated microarrays",
+            "authors": [],
+            "year": 2003,
+            "venue": "Bioinformatics",
+            "volume": "19",
+            "issn": "15",
+            "pages": "1945-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF76": {
+            "title": "Significance analysis of microarrays applied to the ionizing radiation response",
+            "authors": [],
+            "year": 2001,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "98",
+            "issn": "9",
+            "pages": "5116-21",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF77": {
+            "title": "Does BCR/ABL1 positive acute myeloid leukaemia exist?",
+            "authors": [],
+            "year": 2013,
+            "venue": "Br J Haematol",
+            "volume": "161",
+            "issn": "4",
+            "pages": "541-50",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF78": {
+            "title": "Assessing gene significance from cDNA microarray expression data via mixed models",
+            "authors": [],
+            "year": 2001,
+            "venue": "J Comput Biol",
+            "volume": "8",
+            "issn": "6",
+            "pages": "625-37",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF79": {
+            "title": "Plasma Protein Biomarkers of the Geriatric Syndrome of Frailty",
+            "authors": [],
+            "year": null,
+            "venue": "J Gerontol A Biol Sci Med Sci",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF80": {
+            "title": "atBioNet--an integrated network analysis tool for genomics and biomarker discovery",
+            "authors": [],
+            "year": 2012,
+            "venue": "BMC Genomics",
+            "volume": "13",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF81": {
+            "title": "Bootstrapping cluster analysis: assessing the reliability of conclusions from microarray experiments",
+            "authors": [],
+            "year": 2001,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "98",
+            "issn": "16",
+            "pages": "8961-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF82": {
+            "title": "Statistical significance for genomewide studies",
+            "authors": [],
+            "year": 2003,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "100",
+            "issn": "16",
+            "pages": "9440-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF83": {
+            "title": "Systematic and integrative analysis of large gene lists using DAVID bioinformatics resources",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nat Protoc",
+            "volume": "4",
+            "issn": "1",
+            "pages": "44-57",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF84": {
+            "title": "Developing optimal prediction models for cancer classification using gene expression data",
+            "authors": [],
+            "year": 2004,
+            "venue": "J Bioinform Comput Biol",
+            "volume": "1",
+            "issn": "4",
+            "pages": "681-94",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF85": {
+            "title": "Logistic Regression Analysis with Standardized Markers",
+            "authors": [],
+            "year": 2013,
+            "venue": "Ann Appl Stat",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF86": {
+            "title": "Hepatocellular carcinoma in cirrhosis: incidence and risk factors",
+            "authors": [],
+            "year": 2004,
+            "venue": "Gastroenterology",
+            "volume": "127",
+            "issn": "5 Suppl 1",
+            "pages": "S35-50",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF87": {
+            "title": "Proteomic identification of CIB1 as a potential diagnostic factor in hepatocellular carcinoma",
+            "authors": [],
+            "year": 2011,
+            "venue": "J Biosci",
+            "volume": "36",
+            "issn": "4",
+            "pages": "659-68",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF88": {
+            "title": "Highly multiplexed proteomic platform for biomarker discovery, diagnostics, and therapeutics",
+            "authors": [],
+            "year": 2013,
+            "venue": "Adv Exp Med Biol",
+            "volume": "734",
+            "issn": "",
+            "pages": "283-300",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF89": {
+            "title": "Machine learning and social network analysis applied to Alzheimer's disease biomarkers",
+            "authors": [],
+            "year": 2013,
+            "venue": "Curr Top Med Chem",
+            "volume": "13",
+            "issn": "5",
+            "pages": "652-62",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF90": {
+            "title": "From brain topography to brain topology: relevance of graph theory to functional neuroscience",
+            "authors": [],
+            "year": 2013,
+            "venue": "Neuroreport",
+            "volume": "24",
+            "issn": "10",
+            "pages": "536-43",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF91": {
+            "title": "Therapeutically targeting glypican-3 via a conformation-specific single-domain antibody in hepatocellular carcinoma",
+            "authors": [],
+            "year": 2013,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "110",
+            "issn": "12",
+            "pages": "E1083-91",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF92": {
+            "title": "Synthetic incoherent feedforward circuits show adaptation to the amount of their genetic template",
+            "authors": [],
+            "year": null,
+            "venue": "Mol Syst Biol;7:519",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF93": {
+            "title": "Toward predictive models of mammalian cells",
+            "authors": [],
+            "year": 2005,
+            "venue": "Annu Rev Biophys Biomol Struct",
+            "volume": "34",
+            "issn": "",
+            "pages": "319-49",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF94": {
+            "title": "Molecular networks in microarray analysis",
+            "authors": [],
+            "year": 2007,
+            "venue": "J Bioinform Comput Biol",
+            "volume": "5",
+            "issn": "2B",
+            "pages": "429-56",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF95": {
+            "title": "Ontology- and graph-based similarity assessment in biological networks",
+            "authors": [],
+            "year": 2010,
+            "venue": "Bioinformatics",
+            "volume": "26",
+            "issn": "20",
+            "pages": "2643-4",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF96": {
+            "title": "A travel guide to Cytoscape plugins",
+            "authors": [],
+            "year": 2012,
+            "venue": "Nat Methods",
+            "volume": "9",
+            "issn": "11",
+            "pages": "1069-76",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF97": {
+            "title": "3DScapeCS: application of three dimensional, parallel, dynamic network visualization in Cytoscape",
+            "authors": [],
+            "year": 2013,
+            "venue": "BMC Bioinformatics",
+            "volume": "14",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF98": {
+            "title": "Pathway analysis tools and toxicogenomics reference databases for risk assessment",
+            "authors": [],
+            "year": 2008,
+            "venue": "Pharmacogenomics",
+            "volume": "9",
+            "issn": "1",
+            "pages": "35-54",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF99": {
+            "title": "STRING v9.1: protein-protein interaction networks, with increased coverage and integration",
+            "authors": [],
+            "year": 2013,
+            "venue": "Nucleic Acids Res",
+            "volume": "41",
+            "issn": "Database issue",
+            "pages": "D808-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF100": {
+            "title": "Bayesian network analysis of signaling networks: a primer",
+            "authors": [],
+            "year": 2005,
+            "venue": "Sci STKE 2005",
+            "volume": "",
+            "issn": "281",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF101": {
+            "title": "Structure learning for Bayesian networks as models of biological networks",
+            "authors": [],
+            "year": 2013,
+            "venue": "Methods Mol Biol",
+            "volume": "939",
+            "issn": "",
+            "pages": "35-45",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF102": {
+            "title": "Myth of the chronic fatigue syndrome",
+            "authors": [],
+            "year": 1991,
+            "venue": "West J Med",
+            "volume": "155",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF103": {
+            "title": "Genetic studies of complex human diseases: characterizing SNP-disease associations using Bayesian networks",
+            "authors": [],
+            "year": 2013,
+            "venue": "BMC Syst Biol",
+            "volume": "6",
+            "issn": "Suppl 3",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF104": {
+            "title": "A comparison of neural network models, fuzzy logic, and multiple linear regression for prediction of hatchability",
+            "authors": [],
+            "year": 2013,
+            "venue": "Poult Sci",
+            "volume": "92",
+            "issn": "4",
+            "pages": "1138-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF105": {
+            "title": "",
+            "authors": [],
+            "year": 2012,
+            "venue": "Bayesian Network for Omics Data Integration",
+            "volume": "",
+            "issn": "",
+            "pages": "110-3",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF106": {
+            "title": "Bayesian methods for proteomics",
+            "authors": [],
+            "year": 2007,
+            "venue": "Proteomics",
+            "volume": "7",
+            "issn": "16",
+            "pages": "2843-55",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF107": {
+            "title": "Bayesian design of synthetic biological systems",
+            "authors": [],
+            "year": 2011,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "108",
+            "issn": "37",
+            "pages": "15190-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF108": {
+            "title": "Modeling signaling networks using high-throughput phospho-proteomics",
+            "authors": [],
+            "year": 2012,
+            "venue": "Adv Exp Med Biol",
+            "volume": "736",
+            "issn": "",
+            "pages": "19-57",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF109": {
+            "title": "Bayesian inference of signaling network topology in a cancer cell line",
+            "authors": [],
+            "year": 2012,
+            "venue": "Bioinformatics",
+            "volume": "28",
+            "issn": "21",
+            "pages": "2804-10",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF110": {
+            "title": "Sensitivity and specificity of inferring genetic regulatory interactions from microarray experiments with dynamic Bayesian networks",
+            "authors": [],
+            "year": 2003,
+            "venue": "Bioinformatics",
+            "volume": "19",
+            "issn": "17",
+            "pages": "2271-82",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF111": {
+            "title": "An empirical Bayesian method for estimating biological networks from temporal microarray data",
+            "authors": [],
+            "year": 2010,
+            "venue": "Stat Appl Genet Mol Biol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF112": {
+            "title": "Network inference using informative priors",
+            "authors": [],
+            "year": 2008,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "105",
+            "issn": "38",
+            "pages": "14313-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF113": {
+            "title": "Network-based classification of breast cancer metastasis",
+            "authors": [],
+            "year": 2007,
+            "venue": "Mol Syst Biol",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF114": {
+            "title": "Systems analysis of EGF receptor signaling dynamics with microwestern arrays",
+            "authors": [],
+            "year": 2010,
+            "venue": "Nat Methods",
+            "volume": "7",
+            "issn": "2",
+            "pages": "148-55",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF115": {
+            "title": "Using Bayesian networks to analyze expression data",
+            "authors": [],
+            "year": 2000,
+            "venue": "J Comput Biol",
+            "volume": "7",
+            "issn": "3-4",
+            "pages": "601-20",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF116": {
+            "title": "Integrating Bayesian variable selection with Modular Response Analysis to infer biochemical network topology",
+            "authors": [],
+            "year": 2013,
+            "venue": "BMC Syst Biol",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF117": {
+            "title": "Integrating Bayesian variable selection with Modular Response Analysis to infer biochemical network topology",
+            "authors": [],
+            "year": 2010,
+            "venue": "BMC Syst Biol",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF118": {
+            "title": "Integrating biological knowledge into variable selection: an empirical Bayes approach with an application in cancer biology",
+            "authors": [],
+            "year": 2010,
+            "venue": "BMC Bioinformatics",
+            "volume": "13",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF119": {
+            "title": "G2D: a tool for mining genes associated with disease",
+            "authors": [],
+            "year": 2005,
+            "venue": "BMC Genet",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF120": {
+            "title": "Association of genes to genetically inherited diseases using data mining",
+            "authors": [],
+            "year": 2002,
+            "venue": "Nat Genet",
+            "volume": "31",
+            "issn": "3",
+            "pages": "316-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF121": {
+            "title": "Conceptual biology: unearthing the gems",
+            "authors": [],
+            "year": 2002,
+            "venue": "Nature",
+            "volume": "416",
+            "issn": "6879",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF122": {
+            "title": "Novel protein-protein interactions inferred from literature context",
+            "authors": [],
+            "year": 2009,
+            "venue": "PLoS One",
+            "volume": "4",
+            "issn": "11",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF123": {
+            "title": "BioProspecting: novel marker discovery obtained by mining the bibleome",
+            "authors": [],
+            "year": 2009,
+            "venue": "BMC Bioinformatics",
+            "volume": "10",
+            "issn": "Suppl 2",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF124": {
+            "title": "Phenotypic characterization of human colorectal cancer stem cells",
+            "authors": [],
+            "year": 2007,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "104",
+            "issn": "24",
+            "pages": "10158-63",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF125": {
+            "title": "CoPub: a literature-based keyword enrichment tool for microarray data analysis",
+            "authors": [],
+            "year": 2008,
+            "venue": "Nucleic Acids Res",
+            "volume": "36",
+            "issn": "Web Server issue",
+            "pages": "W406-10",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF126": {
+            "title": "Observing metabolic functions at the genome scale",
+            "authors": [],
+            "year": 2007,
+            "venue": "Genome Biol",
+            "volume": "8",
+            "issn": "6",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF127": {
+            "title": "Pathway studio--the analysis and navigation of molecular networks",
+            "authors": [],
+            "year": 2003,
+            "venue": "Bioinformatics",
+            "volume": "19",
+            "issn": "16",
+            "pages": "2155-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF128": {
+            "title": "Human Protein Reference Database--2009 update",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nucleic Acids Res",
+            "volume": "37",
+            "issn": "Database issue",
+            "pages": "D767-72",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF129": {
+            "title": "A Bayesian network model for omics data integration",
+            "authors": [],
+            "year": 2012,
+            "venue": "Proceedings of the 2012 IEEE International Workshop on Genomic Signal Processing and Statistics (GENSIPS). Washington DC",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF130": {
+            "title": "The structural and content aspects of abstracts versus bodies of full text journal articles are different",
+            "authors": [],
+            "year": 2010,
+            "venue": "BMC Bioinformatics",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF131": {
+            "title": "Reverse PCA, a Systematic Approach for Identifying Genes Important for the Physical Interaction between Protein Pairs",
+            "authors": [],
+            "year": 2013,
+            "venue": "PLoS Genet",
+            "volume": "9",
+            "issn": "10",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF132": {
+            "title": "Infection of common marmosets with hepatitis C virus/GB virus-B chimeras",
+            "authors": [],
+            "year": 2013,
+            "venue": "Hepatology",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF133": {
+            "title": "Identification and validation of dysregulated metabolic pathways in metastatic renal cell carcinoma",
+            "authors": [],
+            "year": 2013,
+            "venue": "Tumour Biol",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF134": {
+            "title": "Genes-environment interactions in obesity- and diabetes-associated pancreatic cancer: A GWAS data analysis",
+            "authors": [],
+            "year": 2013,
+            "venue": "Cancer Epidemiol Biomarkers Prev",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF135": {
+            "title": "Dynamic modularity in protein interaction networks predicts breast cancer outcome",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nat Biotechnol",
+            "volume": "27",
+            "issn": "2",
+            "pages": "199-204",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF136": {
+            "title": "A Review for Detecting Gene-Gene Interactions Using Machine Learning Methods in Genetic Epidemiology",
+            "authors": [],
+            "year": 2013,
+            "venue": "Biomed Res Int",
+            "volume": "2013",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF137": {
+            "title": "Neural networks",
+            "authors": [],
+            "year": 2010,
+            "venue": "Methods Mol Biol",
+            "volume": "609",
+            "issn": "",
+            "pages": "197-222",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF138": {
+            "title": "Recursive SVM biomarker selection for early detection of breast cancer in peripheral blood",
+            "authors": [],
+            "year": 2013,
+            "venue": "BMC Med Genomics",
+            "volume": "6",
+            "issn": "Suppl 1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF139": {
+            "title": "Applying bioinformatics to proteomics: is machine learning the answer to biomarker discovery for PD and MSA?",
+            "authors": [],
+            "year": 2012,
+            "venue": "Mov Disord",
+            "volume": "27",
+            "issn": "13",
+            "pages": "1595-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF140": {
+            "title": "Application of proteomic marker ensembles to subcellular organelle identification",
+            "authors": [],
+            "year": 2010,
+            "venue": "Mol Cell Proteomics",
+            "volume": "9",
+            "issn": "2",
+            "pages": "388-402",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF141": {
+            "title": "Computational identification of post-translational modification sites and functional families reveal possible moonlighting role of rotaviral proteins",
+            "authors": [],
+            "year": 2010,
+            "venue": "Bioinformation",
+            "volume": "4",
+            "issn": "10",
+            "pages": "448-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF142": {
+            "title": "Measurements of protein sequence-structure correlations",
+            "authors": [],
+            "year": 2004,
+            "venue": "Proteins",
+            "volume": "57",
+            "issn": "4",
+            "pages": "804-10",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF143": {
+            "title": "Evaluation and integration of existing methods for computational prediction of allergens",
+            "authors": [],
+            "year": 2013,
+            "venue": "BMC Bioinformatics",
+            "volume": "14",
+            "issn": "Suppl 4",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF144": {
+            "title": "How changes in extracellular matrix mechanics and gene expression variability might combine to drive cancer progression",
+            "authors": [],
+            "year": 2013,
+            "venue": "PLoS One",
+            "volume": "8",
+            "issn": "10",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF145": {
+            "title": "Genome-wide association and sequencing studies on colorectal cancer",
+            "authors": [],
+            "year": 2013,
+            "venue": "Semin Cancer Biol",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

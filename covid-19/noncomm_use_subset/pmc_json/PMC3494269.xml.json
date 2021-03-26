@@ -1,0 +1,5178 @@
+{
+    "paper_id": "PMC3494269",
+    "metadata": {
+        "title": "Evolution of Viral Proteins Originated De Novo by Overprinting",
+        "authors": [
+            {
+                "first": "Niv",
+                "middle": [],
+                "last": "Sabath",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Andreas",
+                "middle": [],
+                "last": "Wagner",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "David",
+                "middle": [],
+                "last": "Karlin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Novel protein-coding genes can have two fundamental origins (reviewed in Long et al. 2003; Babushok et al. 2007; Zhou and Wang 2008; Bornberg-Bauer et al. 2010; Kaessmann 2010; Tautz and Domazet-Loso 2011). In the first, a gene originates by modification of an existing gene, for example, through gene duplication, exon shuffling, gene fusion, horizontal gene transfer, or transposition. In the second, a gene originates de novo. This mechanism was thought to be highly improbable (Ohno 1970; Jacob 1977), but recent studies have provided experimental evidence that it may be frequent. De novo origination can take place in a previously noncoding region, such as an intergenic region (Cai et al. 2008; Toll-Riera et al. 2009b; Li, Zhang, et al. 2010), or an intron (Sorek 2007). However, a gene can also originate de novo from an open reading frame that already encodes a protein, by a mechanism called \u201coverprinting\u201d, in which mutations lead to the expression of a second reading frame overlapping the first one (Ohno 1984; Keese and Gibbs 1992; Rancurel et al. 2009; Li, Dong, et al. 2010). Genome-scale computational analyses or experimental analyses of RNA transcripts have proposed many candidate genes originated de novo through these mechanisms (Levine et al. 2006; Begun et al. 2007; Zhou et al. 2008; Knowles and McLysaght 2009; Chen et al. 2010; Wu et al. 2011; Yang and Huang 2011).",
+            "cite_spans": [
+                {
+                    "start": 73,
+                    "end": 89,
+                    "mention": "Long et al. 2003",
+                    "ref_id": "BIBREF82"
+                },
+                {
+                    "start": 91,
+                    "end": 111,
+                    "mention": "Babushok et al. 2007",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 113,
+                    "end": 131,
+                    "mention": "Zhou and Wang 2008",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 133,
+                    "end": 159,
+                    "mention": "Bornberg-Bauer et al. 2010",
+                    "ref_id": "BIBREF109"
+                },
+                {
+                    "start": 161,
+                    "end": 175,
+                    "mention": "Kaessmann 2010",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 177,
+                    "end": 204,
+                    "mention": "Tautz and Domazet-Loso 2011",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 482,
+                    "end": 491,
+                    "mention": "Ohno 1970",
+                    "ref_id": "BIBREF96"
+                },
+                {
+                    "start": 493,
+                    "end": 503,
+                    "mention": "Jacob 1977",
+                    "ref_id": "BIBREF67"
+                },
+                {
+                    "start": 685,
+                    "end": 700,
+                    "mention": "Cai et al. 2008",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 702,
+                    "end": 725,
+                    "mention": "Toll-Riera et al. 2009b",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 727,
+                    "end": 749,
+                    "mention": "Li, Zhang, et al. 2010",
+                    "ref_id": "BIBREF79"
+                },
+                {
+                    "start": 766,
+                    "end": 776,
+                    "mention": "Sorek 2007",
+                    "ref_id": "BIBREF119"
+                },
+                {
+                    "start": 1014,
+                    "end": 1023,
+                    "mention": "Ohno 1984",
+                    "ref_id": "BIBREF95"
+                },
+                {
+                    "start": 1025,
+                    "end": 1045,
+                    "mention": "Keese and Gibbs 1992",
+                    "ref_id": "BIBREF71"
+                },
+                {
+                    "start": 1047,
+                    "end": 1067,
+                    "mention": "Rancurel et al. 2009",
+                    "ref_id": "BIBREF105"
+                },
+                {
+                    "start": 1069,
+                    "end": 1090,
+                    "mention": "Li, Dong, et al. 2010",
+                    "ref_id": "BIBREF79"
+                },
+                {
+                    "start": 1253,
+                    "end": 1271,
+                    "mention": "Levine et al. 2006",
+                    "ref_id": "BIBREF77"
+                },
+                {
+                    "start": 1273,
+                    "end": 1290,
+                    "mention": "Begun et al. 2007",
+                    "ref_id": "BIBREF87"
+                },
+                {
+                    "start": 1292,
+                    "end": 1308,
+                    "mention": "Zhou et al. 2008",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1310,
+                    "end": 1336,
+                    "mention": "Knowles and McLysaght 2009",
+                    "ref_id": "BIBREF72"
+                },
+                {
+                    "start": 1338,
+                    "end": 1354,
+                    "mention": "Chen et al. 2010",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1356,
+                    "end": 1370,
+                    "mention": "Wu et al. 2011",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1372,
+                    "end": 1391,
+                    "mention": "Yang and Huang 2011",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Most studies in this area have focused on eukaryotes, which are not necessarily the best organisms to study de novo genes. First, the incidence of de novo gene origination may be relatively low in eukaryotes, ranging from 2 to 12% of all new gene origination events according to recent estimates (Zhou et al. 2008; Toll-Riera et al. 2009a; Ekman and Elofsson 2010). Second, direct experimental evidence for the expression of the proteins encoded by candidate de novo genes is not always available in eukaryotes\u2014some might be artifacts of genome annotation (Wang et al. 2003). Third, most eukaryotic candidate genes are structurally and functionally poorly characterized. Finally, current protocols to identify genes created de novo from noncoding sequences in eukaryotic genomes focus on genes with similarity to genes already annotated in the genome sequence, whereas some de novo genes may not be currently annotated, even as hypothetical, which would preclude their discovery (Guerzoni and McLysaght 2011).",
+            "cite_spans": [
+                {
+                    "start": 297,
+                    "end": 313,
+                    "mention": "Zhou et al. 2008",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 315,
+                    "end": 338,
+                    "mention": "Toll-Riera et al. 2009a",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 340,
+                    "end": 363,
+                    "mention": "Ekman and Elofsson 2010",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 557,
+                    "end": 573,
+                    "mention": "Wang et al. 2003",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 980,
+                    "end": 1007,
+                    "mention": "Guerzoni and McLysaght 2011",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The identification of de novo genes in viruses does not suffer from these problems or to a much lesser extent. This holds especially for genes generated by overprinting. Overlapping genes are very common in viral genomes (Belshaw et al. 2007; Chirico et al. 2010), providing an abundant source of such de novo genes. In addition, in most cases, the expression of their protein product has been proven, and their function is at least partly known (Rancurel et al. 2009). Finally, using overlapping genes allows the identification of proteins originated de novo with high reliability (see later), by avoiding the confounding factors that limit current approaches to identify proteins generated de novo from noncoding sequences (Guerzoni and McLysaght 2011). For brevity, we will refer here to de novo genes as genes that originated through overprinting.",
+            "cite_spans": [
+                {
+                    "start": 222,
+                    "end": 241,
+                    "mention": "Belshaw et al. 2007",
+                    "ref_id": "BIBREF98"
+                },
+                {
+                    "start": 243,
+                    "end": 262,
+                    "mention": "Chirico et al. 2010",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 447,
+                    "end": 467,
+                    "mention": "Rancurel et al. 2009",
+                    "ref_id": "BIBREF105"
+                },
+                {
+                    "start": 726,
+                    "end": 753,
+                    "mention": "Guerzoni and McLysaght 2011",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Viral de novo genes often encode proteins that play a role in viral pathogenicity or spreading, rather than proteins central to viral replication or structure (Li and Ding 2006; Rancurel et al. 2009). The majority of these proteins are predicted to be structurally disordered, i.e., they lack a stable three-dimensional structure (Dyson and Wright 2005; Tompa 2005; Sickmeier et al. 2007), but those that are ordered have intriguing structural features (Rancurel et al. 2009). For instance, the protein p19, originated de novo in the plant virus family Tombusviridae (Rancurel et al. 2009), has a previously unknown tertiary structure and a previously unknown mode of binding to small interfering RNAs (Vargason et al. 2003). This suggests that de novo gene origination can lead to evolutionary innovations in protein structure and function (Rancurel et al. 2009; Bornberg-Bauer et al. 2010; Kaessmann 2010; Abroi and Gough 2011).",
+            "cite_spans": [
+                {
+                    "start": 160,
+                    "end": 176,
+                    "mention": "Li and Ding 2006",
+                    "ref_id": "BIBREF78"
+                },
+                {
+                    "start": 178,
+                    "end": 198,
+                    "mention": "Rancurel et al. 2009",
+                    "ref_id": "BIBREF105"
+                },
+                {
+                    "start": 331,
+                    "end": 352,
+                    "mention": "Dyson and Wright 2005",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 354,
+                    "end": 364,
+                    "mention": "Tompa 2005",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 366,
+                    "end": 387,
+                    "mention": "Sickmeier et al. 2007",
+                    "ref_id": "BIBREF118"
+                },
+                {
+                    "start": 454,
+                    "end": 474,
+                    "mention": "Rancurel et al. 2009",
+                    "ref_id": "BIBREF105"
+                },
+                {
+                    "start": 568,
+                    "end": 588,
+                    "mention": "Rancurel et al. 2009",
+                    "ref_id": "BIBREF105"
+                },
+                {
+                    "start": 703,
+                    "end": 723,
+                    "mention": "Vargason et al. 2003",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 842,
+                    "end": 862,
+                    "mention": "Rancurel et al. 2009",
+                    "ref_id": "BIBREF105"
+                },
+                {
+                    "start": 864,
+                    "end": 890,
+                    "mention": "Bornberg-Bauer et al. 2010",
+                    "ref_id": "BIBREF109"
+                },
+                {
+                    "start": 892,
+                    "end": 906,
+                    "mention": "Kaessmann 2010",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 908,
+                    "end": 928,
+                    "mention": "Abroi and Gough 2011",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "A prerequisite to identify a de novo gene is that it must have a monophyletic distribution in one clade\u2014the \u201cfocal\u201d clade (fig. 1a, taxa T1, T2, and T3)\u2014while being absent from organisms outside this clade (fig. 1a, taxa T4 and T5). We note that this prerequisite is necessary but not sufficient. Genes fulfilling it may have an ancient origin, older than the focal clade, but they might have diverged beyond recognition outside this clade (Elhaik et al. 2006). Alternatively, they may have entered the focal clade through horizontal gene transfer. These confounding factors can be easily excluded for genes that arose by overprinting (fig. 1b, blue arrows) within a pre-existing \u201cancestral\u201d reading frame (red arrows). Specifically, if the ancestral gene is present outside the focal clade (e.g., taxa T4 and T5 in fig. 1b), one can exclude divergence beyond recognition and horizontal gene transfer, because in either case, the ancestral gene would not be present outside the focal clade.\n",
+            "cite_spans": [
+                {
+                    "start": 441,
+                    "end": 459,
+                    "mention": "Elhaik et al. 2006",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": [
+                {
+                    "start": 123,
+                    "end": 129,
+                    "mention": "fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 207,
+                    "end": 213,
+                    "mention": "fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 636,
+                    "end": 642,
+                    "mention": "fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 816,
+                    "end": 822,
+                    "mention": "fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Taking the above considerations into account, we ask the following questions about the evolutionary dynamics of de novo genes: Do de novo genes adapt to their genome, and if so, how rapidly? What is their rate of evolution? How do the de novo genes influence the genes that they overlap? Do de novo genes contribute to viral fitness? To answer these questions, we analyzed the evolution of 12 independent, experimentally validated de novo genes in RNA viruses. We estimated their relative age and compared their evolutionary dynamics to that of the ancestral gene from which they originated.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "We investigated three properties of the ancestral and de novo genes, and the proteins they encode (see Materials and Methods). The first property is the relative sequence divergence, a proxy for the rate at which a protein changes its sequence. Relative divergence values above 1 indicate that a coding region evolves faster than a reference sequence, in our case the full length sequence of the ancestral gene of the pair considered.",
+            "cite_spans": [],
+            "section": "Three Quantifiers Are Useful to Describe the Evolutionary Dynamics of Overlapping Genes ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The second property is the selective constraint (dN/dS), which estimates the strength of purifying selection on a gene by its ratio of nonsynonymous to synonymous nucleotide substitutions. Values of dN/dS below 1 are evidence of purifying selection whose strength increases with decreasing dN/dS. In principle, values of dN/dS exceeding 1 might suggest that a gene evolves under positive selection (Nei and Gojobori 1986). However, the method we used to calculate dN/dS (Sabath et al. 2008) does not test statistically for positive selection, which is often limited to few sites within the gene (Nielsen and Yang 1998; Zhang et al. 2005). Therefore, values of dN/dS above 1 should be taken to indicate either neutral evolution or positive selection.",
+            "cite_spans": [
+                {
+                    "start": 399,
+                    "end": 420,
+                    "mention": "Nei and Gojobori 1986",
+                    "ref_id": "BIBREF91"
+                },
+                {
+                    "start": 471,
+                    "end": 489,
+                    "mention": "Sabath et al. 2008",
+                    "ref_id": "BIBREF112"
+                },
+                {
+                    "start": 596,
+                    "end": 617,
+                    "mention": "Nielsen and Yang 1998",
+                    "ref_id": "BIBREF93"
+                },
+                {
+                    "start": 619,
+                    "end": 636,
+                    "mention": "Zhang et al. 2005",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Three Quantifiers Are Useful to Describe the Evolutionary Dynamics of Overlapping Genes ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The third and final property is the Codon Similarity Index (CSI), which measures the similarity between the codon usage of a gene and that of the rest of the genome containing it. CSI is based on the same calculations as the Codon Adaptation Index (CAI), a commonly used measure of codon usage bias (Sharp and Li 1987) but uses the rest of the genome as a reference set instead of a data set of highly expressed genes (see Materials and Methods).",
+            "cite_spans": [
+                {
+                    "start": 300,
+                    "end": 317,
+                    "mention": "Sharp and Li 1987",
+                    "ref_id": "BIBREF117"
+                }
+            ],
+            "section": "Three Quantifiers Are Useful to Describe the Evolutionary Dynamics of Overlapping Genes ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "We first compared these three properties for all ancestral/de novo gene pairs. Table 2 summarizes the results of this comparison. Overall, de novo genes evolve significantly faster (paired two-sided Wilcoxon signed rank test, P < 7.1 \u00d7 10\u221234), are under stronger selective constraint (P < 2.9 \u00d7 10\u22124), and exhibit lower CSI values (P < 5.4 \u00d7 10\u22125) than ancestral genes. The magnitude of the difference between the mean CSI of ancestral genes (0.66) and that of de novo genes (0.62) is low (6%), whereas the difference between the mean relative divergence of the ancestral and de novo genes is high (43%), as is the difference between the selection intensity of ancestral and de novo genes (47%).\n",
+            "cite_spans": [],
+            "section": "Three Quantifiers Are Useful to Describe the Evolutionary Dynamics of Overlapping Genes ::: Results",
+            "ref_spans": [
+                {
+                    "start": 79,
+                    "end": 86,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "We asked how these properties depend on the time since a de novo gene originated. To this end, we estimated this time by using the sequence divergence of the RNA-dependent RNA polymerase domain of each genome (see Materials and Methods). We then plotted the three properties against this estimated age in figures 3 and 4. The horizontal axis of figures 3 and 4 corresponds to the origination time of de novo genes (labeled by viral genus), with the most recently originated de novo genes shown to the left. The vertical axis shows the relative divergence (fig. 3a), selective constraint (fig. 3b), and CSI (fig. 4). Note that the relative divergence and the selective constraints are calculated for pairs of homologous genes, whereas the CSI is calculated for single genes (see Materials and Methods). Thus, dots in figure 3a and b correspond to values obtained for pairs, whereas dots in figure 4 correspond to values for single genes. Regression lines for ancestral genes (red) and de novo genes (blue) indicate general trends. We used analysis of covariance (ANCOVA) to test whether the slopes of the two regression lines in each panel were different.\n\n",
+            "cite_spans": [],
+            "section": "Three Quantifiers Are Useful to Describe the Evolutionary Dynamics of Overlapping Genes ::: Results",
+            "ref_spans": [
+                {
+                    "start": 305,
+                    "end": 314,
+                    "mention": "figures 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 319,
+                    "end": 320,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 345,
+                    "end": 354,
+                    "mention": "figures 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 359,
+                    "end": 360,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 556,
+                    "end": 562,
+                    "mention": "fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 588,
+                    "end": 594,
+                    "mention": "fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 607,
+                    "end": 613,
+                    "mention": "fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 816,
+                    "end": 824,
+                    "mention": "figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 889,
+                    "end": 897,
+                    "mention": "figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Below, we first examine these three properties separately, before considering them together and synthesizing our observations.",
+            "cite_spans": [],
+            "section": "Three Quantifiers Are Useful to Describe the Evolutionary Dynamics of Overlapping Genes ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Figure 3a presents for each overlap the relative sequence divergence for the pairs of ancestral proteins (red) and the pairs of de novo proteins (blue). The regression line of the ancestors (red) is nearly horizontal (although the regression coefficient is significantly different from zero, P < 0.0012) and equal to one, suggesting that on average the overlapping regions of the ancestral proteins evolve at a similar rate as the full-length ancestral proteins. In contrast, de novo proteins (blue) show a higher relative divergence than their ancestral overlapping proteins. Accordingly, the slopes of the two regression lines are significantly different (P < 3.2 \u00d7 10\u221225). The range of values of the relative divergences between pairs of ancestral proteins is generally narrow or moderate. For instance, the relative divergences of the de novo gene of tymovirus (taxon 11), which encodes the movement protein, range between 1.2 and 2.8 and thus vary by less than a factor three. Three notable exceptions are the youngest de novo proteins of taxa 1 and 3 (respectively, influenzavirus A PB1-F2 and betacoronavirus protein I), which exhibit a considerable range of divergences (from 0 up to 10.4).",
+            "cite_spans": [],
+            "section": "Relative Divergence ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Figure 3b presents the selective constraint (dN/dS) for the ancestral and de novo genes in each group of viruses we studied. The ancestral and de novo genes are subject to very different constraints, as attested by the significant difference (P < 4.9 \u00d7 10\u221213) between the slopes of their respective regression lines, and the fact that the ancestral regression line has a positive slope, whereas the de novo regression line has a negative slope. The low values of dN/dS < 1 below for most genes indicate that they are under strong selective constraints (purifying selection), i.e., mutations that change the protein sequence are likely to be selected against. In several viruses, the values of dN/dS for the ancestral genes are particularly low, suggesting an extreme functional or structural constraint. For example, the ratio dN/dS of the ancestral gene in viruses 1, 4, and 5 is below 0.05. In contrast, in some cases, either the de novo gene (the influenzavirus A PB1-F2, the betacoronavirus protein I, and the tymovirus movement protein, respectively, from groups 1, 3, and 5) or the ancestral gene (the ilavirus polymerase and the betanodavirus protein A, from groups 7 and 12, respectively) exhibits dN/dS \u2265 1, which indicates neutral evolution or positive selection. As explained at the beginning of the Results section, the test we employ cannot distinguish between them. For all groups, the trends in relative divergence (fig. 3a) and selective constraints (fig. 3b) were consistent with one another. For example, the de novo proteins of cardioviruses are more highly diverged than the ancestral proteins and they also show a lower selective constraint.",
+            "cite_spans": [],
+            "section": "Selective Constraint ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1431,
+                    "end": 1437,
+                    "mention": "fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1467,
+                    "end": 1473,
+                    "mention": "fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Figure 4 presents the CSI values of ancestral and de novo genes. The slopes of the two regression lines show a significant difference (P < 0.032). The slope of the ancestral regression line is not significantly different from zero (P > 0.96), whereas the de novo regression line has a positive slope (P < 0.003). Relative to their ancestral overlapping genes, most de novo genes show lower CSI values, although the ranges of CSI values in de novo and ancestral genes overlap markedly in most groups. An exception is omegatetraviruses (taxon 4), in which the CSI values of the de novo p17 genes are all higher than the CSI values of the ancestral capsid genes. The CSI values for homologous genes can take a wide range of values. For instance, the CSI of the betacoronavirus I gene varies from 0.27 to 0.67. Overall, the data suggest that the codon usage of de novo genes becomes slowly assimilated into that of the host genome.",
+            "cite_spans": [],
+            "section": "Codon Similarity Index ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Overall, we found that the differences between ancestral and de novo genes appears to decrease with time. Taxa 1\u20135, with the shortest distance from the origin\u2014corresponding to the youngest de novo genes\u2014all exhibit a similar pattern (fig. 3): the de novo genes show higher relative divergence with respect to their ancestral overlapping genes and weaker selective constraint.",
+            "cite_spans": [],
+            "section": "De Novo Genes Have Different Properties Depending on Their Age of Origin ::: Results",
+            "ref_spans": [
+                {
+                    "start": 234,
+                    "end": 240,
+                    "mention": "fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The pattern that contrasts most with that of taxa 1\u20135 occurs in taxa 7 and 12 (Ilarvirus and Betanodavirus, respectively), where the de novo genes have a more ancient origin. Here, the de novo genes evolve more slowly and exhibit stronger purifying selection relative to their ancestral overlapping genes (fig. 3). In other words, here mutations that change the sequence of the de novo proteins are more deleterious, on average, than mutations that change the sequence of the overlapping ancestral proteins.",
+            "cite_spans": [],
+            "section": "De Novo Genes Have Different Properties Depending on Their Age of Origin ::: Results",
+            "ref_spans": [
+                {
+                    "start": 306,
+                    "end": 312,
+                    "mention": "fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Overall, our observations suggest that older de novo genes are more adapted to their genome and evolve under stronger purifying selection. This inference is supported by experimental data on the fitness effects of mutations in de novo genes of different ages (table 3). Mutations in the youngest de novo genes (taxa 1\u20133) have little to moderate effect, whereas suppression of older de novo genes (taxa 6 and 10\u201312) has severe effects.\n",
+            "cite_spans": [],
+            "section": "De Novo Genes Have Different Properties Depending on Their Age of Origin ::: Results",
+            "ref_spans": [
+                {
+                    "start": 260,
+                    "end": 267,
+                    "mention": "table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Our results suggest that de novo genes do adapt to their genome. More specifically, de novo genes evolve very rapidly shortly after their origin. As they age, they tend to experience increasingly severe selective constraints, and their codon usage tends to approach that of the ancestral gene from which they originate.",
+            "cite_spans": [],
+            "section": "De Novo Genes Adapt to Their Genomes ::: Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our results are consistent with population genetics theory (Hartl and Clark 1997). Viruses have large population sizes. At such large sizes, natural selection is highly efficient, which has two consequences regarding de novo genes. First, they are likely to become fixed in a population only if they provide some selective advantage. Second, even though a de novo gene might initially only provide a very small fitness benefit, in a large population this fitness benefit can be sufficient to cause the gene\u2019s fixation. Immediately after its origin, the sequence of a de novo gene will typically be far from optimal for the (rudimentary) function it provides, unlike a gene originated through modification of an existing gene. Consequently, one would expect a de novo gene to evolve rapidly shortly after its origin and to become better adapted as it ages, resulting in increased selective constraints and a decreased rate of sequence change.",
+            "cite_spans": [
+                {
+                    "start": 60,
+                    "end": 80,
+                    "mention": "Hartl and Clark 1997",
+                    "ref_id": "BIBREF60"
+                }
+            ],
+            "section": "De Novo Genes Adapt to Their Genomes ::: Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our results also suggest that in general, the ancestral genes are more constrained in sequence than the de novo genes which overlap them. However, this pattern can be reversed in old de novo genes. In particular, three de novo genes of our data set, which encode the Ilarvirus 2 b protein, the morbillivirus C protein, and betanodavirus B protein (taxa 7, 10 and 12), are subject to stronger selective constraints than their ancestral genes (fig. 3b). We speculate that this reversal could reflect an evolutionary \u201ctug of war\u201d between the two genes over the dominance of the sequence. An ultimate \u201cvictory\u201d of a de novo gene in this tug of war would consist in the disappearance of the ancestral gene. We speculate that some viral genes that do not overlap any other gene today may have originated through overprinting but have eventually lost the overlap. A similar scenario has been proposed for an overlapping region of two protein-coding genes within the genome of archaeal Thermoplasma (Rogozin et al. 2002). These overlapping genes are nonoverlapping in other related genomes, possibly because of duplication and consequent loss (Rogozin et al. 2002).",
+            "cite_spans": [
+                {
+                    "start": 992,
+                    "end": 1011,
+                    "mention": "Rogozin et al. 2002",
+                    "ref_id": "BIBREF106"
+                },
+                {
+                    "start": 1136,
+                    "end": 1155,
+                    "mention": "Rogozin et al. 2002",
+                    "ref_id": "BIBREF106"
+                }
+            ],
+            "section": "De Novo Genes Adapt to Their Genomes ::: Discussion",
+            "ref_spans": [
+                {
+                    "start": 442,
+                    "end": 448,
+                    "mention": "fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "For most overlapping gene pairs in our data set, the identification of the de novo gene is highly reliable, as the ancestral gene has a much wider phylogenetic distribution than the de novo gene. For instance, the de novo movement protein of Tymoviruses (taxon 5) has homologs only in this genus, whereas its ancestor, the methyltransferase-guanylyltransferase has homologs in over a dozen families (Rozanov et al. 1992).",
+            "cite_spans": [
+                {
+                    "start": 400,
+                    "end": 419,
+                    "mention": "Rozanov et al. 1992",
+                    "ref_id": "BIBREF107"
+                }
+            ],
+            "section": "Our Evolutionary Inferences Are Robust and Biologically Coherent ::: Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "One important caveat of our analysis is that we are unable to estimate the absolute age of de novo genes but only their age relative to the divergence of a viral housekeeping gene that encodes the RNA-dependent RNA polymerase. Our relative age estimates of de novo genes, however, are broadly consistent with their taxonomic distribution (table 1, column 6): as expected, young de novo genes show a more restricted distribution than older de novo genes. The youngest genes (groups 1\u20133 in fig. 3) are found in less than one genus, with gene 1 occurring only in a single species (these observations are not due to sequencing bias, as each taxon considered contains several species or genera). Conversely, all oldest de novo genes (6\u201312) are found at least throughout a whole genus (in two genera for cases 10 and 11).",
+            "cite_spans": [],
+            "section": "Our Evolutionary Inferences Are Robust and Biologically Coherent ::: Discussion",
+            "ref_spans": [
+                {
+                    "start": 488,
+                    "end": 494,
+                    "mention": "fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 339,
+                    "end": 346,
+                    "mention": "table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "A case where gene age may have been overestimated is that of taxon 3 (betacoronavirus I gene). Our analysis suggested that the I and ORF9b genes have a common origin (see supplementary information, Supplementary Material online, case 3) despite their different lengths (98aa and 207aa, respectively) and lack of significant sequence similarity (not shown). This inference is based on assuming functionality for the unannotated ORFs in five closely related genomes (supplementary fig. S4, Supplementary Material online). Consequently, we calculated the age of the I gene by considering the node common to I and ORF9b (marked with blue line, supplementary fig. S5, Supplementary Material online, group 3). In the alternative scenario where these two genes have independent origins, their estimated age would be reduced. Nevertheless, the overall pattern of the results would remain unchanged (not shown). Another caveat to our study is that RNA secondary structure, and selection pressure for high protein expression level may be partly responsible for the differences we observed in codon usage (Plotkin and Kudla 2011).",
+            "cite_spans": [
+                {
+                    "start": 1095,
+                    "end": 1117,
+                    "mention": "Plotkin and Kudla 2011",
+                    "ref_id": "BIBREF104"
+                }
+            ],
+            "section": "Our Evolutionary Inferences Are Robust and Biologically Coherent ::: Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Finally, the estimated rate of evolution of most ancestral and de novo proteins (fig. 3) is generally coherent with their function or effect on viral fitness (table 3). For instance, the ancestral methyltransferase-guanyltransferase of tymoviruses experiences severe constraints, as expected from an enzyme, whereas the de novo protein I of betacoronaviruses, which is dispensable for replication, experiences low or no constraints. We note two exceptions: first, the orthohepadnavirus replicase gene, encoding an essential reverse transcriptase function, is not subject to very strong selective constraint (e.g., dN/dS between 0.28 and 0.78, taxon 11 in fig. 3b). However, this discrepancy is readily explained. The overlapping region of the replicase gene in fact encodes two domains (fig. 1): a disordered, hypervariable linker and the reverse transcriptase domain. The relaxed selective constraint is the result of a high dN/dS for the linker (average of 0.94) and a very low dN/dS for the reverse transcriptase domain (average of 0.15). Second, the tymovirus movement protein gene has a dN/dS of 1, suggesting an absence of selective pressure, despite encoding an important function that allows the spread of viral RNA between cells. Again, this discrepancy can be attributed to the fact that the movement protein consists of a slowly evolving region (around aa 1\u2013400) and a fast-evolving region (C-terminal 200aa) (results not shown).",
+            "cite_spans": [],
+            "section": "Our Evolutionary Inferences Are Robust and Biologically Coherent ::: Discussion",
+            "ref_spans": [
+                {
+                    "start": 81,
+                    "end": 87,
+                    "mention": "fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 655,
+                    "end": 661,
+                    "mention": "fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 787,
+                    "end": 793,
+                    "mention": "fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 159,
+                    "end": 166,
+                    "mention": "table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Our results have two practical implications. First, they suggest that recently evolved genes might have strain-specific functions, or possibly no function, as suggested previously (Trifonov and Rabadan 2009) for PB1-F2 (taxon 1), the youngest de novo genes in our data set. Experimental studies should thus take this possibility into account. Our current method to estimate dN/dS does not tell us whether the elevated dN/dS values observed in some young de novo genes indicate neutral evolution or positive selection. However, it is possible that they come not only from neutral mutations but also from beneficial mutations subject to positive selection, which would reflect evolutionary adaptations.",
+            "cite_spans": [
+                {
+                    "start": 181,
+                    "end": 206,
+                    "mention": "Trifonov and Rabadan 2009",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Young De Novo Genes Might Have Strain-Specific Functions and Be Difficult to Detect by Sequence Analysis ::: Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Second, our results have implications for the identification of overlapping genes. Current bioinformatics methods to detect overlapping genes use the signature of purifying selection (Firth and Brown 2005, 2006; Sabath et al. 2009; Sabath and Graur 2010). These recently developed methods have had great success and lead to discoveries in many viral taxa (Chung et al. 2008; Firth 2008; Firth and Atkins 2008a, b; Sabath et al. 2009; Firth and Atkins 2009a, b, c; Firth and Atkins 2010, Firth et al. 2010). However, the signature of purifying selection is mostly absent in young de novo genes. Thus, the number of young de novo genes may be much larger than it appears, because these methods can simply not detect many such genes.",
+            "cite_spans": [
+                {
+                    "start": 184,
+                    "end": 204,
+                    "mention": "Firth and Brown 2005",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 206,
+                    "end": 210,
+                    "mention": "2006",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 212,
+                    "end": 230,
+                    "mention": "Sabath et al. 2009",
+                    "ref_id": "BIBREF113"
+                },
+                {
+                    "start": 232,
+                    "end": 253,
+                    "mention": "Sabath and Graur 2010",
+                    "ref_id": "BIBREF111"
+                },
+                {
+                    "start": 356,
+                    "end": 373,
+                    "mention": "Chung et al. 2008",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 375,
+                    "end": 385,
+                    "mention": "Firth 2008",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 387,
+                    "end": 409,
+                    "mention": "Firth and Atkins 2008a",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 411,
+                    "end": 412,
+                    "mention": "b",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 414,
+                    "end": 432,
+                    "mention": "Sabath et al. 2009",
+                    "ref_id": "BIBREF113"
+                },
+                {
+                    "start": 434,
+                    "end": 456,
+                    "mention": "Firth and Atkins 2009a",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 458,
+                    "end": 459,
+                    "mention": "b",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 461,
+                    "end": 462,
+                    "mention": "c",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 464,
+                    "end": 485,
+                    "mention": "Firth and Atkins 2010",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 487,
+                    "end": 504,
+                    "mention": "Firth et al. 2010",
+                    "ref_id": "BIBREF48"
+                }
+            ],
+            "section": "Young De Novo Genes Might Have Strain-Specific Functions and Be Difficult to Detect by Sequence Analysis ::: Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In closing, we point to several directions for future research. Approaches to estimate selection pressures in overlapping genes (e.g., Sabath et al. 2008) lag behind those for nonoverlapping genes (reviewed in Anisimova and Kosiol 2009), which can detect lineage-specific and site-specific selection pressures. The development of advanced methods could, for instance, reveal the role of positive selection in de novo gene origination and perhaps predict interactions between proteins encoded by overlapping genes, such as the Rz and Rz1 genes of bacteriophage lambda (Zhang and Young 1999). Finally, further research is needed to shed light on how exactly de novo overlapping genes originate and become established, i.e., the mutational events that result in their expression, their frequency, and their effects on viral fitness.",
+            "cite_spans": [
+                {
+                    "start": 135,
+                    "end": 153,
+                    "mention": "Sabath et al. 2008",
+                    "ref_id": "BIBREF112"
+                },
+                {
+                    "start": 210,
+                    "end": 235,
+                    "mention": "Anisimova and Kosiol 2009",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 568,
+                    "end": 588,
+                    "mention": "Zhang and Young 1999",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Conclusion and Perspectives ::: Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We extracted all fully sequenced viral genomes from the NCBI viral genome database (Bao et al. 2004) in June 2011 and identified all viral proteins annotated in these genomes. All homology searches were carried out against a database of these proteins, using PSI-basic local alignment search tool (BLAST) (Altschul et al. 1997) with an E value cutoff of 10\u22126. We performed all multiple sequence alignments using MAFFT (Katoh et al. 2002) and constructed phylogenetic trees with the BIONG method (Gascuel 1997). We rooted these trees with the mid-point rooting method (Farris 1972). We predicted the domain organization of proteins encoded by overlapping genes using ANNIE (Ooi et al. 2009).",
+            "cite_spans": [
+                {
+                    "start": 84,
+                    "end": 99,
+                    "mention": "Bao et al. 2004",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 306,
+                    "end": 326,
+                    "mention": "Altschul et al. 1997",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 419,
+                    "end": 436,
+                    "mention": "Katoh et al. 2002",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 496,
+                    "end": 508,
+                    "mention": "Gascuel 1997",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 568,
+                    "end": 579,
+                    "mention": "Farris 1972",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 673,
+                    "end": 688,
+                    "mention": "Ooi et al. 2009",
+                    "ref_id": "BIBREF97"
+                }
+            ],
+            "section": "Sequence Analyses ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We identified from the literature a set of 40 overlapping gene pairs for which the expression of a protein product from two reading frames had been experimentally verified. All gene pairs in this data set come from viruses that infect eukaryotes. Among these gene pairs, we selected 29 pairs coming from viruses whose genome encodes an RNA-dependent RNA polymerase (RdRP), to facilitate comparison among clades (see later). We further narrowed the data set to overlapping gene pairs in which we could identify which gene had originated de novo (see procedure described later). In total, we obtained 12 gene pairs that correspond to 12 cases of de novo origin, stemming from 12 families of RNA viruses that met these criteria. The data set shares some genes with a previously published data set (4 cases out of 12: groups 4, 6, 8, and 11 below) (Rancurel et al. 2009). The reason why we could include only a minority of the genes published in the Rancurel data set (4 out of 17) is that we restricted ourselves to considering pairs in which both ancestral and de novo proteins had less than 50% amino acid divergence (percentage of identity). Table 1 lists, for each gene pair, the species taxonomy, the genome accession number, the names of the overlapping genes, and their lengths. In the rest of the article, we will refer to each case either by its genus or by the number of its clade, as listed in table 1. Table 3 lists bibliographical evidence about the expression, function, and fitness effect of mutations in the de novo gene.",
+            "cite_spans": [
+                {
+                    "start": 845,
+                    "end": 865,
+                    "mention": "Rancurel et al. 2009",
+                    "ref_id": "BIBREF105"
+                }
+            ],
+            "section": "Collection of Viral Overlapping Genes ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 1142,
+                    "end": 1149,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1402,
+                    "end": 1409,
+                    "mention": "table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1411,
+                    "end": 1418,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "To identify de novo gene candidates, we applied the criterion of monophyly stated in the introduction: one of the genes in an overlapping pair\u2014the ancestral gene\u2014must occur in each member of a viral clade, whereas the other gene\u2014the de novo gene\u2014must be restricted to a single subclade, the focal clade (fig. 1b). To find genes that meet this criterion, we first identified, for each gene pair, homologous protein products in related genomes. (We found no evidence of duplicated genes in the genomes under study, hence all our homologs are orthologs.) We aligned the homologous protein sequences of the ancestral protein (which is more phylogenetically widespread) and constructed their phylogenetic tree. By manual examination of these trees, we identified 12 cases of de novo origin (tables 1 and 3) that met the criterion of monophyly. We scanned the related genomes of the focal clade for unannotated ORFs to overcome missing genes due to fault annotation. These trees also allowed us to infer the internal node of a tree closest to the origin of the de novo gene. We call this node the last common ancestor (LCA, marked with a blue circle in the hypothetical example of fig. 1b). To ensure that the identification of the LCA is not biased by genome annotation, we manually examined the related genomes for presence of homologous unannotated ORFs. We provide detailed explanations of the challenges in de novo gene and LCA identification in the supplementary information, Supplementary Material online (supplementary figs. S1\u2013S4, Supplementary Material online). The phylogenetic tree and the corresponding genomic maps of the 12 cases are presented in supplementary figure S5, Supplementary Material online. For all gene pairs that met the monophyly criterion, we also determined the DNA sequence alignments corresponding to the amino acid sequence alignments (of the ancestral proteins), to enable the calculations described later.",
+            "cite_spans": [],
+            "section": "Identifying De Novo and Ancestral Genes ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 304,
+                    "end": 310,
+                    "mention": "fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1175,
+                    "end": 1181,
+                    "mention": "fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 786,
+                    "end": 794,
+                    "mention": "tables 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 799,
+                    "end": 800,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "To understand the evolutionary dynamics of de novo genes, one needs to estimate their age of origin and to compare this age among different clades. This estimation is made difficult by differences in mutation rate, population dynamics, and selection pressures among different viral genomes and genes (Duffy et al. 2008). To alleviate these difficulties, we calibrated our estimates with a reference molecule, the RdRP protein domain, which is common to all clades in the study (Bruenn 2003). The RdRP domain has a common origin and similar tertiary structure in the clades we study (Bruenn 2003), and thus we assume that as a first approximation it is subject to similar functional and structural constraints. In each genome listed in table 1, we identified the RdRP domain by using HHpred (Soding et al. 2005) against the PFAM database (Finn et al. 2008) with an E-value cutoff of 10\u221210. We identified the orthologous RdRP domains within the other genomes of each clade using PSI-BLAST, aligned them, and constructed their phylogenetic trees. Supplementary figure S6, Supplementary Material online, presents these \u201cRdRP trees.\u201d",
+            "cite_spans": [
+                {
+                    "start": 301,
+                    "end": 318,
+                    "mention": "Duffy et al. 2008",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 478,
+                    "end": 489,
+                    "mention": "Bruenn 2003",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 583,
+                    "end": 594,
+                    "mention": "Bruenn 2003",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 838,
+                    "end": 854,
+                    "mention": "Finn et al. 2008",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Estimation of the Relative Age of Origin of the De Novo Genes ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We defined the focal clade of the RdRP tree as the smallest clade that contains all the taxa found within the focal clade of the phylogenetic tree of the overlapping genes. The LCA for the RdRP tree was defined as earlier. We compared the focal clades in the RdRP tree and the tree of overlapping genes and found that in 9 of 12 cases the focal clades were identical, whereas in three cases (2, 5, and 12, within the genera Cardiovirus, Tymovirus, and Betanodavirus, respectively), we found minor differences (supplementary fig. S6, Supplementary Material online). Overall, this comparison suggested that the RdRP genes and the overlapping gene pairs have similar evolutionary histories. On the basis of the RdRP tree, we thus estimated as a proxy for the age of a de novo gene the sequence divergence of the RdRP domain in each focal clade since the origin of the de novo gene, i.e., its accumulated genetic distance D along the tree branches since the LCA. To estimate D, we generated 100 bootstrap RdRP trees. For each tree i (1 \u2264 i \u2264 100), we calculated Di, the average length of the phylogenetic tree branches between the LCA and each extant genome that contains the de novo gene. For the example in figure 1b, Di would calculate as [d(LCA, T1) + d(LCA, T2) + d(LCA, T3)]/3, where d(LCA, T1) = b1 + b2, d(LCA, T2) = b3 + b2, and d(LCA, T3) = b4, and b1, b2, b3, and b4 are the branch lengths shown in the figure. Finally, we estimate D as the average over all the bootstrap trees, . We estimated all branch lengths by the BIONG method (Gascuel 1997). In supplementary figure S7, Supplementary Material online, we present D and the standard deviation within each group. For convenience, we ordered the clades in table 1 according to increasing D.",
+            "cite_spans": [
+                {
+                    "start": 1541,
+                    "end": 1553,
+                    "mention": "Gascuel 1997",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "Estimation of the Relative Age of Origin of the De Novo Genes ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 1205,
+                    "end": 1213,
+                    "mention": "figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "For each of our 12 overlapping gene pairs (table 1), we collected the full sequences of the ancestral and the de novo genes, the sequence of the region of the genome where they overlapped, and the sequences of other genes annotated in the genome in which they occur. We also collected this information for homologous overlapping genes in related genomes within the focal clade (see earlier). As all subsequent analyses are carried on sequences within the focal clade, which is defined by the distribution of the de novo protein rather than the ancestral protein, it is independent of the BLAST cutoff. We used these data to study the following three properties of ancestral and de novo genes:\nThe \u201crelative sequence divergence\u201d between pairs of homologous proteins that the genes encode. We define the sequence divergence between two proteins as the proportion of amino acids in which they differ and the \u201crelative\u201d sequence divergence between two protein regions as their sequence divergence normalized (divided) by the sequence divergence of the corresponding ancestral proteins over their entire length. Consider, as a hypothetical example, the protein products of the overlapping genes in taxa T1 and T2 in figure 1b. The relative divergence between the ancestral proteins (red) of taxa T1 and T2 is the divergence between the protein region encoded by the part of the red gene that overlaps with the blue gene in taxa T1 and T2, divided by the divergence between the full-length red proteins of taxa T1 and T2. Analogously, the relative divergence between the de novo proteins of taxa T1\u2013T2 is the divergence between the protein region of the blue gene that overlaps with the red gene in T1 and T2 (in this case the whole blue protein), again divided by the divergence between the full-length red proteins of taxa T1 and T2. The reason why we chose to normalize divergence in this way is to allow comparison between pairs of species that have diverged at different times (e.g., species T1\u2013T2 diverged more recently than T1\u2013T3 in fig. 1b). We calculated the relative sequence divergence in this way for all homologous pairs of ancestral proteins and for all homologous pairs of de novo proteins in each of our 12 clades containing de novo gene pairs. Note that if the ancestral gene overlaps the de novo gene over its entire length, the relative divergence of the ancestral protein will be 1. This happens in case 6 (umbravirus).The \u201cselective constraint\u201d in the overlapping regions, estimated by the method of Sabath et al. (2008). This method, developed specifically for overlapping genes, accounts for independent selection pressures acting simultaneously on two overlapping genes by extending the single-gene model of codon evolution (Goldman and Yang 1994) to estimate the nonsynonymous/synonymous rate ratio (dN/dS) for each gene (reading frame) separately. Like the relative divergence, we calculated the selective constraint for pairs of homologous sequences. Specifically, we calculated selective constraint for all ancestral genes and de novo genes in each of our 12 cases. To prevent artifacts from saturation of synonymous substitutions, we restricted the estimation of the selective constraint to pairs in which both ancestral and de novo proteins had less than 50% amino acid divergence (percentage of identity). Because the method is inaccurate at low divergences (Sabath et al. 2008), we excluded sequence pairs with less than 1% amino acid divergence.The CSI of the overlapping regions relative to protein coding genes in the rest of the genome. CSI is based on the algorithm used to calculate the CAI (Sharp and Li 1987), which is the most commonly used measure of codon usage bias. The CAI compares the codon usage of a gene with that of a reference set of highly expressed genes in a given genome to examine whether a protein-coding gene is subject to selection for high translation rate (and thus presumably highly expressed). Instead, in this study, we apply the CSI as a measure of the similarity between the codon usage of a gene and that of all other genes in the same genome. Therefore, we calculated the CSI of a given gene as described in Sharp and Li (1987) with the difference that the reference used was the codon usage of all other protein-coding genes in the same genome instead of the codon usage only of highly expressed genes. We performed this calculation for the overlapping regions of all 12 ancestral/de novo gene pairs. Note that unlike relative divergence and selective constraint, the CSI is calculated for single genes and not for pairs of homologous genes.\n",
+            "cite_spans": [
+                {
+                    "start": 2515,
+                    "end": 2535,
+                    "mention": "Sabath et al. (2008)",
+                    "ref_id": "BIBREF112"
+                },
+                {
+                    "start": 2743,
+                    "end": 2764,
+                    "mention": "Goldman and Yang 1994",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 3384,
+                    "end": 3402,
+                    "mention": "Sabath et al. 2008",
+                    "ref_id": "BIBREF112"
+                },
+                {
+                    "start": 3624,
+                    "end": 3641,
+                    "mention": "Sharp and Li 1987",
+                    "ref_id": "BIBREF117"
+                },
+                {
+                    "start": 4171,
+                    "end": 4190,
+                    "mention": "Sharp and Li (1987)",
+                    "ref_id": "BIBREF117"
+                }
+            ],
+            "section": "Analysis of the Evolutionary Properties of Overlapping Genes ::: Materials and Methods",
+            "ref_spans": [
+                {
+                    "start": 1211,
+                    "end": 1219,
+                    "mention": "figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 2034,
+                    "end": 2040,
+                    "mention": "fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 43,
+                    "end": 50,
+                    "mention": "table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Overlapping Genes in the Study.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2.: Mean Values of Three Evolutionary Properties for Ancestral and De Novo Genes.\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3.: Evidence of Expression, Function, and Fitness Effect of the De Novo Genes in the Study.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Fig. 1.: Monophyletic distribution of genes originated de novo. (a) A gene that originated de novo (blue arrows) will exhibit a monophyletic distribution among related taxa. However, this distribution could also be the result of divergence of the gene beyond recognition or of acquisition of the gene through horizontal gene transfer (HGT). (b) For a gene that originated de novo (blue arrows) by overprinting an ancestral reading frame (red arrows), these confounding factors can be excluded (see Introduction). Colors are displayed in the electronic version of the article.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig. 2.: Structural and functional organization of the overlapping genes we studied. Proteins encoded by overlapping genes are shown to scale. For each protein pair, the ancestral protein is shown on the bottom and the de novo protein on top. B1, base domain 1; cc, coiled coil; Le, Leader region; PA2, phospholipase A2 domain; RdRP, RNA-dependent RNA polymerase domain; tm, transmembrane segment; z, zinc-binding region.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Fig. 3.: Evolutionary dynamics of ancestral (red) and de novo genes (blue). The vertical axes show (a) relative divergence and (b) selective constraint (dN/dS) for the 12 taxa. The horizontal axis represents the evolutionary distance from the origin of each de novo gene (i.e., the estimated age of genes within the clade). Regression lines are plotted for visualization of general trends. Low dN/dS values represent strong selective constraints (see text). Note that dN/dS in (b) could only be calculated for gene pairs that have less than 50% amino acid divergence at the amino acid level (see Materials and Methods). No selective constraint data could be calculated for cases 6 and 8 (bottom panel) as the sequence pairs in these clades have all diverged beyond 50%. Where neighboring groups had similar ages, we shifted their position slightly for visual clarity (groups 5 and 6).",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Fig. 4.: Codon Similarity Index (CSI) of ancestral (red) and de novo genes (blue). The horizontal axis represents the evolutionary distance from the origin of each de novo gene (as in fig. 3). Regression lines are plotted for visualization of general trends. High CSI values indicate high similarity between the codon usage of a gene and the codon usage of the rest of a genome. Colors are displayed in the electronic version of the paper.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Are viruses a source of new protein folds for organisms?\u2014virosphere structure space and evolution",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Abroi",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Gough",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Bioessays",
+            "volume": "33",
+            "issn": "",
+            "pages": "626-635",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Expression of Orf-69 of turnip yellow mosaic-virus is necessary for viral spread in plants",
+            "authors": [
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Bozarth",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Weiland",
+                    "suffix": ""
+                },
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Dreher",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Virology",
+            "volume": "187",
+            "issn": "",
+            "pages": "124-130",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Theiler's murine encephalomyelitis virus L* amino acid position 93 is important for virus persistence and virus-induced demyelination",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Stavrou",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Baida",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Viktorova",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Ghadge",
+                    "suffix": ""
+                },
+                {
+                    "first": "VI",
+                    "middle": [],
+                    "last": "Agol",
+                    "suffix": ""
+                },
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Roos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Virol.",
+            "volume": "84",
+            "issn": "",
+            "pages": "1348-1354",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Natural selection on the influenza virus genome",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Suzuki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mol Biol Evol.",
+            "volume": "23",
+            "issn": "",
+            "pages": "1902-1911",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "The evolutionary origin of orphan genes",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Tautz",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Domazet-Loso",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nat Rev Genet.",
+            "volume": "12",
+            "issn": "",
+            "pages": "692-702",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Origin of primate orphan genes: a comparative genomics approach",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Toll-Riera",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bosch",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bellora",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Castelo",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Armengol",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Estivill",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Alba",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Mol Biol Evol.",
+            "volume": "26",
+            "issn": "",
+            "pages": "603-612",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Origin of primate orphan genes: a comparative genomics approach",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Toll-Riera",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bosch",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bellora",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Castelo",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Armengol",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Estivill",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Alba",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Mol Biol Evol.",
+            "volume": "26",
+            "issn": "",
+            "pages": "603-612",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "The interplay between structure and function in intrinsically unstructured proteins",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Tompa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "FEBS Lett.",
+            "volume": "579",
+            "issn": "",
+            "pages": "3346-3354",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "The Contribution of the PB1-F2 protein to the fitness of Influenza A viruses and its recent evolution in the 2009 Influenza A (H1N1) pandemic virus",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Trifonov",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rabadan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "PLoS Curr.",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Non-AUG-initiated internal translation of the L* protein of Theiler's virus and importance of this protein for viral persistence",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "van Eyll",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Michiels",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Virol.",
+            "volume": "76",
+            "issn": "",
+            "pages": "10665-10673",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Size selective recognition of siRNA by an RNA silencing suppressor",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Vargason",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Szittya",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Burgyan",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Hall",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Cell",
+            "volume": "115",
+            "issn": "",
+            "pages": "799-811",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Vertebrate gene predictions and the problem of large genes",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ye",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "GK",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nat Rev Genet.",
+            "volume": "4",
+            "issn": "",
+            "pages": "741-749",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "A structural and primary sequence comparison of the viral RNA-dependent RNA polymerases",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Bruenn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res.",
+            "volume": "31",
+            "issn": "",
+            "pages": "1821-1829",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Characterization of V protein in measles virus-infected cells",
+            "authors": [
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Wardrop",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Briedis",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "J Virol.",
+            "volume": "65",
+            "issn": "",
+            "pages": "3421-3428",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Infectious TYMV RNA from cloned cDNA: effects in vitro and in vivo of point substitutions in the initiation codons of two extensively overlapping ORFs",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Weiland",
+                    "suffix": ""
+                },
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Dreher",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Nucleic Acids Res.",
+            "volume": "17",
+            "issn": "",
+            "pages": "4675-4687",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "De novo origin of human protein-coding genes",
+            "authors": [
+                {
+                    "first": "DD",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Irwin",
+                    "suffix": ""
+                },
+                {
+                    "first": "YP",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS Genet.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Ilarviruses encode a cucumovirus-like 2 b gene that is absent in other genera within the Bromoviridae",
+            "authors": [
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Xin",
+                    "suffix": ""
+                },
+                {
+                    "first": "LH",
+                    "middle": [],
+                    "last": "Ji",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                },
+                {
+                    "first": "RH",
+                    "middle": [],
+                    "last": "Symons",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Virol.",
+            "volume": "72",
+            "issn": "",
+            "pages": "6956-6959",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "De novo origin of new genes with introns in Plasmodium vivax",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "FEBS Lett.",
+            "volume": "585",
+            "issn": "",
+            "pages": "641-644",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Independent evolution of overlapping polymerase and surface protein genes of hepatitis B virus",
+            "authors": [
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Zaaijer",
+                    "suffix": ""
+                },
+                {
+                    "first": "FJ",
+                    "middle": [],
+                    "last": "van Hemert",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Koppelman",
+                    "suffix": ""
+                },
+                {
+                    "first": "VV",
+                    "middle": [],
+                    "last": "Lukashov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Gen Virol.",
+            "volume": "88",
+            "issn": "",
+            "pages": "2137-2143",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Influenza A virus PB1-F2 protein contributes to viral pathogenesis in mice",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Zamarin",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Ortigoza",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Palese",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Virol.",
+            "volume": "80",
+            "issn": "",
+            "pages": "7976-7983",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Evaluation of an improved branch-site likelihood method for detecting positive selection at the molecular level",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Mol Biol Evol.",
+            "volume": "22",
+            "issn": "",
+            "pages": "2472-2479",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Complementation and characterization of the nested Rz and Rz1 reading frames in the genome of bacteriophage lambda",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Young",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Mol Gen Genet.",
+            "volume": "262",
+            "issn": "",
+            "pages": "659-667",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "On the origin and evolution of new genes\u2014a genomic and experimental perspective",
+            "authors": [
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J Genet Genomics.",
+            "volume": "35",
+            "issn": "",
+            "pages": "639-648",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "De novo origination of a new protein-coding gene in Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cai",
+                    "suffix": ""
+                },
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "HF",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Genetics",
+            "volume": "179",
+            "issn": "",
+            "pages": "487-496",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "On the origin of new genes in Drosophila",
+            "authors": [
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhan",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Genome Res.",
+            "volume": "18",
+            "issn": "",
+            "pages": "1446-1455",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "H5N1 influenza virus evolution: a comparison of different epidemics in birds and humans (1997\u20132004)",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Campitelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ciccozzi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Salemi",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Taglia",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Boros",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Donatelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Rezza",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Gen Virol.",
+            "volume": "87",
+            "issn": "",
+            "pages": "955-960",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "A novel influenza A virus mitochondrial protein that induces cell death",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Calvo",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Malide",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Nat Med.",
+            "volume": "7",
+            "issn": "",
+            "pages": "1306-1312",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "A novel influenza A virus mitochondrial protein that induces cell death",
+            "authors": [
+                {
+                    "first": "WS",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Calvo",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Malide",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "(13 co-authors)",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Nat Med.",
+            "volume": "7",
+            "issn": "",
+            "pages": "1306-1312",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "A picornaviral protein synthesized out of frame with the polyprotein plays a key role in a virus-induced immune-mediated demyelinating disease",
+            "authors": [
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Kong",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Ward",
+                    "suffix": ""
+                },
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Roos",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Nat Med.",
+            "volume": "1",
+            "issn": "",
+            "pages": "927-931",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "New genes in Drosophila quickly become essential",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "YE",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Long",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Science",
+            "volume": "330",
+            "issn": "",
+            "pages": "1682-1685",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Why genes overlap in viruses",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Chirico",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vianelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Belshaw",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Proc R Soc B Biol Sci.",
+            "volume": "277",
+            "issn": "",
+            "pages": "3809-3817",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "An overlapping essential gene in the Potyviridae",
+            "authors": [
+                {
+                    "first": "BY",
+                    "middle": [],
+                    "last": "Chung",
+                    "suffix": ""
+                },
+                {
+                    "first": "WA",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Proc Natl Acad Sci U S A.",
+            "volume": "105",
+            "issn": "",
+            "pages": "5897-5902",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Gapped BLAST and PSI-BLAST: a new generation of protein database search programs",
+            "authors": [
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Altschul",
+                    "suffix": ""
+                },
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Madden",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Schaffer",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nucleic Acids Res.",
+            "volume": "25",
+            "issn": "",
+            "pages": "3389-3402",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Rates of evolutionary change in viruses: patterns and determinants",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Duffy",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Shackelton",
+                    "suffix": ""
+                },
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Holmes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nat Rev Genet.",
+            "volume": "9",
+            "issn": "",
+            "pages": "267-276",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Intrinsically unstructured proteins and their functions",
+            "authors": [
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Dyson",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Wright",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nat Rev Mol Cell Biol.",
+            "volume": "6",
+            "issn": "",
+            "pages": "197-208",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Identifying and quantifying orphan protein sequences in fungi",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ekman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Elofsson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Mol Biol.",
+            "volume": "396",
+            "issn": "",
+            "pages": "396-405",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "The \u201cinverse relationship between evolutionary rate and age of mammalian genes\u201d is an artifact of increased genetic distance with rate of evolution and time of divergence",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Elhaik",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Sabath",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Graur",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Mol Biol Evol.",
+            "volume": "23",
+            "issn": "",
+            "pages": "1-3",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Estimating phylogenetic trees from distance matrices",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Farris",
+                    "suffix": ""
+                }
+            ],
+            "year": 1972,
+            "venue": "Am. Nat.",
+            "volume": "106",
+            "issn": "",
+            "pages": "645-668",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Betanodavirus B2 is an RNA interference antagonist that facilitates intracellular viral RNA accumulation",
+            "authors": [
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Fenner",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Thiagarajan",
+                    "suffix": ""
+                },
+                {
+                    "first": "HK",
+                    "middle": [],
+                    "last": "Chua",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kwang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Virol.",
+            "volume": "80",
+            "issn": "",
+            "pages": "85-94",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "The Pfam protein families database",
+            "authors": [
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Finn",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Tate",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Mistry",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Coggill",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Sammut",
+                    "suffix": ""
+                },
+                {
+                    "first": "HR",
+                    "middle": [],
+                    "last": "Hotz",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Ceric",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Forslund",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Eddy",
+                    "suffix": ""
+                },
+                {
+                    "first": "EL",
+                    "middle": [],
+                    "last": "Sonnhammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bateman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Res.",
+            "volume": "36",
+            "issn": "",
+            "pages": "D281-D288",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Bioinformatic analysis suggests that the Orbivirus VP6 cistron encodes an overlapping gene",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Virol J.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Bioinformatic analysis suggests that a conserved ORF in the waikaviruses encodes an overlapping gene",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Arch Virol.",
+            "volume": "153",
+            "issn": "",
+            "pages": "1379-1383",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Bioinformatic analysis suggests that the Cypovirus 1 major core protein cistron harbours an overlapping gene",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Virol J.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Investigating protein-coding sequence evolution with probabilistic codon substitution models",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Anisimova",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Kosiol",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Mol Biol Evol.",
+            "volume": "26",
+            "issn": "",
+            "pages": "255-271",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Analysis of the coding potential of the partially overlapping 3' ORF in segment 5 of the plant fijiviruses",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Virol J.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "A case for a CUG-initiated coding sequence overlapping torovirus ORF1a and encoding a novel 30 kDa product",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Virol J.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Evidence for a novel coding sequence overlapping the 5'-terminal approximately 90 codons of the gill-associated and yellow head okavirus envelope glycoprotein gene",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Virol J.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Candidates in Astroviruses, Seadornaviruses, Cytorhabdoviruses and Coronaviruses for +1 frame overlapping genes accessed by leaky scanning",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Virol J.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Evidence for ribosomal frameshifting and a novel overlapping gene in the genomes of insect-specific flaviviruses",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Blitvich",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Wills",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Virology",
+            "volume": "399",
+            "issn": "",
+            "pages": "153-166",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Detecting overlapping coding sequences with pairwise alignments",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Bioinformatics",
+            "volume": "21",
+            "issn": "",
+            "pages": "282-292",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Detecting overlapping coding sequences in virus genomes",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Firth",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Bioinformatics",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "The internal open reading frame within the nucleocapsid gene of mouse hepatitis virus encodes a structural protein that is not essential for viral replication",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Fischer",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Peng",
+                    "suffix": ""
+                },
+                {
+                    "first": "ST",
+                    "middle": [],
+                    "last": "Hingley",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Weiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Masters",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J Virol.",
+            "volume": "71",
+            "issn": "",
+            "pages": "996-1003",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Conserved and non-conserved regions in the Sendai virus genome: evolution of a gene possessing overlapping reading frames",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Fujii",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kiyotani",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Yoshida",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Sakaguchi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Virus Genes",
+            "volume": "22",
+            "issn": "",
+            "pages": "47-52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "BIONJ: an improved version of the NJ algorithm based on a simple model of sequence data",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Gascuel",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Mol Biol Evol.",
+            "volume": "14",
+            "issn": "",
+            "pages": "685-695",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Current topics in genome evolution: molecular mechanisms of new gene formation",
+            "authors": [
+                {
+                    "first": "DV",
+                    "middle": [],
+                    "last": "Babushok",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Ostertag",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Kazazian",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Cellular Mol Life Sci.",
+            "volume": "64",
+            "issn": "",
+            "pages": "542-554",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "A protein critical for a Theiler's virus-induced immune system-mediated demyelinating disease has a cell type-specific antiapoptotic effect and a key role in virus persistence",
+            "authors": [
+                {
+                    "first": "GD",
+                    "middle": [],
+                    "last": "Ghadge",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sato",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Roos",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Virol",
+            "volume": "72",
+            "issn": "",
+            "pages": "8605-8612",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "A codon-based model of nucleotide substitution for protein-coding DNA sequences",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Goldman",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Mol Biol Evol.",
+            "volume": "11",
+            "issn": "",
+            "pages": "725-736",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "De novo origins of human genes",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Guerzoni",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "McLysaght",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Plos Genet.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Sequence analysis of Potato leafroll virus isolates reveals genetic stability, major evolutionary events and differential selection pressure between overlapping reading frame products",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Guyader",
+                    "suffix": ""
+                },
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Ducray",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "J Gen Virol.",
+            "volume": "83",
+            "issn": "",
+            "pages": "1799-1807",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Sequence of RNA2 of the Helicoverpa armigera stunt virus (Tetraviridae) and bacterial expression of its genes",
+            "authors": [
+                {
+                    "first": "TN",
+                    "middle": [],
+                    "last": "Hanzlik",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Dorrian",
+                    "suffix": ""
+                },
+                {
+                    "first": "KN",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Brooks",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Gordon",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "J Gen Virol.",
+            "volume": "76",
+            "issn": "Pt 4",
+            "pages": "799-811",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Hartl",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Principles of population genetics",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Sequence variability and evolution of the terminal overlapping VP5 gene of the infectious bursal disease virus",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hernandez",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Villegas",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Hernandez",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Banda",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Maya",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Romero",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Tomas",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Perez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Virus Genes",
+            "volume": "41",
+            "issn": "",
+            "pages": "59-66",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "Comment on \u201cLarge-scale sequence analysis of avian influenza isolates.\u201d",
+            "authors": [
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Holmes",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Zamarin",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Yewdell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "313",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Patterns of nucleotide difference in overlapping and non-overlapping reading frames of papillomavirus genomes",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Virus Res.",
+            "volume": "113",
+            "issn": "",
+            "pages": "81-88",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "Simultaneous positive and purifying selection on overlapping reading frames of the tat and vpr genes of simian immunodeficiency virus",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Westover",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "da Silva",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "O'Connor",
+                    "suffix": ""
+                },
+                {
+                    "first": "DI",
+                    "middle": [],
+                    "last": "Watkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J Virol.",
+            "volume": "75",
+            "issn": "",
+            "pages": "7966-7972",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "National center for biotechnology information viral genomes project",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Bao",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Federhen",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Leipe",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Pham",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Resenchuk",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rozanov",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Tatusov",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tatusova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Virol.",
+            "volume": "78",
+            "issn": "",
+            "pages": "7291-7298",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "Characterization of striped jack nervous necrosis virus subgenomic RNA3 and biological activities of its encoded protein B2",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Iwamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Mise",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Takeda",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Okinaka",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Mori",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Arimoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Okuno",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Nakai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Gen Virol.",
+            "volume": "86",
+            "issn": "",
+            "pages": "2807-2816",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Evolution and tinkering",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Jacob",
+                    "suffix": ""
+                }
+            ],
+            "year": 1977,
+            "venue": "Science",
+            "volume": "196",
+            "issn": "",
+            "pages": "1161-1166",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "Molecular evolution of the Paramyxoviridae and Rhabdoviridae multiple-protein-encoding P gene",
+            "authors": [
+                {
+                    "first": "IK",
+                    "middle": [],
+                    "last": "Jordan",
+                    "suffix": ""
+                },
+                {
+                    "first": "BA",
+                    "middle": [],
+                    "last": "Sutter ",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "McClure",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Mol Biol Evol.",
+            "volume": "17",
+            "issn": "",
+            "pages": "75-86",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "Origins, evolution, and phenotypic impact of new genes",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kaessmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Genome Res.",
+            "volume": "20",
+            "issn": "",
+            "pages": "1313-1326",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF70": {
+            "title": "MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Katoh",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Misawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kuma",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Miyata",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nucleic Acids Res.",
+            "volume": "30",
+            "issn": "",
+            "pages": "3059-3066",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF71": {
+            "title": "Origins of genes: \u201cbig bang\u201d or continuous creation?",
+            "authors": [
+                {
+                    "first": "PK",
+                    "middle": [],
+                    "last": "Keese",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gibbs",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Proc Natl Acad Sci U S A.",
+            "volume": "89",
+            "issn": "",
+            "pages": "9489-9493",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF72": {
+            "title": "Recent de novo origin of human protein-coding genes",
+            "authors": [
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Knowles",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "McLysaght",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Genome Res.",
+            "volume": "19",
+            "issn": "",
+            "pages": "1752-1759",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF73": {
+            "title": "Current knowledge on PB1-F2 of influenza A viruses",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Krumbholz",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Philipps",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Oehring",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Schwarzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Eitner",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wutzler",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Zell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Med Microbiol Immunol.",
+            "volume": "200",
+            "issn": "",
+            "pages": "69-75",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF74": {
+            "title": "The Pre-S1 and antigenic loop infectivity determinants of the hepatitis B virus envelope proteins are functionally independent",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Le Duff",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Blanchet",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Sureau",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Virol.",
+            "volume": "83",
+            "issn": "",
+            "pages": "12443-12451",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF75": {
+            "title": "Relative codon adaptation index, a sensitive measure of codon usage bias",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Weon",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Kang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Evol Bioinform Online.",
+            "volume": "6",
+            "issn": "",
+            "pages": "47-55",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF76": {
+            "title": "Hepatitis B virus replication",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Beck",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nassal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "World J Gastroenterol.",
+            "volume": "13",
+            "issn": "",
+            "pages": "48-64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF77": {
+            "title": "Novel genes derived from noncoding DNA in Drosophila melanogaster are frequently X-linked and exhibit testis-biased expression",
+            "authors": [
+                {
+                    "first": "MT",
+                    "middle": [],
+                    "last": "Levine",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Kern",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Lindfors",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Begun",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci U S A.",
+            "volume": "103",
+            "issn": "",
+            "pages": "9935-9939",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF78": {
+            "title": "Virus counterdefense: diverse strategies for evading the RNA-silencing immunity",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Annu Rev Microbiol.",
+            "volume": "60",
+            "issn": "",
+            "pages": "503-531",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF79": {
+            "title": "A de novo originated gene depresses budding yeast mating pathway and is repressed by the protein encoded by its antisense strand",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "HF",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cai",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Cell Res.",
+            "volume": "20",
+            "issn": "",
+            "pages": "408-420",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF80": {
+            "title": "Genesis of a highly pathogenic and potentially pandemic H5N1 influenza virus in eastern Asia",
+            "authors": [
+                {
+                    "first": "KS",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "(22 co-authors)",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "430",
+            "issn": "",
+            "pages": "209-213",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF81": {
+            "title": "A human-specific de novo protein-coding gene associated with human brain functions",
+            "authors": [
+                {
+                    "first": "C-Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Cao",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "(14 co-authors)",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Plos Comput Biol.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF82": {
+            "title": "The origin of new genes: glimpses from the young and old",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Long",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Betran",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Thornton",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nat Rev Genet.",
+            "volume": "4",
+            "issn": "",
+            "pages": "865-875",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF83": {
+            "title": "The proapoptotic influenza A virus protein PB1-F2 regulates viral polymerase activity by interaction with the PB1 protein",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Mazur",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Anhlan",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Mitzner",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wixler",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Schubert",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ludwig",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Cell Microbiol.",
+            "volume": "10",
+            "issn": "",
+            "pages": "1140-1152",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF84": {
+            "title": "The effects of influenza A virus PB1-F2 protein on polymerase activity are strain specific and do not impact pathogenesis",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "McAuley",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "McCullers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Virol.",
+            "volume": "84",
+            "issn": "",
+            "pages": "558-564",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF85": {
+            "title": "Sequence determination and genetic content of the short unique region in the genome of herpes simplex virus type 1",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "McGeoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Dolan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Donald",
+                    "suffix": ""
+                },
+                {
+                    "first": "FJ",
+                    "middle": [],
+                    "last": "Rixon",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "J Mol Biol.",
+            "volume": "181",
+            "issn": "",
+            "pages": "1-13",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF86": {
+            "title": "Tax & rex: overlapping genes of the Deltaretrovirus group",
+            "authors": [
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "McGirr",
+                    "suffix": ""
+                },
+                {
+                    "first": "GC",
+                    "middle": [],
+                    "last": "Buehuring",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Virus Genes",
+            "volume": "32",
+            "issn": "",
+            "pages": "229-239",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF87": {
+            "title": "Evidence for de novo evolution of testis-expressed genes in the Drosophila yakuba/Drosophila erecta clade",
+            "authors": [
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Begun",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Lindfors",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Kern",
+                    "suffix": ""
+                },
+                {
+                    "first": "CD",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Genetics",
+            "volume": "176",
+            "issn": "",
+            "pages": "1131-1137",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF88": {
+            "title": "IS1414, an Escherichia coli insertion sequence with a heat-stable enterotoxin gene embedded in a transposase-like gene",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "McVeigh",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Fasano",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jelacic",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Moseley",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Robertson",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Savarino",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Infect Immun.",
+            "volume": "68",
+            "issn": "",
+            "pages": "5710-5715",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF89": {
+            "title": "Constrained evolution with respect to gene overlap of hepatitis B virus",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mizokami",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Orito",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Ohba",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Ikeo",
+                    "suffix": ""
+                },
+                {
+                    "first": "JY",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Gojobori",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J Mol Evol.",
+            "volume": "44",
+            "issn": "Suppl 1",
+            "pages": "S83-S90",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF90": {
+            "title": "Overlapping reading frames in closely related human papillomaviruses result in modular rates of selection within E2",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Narechania",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Terai",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Burk",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Gen Virol.",
+            "volume": "86",
+            "issn": "",
+            "pages": "1307-1313",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF91": {
+            "title": "Simple methods for estimating the numbers of synonymous and nonsynonymous nucleotide substitutions",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nei",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Gojobori",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Mol Biol Evol.",
+            "volume": "3",
+            "issn": "",
+            "pages": "418-426",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF92": {
+            "title": "Oscillating evolution of a mammalian locus with overlapping reading frames: an XLalphas/ALEX relay",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nekrutenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wadhawan",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Goetting-Minesky",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Makova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "PLoS Genet.",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF93": {
+            "title": "Likelihood models for detecting positively selected amino acid sites and applications to the HIV-1 envelope gene",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Genetics",
+            "volume": "148",
+            "issn": "",
+            "pages": "929-936",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF94": {
+            "title": "Large-scale sequence analysis of avian influenza isolates",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Obenauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Denson",
+                    "suffix": ""
+                },
+                {
+                    "first": "PK",
+                    "middle": [],
+                    "last": "Mehta",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "311",
+            "issn": "",
+            "pages": "1576-1580",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF95": {
+            "title": "Birth of a unique enzyme from an alternative reading frame of the preexisted, internally repetitious coding sequence",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ohno",
+                    "suffix": ""
+                }
+            ],
+            "year": 1984,
+            "venue": "Proc Natl Acad Sci U S A.",
+            "volume": "81",
+            "issn": "",
+            "pages": "2421-2425",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF96": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ohno",
+                    "suffix": ""
+                }
+            ],
+            "year": 1970,
+            "venue": "Evolution by gene duplication",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF97": {
+            "title": "ANNIE: integrated de novo protein sequence annotation",
+            "authors": [
+                {
+                    "first": "HS",
+                    "middle": [],
+                    "last": "Ooi",
+                    "suffix": ""
+                },
+                {
+                    "first": "CY",
+                    "middle": [],
+                    "last": "Kwo",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Wildpaner",
+                    "suffix": ""
+                },
+                {
+                    "first": "FL",
+                    "middle": [],
+                    "last": "Sirota",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Eisenhaber",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Maurer-Stroh",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Schleiffer",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Eisenhaber",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Schneider",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Res.",
+            "volume": "37",
+            "issn": "",
+            "pages": "W435-W440",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF98": {
+            "title": "The evolution of genome compression and genomic novelty in RNA viruses",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Belshaw",
+                    "suffix": ""
+                },
+                {
+                    "first": "OG",
+                    "middle": [],
+                    "last": "Pybus",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rambaut",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Genome Res.",
+            "volume": "17",
+            "issn": "",
+            "pages": "1496-1504",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF99": {
+            "title": "V and C proteins of measles virus function as virulence factors in vivo",
+            "authors": [
+                {
+                    "first": "JB",
+                    "middle": [],
+                    "last": "Patterson",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Thomas",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Lewicki",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Billeter",
+                    "suffix": ""
+                },
+                {
+                    "first": "MBA",
+                    "middle": [],
+                    "last": "Oldstone",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Virology",
+            "volume": "267",
+            "issn": "",
+            "pages": "80-89",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF100": {
+            "title": "Origin and evolution of overlapping genes in the family Microviridae",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pavesi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J Gen Virol.",
+            "volume": "87",
+            "issn": "",
+            "pages": "1013-1017",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF101": {
+            "title": "Pattern of nucleotide substitution in the overlapping nonstructural genes of influenza A virus and implication for the genetic diversity of the H5N1 subtype",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pavesi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Gene",
+            "volume": "402",
+            "issn": "",
+            "pages": "28-34",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF102": {
+            "title": "On the informational content of overlapping genes in prokaryotic and eukaryotic viruses",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pavesi",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "De Iaco",
+                    "suffix": ""
+                },
+                {
+                    "first": "MI",
+                    "middle": [],
+                    "last": "Granero",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Porati",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J Mol Evol.",
+            "volume": "44",
+            "issn": "",
+            "pages": "625-631",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF103": {
+            "title": "Isolation and characterization of the major protein and glycoprotein of hepatitis B surface antigen",
+            "authors": [
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Peterson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "J Biol Chem.",
+            "volume": "256",
+            "issn": "",
+            "pages": "6975-6983",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF104": {
+            "title": "Synonymous but not the same: the causes and consequences of codon bias",
+            "authors": [
+                {
+                    "first": "JB",
+                    "middle": [],
+                    "last": "Plotkin",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Kudla",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nat Rev Genet.",
+            "volume": "12",
+            "issn": "",
+            "pages": "32-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF105": {
+            "title": "Overlapping genes produce proteins with unusual sequence properties and offer insight into de novo protein creation",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Rancurel",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Khosravi",
+                    "suffix": ""
+                },
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Dunker",
+                    "suffix": ""
+                },
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Romero",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Karlin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Virol.",
+            "volume": "83",
+            "issn": "",
+            "pages": "10719-10736",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF106": {
+            "title": "Purifying and directional selection in overlapping prokaryotic genes",
+            "authors": [
+                {
+                    "first": "IB",
+                    "middle": [],
+                    "last": "Rogozin",
+                    "suffix": ""
+                },
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Spiridonov",
+                    "suffix": ""
+                },
+                {
+                    "first": "AV",
+                    "middle": [],
+                    "last": "Sorokin",
+                    "suffix": ""
+                },
+                {
+                    "first": "YI",
+                    "middle": [],
+                    "last": "Wolf",
+                    "suffix": ""
+                },
+                {
+                    "first": "IK",
+                    "middle": [],
+                    "last": "Jordan",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Tatusov",
+                    "suffix": ""
+                },
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Trends Genet.",
+            "volume": "18",
+            "issn": "",
+            "pages": "228-232",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF107": {
+            "title": "Conservation of the putative methyltransferase domain: a hallmark of the \u201cSindbis-like\u201d supergroup of positive-strand RNA viruses",
+            "authors": [
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Rozanov",
+                    "suffix": ""
+                },
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Koonin",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Gorbalenya",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "J Gen Virol.",
+            "volume": "Pt 8",
+            "issn": "73",
+            "pages": "2129-2134",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF108": {
+            "title": "Intracellular location of two groundnut rosette umbravirus proteins delivered by PVX and TMV vectors",
+            "authors": [
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Ryabov",
+                    "suffix": ""
+                },
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Oparka",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Santa Cruz",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Taliansky",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Virology",
+            "volume": "242",
+            "issn": "",
+            "pages": "303-313",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF109": {
+            "title": "How do new proteins arise?",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bornberg-Bauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "AK",
+                    "middle": [],
+                    "last": "Huylmans",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Sikosek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Curr Opin Struct Biol.",
+            "volume": "20",
+            "issn": "",
+            "pages": "390-396",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF110": {
+            "title": "A plant virus-encoded protein facilitates long-distance movement of heterologous viral RNA",
+            "authors": [
+                {
+                    "first": "EV",
+                    "middle": [],
+                    "last": "Ryabov",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Taliansky",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Proc Natl Acad Sci U S A.",
+            "volume": "96",
+            "issn": "",
+            "pages": "1212-1217",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF111": {
+            "title": "Detection of functional overlapping genes: simulation and case studies",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Sabath",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Graur",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Mol Evol.",
+            "volume": "71",
+            "issn": "",
+            "pages": "308-316",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF112": {
+            "title": "A method for the simultaneous estimation of selection intensities in overlapping genes",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Sabath",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Landan",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Graur",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS One",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF113": {
+            "title": "A potentially novel overlapping gene in the genomes of Israeli acute paralysis virus and its relatives",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Sabath",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Price",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Graur",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Virol J.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF114": {
+            "title": "Genetic variability of natural populations of cotton leaf curl geminivirus, a single-stranded DNA virus",
+            "authors": [
+                {
+                    "first": "AI",
+                    "middle": [],
+                    "last": "Sanz",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Fraile",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Gallego",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Malpica",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Garcia-Arenal",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J Mol Evol.",
+            "volume": "49",
+            "issn": "",
+            "pages": "672-681",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF115": {
+            "title": "Maize chlorotic mottle machlomovirus expresses its coat protein from a 1.47-kb subgenomic RNA and makes a 0.34-kb subgenomic RNA",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Scheets",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Virology",
+            "volume": "267",
+            "issn": "",
+            "pages": "90-101",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF116": {
+            "title": "The nucleocapsid protein gene of bovine coronavirus is bicistronic",
+            "authors": [
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Senanayake",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Hofmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Maki",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Brian",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "J Virol.",
+            "volume": "66",
+            "issn": "",
+            "pages": "5277-5283",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF117": {
+            "title": "The Codon Adaptation Index\u2014a measure of directional synonymous codon usage bias, and its potential applications",
+            "authors": [
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Sharp",
+                    "suffix": ""
+                },
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Nucleic Acids Res.",
+            "volume": "15",
+            "issn": "",
+            "pages": "1281-1295",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF118": {
+            "title": "DisProt: the database of disordered proteins",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Sickmeier",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Hamilton",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "LeGall",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "(12 co-authors)",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res.",
+            "volume": "35",
+            "issn": "",
+            "pages": "D786-D793",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF119": {
+            "title": "The birth of new exons: mechanisms and evolutionary consequences",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Sorek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "RNA",
+            "volume": "13",
+            "issn": "",
+            "pages": "1603-1608",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

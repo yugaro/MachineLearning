@@ -1,0 +1,1877 @@
+{
+    "paper_id": "PMC6299699",
+    "metadata": {
+        "title": "Development of a smartphone-based rapid dual fluorescent diagnostic system for the simultaneous detection of influenza A and H5 subtype in avian influenza A-infected patients",
+        "authors": [
+            {
+                "first": "Seon-Ju",
+                "middle": [],
+                "last": "Yeo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Homan",
+                "middle": [],
+                "last": "Kang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Tung",
+                "middle": [
+                    "Duy"
+                ],
+                "last": "Dao",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Bui",
+                "middle": [
+                    "Thi"
+                ],
+                "last": "Cuc",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Anh",
+                "middle": [
+                    "Thi",
+                    "Viet"
+                ],
+                "last": "Nguyen",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Trinh",
+                "middle": [
+                    "Thi",
+                    "Thuy"
+                ],
+                "last": "Tien",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Nguyen",
+                "middle": [
+                    "Le",
+                    "Khanh"
+                ],
+                "last": "Hang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Hoang",
+                "middle": [
+                    "Vu",
+                    "Mai"
+                ],
+                "last": "Phuong",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Le",
+                "middle": [
+                    "Thi"
+                ],
+                "last": "Thanh",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Le",
+                "middle": [
+                    "Quynh"
+                ],
+                "last": "Mai",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Yoonhyuk",
+                "middle": [],
+                "last": "Rah",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Kyoungsik",
+                "middle": [],
+                "last": "Yu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ho-Joon",
+                "middle": [],
+                "last": "Shin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Chom-Kyu",
+                "middle": [],
+                "last": "Chong",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Hak",
+                "middle": [
+                    "Soo"
+                ],
+                "last": "Choi",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Hyun",
+                "middle": [],
+                "last": "Park",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Avian influenza (AI) viruses are distinct from human seasonal influenza viruses and are not easily transmissible to humans 1. However, AI viruses may occasionally infect humans through direct or indirect contact, resulting in disease symptoms ranging from a mild illness to death. AI has become a global concern with a mortality rate of approximately 60% 2. In this context, the H5N1 virus is highly contagious among birds and can be deadly, especially in domestic poultry and humans. Therefore, an on-site surveillance/alert system for the highly pathogenic avian influenza (HPAI) A H5N1 would prevent widespread exposure to the virus and identify potential patients/animals for immediate attention and treatment. Improved case management of diseases with common flu symptoms is especially crucial in densely populated areas 3. An adequate H5 subtype-specific diagnostic toolkit for on-site monitoring has not been developed, and current field-level point-of-care testing (POCT) is not recommended for screening AI infections in clinical samples due to insufficient sensitivity and poor accuracy 4. Simultaneous detection of multiple biomarkers using antigen-specific antibodies can increase the diagnostic accuracy and sensitivity of POCT. Thus, many researchers have attempted to design a molecular diagnostic method for the simultaneous detection of influenza A and B as well as their subtypes 5-7.",
+            "cite_spans": [
+                {
+                    "start": 123,
+                    "end": 124,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 355,
+                    "end": 356,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 826,
+                    "end": 827,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1097,
+                    "end": 1098,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1398,
+                    "end": 1399,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 1400,
+                    "end": 1401,
+                    "mention": "7",
+                    "ref_id": "BIBREF55"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Multiplex detection has recently received great attention, and microfluidic devices have emerged as a promising diagnostic platform because of their favorable material transport process, rapid turnaround time, and low sample/reagent consumption 8, 9. However, several challenges in mass production, particularly sensor fabrication costs, limit their clinical application for POCT 10. Given the demand for multiplex testing and the major advantages of the lateral flow assay over alternative rapid diagnostic platforms, this study aimed to adapt the simplicity of the membrane-based lateral flow assay and multiplex techniques. Various fluorescent materials have been applied for lateral flow assays as alternative to conventional gold nanoparticles to detect influenza A as POCT 11-16. Also, self-contained and disposable diagnostic devices have been developed 15, 17-19.",
+            "cite_spans": [
+                {
+                    "start": 245,
+                    "end": 246,
+                    "mention": "8",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 248,
+                    "end": 249,
+                    "mention": "9",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 380,
+                    "end": 382,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 779,
+                    "end": 781,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 782,
+                    "end": 784,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 861,
+                    "end": 863,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 865,
+                    "end": 867,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 868,
+                    "end": 870,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "There is a critical need for POCT diagnostics in healthcare which can have a positive impact on the quality of life worldwide 20. POCT devices of interest include smartphones 20, wearable devices 21, other complementary metal-oxide-semiconductor (CMOS) imaging devices 22, and strip readers 23. Among them, devices integrating with personal computer have revolutionized research in recent decades, and smartphones are now finding increasing application in a wide variety of research domains as they are expedited by the integrated data capture, processing capability (e.g., lab in a phone), operability, compact form, relatively low cost, and very widespread circulation 24.",
+            "cite_spans": [
+                {
+                    "start": 126,
+                    "end": 128,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 175,
+                    "end": 177,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 196,
+                    "end": 198,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 269,
+                    "end": 271,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 291,
+                    "end": 293,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 671,
+                    "end": 673,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Given that assays combining nanoparticles with consumer electronic devices have almost exclusively utilized optical readout, we assessed the potential for quantum dots (QDs) nanoparticle-based electrochemical assays with readout through a smartphone. In particular, QDs have attracted considerable attention because of their improved quantum yield (QY), optical stability, and potential for multiplexing in POCT 25, 26. The application of QDs in lateral flow strips via an aptamer is widely used in POCT 27, 28.",
+            "cite_spans": [
+                {
+                    "start": 412,
+                    "end": 414,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 416,
+                    "end": 418,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 504,
+                    "end": 506,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 508,
+                    "end": 510,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Despite the versatile tunability of the emission peaks of QDs in multiplexed diagnostic systems, few reports show their application in clinical diagnostics 29, 30. Since high-fluorescent QDs are usually synthesized at elevated temperatures in organic solvents, they are only soluble in non-polar organic solvents, which are not suitable for biological applications, water compatibility, and bioconjugation. When QDs are covered with hydrophilic shells using tedious processing 31, the signal is too weak for the visible readouts of POCT requiring encapsulation of many QDs in an individual nanoparticle 32.",
+            "cite_spans": [
+                {
+                    "start": 156,
+                    "end": 158,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 160,
+                    "end": 162,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 477,
+                    "end": 479,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 603,
+                    "end": 605,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Detection of two influenza A virus subtypes (H5 and H9) via single QD-based immunoassay was previously reported by Wu et al. 33; however, it was not simultaneous detection of two antigens of one subtype virus by two different QDs. Single QD was also successfully used to detect H7N9 by combined magnetic capture, but this was performed under a UV detector rather than POCT 34. Also, a laboratory immunoassay for detecting H5N1 using QD was developed and tested in chicken samples 35. Thus, no multiplex POCT diagnostic system for detecting two antigens of a single virus has yet been developed to reliably perform the primary screening.",
+            "cite_spans": [
+                {
+                    "start": 125,
+                    "end": 127,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 373,
+                    "end": 375,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 480,
+                    "end": 482,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "We had previously developed a portable smartphone-based rapid fluorescent diagnostic system (SRFDS) 13. In this study, it was advanced to a multiplex AI virus detection toolkit and readout system equipped with a portable SRDFDS using two emission filters. The system was designed to simultaneously detect both influenza A and its H5 subtype on a single strip using two QD signals (580 nm and 650 nm) and provides quantitative analysis with high accuracy. This system can be used for the accurate and early diagnosis of influenza viral infections for POCT in clinical settings.",
+            "cite_spans": [
+                {
+                    "start": 100,
+                    "end": 102,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Nanobiomaterials require water-soluble QDs of high quality 36, 37. We synthesized water-soluble and stable core-multi-shell QDs (CdSe/CdS/ZnS) using the standard hot injection method with TOPO ligand as the stabilizing agent. Subsequently, ligand exchange was carried out to replace the hydrophobic TOPO ligands with hydrophilic MPA ligands. The emission wavelength could be tuned by controlling the QD core size, and two types of QDs (QD580 and QD650 at 580 nm and 650 nm emissions, respectively) were synthesized. The QYs of the QDs were calculated as 70% and 48% for QD580 and QD650, respectively (Fig. S1). The diameters of QD580 and QD650 were 5.4 \u00b1 1.5 nm and 9.3 \u00b1 2.0 nm, respectively (Fig. S2). This high QY (>70%) has been reported to be measurable under UV light 38; however, few studies have investigated the required QYs for a relatively low sensitivity detection tool such as POCT. When we observed the fluorescence signals of the QDs under a UV lamp after a strip assay with a high concentration of viruses (160 hemagglutinin units [HAU]/ml) (Fig. 1A), intensities of both QD580 and QD650 conjugates were inconclusive in both the test and control lines, indicating that QDs alone are not suitable for sensitive virus detection in POCT.",
+            "cite_spans": [
+                {
+                    "start": 59,
+                    "end": 61,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 63,
+                    "end": 65,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 774,
+                    "end": 776,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Characterization of QD-latex-monoclonal antibody bioconjugate ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1063,
+                    "end": 1064,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "To amplify the fluorescence intensity, QDs were assembled onto an amine-functionalized latex template using the EDC/NHS coupling method (Fig. 1B). All remaining amine groups on the latex bead surface were converted to carboxylate groups for conjugation with monoclonal antibodies (mAbs). As shown in Fig. 1C, a large number of hydrophilic MPA-capped CdSe/CdS/ZnS QDs were attached to latex beads, as confirmed by transmission electron microscopy (TEM) analysis. Following conjugation of the QDs with mAbs, the sizes of the complexes increased to 185.83 \u00b1 5.25 nm for latex + QD580 + mAb, and 188.38 \u00b1 5.28 nm for latex + QD650 + mAb, compared to the latex alone (175.09 \u00b1 5.27 nm) (n = 30 per sample) (Fig. 1D). This diameter of the latex was chosen because it was relatively bigger than the antibody (hydrodynamic diameter of \u223c10 nm) 39 and the QDs (10 nm). Empirically, a latex larger than 175 nm caused precipitation on the membrane thereby hindering the lateral flow, and smaller than 100 nm latex could not efficiently carry the antibody and QDs on the surface. According to our computational calculations of the average diameter of the QDs, latex, and length of MPA ligands, the surface of the latex was conjugated with an average of 2,243 numbers of QD580 and 924 of QD650 beads per latex, respectively (details of this calculation are shown in Supplementary Information\nScheme S1).",
+            "cite_spans": [
+                {
+                    "start": 835,
+                    "end": 837,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Characterization of QD-latex-monoclonal antibody bioconjugate ::: Results",
+            "ref_spans": [
+                {
+                    "start": 142,
+                    "end": 143,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 305,
+                    "end": 306,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 707,
+                    "end": 708,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Each latex bioconjugate was tested using a rapid fluorescent immunochromatographic assay, and fluorescent images were captured under UV light. Pixels were counted using ImageJ software to determine the dynamic range of quantification (Fig. 1E). The ImageJ software was used to interpret the raw data in two dimensions with the length and width of the band defined by the repeated 'rectangle tool' such that the chemiluminescent signal emitted from the band was registered as a peak rising out of the test line (TL) or control line (CL). In this study, each TL was subtracted from the background and was normalized by the ratio of the density of CL to calculate TL/CL in Fig 1. As shown in Fig. 1F, both latex bioconjugates had a high linear regression (QD580 conjugate: r2 = 0.9706, and QD650 conjugate: r2 = 0.9649) for the H5N3 virus at concentrations of 5-160 HAU/mL (Fig. S3).",
+            "cite_spans": [],
+            "section": "Characterization of QD-latex-monoclonal antibody bioconjugate ::: Results",
+            "ref_spans": [
+                {
+                    "start": 240,
+                    "end": 241,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 674,
+                    "end": 675,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 694,
+                    "end": 695,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "To determine the presence of AI virus antigens on the strips, image acquisition and fluorescence intensity estimation were performed on two TLs and a CL on a lateral flow immunoassay strip using SRDFDS. Two bioconjugates were simultaneously used with SRDFDS to achieve high fluorescence detection sensitivity within a single strip and to analyze a separate lateral flow reaction accurately (Fig. 2A). The fluorescence intensity of the two QDs bioconjugates was measured by a smartphone detector utilizing the same platform containing a pair of parabolic mirrors between the lateral flow strip and the smartphone's camera 13. However, current SRDFDS was designed to get fluorescent signals of two QDs separately in the CL, using two different emission filters (580 nm and 650 nm) which were inserted into the module (Fig. 2B). In the lateral flow, a control line was used to confirm completion of the testing reaction by capturing the antibody on the conjugate. Our study was performed using both conjugate mouse monoclonal antibodies. As the species of anti-influenza A NP and H5 subtype were the same, anti-mouse IgGs coated on one control line were expected to capture both conjugates. With emission filters, the fluorescent signal of each conjugate captured on the control line could be obtained, separately. The emission filter at 580 nm had 585 nm wavelength (at center) and 65 nm bandwidth, while the emission filter at 650 nm had 650 nm wavelength (at center) and 45 nm bandwidth, indicating that the two emission filters could discriminate each QD signal at one CL.",
+            "cite_spans": [
+                {
+                    "start": 621,
+                    "end": 623,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Design of the SRDFDS platform ::: Results",
+            "ref_spans": [
+                {
+                    "start": 396,
+                    "end": 397,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 821,
+                    "end": 822,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The smartphone-based fluorescence detector is presented on the right side of Fig. 2B. To measure each fluorescence value under different emission filters, the fluorescence intensity values of each line were measured after changing the position of the line with a micrometer. The LED current controller regulated the energy level independent of the detector. As described previously, an application running on the Android operating system was developed to enable non-experts to easily complete a fluorescence immunochromatographic diagnostic test and report its results via wireless communication through step-by-step instructions displayed on the smartphone's touchscreen 13. After completing the measurements, the test result was obtained by computing the ratio of fluorescence intensity (TL1/CL or TL2/CL).",
+            "cite_spans": [
+                {
+                    "start": 672,
+                    "end": 674,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Design of the SRDFDS platform ::: Results",
+            "ref_spans": [
+                {
+                    "start": 82,
+                    "end": 83,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "To achieve a simultaneous diagnostic performance, dual quantum dots-mediated separate fluorescence signals for each test line (TL) and control line (CL) with two different emission filters must be measured. SRDFDS can normalize the positive sample compared to the negative sample using each value of TL/CL [TL1/CL for H5-HA detection with 580 nm emission filter (F580 nm) and TL2/CL for influenza A with 650 nm emission filter (F650 nm)] and the fold of control. Finally, all results obtained by SRDFDS can be analyzed with dual fluorescence signals leading to accurate diagnostic result using only TL1/CL or TL2/CL.",
+            "cite_spans": [],
+            "section": "Strategy to analyze SRDFDS results ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Fig. 3A shows the strategy of signal analyses measured by SRDFDS. The TL2/CL value at 580 nm and TL1/CL value at 650 nm of the positive sample (ii in Figure 3A) were divided by the corresponding values of the uninfected sample (i in Figure 3A) to normalize and obtain the final TL/CL value (fold of control). The TL/CL values of the counterpart test lines (iii and iv) were also obtained to check cross-reactions and further increase accuracy. As shown in Table 1, inter-assay coefficients of variation (CV) were less than 11 % for all TC/CL values. Following SRDFDS measurements, all diagnostic strips were observed under UV excitation with or without two emission filters to further confirm the accuracy of the assay (Fig. 3B).",
+            "cite_spans": [],
+            "section": "Strategy to analyze SRDFDS results ::: Results",
+            "ref_spans": [
+                {
+                    "start": 5,
+                    "end": 6,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 157,
+                    "end": 158,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 240,
+                    "end": 241,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 725,
+                    "end": 726,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 462,
+                    "end": 463,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "For developing a dual diagnostic system, it was essential to optimize the fluorescent immunochromatographic strip test (FICT) conditions to prevent cross-reactivity of two test lines with two target antigens on one viral particle. For accurate normalization of each TL/CL, both conjugates must interact with only one test line. CL indicates the leftover conjugate amount after lateral flow. If some fraction of the conjugate is randomly captured by the counter test line, its concentration would be decreased thereby increasing the TL/CL value. Therefore, in the case of cross-reaction, a high TL/CL is inaccurate.",
+            "cite_spans": [],
+            "section": "Optimization of the lysis buffer ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "For one virus particle to specifically bind to the bioconjugate in each TL, all viral antigens need to be released making the composition of the lysis buffer a critical factor. We, therefore, tested different concentrations of sodium dodecyl sulfate (SDS) at different pH values to determine the suitable range for a specific reaction without interference by the other TL. As displayed in Fig. 4, the lysis buffer was tested with different concentrations of SDS (0.6, 1.2, and 1.5%) at different pH values (5, 8, and 11) using 100-fold dilution of both conjugates with H5N3 virus (640 HAU/mL).",
+            "cite_spans": [],
+            "section": "Optimization of the lysis buffer ::: Results",
+            "ref_spans": [
+                {
+                    "start": 394,
+                    "end": 395,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "As the rapid diagnostic strip was not ELISA-based and lacked multiple washing steps, it readily showed nonspecific reactions based on the characteristics of an antibody. The H5 HA-specific antibody at TL1 cross-reacted with the influenza A antibody conjugate (QD580) in 0.6% SDS at pH 5.0 which was reduced at higher pH values (Fig. 4A-C). The QD580 conjugate showed a non-specific reaction at TL1 regardless of the presence of the virus affecting TL/CL at normalization. The reduced amount of CL was due to the waste of the conjugate at the other test line rendering the normalization of TL/CL inaccurate. As 0.6% SDS in lysis buffer (pH 11.0) (Fig. 4C) was not sufficient in removing the cross signaling at TL1, we increased the SDS concentration at different pH values (Fig. 4D-F). As displayed in Fig. 4F, compared with 1.5% SDS (Fig. 4G-4I), the lysis buffer with 1.2% SDS at pH 11.0 led to a more consistent TL/CL value at each TL without cross signaling. Therefore, of the nine different combinations of SDS and pH tested, 1.2% SDS at pH 11.0 was most effective in suppressing the cross-reaction of both QD bioconjugates against counterpart test line. The performance of the current smartphone-based diagnostic system was, therefore, further optimized to increase the TL/CL ratio by adjusting the two variables in the lysis buffer (1.2% SDS and pH 11.0). All raw SRDFDS results are shown in Fig. S4.",
+            "cite_spans": [],
+            "section": "Optimization of the lysis buffer ::: Results",
+            "ref_spans": [
+                {
+                    "start": 333,
+                    "end": 334,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 651,
+                    "end": 652,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 778,
+                    "end": 779,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 806,
+                    "end": 807,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 839,
+                    "end": 840,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 842,
+                    "end": 843,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "To increase the TL/CL ratio, different dilutions (50, 70, and 100 folds) of QD580-conjugated anti-influenza A NP and QD650-conjugated anti-H5 HA antibody were applied to SRDFDS in the optimized lysis buffer (1.2% SDS and pH 11.0) in the following combinations:",
+            "cite_spans": [],
+            "section": "Optimization of the dilution factor of bioconjugates ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The 50-, 70-, and 100-fold diluted QD650 conjugate (to detect H5 HA) was mixed with differentially diluted QD580 conjugate (to detect influenza A NP) with 50-, 70-, and 100-fold dilutions (Fig. 5A-5I). The highest concentrations of bioconjugates (H5 HA conjugate: influenza A conjugate=50:50) not only interfered with migration on the strips, but also increased the relative CL value decreasing the TL/CL ratio, indicating that there is no significant difference between the negative sample and H5N3 (20 HAU/mL) in terms of 'fold of control' (Fig. 5A).",
+            "cite_spans": [],
+            "section": "Optimization of the dilution factor of bioconjugates ::: Results",
+            "ref_spans": [
+                {
+                    "start": 194,
+                    "end": 195,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 197,
+                    "end": 198,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 548,
+                    "end": 549,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "As shown in Fig. 5B - 5E, at 20 HAU/mL of H5N3 virus, the following combinations of the dilutions of QD650-conjugated anti-H5 HA antibody: QD580-conjugated anti-influenza A NP showed a significant difference without any cross-reactions in the TL/CL value of counterpart: 50-fold:70-fold (P < 0.001); 50-fold:100-fold (P < 0.05); 70-fold:50-fold (P < 0.05); 70-fold:70-fold (P < 0.01). Further study was performed with diluents of 50-fold and 70-fold of QD650-conjugated anti-H5 HA and QD580-conjugated anti-influenza A NP, respectively. All raw SRDFDS results are shown in Fig. S5.",
+            "cite_spans": [],
+            "section": "Optimization of the dilution factor of bioconjugates ::: Results",
+            "ref_spans": [
+                {
+                    "start": 17,
+                    "end": 18,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 22,
+                    "end": 23,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "After establishing the ideal conditions for the bioconjugate to detect both influenza A and HA on the strip, we examined the quantitative range of SRDFDS for detecting the H5N3 virus using a serial dilution of the virus. Representative images taken using SRDFDS and UV were compared in the presence of the two bioconjugates and are displayed in Fig. 6A. The fluorescence signals of each TL increased at their respective wavelengths for concentrations of up to 160 HAU/mL proportional to the virus titer by both SRDFDS and UV. At 160 HAU/mL, TL2 of the influenza A showed cross-reaction at F650 (P < 0.05) under UV. On the contrary, we did not identify any cross-reactivity of QD650-conjugated anti-H5 HA at TL1 of H5 HA at F580, indicating that this emission filter (F580) could discriminate the fluorescence signal of TL1 derived from QD650 conjugate.",
+            "cite_spans": [],
+            "section": "Quantitative analysis of SRDFDS ::: Results",
+            "ref_spans": [
+                {
+                    "start": 350,
+                    "end": 351,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "We determined the limit of detection (LOD) in our immunoassay based on the statistics shown in Fig. 6B-6E. Using F580, the virus titer corresponding to the LOD of influenza A NP was 10 HAU/mL [TL/CL: 1.80 \u00b1 0.13 (mean \u00b1 SD)] (P < 0.05). The virus titer corresponding to the LOD of H5 HA at F650 was 10 HAU/mL [TL/CL: 1.77 \u00b1 0.24 (mean \u00b1 SD)] (P < 0.05).",
+            "cite_spans": [],
+            "section": "Quantitative analysis of SRDFDS ::: Results",
+            "ref_spans": [
+                {
+                    "start": 100,
+                    "end": 101,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 103,
+                    "end": 104,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "The LODs obtained from multiplexed QD conjugates for different emission filters were compared to those with one bioconjugate and a negative control conjugate (one antibody was replaced with anti-mouse IgG). The LOD of the single conjugate was still 10 HAU/mL for both influenza A (P < 0.05) and H5 HA (P < 0.001). At the high titer of 160 HAU/mL, there were no cross signals from the conjugates at both emission filters, indicating that at this high virus titer, there was no random binding of the conjugate due to cross-signaling or loss of conjugate on the counterpart TL. It implied that the problem of optical leaking at F650 used in SRDFDS could be ignored in computing TL/CL because the lack of random binding of the conjugate to test lines and non-wasted conjugate leftover resulted in an accurate TL/CL value.",
+            "cite_spans": [],
+            "section": "Quantitative analysis of SRDFDS ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The negative control conjugates showed a clear reaction from lateral flow in SRDFDS. All raw SRDFDS results are shown in Fig. S6. The RNA copy number of the LOD (10 HAU/mL) for SRDFDS was determined by reverse transcription-polymerase chain reaction (rRT-PCR) (Fig. S7). The LOD of the fluorescent immunochromatographic strip test (FICT; 10 HAU/mL) corresponded to a Ct value of 27.86 \u00b1 0.26 (mean \u00b1 SD) and 3.3 \u00d7 105 \u00b1 5.2 \u00d7 103 (mean \u00b1 SD) RNA/\u03bcL for influenza A NP, and a Ct value of 28.27 \u00b1 0.095 (mean \u00b1 SD) and 5.9 \u00d7 105 \u00b1 3.9 \u00d7 103 (mean \u00b1 SD) RNA/\u03bcL for H5 HA. The accuracy of SRDFDS was examined by computing the inter-assay coefficient of variation (CV) (Table 1). The virus titer of spiked specimens was adjusted to 40 or 160 HAU/mL by mixing 10 \u00b5L of the appropriate virus stock with 90 \u00b5L of nasopharyngeal specimens. The ratios of TL/CL derived from all experiments were then plotted for comparison. TL/CL between the negative control and specimens with the virus at 40 HAU/mL or 160 HAU/mL showed a significant difference for influenza A and H5 HA at the relevant emission filter (P < 0.001). The analytical error rate was computed by the inter-assay CV based on replicates of 40 HAU/mL and 160 HAU/mL. The inter-assay CV of SRDFDS for influenza A detection using F580 was 6.10%, and that of H5 HA detection using F650 was 9.14%, demonstrating that SRDFDS is an accurate technique because the range of inter-assay CVs was below 15% 40. All raw SRDFDS results are shown in Fig. S8. Intraday CV was measured by calculating the relative standard deviation (RSD) between 20 and 160 HAU/mL 41. RSD of influenza A was 2.798 \u00b1 0.7 % (mean \u00b1 SD) and that of H5 was 4.73 \u00b1 1.3 % (mean \u00b1 SD), indicating that this assay was reliable (Fig. S9).",
+            "cite_spans": [
+                {
+                    "start": 1447,
+                    "end": 1449,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 1600,
+                    "end": 1602,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Quantitative analysis of SRDFDS ::: Results",
+            "ref_spans": [
+                {
+                    "start": 671,
+                    "end": 672,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "A significant advantage of QDs is that they can be designed to possess distinct emission spectra. Furthermore, the emission filter eliminates the fluorescent signal of the other QD, because it absorbs only the wavelengths emitted by each QD and blocks all external fluorescent signals. In this study, the range of optically leaky fluorescent signal derived from the counterpart QD was examined at each emission filter, and the random binding of the antibody conjugate to counterpart test line was analyzed using relatively high titer of virus (up to 1,280 HAU/mL). To replicate the multiplex QD condition of SRDFDS, QD-conjugated mouse IgG (mIgG) was mixed with QD580-conjugated anti-influenza A (7307) or QD650-conjugated anti-H5 HA (2H2). The mixture of QD580-conjugated influenza A NP antibody (7307) and QD650-conjugated mIgG was anticipated to be detected at F580 only. However, the TL/CL value derived from this mixture was significantly different at 320 HAU/mL (P <0.01) and 1,280 HAU/mL (P <0.001) for detecting influenza A at F650 implying that the F650 could not eliminate the leaky fluorescent signal derived from the mixture and that the viral concentration of 320-1,280 HAU/mL may also have influenced the cross signaling of QD580 at F650 (Fig. 7A). Also, QD580-conjugated anti-influenza A NP (7307) antibody did not bind to the test line of H5 HA even at 1,280 HAU/mL, indicating that it did not possess any cross-reactivity with the H5 HA TL.",
+            "cite_spans": [],
+            "section": "Characterization of SRDFDS ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1258,
+                    "end": 1259,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "In the mixture of the QD650-conjugated anti-H5 HA (2H2) and QD580-conjugated mIgG, we found no leaky fluorescent signals in the H5 HA TL at F580 even though TL/CL of H5 HA reached 50, indicating that the F580 totally eliminated the QD650 fluorescent signal. However, the same mixture showed significant cross-reactivity (P <0.01) by QD650 conjugate at test line of influenza A NP in the presence of 320 HAU/mL of the H5N3 virus at F650 (Fig. 7B). This result implied that if the diagnostic result of H5 had a TL/CL value of <10 at ~160 HAU/mL, there was no cross-reaction between QD650-conjugated anti-H5 HA (2H2) and TL of influenza A NP. However, at a concentration of >320 HAU/mL with a TL/CL value of >10 in the anti-influenza A NP TL, QD650-conjugated anti-H5 HA appeared to bind to both TLs of the influenza A NP and the H5 HA. The raw FICT results are presented in Fig. S10.",
+            "cite_spans": [],
+            "section": "Characterization of SRDFDS ::: Results",
+            "ref_spans": [
+                {
+                    "start": 442,
+                    "end": 443,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "H5 subtype-specificity of SRDFDS was confirmed by testing the H1N1 and H7N1 viruses in specimens at a titer of 100 and 320 HAU/mL using multiplex QD conjugates. These samples only showed positive reactions for the influenza A TL but not the H5 HA (P <0.001) (Fig. 7C and 7D). The raw FICT results are presented in Fig. S11.",
+            "cite_spans": [],
+            "section": "Characterization of SRDFDS ::: Results",
+            "ref_spans": [
+                {
+                    "start": 264,
+                    "end": 265,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 271,
+                    "end": 272,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "For actual measurements with clinical samples, specimens from 14 patients confirmed to be infected with H5N1 (clade 2.3.4), listed as WHO case numbers, were tested at the National Institute of Hygiene and Epidemiology (NIHE), Hanoi, Vietnam. The detailed characterization of patients has been described in a previous report 13. Patients from # 16 (VN 100) to # 29 (VN 119) were used in our analysis for the evaluation of SRDFDS. These H5N1-confirmed patients (four females, nine males, and one unknown) with the mean age of 18.5 years (range, 2\u201540) were enrolled between 2007 and 2010. Sample collection was performed within a week of the onset of the illness. Among the 14 cases, 7 patients died within two weeks of the onset of the illness, showing 50% mortality (Table 2).",
+            "cite_spans": [
+                {
+                    "start": 324,
+                    "end": 326,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Clinical performance of SRDFDS ::: Results",
+            "ref_spans": [
+                {
+                    "start": 772,
+                    "end": 773,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "For binary diagnostic decision, the TL/CL threshold cut-off value for H5N1 was determined to be 0.77 for influenza A and 0.25 for H5 HA from receiver-operating characteristic (ROC) curve analysis; all TL/CL values were normalized based on this cut-off value (positive if TL/CL > 1, negative otherwise). The ROC curve analysis resulted in an area under the curve (AUC) value of 0.96 (95% confidence interval [CI]: 0.89-1.033) for the diagnosis of influenza A (P < 0.0001) (Fig. 8A). The diagnosis of H5 HA showed an AUC of 0.89 (95% CI: 0.76-1.008; P < 0.0001) (Fig. 8B), indicating that SRDFDS had high accuracy to predict H5N1 infection for both influenza A and H5 HA. Of the H5N1 positive 14 patients, only one case showed a false-negative TL/CL value while the other cases showed above the threshold TL/CL values for influenza A detection at F580. The non-infected control group (n = 38) showed no false-positive cases for influenza A (Fig. 8C). When detecting H5 HA in the patients, SRDFDS showed eleven positive cases and three false negative cases based on the threshold TL/CL value at F650 (Fig. 8D). Five cases with a higher TL/CL value than the other cases showed cross-reactivity at different emission filter (Fig. 8B). Four out of five cases with a positive TL/CL at F580 were also strongly positive at F650 for influenza A detection. Detailed results of the TL/CL values from SRDFDS and RDT are presented in Table 3.",
+            "cite_spans": [],
+            "section": "Clinical performance of SRDFDS ::: Results",
+            "ref_spans": [
+                {
+                    "start": 477,
+                    "end": 478,
+                    "mention": "8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 566,
+                    "end": 567,
+                    "mention": "8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 944,
+                    "end": 945,
+                    "mention": "8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 1103,
+                    "end": 1104,
+                    "mention": "8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 1225,
+                    "end": 1226,
+                    "mention": "8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 1426,
+                    "end": 1427,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Among the negative control patients, only one case of a metapneumovirus (MPV)-infected patient showed a false-positive for H5 HA detection with higher TL/CL values than the threshold. As seen in Table 3, SRDFDS showed a sensitivity of 92.86% (13/14) (95% CI: 66.13-99.82) and a specificity of 100% (38/38) (95% CI: 90.75-100.00; P < 0.0001) for influenza A detection. For H5 HA detection, SRDFDS showed a sensitivity of 78.57% (11/14) (95% CI: 49.20-95.34) and a specificity of 97.37% (37/38) (95% CI: 86.19-99.93; P < 0.0001). All results are presented in Figs. S12 and S13. The same antibodies were used to perform a simple, rapid diagnostic test (RDT) using colloidal gold nanoparticles (GenBody Inc., Cheonan, Republic of Korea) to test the same patients. H5N1-infected patients showed eight positive cases out of 14 for influenza A (sensitivity: 57.14%; 95% CI: 28.86-82.34%) and four positive cases out of 14 for H5 HA (sensitivity: 28.57%; 95% CI: 8.39-58.10%). The control group (n = 38) showed no false-positive cases for the detection of influenza A or H5 HA. All results from RDT are presented in Figs. S14 and S15.",
+            "cite_spans": [],
+            "section": "Clinical performance of SRDFDS ::: Results",
+            "ref_spans": [
+                {
+                    "start": 201,
+                    "end": 202,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Based on these results, the H5N1-specific SRDFDS we developed had superior specificity and sensitivity for the detection of H5N1 HPAI virus strains (clade 2.3.4). The reactivity of mAbs to other H5N1 (clade 1) was also confirmed, indicating the capability of SRDFDS to detect multiple clades of H5N1 HPAI (Fig. S16).",
+            "cite_spans": [],
+            "section": "Clinical performance of SRDFDS ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Since November 2003, WHO reported more than 700 human cases of Asian HPAI H5N1 viruses mostly from fifteen countries across Asia, Africa, the Pacific, Europe, and the Near East 42. Due to high cross-reactivity and antigenic variability, H5-subtype-specific rapid diagnostic systems have been developed and tested mainly in wild birds and not in humans 43. Therefore, there is an urgent need to develop more sensitive and H5 subtype-specific on-site monitoring systems. However, H5-subtype-specific rapid diagnostic systems have only been rarely developed.",
+            "cite_spans": [
+                {
+                    "start": 177,
+                    "end": 179,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 352,
+                    "end": 354,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "QD-based electrochemical assays have been extensively explored because of their optical properties, tunability, and potential for multiplexing in POCT. So far, preventing nonspecific reactions in QDs and increasing solubility have been major challenges because the use of high-temperature organometallic synthetic procedures produces monodisperse nanocrystals with a passivated surface containing a monolayer of hydrophobic surfactant ligands 44-46. QDs are insolubly monodispersed with a very wide range of possible emission spectra ranging from ultraviolet to near-infrared that can be controlled by simply changing their size, composition, and structure 36, 37. For water compatibility and bioconjugation, QDs are covered with a hydrophilic shell which is a popular method to solubilize QDs in aqueous media and improve their signal intensity through encapsulation with polymers 31, 32. To apply QDs to POCT, encapsulation of QDs with a polymer was routinely used to amplify the fluorescent signal, and few trials have attempted to use polymers on QD surface for POCT systems 31, 32, 47. This may reflect the weakness of the fluorescent signal of QDs making it difficult to be captured by POCT. An additional method of encapsulating many QDs in one particle was suggested to amplify the fluorescent signal from the QD nanoparticles 32.",
+            "cite_spans": [
+                {
+                    "start": 443,
+                    "end": 445,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 446,
+                    "end": 448,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 657,
+                    "end": 659,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 661,
+                    "end": 663,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 882,
+                    "end": 884,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 886,
+                    "end": 888,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1079,
+                    "end": 1081,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1083,
+                    "end": 1085,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1087,
+                    "end": 1089,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 1335,
+                    "end": 1337,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Currently, a rapid dual POCT system has been developed that detects two different pathogen species rather than two antigen targets in one pathogen 33. However, simultaneous detection of two antigens of one pathogen, HPAI H5N1, would strengthen the primary screening of POCT and inform clinicians of the H5-infection potential, although the patient may test negative due to the relatively small amount of H5-specific antigen compared to influenza A NP antigen.",
+            "cite_spans": [
+                {
+                    "start": 147,
+                    "end": 149,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "To overcome this limitation, in this study, we developed a novel method using CdSe/CdS/ZnS QDs for POCT and evaluated the clinical feasibility of this multiplex diagnostic system. We also employed a unique method for coating QDs on the surface of a latex increasing the sensitivity of the fluorescent signal, thus improving the sensitivity of the POCT system (Fig. 1A and 1E).",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 365,
+                    "end": 366,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 372,
+                    "end": 373,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "In order to increase the accuracy of POCT, each TL value on the lateral flow strip needs to be normalized against that of the CL 30.",
+            "cite_spans": [
+                {
+                    "start": 129,
+                    "end": 131,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In a previous study, a single QD was used to detect two different viruses. Most of the multiplex QD-labeled strips, which possessed an extremely high sensitivity (0.016 HAU of H5 and 0.25 HAU of influenza A as a limit of detection), were used without accurate normalization of the CL resulting in qualitative rather than quantitative detection of targets 33. Other groups have applied a single QD for detecting only one target antigen of one viral particle rather than for simultaneous targeting of two antigens of one viral particle. Chen and colleagues studied fluorescence-linked immunosorbent assay (FLISA) with chicken samples and Cui et al. examined influenza virus using an electron microscope for imaging; however, none of these systems was a rapid diagnostic system 35, 48. Li's group developed a QD-linked rapid diagnostic system, which needed additional HCL and Br2 treatment steps to measure fluorescence intensity 49.",
+            "cite_spans": [
+                {
+                    "start": 355,
+                    "end": 357,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 775,
+                    "end": 777,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 779,
+                    "end": 781,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 927,
+                    "end": 929,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In contrast, our assay provides a rapid system for detecting two antigens of one virus simultaneously resulting in the reliability of the screening data. Two different QDs and emission filters were used for targeting two different components of the same virus on a single strip. All components of the viral antigens needed to be separated from the virion to prevent cross-reactions on the counterpart TL. In our study, the bioconjugate of latex, QDs, and mAb was used for the simultaneous identification of influenza A and H5 subtype with no cross-reactivity at a concentration of 5-160 HAU/mL. This assay showed a good linear regression at a TL/CL range of 1-10 (Fig. 6), which corresponds to the TL/CL ranges in clinical patients (Fig. 8).",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 669,
+                    "end": 670,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 738,
+                    "end": 739,
+                    "mention": "8",
+                    "ref_id": "FIGREF7"
+                }
+            ]
+        },
+        {
+            "text": "As reported by de Jong et al. a fatal case had H5N1 viral loads of about 5.8 log10 cDNA copies (nose) and 7.5 log10 cDNA copies (throat) 50. The rRT-PCR in our study of 5.9 log 10 cDNA corresponded to the limit of detection of our assay for H5 HA and 5 - 6.5 log 10 cDNA copies corresponded to the quantitative range of 5-160 HAU/mL. Taken together, we believe that our limit of detection and quantitative range enabled detection of a fatal H5N1 human case. We have provided evidence by diluting HPAI H5N1 virus in addition to H5N3, which showed a good linear regression in this TL/CL range (Fig. S17). As Fig. 7 shows, the cross-reactivity of influenza A TL obtained by F650 nm at 160 HAU/mL was not derived from the random binding of QD650 conjugate to influenza A test line. Except for one patient (VN 102) (TL/CL;1.31), four patients (VN 100, VN 105, VN 106, and VN 109), who had TL/CL value of > 3 against influenza A detection, were positive at F650 and were not due to the random binding of QD650 conjugate but simple optical leaking. As this optical leaking did not interfere with TL1/CL or TL2/CL results in patients, clinical readouts to diagnose influenza A and H5 HA measured by SRDFDS could be considered reliable.",
+            "cite_spans": [
+                {
+                    "start": 137,
+                    "end": 139,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 611,
+                    "end": 612,
+                    "mention": "7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "Our system was limited by random binding of QD650 conjugate at influenza A TL at an extremely high titer, such as 320-1200 HAU/mL, due to the use of a less than perfect lysis buffer, where the fluorescence signal of QD580 was captured by F650. In contrast, the F580 excluded the fluorescent signal from QD650 conjugates completely while QD650 conjugates targeting H5 HA were cross-reactive to the TL of influenza A NP at concentrations greater than 320 HAU/mL, indicating that the NP- and HA antigens of single virus particle were not completely separated at this high titer.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "For influenza A diagnosis, an isothermal nucleic acid amplification-based integrated system, Alere i influenza A&B test, had an excellent performance showing a sensitivity of 87.2-93.8% and specificity of 62.5-100% 51, 52. Moreover, an antigen detection kit showed a sensitivity of 60-80% 53, 54. Therefore, our result is comparable to that of the isothermal nucleic acid amplification-based integrated system and could be more accurate than that of the rapid diagnostic system. However, no commercialized H5 subtype-specific rapid diagnostic system is currently available. Here, we have developed an assay that provides a reliable primary screening result to clinicians by furnishing dual information for highly pathogenic H5N1 virus-infected patients with 50% mortality. As laboratory immunoassay, we conducted sandwich fluorescence-linked immunosorbent assay (FLISA)with the QD conjugates and found that SRDFDS was more sensitive than FLISA (Fig. S18). Furthermore, the lowest virus titer of a commercial RDT (influenza A) was 80 HAU/mL, indicating that our SRDFDS improved the performance to recognize the same virus by 8 folds over the commercial RDT kit (Fig. S19).",
+            "cite_spans": [
+                {
+                    "start": 215,
+                    "end": 217,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 219,
+                    "end": 221,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 289,
+                    "end": 291,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 293,
+                    "end": 295,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "To the best of our knowledge, our study is the first to clinically evaluate a rapid kit with the ability to detect influenza A and H5-subtype simultaneously in human samples. This assay was designed to develop an efficient QD-based method with more than 50% QY; we believe that our study could adapt current QDs to the POCT platform based on lateral flow test strips via latex conjugation.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In summary, the H5 subtype-specific SRDFDS developed in this study allowed for the accurate identification of influenza A and HA subtype for the rapid detection of H5N1 HPAI viruses in human clinical samples. This multiplexing of the QD-based SRDFDS system can lay the foundation for the rapid and simultaneous detection of subtype-specific influenza virus samples in a clinical setting.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: TL/CL values in test line and counterpart test line and inter-assay coefficients of variation (CV) measured by SRDFDS\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Summary of confirmed clinical H5N1 cases\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Clinical performance of SRDFDS\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1:  Characterization of bioconjugates with or without latex substrate. (A) The bioconjugate complex with QDs and monoclonal antibody (mAb) (without latex) was tested on a strip with the H5N3 virus; images were then taken under UV exposure. (B) Schematic illustration of the synthesis of the bioconjugate with latex, QDs, and mAbs. (C) TEM of the bioconjugate complexes; (i) Latex beads; (ii) Latex + QD580 complexes; (iii) Latex + QD580 + mAb complexes; (iv) Latex + QD650 complexes; (v) Latex + QD650 + mAb complexes. (D) The diameters of each bioconjugate were calculated (n = 30) and plotted. (E) Latex, QDs, and mAbs were conjugated together and tested on nitrocellulose-coated with anti-influenza A or anti-influenza H5 subtype using a fluorescent immunochromatographic test. The images of the test line were captured under UV illumination. (F) The fluorescent pixel values of the latex conjugate were plotted. CL, control line; TL, test line. ***, P < 0.001.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2:  Overview of the smartphone-based rapid dual fluorescent diagnostic system (SRDFDS). (A) Schematic presentation of the multiplexed lateral flow strip with two simultaneous conjugates. To induce the lateral flow reaction toward the test line (TL) and control line (CL), virus particles in lysis buffer were dropped on the sample pad. After 20 min, each conjugate was posted on each test line, while the unreactive bioconjugates flowed further and were caught by the anti-mouse IgG on the CL. To normalize each conjugate reaction on the strip, counterpart fluorescence values of the conjugates in the CL were excluded using two different emission filters (580 nm and 650 nm) with the smartphone-based fluorescence detector containing a reflective light concentrator module and two emission filters. HA, hemagglutinin; NP, nucleoprotein. (B) Schematic representation of the smartphone-based fluorescence detector with a reflective light concentrator module and two emission filters. An image of the smartphone-based fluorescence detectors is shown with two different emission filters for 580 nm (ET585/65nm; F580) and 650 nm (ET650/45 nm; F650) on the right panel. Location of upper- and lower optical reflectors is presented in green and red dotted boxes, respectively. Orange dotted-lined box indicates the position of the laser and excitation filter.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3:  Analysis of dual fluorescence signals of the smartphone-based rapid dual fluorescent diagnostic system (SRDFDS). (A) The assay was conducted with two QD conjugates for 20 min in the presence of the H5N3 virus. SRDFDS was used to observe two fluorescent signals using separate emission filters, and test line (TL)/control line (CL) values were calculated by smartphone. TL2/CL at F580 nm (green box) or TL1/ CL at F650 nm (red box) indicate influenza A and H5 HA, respectively. TL1/CL and TL2/CL of virus sample (ii) were divided by TL1/CL and TL2/CL of each uninfected sample (i), respectively, to obtain normalized value (fold of control). Normalized TL/CL values of counterpart test lines (iii and iv) also confirmed to ascertain that there was no cross-reactivity. (B) Under a UV light, fluorescent signals at TL1, TL2, and CL on the strip were observed without (w/o) or with two emission filters (F580 nm or F650 nm). TL1, H5 subtype-specific test line; TL2, influenza A test line; CL, control line to normalize TL.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4:  Optimization of lysis buffers for SRDFDS with two QD bioconjugates. Various concentrations of SDS (0.6, 1.2, and 1.5%) at different pH values (5.0, 8.0, and 11.0) in lysis buffer were tested using 100-fold diluted conjugates. In lysis buffer, 0.6% SDS was dissolved at three different pHs (A, B, and C). 1.2% SDS was dissolved in lysis buffers of different pHs (D, E, and F). 1.5% SDS was dissolved in lysis buffers of different pHs (G, H, and I). All data (n = 3) are shown as the mean \u00b1 SD. F 580-A, TL2/CL of influenza A taken with the 580 nm emission filter; F 580-H5, TL1/CL of H5 taken with the 580 nm emission filter; F 650-A, TL2/CL of influenza A taken with the 650 nm emission filter; F 650-H5, TL1/CL of H5 taken with the 650 nm emission filter. TL1, H5 subtype-specific test line; TL2, influenza A test line; CL, control line to normalize TL. *, P < 0.05; ***, P < 0.001.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5:  Optimization of dilution factors of the two bioconjugates for SRDFDS. Conjugates at different dilution factors (50, 75, and 100) were tested in lysis buffer (1.2% SDS and pH 11.0) at 20 HAU/mL of H5N3 virus. 50-fold diluted QD650 conjugate to detect H5 HA was mixed with 50-, 70-, and 100-fold diluted QD580 conjugates to detect influenza A NP (A, B, and C). 70-fold diluted QD650 conjugate to detect H5 HA was mixed with 50-, 70-, and 100-fold diluted QD580 conjugate to detect influenza A NP (D, E, and F). 100-fold diluted QD650 conjugate to detect H5 HA was mixed with 50-, 70-, and 100-fold diluted QD580 conjugate to detect influenza A NP with (G, H, and I). All data (n = 3) are shown as the mean \u00b1 SD. F 580-A, TL2/CL of influenza A taken with the 580 nm emission filter; F 580-H5, TL1/CL of H5 taken with the 580 nm emission filter; F 650-A, TL2/CL of influenza A taken with the 650 nm emission filter; F 650-H5, TL1/CL of H5 taken with the 650 nm emission filter. *, P < 0.05; **, P < 0.01; ***, P < 0.001.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6:  Limit of detection (LOD) of SRDFDS. (A) SRDFDS was carried out using diagnostic strips with two QD conjugates [anti-influenza A (7307) conjugated with QD580, and anti-H5 HA (2H2) conjugated with QD650]. The fluorescence images of serially diluted H5N3 virus (10-160 HAU/mL) were captured after 20 min with SRDFDS including two emissions filters (top panel). Serially diluted H5N3 viruses (10-160 HAU/mL) were dissolved in human nasopharyngeal samples at a 1:10 dilution ratio. The fluorescence images under UV light were captured without a filter (naked eye) or with each filter (bottom panel). F580, 580 nm emission filter; F650, 650 nm emission filter. (B) The TL/CL values of SRDFDS obtained in the presence of two QD conjugates [anti-influenza A (7307) conjugated with QD580, and anti-H5 HA (2H2) conjugated with QD650] was plotted. (C) The result of two QD conjugates [anti-influenza A (7307) conjugated with QD580 and anti-mouse IgG conjugated with QD650] was plotted. (D) The result of two QD conjugates [anti-mouse IgG conjugated with QD580 and anti-H5 HA (2H2) conjugated with QD650 nm] was plotted. (E) The result of two QD conjugates [anti-mouse IgG conjugated with QD580 and anti-mouse IgG conjugated with QD650] was plotted *, P < 0.05; **, P < 0.01; ***, P < 0.001.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7:  Characteristics of SRDFDS for cross-reactivity. (A) Cross-reactive fluorescence signals derived from counter QD conjugates were measured with anti-influenza A (7307) conjugated with QD580 and anti-mouse IgG conjugated with QD650. (B) Cross-reactive fluorescence signals derived from counter QD conjugates were measured with anti-mIgG conjugated with QD580and anti-H5 HA (2H2) conjugated with QD650. Specificity of H5 subtype of SRDFDS was confirmed using two other subtypes of influenza A H1N1 and H7N1 using two QD conjugates [anti-influenza A (7307) conjugated with QD580, and anti-H5 HA (2H2) conjugated with QD650]. Two different titers (100 and 320 HAU/mL) of H1N1 (C) and H7N1 (D) were tested. mIgG, mouse IgG;**, P < 0.01; ***, P < 0.001.",
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Figure 8:  Clinical validation of SRDFDS with H5N1-infected patient samples. A third-party field trial of SRDFDS was performed using human throat swab specimens collected from H5N1-infected patients (n = 14) in Vietnam, and negative control patients from Vietnam and Korea (n = 38). Each receiver operating characteristic (ROC) curve was plotted for influenza A (A) and H5 subtype (B). The accuracy of the SRDFDS was determined based on the area under the ROC curve (AUC). The cut-off value used for the detection of H5N1 was applied to determine the presence of the virus. All fluorescence levels of TL/CL against negative control group or positive patients were plotted for prediction of infection by influenza A and H5 subtype using two different emission filters for 580 nm (F580) (C) and 650 nm (F650) (D), respectively.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Avian and other zoonotic influenza",
+            "authors": [],
+            "year": null,
+            "venue": "2018",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "",
+            "authors": [],
+            "year": 2017,
+            "venue": "Development of Multiplexed Infectious Disease Lateral Flow Assays: Challenges and Opportunities",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Improvement of a rapid diagnostic application of monoclonal antibodies against avian influenza H7 subtype virus using Europium nanoparticles",
+            "authors": [],
+            "year": 2017,
+            "venue": "Sci Rep",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Rapid and quantitative detection of zoonotic influenza A virus infection utilizing coumarin-derived dendrimer-based fluorescent immunochromatographic strip test (FICT)",
+            "authors": [],
+            "year": 2014,
+            "venue": "Theranostics",
+            "volume": "4",
+            "issn": "",
+            "pages": "1239-49",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Smartphone-Based Fluorescent Diagnostic System for Highly Pathogenic H5N1 Viruses",
+            "authors": [],
+            "year": 2016,
+            "venue": "Theranostics",
+            "volume": "6",
+            "issn": "",
+            "pages": "231-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Fluorescent immunochromatography for rapid and sensitive typing of seasonal influenza viruses",
+            "authors": [],
+            "year": 2015,
+            "venue": "PLoS One",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Highly sensitive electrochemical immunoassay for H1N1 influenza virus based on copper-mediated amplification",
+            "authors": [],
+            "year": 2012,
+            "venue": "Chem Commun (Camb)",
+            "volume": "48",
+            "issn": "",
+            "pages": "6562-4",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "A highly sensitive europium nanoparticle-based immunoassay for detection of influenza A/B virus antigen in clinical specimens",
+            "authors": [],
+            "year": 2014,
+            "venue": "J Clin Microbiol",
+            "volume": "52",
+            "issn": "",
+            "pages": "4385-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Mobile Phone Ratiometric Imaging Enables Highly Sensitive Fluorescence Lateral Flow Immunoassays without External Optical Filters",
+            "authors": [],
+            "year": 2018,
+            "venue": "Anal Chem",
+            "volume": "90",
+            "issn": "",
+            "pages": "6967-74",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "A Smartphone-Driven Thermometer Application for Real-time Population- and Individual-Level Influenza Surveillance",
+            "authors": [],
+            "year": 2018,
+            "venue": "Clin Infect Dis",
+            "volume": "67",
+            "issn": "",
+            "pages": "388-97",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Disposable Autonomous Device for Swab-to-Result Diagnosis of Influenza",
+            "authors": [],
+            "year": 2017,
+            "venue": "Anal Chem",
+            "volume": "89",
+            "issn": "",
+            "pages": "5776-83",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Global alert to avian influenza virus infection: from H5N1 to H7N9",
+            "authors": [],
+            "year": 2013,
+            "venue": "Pathog Glob Health",
+            "volume": "107",
+            "issn": "",
+            "pages": "217-23",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Smartphone-Based Point-of-Care Urinalysis Under Variable Illumination",
+            "authors": [],
+            "year": 2018,
+            "venue": "IEEE J Transl Eng Health Med",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Point-of-Care Technologies for Precision Cardiovascular Care and Clinical Research: National Heart, Lung, and Blood Institute Working Group",
+            "authors": [],
+            "year": 2016,
+            "venue": "JACC Basic Transl Sci",
+            "volume": "1",
+            "issn": "",
+            "pages": "73-86",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "CMOS cell sensors for point-of-care diagnostics",
+            "authors": [],
+            "year": 2012,
+            "venue": "Sensors (Basel)",
+            "volume": "12",
+            "issn": "",
+            "pages": "10042-66",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "A Novel Automatic Rapid Diagnostic Test Reader Platform",
+            "authors": [],
+            "year": 2016,
+            "venue": "Comput Math Methods Med",
+            "volume": "2016",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "",
+            "authors": [],
+            "year": 2018,
+            "venue": "Smartphone Spectrometers",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Ultrasensitive, biocompatible, quantum-dot-embedded silica nanoparticles for bioimaging",
+            "authors": [],
+            "year": 2012,
+            "venue": "Adv Funct Mater",
+            "volume": "22",
+            "issn": "",
+            "pages": "1843-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Quantum dot bioconjugates for imaging, labelling and sensing",
+            "authors": [],
+            "year": 2005,
+            "venue": "Nature materials",
+            "volume": "4",
+            "issn": "",
+            "pages": "435-46",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Quantum dot enabled molecular sensing and diagnostics",
+            "authors": [],
+            "year": 2012,
+            "venue": "Theranostics",
+            "volume": "2",
+            "issn": "",
+            "pages": "631-54",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Application of DNA Aptamers and Quantum Dots to Lateral Flow Test Strips for Detection of Foodborne Pathogens with Improved Sensitivity versus Colloidal Gold",
+            "authors": [],
+            "year": 2014,
+            "venue": "Pathogens",
+            "volume": "3",
+            "issn": "",
+            "pages": "341-55",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Quantitative and rapid detection of C-reactive protein using quantum dot-based lateral flow test strip",
+            "authors": [],
+            "year": 2018,
+            "venue": "Anal Chim Acta",
+            "volume": "1008",
+            "issn": "",
+            "pages": "1-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Disease-induced resource constraints can trigger explosive epidemics",
+            "authors": [],
+            "year": 2015,
+            "venue": "Sci Rep",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Simultaneous quantitation of cytokeratin-19 fragment and carcinoembryonic antigen in human serum via quantum dot-doped nanoparticles",
+            "authors": [],
+            "year": 2017,
+            "venue": "Biosens Bioelectron",
+            "volume": "91",
+            "issn": "",
+            "pages": "60-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "A fluorescent immunochromatographic strip test using Quantum Dots for fumonisins detection",
+            "authors": [],
+            "year": 2016,
+            "venue": "Talanta",
+            "volume": "150",
+            "issn": "",
+            "pages": "463-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Simple and sensitive detection of HBsAg by using a quantum dots nanobeads based dot-blot immunoassay",
+            "authors": [],
+            "year": 2014,
+            "venue": "Theranostics",
+            "volume": "4",
+            "issn": "",
+            "pages": "307-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Multiplexed detection of influenza A virus subtype H5 and H9 via quantum dot-based immunoassay",
+            "authors": [],
+            "year": 2016,
+            "venue": "Biosens Bioelectron",
+            "volume": "77",
+            "issn": "",
+            "pages": "464-70",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Rapid and Quantitative Detection of Avian Influenza A(H7N9) Virions in Complex Matrices Based on Combined Magnetic Capture and Quantum Dot Labeling",
+            "authors": [],
+            "year": 2015,
+            "venue": "Small",
+            "volume": "11",
+            "issn": "",
+            "pages": "5280-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Quantum-dots-based fluoroimmunoassay for the rapid and sensitive detection of avian influenza virus subtype H5N1",
+            "authors": [],
+            "year": 2010,
+            "venue": "Luminescence",
+            "volume": "25",
+            "issn": "",
+            "pages": "419-23",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Review: three synthesis methods of CdX (X = Se, S or Te) quantum dots",
+            "authors": [],
+            "year": 2014,
+            "venue": "IET Nanobiotechnol",
+            "volume": "8",
+            "issn": "",
+            "pages": "59-76",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Water-soluble quantum dots for biomedical applications",
+            "authors": [],
+            "year": 2006,
+            "venue": "Biochem Biophys Res Commun",
+            "volume": "348",
+            "issn": "",
+            "pages": "781-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Phosphine-free synthesis of high-quality reverse type-I ZnSe/CdSe core with CdS/Cd(x)Zn(1 - x)S/ZnS multishell nanocrystals and their application for detection of human hepatitis B surface antigen",
+            "authors": [],
+            "year": 2011,
+            "venue": "Nanotechnology",
+            "volume": "22",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Liquid-liquid phase separation of a monoclonal antibody and nonmonotonic influence of Hofmeister anions",
+            "authors": [],
+            "year": 2010,
+            "venue": "Biophys J",
+            "volume": "99",
+            "issn": "",
+            "pages": "3792-800",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Rapid diagnostic tests for identifying avian influenza A(H7N9) virus in clinical samples",
+            "authors": [],
+            "year": 2015,
+            "venue": "Emerg Infect Dis",
+            "volume": "21",
+            "issn": "",
+            "pages": "87-90",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Validation of an enzyme-linked immunosorbent assay developed for measuring cortisol concentration in human saliva and serum for its applicability to analyze cortisol in pig saliva",
+            "authors": [],
+            "year": 2014,
+            "venue": "Acta Vet Scand",
+            "volume": "56",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Multianalytical Method Validation for Qualitative and Quantitative Analysis of Solvents of Abuse in Oral Fluid by HS-GC/MS",
+            "authors": [],
+            "year": 2016,
+            "venue": "Int J Anal Chem",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Highly Pathogenic Asian Avian Influenza A (H5N1) in People",
+            "authors": [],
+            "year": null,
+            "venue": "2015",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Rapid and broad detection of H5 hemagglutinin by an immunochromatographic kit using novel monoclonal antibody against highly pathogenic avian influenza virus belonging to the genetic clade 2.3.4.4",
+            "authors": [],
+            "year": 2017,
+            "venue": "PLoS One",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Effective reduction of nonspecific binding by surface engineering of quantum dots with bovine serum albumin for cell-targeted imaging",
+            "authors": [],
+            "year": 2012,
+            "venue": "Langmuir",
+            "volume": "28",
+            "issn": "",
+            "pages": "16605-13",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Rapid and sensitive detection of protein biomarker using a portable fluorescence biosensor based on quantum dots and a lateral flow test strip",
+            "authors": [],
+            "year": 2010,
+            "venue": "Anal Chem",
+            "volume": "82",
+            "issn": "",
+            "pages": "7008-14",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Direct Characterization of Polymer Encapsulated CdSe/CdS/ZnS Quantum Dots",
+            "authors": [],
+            "year": 2016,
+            "venue": "Surf Sci",
+            "volume": "648",
+            "issn": "",
+            "pages": "339-44",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Synthesis of size-tunable photoluminescent aqueous CdSe/ZnS microspheres via a phase transfer method with amphiphilic oligomer and their application for detection of HCG antigen",
+            "authors": [],
+            "year": 2011,
+            "venue": "J Mater Chem",
+            "volume": "21",
+            "issn": "",
+            "pages": "7393-400",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Quantum dot-aptamer nanoprobes for recognizing and labeling influenza A virus particles",
+            "authors": [],
+            "year": 2011,
+            "venue": "Nanoscale",
+            "volume": "3",
+            "issn": "",
+            "pages": "2454-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "A fast and sensitive immunoassay of avian influenza virus based on label-free quantum dot probe and lateral flow test strip",
+            "authors": [],
+            "year": 2012,
+            "venue": "Talanta",
+            "volume": "100",
+            "issn": "",
+            "pages": "1-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Serologic diagnosis of tuberculosis by combining Ig classes against selected mycobacterial targets",
+            "authors": [],
+            "year": 2014,
+            "venue": "J Infect",
+            "volume": "69",
+            "issn": "",
+            "pages": "581-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Fatal outcome of human influenza A (H5N1) is associated with high viral load and hypercytokinemia",
+            "authors": [],
+            "year": 2006,
+            "venue": "Nat Med",
+            "volume": "12",
+            "issn": "",
+            "pages": "1203-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Evaluation of Alere i Influenza A&B for rapid detection of influenza viruses A and B",
+            "authors": [],
+            "year": 2014,
+            "venue": "J Clin Microbiol",
+            "volume": "52",
+            "issn": "",
+            "pages": "3339-44",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Performance of the molecular Alere I influenza A&B test compared to that of the xpert flu A/B assay",
+            "authors": [],
+            "year": 2015,
+            "venue": "J Clin Microbiol",
+            "volume": "53",
+            "issn": "",
+            "pages": "706-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Evaluation of a rapid diagnostic test, NanoSign(R) Influenza A/B Antigen, for detection of the 2009 pandemic influenza A/H1N1 viruses",
+            "authors": [],
+            "year": 2010,
+            "venue": "Virol J",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Clinical evaluation of the SD Bioline influenza virus antigen test for rapid detection of influenza viruses A and B in children and adults during the influenza season",
+            "authors": [],
+            "year": 2007,
+            "venue": "Clin Vaccine Immunol",
+            "volume": "14",
+            "issn": "",
+            "pages": "1050-2",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Highly Luminescent CdSe/ZnSe Core/Shell Nanocrystals of Low Size Dispersion",
+            "authors": [],
+            "year": 2002,
+            "venue": "Nano letters",
+            "volume": "2",
+            "issn": "",
+            "pages": "781-4",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Large-scale synthesis of nearly monodisperse CdSe/CdS core/shell nanocrystals using air-stable reagents via successive ion layer adsorption and reaction",
+            "authors": [],
+            "year": 2003,
+            "venue": "J Am Chem Soc",
+            "volume": "125",
+            "issn": "",
+            "pages": "12567-75",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Modified ligand-exchange for efficient solubilization of CdSe/ZnS quantum dots in water: a procedure guided by computational studies",
+            "authors": [],
+            "year": 2008,
+            "venue": "Langmuir",
+            "volume": "24",
+            "issn": "",
+            "pages": "5270-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Fluorescence dynamics of the biosynthesized CdSe quantum dots in Candida utilis",
+            "authors": [],
+            "year": 2017,
+            "venue": "Sci Rep",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "A multiplex PCR assay for the detection of five influenza viruses using a dual priming oligonucleotide system",
+            "authors": [],
+            "year": 2015,
+            "venue": "BMC Infect Dis",
+            "volume": "15",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Simultaneous detection of influenza A subtypes of H3N2 virus, pandemic (H1N1) 2009 virus and reassortant avian H7N9 virus in humans by multiplex one-step real-time RT-PCR assay",
+            "authors": [],
+            "year": 2016,
+            "venue": "Springerplus",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Microfluidic Multiplexing in Bioanalyses",
+            "authors": [],
+            "year": 2013,
+            "venue": "Journal of Laboratory Automation",
+            "volume": "18",
+            "issn": "",
+            "pages": "350-66",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Multiplexed Point-of-Care Testing - xPOCT",
+            "authors": [],
+            "year": 2017,
+            "venue": "Trends Biotechnol",
+            "volume": "35",
+            "issn": "",
+            "pages": "728-42",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

@@ -1,0 +1,4736 @@
+{
+    "paper_id": "PMC5887474",
+    "metadata": {
+        "title": "Network perturbation analysis of gene transcriptional profiles reveals protein targets and mechanism of action of drugs and influenza A viral infection",
+        "authors": [
+            {
+                "first": "Heeju",
+                "middle": [],
+                "last": "Noh",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jason",
+                "middle": [
+                    "E"
+                ],
+                "last": "Shoemaker",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Rudiyanto",
+                "middle": [],
+                "last": "Gunawan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The identification of the molecular targets of pharmacologically relevant compounds is vital for understanding the mechanism of action (MoA) of drugs, as well as for exploring off-target effects. While the definition of a target can be quite arbitrary, the term generally refers to a molecule whose interaction with the compound is connected to the compound's effects (1). In this study, transcription factors (TFs) and their protein interaction partners represent the target molecules, while differential gene expression profiles represent the effects. Among existing technologies for protein target discovery (e.g. biochemical affinity purification, RNAi knockdown or gene knockout experiments) (2), gene expression profiling has received much recent attention due to its relative ease of implementation as well as the availability of large-scale public databases and well-established experimental protocols and data analytical methods. A complication when using gene expression profiling for target discovery is that the data give only indirect indications of the drug's action. As illustrated in Figure 1A, the interaction between a compound and its protein target(s) is expected to result in the differential expression of downstream genes that are regulated by the protein target(s). But, the expression of the protein targets themselves may not\u2014and often do not\u2014change (3). Consequently, target discovery using gene expression profiles requires computational methods to identify the (upstream) targets from the (downstream) effects.",
+            "cite_spans": [
+                {
+                    "start": 369,
+                    "end": 370,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 698,
+                    "end": 699,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1377,
+                    "end": 1378,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 1107,
+                    "end": 1109,
+                    "mention": "1A",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Existing computational strategies for compound target identification using gene expression profiles can generally be classified into two groups: comparative analysis and network-based analysis (4). Comparative analysis methods use the gene expression profiles as drug signatures. Here, the similarity between the differential gene expression of a drug treatment and those of reference compounds or experiments with known targets, implies a closeness in the molecular targets and the MoA. A notable example of such an approach is the Connectivity Map (5), which provides gene expression profiles of human cell lines treated by \u223c5000 small molecule compounds as queryable signatures for evaluating drug\u2013drug similarities (6). The obvious drawback of comparative analysis methods is their dependence on an extensive and accurate target annotation of the reference gene expression profiles.",
+            "cite_spans": [
+                {
+                    "start": 194,
+                    "end": 195,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 551,
+                    "end": 552,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 720,
+                    "end": 721,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In network-based analysis, one adopts a system-oriented view by using cellular networks, such as gene regulatory network (GRN) and/or protein\u2013protein interaction network (PIN). A number of network-based analytical methods relied on dynamic models of the GRN to infer network perturbations caused by drug treatments (7\u201311). Several notable methods include Network Identification by multiple Regression (NIR) (7), Mode of action by Network Identification (MNI) (8), Sparse Simultaneous Equation Model (SSEM) (9) and DeltaNet (10,11). In these methods, the GRN is inferred from a training dataset of gene expression profiles using a linear regression derived from a dynamic mechanistic model of the gene transcriptional process. Subsequently, the inferred GRN is utilized for target identification to evaluate deviations in the differential gene expression caused by drug treatments (7\u201311) or in disease (12). A major pitfall of the above methods is that the inference of GRN from gene transcriptional profiles is highly challenging (13), as the inference problem often becomes underdetermined (i.e. the GRN may not be inferable) (14,15). In addition, as mentioned above, the expressions of the drug targets are often unaffected by the drug treatment (3).",
+            "cite_spans": [
+                {
+                    "start": 316,
+                    "end": 320,
+                    "mention": "7\u201311",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 408,
+                    "end": 409,
+                    "mention": "7",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 460,
+                    "end": 461,
+                    "mention": "8",
+                    "ref_id": "BIBREF72"
+                },
+                {
+                    "start": 507,
+                    "end": 508,
+                    "mention": "9",
+                    "ref_id": "BIBREF73"
+                },
+                {
+                    "start": 524,
+                    "end": 526,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 527,
+                    "end": 529,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 881,
+                    "end": 885,
+                    "mention": "7\u201311",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 902,
+                    "end": 904,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1031,
+                    "end": 1033,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1128,
+                    "end": 1130,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1131,
+                    "end": 1133,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1249,
+                    "end": 1250,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Another group of network-based analytical methods utilizes cellular network graphs, either curated from the literature knowledge or inferred from gene expression data, to formulate statistical hypothesis tests for ranking drug targets (3,16\u201322). Several methods in this category prioritize targets based on the enrichment of the downstream or neighbouring molecules in the network for differentially expressed genes, following the principle of \u2018guilt by association\u2019 (3,16\u201320). Another set of methods rank targets by scoring hypotheses that are generated based on causal relationships in the biological networks (21,22). A recent method called Detecting Mechanism of Action by Network Dysregulation (DeMAND), combines the GRN and PIN to create a molecular interaction network, where the drug targets are scored based on the statistical significance of drug-induced alterations in the joint gene expression distribution between two connected genes in the network (23). The methods in this group make use of only the (static) topology of cellular networks without much consideration of the dynamics of the gene transcriptional process, and thus are unable to fully exploit information contained in time-series datasets.",
+            "cite_spans": [
+                {
+                    "start": 236,
+                    "end": 237,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 238,
+                    "end": 243,
+                    "mention": "16\u201322",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 468,
+                    "end": 469,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 470,
+                    "end": 475,
+                    "mention": "16\u201320",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 613,
+                    "end": 615,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 616,
+                    "end": 618,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 963,
+                    "end": 965,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In this work, we developed ProTINA (Protein Target Inference by Network Analysis), a network perturbation analysis method for protein target identification using gene transcriptional profiles. The analysis involves two key steps: (a) the creation of a model of tissue or cell type-specific protein\u2013gene regulatory network (PGRN) and (b) the calculation of protein target scores based on the enhancement or attenuation of the protein\u2013gene regulations. In developing ProTINA, we addressed some of the drawbacks in the existing methods. First, the PGRN in ProTINA is based on a dynamic model of the gene transcriptional process, and is therefore able to take advantage of time-series gene expression profiles that are commonly generated by drug treatment studies. In addition, ProTINA leverages on the availability of comprehensive maps of protein\u2013protein and protein\u2013DNA interactions for the construction of the PGRN, which serves as prior information to alleviate network inferability issue. Finally, ProTINA scores candidate targets based on drug-induced perturbations to the expression of genes regulated by the targets, rather than the expression of the targets themselves. We demonstrated the superiority of ProTINA over the state-of-the-art method DeMAND and differential gene expression analysis (DE), in predicting the protein targets of drugs using human and mouse datasets from NCI-DREAM drug synergy challenge (24), genotoxicity study (25) and chromosome drug targeting study (26). Besides protein targets of compounds, we presented the application of ProTINA to study host-pathogen interactions, specifically for elucidating the targets of influenza A viral proteins.",
+            "cite_spans": [
+                {
+                    "start": 1420,
+                    "end": 1422,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1445,
+                    "end": 1447,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1486,
+                    "end": 1488,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "We applied ProTINA to three datasets of drug treatments from NCI-DREAM drug synergy challenge (24), genotoxicity study (25) and chromosome drug targeting study (26), and to gene expression data of human lung cancer cell Calu-3 from influenza A viral infection studies (27\u201330). For NCI-DREAM drug synergy challenge, we obtained the raw Affymetrix Human Genome U219 microarray data from Gene Expression Omnibus (GEO) database (31) (accession number: GSE51068). The raw data were first normalized and transformed into log2-scaled expressions using justRMA function in the affy package of Bioconductor (32). Then, the log2 fold change (log2FC) differential expressions and their statistical significance (Benjamini\u2013Hochberg adjusted P-values) were calculated using a linear fit model and empirical Bayes method in the limma package of Bionconductor. Three samples from the drug treatment using the low dose of Aclacinomycin A were dropped because all of the log2FC expressions were close to 1 and thus not statistically significant. The probe sets were mapped to gene symbols using hgu219.db annotation package (Entrez Gene database as of 27 September 2015). In the case of multiple probe sets mapping to a gene symbol, we assigned the log2FC from the probe set with the smallest average adjusted P-value over the samples.",
+            "cite_spans": [
+                {
+                    "start": 95,
+                    "end": 97,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 120,
+                    "end": 122,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 161,
+                    "end": 163,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 269,
+                    "end": 274,
+                    "mention": "27\u201330",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 425,
+                    "end": 427,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 599,
+                    "end": 601,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Gene expression data ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The raw microarray data from genotoxicity study (25) in human HepG2 cell line were obtained from GEO (accession numbers: GSE28878 using Affymetrix GeneChip Human Genome U133 Plus 2.0 array and GSE58235 using Affymetrix HT Human Genome U133+ PM array). As with the drug synergy data, the microarray data were first normalized using justRMA, and the log2FCs and their adjusted P-values were calculated using limma in Bioconductor. Because the data came from different microarray platforms, the gene symbols were matched separately for each platform using hgu133plus2.db annotation package (Entrez database of 27 September 2015) and HT_HG-U133_Plus_PM annotation file in Affymetrix, respectively. Likewise, in the case of multiple probe sets matching a gene symbol, the probe set with the smallest average adjusted P-value across all samples was chosen.",
+            "cite_spans": [
+                {
+                    "start": 49,
+                    "end": 51,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Gene expression data ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The raw data from the chromosome-targeting study using mouse pancreatic alpha and beta cells (26) were also obtained from GEO database (accession number: GSE36379). Again, the raw data were normalized using justRMA, and the log2FCs and their adjusted P-values were calculated by limma. The probes were mapped to the corresponding gene symbols using moe430a.db package (Entrez Gene database as of 27 September 2015) in Bioconductor. In the case of multiple probe sets mapping to a gene symbol, we selected the probe set with the smallest average adjusted P-value among the samples.",
+            "cite_spans": [
+                {
+                    "start": 94,
+                    "end": 96,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Gene expression data ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "For influenza A infection analysis, we obtained the raw microarray data of four influenza studies (27\u201330) from GEO database (accession numbers: GSE40844, GSE37571, GSE33142 and GSE28166). The raw data were background-corrected and normalized using normexp and quantile methods in limma package of Bioconductor. The log2FCs and their adjusted P-values were again calculated by limma. The probes were mapped to the corresponding gene symbols using hgug4112a.db package (Entrez Gene database as of 27 September 2015). Like before, for genes with multiple probe sets, we chose the log2FC value corresponding to the probe set with the smallest average adjusted P-value.",
+            "cite_spans": [
+                {
+                    "start": 99,
+                    "end": 104,
+                    "mention": "27\u201330",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Gene expression data ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "In ProTINA, the PGRN is a bipartite graph with weighted, directed edges pointing from a protein to a gene (see Figure 1A). The edges in the PGRN describe the regulation of gene expression by TFs and their protein partners, the molecular targets of interest in this work. The bipartite PGRN above is able to capture feedback loops in the gene transcriptional regulation, even though these loops are not drawn explicitly. An example of such a feedback loop is when a protein regulates the expression of its own transcription factor(s). The PGRN is constructed by combining two types of networks, namely the TF\u2013gene network and PIN. For the construction of human cell type-specific PGRNs, we relied on the Regulatory Circuit resource that provides 394 cell type and tissue-specific TF\u2013gene interactions (33). More specifically, for the analysis of the NCI-DREAM drug synergy, genotoxic compound study, and influenza A viral infection study datasets, we used the TF\u2013gene networks of human lymphoma cells, pleomorphic hepatocellular carcinoma cells, and epithelium lung cancer cells, respectively. We included only TF\u2013gene interactions with a Regulatory Circuit confidence score greater than 0.1. The confidence score indicates the normalized promoter activity level in a given cell type (0: not active, 1: maximally active) (33). For the analysis of mouse pancreatic cell dataset, we obtained the mouse pancreatic TF\u2013gene interactions from CellNet (34). In the construction of the PGRNs, any TF\u2013gene interactions involving unmeasured genes were excluded. In summary, the TF\u2013gene network for human lymphoma, hepatocellular carcinoma cell, and epithelium lung cancer cell lines included 31 392 edges pointing from 515 TFs to 5153 genes, 3868 edges pointing from 413 TFs to 953 genes, and 42 145 edges pointing from 515 TFs to 7125 genes, respectively. The mouse pancreatic PGRN included 2922 edges, involving 95 TFs and 588 genes.",
+            "cite_spans": [
+                {
+                    "start": 801,
+                    "end": 803,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1321,
+                    "end": 1323,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1445,
+                    "end": 1447,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Protein\u2013gene regulatory network ::: Protein target identification using ProTINA ::: MATERIALS AND METHODS",
+            "ref_spans": [
+                {
+                    "start": 118,
+                    "end": 120,
+                    "mention": "1A",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "For human PIN, we combined the protein\u2013protein interactions from two databases, namely Enrichr (35) and STRING (36). For mouse pancreatic cells, we obtained mouse (Mus musculus) PIN from the STRING database (36). For each TF, we identified its protein partners, defined as proteins that are within a network distance of 2 from the TF in the PIN. When using the STRING database, we included all direct protein partners of TFs, and proteins with a network distance of 2 from TFs with a confidence score reported on STRING larger than 0.5. For human lymphoma, hepatocytes, and lung cancer cells, we identified 11 090 protein partners for a subset of 499 TFs (out of 515 TFs), 10 834 protein partners for a subset of 403 TFs (out of 413 TFs) and 6 175 protein partners for a subset of 504 TFs (out of 515 TFs), respectively. For mouse pancreatic cells, we found 6620 protein partners for a subset of 89 TFs (out of 95 TFs).",
+            "cite_spans": [
+                {
+                    "start": 96,
+                    "end": 98,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 112,
+                    "end": 114,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 208,
+                    "end": 210,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Protein\u2013gene regulatory network ::: Protein target identification using ProTINA ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Finally, in the construction of the PGRNs, we assigned a directed edge from a TF or from a protein partner of a TF, to every gene regulated by the TF. In summary, the cell type-specific PGRN for human lymphoma cells included 21 488, 617 regulatory edges among 11 161 TFs/proteins and 5153 genes. For hepatocellular carcinoma cells, the PGRN comprised 3726, 393 edges among 10 893 TFs/proteins and 953 genes. For human lung cancer cells, the PGRN comprised 30 656 861 edges among 11 346 TFs/proteins and 7125 genes. For mouse pancreatic cells, the PGRN consisted of 1 417 972 edges among 6661 TFs/proteins and 588 genes. While increasing the size of the PGRN, for example by including lesser confident TF\u2013gene and protein\u2013protein interactions or by including proteins with a network distance from TFs larger than 2, would allow the scoring of a higher number of proteins, such strategy often lowers the accuracy of the protein target predictions.",
+            "cite_spans": [],
+            "section": "Protein\u2013gene regulatory network ::: Protein target identification using ProTINA ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The edges in the PGRN have weights, whose magnitudes represent the strength of the gene regulation and whose signs indicate the direction or the mode of the regulation: positive for gene activation and negative for gene repression. The weights are inferred from the gene expression dataset by adapting a procedure described in our previous method DeltaNet (10,11) (see Figure 1B). The inference of the edge weights is based on an ordinary differential equation (ODE) model of the mRNA production of a gene:(1)\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}\\begin{equation*}\\frac{{d\\;{r_k}(t)}}{{d\\;t}} = {u_k}\\prod\\limits_{j = 1}^n {{r_j}{{(t)}^{{a_{kj}}}} - {d_k}\\;{r_k}(t)} \\end{equation*}\\end{document}where rk(t) is the mRNA concentration of gene k at time t, uk and dk denotes the mRNA transcription and degradation rate constants respectively, and akj denotes the gene regulatory influence (or edge weight) of the jth protein on the kth gene.",
+            "cite_spans": [
+                {
+                    "start": 357,
+                    "end": 359,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 360,
+                    "end": 362,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Gene transcription model ::: Protein target identification using ProTINA ::: MATERIALS AND METHODS",
+            "ref_spans": [
+                {
+                    "start": 376,
+                    "end": 378,
+                    "mention": "1B",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "While the regulatory edges in the model above usually describe TF\u2013gene interactions, in ProTINA, we further accounted for the (indirect) regulation of a gene by proteins that interact with the TFs. For this purpose, we considered a modified ODE model:(2)\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}\\begin{equation*}\\frac{{d\\;{r_k}}}{{d\\;t}} = {u_k}\\left( {\\prod\\limits_{j = 1}^{{n_{TF}}} {{r_j}^{{a_{kj}}}\\prod\\limits_{q = 1}^{{n_P}} {{{({r_j}\\;{r_q})}^{{b_{kjq}}}}} } } \\right) - {d_k}\\;{r_k}\\end{equation*}\\end{document}where a positive (negative) bkjq describes the activation (repression) of the kth gene by a protein q through its interaction with the TF protein j. The variables nTF and nP denote the numbers of TFs and their protein partners, respectively. The multiplication of two variables rj and rq implies that the regulation of gene k by protein q requires the TF protein j (a non-zero rj). The model in Equation (2) can be simplified into:\n(3)\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}\\begin{equation*}\\begin{array}{@{}*{2}{l}@{}} {\\frac{{d\\;{r_k}}}{{d\\;t}}}&{ = {u_k}\\left( {\\prod\\limits_{j = 1}^{{n_{TF}}} {{r_j}^{{a_{kj}} + \\sum\\nolimits_q {{b_{kjq}}} }} } \\right)\\left( {\\prod\\limits_{q = 1}^{{n_P}} {{r_q}^{\\sum\\nolimits_j {{b_{kjq}}} }} } \\right) - {d_k}{r_k}}\\\\ \\;&{ = {u_k}\\left( {\\prod\\limits_{j = 1}^{{n_{TF}}} {{r_j}^{a_{kj}^*}} } \\right)\\left( {\\prod\\limits_{q = 1}^{{n_P}} {{r_q}^{a_{kq}^*}} } \\right) - {d_k}{r_k}}\\\\ \\;&{ = {u_k}\\left( {\\prod\\limits_{j = 1}^{{n_{TF}} + {n_P}} {{r_j}^{a_{kj}^*}} } \\right) - {d_k}{r_k}} \\end{array}\\end{equation*}\\end{document}where \\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}$a_{kj}^*$\\end{document} denotes the overall regulatory influence of each protein j, including TFs and their protein partners, on the expression of gene k. Note that the model in Equation (3) is mathematically equivalent to that in Equation (1).",
+            "cite_spans": [],
+            "section": "Gene transcription model ::: Protein target identification using ProTINA ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "By taking the pseudo steady-state assumption (i.e. the synthesis rate of mRNA balances the degradation rate, leading to drk/dt = 0 in Equation (3)), the inference of edge weights (\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}$a_{kj}^*$\\end{document}) of the PGRN can be rewritten as the following linear regression problem (see derivation in (10)):(4)\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}\\begin{equation*}{c_{ki}} = \\sum\\limits_{j = 1}^{{n_{TF}} + {n_P}} {a_{kj}^*{c_{ji}}} + {p_{ki}}\\end{equation*}\\end{document}where cki denotes the log2FC expression for gene k in sample i. The variable pki represents the part of log2FC of gene k expression in sample i that cannot be accounted for by the log2FC of its protein regulators. In other words, pki indicates the perturbations to the expression of gene k. As detailed below, ProTINA relies on the magnitude and directions of such network perturbations (dysregulations) to identify proteins with altered gene regulatory activity.",
+            "cite_spans": [
+                {
+                    "start": 533,
+                    "end": 535,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Gene transcription model ::: Protein target identification using ProTINA ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The dynamical information contained in time-series gene expression profiles could greatly improve the inference of the edge weights above. But, the pseudo steady-state assumption hinders the application of the linear regression in Equation (4) to time-series data. As previously described in (11), time-series information could be accounted for by adding the following linear constraint on the linear regression problem:(5)\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}\\begin{equation*}{s_{ki}} = \\sum\\limits_{j = 1}^{{n_{TF}} + {n_P}} {a_{kj}^*{s_{ji}}} \\end{equation*}\\end{document}where ski is the time derivatives (slope) of the log2FC of gene k in sample i. In contrast to Equation (4), Equation (5) was derived without assuming pseudo steady-state, which was necessary to account for the dynamics of gene expressions. The slopes of the log2FC at each sampling time point were computed using a second-order accurate finite difference approximation (37). In summary, the estimation of edge weights in ProTINA involved the following linear regression problem:(6)\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}\\begin{equation*}{{\\bf C}_k}{{\\bf = }}{{\\bf A}_k}{{\\bf C}_{{R_k}}}{{\\bf + }}{{\\bf P}_k}\\end{equation*}\\end{document}(7)\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}\\begin{equation*}{{\\bf S}_k}{{\\bf = }}{{\\bf A}_k}{{\\bf S}_{{R_k}}}\\end{equation*}\\end{document}where Ck and Sk are the 1 \u00d7 m vectors of log2FC expressions and time-derivatives of gene k across m samples, the subscript Rk refers to the set of (nTF,k+nP,k) protein regulators of gene k in the cell type-specific PGRN, \\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}${{\\bf C}_{{R_k}}}$\\end{document} and \\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}${{\\bf S}_{{R_k}}}$\\end{document} denote the (nTF+nP,k) \u00d7 m matrices of log2FCs and their slopes across m samples, Ak is the 1 \u00d7 (nTF+nP) vector of weights for edges in the PGRN pointing to gene k, and Pk is the 1 \u00d7 m vector of dysregulation impacts of gene k over m samples.",
+            "cite_spans": [
+                {
+                    "start": 293,
+                    "end": 295,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1143,
+                    "end": 1145,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Gene transcription model ::: Protein target identification using ProTINA ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "In ProTINA, the vectors Ak and Pk for each gene k in Equations (6) and (7) were estimated by ridge regression. The ridge regression provides a solution to an underdetermined linear regression problem of the standard form: y=X\u03b2 + \u03f5, using a penalized least square objective function:\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}\\begin{equation*}\\mathop {\\min }\\limits_\\beta \\left\\| {{\\bf y} - {\\bf X}\\beta } \\right\\|_2^2{\\rm{ + }}\\lambda \\left\\| \\beta \\right\\|_2^2\\end{equation*}\\end{document}where \u03bb is a shrinkage parameter for the L2-norm penalty. Equations (6) and (7) are rewritten into the standard linear regression problem with y = [CkSk]T, X = [[\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}${{\\bf C}_{{R_k}}}$\\end{document}\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}${{\\bf S}_{{R_k}}}$\\end{document}]T, [Im0]T], \u03b2 = [AkPk]T. Before applying the ridge regression, we normalized the vectors of log2FCs and slopes to have a unit norm. Self-loops were excluded in the regression, and thus the diagonal entries of Ak were set to 0. In the applications of ProTINA, we employed 10-fold cross validations to determine the optimal \u03bb, one that gives the minimum average prediction error. Here, we used the GLMNET package (38) for both the MATLAB and R versions of ProTINA.",
+            "cite_spans": [
+                {
+                    "start": 1793,
+                    "end": 1795,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Gene transcription model ::: Protein target identification using ProTINA ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "In ProTINA, each candidate protein target is assigned a score based on the deviation of the expression of its downstream genes. More specifically, we computed the residuals of the linear regression problem in Equation (6) for each gene k, i.e.(8)\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}\\begin{equation*}{{\\bf r}_k} = {{\\bf C}_k} - {{\\bf A}_k}{{\\bf C}_{{R_k}}}\\end{equation*}\\end{document}where rk is the 1 \u00d7 m vector of residuals for m samples. For each drug treatment, there often exist multiple gene expression profiles, taken at different time points or different doses. Correspondingly, we evaluated the z-score zlk for each drug treatment l and for each gene k, according to(9)\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}\\begin{equation*}{z_{lk}} = \\frac{{{{\\bar{r}}_{lk}}}}{{{{{\\sigma _k}} \\mathord{\\left/ {\\vphantom {{{\\sigma _k}} {\\sqrt {{n_l}} }}} \\right.} {\\sqrt {{n_l}} }}}}\\end{equation*}\\end{document}where \\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}${\\bar{r}_{lk}}$\\end{document} denotes the average residual of gene k among the drug treatment samples, \u03c3k denotes the sample standard deviation of the residuals in all samples besides the drug treatment, and nl denotes the number of samples from the drug treatment. A positive (negative) z-score indicates that the expression of gene k in the particular sample was higher (lower) than expected based on the expression of its regulators. The greater the magnitude of the z-score, the more significant is the gene dysregulation.",
+            "cite_spans": [],
+            "section": "Protein target scoring ::: Protein target identification using ProTINA ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The target score of a TF or protein for a drug is calculated by combining the z-scores of the target genes in the PGRN, as follows (39):(10)\\documentclass[12pt]{minimal}\n\\usepackage{amsmath}\n\\usepackage{wasysym} \n\\usepackage{amsfonts} \n\\usepackage{amssymb} \n\\usepackage{amsbsy}\n\\usepackage{upgreek}\n\\usepackage{mathrsfs}\n\\setlength{\\oddsidemargin}{-69pt}\n\\begin{document}\n}{}\\begin{equation*}{s_{ji}} = \\frac{{\\sum\\nolimits_{k = 1}^{{n_D}} {{w_{kj}}{z_{ki}}} }}{{\\sqrt {\\sum\\nolimits_{k = 1}^{{n_D}} {w_k^2} } }}\\end{equation*}\\end{document}where zki denotes the z-score of gene k and sji denotes the score of the TF/protein j in the drug treatment sample i. The weighting coefficients wkj are set equal to the edge weights akj divided by the maximum magnitude of akj across all j. In other words, the weight wkj reflects the fraction of the regulation of gene k expression that could be attributed to protein j. When wkj (or akj) and zki have the same signs, wkjzki thus takes a positive value. As illustrated in Figure 1C, a positive wkjzki implies an enhanced regulatory activity of protein j on gene k, since the activation (inhibition) of gene k expression by protein j is stronger in this sample than expected by the PGRN model. In contrast, a negative wkjzki indicates an attenuation of the regulatory influence of protein j on gene k, since the activation (inhibition) of gene k expression by protein j is weaker than predicted by the PGRN model. Consequently, a highly positive (negative) score sji is an overall indicator of strongly enhanced (attenuated) regulatory activity of protein j by the drug treatment in sample i (see Figure 1D). The protein targets in each drug treatment sample are ranked in decreasing magnitude of the scores sji.",
+            "cite_spans": [
+                {
+                    "start": 132,
+                    "end": 134,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Protein target scoring ::: Protein target identification using ProTINA ::: MATERIALS AND METHODS",
+            "ref_spans": [
+                {
+                    "start": 1021,
+                    "end": 1023,
+                    "mention": "1C",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1645,
+                    "end": 1647,
+                    "mention": "1D",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "For DeMAND analysis, we employed the public R subroutines available from the website: http://califano.c2b2.columbia.edu/demand. Following the procedure detailed in the original publication (23), we computed the RMA (Robust Multi-array Average) normalized gene expression values as inputs to the analysis. In DeMAND analysis, we used the same cell type-specific PGRNs as those in ProTINA. For each candidate protein target, DeMAND evaluated the P-value of the deviations in the gene expression relationship between the protein target and each of the genes connected to this protein in the PGRN. The drug targets were ranked in increasing magnitude of the combined P-values.",
+            "cite_spans": [
+                {
+                    "start": 190,
+                    "end": 192,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "DeMAND and differential expression analysis ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "In differential gene expression (DE) analysis, we calculated the log2FC differential expression of each protein in the PGRN, as described in section Gene expression data above. Here, we used the log2FC values directly as the target scores. Correspondingly, we ranked the candidate protein targets in decreasing magnitude of the log2FC gene expression values.",
+            "cite_spans": [],
+            "section": "DeMAND and differential expression analysis ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "For comparing the performance of different methods, we computed the area under the receiver operating characteristic curve (AUROC), i.e. the area under the plot of true positive rate against false positive rate, following the procedure adopted in DREAM challenges (40,41). For each method and each drug treatment, we generated a ranked list of protein targets according to decreasing magnitudes of the protein scores in ProTINA, increasing P-values of network dysregulation from DeMAND, and decreasing magnitudes of log2FC gene expression from DE analysis.",
+            "cite_spans": [
+                {
+                    "start": 265,
+                    "end": 267,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 268,
+                    "end": 270,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Performance assessment ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "For influenza A virus study, we performed a gene set enrichment analysis (GSEA) of the protein target predictions from ProTINA, DeMAND and DE analysis for the KEGG biological pathways (42), using the R package GAGE (Generally Applicable Gene-set/pathway Enrichment analysis) with Kolmogorov-Smirnov tests (43). In the case of ProTINA and DeMAND, target proteins with zero score were excluded from the GSEA.",
+            "cite_spans": [
+                {
+                    "start": 185,
+                    "end": 187,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 306,
+                    "end": 308,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Gene set enrichment analysis ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The reference protein targets of compounds in drug treatment studies were compiled from five different public databases of chemical-protein interactions: DrugBank (44), Therapeutic Target Database (TTD) (45), MATADOR (46), Comparative Toxicogenomics Database (CTD) (47), and STITCH (48). DrugBank and TTD provided information on the mechanism of drug actions as well as the proteins that have physical binding interactions with drugs. Meanwhile, MATADOR, CTD, and STITCH gave interactions between proteins and chemical compounds, curated from text mining and experimental evidences. When retrieving the protein targets of drugs from these databases, we collected proteins that directly bind to the queried drugs. The reference targets for each dataset in this study are provided in Supplementary material 1. Meanwhile, the reference protein targets for influenza A virus study were obtained from (49), where 1292 host proteins that likely physically bind to viral proteins of influenza type A/WSN/33 in human embryonic kidney cells (HEK293) were identified by whole-genome co-immunoprecipitation assays.",
+            "cite_spans": [
+                {
+                    "start": 164,
+                    "end": 166,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 204,
+                    "end": 206,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 218,
+                    "end": 220,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 266,
+                    "end": 268,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 283,
+                    "end": 285,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 897,
+                    "end": 899,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Reference protein targets ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "ProTINA takes advantage of the availability of comprehensive protein\u2013protein and protein\u2013DNA interaction databases to construct, when possible, a tissue or cell type-specific PGRN. The method considers a PGRN with weighted directed edges (see Figure 1A), describing direct and indirect gene transcriptional regulation by TFs and their protein partners. The edge weights are determined by applying ridge regression using the gene expression data based on a kinetic model of the gene transcriptional process (see Figure 1B and Materials and Methods). Here, a positive weight indicates a gene activation, while a negative weight implies a gene repression. Because of the underlying kinetic model, ProTINA is able to incorporate dynamical gene expression data, a common type of data from drug treatment studies (5,24\u201326). The scoring of drug targets is based on the enhancement or attenuation of protein\u2013gene regulatory interactions caused by the drug treatment. A drug-induced gene regulatory enhancement occurs when the expression of genes that are positively (negatively) regulated by a candidate target, becomes higher (lower) in drug treated samples than what is predicted by the PGRN model (see Figure 1C). A drug-induced attenuation describes the opposite scenario, where the expression of positively (negatively) regulated genes of a target is lower (higher) than expected from the model. For any given differential gene expression sample, a candidate protein target is scored based on the overall enhancement and/or attenuation of its regulatory influence on the downstream genes (see Figure 1D and Materials and Methods). Thus, a protein target with a more positive (negative) score is considered a more likely target of the drug, in which the drug treatment enhances (attenuates) the gene regulatory activity.",
+            "cite_spans": [
+                {
+                    "start": 808,
+                    "end": 809,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 810,
+                    "end": 815,
+                    "mention": "24\u201326",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "New protein target prediction strategy ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 250,
+                    "end": 252,
+                    "mention": "1A",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 518,
+                    "end": 520,
+                    "mention": "1B",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1204,
+                    "end": 1206,
+                    "mention": "1C",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1597,
+                    "end": 1599,
+                    "mention": "1D",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We tested ProTINA\u2019s performance in predicting drug targets using gene expression data from three drug treatment studies employing human and mouse cell lines. The first dataset came from the NCI-DREAM drug synergy study using human diffuse large B cell lymphoma OCI-LY3 (24), the second from the compound genotoxicity study using human liver cancer cells HepG2 (25), and the third from the chromatin-targeting compound study using mouse pancreatic cells (26). We compared ProTINA to the state-of-the-art network-based analytical method DeMAND (23), and to the traditional DE analysis. For the analysis of datasets from human cell lines, we constructed cell-type specific PGRNs by combining human PIN from STRING (36) and Enrichr database (35) and human cell-type specific protein\u2013DNA networks from Regulatory Circuit resource (33). Meanwhile, for the construction of mouse pancreatic cell type-specific PGRN, we used mouse (Mus musculus) PIN from STRING (36) and mouse protein\u2013DNA interactions from CellNet (34) (see details in Materials and Methods).",
+            "cite_spans": [
+                {
+                    "start": 270,
+                    "end": 272,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 361,
+                    "end": 363,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 454,
+                    "end": 456,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 543,
+                    "end": 545,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 712,
+                    "end": 714,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 738,
+                    "end": 740,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 826,
+                    "end": 828,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 954,
+                    "end": 956,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1007,
+                    "end": 1009,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Prediction of known targets of drugs ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "In assessing the performance of ProTINA and the other methods, we compared the ranked list of protein target predictions for each compound with the reference drug targets compiled from the literature (see Materials and Methods and Supplementary material 1). Figure 2 (also see Supplementary Tables S1\u2013S3) summarizes the AUROCs of the target predictions from ProTINA, DeMAND, and DE analysis, showing ProTINA significantly outperforming DeMAND and DE analysis for all three datasets. Here, the drug target predictions from DE analysis had the poorest AUROCs with an overall average below 0.66 (AUROC range: 0.393\u20140.982). Meanwhile, the target predictions of DeMAND were slightly better than the DE analysis, averaging at 0.74 (AUROC range: 0.405\u20140.989) for the three datasets. Meanwhile, ProTINA gave the highest average AUROCs among the methods with an average of 0.83 (AUROC range: 0.425\u20140.991).",
+            "cite_spans": [],
+            "section": "Prediction of known targets of drugs ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 265,
+                    "end": 266,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Besides high AUROCs, ProTINA also provided accurate and specific indications on the MoA of the compounds. In the NCI-DREAM synergy study, roughly half of the compounds are known to induce DNA damage response, including DNA topoisomerase inhibitors (camptothecin, doxorubicin and etoposide), DNA crosslinker (mitomycin C), oxidative DNA damaging agent (methothrexate), and histone deacetylase (HDAC) inhibitors (trichostatin A). In demonstrating ProTINA\u2019s ability to reveal the compound MoA, we focused on the canonical p53 DNA damage response pathway (23), as illustrated in Figure 3. Here, the activation of p53 in response to DNA damage is expected to induce the transcription of Cyclin Dependent Kinase Inhibitor 1A (CDKN1A) and Growth Arrest and DNA Damage Inducible Alpha (GADD45A) (50,51). In turn, CDKN1A and GADD45A\u2014through their interactions with Proliferating Cell Nuclear Antigen (PCNA)\u2014regulate the DNA replication and repair process (52). GADD45A also inhibits the catalytic activity of Aurora Kinase A (AURKA) (53), leading to a lowered activation of Polo-like Kinase 1 (PLK1) and Cyclin B1 (CCNB1) in a phosphorylation cascade (54,55). As shown in Figure 4A, except for trichostatin A, the six proteins in the canonical p53 pathway above were ranked highly by ProTINA among the genotoxic compounds in the study (median rank <500), consistent with their known MoA. Note that the same six proteins were ranked much lower among the non-DNA damaging compounds (median rank > 500), signifying a high specificity of ProTINA predictions (see also Supplementary Figure S1). Equally important, ProTINA was able to accurately identify the direction of the drug-induced alterations caused by the DNA damaging compounds. The signs of protein target scores from ProTINA indicated drug-induced enhancement (positive scores) of CDKN1A, PCNA and GADD45A, and attenuation (negative scores) of CCNB1, AURKA and PLK1 (see Supplementary Table S4), consistent with the expected response of these proteins to DNA damage in Figure 3.",
+            "cite_spans": [
+                {
+                    "start": 552,
+                    "end": 554,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 788,
+                    "end": 790,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 791,
+                    "end": 793,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 947,
+                    "end": 949,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 1025,
+                    "end": 1027,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1143,
+                    "end": 1145,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 1146,
+                    "end": 1148,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "Mechanism of action of drugs ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 582,
+                    "end": 583,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1170,
+                    "end": 1172,
+                    "mention": "4A",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 2023,
+                    "end": 2024,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "As illustrated in Figure 4A, DeMAND and DE analysis also performed reasonably well in predicting the compounds\u2019 MoA. But, the directions of the perturbations predicted by DE analysis were not always consistent with the expected response to DNA damage (see Supplementary Table S5 and S6). Meanwhile, DeMAND did not provide any information on the directions of the drug perturbations. In addition, the protein target scores of ProTINA provided a clearer demarcation between the genotoxic and the non-genotoxic agents among the compounds in the dataset, than DeMAND and DE analysis (see Supplementary Figure S1). Besides the canonical p53 response pathway, we further looked at the ranking of proteins involved in the overall DNA damage repair (DDR) and its associated pathways (56) (see Supplementary material 2). As depicted in Figure 4B, ProTINA ranked these proteins much higher than DeMAND and DE analysis, with DE performing the poorest among the methods considered.",
+            "cite_spans": [
+                {
+                    "start": 776,
+                    "end": 778,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                }
+            ],
+            "section": "Mechanism of action of drugs ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 25,
+                    "end": 27,
+                    "mention": "4A",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 834,
+                    "end": 836,
+                    "mention": "4B",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "In comparison to DeMAND and DE analysis, ProTINA was further able to detect a specific MoA of mitomycin C, whose DNA crosslinking activity is expected to prompt a particular DNA repair process called the fanconi anemia pathway (57). The fanconi anemia pathway relies on a specific protein complex to ubiquitinate Fanconi Anemia Group D2 Protein (FANCD2) and Fanconi Anemia Group I Protein (FANCI), as well as two homologous recombination (HR) repair proteins, namely Breast Cancer Type 1 Susceptibility Protein (BRCA1) and RAD51 Recombinase (RAD51) (58). In ProTINA analysis, the average rank of FANCD2, FANCI, BRCA1, and RAD51 was within top 100 for mitomycin C, while the average rank of those proteins was much >100 for the other DNA damaging agents (see Supplementary Table S7). However, the specific activation of the fanconi anemia pathway by mitomycin C was not detected by DeMAND or DE analysis. Thus, ProTINA provided more sensitive and specific indications for the mechanism of action of compounds than DeMAND and DE.",
+            "cite_spans": [
+                {
+                    "start": 228,
+                    "end": 230,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 550,
+                    "end": 552,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "Mechanism of action of drugs ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "We applied ProTINA to time-course gene expression profiles of human lung cancer cells (Calu-3) under influenza A virus infection, with the goal of identifying host factors that interact with the viral proteins. The gene expression data came from four studies of influenza A viruses, including A/Netherlands/602/2009 (H1N1), A/CA/04/2009 (H1N1), and A/Vietnam/1203/2004 (H5N1) (27\u201330). We employed ProTINA to compute the overall protein target scores using the gene expression data of Calu-3 from the four studies above, by averaging the scores from the early phase of the influenza infection between 0 and 12 h. We checked the target predictions of ProTINA against the findings from a genome-wide co-immunoprecipitation analysis of host and viral protein interactions (49). More specifically, the aforementioned study reported 1292 host proteins that co-immunoprecipitated with viral proteins of influenza A/WSN/33 using human embryonic kidney cells (HEK293). Despite the discrepancy in the cell types and influenza viral strains between the co-immunoprecipitation analysis and the gene expression profiling, influenza A viruses share similar features and common protein interactions (59,60). Besides ProTINA, we also evaluated the accuracy of viral target predictions from DeMAND and DE for the same dataset.",
+            "cite_spans": [
+                {
+                    "start": 377,
+                    "end": 382,
+                    "mention": "27\u201330",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 769,
+                    "end": 771,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1185,
+                    "end": 1187,
+                    "mention": "59",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 1188,
+                    "end": 1190,
+                    "mention": "60",
+                    "ref_id": "BIBREF56"
+                }
+            ],
+            "section": "Application of ProTINA for predicting pathogen-host interactions ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Figure 5 gives the receiver operating characteristic (ROC) curves of the target predictions from ProTINA, DeMAND and DE analysis. ProTINA outperformed the two other methods, providing the highest AUROC (ProTINA: 0.76 versus demand: 0.69 and DE: 0.65). We further performed a gene set enrichment analysis (GSEA) for the target predictions from each of the methods (see Materials and Methods) to elucidate the key pathways involved in the viral infection and the accompanying host response. The results of the GSEA are summarized in Figure 6. Both DeMAND and DE target predictions were enriched for only a few pathways (q-value < 0.01), while ProTINA prediction had a much higher number of overrepresented pathways.",
+            "cite_spans": [],
+            "section": "Application of ProTINA for predicting pathogen-host interactions ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 7,
+                    "end": 8,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 538,
+                    "end": 539,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "The common enriched pathways among ProTINA, DeMAND and DE (top of Figure 6) included known mechanisms related to viral entry, replication and assembly, including endocytosis (61), protein processing in endoplasmic reticulum (62), ubiquitin mediated proteolysis (63,64) and RIG-I-like receptor signaling pathway (65,66). Both ProTINA and DE analysis indicated the modulation of host cell cycle (67), mRNA surveillance (68) and DNA damage response (69). Only ProTINA prediction was significantly enriched for focal adhesion and actin cytoskeleton, which have been shown to regulate influenza virus entry at the early stage of infection (70). In addition, ProTINA target predictions were also enriched for a broad set of host response pathways to viral infection, including host defense mechanism (e.g. T- and B-cell receptor pathways, phagocytosis, leukocyte migration, chemokine signaling pathways), DNA damage repair (e.g. nucleotide excision repair, p53 signaling pathway, homologous recombination) and apoptosis. As several influenza proteins are known to interfere with interferon production (which in turn regulates several cytokines) (65,66), these findings suggest that, overall, ProTINA provided a broader picture of the early events in the influenza A viral infection, than DeMAND and DE analysis.",
+            "cite_spans": [
+                {
+                    "start": 175,
+                    "end": 177,
+                    "mention": "61",
+                    "ref_id": "BIBREF57"
+                },
+                {
+                    "start": 225,
+                    "end": 227,
+                    "mention": "62",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 262,
+                    "end": 264,
+                    "mention": "63",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 265,
+                    "end": 267,
+                    "mention": "64",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 312,
+                    "end": 314,
+                    "mention": "65",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 315,
+                    "end": 317,
+                    "mention": "66",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 394,
+                    "end": 396,
+                    "mention": "67",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 418,
+                    "end": 420,
+                    "mention": "68",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 447,
+                    "end": 449,
+                    "mention": "69",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 635,
+                    "end": 637,
+                    "mention": "70",
+                    "ref_id": "BIBREF67"
+                },
+                {
+                    "start": 1140,
+                    "end": 1142,
+                    "mention": "65",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 1143,
+                    "end": 1145,
+                    "mention": "66",
+                    "ref_id": "BIBREF62"
+                }
+            ],
+            "section": "Application of ProTINA for predicting pathogen-host interactions ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 73,
+                    "end": 74,
+                    "mention": "6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "ProTINA is a novel and highly effective network-based analytical method for inferring the protein targets of compounds from gene expression profiling data. ProTINA combines the information of TF\u2013gene and protein\u2013protein interactions and data of differential gene expressions to create a tissue or cell type-specific PGRN model. Similar to network-based analysis methods such as NIR (7), MNI (8), SSEM (9) and DeltaNet (10), ProTINA uses a dynamic mechanistic model of the gene transcriptional process to compute deviations in the differential gene expression profiles that are induced by drug treatments. However, as mentioned earlier, the expression of the targets of a drug is often unaffected by the drug treatment (3). For this reason and as illustrated in Figure 1C and D, ProTINA further transforms the deviations in the differential gene expression into alterations in the protein\u2013gene regulatory edges in the PGRN model. Finally, the target scoring is based on edgetic perturbations of the PGRN, specifically enhancement or attenuation of gene regulatory interactions, caused by the compound.",
+            "cite_spans": [
+                {
+                    "start": 383,
+                    "end": 384,
+                    "mention": "7",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 392,
+                    "end": 393,
+                    "mention": "8",
+                    "ref_id": "BIBREF72"
+                },
+                {
+                    "start": 402,
+                    "end": 403,
+                    "mention": "9",
+                    "ref_id": "BIBREF73"
+                },
+                {
+                    "start": 419,
+                    "end": 421,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 719,
+                    "end": 720,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 768,
+                    "end": 770,
+                    "mention": "1C",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 775,
+                    "end": 776,
+                    "mention": "D",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Like ProTINA, the state-of-the-art method DeMAND also relies on gene transcriptional dysregulations to score drug targets. But, DeMAND does not consider the mode nor the dynamics of the gene regulations, and is unable to predict the direction of the drug-induced dysregulations. DeMAND calculates protein dysregulation scores (P-values) for a given gene regulatory network, by statistical comparison between samples from drug treatment and from control experiments. Consequently, DeMAND requires only few samples to generate its prediction (provided that the network can be defined a priori). On the other hand, ProTINA makes use of the available differential gene expression profiles from a study or a cell line (i.e. not only from the specific drug treatment), to assign the edge weights of the PGRN by ridge regression. Importantly, in the regression analysis, the PGRN model used in ProTINA accounts for the network perturbations. The ability of ProTINA to incorporate data from other drug treatments or conditions in the scoring of protein targets makes this method particularly suited to take advantage of the extensive and still growing number of gene transcriptional profiles from online databases, such as GEO. As demonstrated in the applications to three benchmark drug treatment datasets using human and mouse cell lines, ProTINA significantly outperformed DeMAND and the standard DE analysis. The target predictions of ProTINA also provide indications for the MoA of compounds, including the directions of the network perturbations, with high sensitivity and specificity.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Besides its intended use to predict targets of compounds, we also demonstrated that the analysis of network perturbations using ProTINA could provide insights into the mechanism of diseases. In the application to gene expression profiles of Calu-3 cells from influenza A infection studies, ProTINA again outperformed DeMAND and DE analysis in identifying host factors that bind with viral proteins. Furthermore, the GSEA of ProTINA target predictions revealed the spectrum of cellular processes involved in the early phase of influenza A infection, including pathways involved in viral entry, replication and assembly, and those related to cellular response to viral infection. Among the pathways with the highest significance (lowest q-value) was focal adhesion, which has been shown to regulate influenza viral entry as well as viral replication (70). Meanwhile, the target predictions of DeMAND and DE analysis had fewer enriched pathways, and thus were less informative than the target analysis by ProTINA.",
+            "cite_spans": [
+                {
+                    "start": 849,
+                    "end": 851,
+                    "mention": "70",
+                    "ref_id": "BIBREF67"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The PGRN model (see Equation (1)) belongs to a class of modeling framework called Biochemical Systems Theory, specifically the S-systems model (71). In addition to gene regulatory networks, S-system modeling have also been used to describe other cellular networks, including signal transduction pathways and metabolic reaction networks (72). Therefore, the principle used in ProTINA could be readily adapted to infer perturbations in cellular signalling or metabolic networks, for example from proteomic and metabolomics profiles, respectively. Besides PGRNs and gene transcriptional profiles, we have not applied ProTINA to analyze other types of cellular networks and data, as such an application was beyond the scope of our work.",
+            "cite_spans": [
+                {
+                    "start": 144,
+                    "end": 146,
+                    "mention": "71",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 337,
+                    "end": 339,
+                    "mention": "72",
+                    "ref_id": "BIBREF69"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "ProTINA requires a cell type- or tissue-specific PGRN as an input, which may hinder its application to analyze data from lesser studied organisms. In the case studies, we leveraged on the extensive online databases of protein\u2013protein interactions and TF\u2013gene networks to manually curate PGRNs for human and mouse cells (33,34,36). Alternatively, provided that a large dataset of gene expression profiles are available for the cell of interest, the PGRN could be inferred using existing network inference methods (73,74). Another potential limitation in applying ProTINA is the requirement for differential gene expression data for inferring the edge weights of the PGRN. While the minimum number for implementing ridge regression with a 3-fold cross validation (lowest fold in GLMNET) is three, the accuracy of the weights and thus the target predictions from ProTINA would generally deteriorate with lower sample sizes. Nevertheless, ProTINA was still able to provide reasonably accurate predictions using a total of 18 samples in the influenza A virus case study above.",
+            "cite_spans": [
+                {
+                    "start": 320,
+                    "end": 322,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 323,
+                    "end": 325,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 326,
+                    "end": 328,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 513,
+                    "end": 515,
+                    "mention": "73",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 516,
+                    "end": 518,
+                    "mention": "74",
+                    "ref_id": "BIBREF71"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The performance of ProTINA, like any other network-based analytical methods, depends on the fidelity of the network used in the analysis. Uncertainty in the PGRN model, both in the structure and the edge weights, is expected to negatively affect the accuracy of the target prediction. Here, structural uncertainty is associated with the reliability of the information used to construct the PGRN, which in our study, comes from online databases of PIN and TF\u2013gene networks. On the other hand, the uncertainty in the edge weights is associated with multiple factors, including the information content of the gene transcriptional profiles and the mathematical formulation used for the weight inference. The information content of the gene expression data is in turn related to measurement uncertainty and richness in the experimental perturbations. Keeping the same number of treatments, datasets with more replicates and less correlated gene expression profiles (i.e. the treatments induce more distinct perturbations to the network), would have a higher degree of information. Meanwhile, we have previously shown that the validity of the model assumption (e.g. pseudo steady-state condition) has an effect on the accuracy of the inferred weights and thus the target prediction accuracy (10). While we have circumvented the issue arising from the violation of the pseudo steady-state assumption in ProTINA (see Equation (7)), (in)validating all model assumptions may be difficult, if not impossible, in practice. A common strategy, as implemented in this study, is to test the performance of the method against benchmark datasets (13). The results of applying ProTINA to drug treatment and influenza A viral infection datasets give confidence to the suitability of the mathematical formulation used in this work.",
+            "cite_spans": [
+                {
+                    "start": 1286,
+                    "end": 1288,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1629,
+                    "end": 1631,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "MATLAB and R versions of ProTINA can be downloaded from Github repository (https://github.com/CABSEL/ProTINA).",
+            "cite_spans": [],
+            "section": "AVAILABILITY",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1.: Protein target prediction by ProTINA. (A) The protein\u2013gene network describes direct and indirect regulations of gene expression by transcription factors (TF) and their protein partners (P), respectively. A drug interaction with a protein is expected to cause differential expression of the downstream genes in the PGN. (B) Based on a kinetic model of gene transcriptional process, ProTINA infers the weights of the protein\u2013gene regulatory edges, denoted by akj, using gene expression data. The variable akj describes the regulation of protein j on gene k, where the magnitude and sign of akj indicate the strength and mode (+akj: activation, \u2013akj: repression) of the regulatory interaction, respectively. (C) A candidate protein target is scored based on the deviations in the expression of downstream genes from the PGN model prediction (Pj: log2FC expression of protein j, Gk: log2FC expression of gene k). The colored dots in the plots illustrate the log2FC data of a particular drug treatment, while the lines show the predicted expression of gene k by the (linear) PGN model. The variable zk denotes the z-score of the deviation of the expression of gene k from the PGN model prediction. A drug-induced enhancement of protein\u2013gene regulatory interactions is indicated by a positive (negative) zk in the expression of genes that are activated (repressed) by the protein (i.e. akjzk > 0). Vice versa, a drug-induced attenuation is indicated by a negative (positive) zk in the expression of genes that are activated (repressed) by the protein (i.e. akjzk < 0). (D) The score of a candidate protein target is determined by combining the z-scores of the set of regulatory edges associated with the protein in the PGN. A positive (negative) score indicates a drug-induced enhancement (attenuation). The larger the magnitude of the score, the more consistent is the drug induced perturbations (enhancement/attenuation) on the protein\u2013gene regulatory edges.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: Prediction of known targets of drugs. AUROCs of protein target predictions from ProTINA, DeMAND and DE methods for the NCI-DREAM drug synergy (human B-cell lymphoma), the compound genotoxicity (human HepG2) and the chromatin targeting study (mouse pancreatic cell) datasets (*P-value < 0.01, **P-value < 0.001 by paired t-test).",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: Canonical p53 DNA damage response pathway. In response to DNA damage, GADD45A, CDKN1A, PCNA are activated, while AURKA, CCNB1 and PLK1 proteins are inhibited (23).",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: Mechanism of action of compounds based on target predictions by ProTINA. (A) The rank distribution of the canonical p53 DNA damage response proteins in the drug target predictions of ProTINA, DeMAND and DE for the NCI-DREAM drug synergy dataset. (B) The rank distribution of proteins involved in the core DNA-damage repair (DDR) and DDR-associated pathways (56) in the target predictions of ProTINA, DeMAND and DE for the DNA damaging compounds in the NCI-DREAM drug synergy study (**P-value < 0.001 by Wilcoxon signed rank tests).",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5.: Prediction of targets of influenza A virus. The receiver operative characteristic curves give the true positive rate versus the false positive rate relationship of the protein target predictions from ProTINA, DeMAND and DE against proteins that co-immunoprecipitate with influenza A viral proteins. The AUROCs for ProTINA, DeMAND and DE analysis are 0.77, 0.69 and 0.65, respectively.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6.: Gene set enrichment analysis for KEGG pathways for the influenza A protein target predictions from ProTINA, DeMAND and DE. The size of the circles corresponds to \u2013log10 scale of the q-values. Only pathways with q-value < 0.01 are shown.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Drugs, their targets and the nature and number of drug targets",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Imming",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Sinning",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Meyer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nat. Rev. Drug Discov.",
+            "volume": "5",
+            "issn": "",
+            "pages": "821-834",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Inferring gene targets of drugs and chemical compounds from gene expression profiles",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Noh",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Gunawan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Bioinformatics",
+            "volume": "32",
+            "issn": "",
+            "pages": "2120-2127",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Inferring causal gene targets from time course expression data",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Noh",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Ziyi",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Gunawan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "IFAC-PapersOnLine",
+            "volume": "49",
+            "issn": "",
+            "pages": "350-356",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Silencing HoxA1 by intraductal injection of siRNA lipidoid nanoparticles prevents mammary tumor progression in mice",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Brock",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Krause",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kowalski",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.S.",
+                    "middle": [],
+                    "last": "Goldberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.J.",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.E.",
+                    "middle": [],
+                    "last": "Ingber",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Sci. Transl. Med.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Wisdom of crowds for robust gene network inference",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Marbach",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.C.",
+                    "middle": [],
+                    "last": "Costello",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "K\u00fcffner",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.M.",
+                    "middle": [],
+                    "last": "Vega",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.J.",
+                    "middle": [],
+                    "last": "Prill",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.M.",
+                    "middle": [],
+                    "last": "Camacho",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.R.",
+                    "middle": [],
+                    "last": "Allison",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kellis",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.J.",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Aderhold",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nat. Methods",
+            "volume": "9",
+            "issn": "",
+            "pages": "796-804",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Assessment of network inference methods: How to cope with an underdetermined problem",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Siegenthaler",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Gunawan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS One",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Ensemble inference and inferability of gene regulatory networks",
+            "authors": [
+                {
+                    "first": "S.M.M.",
+                    "middle": [],
+                    "last": "Ud-Dean",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Gunawan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS One",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "KEA: Kinase enrichment analysis",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Lachmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Maayan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "",
+            "pages": "684-686",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "A human B-cell interactome identifies MYB and FOXM1 as master regulators of proliferation in germinal centers",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Lefebvre",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Rajbhandari",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.J.",
+                    "middle": [],
+                    "last": "Alvarez",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Bandaru",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.K.",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Sato",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Sumazin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kustagi",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.C.",
+                    "middle": [],
+                    "last": "Bisikirska",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Mol. Syst. Biol.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Expression2Kinases: mRNA profiling linked to multiple upstream regulatory layers",
+            "authors": [
+                {
+                    "first": "E.Y.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Gordonov",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.P.",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.H.",
+                    "middle": [],
+                    "last": "Perkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Ma\u2019ayan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Bioinformatics",
+            "volume": "28",
+            "issn": "",
+            "pages": "105-111",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Drug target prediction and repositioning using an integrated network-based approach",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Emig",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Ivliev",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Pustovalova",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Lancashire",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Bureeva",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Nikolsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Bessarabova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "PLoS One",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Target identification and mechanism of action in chemical biology and drug discovery",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Schenone",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Dan\u010d\u00edk",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.K.",
+                    "middle": [],
+                    "last": "Wagner",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.A.",
+                    "middle": [],
+                    "last": "Clemons",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nat. Chem. Biol.",
+            "volume": "9",
+            "issn": "",
+            "pages": "232-240",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Finding the targets of a drug by integration of gene expression data with a protein interaction network",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Laenen",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Thorrez",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "B\u00f6rnigen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Moreau",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Mol. Biosyst.",
+            "volume": "9",
+            "issn": "",
+            "pages": "1676-1685",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Causal reasoning on biological networks: Interpreting transcriptional changes",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Chindelevitch",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Ziemek",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Enayetallah",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Randhawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Sidders",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Brockel",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.S.",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Bioinformatics",
+            "volume": "28",
+            "issn": "",
+            "pages": "1114-1121",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Assessment of network perturbation amplitudes by applying high-throughput data to causal biological networks",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.M.",
+                    "middle": [],
+                    "last": "Thomson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Sewer",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.A.",
+                    "middle": [],
+                    "last": "Drubin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Mathis",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Weisensee",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Pratt",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Hoeng",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.C.",
+                    "middle": [],
+                    "last": "Peitsch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "BMC Syst. Biol.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Elucidating compound mechanism of action by network perturbation analysis",
+            "authors": [
+                {
+                    "first": "J.H.",
+                    "middle": [],
+                    "last": "Woo",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Shimoni",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.S.",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Subramaniam",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Iyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Nicoletti",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Rodr\u00edguez\u00a0Mart\u00ednez",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "L\u00f3pez",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Mattioli",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Realubit",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Cell",
+            "volume": "162",
+            "issn": "",
+            "pages": "441-451",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "A community computational challenge to predict the activity of pairs of compounds",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Bansal",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Karan",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.P.",
+                    "middle": [],
+                    "last": "Menden",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.C.",
+                    "middle": [],
+                    "last": "Costello",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Xiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Allen",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Zhong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nat. Biotechnol.",
+            "volume": "32",
+            "issn": "",
+            "pages": "1213-1222",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "A transcriptomics-based in vitro assay for predicting chemical genotoxicity in vivo",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Magkoufopoulou",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.M.H.",
+                    "middle": [],
+                    "last": "Claessen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Tsamou",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.G.J.",
+                    "middle": [],
+                    "last": "Jennen",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.C.S.",
+                    "middle": [],
+                    "last": "Kleinjans",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.H.M.",
+                    "middle": [],
+                    "last": "Van\u00a0delft",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Carcinogenesis",
+            "volume": "33",
+            "issn": "",
+            "pages": "1421-1429",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Chromatin-targeting small molecules cause class-specific transcriptional changes in pancreatic endocrine cells",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Kubicek",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.C.",
+                    "middle": [],
+                    "last": "Gilbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Fomina-yadlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.D.",
+                    "middle": [],
+                    "last": "Gitlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Yuan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Proc. Natl. Acad. Sci. U.S.A.",
+            "volume": "109",
+            "issn": "",
+            "pages": "5364-5369",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Conserved host response to highly pathogenic avian influenza virus infection in human cell culture, mouse and macaque model systems",
+            "authors": [
+                {
+                    "first": "J.E.",
+                    "middle": [],
+                    "last": "McDermott",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Shankaran",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.J.",
+                    "middle": [],
+                    "last": "Eisfeld",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.E.",
+                    "middle": [],
+                    "last": "Belisle",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Neuman",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "McWeeney",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Sabourin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Kawaoka",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.G.",
+                    "middle": [],
+                    "last": "Katze",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "BMC Syst. Biol.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Host regulatory network response to infection with highly pathogenic H5N1 avian influenza virus",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Bankhead",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.J.",
+                    "middle": [],
+                    "last": "Eisfeld",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Hatta",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Jeng",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.H.",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.D.",
+                    "middle": [],
+                    "last": "Aicher",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Proll",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.L.",
+                    "middle": [],
+                    "last": "Ellis",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.L.",
+                    "middle": [],
+                    "last": "Law",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Virol.",
+            "volume": "85",
+            "issn": "",
+            "pages": "10955-10967",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "A network integration approach to predict conserved regulators related to pathogenicity of influenza and SARS-CoV respiratory viruses",
+            "authors": [
+                {
+                    "first": "H.D.",
+                    "middle": [],
+                    "last": "Mitchell",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.J.",
+                    "middle": [],
+                    "last": "Eisfeld",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.C.",
+                    "middle": [],
+                    "last": "Sims",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.E.",
+                    "middle": [],
+                    "last": "McDermott",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.M.",
+                    "middle": [],
+                    "last": "Matzke",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.J.M.",
+                    "middle": [],
+                    "last": "Webb-Robertson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.C.",
+                    "middle": [],
+                    "last": "Tilton",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Tchitchek",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Josset",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "PLoS One",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Drug target prioritization by perturbed gene expression and network information",
+            "authors": [
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Isik",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Baldow",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.V.",
+                    "middle": [],
+                    "last": "Cannistraci",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Schroeder",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Sci. Rep.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Pathogenic influenza viruses and coronaviruses utilize similar and contrasting approaches to control interferon-stimulated gene responses",
+            "authors": [
+                {
+                    "first": "V.D.",
+                    "middle": [],
+                    "last": "Menachery",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.J.",
+                    "middle": [],
+                    "last": "Eisfeld",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Sch\u00e4fer",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Josset",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.C.",
+                    "middle": [],
+                    "last": "Sims",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Proll",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Fan",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Neumann",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.C.",
+                    "middle": [],
+                    "last": "Tilton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "MBio",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "NCBI GEO: archive for functional genomics data sets - Update",
+            "authors": [
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Barrett",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.E.",
+                    "middle": [],
+                    "last": "Wilhite",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Ledoux",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Evangelista",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.F.",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Tomashevsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.A.",
+                    "middle": [],
+                    "last": "Marshall",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.H.",
+                    "middle": [],
+                    "last": "Phillippy",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.M.",
+                    "middle": [],
+                    "last": "Sherman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Holko",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nucleic Acids Res",
+            "volume": "41",
+            "issn": "",
+            "pages": "991-995",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Bioconductor: open software development for computational biology and bioinformatics",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Gentleman",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Carey",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Bates",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Bolstad",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Dettling",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Dudoit",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Ellis",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Gautier",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Ge",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Gentry",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Genome Biol",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Tissue-specific regulatory circuits reveal variable modular perturbations across complex diseases",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Marbach",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Lamparter",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Quon",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kellis",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Kutalik",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Bergmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Nat. Methods",
+            "volume": "13",
+            "issn": "",
+            "pages": "366-370",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "CellNet: Network biology applied to stem cell engineering",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Cahan",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.A.",
+                    "middle": [],
+                    "last": "Morris",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Lummertz\u00a0Da\u00a0Rocha",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.Q.",
+                    "middle": [],
+                    "last": "Daley",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.J.",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Cell",
+            "volume": "158",
+            "issn": "",
+            "pages": "903-915",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Enrichr: a comprehensive gene set enrichment analysis web server 2016 update",
+            "authors": [
+                {
+                    "first": "M.V.",
+                    "middle": [],
+                    "last": "Kuleshov",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.R.",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.D.",
+                    "middle": [],
+                    "last": "Rouillard",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.F.",
+                    "middle": [],
+                    "last": "Fernandez",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Duan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Koplev",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.L.",
+                    "middle": [],
+                    "last": "Jenkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.M.",
+                    "middle": [],
+                    "last": "Jagodnik",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Lachmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Nucleic Acids Res",
+            "volume": "44",
+            "issn": "",
+            "pages": "W90-W97",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "STRING v10: protein\u2013protein interaction networks, integrated over the tree of life",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Szklarczyk",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Franceschini",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Wyder",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Forslund",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Heller",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Huerta-Cepas",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Simonovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Roth",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Santos",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.P.",
+                    "middle": [],
+                    "last": "Tsafou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Nucleic Acids Res",
+            "volume": "43",
+            "issn": "",
+            "pages": "D447-D452",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "\nFinite Difference Calculus, Numerical Partial Differential Equations for Enviornmental Scientists and Engineers: A first Practical Course",
+            "authors": [
+                {
+                    "first": "D.R.",
+                    "middle": [],
+                    "last": "Lynch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": "11-19",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Regularization paths for generalized linear models via coordinate descent",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Friedman",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Hastie",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Tibshirani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Stat. Softw.",
+            "volume": "33",
+            "issn": "",
+            "pages": "1-22",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Combining probability from independent tests: The weighted Z-method is superior to Fisher's approach",
+            "authors": [
+                {
+                    "first": "M.C.",
+                    "middle": [],
+                    "last": "Whitlock",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Evol. Biol.",
+            "volume": "18",
+            "issn": "",
+            "pages": "1368-1373",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Discovering the targets of drugs via computational systems biology",
+            "authors": [
+                {
+                    "first": "H.N.",
+                    "middle": [],
+                    "last": "Chua",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.P.",
+                    "middle": [],
+                    "last": "Roth",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Biol. Chem.",
+            "volume": "286",
+            "issn": "",
+            "pages": "23653-23658",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Lessons from the DREAM2 challenges: a community effort to assess biological network inference",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Stolovitzky",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.J.",
+                    "middle": [],
+                    "last": "Prill",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Califano",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Ann. N. Y. Acad. Sci.",
+            "volume": "1158",
+            "issn": "",
+            "pages": "159-195",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Towards a rigorous assessment of systems biology models: The DREAM3 challenges",
+            "authors": [
+                {
+                    "first": "R.J.",
+                    "middle": [],
+                    "last": "Prill",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Marbach",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Saez-Rodriguez",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.K.",
+                    "middle": [],
+                    "last": "Sorger",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.G.",
+                    "middle": [],
+                    "last": "Alexopoulos",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Xue",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.D.",
+                    "middle": [],
+                    "last": "Clarke",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Altan-Bonnet",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Stolovitzky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS One",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "KEGG: New perspectives on genomes, pathways, diseases and drugs",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kanehisa",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Furumichi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Tanabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Sato",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Morishima",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Nucleic Acids Res",
+            "volume": "45",
+            "issn": "",
+            "pages": "D353-D361",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "GAGE: generally applicable gene set enrichment for pathway analysis",
+            "authors": [
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Luo",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.S.",
+                    "middle": [],
+                    "last": "Friedman",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Shedden",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.D.",
+                    "middle": [],
+                    "last": "Hankenson",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.J.",
+                    "middle": [],
+                    "last": "Woolf",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "BMC Bioinformatics",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "DrugBank 4.0: Shedding new light on drug metabolism",
+            "authors": [
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Law",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Knox",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Djoumbou",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Jewison",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.C.",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "MacIejewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Arndt",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Neveu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nucleic Acids Res",
+            "volume": "42",
+            "issn": "",
+            "pages": "1091-1097",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Therapeutic target database update 2012: a resource for facilitating target-oriented drug discovery",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Zhu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Qin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Tao",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res",
+            "volume": "40",
+            "issn": "",
+            "pages": "1128-1136",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "SuperTarget and Matador: resources for exploring drug-target relationships",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "G\u00fcnther",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Dunkel",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Campillos",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Senger",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Petsalaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Ahmed",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.G.",
+                    "middle": [],
+                    "last": "Urdiales",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Gewiess",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.J.",
+                    "middle": [],
+                    "last": "Jensen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Res",
+            "volume": "36",
+            "issn": "",
+            "pages": "919-922",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "The comparative toxicogenomics database: update 2017",
+            "authors": [
+                {
+                    "first": "A.P.",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.J.",
+                    "middle": [],
+                    "last": "Grondin",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.J.",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Sciaky",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.L.",
+                    "middle": [],
+                    "last": "King",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "McMorran",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wiegers",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.C.",
+                    "middle": [],
+                    "last": "Wiegers",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.J.",
+                    "middle": [],
+                    "last": "Mattingly",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Nucleic Acids Res",
+            "volume": "45",
+            "issn": "",
+            "pages": "D972-D978",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "STITCH 5: augmenting protein-chemical interaction networks with tissue and affinity data",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Szklarczyk",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Santos",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Von\u00a0Mering",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.J.",
+                    "middle": [],
+                    "last": "Jensen",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Bork",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Nucleic Acids Res",
+            "volume": "44",
+            "issn": "",
+            "pages": "D380-D384",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Influenza virus-host interactome screen as a platform for antiviral drug development",
+            "authors": [
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Watanabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Kawakami",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.E.",
+                    "middle": [],
+                    "last": "Shoemaker",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.J.S.",
+                    "middle": [],
+                    "last": "Lopes",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Matsuoka",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Tomita",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Kozuka-Hata",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Gorai",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Kuwahara",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Takeda",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Cell Host Microbe",
+            "volume": "16",
+            "issn": "",
+            "pages": "795-805",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "The connectivity map: A new tool for biomedical research",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Lamb",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat. Rev. Cancer",
+            "volume": "7",
+            "issn": "",
+            "pages": "54-60",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Multiple roles of the cell cycle inhibitor p21CDKN1A in the DNA damage response",
+            "authors": [
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Cazzalini",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.I.",
+                    "middle": [],
+                    "last": "Scovassi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Savio",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.A.",
+                    "middle": [],
+                    "last": "Stivala",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Prosperi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Mutat. Res.",
+            "volume": "704",
+            "issn": "",
+            "pages": "12-20",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Gadd45a, a p53- and BRCA1-regulated stress protein, in cellular response to DNA damage",
+            "authors": [
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Zhan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Mutat. Res. - Fundam. Mol. Mech. Mutagen.",
+            "volume": "569",
+            "issn": "",
+            "pages": "133-143",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "PCNA: structure, functions and interactions",
+            "authors": [
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Kelman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Oncogene",
+            "volume": "14",
+            "issn": "",
+            "pages": "629-640",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Gadd45a interacts with aurora-A and inhibits its kinase activity",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Shao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Jin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Fan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Fu",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Tong",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Biol. Chem",
+            "volume": "281",
+            "issn": "",
+            "pages": "28943-28950",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Polo-like kinase-1 is activated by aurora A to promote checkpoint recovery",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Mac\u016frek",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Lindqvist",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.A.",
+                    "middle": [],
+                    "last": "Lampson",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Klompmaker",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Freire",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Clouin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.S.",
+                    "middle": [],
+                    "last": "Taylor",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.B.",
+                    "middle": [],
+                    "last": "Yaffe",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.H.",
+                    "middle": [],
+                    "last": "Medema",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nature",
+            "volume": "455",
+            "issn": "",
+            "pages": "119-123",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Polo-like kinase 1 phosphorylates cyclin B1 and targets it to the nucleus during prophase",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Toyoshima-Morimoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Taniguchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Shinya",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Iwamatsu",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Nishida",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "410",
+            "issn": "",
+            "pages": "215-220",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Therapeutic opportunities within the DNA damage response",
+            "authors": [
+                {
+                    "first": "L.H.",
+                    "middle": [],
+                    "last": "Pearl",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.C.",
+                    "middle": [],
+                    "last": "Schierz",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.E.",
+                    "middle": [],
+                    "last": "Ward",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Al-Lazikani",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.M.G.",
+                    "middle": [],
+                    "last": "Pearl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Nat. Rev. Cancer",
+            "volume": "15",
+            "issn": "",
+            "pages": "166-180",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "DNA interstrand crosslink repair and cancer",
+            "authors": [
+                {
+                    "first": "A.J.",
+                    "middle": [],
+                    "last": "Deans",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.C.",
+                    "middle": [],
+                    "last": "West",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nat rev Cancer",
+            "volume": "11",
+            "issn": "",
+            "pages": "467-480",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Fanconi anaemia proteins, DNA interstrand crosslink repair pathways, and cancer therapy",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Andreassen",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Ren",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Curr. Cancer Crug Targets",
+            "volume": "9",
+            "issn": "",
+            "pages": "101-117",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Cellular proteins in influenza virus particles",
+            "authors": [
+                {
+                    "first": "M.L.",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.L.",
+                    "middle": [],
+                    "last": "Stone",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.M.",
+                    "middle": [],
+                    "last": "Colangelo",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.E.",
+                    "middle": [],
+                    "last": "Gulcicek",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Palese",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS Pathog",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Transcriptional data: a new gateway to drug repositioning",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Iorio",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Rittman",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Ge",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Menden",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Saez-Rodriguez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Drug Discov. Today",
+            "volume": "18",
+            "issn": "",
+            "pages": "350-357",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Structure homology and interaction redundancy for discovering virus\u2013host protein interactions",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "de\u00a0Chassey",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Meyniel-Schicklin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Aublin-Gex",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Navratil",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Chantier",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Andr\u00e9",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Lotteau",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "EMBO Rep",
+            "volume": "14",
+            "issn": "",
+            "pages": "938-944",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "A comprehensive map of the influenza A virus replication cycle",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Matsuoka",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Matsumae",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Katoh",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.J.",
+                    "middle": [],
+                    "last": "Eisfeld",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Neumann",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Hase",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Ghosh",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.E.",
+                    "middle": [],
+                    "last": "Shoemaker",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.J.",
+                    "middle": [],
+                    "last": "Lopes",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Watanabe",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "BMC Syst. Biol.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Folding of influenza hemagglutinin in the endoplasmic reticulum",
+            "authors": [
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Braakman",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Hoover-Litty",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.R.",
+                    "middle": [],
+                    "last": "Wagner",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Helenius",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "J. Cell Biol.",
+            "volume": "114",
+            "issn": "",
+            "pages": "401-411",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Influenza virus infection causes specific degradation of the largest subunit of cellular RNA polymerase II",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Rodriguez",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Perez-Gonzalez",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Nieto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Virol.",
+            "volume": "81",
+            "issn": "",
+            "pages": "5315-5324",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "Ubiquitin in influenza virus entry and innate immunity",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Rudnicka",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Yamauchi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Viruses",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "The multifunctional NS1 protein of influenza A viruses",
+            "authors": [
+                {
+                    "first": "B.G.",
+                    "middle": [],
+                    "last": "Hale",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.E.",
+                    "middle": [],
+                    "last": "Randall",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Ortin",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Jackson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Gen. Virol.",
+            "volume": "89",
+            "issn": "",
+            "pages": "2359-2376",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "Influenza virus protein PB1-F2 inhibits the induction of type I interferon by binding to MAVS and decreasing mitochondrial membrane potential",
+            "authors": [
+                {
+                    "first": "Z.T.",
+                    "middle": [],
+                    "last": "Varga",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Grant",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Manicassamy",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Palese",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Virol.",
+            "volume": "86",
+            "issn": "",
+            "pages": "8359-8366",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Integrated network analysis reveals a novel role for the cell cycle in 2009 pandemic influenza virus-induced inflammation in macaque lungs",
+            "authors": [
+                {
+                    "first": "J.E.",
+                    "middle": [],
+                    "last": "Shoemaker",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Fukuyama",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.J.",
+                    "middle": [],
+                    "last": "Eisfeld",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Muramoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Watanabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Watanabe",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Matsuoka",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Kitano",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Kawaoka",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "BMC Syst. Biol.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "Non-structural protein 1 of influenza viruses inhibits rapid mRNA degradation mediated by double-stranded RNA-binding protein, staufen1",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Cho",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.H.",
+                    "middle": [],
+                    "last": "Ahn",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.M.",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.K.",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "FEBS Lett",
+            "volume": "587",
+            "issn": "",
+            "pages": "2118-2124",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "Influenza infection induces host DNA damage and dynamic DNA damage responses during tissue regeneration",
+            "authors": [
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Parrish",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.K.",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Rai",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Yoshiyuki",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Abolhassani",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.B.",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Kiraly",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.T.K.",
+                    "middle": [],
+                    "last": "Chow",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Cell. Mol. Life Sci.",
+            "volume": "72",
+            "issn": "",
+            "pages": "2973-2988",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "Inferring genetic networks and identifying compound mode of action via expression profiling",
+            "authors": [
+                {
+                    "first": "T.S.",
+                    "middle": [],
+                    "last": "Gardner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "301",
+            "issn": "",
+            "pages": "102-105",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Novel roles of focal adhesion kinase in cytoplasmic entry and replication of influenza A viruses",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Elbahesh",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Cline",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Baranovich",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.A.",
+                    "middle": [],
+                    "last": "Govorkova",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Schultz-Cherry",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.J.",
+                    "middle": [],
+                    "last": "Russell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J. Virol.",
+            "volume": "88",
+            "issn": "",
+            "pages": "6714-6728",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "E.O.",
+                    "middle": [],
+                    "last": "Voit",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Computational Analysis of Biochemical Systems: A Practical Guide for Biochemists and Molecular Biologists",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "Recent developments in parameter estimation and structure identification of biochemical and genomic systems",
+            "authors": [
+                {
+                    "first": "I.C.",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.O.",
+                    "middle": [],
+                    "last": "Voit",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Math. Biosci.",
+            "volume": "219",
+            "issn": "",
+            "pages": "57-83",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF70": {
+            "title": "ARACNE: An algorithm for the reconstruction of gene regulatory networks in a mammalian cellular context",
+            "authors": [
+                {
+                    "first": "A.A.",
+                    "middle": [],
+                    "last": "Margolin",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Nemenman",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Basso",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Wiggins",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Stolovitzky",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.D.",
+                    "middle": [],
+                    "last": "Favera",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Califano",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Bioinformatics",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF71": {
+            "title": "Genome-wide identification of post-translational modulators of transcription factor activity in human B cells",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Saito",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.C.",
+                    "middle": [],
+                    "last": "Bisikirska",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.J.",
+                    "middle": [],
+                    "last": "Alvarez",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.K.",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Rajbhandari",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Shen",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Nemenman",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Basso",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.A.",
+                    "middle": [],
+                    "last": "Margolin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nat. Biotechnol.",
+            "volume": "27",
+            "issn": "",
+            "pages": "829-837",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF72": {
+            "title": "Chemogenomic profiling on a genome-wide scale using reverse-engineered gene networks",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "di\u00a0Bernardo",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.J.",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.S.",
+                    "middle": [],
+                    "last": "Gardner",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.E.",
+                    "middle": [],
+                    "last": "Chobot",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.L.",
+                    "middle": [],
+                    "last": "Eastwood",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.P.",
+                    "middle": [],
+                    "last": "Wojtovich",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.J.",
+                    "middle": [],
+                    "last": "Elliott",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.E.",
+                    "middle": [],
+                    "last": "Schaus",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.J.",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nat. Biotechnol.",
+            "volume": "23",
+            "issn": "",
+            "pages": "377-383",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF73": {
+            "title": "Predicting gene targets of perturbations via network-based filtering of mRNA expression compendia",
+            "authors": [
+                {
+                    "first": "E.J.",
+                    "middle": [],
+                    "last": "Cosgrove",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.S.",
+                    "middle": [],
+                    "last": "Gardner",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.D.",
+                    "middle": [],
+                    "last": "Kolaczyk",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Bioinformatics",
+            "volume": "24",
+            "issn": "",
+            "pages": "2482-2490",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

@@ -1,0 +1,1630 @@
+{
+    "paper_id": "PMC6024350",
+    "metadata": {
+        "title": "Novel Method of 3-Dimensional Graphical Representation for Proteins\nand Its Application",
+        "authors": [
+            {
+                "first": "Zhao-Hui",
+                "middle": [],
+                "last": "Qi",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ke-Cheng",
+                "middle": [],
+                "last": "Li",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jin-Long",
+                "middle": [],
+                "last": "Ma",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Yu-Hua",
+                "middle": [],
+                "last": "Yao",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ling-Yun",
+                "middle": [],
+                "last": "Liu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "With the number of available biological sequences developing rapidly, how to mine\nessential information from a huge amount of biological sequences effectively and\nreliably has become a critical problem. As a result, many methods in information\nextraction are proposed by researchers. Among them, the graphical representation of\nDNA sequences is an effective method for the virtualization and similarity analysis.\nGraphical representation is a kind of alignment-free method. It provides intuitive\ninformation of data by visualization of biological sequences. What is more, it is\nmore generally applicable because its mathematical description of data facilitates\nnumerical analysis without difficult calculations. Therefore, numerous works based\non graphical representation have been presented by researchers.1\u20138 For example, Randi\u0107 et al1 proposed a graphical representation of RNA secondary structure based on\ntwelve symbols. Bieli\u0144ska-Wa\u017c et al5 proposed a 2D-dynamic representation of DNA sequences in 2007. After that\nthey proposed more dynamic representations of DNA sequences for\ngeneralization.6,7",
+            "cite_spans": [
+                {
+                    "start": 807,
+                    "end": 808,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 808,
+                    "end": 808,
+                    "mention": "",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 808,
+                    "end": 808,
+                    "mention": "",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 808,
+                    "end": 808,
+                    "mention": "",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 808,
+                    "end": 808,
+                    "mention": "",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 808,
+                    "end": 808,
+                    "mention": "",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 808,
+                    "end": 808,
+                    "mention": "",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 809,
+                    "end": 810,
+                    "mention": "8",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 836,
+                    "end": 837,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 945,
+                    "end": 946,
+                    "mention": "5",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1100,
+                    "end": 1101,
+                    "mention": "6",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1102,
+                    "end": 1103,
+                    "mention": "7",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "However, the graphical representation of protein sequences is much more difficult\nbecause there are 20 amino acids instead of 4 nucleotides. Various approaches have\nbeen proposed by researchers only until recently.9\u201316 Among them, many approaches\nare based primarily on the physicochemical properties of amino acids. Randi\u01079 early proposed a 2-dimensional graphical representation of proteins based on\na pair of physicochemical properties in 2007. After that, Yu et al11 proposed a protein mapping method of protein sequences based on 10\nphysicochemical properties. Wang et al10 presented a graphical representation of protein sequences based on 9\nphysicochemical properties. In the works by He et al15 and Hu,16 the physicochemical properties are also indispensable in information\nextraction from proteins because they have effects on the rate and pattern of\nprotein evolution. From these, we can see that physicochemical properties are widely\napplied with graphical representation of protein sequences by these researchers and\ntheir results seem well.",
+            "cite_spans": [
+                {
+                    "start": 214,
+                    "end": 215,
+                    "mention": "9",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 215,
+                    "end": 215,
+                    "mention": "",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 215,
+                    "end": 215,
+                    "mention": "",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 215,
+                    "end": 215,
+                    "mention": "",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 215,
+                    "end": 215,
+                    "mention": "",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 215,
+                    "end": 215,
+                    "mention": "",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 215,
+                    "end": 215,
+                    "mention": "",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 216,
+                    "end": 218,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 323,
+                    "end": 324,
+                    "mention": "9",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 468,
+                    "end": 470,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 576,
+                    "end": 578,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 700,
+                    "end": 702,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 710,
+                    "end": 712,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this article, we propose a 3-dimensional (3D) graphic representation of protein\nsequences based on 10 physicochemical properties17\u201321 of amino acids and the\nBLOSUM62 matrix.22 The representation can provide good visualization without degeneracy or\ncircuit. Then, we extract a specific vector from the graphical curve of a protein\nsequence. In addition, we proposed 2 applications based on the vector to analyze the\nsimilarity and evolutionary relationship of 3 data sets, respectively. The results\nare consistent with the evolution fact and works by other researchers. This shows\nour approach can be applied to hundreds of sequences with different lengths and\nperform well.",
+            "cite_spans": [
+                {
+                    "start": 131,
+                    "end": 133,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 133,
+                    "end": 133,
+                    "mention": "",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 133,
+                    "end": 133,
+                    "mention": "",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 133,
+                    "end": 133,
+                    "mention": "",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 134,
+                    "end": 136,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 176,
+                    "end": 178,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "BLOSUM62 matrix by Henikoff and Henikoff22 is a substitution matrix applied to the alignment of protein sequences.\nThe values of the BLOSUM62 matrix represent the probability that one amino acid\nis replaced by other amino acids. In their scoring scheme, a positive score\nrepresents a higher similarity between 2 amino acids and a negative score\nrepresents a lower similarity.",
+            "cite_spans": [
+                {
+                    "start": 40,
+                    "end": 42,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "BLOSUM62 matrix ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Here, we consider 10 primary physicochemical properties of amino acids, such as\nthe pK1 (\u2013COOH),17 the pK2 (\u2013NH3),21 the polar requirement,21 the isoelectric point,18 the hydrogenation,20 the hydroxythiolation,20 the molecular volume,19 the aromaticity,20 the aliphaticity,20 and the polarity values.19 The 10 physicochemical properties of 20 amino acids are shown in Table 1.",
+            "cite_spans": [
+                {
+                    "start": 96,
+                    "end": 98,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 114,
+                    "end": 116,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 139,
+                    "end": 141,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 164,
+                    "end": 166,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 185,
+                    "end": 187,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 210,
+                    "end": 212,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 234,
+                    "end": 236,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 253,
+                    "end": 255,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 273,
+                    "end": 275,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 300,
+                    "end": 302,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Physicochemical properties of amino acids ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 368,
+                    "end": 375,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "For each physicochemical property, we will use K-means\nclustering method23 to classify the 20 amino acids into several groups.\nK-means clustering is an efficient unsupervised clustering\nmethod which is widely used in a diverse range of fields such as data mining,\nbioinformatics, and natural language processing.24 However, there are some weaknesses in K-means.\nK-means needs to be given the number of clusters\nbeforehand. Silhouette25 is a cluster validity index that can be used to determine the number of\nclusters. It considers 2 factors: cohesion and separation. Its value ranges from\n\u22121 to 1 and a higher value represents a better effect of clustering. According\nto this index, we can obtain a valid number of clusters of the given data set.\nIn this way, we can obtain 10 kinds of clustering classification based on the 10\ndifferent properties, which are shown in Table 2.",
+            "cite_spans": [
+                {
+                    "start": 72,
+                    "end": 74,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 312,
+                    "end": 314,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 433,
+                    "end": 435,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "The 3D graphical representation of protein sequences based on Blosum62 matrix\nand physicochemical properties of amino acids ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 869,
+                    "end": 876,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "According to the property pK1 (\u2013COOH), we can divide the 20 amino acids into 7\ngroups: G1 (A, G, I, L, M, W, V), G2 (H, F), G3 (Q, E, K, S, Y), G4 (T), G5 (N,\nP), G6 (C), and G7 (D). If 2 or more amino acids are divided into the same\ngroup, it denotes that they are similar to each other by the property pK1\n(\u2013COOH). Taking all the properties into consideration, we can obtain the number\nof similar properties between each pair of amino acids.",
+            "cite_spans": [],
+            "section": "The 3D graphical representation of protein sequences based on Blosum62 matrix\nand physicochemical properties of amino acids ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "If X denotes an amino acid and Y denotes another amino acid, then we define the similar degree\nof 2 amino acids SXY as follows:",
+            "cite_spans": [],
+            "section": "The 3D graphical representation of protein sequences based on Blosum62 matrix\nand physicochemical properties of amino acids ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\n(1)SXY=NXY\u00d7BXY\n",
+            "cite_spans": [],
+            "section": "The 3D graphical representation of protein sequences based on Blosum62 matrix\nand physicochemical properties of amino acids ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where NXY is the number of similar properties between amino acid\nX and Y. BXY is the value of amino acid X and Y in the Blosum62 matrix. Then, we calculate all the values of\nSXY and the result is shown in Table 3.",
+            "cite_spans": [],
+            "section": "The 3D graphical representation of protein sequences based on Blosum62 matrix\nand physicochemical properties of amino acids ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 205,
+                    "end": 212,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "From Table 3, we can\nfind that the similarity degree SXY of different amino acids can be numerically different from\neach other. To describe the similarity degree graphically, we will use a unitary\nlinear regression to extract characters from every amino acid. Here, we take\nI = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,\n17, 18, 19} as independent variables of linear regression. For amino acid X, we\ntake the 19 values in its corresponding row in Table 3 as dependent variables. Using\nunitary linear regression, we can obtain the corresponding slope and intercept\nof amino acid X. The slope and intercept can describe amino acid X effectively.\nAll the slopes and intercepts of 20 amino acids are given in Table 4.",
+            "cite_spans": [],
+            "section": "The 3D graphical representation of protein sequences based on Blosum62 matrix\nand physicochemical properties of amino acids ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 5,
+                    "end": 12,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 461,
+                    "end": 468,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 719,
+                    "end": 726,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "We assume that P=p1,p2,\u2026,pn is an arbitrary protein sequence composed of n amino acids. If\nxi, yi, and zi represent the 3D coordinates of pi in the protein sequence, then the 3D representation of a\nprotein sequence will be constructed as follows:",
+            "cite_spans": [],
+            "section": "The 3D graphical representation of protein sequences based on Blosum62 matrix\nand physicochemical properties of amino acids ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\n(2)pi={xi=xi\u22121+aiyi=yi\u22121+bizi=i\n",
+            "cite_spans": [],
+            "section": "The 3D graphical representation of protein sequences based on Blosum62 matrix\nand physicochemical properties of amino acids ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where ai and bi represent the slope and intercept of pi. In addition, the initial condition is x0=y0=0. Next, we can convert the n points into a graphical curve.",
+            "cite_spans": [],
+            "section": "The 3D graphical representation of protein sequences based on Blosum62 matrix\nand physicochemical properties of amino acids ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To demonstrate the effectiveness of the 3D graphical method, we take 2 protein\nsequences as an example. Both the sequences are taken from yeast\nSaccharomyces cerevisiae.26 The graphical representations of 2 protein sequences are shown in Figure 1.",
+            "cite_spans": [
+                {
+                    "start": 169,
+                    "end": 171,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "The 3D graphical representation of protein sequences based on Blosum62 matrix\nand physicochemical properties of amino acids ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 238,
+                    "end": 246,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "As can be seen from Figure\n1, the 2 curves are similar to each other. Furthermore, we can see\nthat there are some differences between 2 figures in p2, p11, p14, and p27. This indicates the effectiveness of the proposed 3D graphical\nrepresentation method.",
+            "cite_spans": [],
+            "section": "The 3D graphical representation of protein sequences based on Blosum62 matrix\nand physicochemical properties of amino acids ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 20,
+                    "end": 28,
+                    "mention": "Figure\n1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Characteristic vector is a common method to calculate the pairwise distance\nbetween 2 protein sequences. A good characteristic vector should avoid the\nproblem about different lengths of sequences and complicated calculation.",
+            "cite_spans": [],
+            "section": "40-dimensional characteristic vector ::: Numerical Characterization and Similarity Analysis of Proteins",
+            "ref_spans": []
+        },
+        {
+            "text": "Here, we define a 2-tuple (a\u00afX,b\u00afX) of amino acid X for characterization. Given a protein sequence composed of\nn amino acids P=p1,p2,\u2026,pn, we can compute the 2-tuple as follows:",
+            "cite_spans": [],
+            "section": "40-dimensional characteristic vector ::: Numerical Characterization and Similarity Analysis of Proteins",
+            "ref_spans": []
+        },
+        {
+            "text": "\n(3){a\u00afX=aX\u00d7NXnb\u00afX=bX\u00d7NXn\n",
+            "cite_spans": [],
+            "section": "40-dimensional characteristic vector ::: Numerical Characterization and Similarity Analysis of Proteins",
+            "ref_spans": []
+        },
+        {
+            "text": "where aX and bX are, respectively, slope and intercept of amino acid\nX in Table\n4. NX is the number of amino acid X in the sequence. From equation (3), we can see that\nNX/n indicates the proportion of the amino acid X in the whole sequence. Taking proportion into consideration,\nwe can eliminate the effects of the lengths of proteins. Thus, for each kind of\namino acid, we get a 2-tuple for characterization. As there are 20 amino acids,\nwe can construct a 40-dimensional characteristic vector (a\u00afA,b\u00afA,a\u00afR,b\u00afR,a\u00afN,b\u00afN,\u2026,a\u00afV,b\u00afV). The component order is the same with Table 4.",
+            "cite_spans": [],
+            "section": "40-dimensional characteristic vector ::: Numerical Characterization and Similarity Analysis of Proteins",
+            "ref_spans": [
+                {
+                    "start": 74,
+                    "end": 81,
+                    "mention": "Table\n4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 569,
+                    "end": 576,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "Taking a short segment of 10 amino acids, AARRARRNNN, as an example, the numbers\nof amino acid A, R, and N in the segment are 3, 4, and 3. Therefore, we can\nobtain the 40-dimensional characterizing vector (0.015, \u22120.738, \u22120.02, \u22120.16,\n\u22120.042, \u22120.369, 0, 0, . . ., 0, 0) according to Table 4 and equation\n(3).",
+            "cite_spans": [],
+            "section": "40-dimensional characteristic vector ::: Numerical Characterization and Similarity Analysis of Proteins",
+            "ref_spans": [
+                {
+                    "start": 283,
+                    "end": 290,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "The similarity/dissimilarity between 2 protein sequences can be represented by\nsimilar distance. There are several calculating methods for measurement of\nsimilar distance such as Euclidean distance, City Block distance, and Manhattan\ndistance. Here, we use Euclidean distance as a measure to represent the\nsimilarity/dissimilarity between 2 sequences. We will compute the similarity\ndistance using the 40-dimensional characteristic vector. If the two\n40-dimensional characteristic vectors are denoted as",
+            "cite_spans": [],
+            "section": "Similarity analysis ::: Numerical Characterization and Similarity Analysis of Proteins",
+            "ref_spans": []
+        },
+        {
+            "text": "\nV=(a\u00af\u2032A,b\u00af\u2032A,a\u00af\u2032R,b\u00af\u2032R,\u2026,a\u00af\u2032V,b\u00af\u2032V)Y=(a\u00af\u2033A,b\u00af\u2033A,a\u00af\u2033R,b\u00af\u2033R,\u2026,a\u00af\u2033V,b\u00af\u2033V)\n",
+            "cite_spans": [],
+            "section": "Similarity analysis ::: Numerical Characterization and Similarity Analysis of Proteins",
+            "ref_spans": []
+        },
+        {
+            "text": "their Euclidean distance is calculated as follows:",
+            "cite_spans": [],
+            "section": "Similarity analysis ::: Numerical Characterization and Similarity Analysis of Proteins",
+            "ref_spans": []
+        },
+        {
+            "text": "\n(4)d(V,Y)=\u2211i=140(Vi\u2212Yi)2\n",
+            "cite_spans": [],
+            "section": "Similarity analysis ::: Numerical Characterization and Similarity Analysis of Proteins",
+            "ref_spans": []
+        },
+        {
+            "text": "The smaller the distance d is, the more similar 2 protein sequences are.",
+            "cite_spans": [],
+            "section": "Similarity analysis ::: Numerical Characterization and Similarity Analysis of Proteins",
+            "ref_spans": []
+        },
+        {
+            "text": "To show the effectiveness of the proposed similarity analysis method, we apply it\nto 9 ND5 protein sequences (provided as Supplementary File 1): human, common chimpanzee, pygmy\nchimpanzee, gorilla, fin whale, blue whale, rat, mouse, and opossum (their\naccession number in NCBI [National Center for Biotechnology Information] are\nAP_000649, NP_008196, NP_008209, NP_008222, NP_006899, NP_007066, AP_004902,\nNP_904338, and NP_007105, respectively). According to the method given in\nsection \u201cSimilarity analysis,\u201d we can obtain the similarity distance matrix of\nthese protein sequences. The corresponding result is shown in Table 5.",
+            "cite_spans": [],
+            "section": "Similarity analysis of 9 ND5 proteins and 29 spike proteins ::: Applications and Discussion",
+            "ref_spans": [
+                {
+                    "start": 621,
+                    "end": 628,
+                    "mention": "Table 5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "On the basis of Table\n5, we can find that the distance between fin whale and blue whale is\nthe smallest. This indicates that they have a high degree of similarity. The\ndistance between human, common chimpanzee, pygmy chimpanzee, and gorilla is\nrelatively small, which means that they are similar to each other. Besides,\nopossum is quite dissimilar to other species because the similarity distances\nbetween opossum and other species are large. All these results are consistent\nwith the evolution theory and the recent studies.14\u201316 That is to say the\nproposed method can analyze the similarities of proteins effectively.",
+            "cite_spans": [
+                {
+                    "start": 525,
+                    "end": 527,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 527,
+                    "end": 527,
+                    "mention": "",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 528,
+                    "end": 530,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Similarity analysis of 9 ND5 proteins and 29 spike proteins ::: Applications and Discussion",
+            "ref_spans": [
+                {
+                    "start": 16,
+                    "end": 23,
+                    "mention": "Table\n5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "To further demonstrate the effectiveness of our method, we apply it to another\ndata set which is widely used in many works.10,27 This data set consists of\n29 spike protein sequences of coronavirus (provided as Supplementary File 2). The basic information of the protein\nsequences is shown in Table\n6. We construct the phylogenetic tree for the 29 spike protein\nsequences based on our method using UPMGA method in Figure 2. From Figure 2, we can see that all the\nsequences are mainly classified into 4 groups by our method. This is consistent\nwith the works10,27 and the known biology fact that coronavirus are always\nclassified into 4 groups: the group I (contains PEDV, TGEV), the group II\n(contains BCoV, MHV, RtCoV), the group III (contains IBV, TCoV), and the\nSARS-CoVs (severe acute respiratory syndrome coronavirus).",
+            "cite_spans": [
+                {
+                    "start": 123,
+                    "end": 125,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 126,
+                    "end": 128,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 556,
+                    "end": 558,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 559,
+                    "end": 561,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Similarity analysis of 9 ND5 proteins and 29 spike proteins ::: Applications and Discussion",
+            "ref_spans": [
+                {
+                    "start": 413,
+                    "end": 421,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 428,
+                    "end": 436,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 292,
+                    "end": 299,
+                    "mention": "Table\n6",
+                    "ref_id": "TABREF5"
+                }
+            ]
+        },
+        {
+            "text": "In this section, we give an application for the similarity analysis of HA gene\nsequences of influenza A (H1N1) from March 1, 2009 to April 30, 2009 (available\nonline at https://www.ncbi.nlm.nih.gov). We obtain a data set that\nconsists of 560 gene sequences with full length (provided as Supplementary File 3). To further demonstrate the validity of\nour method, we apply the method to this data set.",
+            "cite_spans": [],
+            "section": "Similarity analysis of 560 gene sequences of influenza A (H1N1) virus ::: Applications and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "According to our method, for each virus isolate, we can get a corresponding\n20-dimensional vector. Thus, we can obtain a vector set of 560 vectors. By\ncomputing the similarity distance between pairs of these vectors, we can obtain\na similarity distance matrix. Next, we construct the phylogenetic tree based on\nour method in Figure 3.\nTo analyze the results better, we mark 2 typical strains: A/California/07/2009\n(H1N1) and A/Indiana/08/2009 (H1N1). From Figure 3, it is easy to identify that all\nvirus isolates are mainly classified into 2 groups. This illustrates that there\nare 2 different kinds of influenza A (H1N1) virus isolates from March 1, 2009 to\nApril 30, 2009. This result is consistent with the works by Qi et al.14,28\nFurthermore, the result is also consistent with the biology fact that a new\ninfluenza virus, A/California/07/2009 (H1N1)\u2013like virus, appeared and showed a\nstrong ability to infect human beings in April 2009.23 The branch length in Figure 3 is the similarity distance between 2 virus isolates.",
+            "cite_spans": [
+                {
+                    "start": 728,
+                    "end": 730,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 731,
+                    "end": 733,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 941,
+                    "end": 943,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Similarity analysis of 560 gene sequences of influenza A (H1N1) virus ::: Applications and Discussion",
+            "ref_spans": [
+                {
+                    "start": 325,
+                    "end": 333,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 456,
+                    "end": 464,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 965,
+                    "end": 973,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "ClustalW is one of the most widely used multiple sequence alignment method for\nnucleic acid and protein sequence in molecular biology. We construct the\nphylogenetic tree of the 560 gene sequences using ClustalW method29 under MEGA6.0 software for comparison. From the phylogenetic tree in\nFigure 4, we can see\nthat all virus isolates are also classified into 2 groups. In the figure, we\nalso mark 2 typical strains: A/California/07/2009 (H1N1) and A/Indiana/08/2009\n(H1N1). Observing Figures\n3 and 4, one\ncan easily find out that the results by our method are consistent with those by\nClustalW method. Furthermore, it takes about 126 minutes to obtain the multiple\nsequence alignment result on our Intel Core i5-3230M CPU @ 2.60 GHz 2.60 GHz\nWindows PC with 4 GB RAM. However, the computation time of our method is\n105.769 seconds by a Python program. It can indicate that our method is a\ncomputational efficiency method when dealing with sequences with different\nlengths.",
+            "cite_spans": [
+                {
+                    "start": 217,
+                    "end": 219,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Similarity analysis of 560 gene sequences of influenza A (H1N1) virus ::: Applications and Discussion",
+            "ref_spans": [
+                {
+                    "start": 289,
+                    "end": 297,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 484,
+                    "end": 493,
+                    "mention": "Figures\n3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 498,
+                    "end": 499,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "In this article, a new 3D graphical representation of protein sequences is introduced\nbased on 10 physicochemical properties and BLOSUM62 matrix. On the basis of the\ngraphical representation curve, we extract a specific vector and use the vector to\ncalculate the similarity distance between 2 protein sequences. To prove the\neffectiveness of our method, we apply our method to 3 real data sets. The results\nshow the validity of our method in phylogenetic analysis compared with related works\nand evolution facts.",
+            "cite_spans": [],
+            "section": "Conclusions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Numerical values about 10 physicochemical properties of 20 amino\nacids.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2.: Grouping information of 20 amino acids after clustering.\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3.: The similar degree of each pair of amino acids.\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4.: Slope, intercept, and linear equation of each amino acid similarity\ndegree sequence.\n",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5.: The similarity matrix for the 9 ND5 protein sequences.\n",
+            "type": "table"
+        },
+        "TABREF5": {
+            "text": "Table 6.: The information of 29 spike protein sequences.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1.: Graphical representation of the protein I and protein II by our\nmethod.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: The phylogenetic tree of the 29 spike proteins of coronavirus using our\nmethod.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: The phylogenetic tree of the 560 influenza A (H1N1) isolates from March\nto April 2009 by our method.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: The phylogenetic tree of the 560 influenza A (H1N1) isolates from March\nto April 2009 using ClustalW method under MEGA6.0 software.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Novel spectral representation of RNA secondary structure without\nloss of information",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Randi\u0107",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Plav\u0161i\u0107",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Chem Phys Lett",
+            "volume": "476",
+            "issn": "",
+            "pages": "277-280",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "ADLD: a novel graphical representation of protein sequences and\nits application",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Peng",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Comput Math Method Med",
+            "volume": "2014",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Protein map: an alignment-free sequence\ncomparison method based on various properties of amino\nacids",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "SST",
+                    "middle": [],
+                    "last": "Yau",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Gene",
+            "volume": "486",
+            "issn": "",
+            "pages": "110-118",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "An efficient numerical method for protein sequences similarity\nanalysis based on a new two-dimensional graphical\nrepresentation",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "El-Lakkani",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Mahran",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "SAR QSAR Environ Res",
+            "volume": "26",
+            "issn": "",
+            "pages": "125-137",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Graphical representation of proteins as four-color maps and their\nnumerical characterization",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Randi\u0107",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Mehuli\u0107",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Vuki\u010devi\u0107",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Pisanski",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Viki\u0107-Topi\u0107",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Plav\u0161i\u0107",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Mol Graph\nModel",
+            "volume": "27",
+            "issn": "",
+            "pages": "637-641",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "A protein mapping method based on physicochemical properties and\ndimension reduction",
+            "authors": [
+                {
+                    "first": "ZH",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                },
+                {
+                    "first": "MZ",
+                    "middle": [],
+                    "last": "Jin",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Comput Biol Med",
+            "volume": "57",
+            "issn": "",
+            "pages": "1-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "The graphical representation of protein sequences based on the\nphysicochemical properties and its applications",
+            "authors": [
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "YP",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "YH",
+                    "middle": [],
+                    "last": "Yao",
+                    "suffix": ""
+                },
+                {
+                    "first": "YF",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                },
+                {
+                    "first": "XY.",
+                    "middle": [],
+                    "last": "Nan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J\nComput Chem",
+            "volume": "31",
+            "issn": "",
+            "pages": "2136-2142",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "F-Curve, a graphical representation of protein sequences for\nsimilarity analysis based on physicochemical properties of amino\nacids",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "MATCH Commun Math Co",
+            "volume": "73",
+            "issn": "",
+            "pages": "749-764",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Analysis of similarity/dissimilarity of protein\nsequences",
+            "authors": [
+                {
+                    "first": "YH",
+                    "middle": [],
+                    "last": "Yao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Dai",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "XY",
+                    "middle": [],
+                    "last": "Nan",
+                    "suffix": ""
+                },
+                {
+                    "first": "YZ.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Proteins",
+            "volume": "73",
+            "issn": "",
+            "pages": "864-871",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "The genetic code and error transmission",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Alff-Steinberger",
+                    "suffix": ""
+                }
+            ],
+            "year": 1969,
+            "venue": "Proc Natl Acad Sci",
+            "volume": "64",
+            "issn": "",
+            "pages": "584-591",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Amino acid difference formula to help explain protein\nevolution",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Grantham",
+                    "suffix": ""
+                }
+            ],
+            "year": 1974,
+            "venue": "Science",
+            "volume": "185",
+            "issn": "",
+            "pages": "862-864",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Milestones in graphical bioinformatics",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Randi\u0107",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Novi\u010d",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Plav\u0161i\u0107",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Int J Quant Chem",
+            "volume": "113",
+            "issn": "",
+            "pages": "2413-2446",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Relations between chemical structure and\nbiological activity",
+            "authors": [
+                {
+                    "first": "PHA",
+                    "middle": [],
+                    "last": "Sneath",
+                    "suffix": ""
+                }
+            ],
+            "year": 1966,
+            "venue": "J Theor Biol",
+            "volume": "12",
+            "issn": "",
+            "pages": "157-195",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "On the fundamental nature and evolution of the genetic\ncode",
+            "authors": [
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Woese",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Dugre",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Dugre",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kondo",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC.",
+                    "middle": [],
+                    "last": "Saxinger",
+                    "suffix": ""
+                }
+            ],
+            "year": 1966,
+            "venue": "Cold Spring Harb Sym",
+            "volume": "31",
+            "issn": "",
+            "pages": "723-736",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Amino acid substitution matrices from protein\nblocks",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Henikoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG.",
+                    "middle": [],
+                    "last": "Henikoff",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "P Natl Acad Sci",
+            "volume": "89",
+            "issn": "",
+            "pages": "10915-10919",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Automated programming: the next wave of developer power\ntools",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "McLaughlin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "IEEE Software",
+            "volume": "23",
+            "issn": "",
+            "pages": "91-93",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Recovering the number of clusters in data sets with noise\nfeatures using feature rescaling factors",
+            "authors": [
+                {
+                    "first": "RCD",
+                    "middle": [],
+                    "last": "Amorim",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Hennig",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Inform\nSci",
+            "volume": "324",
+            "issn": "",
+            "pages": "126-145",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Silhouettes: a graphical aid to the interpretation and validation\nof cluster analysis",
+            "authors": [
+                {
+                    "first": "PJ.",
+                    "middle": [],
+                    "last": "Rousseeuw",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "J Comput Appl Math",
+            "volume": "20",
+            "issn": "",
+            "pages": "53-65",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Novel 2-D graphical representation of proteins",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Randi\u0107",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Butina",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Zupan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Chem Phys Lett",
+            "volume": "419",
+            "issn": "",
+            "pages": "528-532",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Structure, function, and evolution of coronavirus spike\nproteins",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Fang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Annu Rev Virol",
+            "volume": "3",
+            "issn": "",
+            "pages": "1954-1964",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Evolution trends of the 2009 pandemic influenza A (H1N1) viruses\nin different continents from March 2009 to April 2012",
+            "authors": [
+                {
+                    "first": "ZH",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC.",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Biologia",
+            "volume": "69",
+            "issn": "",
+            "pages": "407-418",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "MEGA6: molecular evolutionary genetics analysis version\n6.0",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Tamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Stecher",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Peterson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Filipski",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Mol Biol Evol",
+            "volume": "30",
+            "issn": "",
+            "pages": "2725-2729",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Four-component spectral representation of DNA\nsequences",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Bieli\u0144ska-Wa\u0327\u017c",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Math Chem",
+            "volume": "47",
+            "issn": "",
+            "pages": "41-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Graphical and numerical representations of DNA sequences:\nstatistical aspects of similarity",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Bieli\u0144ska-Wa\u0327\u017c",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J Math\nChem",
+            "volume": "49",
+            "issn": "",
+            "pages": "2345-2407",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "2D-dynamic representation of DNA sequences",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Bieli\u0144ska-Wa\u0327\u017c",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wa\u0327\u017c",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Nowak",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Nandy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Chem Phys Lett",
+            "volume": "442",
+            "issn": "",
+            "pages": "140-144",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Spectral-dynamic representation of DNA sequences",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Bieli\u0144ska-Wa\u0327\u017c",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Wa\u0327\u017c",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "J Biomed Inform",
+            "volume": "72",
+            "issn": "",
+            "pages": "1-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "3D-dynamic representation of DNA sequences",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wa\u0327\u017c",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Bieli\u0144ska-Wa\u0327\u017c",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J Mol Model",
+            "volume": "20",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "A group of 3D graphical representation of DNA sequences based on\ndual nucleotides",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Cao",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Int J Quantum Chem",
+            "volume": "108",
+            "issn": "",
+            "pages": "1485-1490",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "WITHDRAWN: 2-D graphical representation of proteins based on\nphysico-chemical properties of amino acids",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Randi\u0107",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Chem\nPhys Lett",
+            "volume": "444",
+            "issn": "",
+            "pages": "176-180",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

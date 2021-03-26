@@ -1,0 +1,1521 @@
+{
+    "paper_id": "PMC6216255",
+    "metadata": {
+        "title": "Single\u2010cell transcriptomics reveals distinct inflammation\u2010induced microglia signatures",
+        "authors": [
+            {
+                "first": "Carole",
+                "middle": [],
+                "last": "Sousa",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Anna",
+                "middle": [],
+                "last": "Golebiewska",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Suresh",
+                "middle": [
+                    "K"
+                ],
+                "last": "Poovathingal",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Tony",
+                "middle": [],
+                "last": "Kaoma",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Yolanda",
+                "middle": [],
+                "last": "Pires\u2010Afonso",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Silvia",
+                "middle": [],
+                "last": "Martina",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Djalil",
+                "middle": [],
+                "last": "Coowar",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Francisco",
+                "middle": [],
+                "last": "Azuaje",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Alexander",
+                "middle": [],
+                "last": "Skupin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Rudi",
+                "middle": [],
+                "last": "Balling",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Knut",
+                "middle": [],
+                "last": "Biber",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Simone",
+                "middle": [
+                    "P"
+                ],
+                "last": "Niclou",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Alessandro",
+                "middle": [],
+                "last": "Michelucci",
+                "suffix": "",
+                "email": "alessandro.michelucci@lih.lu",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The healthy brain hosts distinct and specialized populations of tissue\u2010resident macrophages strategically placed in the parenchyma, perivascular spaces, meninges and choroid plexus where they coordinate homeostatic and immune surveillance functions 1. As the only parenchymal\u2010resident immune cells of the central nervous system (CNS), microglia act as critical effectors and regulators of changes in the CNS during development and adult homeostasis. Their ontogeny, together with the absence of turnover from the periphery and the exceptional environment of the CNS, makes microglia a unique immune cell population 2. By sensing any disruption of CNS homeostasis, microglia rapidly change their gene expression programmes and functional profiles. Recent genome\u2010wide transcriptional studies revealed a unique molecular signature selectively expressed in homeostatic microglia 3, 4, 5, 6 that is lost in disease and during ageing 4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17. Microglia coordinate immune responses between the periphery and the CNS as they perceive and propagate inflammatory signals initiated outside the CNS 18. A multitude of signals received from the CNS environment as well as from the periphery induce microglial responses towards phenotypes that ultimately may support or harm neuronal health 2, 19. Although neuroinflammation and its associated immune responses are often linked to neurodegeneration, the inflammatory response per se provides a primary, transient and self\u2010limiting defence mechanism, by which harmful stimuli are resolved and tissue damage is repaired 20. Disruption of CNS homeostasis, neuronal deterioration and inflammation are common pathophysiological features of several neurodegenerative diseases. In this context, chronic inflammation is likely to be triggered by abnormal protein deposition, by signals elicited by injured neurons and synapses or by impaired pro\u2010 and anti\u2010inflammatory regulatory mechanisms that ultimately exacerbate the neurodegenerative process 21. Dysfunctional microglial responses are believed to worsen CNS diseases 22; nevertheless, their impact during the neuroinflammatory processes remains largely obscure.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In recent years, single\u2010cell RNA sequencing investigations have emerged as a remarkable method to depict heterogeneous cell populations and measure cell\u2010to\u2010cell expression variability of thousands of genes 23, 24, 25. In the murine and human brains, single\u2010cell RNA sequencing analyses have revealed neural and glial cell heterogeneity 26, 27, 28, 29, 30. Similarly, the complexity of immune cell types has been recently unravelled 31. However, although recent studies have elucidated microglia signatures associated with inflammatory conditions at the bulk level 4, 16, 32, it is still not clear whether all microglial cells uniformly react to the inflammatory stimuli.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "To elucidate the heterogeneity of microglial responses towards systemic inflammation, we here analysed the effect of a peripheral injection of the Gram\u2010negative bacterial endotoxin lipopolysaccharide (LPS) in 3\u2010 to 4\u2010month\u2010old C57BL/6N mice using a combination of multicolour flow cytometry and single\u2010cell RNA sequencing analyses. LPS is a well\u2010known immunostimulant used to mimic inflammatory and infectious conditions inducing immune responses associated with sickness behaviour in mice and humans 33, 34. Notably, it has been shown that repeated peripheral injections of LPS in mice induce neurodegeneration, while a single\u2010dose injection of LPS induces acute inflammatory, but not neurodegenerative processes 35. By our approach, we have identified distinct microglial activated profiles under acute inflammatory conditions, which differ from the recently described disease\u2010associated phenotypes 14.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Understanding the specific molecular triggers and the subsequent genetic programmes defining microglia under homeostatic, inflammatory and neurodegenerative conditions at the single\u2010cell level is a fundamental step to further uncover the multifaceted nature of microglia, thus opening new windows to design novel therapeutic strategies to restore, for example, efficient inflammatory immune responses in CNS diseases.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Cell\u2010specific transcriptomic analyses are critically dependent on isolation protocols to obtain pure populations resembling their physiological profiles. To characterize microglia close to their proper environment, mouse brains were mechanically dissociated into single\u2010cell suspension with all the steps performed at 4\u00b0C 36. Since microglia in the mouse brain represent only 10% of the cells, CD11b+CD45int microglia were purified from other CNS and immune cells, including CD11b+CD45high macrophages and CD11b\u2212CD45high lymphocytes, by FACS, as described previously (Figs 1A and EV1) 37. To verify accurate microglial enrichment, we compared gene expression levels of specific CNS cell type markers between RNA extracted from unsorted total brain cells and CD11b+CD45int sorted microglia (Fig 1B). We analysed the expression levels of microglial homeostatic genes (Olfml3, Fcrls, Tmem119, Siglech, Gpr34, P2ry12) as well as astrocytic (Gfap, Gjb6, Ntsr2, Aldh1l1), oligodendrocytic (Mobp, Mog, Cldn11) and neuronal (Tubb3, Vglut1, NeuN) markers. As expected, microglial markers were highly expressed in CD11b+CD45int sorted cells, whereas astrocytic, oligodendrocytic and neuronal markers were undetectable or detectable at background levels (Figs 1B and EV1). We next investigated whether CD11b+CD45int population contained resident non\u2010parenchymal macrophages, such as perivascular macrophages. This was inferred using CD206 as an additional marker for resident macrophages 38. Under homeostatic conditions, CD11b+CD45int microglia contained only 0.04 \u00b1 0.02% CD206+ cells, while CD11b+CD45high cells contained 24.7 \u00b1 3.8% CD206+ resident macrophages (Fig 1C and D). Similar results were obtained for the dendritic cell marker CD11c and the monocytic markers Ly6C and CCR2 (Fig EV1). Taken together, these results show that our approach highly discriminates pure and not activated microglial populations from other resident CNS cells.",
+            "cite_spans": [],
+            "section": "Acutely isolated CD11b+CD45int cells express high levels of microglial homeostatic genes and represent a specific resident immune cell population ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 573,
+                    "end": 574,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 580,
+                    "end": 583,
+                    "mention": "EV1",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 794,
+                    "end": 795,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1249,
+                    "end": 1250,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1256,
+                    "end": 1259,
+                    "mention": "EV1",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1659,
+                    "end": 1660,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1781,
+                    "end": 1784,
+                    "mention": "EV1",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The response of microglia towards specific pro\u2010 or anti\u2010inflammatory cues in vitro has been extensively studied 39. Treatment of primary microglial cells with TGF\u2010\u03b2, LPS or IL\u20104 generates, respectively, the so\u2010called M0 homeostatic, M1 pro\u2010inflammatory and M2 anti\u2010inflammatory states defined by specific gene signatures 5, 40. However, our understanding towards the reaction of microglia under inflammatory conditions in vivo is only starting to emerge. To comprehensively investigate the effect of a systemic inflammatory and/or infectious state on microglia, we peripherally injected mice with LPS (4 \u03bcg/g body) 24 h prior analysis. It has been shown that a single\u2010dose injection of LPS induces acute inflammatory, but not neurodegenerative processes 35. We isolated CD11b+CD45int cells from LPS\u2010injected mice and compared mRNA levels of specific genes to the corresponding cells isolated from saline\u2010injected control mice by qPCR. In agreement with previous studies 32, 41, the expression levels of homeostatic (e.g. Olfml3, Fcrls, Tmem119, Siglech, Gpr34, P2ry12, Mef2c), phagocytic (Tyrobp and Trem2) and anti\u2010inflammatory genes (e.g. Mrc1 and Arg1) were highly decreased in microglia isolated from LPS\u2010injected mice compared to untreated mice, while the classical pro\u2010inflammatory genes (e.g. Il1b, Tnf and Ccl2) were markedly increased (Figs 2A and EV2). Notably, it has been recently shown that signals from the CNS microenvironment have considerable influence in shaping, maintaining and reinforcing microglial identity by regulating expression and establishing distinct chromatin landscapes surrounding enhancer regions 42, 43, 44. Changes in chromatin remodelers associate with changes in the expression of nearby genes. Specifically, MEF2C binding sites were shown to be over\u2010enriched in enhancer regions of microglial\u2010specific genes 42 and the loss of MEF2C was associated with priming of microglia 45. In line with these observations, Mef2c expression levels were highly decreased in microglia isolated from LPS\u2010injected mice compared to na\u00efve mice.",
+            "cite_spans": [],
+            "section": "Microglia isolated from LPS\u2010injected mice show a classical activated pro\u2010inflammatory profile accompanied by a decreased homeostatic signature ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 1350,
+                    "end": 1351,
+                    "mention": "2",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1357,
+                    "end": 1360,
+                    "mention": "EV2",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "We verified that this signature is microglia\u2010specific, and it is not affected by LPS\u2010activated immune peripheral cells, such as lymphocytes (CD11b\u2212CD45high cells) and peripheral monocytes/macrophages (CD11b+CD45high cells), as no significant differences were detected between cellular populations present in brains of saline\u2010 and LPS\u2010injected mice (Figs 2B and EV2). Importantly, CD11b+CD45int FACS\u2010gated cells contained very rare (< 0.25%) Ly6C+ putative monocytes and (< 0.1%) CD206+ putative resident macrophages (Fig 2C). Also, the expression of monocytic markers Ly6c1 and Ccr2 was very low in CD11b+CD45int microglia compared to bone marrow\u2010isolated monocytes with no significant differences under LPS exposure (Figs 2D and EV2). In order to further assess that the decrease in the homeostatic signature under inflammatory conditions is not due to the presence of other immune cell types, but it is an intrinsic property of microglial cells, we also analysed the effect of LPS on cultivated microglial from adult and neonatal mice. As expected, the expression level of the homeostatic genes was markedly decreased in cultivated cells when compared to acutely isolated microglia (Fig EV2) 5. Thus, we cultivated adult microglia in the presence of TGF\u2010\u03b2 (50 \u03bcg/ml) and M\u2010CSF (10 ng/ml) or neonatal cells with TGF\u2010\u03b2 24 h prior treatment with LPS to induce the expression of the homeostatic genes, although at a lower extent than in ex vivo isolated cells (Fig EV2). Cells treated with LPS (1 ng/ml) for 6 h showed a dramatic decrease of the expression levels of the homeostatic gene markers, such as Olfml3, Tmem119 and Gpr34, accompanied by enhanced expression levels of inflammatory marker genes, such as Il1b, Tnf and Ccl2 both in adult and in neonatal microglia when compared to cells treated with TGF\u2010\u03b2 only (Fig 2E). In the healthy brain, TGF\u2010\u03b2 is expressed at low levels by both neurons and glial cells 46, 47, while its expression is increased upon injury 48, 49, hypoxia\u2013ischaemia 50 and neurodegeneration 51, 52. SMAD and signal transducer and activator of transcription (STAT) proteins are key signal transducers and transcription factors controlling TGF\u2010\u03b2 downstream signalling 53. Specifically, STAT3 and suppressor of cytokine signalling 3 (SOCS3) regulate inflammatory responses 54. The binding of SOCS3 to both JAK kinase and the cytokine receptor results in the inhibition of STAT3 activation. In our analysis, microglial cells treated with LPS showed increased amounts of STAT3 phosphorylation along with upregulation of Socs3 expression levels compared to untreated cells (Appendix Fig S1). Taking advantage of the \u201charmonizome\u201d collection of databases 55, we attested that more than 1/3 of the top 100 sensome genes 4 possess STAT3\u2010binding sites in their promoter region. Hence, we hypothesized that the SOCS3\u2010STAT3 antagonistic signalling may be responsible for the suppression of the homeostatic microglia signature and the concomitant shift towards the inflammatory profile 56.",
+            "cite_spans": [],
+            "section": "Microglia isolated from LPS\u2010injected mice show a classical activated pro\u2010inflammatory profile accompanied by a decreased homeostatic signature ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 354,
+                    "end": 355,
+                    "mention": "2",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 361,
+                    "end": 364,
+                    "mention": "EV2",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 521,
+                    "end": 522,
+                    "mention": "2",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 723,
+                    "end": 724,
+                    "mention": "2",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 730,
+                    "end": 733,
+                    "mention": "EV2",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1189,
+                    "end": 1192,
+                    "mention": "EV2",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1463,
+                    "end": 1466,
+                    "mention": "EV2",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1821,
+                    "end": 1822,
+                    "mention": "2",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "These results show that microglia isolated from LPS\u2010injected mice display a classical activated pro\u2010inflammatory profile associated with a decrease in the expression of the homeostatic genes. The decrease in the homeostatic signature under inflammatory conditions is an inherent facet of microglial in vivo and in vitro.",
+            "cite_spans": [],
+            "section": "Microglia isolated from LPS\u2010injected mice show a classical activated pro\u2010inflammatory profile accompanied by a decreased homeostatic signature ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Based on the observed differences in the targeted qPCR approach under steady state and LPS conditions, we next aimed to investigate microglial states at the genome\u2010wide level and infer their transcriptomic heterogeneity at single\u2010cell resolution, since studying a population of cells masks the differences among individual cells. For this purpose, FACS\u2010sorted CD11b+CD45int cells from saline\u2010 or LPS\u2010injected mice were analysed using the recently developed high\u2010throughput droplet\u2010based Drop\u2010seq method 23. In Drop\u2010seq, single cells and functionalized barcoded beads as cell identifiers are co\u2010encapsulated into droplets followed by cDNA synthesis, amplification, library preparation and next\u2010generation sequencing. First, we sought for differentially expressed genes between all LPS and all na\u00efve/saline cells using MAST 57. We identified 2,405 differentially expressed genes between these two conditions with a false discovery rate (FDR) cut\u2010off of 5% (Dataset EV1) and exemplified the top 100 differentially expressed genes in a heatmap (Fig 3A). Second, principal component analysis followed by two\u2010dimensional t\u2010distributed stochastic neighbour embedding (2D\u2010tSNE) of the overall gene expression data of 1,247 analysed cells identified two main cell clusters that were independent of the 2D\u2010tSNE parameters and library sizes (Appendix Fig S2). Microglia isolated from LPS\u2010injected mice distinctly clustered from the corresponding steady state microglia presenting discrete gene expression signatures (Fig 3B; Dataset EV1). Intriguingly, we noticed from both analyses that, although most of the activated cells clustered together, a small group of cells assembled closer to the control cells, thus highlighting the existence of potential subpopulations under inflammatory conditions, which we characterized later. Gene set enrichment analysis (GO) of upregulated genes in microglia isolated from LPS\u2010injected mice using DAVID 58, 59 uncovered significant involvement (P < 2.5 \u00d7 10\u22129) in \u201ctranslation\u201d, \u201cprotein folding\u201d, \u201cribosome biogenesis\u201d and \u201cimmune system process\u201d, thus reflecting highly activated cells. On the other hand, GO of the corresponding downregulated genes identified, among others, significant enrichment (P < 4.9 \u00d7 10\u22125) in \u201cregulation of transforming growth factor beta receptor signalling pathway\u201d, thus reflecting that TGF\u2010\u03b2 signalling is among the most affected pathways in microglia exposed to LPS (Appendix Fig S3). In line with gene expression results obtained at the bulk level, microglial homeostatic genes (e.g. Tmem119, Mef2c, P2ry13, P2ry12, Siglech) were among the top downregulated genes and classical pro\u2010inflammatory genes (e.g. Ccl2, Gpr84, Nfkbia) were mainly upregulated also at the single\u2010cell level (Appendix Fig S2). We further investigated individual gene expressions at single\u2010cell level using 2D\u2010tSNE to show specific homeostatic and inflammatory gene expression levels. For example, Tmem119, Siglech and P2ry12 genes were consistently expressed under steady state, but were downregulated in microglia isolated from LPS\u2010injected mice, while Ccl2 and Gpr84 were largely upregulated in most of the cells exposed to LPS compared to saline conditions (Fig 3C; Appendix Fig S4). Notably, a prominent decrease in TMEM119 and P2RY12 expression was further confirmed at the protein level by flow cytometry (Fig 3D).",
+            "cite_spans": [],
+            "section": "Single\u2010cell mRNA sequencing of CD11b+CD45int microglia isolated from LPS\u2010injected mice reveals a global transcriptional shift and increased heterogeneity compared to steady state conditions ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 1045,
+                    "end": 1046,
+                    "mention": "3",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 1510,
+                    "end": 1511,
+                    "mention": "3",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 3201,
+                    "end": 3202,
+                    "mention": "3",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 3352,
+                    "end": 3353,
+                    "mention": "3",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Although microglial activation is a common hallmark under inflammatory and neurodegenerative conditions 22, microglia transcriptional signatures have been shown to be different. For example, Chiu et al\n16 demonstrated that acutely isolated microglia from the SOD1G93A mouse model of amyotrophic lateral sclerosis (ALS) differed from LPS\u2010activated microglia, defining an ALS\u2010specific phenotype. Following the recent description of a novel disease\u2010associated microglial (DAM) phenotype identified under neurodegenerative conditions at single\u2010cell resolution 14, we here compared our inflammatory\u2010associated microglia (IAM) signature to DAM. The scatterplot showing the fold change of genes between microglia isolated from LPS\u2010injected mice (2,405 genes; Dataset EV1) versus DAM (1,660 genes; Dataset EV2) compared to homeostatic microglia (FDR < 0.05) disclosed 1,826 unique genes affected by the LPS treatment (e.g. Tnf, Irf1), 1,081 distinct genes in DAM (e.g. Itgax, Axl) and 579 shared genes between the two populations (e.g. Gpr84, Tmem119), thus highlighting that these cells mainly display a unique expression profile (Fig EV3). Specifically, only 215 upregulated genes (12.1%) and 364 downregulated genes (21.2%) were shared between the two groups (Fig EV3). Gene set enrichment analysis (GO) and identification of key genes being discriminative between inflammatory microglia and DAM revealed a high inflammatory reactivity upon LPS treatment and a phagocytic/lysosomal gene signature in DAM (Fig EV3). For instances, Trem2 and Tyrobp expression levels were highly decreased in IAM, whereas an elevation of both genes was reported in DAM. TREM2 associates with the immunoreceptor tyrosine\u2010based activation motif (ITAM)\u2010containing adaptor protein TYROBP (DAP12), in which signalling involves the recruitment of tyrosine kinase Syk that further phosphorylates downstream pathways inducing cell activation. TREM2 is required for phagocytosis of apoptotic neurons, microglial proliferation and survival 56, 60, 61, 62. These subtle differences in perceiving different signals induced by CNS perturbations support the microglial critical role in modulating specific functional activities. In fact, it is intuitive to consider that sensing inflammatory environments to maintain a homeostatic neuronal network (e.g. through the expression of Clec4a and Clec5a genes that are exclusively upregulated in our dataset) or recognizing and clearing pathogenic factors (e.g. by expressing Clec7a/Dectin\u20101 in DAM), such as \u03b2\u2010amyloid aggregates in AD, require distinct activated phenotypes. In a different context, it has been recently shown that myelin pieces are gradually released from ageing myelin sheaths and are subsequently cleared by microglia 63. Age\u2010related myelin fragmentation is substantial, leading to lysosomal storage and contributing to microglial senescence and immune dysfunction in ageing 63. It could be then hypothesized that a similar accentuated mechanism may be encountered by microglia surrounding \u03b2\u2010amyloid plaques, which become dystrophic at a late stage of the disease 64. Interestingly, genes described to be associated with neurological diseases, such as Cd33, Cd9, Sod1, Ctsd, and Hif1a, were also downregulated in our signature in comparison with DAM.",
+            "cite_spans": [],
+            "section": "Single\u2010cell mRNA sequencing of CD11b+CD45int microglia isolated from LPS\u2010injected mice reveals a global transcriptional shift and increased heterogeneity compared to steady state conditions ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 1128,
+                    "end": 1131,
+                    "mention": "EV3",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1259,
+                    "end": 1262,
+                    "mention": "EV3",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 1504,
+                    "end": 1507,
+                    "mention": "EV3",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Taken together, these results suggest that microglia under acute systemic inflammation present a highly activated state, which is heterogeneous and distinct from neurodegenerative disease\u2010associated profiles.",
+            "cite_spans": [],
+            "section": "Single\u2010cell mRNA sequencing of CD11b+CD45int microglia isolated from LPS\u2010injected mice reveals a global transcriptional shift and increased heterogeneity compared to steady state conditions ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Next, we aimed to elucidate whether the response to LPS was heterogeneous across microglial cells. Based on our previous observation (Figs 3A and B), we further analysed the identified subclusters by 2D\u2010tSNE representation (Fig 4A). Based on the obtained 2D representation, a specific LPS subgroup (\u201csubset LPS\u201d, in yellow) distinct from the core LPS cluster (\u201cmain LPS\u201d, in red) was identified closer to na\u00efve microglial cluster. Thus, we hypothesized that these cells may correspond to a microglial subset that is less sensitive to inflammatory stimuli or a cluster of cells which already partly recovered from their activated state following the prominent pro\u2010inflammatory immune response. We obtained differentially expressed genes between the \u201cmain LPS\u201d (Dataset EV3) and the \u201csubset LPS\u201d (Dataset EV4) clusters compared to the corresponding control conditions (FDR < 0.05). We represented the top 100 differentially expressed genes among the identified clusters in a heatmap (FDR < 0.05; Appendix Fig S5). To elucidate the transcriptional signature of the LPS subgroups, we showed differentially expressed genes between \u201cmain LPS\u201d and \u201csubset LPS\u201d clusters compared to the corresponding control conditions (FDR < 0.05). In line with their activated state, the main pro\u2010inflammatory genes (e.g. Ccl2, Tnf, Irg1, Gpr84) were upregulated (Fig 4B) and the microglial homeostatic genes (e.g. Siglech, P2ry12, Fcrls, Gpr34) were downregulated in both populations (Fig 4C), although at a lesser extent in \u201csubset LPS\u201d, compared to steady state conditions. Investigation of the top differentially expressed genes unique to \u201cmain LPS\u201d or \u201csubset LPS\u201d compared to na\u00efve cells (FDR < 0.05; Log2FC \u2265 3 or Log2FC \u2264 \u22123; Table 1) identified, for example, Manf (a growth factor that promotes neuroprotection and tissue repair 65) and C5ar1 among the top upregulated genes in \u201cmain LPS\u201d and Stab 1 as well as Ash1l (which suppresses the production of pro\u2010inflammatory mediators, such as IL\u20106 and TNF 66), among the enhanced genes in \u201csubset LPS\u201d. Downregulated genes were, for example, the homeostatic gene marker Mef2c, which restrains the microglial inflammatory response 45 in \u201cmain LPS\u201d and genes associated with endosomes/lysosomes in both \u201cmain LPS\u201d (Maf) and \u201csubset LPS\u201d (Lamp1) (Figs 4D and EV4), thus potentially providing some mechanistic insights regarding the less activated state of \u201csubset LPS\u201d compared to the \u201cmain LPS\u201d cluster. Further analysis of unique differentially expressed genes (FDR < 0.05) characterizing the two LPS subpopulations based on microglial functions and properties showed a dramatic increase in genes associated with the major histocompatibility complex (e.g. H2\u2010D1 and H2\u2010K1) exclusively in the \u201cmain LPS\u201d group and a decrease in the complement system (e.g. C1qa, C1qb and C1qc) in the \u201csubset LPS\u201d group when compared to steady state (Table EV1).",
+            "cite_spans": [],
+            "section": "Microglia present distinct activated signatures under inflammatory conditions ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 139,
+                    "end": 140,
+                    "mention": "3",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 228,
+                    "end": 229,
+                    "mention": "4",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 1346,
+                    "end": 1347,
+                    "mention": "4",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 1468,
+                    "end": 1469,
+                    "mention": "4",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 2282,
+                    "end": 2283,
+                    "mention": "4",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 2289,
+                    "end": 2292,
+                    "mention": "EV4",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 1718,
+                    "end": 1719,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Notably, we characterized membrane markers corresponding to specific genes identified at single\u2010cell resolution by flow cytometry to analyse the expression levels of markers upregulated in both LPS groups (e.g. CD44), only in \u201cmain LPS\u201d (e.g. CD274) or only in \u201csubset LPS\u201d (e.g. NOTCH4). Although three markers used simultaneously did not allow to clearly discriminate the \u201csubset LPS\u201d from the \u201cmain LPS\u201d population, changes in the proportion of marker\u2010positive cells were in line with the scRNA\u2010seq data. Upon LPS treatment, a smaller proportion of NOTCH4\u2010positive cells (saline 5.4%; LPS 18.9%) compared to CD44 (saline 65.2%; LPS 97.5%) and CD274 (saline 48.7%; LPS 88.1%) were detected (Fig EV5). We confirmed this pattern by immunohistochemistry, showing that NOTCH4\u2010positive cells were evenly distributed throughout the brain, thus indicating that these cells were not associated with a specific brain region (Fig EV5).",
+            "cite_spans": [],
+            "section": "Microglia present distinct activated signatures under inflammatory conditions ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 697,
+                    "end": 700,
+                    "mention": "EV5",
+                    "ref_id": "FIGREF9"
+                },
+                {
+                    "start": 922,
+                    "end": 925,
+                    "mention": "EV5",
+                    "ref_id": "FIGREF9"
+                }
+            ]
+        },
+        {
+            "text": "Gene set enrichment analysis of downregulated genes characterizing \u201csubset LPS\u201d compared to \u201cmain LPS\u201d confirmed \u201cinnate immune response\u201d and \u201ccomplement activation, classical pathway\u201d as decreased terms, thus highlighting a less pronounced activated state of the \u201csubset LPS\u201d. Intriguingly, these cells revealed significant over\u2010representation (P < 0.05) of \u201ccovalent chromatin modification\u201d and \u201cDNA repair\u201d that may indicate cells recovering from their acute activated state or a subset of cells with specific chromatin states and DNA repair properties conveying an attenuated activated phenotype than the main population (Fig 4E). In order to further corroborate the existence of the identified microglial subpopulations under inflammatory conditions, the corresponding 770 cells were subjected to the \u201cSC3\u201d method 67. With two clusters, we found a very high concordance between the subcluster obtained with \u201cSC3\u201d and the LPS subset identified by 2D\u2010tSNE, thus supporting the existence of the detected subpopulations. We represented the top 50 differentially expressed genes driving the segregation of cells into the two clusters in a heatmap (adjusted P\u2010value < 0.05; Appendix Fig S6).",
+            "cite_spans": [],
+            "section": "Microglia present distinct activated signatures under inflammatory conditions ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 630,
+                    "end": 631,
+                    "mention": "4",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "Lastly, we used Venn diagrams to show unique and common upregulated and downregulated (Fig EV5) genes among \u201cmain LPS\u201d cluster, \u201csubset LPS\u201d and DAM (FDR < 0.05). Among the deregulated genes, for example, Spp1, Il1b and Tlr2 were commonly upregulated, while Fcrls, Tgfbr1 and Siglech were downregulated in the three groups. Intriguingly, genes of the complement system (e.g. C1qa, C1qb and C1qc) were downregulated in both \u201csubset LPS\u201d and DAM, but not in \u201cmain LPS\u201d. Further analysis of the top differentially expressed genes unique to the three groups compared to na\u00efve cells (FDR < 0.05; Log2FC \u2265 3 or Log2FC \u2264 \u22123; Appendix Table S1) showed that the previously identified genes, such as Manf and C5ar1 are uniquely upregulated in \u201cmain LPS\u201d, while Stab 1 as well as Ash1l is among the increased genes only in \u201csubset LPS\u201d.",
+            "cite_spans": [],
+            "section": "Microglia present distinct activated signatures under inflammatory conditions ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 91,
+                    "end": 94,
+                    "mention": "EV5",
+                    "ref_id": "FIGREF9"
+                }
+            ]
+        },
+        {
+            "text": "Overall, these results highlight the existence of specific microglial subpopulations under inflammatory conditions, which are distinct from neurodegenerative\u2010associated phenotypes. These findings emphasize heterogeneity of microglial activated states in vivo reflecting specific functional activities related to their corresponding environment.",
+            "cite_spans": [],
+            "section": "Microglia present distinct activated signatures under inflammatory conditions ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Although further analyses at different time points should be performed in the future to resolve the dynamic process of activation, to further investigate the activation process, the heterogeneity within LPS\u2010activated microglia and, specifically, the properties of \u201csubset LPS\u201d compared to \u201cmain LPS\u201d, we applied branch expression analysis modelling (BEAM) and corresponding pseudotime analysis implemented in Monocle 2 68. Since the more subtle differences during the activation process would be dominated by the large differences between na\u00efve and LPS conditions, we applied the branching analysis to the LPS\u2010activated microglia only. This more sensitive analysis revealed nine different states, with the largest difference of \u201csubset LPS\u201d to all others, in accordance with the previous tSNE and \u201cSC3\u201d analyses. Interestingly, cells assigned to \u201csubset LPS\u201d exhibit a dense core, but also a significant number of cells towards the other main clusters (Fig 5A). Given this more sensitive clustering and corresponding pseudotime analysis, we then investigated the characteristics of \u201csubset LPS\u201d with respect to their activation state and their relation with the other states. For this purpose, we plotted the estimated pseudotime of each cell in the state space indicating a delayed activation pattern of \u201csubset LPS\u201d (Fig 5B). Lastly, we investigated inflammatory (e.g. Ccl12, Ccl2, Gpr84) and homeostatic (e.g. Mef2c, P2ry12, Siglech) gene expression profiles in dependence on pseudotime, further indicating the delayed activation state of \u201csubset LPS\u201d by smaller pseudotimes (Fig 5C). By comparing the dynamics of the inflammatory and homeostatic genes along the activation process, we observed that inflammatory genes were upregulated first, while the homeostatic markers were only subsequently downregulated. Thus, \u201csubset LPS\u201d may correspond to an intermediate state where the gene expression levels of the inflammatory mediators are increased, but the homeostatic gene markers, such as Mef2c, are still partly preserved. In conclusion, from this analysis, we hypothesized that these cells may correspond to a microglial subpopulation that is less sensitive to inflammatory stimuli.",
+            "cite_spans": [],
+            "section": "Pseudotime analysis of LPS\u2010activated microglia uncovers \u201csubset LPS\u201d as an intermediate activated state ::: Results and Discussion",
+            "ref_spans": [
+                {
+                    "start": 957,
+                    "end": 958,
+                    "mention": "5",
+                    "ref_id": "FIGREF8"
+                },
+                {
+                    "start": 1323,
+                    "end": 1324,
+                    "mention": "5",
+                    "ref_id": "FIGREF8"
+                },
+                {
+                    "start": 1583,
+                    "end": 1584,
+                    "mention": "5",
+                    "ref_id": "FIGREF8"
+                }
+            ]
+        },
+        {
+            "text": "In summary, our work elucidated an extensive picture of microglial profiles in steady state and upon inflammatory conditions, including unforeseen heterogeneity in their states of activation. We believe that our findings, together with the recent single\u2010cell RNA sequencing studies of microglia in Alzheimer's disease 14, present a comprehensive transcriptomic view of microglia under acute inflammatory conditions and a comparison with neurodegenerative processes. These results could then pave the way to design new therapeutic approaches to restore abnormal or detrimental microglial phenotypes found in several CNS disorders.",
+            "cite_spans": [],
+            "section": "Pseudotime analysis of LPS\u2010activated microglia uncovers \u201csubset LPS\u201d as an intermediate activated state ::: Results and Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Three\u2010 to four\u2010month\u2010old C57BL/6N male and female mice were obtained from Charles River Laboratories (France). Mice were housed in 12\u2010h light/dark cycle, with sterile food and water ad libitum. All animal procedures were approved by the University of Luxembourg Animal Experimentation Ethics Committee and by appropriate government agencies. The animal work of the present study has been conducted and reported in accordance with the ARRIVE (Animal Research: Reporting of In Vivo Experiments) guidelines to improve the design, analysis and reporting of research using animals, maximizing information published and minimizing unnecessary studies.",
+            "cite_spans": [],
+            "section": "Animals ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Mice were treated with a single intraperitoneal injection of LPS (4 \u03bcg LPS/g body weight) or with PBS (saline) as vehicle control. Twenty\u2010four hours later, mice were deeply anaesthetized with a combination of ketamine (100 mg/ml; Nimatek Vet)\u2013dorbene (medetomidine hydrochloride; 1 mg/ml; Dorbene Vet) and perfused transcardially with ice\u2010cold PBS. Further processing was performed at 4\u00b0C and no\u2010break centrifugations. Brains were rapidly removed, stored in ice\u2010cold HBSS (Gibco/Life Technologies) with 1 M HEPES (Gibco/Life Technologies) and 0.5% D\u2010(+)\u2010glucose (Sigma\u2010Aldrich), mechanically homogenized in a potter homogenizer and centrifuged at 900 rpm for 10 min. Myelin was removed from cell suspension with the Myelin Removal Kit (Miltenyi Biotec) according to the manufacturer's protocol. Prior to the FACS, the cell suspension was resuspended in ice\u2010cold HBSS with 2% FBS and 10 mM HEPES, pH 7.4 and filtered through a 70\u2010\u03bcm nylon mesh (CellTrics). For multicolour staining, cells were incubated for 15 min with Fc receptor binding inhibitor (anti\u2010mouse CD16/CD32 monoclonal antibody; 1:100; eBioscience) to reduce binding of non\u2010specific Fc\u2010gamma receptors, and then stained with fluorochrome\u2010conjugated antibodies (Appendix Table S2) or their corresponding isotopic controls for 45 min at 4\u00b0C in dark. After washing, cells were pelleted at 300 g for 10 min at 4\u00b0C and resuspended in 200 \u03bcl of the appropriated buffer. Hoechst (0.1 \u03bcg/ml; Sigma) or Sytox Red (1:1,000; Thermo Fisher Scientific) were added shortly before flow cytometry measurements for dead cell discrimination. Cells were sorted with FACSAria\u2122 SORP cytometer (BD Biosciences) fitted with a 640 nm (30 mW) red laser, a 355 nm (60 mW) UV laser, a 405 nm (50 mW) violet laser, a 488 nm (100 mW) blue laser and a 561 nm (50 mW) yellow/green laser. Data were analysed with FACSDiva software (Becton Dickinson) and FlowJo software (version 7.6.5; Tree Star). Imaging flow cytometry was performed with an ImageStream imaging cytometer (Amnis) fitted with a 375 UV laser, a 488 blue laser, a 561 yellow\u2010green laser, a 642 red laser and a 785 nm infrared laser. Acquisition was performed with the INSPIRE\u00ae software, and analysis was performed using IDEAS\u00ae image analysis software. Pictures were taken at 60\u00d7 magnification at low speed, high sensitivity mode.",
+            "cite_spans": [],
+            "section": "Acute microglial isolation and purification by multicolour flow cytometry ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Monocytes were isolated from mouse bone marrow cells by using the Monocyte Isolation Kit (Miltenyi Biotec) according to the manufacturer's protocol.",
+            "cite_spans": [],
+            "section": "Isolation of bone marrow monocytes ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Adult microglia were isolated from brains of C57BL/6N mice at age 6\u201310 weeks by magnetic separation. Mice were transcardially perfused with ice\u2010cold PBS under anaesthesia, and brains were dissociated using the Neural Dissociation Kit P (MACS Miltenyi Biotec) according to the manufacturer's instruction. Microglia were enriched by magnetic separation using CD11b+ beads (MACS Miltenyi Biotec). Briefly, 1 \u00d7 107 cells were resuspended in 90 \u03bcl of MACS buffer [Hank's balanced salt solution (HBSS); Lonza] supplemented with 0.5% BSA (Sigma\u2010Aldrich) and 2 mM EDTA and 10 \u03bcl of CD11b MicroBeads (MACS Miltenyi Biotec). The cell suspension was incubated at 4\u00b0C for 20 min, washed and pelleted in 500 \u03bcl of MACS buffer at a density of 1 \u00d7 108 cells. The cell suspension was applied into LS columns (MACS Miltenyi Biotec), and the CD11b+ fraction was eluted. Primary adult microglia were plated in 24\u2010well plates coated in poly\u2010L\u2010lysine (0.1 mg/ml solution; Sigma\u2010Aldrich) at a density of 2 \u00d7 105 cells/ml and grown in microglial culture medium [Dulbecco's modified Eagle's medium (DMEM\u2010F12 w/L\u2010glutamine w/15 mM HEPES; Biowest)] supplemented with 10% foetal bovine serum (FBS; Gibco/Life Technologies), pen\u2010strep (100 U/ml/100 \u03bcg/ml; Gibco/Life Technologies), human recombinant TGF\u2010\u03b2 (PeproTech) at a final concentration of 50 \u03bcg/ml and mouse recombinant M\u2010CSF (R&D Systems) at a final concentration of 10 ng/ml. Cells were cultured for 5 days without changing media. After 9 days of culture, cells were stimulated with lipopolysaccharide (LPS from Escherichia coli 055:B5; Sigma\u2010Aldrich) at a final concentration of 1 ng/ml for 6 h.",
+            "cite_spans": [],
+            "section": "Primary adult mouse microglial culture ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Murine primary microglial cells were isolated from newborn (P1\u2013P4) C57BL/6N mouse brains as previously described 69. Brains were dissected on ice. Subsequently, meninges and large blood vessels were carefully removed and brains were pooled and minced in cold Dulbecco's phosphate buffered saline (PBS; Lonza). Tissue dissociation was completed by 10 min of incubation in 2 mM EDTA (Sigma\u2010Aldrich). Cells were washed, centrifuged, seeded into six\u2010well plates coated with poly\u2010L\u2010lysine and allowed to attach and grow in complete medium DMEM (Gibco/Life Technologies) supplemented with 10% FBS and pen\u2010strep at 37\u00b0C in a water\u2010saturated atmosphere containing 5% CO2. The culture medium was renewed after 3 days of culture. After 10 days, when cells reached confluence, the mixed glial monolayer was trypsinated (0.05% Trypsin\u2013EDTA; Gibco/Life Technologies) and microglial cells were purified by magnetic cell sorting (MACS Miltenyi Biotec) following the manufacturer's instructions. Primary microglia were plated in 12\u2010well plates coated with poly\u2010L\u2010lysine (Sigma\u2010Aldrich) at a density of 4 \u00d7 105 cells/ml. Twenty\u2010four hours after plating, cells were activated with different compounds: LPS at a final concentration of 1 ng/ml, TGF\u2010\u03b2 at a final concentration of 50 \u03bcg/ml and M\u2010CSF at a final concentration of 10 ng/ml.",
+            "cite_spans": [],
+            "section": "Primary newborn mouse microglial culture ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "CD11b+CD45int cells were FACS\u2010sorted directly to TRIzol\u00ae LS, and total RNA was extracted according to the manufacturer's protocol (Life Technologies). RNA from primary cells was extracted using the RNeasy Mini Kit (QIAGEN), according to the manufacturer's instructions. RNA concentration was quantified by NanoDrop (NanoDrop Technologies) and the quality assessed by the quotient of the 28S to 18S ribosomal RNA electropherogram peak using a bioanalyser (Agilent 2100; Agilent Technologies) using a RNA Pico Chip (Agilent Technologies; only samples with RIN \u2265 7 were further analysed). For cDNA synthesis, RNA was reverse\u2010transcribed using SuperScript\u2122 III reverse transcriptase (10,000 U; Invitrogen/Life Technologies) with 1 \u03bcl (50 \u03bcM)/reaction oligo(dT)20 (25 \u03bcM; Invitrogen/Life Technologies) as primer according to the manufacturer's instructions. Reverse transcription was performed at 50\u00b0C for 60 min. Gene expression reaction mixtures contained 2 \u03bcl of diluted cDNA, 10 \u03bcl of Fast SYBR Green Master Mix (Applied Biosystems/Thermo Fisher Scientific) and 0.5 \u03bcl of each 10 \u03bcM forward and reverse primers. PCRs were carried out in 96\u2010well plates on a ViiA\u2122 7 real\u2010time PCR system (Applied Biosystems/Thermo Fisher Scientific) using the following programme: 95\u00b0C for 20 s, 40 cycles at 95\u00b0C for 1 s and 60\u00b0C for 20 s. The sequences of the primers designed using Primer\u2010Blast tool are listed in Appendix Table S3. Samples were run in duplicates, and the mean C\nt (threshold cycle) values were used to calculate the relative amount of product by the \u0394\u0394C\nt method using Gapdh as housekeeping gene.",
+            "cite_spans": [],
+            "section": "RNA isolation and RT\u2013PCR ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Under deep ketamine\u2013dorbene anaesthesia, mice were transcardially perfused with ice\u2010cold PBS, post\u2010fixed in 4% paraformaldehyde (PFA) for 48 h and stored at 4\u00b0C in 0.02% sodium azide/PBS as preservative. Serialized parasagittal free\u2010floating 50\u2010\u03bcm\u2010thick sections were generated with a vibratome (Leica; VT\u20101000S) and collected in cryoprotective medium [PBS containing 1\u20101 ethylene glycol (Sigma\u2010Aldrich) and 1% w/v polyvinylpyrrolidone (Sigma\u2010Aldrich)]. Sections were stored at \u221220\u00b0C in tubes, each containing a series of every 4th section.",
+            "cite_spans": [],
+            "section": "Immunohistochemistry ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For immunofluorescence, a standard protocol was used with minor modifications 70. Briefly, sections were washed (PBS with 0.1% Triton X\u2010100), permeabilized (PBS with 1.5% Triton X\u2010100), blocked (PBS with 5% BSA) and incubated with primary antibodies (PBS with 0.3% Triton X\u2010100 and 2% BSA): rabbit anti\u2010Iba1 (1:1,000; Wako) and pre\u2010conjugated PE anti\u2010mouse Notch4 (1:80; BioLegend). Iba1 antibody was visualized using goat anti\u2010rabbit IgG Molecular Probes Alexa Fluor 555 (Thermo Fisher Scientific) secondary antibody. Cell nuclei were counterstained with Hoechst (1 \u03bcg/ml; Sigma). Sections were mounted on glass slides coverslipped using Fluoromount\u2122 Aqueous Mounting Medium (Sigma). Microscopic images were obtained using confocal microscopy (Zeiss LSM880).",
+            "cite_spans": [],
+            "section": "Immunohistochemistry ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Heat\u2010denatured protein samples were separated on 4\u201312% BisTris\u2013polyacrylamide gel electrophoresis followed by transfer to nitrocellulose membranes 0.2 \u03bcm (Bio\u2010Rad). After blocking with 5% (wt/vol) dry milk in TBST for STAT3 and 3% BSA in TBST for Phospho\u2010STAT3, respectively, the membrane was incubated overnight at 4\u00b0C in primary anti\u2010STAT3 antibody from mouse (Cell Signaling) diluted 1:1,000 in 5% (wt/vol) dry milk in TBST and in primary anti\u2010Phospho\u2010STAT3 antibody (Cell Signaling) diluted 1:500 in 3% BSA in TBST with constant shaking. After three washing steps with TBS containing 0.1% Tween\u201020, the membrane was incubated with anti\u2010rabbit antibody or anti\u2010mouse respectively, coupled to horseradish peroxidase and revealed by chemoluminescence using the Pierce\u2122 ECL detection reagents (Thermo Fisher Scientific).",
+            "cite_spans": [],
+            "section": "SDS\u2013PAGE and Western Blotting analysis ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "FACS\u2010sorted CD11b+CD45int cells were collected in pre\u2010cooled HBSS and 0.5% BSA and transferred directly for subsequent Drop\u2010seq analysis. The cells were stored on ice until the start of the Drop\u2010seq experiment (tissue harvest to running of Drop\u2010seq was < 1 h). Prior to cell loading on the Drop\u2010seq chips, the cell viability was verified and the concentration was adjusted to ~150 cells/\u03bcl. This was optimal based on Poissonian statistics to achieve single\u2010cell encapsulation within each droplet of ~800\u2013900 pl droplet size. All samples analysed in this work had a cell viability > 95%.",
+            "cite_spans": [],
+            "section": "Cell preparation ::: Single\u2010cell RNA sequencing using Drop\u2010seq ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Microfluidics devices were generated using a previously published design 23. Soft lithography was performed using SU\u20108 2050 photoresist (MicroChem) on 4\u201d silicon substrate to obtain a feature aspect depth of 100 \u03bcm. After overnight silanization (using chlorotrimethylsilane; Sigma), the wafer masks were used for microfluidics fabrication. Drop\u2010seq chips were fabricated using silicon\u2010based polymerization chemistry, with the previously published protocol 71. Briefly, polydimethylsiloxane (PDMS) base and crosslinker (Dow Corning) were mixed at a 10:1 ratio, mixed and degassed before pouring onto the Drop\u2010seq master template. PDMS was cured on the master template, at 80\u00b0C for 2 h. After incubation and cooling, PDMS monoliths were cut and the inlet/outlet ports were punched with 1.25\u2010mm biopsy punchers (World Precision Instruments). The PDMS monolith was plasma\u2010bonded to a clean microscopic glass slide using a Harrick plasma cleaner. Immediately after pairing the plasma\u2010treated surfaces of the PDMS monolith and the glass slide, flow channels of the Drop\u2010seq chip were subjected to a hydrophobicity treatment using 1H,1H,2H,2H\u2010perfluorodecyltrichlorosilane (in 2% v/v in FC\u201040 oil; Alfa Aesar/Sigma). After 5 min of treatment, excessive silane was blown through the inlet/outlet ports. Chips were further incubated at 80\u00b0C for 15 min.",
+            "cite_spans": [],
+            "section": "Microfluidics fabrication ::: Single\u2010cell RNA sequencing using Drop\u2010seq ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Experiments followed the original Drop\u2010seq protocol 23 with minor changes described below. Synthesized barcoded beads (ChemGenes Corp., USA) were co\u2010encapsulated with cells inside the droplets containing lysis reagents using an optimal bead concentration of 200 beads/\u03bcl in Drop\u2010seq Lysis buffer medium. Cellular mRNA was captured on the beads via barcoded oligo (dT) handles synthesized on the surface.",
+            "cite_spans": [],
+            "section": "Single\u2010cell droplet encapsulation ::: Single\u2010cell RNA sequencing using Drop\u2010seq ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For cell encapsulation, bead suspensions and cell suspension were loaded into 3\u2010ml syringes (BD). To keep beads in homogenous suspension, a micro\u2010stirrer was used (VP Scientific). The QX200 carrier oil (Bio\u2010Rad) used as continuous phase in the droplet generation was loaded into a 20\u2010ml syringe (BD). For droplet generation, 3.6 ml/h and 13 ml/h flowrates were used in KD Scientific Legato Syringe Pumps for the dispersed and continuous phase flows, respectively. After stabilization of droplet formation, the droplet suspension was collected into a 50\u2010ml Falcon tube. Collection of the emulsion was carried out until 1 ml of the single\u2010cell suspension was dispensed. Droplet consistency and stability were evaluated by bright\u2010field microscopy using INCYTO C\u2010Chip Disposable Hemacytometer (Thermo Fisher Scientific). Bead occupancy within droplets was carefully monitored to avoid multiple beads per droplet.",
+            "cite_spans": [],
+            "section": "Single\u2010cell droplet encapsulation ::: Single\u2010cell RNA sequencing using Drop\u2010seq ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The subsequent steps of droplet breakage, bead harvesting, reverse transcription and exonuclease treatment were carried out in accordance with the Drop\u2010seq method 23. RT buffer contained 1\u00d7 Maxima RT buffer, 4% Ficoll PM\u2010400 (Sigma), 1 \u03bcM dNTPs (Thermo Fisher Scientific), 1 U/ml RNase Inhibitor (Lucigen), 2.5 \u03bcM Template Switch Oligo 23 and 10 U/ml Maxima H\u2010RT (Thermo Fisher Scientific). After Exo\u2010I treatment, the bead counts were estimated using INCYTO C\u2010Chip Disposable Hemacytometer, and 5,000\u20138,000 beads were aliquoted in 0.2 ml Eppendorf PCR tubes. PCR mix was dispensed in a volume of 50 \u03bcl using 1\u00d7 HiFi HotStart ReadyMix (Kapa Biosystems) and 0.8 mM Template Switch PCR primer. The thermocycling programme for the PCR amplification was modified for the final PCR cycles by 95\u00b0C (3 min), four cycles of 98\u00b0C (20 s), 65\u00b0C (45 s), 72\u00b0C (3 min) and 16 cycles of 98\u00b0C (20 s), 67\u00b0C (20 s), 72\u00b0C (3 min), followed by a final extension step of 72\u00b0C for 5 min. After PCR amplification, libraries were purified with 0.6\u00d7 Agencourt AMPure XP beads (Beckman Coulter), according to the manufacturer's protocol. Finally, the purified libraries were eluted in 20 \u03bcl RNase/DNase\u2010free Molecular Grade Water. Quality and concentration of the sequencing libraries were assessed using Bioanalyzer High Sensitivity Chip (Agilent Technologies).",
+            "cite_spans": [],
+            "section": "Single\u2010cell droplet encapsulation ::: Single\u2010cell RNA sequencing using Drop\u2010seq ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The 3\u2032 end enriched cDNA libraries were prepared by tagmentation reaction of 600 pg cDNA library using the standard Nextera XT tagmentation kit (Illumina). Reactions were performed according to the manufacturer's instructions. The PCR amplification cycling programme used was 95\u00b0C 30 s, and fourteen cycles of 95\u00b0C (10 s), 55\u00b0C (30 s) and 72\u00b0C (30 s), followed by a final extension step of 72\u00b0C (5 min). Libraries were purified twice to reduce primers and short DNA fragments with 0.6\u00d7 and 1\u00d7 Agencourt AMPure XP beads (Beckman Coulter), respectively, in accordance with the manufacturer's protocol. Finally, purified libraries were eluted in 15 \u03bcl Molecular Grade Water. Quality and quantity of the tagmented cDNA library were evaluated using Bioanalyzer High Sensitivity DNA Chip. The average size of the tagmented libraries prior to sequencing was between 400 and 700 bps.",
+            "cite_spans": [],
+            "section": "NGS preparation for Drop\u2010seq libraries ::: Single\u2010cell RNA sequencing using Drop\u2010seq ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Purified Drop\u2010seq cDNA libraries were sequenced using Illumina NextSeq 500 with the recommended sequencing protocol except for 6pM of custom primer (GCCTGTCCGCGGAAGCAGTGGTATCAACGCAGAGTAC) applied for priming of read 1. Paired\u2010end sequencing was performed for the read 1 of 20 bases (covering the random cell barcode 1\u201312 bases and the rest 13\u201320 bases of random unique molecular identifier (UMI) and for read 2 of 50 bases of the genes.",
+            "cite_spans": [],
+            "section": "NGS preparation for Drop\u2010seq libraries ::: Single\u2010cell RNA sequencing using Drop\u2010seq ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The FASTQ files were assembled from the raw BCL files using Illumina's bcl2fastq converter and ran through the FASTQC codes (Babraham bioinformatics; https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) to check for consistency in library qualities. The monitored quality assessment parameters were (i) quality per base sequence (especially for the read 2 of the gene), (ii) per base N content, (iii) per base sequence content, and (iv) over\u2010represented sequences. Libraries that showed significant deviation were re\u2010sequenced. The FASTQ files were then merged and converted into binaries using PICARD's FastqToSam algorithm. The sequencing reads were converted into a digital gene expression matrix using the Drop\u2010seq bioinformatics pipeline 23.",
+            "cite_spans": [],
+            "section": "Bioinformatics processing and data analysis ::: Single\u2010cell RNA sequencing using Drop\u2010seq ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Data analysis was done in R. Cells with less than 1,000 counts and genes with zero count in all cells were excluded from subsequent analyses, resulting in 1,247 cells (477 from the saline control and 770 from LPS\u2010injected mice) and 12,369 genes. PCA (prcomp function with scaling) was used for dimensionality reduction, and PCA results were projected onto a two\u2010dimensional (2D) space using t\u2010distributed stochastic neighbour embedding (tSNE, tsne package, v.0.1\u20103). As the first principal component was strongly correlated to the total number of UMI (reads) per cell, it was not included in the 2D\u2010tSNE analysis. Differential expression analysis was performed with MAST 57. P\u2010values were adjusted for multiple testing using false discovery rate (FDR) 72. Prior to MAST analysis, counts were converted into counts per million and log2\u2010transformed. For subpopulation identification, two approaches were used: (i) based on visual inspection of 2D\u2010tSNE plot, cells were divided into three clusters: one cluster contained almost exclusively cells isolated from control mice, another cluster contained mainly cells harvested from LPS\u2010injected mice, and the last cluster was constituted of a small subset of LPS\u2010derived cells. Clusters were pruned to keep only cells coming from the predominant sample in the group. Comparisons of gene expression between different groups were done with the Kruskal\u2013Wallis H\u2010test. P\u2010values were corrected with FDR 72; (ii) each condition was analysed separately with the \u201cSC3\u201d package 67. Branching analysis was performed by Monocle 2.4.0 in R (version 3.4.4) with standard parameters 68, 73. The branching method orders cells along an estimated cell trajectory within a gene expression state space based on gene expression similarities estimated by generalized linear regression models.",
+            "cite_spans": [],
+            "section": "Bioinformatics processing and data analysis ::: Single\u2010cell RNA sequencing using Drop\u2010seq ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Statistical analyses for qPCRs and FACS experiments were performed using GraphPad Prism 7 software. Comparisons of two groups were performed with a two\u2010tailed Student's t\u2010test. Comparisons involving more than two groups were performed using one\u2010way ANOVA followed by the Bonferroni correction for multiple testing. All differences were considered significantly different at P < 0.05. Further statistical analysis details are reported in the figure legends.",
+            "cite_spans": [],
+            "section": "Statistical analysis ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Single\u2010cell RNA sequencing data have been deposited in Gene Expression Omnibus (GEO) database under the accession number GSE115571 (https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE115571).",
+            "cite_spans": [],
+            "section": "Data availability",
+            "ref_spans": []
+        },
+        {
+            "text": "CS and AM designed the project; KB, RB and SPN involved in the experimental design; CS, SKP, YP\u2010A and AM performed experiments; CS, AG, SKP, TK, SM, AS and AM analysed experiments; DC provided animals; FA supervised the bioinformatics analyses of the single\u2010cell RNA\u2010seq; CS and AM wrote the manuscript; and AG, SKP, TK, DC, YP\u2010A, SM, FA, AS, RB, KB and SPN edited and approved the manuscript.",
+            "cite_spans": [],
+            "section": "Author contributions",
+            "ref_spans": []
+        },
+        {
+            "text": "The authors declare that they have no conflict of interest.",
+            "cite_spans": [],
+            "section": "Conflict of interest",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: List of top differentially expressed genes unique to \u201cmain LPS\u201d or \u201csubset LPS\u201d versus PBS (FDR < 0.05; upregulated genes, Log2FC \u2265 3; downregulated genes, Log2FC \u2264 \u22123)\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: \nFACS gating strategy representative of five independent experiments adopted to sort CD11b+CD45int microglia distinctly from CD11b+CD45high resident macrophages and CD11b\u2212CD45high lymphocytes.Analysis of relative transcript levels of CD11b+CD45int FACS\u2010sorted microglia compared with whole brain tissue by qPCR. Gene expression levels of microglia (Olfml3, Fcrls, Tmem119, Siglech, Gpr34, P2ry12), astrocyte (Gfap, Gjb6, Ntsr2, Aldh1l1), oligodendrocyte (Mobp, Mog, Cldn1) and neuron (Tubb3, Vglut1, NeuN) markers. Bars represent mean (n = 4; pool of one female and one male per biological replicate) of relative expression (Gapdh as housekeeping gene) \u00b1 SEM (*P < 0.05; **P < 0.01 by two\u2010tailed Student's t\u2010test). N.D., not detected.Representative quantification of CD206 expression in CD11b+CD45int microglia and CD11b+CD45high resident macrophages. Values denote the percentage of the mean \u00b1 SEM of five independent experiments.Representative images of two independent experiments showing microglia, resident macrophages and lymphocytes acquired with ImageStream imaging cytometer (Amnis) based on CD45, CD11b and CD206 expression levels (scale bar represents 7 \u03bcm).\n",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure EV1: \nFACS gating strategy representative of five independent experiments adopted to sort CD11b+CD45int microglial. Cells were distinguished from debris using forward (FSC\u2010A) and side (SSC\u2010A) scatters, followed by cell doublet and aggregate elimination (SSC\u2010H/SSC\u2010A). Dead cells were gated out by their strong positivity for the dead cell discrimination marker Hoechst. Single viable microglial cells were gated as CD11b+CD45int.Analysis of microglial purity by qPCR. Gene expression levels of microglial\u2010specific genes (Itgb5, Sall1, Hexb, Tgfb, Aif1, Cx3cr1, Mertk, Ctss, Tyrobp, Trem2, Itgam, Itgax) in purified microglia compared to whole brain. Bars represent mean (n = 4; one female and one male per sample) of relative expression (Gapdh as housekeeping gene) \u00b1 SEM (*P < 0.05; **P < 0.01 by two\u2010tailed Student's t\u2010test).Quantification of CD11c, Ly6C and CCR2 expression in CD11b+CD45int microglia and CD11b+CD45high resident macrophages representative of five independent experiments. Values denote the percentage of the mean \u00b1 SEM of five independent experiments.\n",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 2: \nA\u2013DThree\u2010 to four\u2010month\u2010old C57BL/6N mice were treated with an acute dose of LPS (4 \u03bcg/g body) or vehicle (saline). Microglia (pool of two mice per group per replicate; one female and one male) were FACS\u2010sorted 24 h later. (A) Gene expression levels of microglial homeostatic (Olfml3, Fcrls, Tmem119, Siglech, Gpr34, P2ry12, Mef2c), phagocytic (Tyrobp, Trem2) and inflammatory (Il1b, Tnf, Ccl2, Mrc1, Arg1) markers were analysed by qPCR. Bars represent mean of relative expression (% of saline; Gapdh as housekeeping gene) \u00b1 SEM (*P < 0.05; **P < 0.01 by two\u2010tailed Student's t\u2010test; n = 4). (B) Representative multicolour flow cytometry analysis of five independent experiments showing CD11b\u2010 and CD45\u2010positive populations in single viable cells in saline or LPS\u2010injected mouse brains. (C) Representative multicolour flow cytometry analysis showing the percentage of the mean \u00b1 SEM of five independent experiments of Ly6C\u2010 and CD206\u2010expressing cells in CD11b+CD45int cells from saline or LPS\u2010injected mice. (D) Gene expression levels of the monocytic markers Ly6c1 and Ccr2 in purified microglia (n = 4) and isolated bone marrow monocytes (n = 2) by qPCR. Bars represent mean of relative expression (Gapdh as housekeeping gene) \u00b1 SEM (**P < 0.01 by two\u2010tailed Student's t\u2010test).EPrimary adult microglia were cultivated in the presence of TGF\u2010\u03b2 (50 \u03bcg/ml) and M\u2010CSF (10 ng/ml), while neonatal cells were stimulated for 24 h with TGF\u2010\u03b2 (50 \u03bcg/ml) followed by 6 h of stimulation with LPS (1 ng/ml) or left untreated. Expression levels of microglial homeostatic (Olfml3, Tmem119, Gpr34) and inflammatory (Il1b, Tnf, Ccl2) genes were analysed by qPCR. Bars represent mean of relative expression (Gapdh as housekeeping gene) \u00b1 SEM (*P < 0.05; **P < 0.01 by two\u2010tailed Student's t\u2010test).\n",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure EV2: \nA, BThree\u2010 to four\u2010month\u2010old mice were treated with an acute dose of LPS (4 \u03bcg/g body) or vehicle (saline). Microglial (pool of two mice per group; one female and one male) were isolated 24 h later. (A) Gene expression levels of microglial homeostatic genes (Itgb5, Sall1, Hexb, Tgfb, Mertk, Ctss, Itgam, Cx3cr1) were analysed by qPCR. Bars represent mean of relative expression (% of saline; Gapdh as housekeeping gene) \u00b1 SEM (**P < 0.01 by two\u2010tailed Student's t\u2010test; n = 4). (B) Representative multicolour flow cytometry analysis of five independent experiments showing CD45, CD11b, CD86 and CD11c expression levels in CD11b+CD45int microglia of saline or LPS\u2010injected mouse brains.CRepresentative results of two independent experiments showing the purity of MACS\u2010isolated bone marrow monocytes based on the expression levels of the monocytic marker Ly6C.DComparison of the homeostatic signature (Tmem119, Siglech, Gpr34, P2ry12) between primary and acutely isolated microglia. Primary adult microglia were cultivated in the presence of TGF\u2010\u03b2 (50 \u03bcg/ml) and M\u2010CSF (10 ng/ml), while neonatal cells were treated for 24 h with TGF\u2010\u03b2 or left untreated. Gene expression levels were analysed by qPCR and normalized using Gapdh as housekeeping gene. Bars represent mean \u00b1 SEM (**P < 0.01 by two\u2010tailed Student's t\u2010test; n = 3).\n",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 3: \nHeatmap showing clustering analysis of 1,247 single cells, featuring 100 most variable genes (FDR < 0.05). Single\u2010cell RNA\u2010seq results are obtained from two mice per group (one female and one male each). Values denote a score based on gene expression rank.2D\u2010tSNE representation of all single cells included in the study (n = 1,247) depicting the separation of microglia isolated from LPS\u2010injected mice (770 cells in red) and steady state (477 cells in blue) in two main clusters.Expression of specific homeostatic (Tmem119, P2ry12, Siglech) and inflammatory (Ccl2, Gpr84) genes overlaid on the 2D\u2010tSNE space. Bars represent log2 (Count + 1).Representative multicolour flow cytometry analysis of two independent experiments showing TMEM119 and P2RY12 expression levels in CD11b+CD45int microglia of saline or LPS\u2010injected mouse brains. For the unconjugated TMEM119 antibody, negative stands for primary antibody without secondary antibody. For P2RY12 antibody, negative represents isotype PE control.\n",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure EV3: \nAScatterplot comparing the fold change of genes (log2 scale) between microglia isolated from LPS\u2010injected mice (x\u2010axis) versus DAM (y\u2010axis) compared to homeostatic microglia (FDR < 0.05).BVenn diagrams showing the number of genes upregulated (left) or downregulated (right) uniquely under LPS treatment, exclusively by DAM and shared between LPS and DAM compared to their corresponding controls (FDR < 0.05).C\u2013ETop 10 biological processes identified by Database for Annotation, Visualization and Integrated Discovery (DAVID) resulting from (C) 960 uniquely upregulated genes under LPS treatment, (D) 597 increased genes specific for DAM and (E) 215 shared genes versus control conditions.FInflammatory\u2010 and disease\u2010associated signatures identified by distinct genes corresponding to specific microglial functions (homeostasis, phagocytosis, lipid metabolism, inflammation and lysosomal activity).\n",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 4: \n2D\u2010tSNE representation of 1,247 single cells isolated from na\u00efve (blue)\u2010 and LPS\u2010treated mice showing two distinct subpopulations among the 770 cells isolated from LPS\u2010injected mice (n = 703, red; n = 67, yellow).Venn diagram showing 732 genes uniquely upregulated in the \u201cmain LPS\u201d cluster (red) and 241 genes exclusively increased in the \u201csubset LPS\u201d (yellow) compared to their corresponding controls (blue) (FDR < 0.05). A total of 274 genes were shared between the two LPS populations.Venn diagram showing 1,055 genes uniquely downregulated in the \u201cmain LPS\u201d cluster (red) and 29 genes exclusively decreased in the \u201csubset LPS\u201d (yellow) compared to their corresponding controls (blue) (FDR < 0.05). A total of 87 genes were shared between the two LPS populations.Heatmap showing examples of specific genes mainly upregulated in \u201cmain LPS\u201d (Manf) or \u201csubset LPS\u201d (Ash1l) and downregulated in \u201cmain LPS\u201d (Mef2c) or \u201csubset LPS\u201d (Lamp1) overlaid on the 2D\u2010tSNE space. Bars represent log2 (Count + 1).Gene set enrichment analysis (GO, top 10 biological processes) of 99 downregulated and 397 upregulated genes distinguishing cells in \u201csubset LPS\u201d versus \u201cmain LPS\u201d (FDR < 0.05).\n",
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Figure EV4: Expression of specific genes uniquely upregulated in \u201cmain LPS\u201d (Cd52, Cd63, Ctsl, Fth1, C5ar1) or \u201csubset LPS\u201d (Golga4, Stab 1, Atrx) and downregulated in \u201cmain LPS\u201d (Maf) or \u201csubset LPS\u201d (Cd68, C1qc, Cd81) overlaid on the 2D\u2010tSNE space. Bars represent log2 (Count + 1).",
+            "type": "figure"
+        },
+        "FIGREF8": {
+            "text": "Figure 5: \nBranching analysis of LPS\u2010activated microglia by Monocle 2 leads to nine distinct clusters in a two\u2010dimensional state space inferred by generalized regression modelling (see Materials and Methods) showing the major difference of \u201csubset LPS\u201d (in yellow) compared to the other clusters corresponding to \u201cmain LPS\u201d (in red).Monocle estimated a pseudotime for each cell along the inferred cell trajectory within the state space showing a delayed activation pattern of \u201csubset LPS\u201d compared to the other fractions.Pseudotime dynamics of inflammatory (Ccl12, Ccl2, Gpr84) and homeostatic (Mef2c, P2ry12, Siglech) genes in dependence on inferred cell states.\n",
+            "type": "figure"
+        },
+        "FIGREF9": {
+            "text": "Figure EV5: \nAQuantification of CD44, CD274 and NOTCH4 expression in CD11b+CD45int microglia under homeostatic (in blue) and inflammatory (in red) conditions. Values denote the percentage of cells obtained from one representative experiment.BImmunohistochemistry for \u201csubset LPS\u201d marker (NOTCH4) in brain sections of tissue isolated from LPS\u2010injected mice after 24 h (IBA1 in red and NOTCH4 in yellow). Cell nuclei were counterstained with Hoechst (in blue). Scale bars: left panel 10 \u03bcm, right panel 20 \u03bcm. Arrows show NOTCH4 expression in IBA1+ cells.C, DVenn diagrams showing unique and commonly (C) upregulated and (D) downregulated genes among \u201cmain LPS\u201d cluster (red), \u201csubset LPS\u201d (yellow) and DAM (green) (FDR < 0.05).\n",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Microglia and brain macrophages in the molecular age: from origin to neuropsychiatric disease",
+            "authors": [],
+            "year": 2014,
+            "venue": "Nat Rev Neurosci",
+            "volume": "15",
+            "issn": "",
+            "pages": "300-312",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Cellular and molecular characterization of microglia: a unique immune cell population",
+            "authors": [],
+            "year": 2017,
+            "venue": "Front Immunol",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Gene\u2010expression profiles and transcriptional regulatory pathways that underlie the identity and diversity of mouse tissue macrophages",
+            "authors": [],
+            "year": 2012,
+            "venue": "Nat Immunol",
+            "volume": "13",
+            "issn": "",
+            "pages": "1118-1128",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "The microglial sensome revealed by direct RNA sequencing",
+            "authors": [],
+            "year": 2013,
+            "venue": "Nat Neurosci",
+            "volume": "16",
+            "issn": "",
+            "pages": "1896-1905",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Identification of a unique TGF\u2010beta\u2010dependent molecular and functional signature in microglia",
+            "authors": [],
+            "year": 2014,
+            "venue": "Nat Neurosci",
+            "volume": "17",
+            "issn": "",
+            "pages": "131-143",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "An RNA\u2010sequencing transcriptome and splicing database of glia, neurons, and vascular cells of the cerebral cortex",
+            "authors": [],
+            "year": 2014,
+            "venue": "J Neurosci",
+            "volume": "34",
+            "issn": "",
+            "pages": "11929-11947",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Targeting miR\u2010155 restores abnormal microglia and attenuates disease in SOD1 mice",
+            "authors": [],
+            "year": 2015,
+            "venue": "Ann Neurol",
+            "volume": "77",
+            "issn": "",
+            "pages": "75-99",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Analysis of the host transcriptome from demyelinating spinal cord of murine coronavirus\u2010infected mice",
+            "authors": [],
+            "year": 2013,
+            "venue": "PLoS One",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Induction of a common microglia gene expression signature by aging and neurodegenerative conditions: a co\u2010expression meta\u2010analysis",
+            "authors": [],
+            "year": 2015,
+            "venue": "Acta Neuropathol Commun",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "RNA sequencing of microglia and monocyte\u2010derived macrophages from mice with experimental autoimmune encephalomyelitis illustrates a changing phenotype with disease course",
+            "authors": [],
+            "year": 2014,
+            "venue": "J Neuroimmunol",
+            "volume": "277",
+            "issn": "",
+            "pages": "26-38",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Identification of a microglia phenotype supportive of remyelination",
+            "authors": [],
+            "year": 2012,
+            "venue": "Glia",
+            "volume": "60",
+            "issn": "",
+            "pages": "306-321",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Identification of a chronic non\u2010neurodegenerative microglia activation state in a mouse model of peroxisomal beta\u2010oxidation deficiency",
+            "authors": [],
+            "year": 2015,
+            "venue": "Glia",
+            "volume": "63",
+            "issn": "",
+            "pages": "1606-1620",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "TREM2 lipid sensing sustains the microglial response in an Alzheimer's disease model",
+            "authors": [],
+            "year": 2015,
+            "venue": "Cell",
+            "volume": "160",
+            "issn": "",
+            "pages": "1061-1071",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "A unique microglia type associated with restricting development of Alzheimer's disease",
+            "authors": [],
+            "year": 2017,
+            "venue": "Cell",
+            "volume": "169",
+            "issn": "",
+            "pages": "1276-1290",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "The TREM2\u2010APOE pathway drives the transcriptional phenotype of dysfunctional microglia in neurodegenerative diseases",
+            "authors": [],
+            "year": 2017,
+            "venue": "Immunity",
+            "volume": "47",
+            "issn": "",
+            "pages": "566-581",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "A neurodegeneration\u2010specific gene\u2010expression signature of acutely isolated microglia from an amyotrophic lateral sclerosis mouse model",
+            "authors": [],
+            "year": 2013,
+            "venue": "Cell Rep",
+            "volume": "4",
+            "issn": "",
+            "pages": "385-401",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Isolation of glia from Alzheimer's mice reveals inflammation and dysfunction",
+            "authors": [],
+            "year": 2014,
+            "venue": "Neurobiol Aging",
+            "volume": "35",
+            "issn": "",
+            "pages": "2746-2760",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Review: microglia of the aged brain: primed to be activated and resistant to regulation",
+            "authors": [],
+            "year": 2013,
+            "venue": "Neuropathol Appl Neurobiol",
+            "volume": "39",
+            "issn": "",
+            "pages": "19-34",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Microglial physiology and pathophysiology: insights from genome\u2010wide transcriptional profiling",
+            "authors": [],
+            "year": 2016,
+            "venue": "Immunity",
+            "volume": "44",
+            "issn": "",
+            "pages": "505-515",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Resolution of inflammation: a new therapeutic frontier",
+            "authors": [],
+            "year": 2016,
+            "venue": "Nat Rev Drug Discov",
+            "volume": "15",
+            "issn": "",
+            "pages": "551-567",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Inflammation in neurodegenerative disease\u2013a double\u2010edged sword",
+            "authors": [],
+            "year": 2002,
+            "venue": "Neuron",
+            "volume": "35",
+            "issn": "",
+            "pages": "419-432",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Mechanisms underlying inflammation in neurodegeneration",
+            "authors": [],
+            "year": 2010,
+            "venue": "Cell",
+            "volume": "140",
+            "issn": "",
+            "pages": "918-934",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Highly parallel genome\u2010wide expression profiling of individual cells using nanoliter droplets",
+            "authors": [],
+            "year": 2015,
+            "venue": "Cell",
+            "volume": "161",
+            "issn": "",
+            "pages": "1202-1214",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Single\u2010cell transcriptomics reveals bimodality in expression and splicing in immune cells",
+            "authors": [],
+            "year": 2013,
+            "venue": "Nature",
+            "volume": "498",
+            "issn": "",
+            "pages": "236-240",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "mRNA\u2010Seq whole\u2010transcriptome analysis of a single cell",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nat Methods",
+            "volume": "6",
+            "issn": "",
+            "pages": "377-382",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Adult mouse cortical cell taxonomy revealed by single cell transcriptomics",
+            "authors": [],
+            "year": 2016,
+            "venue": "Nat Neurosci",
+            "volume": "19",
+            "issn": "",
+            "pages": "335-346",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Temporal tracking of microglia activation in neurodegeneration at single\u2010cell resolution",
+            "authors": [],
+            "year": 2017,
+            "venue": "Cell Rep",
+            "volume": "21",
+            "issn": "",
+            "pages": "366-380",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Single\u2010cell transcriptomic analysis defines heterogeneity and transcriptional dynamics in the adult neural stem cell lineage",
+            "authors": [],
+            "year": 2017,
+            "venue": "Cell Rep",
+            "volume": "18",
+            "issn": "",
+            "pages": "777-790",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Single\u2010cell RNA\u2010seq reveals hypothalamic cell diversity",
+            "authors": [],
+            "year": 2017,
+            "venue": "Cell Rep",
+            "volume": "18",
+            "issn": "",
+            "pages": "3227-3241",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "A single\u2010cell RNA sequencing study reveals cellular and molecular dynamics of the hippocampal neurogenic niche",
+            "authors": [],
+            "year": 2017,
+            "venue": "Cell Rep",
+            "volume": "21",
+            "issn": "",
+            "pages": "3271-3284",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Dissecting immune circuits by linking CRISPR\u2010pooled screens with single\u2010cell RNA\u2010seq",
+            "authors": [],
+            "year": 2016,
+            "venue": "Cell",
+            "volume": "167",
+            "issn": "",
+            "pages": "1883-1896",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "New tools for studying microglia in the mouse and human CNS",
+            "authors": [],
+            "year": 2016,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "113",
+            "issn": "",
+            "pages": "E1738-E1746",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Systemic LPS causes chronic neuroinflammation and progressive neurodegeneration",
+            "authors": [],
+            "year": 2007,
+            "venue": "Glia",
+            "volume": "55",
+            "issn": "",
+            "pages": "453-462",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Cytokine\u2010induced sickness behavior: mechanisms and implications",
+            "authors": [],
+            "year": 2001,
+            "venue": "Ann N Y Acad Sci",
+            "volume": "933",
+            "issn": "",
+            "pages": "222-234",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Neurodegeneration by activation of the microglial complement\u2010phagosome pathway",
+            "authors": [],
+            "year": 2014,
+            "venue": "J Neurosci",
+            "volume": "34",
+            "issn": "",
+            "pages": "8546-8556",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "A polarizing question: do M1 and M2 microglia exist?",
+            "authors": [],
+            "year": 2016,
+            "venue": "Nat Neurosci",
+            "volume": "19",
+            "issn": "",
+            "pages": "987-991",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Isolation and direct characterization of resident microglial cells from the normal and inflamed central nervous system",
+            "authors": [],
+            "year": 1991,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "88",
+            "issn": "",
+            "pages": "7438-7442",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Origin, fate and dynamics of macrophages at central nervous system interfaces",
+            "authors": [],
+            "year": 2016,
+            "venue": "Nat Immunol",
+            "volume": "17",
+            "issn": "",
+            "pages": "797-805",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Characterization of the microglial phenotype under specific pro\u2010inflammatory and anti\u2010inflammatory conditions: effects of oligomeric and fibrillar amyloid\u2010beta",
+            "authors": [],
+            "year": 2009,
+            "venue": "J Neuroimmunol",
+            "volume": "210",
+            "issn": "",
+            "pages": "3-12",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Unique transcriptome signature of mouse microglia",
+            "authors": [],
+            "year": 2013,
+            "venue": "Glia",
+            "volume": "61",
+            "issn": "",
+            "pages": "1429-1442",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "The P2Y12 receptor regulates microglial activation by extracellular nucleotides",
+            "authors": [],
+            "year": 2006,
+            "venue": "Nat Neurosci",
+            "volume": "9",
+            "issn": "",
+            "pages": "1512-1519",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Environment drives selection and function of enhancers controlling tissue\u2010specific macrophage identities",
+            "authors": [],
+            "year": 2014,
+            "venue": "Cell",
+            "volume": "159",
+            "issn": "",
+            "pages": "1327-1340",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Tissue\u2010resident macrophage enhancer landscapes are shaped by the local microenvironment",
+            "authors": [],
+            "year": 2014,
+            "venue": "Cell",
+            "volume": "159",
+            "issn": "",
+            "pages": "1312-1326",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Microglia development follows a stepwise program to regulate brain homeostasis",
+            "authors": [],
+            "year": 2016,
+            "venue": "Science",
+            "volume": "353",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Mef2C restrains microglial inflammatory response and is lost in brain ageing in an IFN\u2010I\u2010dependent manner",
+            "authors": [],
+            "year": 2017,
+            "venue": "Nat Commun",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Localization and actions of transforming growth factor\u2010beta s in the embryonic nervous system",
+            "authors": [],
+            "year": 1991,
+            "venue": "Development",
+            "volume": "113",
+            "issn": "",
+            "pages": "183-191",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Smad3\u2010dependent signaling underlies the TGF\u2010beta1\u2010mediated enhancement in astrocytic iNOS expression",
+            "authors": [],
+            "year": 2010,
+            "venue": "Glia",
+            "volume": "58",
+            "issn": "",
+            "pages": "1282-1291",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Transforming growth factor\u2010beta 1 in the rat brain: increase after injury and inhibition of astrocyte proliferation",
+            "authors": [],
+            "year": 1992,
+            "venue": "J Cell Biol",
+            "volume": "117",
+            "issn": "",
+            "pages": "395-400",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "The role of thrombospondin\u20101 and transforming growth factor\u2010beta after spinal cord injury in the rat",
+            "authors": [],
+            "year": 2009,
+            "venue": "J Clin Neurosci",
+            "volume": "16",
+            "issn": "",
+            "pages": "818-821",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Hypoxia\u2010ischemia induces transforming growth factor beta 1 mRNA in the infant rat brain",
+            "authors": [],
+            "year": 1992,
+            "venue": "Brain Res Mol Brain Res",
+            "volume": "13",
+            "issn": "",
+            "pages": "93-101",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Transforming growth factor\u2010betas in neurodegenerative disease",
+            "authors": [],
+            "year": 1998,
+            "venue": "Prog Neurobiol",
+            "volume": "54",
+            "issn": "",
+            "pages": "71-85",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "The neuroprotective functions of transforming growth factor beta proteins",
+            "authors": [],
+            "year": 2012,
+            "venue": "Int J Mol Sci",
+            "volume": "13",
+            "issn": "",
+            "pages": "8219-8258",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "STAT3 selectively interacts with Smad3 to antagonize TGF\u2010beta",
+            "authors": [],
+            "year": 2016,
+            "venue": "Oncogene",
+            "volume": "35",
+            "issn": "",
+            "pages": "4388-4398",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "SOCS3, a major regulator of infection and inflammation",
+            "authors": [],
+            "year": 2014,
+            "venue": "Front Immunol",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "The harmonizome: a collection of processed datasets gathered to serve and mine knowledge about genes and proteins",
+            "authors": [],
+            "year": 2016,
+            "venue": "Database (Oxford)",
+            "volume": "2016",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Microglia function in the central nervous system during health and neurodegeneration",
+            "authors": [],
+            "year": 2017,
+            "venue": "Annu Rev Immunol",
+            "volume": "35",
+            "issn": "",
+            "pages": "441-468",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "MAST: a flexible statistical framework for assessing transcriptional changes and characterizing heterogeneity in single\u2010cell RNA sequencing data",
+            "authors": [],
+            "year": 2015,
+            "venue": "Genome Biol",
+            "volume": "16",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Systematic and integrative analysis of large gene lists using DAVID bioinformatics resources",
+            "authors": [],
+            "year": 2008,
+            "venue": "Nat Protoc",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Bioinformatics enrichment tools: paths toward the comprehensive functional analysis of large gene lists",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nucleic Acids Res",
+            "volume": "37",
+            "issn": "",
+            "pages": "1-13",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "A role for TREM2 ligands in the phagocytosis of apoptotic neuronal cells by microglia",
+            "authors": [],
+            "year": 2009,
+            "venue": "J Neurochem",
+            "volume": "109",
+            "issn": "",
+            "pages": "1144-1156",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "Clearance of apoptotic neurons without inflammation by microglial triggering receptor expressed on myeloid cells\u20102",
+            "authors": [],
+            "year": 2005,
+            "venue": "J Exp Med",
+            "volume": "201",
+            "issn": "",
+            "pages": "647-657",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "TREM2 promotes microglial survival by activating Wnt/beta\u2010Catenin pathway",
+            "authors": [],
+            "year": 2017,
+            "venue": "J Neurosci",
+            "volume": "37",
+            "issn": "",
+            "pages": "1772-1784",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "Age\u2010related myelin degradation burdens the clearance function of microglia during aging",
+            "authors": [],
+            "year": 2016,
+            "venue": "Nat Neurosci",
+            "volume": "19",
+            "issn": "",
+            "pages": "995-998",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Dystrophic (senescent) rather than activated microglial cells are associated with tau pathology and likely precede neurodegeneration in Alzheimer's disease",
+            "authors": [],
+            "year": 2009,
+            "venue": "Acta Neuropathol",
+            "volume": "118",
+            "issn": "",
+            "pages": "475-485",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "Immune modulation by MANF promotes tissue repair and regenerative success in the retina",
+            "authors": [],
+            "year": 2016,
+            "venue": "Science",
+            "volume": "353",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "Histone methyltransferase Ash1 l suppresses interleukin\u20106 production and inflammatory autoimmune diseases by inducing the ubiquitin\u2010editing enzyme A20",
+            "authors": [],
+            "year": 2013,
+            "venue": "Immunity",
+            "volume": "39",
+            "issn": "",
+            "pages": "470-481",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "SC3: consensus clustering of single\u2010cell RNA\u2010seq data",
+            "authors": [],
+            "year": 2017,
+            "venue": "Nat Methods",
+            "volume": "14",
+            "issn": "",
+            "pages": "483-486",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Single\u2010cell mRNA quantification and differential analysis with Census",
+            "authors": [],
+            "year": 2017,
+            "venue": "Nat Methods",
+            "volume": "14",
+            "issn": "",
+            "pages": "309-315",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "An efficient method to limit microglia\u2010dependent effects in astroglial cultures",
+            "authors": [],
+            "year": 2012,
+            "venue": "J Neurosci Methods",
+            "volume": "207",
+            "issn": "",
+            "pages": "59-71",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "Expression of human apolipoprotein E3 or E4 in the brains of Apoe\u2010/\u2010 mice: isoform\u2010specific effects on neurodegeneration",
+            "authors": [],
+            "year": 1999,
+            "venue": "J Neurosci",
+            "volume": "19",
+            "issn": "",
+            "pages": "4867-4880",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF70": {
+            "title": "Single\u2010cell analysis and sorting using droplet\u2010based microfluidics",
+            "authors": [],
+            "year": 2013,
+            "venue": "Nat Protoc",
+            "volume": "8",
+            "issn": "",
+            "pages": "870-891",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF71": {
+            "title": "Controlling the false discovery rate: a practical and powerful approach to multiple testing",
+            "authors": [],
+            "year": 1995,
+            "venue": "J R Stat Soc B Methodol",
+            "volume": "57",
+            "issn": "",
+            "pages": "289-300",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF72": {
+            "title": "The dynamics and regulators of cell fate decisions are revealed by pseudotemporal ordering of single cells",
+            "authors": [],
+            "year": 2014,
+            "venue": "Nat Biotechnol",
+            "volume": "32",
+            "issn": "",
+            "pages": "381-386",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

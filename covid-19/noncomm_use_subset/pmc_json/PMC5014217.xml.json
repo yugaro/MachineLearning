@@ -1,0 +1,1116 @@
+{
+    "paper_id": "PMC5014217",
+    "metadata": {
+        "title": "Network analysis of host\u2013virus communities in bats and rodents reveals determinants of cross\u2010species transmission",
+        "authors": [
+            {
+                "first": "Angela",
+                "middle": [
+                    "D."
+                ],
+                "last": "Luis",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Thomas",
+                "middle": [
+                    "J."
+                ],
+                "last": "O'Shea",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "David",
+                "middle": [
+                    "T.",
+                    "S."
+                ],
+                "last": "Hayman",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "James",
+                "middle": [
+                    "L.",
+                    "N."
+                ],
+                "last": "Wood",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Andrew",
+                "middle": [
+                    "A."
+                ],
+                "last": "Cunningham",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Amy",
+                "middle": [
+                    "T."
+                ],
+                "last": "Gilbert",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "James",
+                "middle": [
+                    "N."
+                ],
+                "last": "Mills",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Colleen",
+                "middle": [
+                    "T."
+                ],
+                "last": "Webb",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jos\u00e9",
+                "middle": [],
+                "last": "Mar\u00eca Gomez",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Most emerging infectious diseases are zoonotic (passed from animals to humans), with > 70% originating in wildlife (Jones et al. 2008). Cross\u2010species transmission is one of the most challenging and least studied aspects of disease ecology, yet it is the defining process in zoonotic disease emergence (Lloyd\u2010Smith et al. 2009).",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Bats are the reservoirs of a number of emerging viruses, including Ebolaviruses, SARS coronavirus and Nipah and Hendra paramyxoviruses (Calisher et al. 2006). Viral and malarial parasite diversity in bats is high (Drexler et al. 2012; Luis et al. 2013; Quan et al. 2013; Schaer et al. 2013; Drexler et al. 2014), and bats appear to be major and ancient natural reservoirs of several viral families, including hepaciviruses, pegiviruses, paramyxoviruses, coronaviruses and influenza A viruses ( Drexler, et al. 2012, 2014; Quan et al. 2013; Tong et al. 2013). Since cross\u2010species transmission can be common among bats (Streicker et al. 2010; Cui et al. 2012), understanding their role as reservoir hosts requires examining them in a community context rather than concentrating on individual species.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Several traits have been hypothesised to make bats particularly suited to hosting and transmitting viruses, including life history traits such as relatively long lifespans for their body size (Munshi\u2010South & Wilkinson 2010), which may facilitate viral persistence for chronic infections; their reliance on torpor, which can decrease viral replication and immune function (Dempster et al. 1966; Prendergast et al. 2002); and flight, which can facilitate transmission of viruses to new areas. In addition, many bat species are gregarious, living in dense aggregations, and some roosting sites can house diverse assemblages of bat species (Kunz 1982; Kuzmin et al. 2010), which could facilitate transmission of pathogens and sustain acute\u2010immunising infections. In evolutionary terms, bats are ancient mammals, and it has been hypothesised that viruses that evolved in bats may use conserved cellular receptors enhancing their ability to transmit viruses to other mammals (Calisher et al. 2006). The diet of some species has been hypothesised to facilitate transmission of viruses; after feeding, frugivorous bats often leave partially eaten fruit behind which can be contaminated with viruses (Chua et al. 2002; Dobson 2005). Bats are the second most diverse mammalian order with over 1100 species, with many overlapping species distributions; multiple regions across the globe are home to more than 40 bat species, allowing for species to interact and potentially spread viruses between them (Fig. 1; Calisher et al. 2006; Luis et al. 2013).",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": [
+                {
+                    "start": 1497,
+                    "end": 1498,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Here, we examine the structure of host\u2013virus communities in bats and rodents and how host traits, such as those above, correlate with propensity to host and transmit viruses. Rodents are a suitable group for comparison because they also host many important zoonotic viruses and share many of the characteristics hypothesised to make bats suitable as viral reservoirs. For example, rodents are also evolutionarily ancient; they are older than bats and more closely related to humans (dos Reis et al. 2012). Rodents are the most diverse mammalian order with approximately twice the number of rodent species as bat species, many of which express torpor, and display a wide range of life history traits, including some long\u2010lived species.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Networks have been used extensively in disease ecology to model the finite and heterogeneous number of social contacts between individuals. Here, we use networks to describe sharing of viruses between different species, rather than individuals. This is akin to other ecological networks, such as food webs, mutualistic, or host\u2013parasite networks (Montoya et al. 2006). However, we collapse the bipartite network (separate nodes for viruses and host species) to a unipartite projection, weighting contacts between host species by the number of viruses they share. In the same way social networks can highlight the disproportionate importance of specific individuals, such as \u2018super\u2010spreaders\u2019, in population\u2010level disease dynamics, our networks can highlight the importance of certain species in host\u2013virus communities and disease emergence. In addition, we can use other network methods to look at substructures, or \u2018communities\u2019 in the network, highlighting sets of highly interconnected species (Newman 2004).",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Here, we use databases of bat and rodent viruses spanning 78 years of publications (Luis et al. 2013) to create networks that connect host species via their shared viruses and examine cross\u2010species transmission at several scales.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "A database of bat and rodent viruses compiled from the literature (Luis et al. 2013) was used to create separate networks of viral sharing for bats and rodents, with each node representing a host species and edges between two nodes representing the presence of virus(es) in both species. Edges were weighted by the number of viruses shared between the two species. See Supplementary Methods in Supporting Information for more details on network formulation.",
+            "cite_spans": [],
+            "section": "Data and network formulation ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To account for sampling bias in the analyses, we used the number of citations on Web of Science (http://thomsonreuters.com/products_services/science/science_products/a-z/web_of_science/) with the host species\u2019 Latin species name for the search term (e.g. Altizer et al. 2011). The distribution was highly skewed, therefore we used the log of this number to normalise the distribution. We also performed the analyses using the species name and \u2018virus\u2019 as the search terms. All results were qualitatively similar.",
+            "cite_spans": [],
+            "section": "Data and network formulation ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We calculated various node and network statistics (Table 1). The node statistics that we calculated were degree (the number of links a node has), weighted degree (incorporating the number of viruses shared) and betweenness (the number of shortest paths that go through a node (weighted)). The network statistics that we calculated included the degree distribution, transitivity (if two nodes are connected, the probability that their adjacent nodes are also connected), degree assortativity (likelihood of high\u2010degree nodes connecting to other high\u2010degree degree nodes and low\u2010degree nodes to other low\u2010degree nodes) and connectance (links per species2, or the proportion of links that are present out of all possible links). We also calculated quantitative connectance, which is the quantitative linkage density (which takes into account the weights of the edges; Bersier et al. 2002) divided by the number of species in the network.",
+            "cite_spans": [],
+            "section": "Data and network formulation ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To account for sampling bias, we additionally calculated the quantitative linkage densities and connectance for sampling effort\u2010corrected networks. See Supporting Information for more details. As another test to account for bias, we calculated the quantitative connectance of the Jaccard matrices (the intersection divided by the union of the viruses for each pair of host species). This gives the proportion of the viruses shared rather than the absolute number. The multiple regression on matrices and GLS analyses described below use the original networks (absolute number of viruses not weighted by sampling effort) because for those, we take sampling effort into account as a covariate.",
+            "cite_spans": [],
+            "section": "Data and network formulation ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To calculate P\u2010values for the network statistics in Table 1, we performed 10 000 permutations of the networks, where we shuffled the edge weights. See Supporting Information for more details.",
+            "cite_spans": [],
+            "section": "Data and network formulation ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Species traits were compiled from online databases and the literature as described in Luis et al. (2013). We examined body mass, number of litters per year, litter size, maximum longevity, torpor use, International Union for Conservation of Nature (IUCN) conservation status, geographical distribution area, latitude of the midpoint of the species distribution, number of other species in the same taxonomic order that are sympatric, and for bats only, migratory classification, diet, gregariousness and propensity to roost in caves. See supplemental Figures S4\u2013S7 in Luis et al. (2013) for plots of the raw data. Bat species traits that were new to these analyses were gregariousness, propensity to roost in caves and diet (see Supporting Information for more details). Virus and host trait data and R code are provided online as Supporting Information.",
+            "cite_spans": [],
+            "section": "Data and network formulation ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Multiple regression on distance matrices (MRM) (Lichstein 2007) was used to detect significant correlations between viral sharing, phylogeny, sympatry and similarity in host traits using \u2018MRM\u2019 in the R package \u2018ecodist\u2019 (Goslee & Urban 2007; R Core Team 2012). The response variable was the viral sharing matrix (adjacency matrix of the network), with each entry giving the number of viruses shared between each pair of host species.",
+            "cite_spans": [],
+            "section": "Multiple regression for correlates of viral sharing ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The \u2018ape\u2019 package in R (Paradis et al. 2004) was used to calculate a phylogenetic correlation matrix based on species\u2019 shared branch lengths of the most complete mammalian phylogenetic supertree available containing bats and rodents (Bininda\u2010Emonds et al. 2007). See Figs S4 and S5 in Supporting Information.",
+            "cite_spans": [],
+            "section": "Multiple regression for correlates of viral sharing ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Using the species distribution shape files from the IUCN website (http://www.iucnredlist.org/technical-documents/spatial-data) and the R packages \u2018sp\u2019 and \u2018rgeos\u2019 (Pebesma & Bivand 2005), a sympatry matrix was created. Each entry of the matrix was either a 1 if the two species\u2019 distributions overlap or a 0 if they do not.",
+            "cite_spans": [],
+            "section": "Multiple regression for correlates of viral sharing ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Matrices of sampling effort were created by multiplying the logged number of citations for each species together. Matrices showing similarity in host traits were also calculated. For example for each pair of species, the difference in the number of litters per year was calculated. This matrix was standardised so values ranged between 0 and 1, and the matrix used in the multiple regression models was 1 minus this matrix (so it would be a correlation matrix similar to the phylogenetic and sympatry matrices).",
+            "cite_spans": [],
+            "section": "Multiple regression for correlates of viral sharing ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Host species were grouped into \u2018communities\u2019, partitions of highly interconnected nodes, by using the community detection algorithm described in Blondel et al. (2008), which maximises the modularity between groups of the weighted networks. See Supporting Information for more details.",
+            "cite_spans": [],
+            "section": "Community detection ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As an alternative to using modularity to assign nodes to communities, we also used clique percolation theory (Palla et al. 2005). In this method, nodes can belong to multiple communities. See Supporting Information for more details.",
+            "cite_spans": [],
+            "section": "Community detection ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Generalised least squares (GLS) were used to examine correlates of viral richness per host species, degree and betweenness, while allowing for phylogenetic correlation to be incorporated into the error structure as described below.",
+            "cite_spans": [],
+            "section": "Generalised least squares \u2013 traits associated with important hosts ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Because many life history traits are correlated, we performed principal components analyses (PCA) on the life history traits: logged body mass, maximum longevity, number of litters per year and litter size (separately for bats and rodents). The variables were rescaled to have unit variance before analysis in R using the \u2018prcomp\u2019 function (R Core Team 2012), and these principal components were then used in subsequent analyses. See Fig. S6 for PCA plots and Table S1 for loading values and variance explained by each principal component.",
+            "cite_spans": [],
+            "section": "Generalised least squares \u2013 traits associated with important hosts ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Because closely related species share traits, we tested for phylogenetic dependence by setting the error term for the GLS to the phylogenetic correlation matrix multiplied by an additional parameter, Pagel's \u03bb, that was estimated to determine the strength of phylogenetic dependence (Pagel 1999; Freckleton et al. 2002). A \u03bb estimate of 1 indicates that the error structure of the model was directly proportional to the species shared branch lengths. A \u03bb of 0 indicates the error structure of the model was not related to the species shared branch lengths (i.e., phylogeny does not explain any additional variation). Note that phylogeny is not a covariate in this analysis, and may not be significant if the model covariates themselves have phylogenetic dependence. Models were ranked by their AICc (Akaike information criterion adjusting for finite sample sizes) values. Correlation coefficients (R) were Pearson's product moment correlation comparing observed values to model predictions.",
+            "cite_spans": [],
+            "section": "Generalised least squares \u2013 traits associated with important hosts ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We also ran these models using MCMC generalised linear mixed effects models (Hadfield, 2010). See the Supporting Information for more details.",
+            "cite_spans": [],
+            "section": "Generalised least squares \u2013 traits associated with important hosts ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Maps were made using the R packages \u2018maptools\u2019, \u2018maps\u2019, \u2018sp\u2019 and \u2018PBSmapping\u2019 (Pebesma & Bivand 2005; Becker et al., 2012; Schnute et al. 2012; Bivand & Lewin\u2010Koh 2013). Viruses were mapped by the union of their hosts\u2019 distributions using the command \u2018gUnionCascaded\u2019 from the \u2018rgeos\u2019 package (Pebesma & Bivand 2005). The assumption was made that the virus exists in the entire distribution of its host(s), analogous to the fundamental niche concept (Hutchinson 1957; Harris & Dunn 2010). To visually assess whether sampling effort had a strong effect on the virus distributions, we also plotted these distributions discounting by sampling effort of the host species (Figs S7 and S8).",
+            "cite_spans": [],
+            "section": "Maps ::: Materials and Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Next, we examined the connections between species, using multiple regression on matrices (Lichstein 2007) to determine the correlates of the number of viruses that two host species share. Both phylogeny (relatedness) and sympatry (geographic range overlap) were important predictors of viral sharing (Table 2). Species with overlapping distributions and closer phylogenetic relationships shared more viruses. Sympatry was more important than phylogeny for viral sharing in both orders, but both explained more variation in bats. Sampling effort (by number of citations on Web of Science) was also important. Well\u2010studied pairs of species were found to have more viruses shared between them. The amount of variation explained by sympatry, phylogeny and citations together was 21% in bats and 14.3% in rodents. Similarity in life history traits explained a small amount of additional variation (Table S2).",
+            "cite_spans": [],
+            "section": "Multiple regression on matrices for correlates of viral sharing ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Although bats generally have received attention as disease reservoirs, some species are more important for disease emergence. We determined which species have the most viruses, the highest degree (the most connections) and the highest betweenness in the network (a measure of network centrality \u2013 the number of shortest paths between any two nodes that go through the node of interest) and host traits associated with these network metrics. For all analyses of the bat and rodent networks, sampling effort was important \u2013 the more a species was studied, the more viruses, higher degree and higher betweenness. Consequently, we adjusted for sampling effort by number of citations on Web of Science.",
+            "cite_spans": [],
+            "section": "Traits associated with important hosts ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The most important variable associated with hosting more viruses in bats was diet (Fig. 2a, Table S3 and S4). Host traits that correlated with the highest degree within the bat network (the most connections or viruses shared), in order of importance, were gregariousness and sympatry; diet was marginally important (Fig. 2b, Table S6 and S7). Migration was the most important host trait associated with betweenness in bats (Fig. 2c, Table S9 and S10).",
+            "cite_spans": [],
+            "section": "Traits associated with important hosts ::: Results",
+            "ref_spans": [
+                {
+                    "start": 88,
+                    "end": 89,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 321,
+                    "end": 322,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 429,
+                    "end": 430,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "In these analyses, phylogeny is not a covariate, but incorporated into the error structure, and an additional phylogenetic correlation parameter (\u03bb; Pagel 1999) is estimated, to determine if phylogeny can explain variation unexplained by the model covariates. For bats, \u03bb, was 0 for the best models for number of viruses and degree (Table S3 and S6), indicating that phylogeny did not explain any additional variation. A likely explanation is that the best models included diet, which is strongly related to phylogeny. However, \u03bb for the best model for betweenness was 0.79 (Table S9), indicating that phylogeny explained additional variation.",
+            "cite_spans": [],
+            "section": "Traits associated with important hosts ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "For rodents, sympatry was the most important host trait; species whose distributions overlapped with a greater number of other rodent species had more viruses and higher degree and betweenness (Fig. 2d\u2013f and Table S11\u2013S19). In addition, rodent species that are larger, longer lived and with higher reproductive rates (e.g. Sigmodon hispidus, Rattus norvegicus) had more viruses (PC3; Table S1, S11\u2013S13). Species at higher latitudes had marginally higher degree (after controlling for sympatry: Table S14\u2013S16).",
+            "cite_spans": [],
+            "section": "Traits associated with important hosts ::: Results",
+            "ref_spans": [
+                {
+                    "start": 199,
+                    "end": 200,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The results from the MCMC generalised linear mixed effects models were largely similar to these results (See Tables S5, S8, S13, S16 and S19). The only significant difference was the best model for the number of viruses in bats included only citations and phylogeny (Table S5). See the Supporting Information for more details.",
+            "cite_spans": [],
+            "section": "Traits associated with important hosts ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Although 88 and 69% of all possible pair\u2010wise combinations of species are connected by < 8 degrees of separation in the bat and rodent networks, respectively, the influence of a single species may be more localised. We detected distinct \u2018communities\u2019 of viral sharing within orders (Figs 3a and 4a), by maximising the modularity (Blondel et al. 2008). Modularity can attain values in the range from \u22120.5 to 1. If positive, there are more within\u2010group connections than would be expected at random, and in practice, values > 0.3 indicate significant community structure (Newman 2004). Modularity scores were 0.54 and 0.55 for the bat and rodent networks respectively.",
+            "cite_spans": [],
+            "section": "Community detection ::: Results",
+            "ref_spans": [
+                {
+                    "start": 288,
+                    "end": 289,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 295,
+                    "end": 296,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "In the bat network, there were 10 viral sharing communities. Each species had distributions that on average overlapped with 85% of the species within its community vs. 18% of species outside (t = 8.82, d.f. = 12.54, P = 9.8 \u00d7 10\u22127; Fig. 3b\u2013f). The largest and most densely connected community (Fig. 3b) consisted of 34 bat species in the Americas, largely connected by vector\u2010borne viruses. The remaining communities were connected by a mixture of vector\u2010borne and non\u2010vector\u2010borne viruses. The green community (Fig. 3c) was broadly distributed from Europe to Australia, and approximately half of the species in this community also shared viruses with species in other communities that overlapped spatially.",
+            "cite_spans": [],
+            "section": "Community detection ::: Results",
+            "ref_spans": [
+                {
+                    "start": 237,
+                    "end": 238,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 299,
+                    "end": 300,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 517,
+                    "end": 518,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "There were two globally distributed communities of rodents with 61 and 44 species (Fig. 4b,c) and two communities that were more spatially restricted. Each rodent species on average overlapped with 68% of the species within its community vs. 7% outside of its community (t = 4.66, d.f. = 6.12, P = 0.003; Fig. 4b\u2013e). The house mouse, Mus musculus, has spread across the globe along with its viruses (Fig. 4b). Removing this species results in largely the same community structure, indicating this species has already facilitated the transmission of viruses to multiple sympatric species across the globe. The black rat, Rattus rattus, and the brown rat, R. norvegicus, are also widely distributed and are the main species holding the green community together (Fig. 4c). When either Rattus species is removed from this community, it splits into several smaller communities, suggesting less secondary viral spread to sympatric rodent species.",
+            "cite_spans": [],
+            "section": "Community detection ::: Results",
+            "ref_spans": [
+                {
+                    "start": 88,
+                    "end": 89,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 310,
+                    "end": 311,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 405,
+                    "end": 406,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 765,
+                    "end": 766,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Overall properties of the bat and rodent networks provide a global view of viral sharing within each order, to our current knowledge. The number of viruses per host species, the number of hosts per virus, the mean degree and connectance were higher in the bat network than the rodent network. This suggests that viruses may pass more easily between bat species than between rodent species. Our analyses indicate that characteristics unique to bats, such as gregariousness and migration, may facilitate this increased transmission.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Previous studies hypothesised frugivory as an important viral transmission mechanism among bats and from bats to other species, because virus has been isolated from partially eaten fruit, which is often shared and dropped to the ground (Chua et al. 2002; Dobson 2005). Our study is consistent with that hypothesis, with frugivores hosting more viruses than nectivores, insectivores and sanguivores. However, diet is strongly correlated with phylogeny, and the best model using MCMC glmm only included phylogeny. Therefore, these results could indicate the importance of diet or, alternatively, some other factor correlated with phylogeny, such as immunological functioning, for example.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The most important host characteristics associated with degree in bats were gregariousness and sympatry. These characteristics have been hypothesised as important mechanisms for viral maintenance and spread (Calisher et al. 2006; Luis et al. 2013) \u2013 bat species with distributions that overlap with a greater number of other bat species, and particularly those which are gregarious, will have greater interspecific contacts and chance for cross\u2010species transmission. At some roosting sites, bat densities can be as high as 3000 bats per square metre, and some roosts house diverse assemblages of species (Constantine 1967; Kunz 1982). High densities can lead to high contact rates, facilitating pathogen transmission and persistence. These dense roosting sites are often caves, therefore we had hypothesised that propensity to roost in caves would be an important predictor of viral sharing in bats. However, colony size (gregariousness) was more important than where the colony roosts. Large colony sizes do not occur on the same scale in rodents and may have led to the higher mean degree and connectance in bats compared to rodents.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Species with high betweenness might not have or share the most viruses, but could play a key role in disseminating viruses because they can connect disparate regions of the network. Migration was the most important host trait associated with betweenness in bats. Long\u2010distance animal movement has been hypothesised to enhance geographic spread of infectious disease, however, evidence in most cases is lacking (Altizer et al. 2011). In the bat network, many of the shortest network paths went through regional migrants (moving 100\u2013500 km annually), which were more important than long\u2010distance migrants (> 500 km). This is consistent with the idea of \u2018migratory culling\u2019 (Bradley & Altizer 2005) in which the physiological stress of long\u2010distance migration can increase mortality of infected individuals.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "For rodents, sympatry was the most important covariate, again emphasising the importance of spatial overlap in cross\u2010species transmission. We found that species that had higher reproductive rates and body mass had more viruses (PC3 of the PCA), which is in accordance with the findings of Han et al. for all rodent pathogens and parasites (2015).",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "This is the first analysis we are aware of that attempts to identify communities of pathogen sharing at a global scale. These communities reveal which species are most highly connected, providing insight into virus maintenance and spread. They may also be useful in guiding public health strategies. For example if a new zoonotic virus is identified in Hipposideros speoris, it may be useful to look for it in other species of the green community (Fig. 3c) as well.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 453,
+                    "end": 454,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The links in our networks represent real connections, the sharing of viruses, and may be evidence of cross\u2010species transmission, coevolution of host and virus lineages, or indirect links of cross\u2010species transmission through an intermediate host or vector. The importance of phylogeny for viral sharing could indicate the virus originated in a common ancestor and was maintained or coevolved in separate lineages, or the greater ability of viruses to transmit between closely related species. However, the greater importance of sympatry in viral sharing indicates that cross\u2010species transmission is at least as important if not more important than coevolution in establishing the network.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "For cross\u2010species transmission to take place, there must be contact, direct or indirect, between two host species, and therefore, it is not surprising that sympatry is important in the sharing of viruses. The importance of sympatry is reflected in similarities between viral and host species richness maps (Fig. 1). Locations where host species diversity is highest generally have more viruses. However, bats in Europe and India have greater viral richness than predicted by the host species richness map (Fig. 1a,c), and this does not appear to be due to sampling bias (Fig. S7). The community context may provide additional insight. There are two host\u2013virus communities connecting Europe to East Asia where species richness is high (Fig. 3c,f), and these communities may provide a bridge. Higher viral richness than expected from host species richness in India may also reflect connections with areas of high species richness in S.E. Asia (Fig. 3c). For the viral richness maps, we assumed that the virus exists throughout the distribution of its host(s) analogous to the fundamental niche concept (Hutchinson 1957; Harris & Dunn 2010) and representing the broadest possible distribution. However, there may be barriers that restrict the realised niche of a virus. For example Rhinolophus ferrumequinum hosts SARS\u2010like coronavirus and Japanese encephalitis virus, and its range extends from E. Asia to W. Europe, but the populations in E. Asia and Europe do not appear to mix (Flanders et al. 2009).",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 312,
+                    "end": 313,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 511,
+                    "end": 512,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 740,
+                    "end": 741,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 947,
+                    "end": 948,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Thirteen viruses were present in both bats and rodents. Ten of these were vector transmitted. Therefore, direct transmission between bats and rodents appears rare. Of the three directly transmitted viruses, only Ebola could have been transmitted from bats via fruit. The other viruses shared between bats and rodents in this study, Hantaan and Puumala, were found in insectivorous bats, and transmission may have occurred from rodents, as they are currently thought to be the reservoirs of these hantaviruses. However, a recent study indicates bats may be important and ancient reservoirs of hantaviruses more generally (Guo et al. 2013).",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A recent study examining the sharing of parasites in primates using similar network methods used an overall metric for network centrality which included weighted degree, betweenness and several other network measures of the importance of a node (G\u00f3mez et al. 2013). In this study, the authors found that hosts with denser populations living in larger groups and having broad distributions had higher centrality. Although overall, degree and betweenness were correlated in our study, the metrics were different enough to be best predicted by different covariates in bats \u2013 gregariousness for degree, and migration for betweenness. However, in rodents, the most important factor was the same for the different metrics \u2013 sympatry best predicted the number of viruses, degree and betweenness.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "For our analysis we used a database covering 78 years of publications (1934\u20132011). Subsequent analyses, particularly focusing on bats as reservoirs of viruses, have been published (e.g. Drexler et al. 2012; Quan et al. 2013). Studies such as Drexler et al.'s (2012) report short genome fragments that are yet to be categorised by the ICTV, which makes it difficult to discern what sequences should be considered the same virus for classification of viral sharing, and thus we have not included them in our analyses. However, molecular studies increase our ability to distinguish viruses and understand virus\u2013host relationships. As interest in reservoirs of emerging infectious diseases increases, especially in bats, we predict that results such as these will further strengthen our findings and allow for more refined analyses at the community level. Indeed, several recent studies support our conclusions, showing a preponderance of host switching between bats and from bats to other mammals (Drexler et al. 2012; Guo et al. 2013; Drexler et al. 2014).",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "This study is based on a large literature search, and therefore there are necessarily constraints on inference, given different motivations for, and methods used during studies of both rodent and bat viruses through time. We were concerned that the recent attention on bats as reservoirs may have biased the sampling and artificially increased the apparent connectance of the bat network; therefore as a secondary analysis, we also created networks using only viral accounts before the year 2000. We found that although both the bat and rodent networks were smaller (the bat network was reduced to 120 species and 744 links; and the rodent network to 145 species and 738 links), the connectance remained relatively steady (5.2% in bats and 3.5% in rodents), suggesting that the apparent greater viral sharing in bats compared to rodents is not merely a function of recent attention on bats. However, the importance of citations in our analyses for both orders highlights the importance of sampling effort overall.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Although we were able to account for sampling effort in the analyses examining species traits associated with viral sharing, it is difficult to account for sampling effort in creating the networks themselves. One approach which we implemented was creating networks using weighted edges based on sampling effort; this gave us confidence that among the species in our database, the connectance is higher in bats than in rodents. Although our database only has 9% of extant rodent species and 13% of extant bat species, the rodents in our database have been more studied overall and more studied for viruses than bats even when removing the most highly studied, lab rodents \u2013 Mus musculus and Rattus norvegicus (significant by t\u2010test on log number of citations for the species name, means = 4.90 & 4.44, P = 0.002; and the species name + virus, means = 1.99 & 1.43, P < 0.001). We would expect more of the total viral community to have been identified in the more highly studied group of species (rodents), thus the sampling bias should increase the apparent connectance in rodents compared to bats. However, this does not account for species not in our database. If the rodent species that have not been sampled share more viruses than the bat species that have not been sampled, then these results may not hold. Similarly, the species trait data was only available for roughly 37% of the bat and rodent species in our networks, which corresponds to 5 and 3% of known extant bat and rodent species respectively; therefore, the species traits associated with important hosts may also change as our knowledge increases. New viruses are being discovered frequently, suggesting that there are many more viruses yet undetected in both bats and rodents. Therefore, our conclusions and the maps of viral diversity for both orders (Fig. 1) may change significantly as our knowledge increases. We hope that this first, broad examination of viral sharing will help motivate future efforts including more directed data collection.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 1827,
+                    "end": 1828,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Another potential source of bias may be reports of spillover or incidental hosts that are not important reservoirs but are treated with equal weight in these analyses. We took care to distinguish the hantaviruses and arenaviruses, for which there is relatively good knowledge of host\u2013virus relationships. However, we found that this did not impact the qualitative conclusions \u2013 when using ICTV classifications the rodent network still had lower mean degree (13.8), mean weighted degree (19.01), connectance (3.51%) and transitivity (0.57) than the bat network. However, for most of the reported viruses in bats and rodents, there is little knowledge of the ecology and epidemiology in these hosts. This again highlights the importance of further study of both bats and rodents as reservoirs of viruses.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our networks connect hosts by their shared viruses. For a given pair of connected species, we do not know in which direction the cross\u2010species transmission may have taken place, or if transmission even occurred between these species. There may have been a third species that transmitted the virus to both species. As more viral sequences become available, molecular methods, such as those used by Streicker et al. (2010), may be used to infer directionality in cross\u2010species transmission, and help resolve these issues.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our study highlights the interconnectedness of species with respect to viruses and shows the benefits of examining pathogens in a community ecology context at several scales. Our analyses suggest that unique bat characteristics figure importantly in sharing and spreading viruses, lending quantitative support for bats\u2019 special status in zoonotic virus emergence and demonstrating which characteristics affect reservoir potential. Practically, our analyses may help guide future surveillance for optimal prevention of emerging zoonoses. This could help campaigns aimed at preventing spillover between bats and humans to benefit human health while conserving bats\u2019 important roles in ecosystem services such as pest management, plant pollination and seed dispersal (Boyles et al. 2011).",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "ADL, CTW, JLNW and AAC designed study. ADL, TJO, DTSH, ATG and JNM compiled data. ADL performed analyses and wrote the manuscript, and all other authors contributed substantially to editing.",
+            "cite_spans": [],
+            "section": "Author Contributions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Network statistics\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Multiple regression of matrices for correlates of the number of viruses shared between two species\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1:  Distributions of zoonotic viral richness for (a) bats and (b) rodents from our data set (as the broadest possible distribution to our current knowledge, for heuristic purposes only); and (c) bat and (d) rodent species richness.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2:  Ranking of host trait variables from the GLS models by \u0394AICc: the change in AICc values when each variable is individually added (+) or removed (\u2212) from the best model for (a) the number of viruses identified in a bat species (best model: number of viruses \u223c log(citations) + diet), (b) the degree of a bat species in the viral sharing network (best model: degree \u223c log(citations) + gregariousness + sympatry + diet), (c) the betweenness of a bat species in the viral sharing network (best model: betweenness \u223c log(citations) + migration), (d) the number of viruses identified in a rodent species (best model: number of viruses \u223c log(citations) + sympatry + PC3), (e) the degree of a rodent species in the viral sharing network (best model: degree \u223c log(citations) + sympatry + latitude) and (f) the betweenness of a rodent species in the viral sharing network (best model: betweenness \u223c log(citations) + sympatry + area).",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3:  (a) The viral sharing network in bats, organised by communities. Each circle represents a bat species. Lines and their thickness represent number of viruses shared between species. Circle size represents the host's degree and is coloured by community. Species with a black centre were classified as part of multiple communities in an alternative method for community identification. (See Fig. S1 for diagram with species names) Panels (b) through (f) show the distributions of the species (with darker areas representing more host species) that make up the five largest communities. Important viruses include (b) Dengue, Eastern equine encephalitis and Yellow fever viruses in the blue community, (c) Japanese encephalitis virus and SARS coronavirus in the green community, (d) Ebola\u2010Zaire and Lake Victoria Marburg viruses in the red community, (e) Hendra and Nipah viruses in the orange community, (f) European bat lyssavirus\u20101 and \u20102, and Issyk\u2010kul virus in the purple community.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4:  (a) The viral sharing network in rodents. See Fig. 2 caption for description. Panels (b) through (e) show the distributions of the species that make up the four largest communities of viral sharing in rodents. (b) Important viruses in the blue community include California encephalitis, Cowpox and Lymphocytic choriomeningitis viruses, among others. (c) Important viruses in the green community include Andes and Encephalomyocarditis viruses. (d) Important viruses in the red community include Colorado Tick fever and Sin Nombre viruses. (e) Important viruses in the orange community include Bunyamwera and Rift Valley fever viruses.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Animal migration and infectious disease risk",
+            "authors": [],
+            "year": 2011,
+            "venue": "Science",
+            "volume": "331",
+            "issn": "",
+            "pages": "296-302",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "",
+            "authors": [],
+            "year": 2012,
+            "venue": "maps: Draw Geographical Maps",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Quantitative descriptors of food\u2010web matrices",
+            "authors": [],
+            "year": 2002,
+            "venue": "Ecology",
+            "volume": "83",
+            "issn": "",
+            "pages": "2394-2407",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "The delayed rise of present\u2010day mammals",
+            "authors": [],
+            "year": 2007,
+            "venue": "Nature",
+            "volume": "446",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "",
+            "authors": [],
+            "year": 2013,
+            "venue": "maptools: Tools for Reading and Handling Spatial Objects",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Fast unfolding of communities in large networks",
+            "authors": [],
+            "year": 2008,
+            "venue": "J. Stat. Mech: Theory Exp.",
+            "volume": "2008",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Economic importance of bats in agriculture",
+            "authors": [],
+            "year": 2011,
+            "venue": "Science",
+            "volume": "332",
+            "issn": "",
+            "pages": "41-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Parasites hinder monarch butterfly flight: implications for disease spread in migratory hosts",
+            "authors": [],
+            "year": 2005,
+            "venue": "Ecol. Lett.",
+            "volume": "8",
+            "issn": "",
+            "pages": "290-300",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Bats: important reservoir hosts of emerging viruses",
+            "authors": [],
+            "year": 2006,
+            "venue": "Clin. Microbiol. Rev.",
+            "volume": "19",
+            "issn": "",
+            "pages": "531-545",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Isolation of Nipah virus from Malaysian island flying\u2010foxes",
+            "authors": [],
+            "year": 2002,
+            "venue": "Microbes Infect.",
+            "volume": "4",
+            "issn": "",
+            "pages": "145-151",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Activity patterns of the Mexican free\u2010tailed bat",
+            "authors": [],
+            "year": 1967,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Discovery of retroviral homologs in bats: implications for the origin of mammalian gammaretroviruses",
+            "authors": [],
+            "year": 2012,
+            "venue": "J. Virol.",
+            "volume": "86",
+            "issn": "",
+            "pages": "4288-4293",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Experimental Coxsackie B\u20103 virus infection in Citellus lateralis",
+            "authors": [],
+            "year": 1966,
+            "venue": "J. Cell. Physiol.",
+            "volume": "67",
+            "issn": "",
+            "pages": "443-454",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "What links bats to emerging infectious diseases?",
+            "authors": [],
+            "year": 2005,
+            "venue": "Science",
+            "volume": "310,",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Bats host major mammalian paramyxoviruses",
+            "authors": [],
+            "year": 2012,
+            "venue": "Nat. Commun.",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Ecology, evolution and classification of bat coronaviruses in the aftermath of SARS",
+            "authors": [],
+            "year": 2014,
+            "venue": "Antiviral Res.",
+            "volume": "101",
+            "issn": "",
+            "pages": "45-56",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Phylogeography of the greater horseshoe bat, Rhinolophus ferrumequinum: contrasting results from mitochondrial and microsatellite data",
+            "authors": [],
+            "year": 2009,
+            "venue": "Mol. Ecol.",
+            "volume": "18",
+            "issn": "",
+            "pages": "306-318",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Phylogenetic analysis and comparative data: a test and review of evidence",
+            "authors": [],
+            "year": 2002,
+            "venue": "Am. Nat.",
+            "volume": "160",
+            "issn": "",
+            "pages": "712-726",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Centrality in primate\u2013parasite networks reveals the potential for the transmission of emerging infectious diseases to humans",
+            "authors": [],
+            "year": 2013,
+            "venue": "Proc. Natl Acad. Sci.",
+            "volume": "110",
+            "issn": "",
+            "pages": "7738-7741",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "The ecodist package for dissimilarity\u2010based analysis of ecological data",
+            "authors": [],
+            "year": 2007,
+            "venue": "J. Stat. Softw.",
+            "volume": "22",
+            "issn": "",
+            "pages": "1-19",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Phylogeny and origins of hantaviruses harbored by bats, insectivores, and rodents",
+            "authors": [],
+            "year": 2013,
+            "venue": "PLoS Pathog.",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "MCMC methods for multi\u2010response generalized linear mixed models: the MCMCglmm R package",
+            "authors": [],
+            "year": 2010,
+            "venue": "J. Stat. Softw.",
+            "volume": "33",
+            "issn": "",
+            "pages": "1-22",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Using host associations to predict spatial patterns in the species richness of the parasites of North American carnivores",
+            "authors": [],
+            "year": 2010,
+            "venue": "Ecol. Lett.",
+            "volume": "13",
+            "issn": "",
+            "pages": "1411-1418",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Concluding remarks",
+            "authors": [],
+            "year": 1957,
+            "venue": "Cold Spring Harbor Symp. Quant. Biol.",
+            "volume": "22",
+            "issn": "",
+            "pages": "415-427",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "IUCN red list of threatened species",
+            "authors": [],
+            "year": 2010,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Global trends in emerging infectious diseases",
+            "authors": [],
+            "year": 2008,
+            "venue": "Nature",
+            "volume": "451",
+            "issn": "",
+            "pages": "990-993",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "",
+            "authors": [],
+            "year": 1982,
+            "venue": "Ecology of Bats.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Shimoni bat virus, a new representative of the lyssavirus genus",
+            "authors": [],
+            "year": 2010,
+            "venue": "Virus Res.",
+            "volume": "149",
+            "issn": "",
+            "pages": "197-210",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Multiple regression on distance matrices: a multivariate spatial analysis tool",
+            "authors": [],
+            "year": 2007,
+            "venue": "Plant Ecol.",
+            "volume": "188",
+            "issn": "",
+            "pages": "117-131",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Epidemic dynamics at the human\u2010animal interface",
+            "authors": [],
+            "year": 2009,
+            "venue": "Science",
+            "volume": "326",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "A comparison of bats and rodents as reservoirs of zoonotic viruses: are bats special?",
+            "authors": [],
+            "year": 2013,
+            "venue": "Proc. Biol. Sci.",
+            "volume": "280",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Ecological networks and their fragility",
+            "authors": [],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "442",
+            "issn": "",
+            "pages": "259-264",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Bats and birds: Exceptional longevity despite high metabolic rates",
+            "authors": [],
+            "year": 2010,
+            "venue": "Ageing Res. Rev.",
+            "volume": "9",
+            "issn": "",
+            "pages": "12-19",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Fast algorithm for detecting community structure in networks",
+            "authors": [],
+            "year": 2004,
+            "venue": "Phys. Rev. E",
+            "volume": "69",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Inferring the historical patterns of biological evolution",
+            "authors": [],
+            "year": 1999,
+            "venue": "Nature",
+            "volume": "401",
+            "issn": "",
+            "pages": "877-884",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Uncovering the overlapping community structure of complex networks in nature and society",
+            "authors": [],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "435",
+            "issn": "",
+            "pages": "814-818",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "APE: analyses of phylogenetics and evolution in R language",
+            "authors": [],
+            "year": 2004,
+            "venue": "Bioinformatics",
+            "volume": "20",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Classes and methods for spatial data in R",
+            "authors": [],
+            "year": 2005,
+            "venue": "R. News",
+            "volume": "5",
+            "issn": "",
+            "pages": "9-13",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Periodic arousal from hibernation is necessary for initiation of immune responses in ground squirrels",
+            "authors": [],
+            "year": 2002,
+            "venue": "Am. J. Physiol. Regul. Integr. Comp. Physiol.",
+            "volume": "282",
+            "issn": "",
+            "pages": "R1054-R1062",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Bats are a major natural reservoir for hepaciviruses and pegiviruses",
+            "authors": [],
+            "year": 2013,
+            "venue": "Proc. Natl Acad. Sci.",
+            "volume": "110",
+            "issn": "",
+            "pages": "8194-8199",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "",
+            "authors": [],
+            "year": 2012,
+            "venue": "R: A Language and Environment for Statistical Computing",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Phylogenomic datasets provide both precision and accuracy in estimating the timescale of placental mammal phylogeny",
+            "authors": [],
+            "year": 2012,
+            "venue": "Proc. Biol. Sci.",
+            "volume": "279",
+            "issn": "",
+            "pages": "3491-3500",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "High diversity of West African bat malaria parasites and a tight link with rodent Plasmodium taxa",
+            "authors": [],
+            "year": 2013,
+            "venue": "Proc. Natl Acad. Sci.",
+            "volume": "110",
+            "issn": "",
+            "pages": "17415-17419",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "",
+            "authors": [],
+            "year": 2012,
+            "venue": "PBSmapping: Mapping Fisheries Data and Spatial Analysis Tools",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Host phylogeny constrains cross\u2010species emergence and establishment of rabies virus in bats",
+            "authors": [],
+            "year": 2010,
+            "venue": "Science",
+            "volume": "329",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "New world bats harbor diverse Influenza A viruses",
+            "authors": [],
+            "year": 2013,
+            "venue": "PLoS Pathog.",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Rodent reservoirs of future zoonotic diseases",
+            "authors": [],
+            "year": 2015,
+            "venue": " Proc. Natl. Acad. Sci.",
+            "volume": "112",
+            "issn": "",
+            "pages": "7039-7044",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

@@ -1,0 +1,1659 @@
+{
+    "paper_id": "PMC6039859",
+    "metadata": {
+        "title": "The intrinsic vulnerability of networks to epidemics",
+        "authors": [
+            {
+                "first": "G.",
+                "middle": [],
+                "last": "Strona",
+                "suffix": "",
+                "email": "giovanni.strona@ec.europa.eu",
+                "affiliation": {}
+            },
+            {
+                "first": "C.J.",
+                "middle": [],
+                "last": "Carstens",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "P.S.A.",
+                "middle": [],
+                "last": "Beck",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "B.A.",
+                "middle": [],
+                "last": "Han",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Network analysis is a powerful approach for investigating epidemics, with nodes representing anything from individuals to countries, and links mapping transmission routes that pathogens can exploit to spread from one node to another (Newman, 2002, Keeling and Eames, 2005, Strona and Castellano, 2018). This general framework permits simulating different epidemiological scenarios over the same network (Pastor-Satorras et al., 2015), yielding disease-specific outcomes that could be important for informing management and intervention strategies (Rushmore et al., 2013, Yamin et al., 2014, Sun et al., 2014, Herrera et al., 2016). Although each scenario has its own characteristics and is expected to lead to specific outcomes, those are also constrained by network structure. Understanding to what extent such constraints can attenuate differences between different epidemiological scenarios may offer important insights into the ecology and dynamics of infectious disease spread (Keeling, 2005).",
+            "cite_spans": [
+                {
+                    "start": 234,
+                    "end": 246,
+                    "mention": "Newman, 2002",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 248,
+                    "end": 271,
+                    "mention": "Keeling and Eames, 2005",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 273,
+                    "end": 300,
+                    "mention": "Strona and Castellano, 2018",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 404,
+                    "end": 432,
+                    "mention": "Pastor-Satorras et al., 2015",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 548,
+                    "end": 569,
+                    "mention": "Rushmore et al., 2013",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 571,
+                    "end": 589,
+                    "mention": "Yamin et al., 2014",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 591,
+                    "end": 607,
+                    "mention": "Sun et al., 2014",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 609,
+                    "end": 629,
+                    "mention": "Herrera et al., 2016",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 983,
+                    "end": 996,
+                    "mention": "Keeling, 2005",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Common models that investigate epidemics in networks are based on identifying distinct categories (i.e., compartments) that define the health status of a host, and a set of specific rules dictating the probability of transition from one status to another. In a typical implementation of epidemic models, nodes can be in one of three different states at any given time: susceptible to the infection, S; infected, I; and recovered/removed from the system, R (following complete immunization or death). Different epidemic models are then formulated by varying the rules that permit hosts to transition from one state to another. For example, a very common model is the SI, where nodes can pass only from S to I. In the SIS models, infected nodes are allowed to roll back to the susceptible state without gaining immunity (I \u2192 S) according to a certain probability, which enables a disease to cycle in a host population by re-infecting individuals that have recovered from a previous infection. Simulating individuals gaining permanent or temporary immunity requires the addition of a third compartment that sees nodes removed from the network (I \u2192 R), which creates more complex models, such as the SIR and the SIRS (note that, besides immunization, the R status may indicate the death of a node) (Pastor-Satorras et al., 2015).",
+            "cite_spans": [
+                {
+                    "start": 1295,
+                    "end": 1323,
+                    "mention": "Pastor-Satorras et al., 2015",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The classic compartmental epidemic models are flexible and simple, but moving beyond these particular formulations to establish more general topology-vulnerability relationships has been difficult, in part because they depict specific and distinct scenarios. As a result, the effects of network structure on disease outcomes are usually investigated by focusing on a particular type of network and pathogen whose features combine to determine disease dynamics (Pastor-Satorras et al., 2015). While precise, these constraints on model formulation limit our ability to compare dynamical outcomes across different networks configurations and across different pathogen types.",
+            "cite_spans": [
+                {
+                    "start": 461,
+                    "end": 489,
+                    "mention": "Pastor-Satorras et al., 2015",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In an attempt to overcome these issues, we introduce here a generalization of classic compartmental models, which we named the \u2018Synthetic Network Epidemic Spread\u2019 (SNES) model. Despite its simple formulation, the SNES model permits the investigation of a wide range of epidemic scenarios in a continuous and controlled way, through tuning three parameters quantifying fundamental pathogen features: (1) the pathogen's transmission rate, \u03c4; (2) the duration of infection (i.e., survival time of the pathogen in the host), \u03c1; and (3) the pathogen's immunization effect on hosts over repeated infections, \u03b9. Such parameters (all bounded in [0, 1]) offer a straightforward way to perform comparisons across different epidemic scenarios.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Here we take advantage of this by applying the SNES model to a large set of simulated networks (representative of many different real world situations), and to a set of animal contact networks (representing potential encounters between field voles obtained from a mark/recapture study, Davis et al., 2015), with the aim to investigate to what extent network structure affects the outcome of an epidemic.",
+            "cite_spans": [
+                {
+                    "start": 286,
+                    "end": 304,
+                    "mention": "Davis et al., 2015",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "We found that, when a broad range of network topologies is taken into account, the epidemiological parameters of the model are in many cases less important than network structure in determining the magnitude of an epidemic outbreak. Of course, when similar networks are considered, as in the case of the field vole contact networks, epidemic parameters (and particularly transmission rate) became fundamental to determine epidemic magnitude. Nevertheless, even in the case of similarly structured networks, topological properties still permit an accurate assessment of relative network vulnerability towards a given class of pathogens (i.e. to pathogens whose spread can be modelled using similar epidemic parameters). These findings can help improve preparedness when limited epidemiological information is available and a fast response (for example in terms of prioritization) is needed, a situation that is expected to become ever more common in the future, due to the growing globalization, and the rapid emergence of new diseases.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "At each time step, any node i can be infected by nodes pointing towards (or, in the case of an undirected network, connected to) it according to a given probability \u03c4 \u00d7 Si, with \u03c4 being the pathogen's transmission rate, and Si being individual host susceptibility to the infection.",
+            "cite_spans": [],
+            "section": "The Synthetic Network Epidemic Spread model (SNES) ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Concurrently, each node recovers with probability Ri, controlled by a parameter \u03c1, varying in [0, 1], and increasing with time since infection: Ri = (1 \u2212 1/(1 + t)\u03c1). Due to the purely theoretical nature of this study, the choice of the Ri function is arbitrary. This formulation of Ri, however, permits a smooth transition from situations where the probability of recovery increases very slowly with time (when \u03c1 is close to 0), to opposite scenarios of fast recovery (when \u03c1 is close to 1). It is intuitive that the concept behind the SNES model allows for maximum flexibility in the choice of Ri(t) function, making it possible to accommodate specific situations. Yet, to avoid adding further complexity to our analyses (and possibly complicating the interpretation of results), we used the above formulation in all of our epidemic simulations.",
+            "cite_spans": [],
+            "section": "The Synthetic Network Epidemic Spread model (SNES) ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The susceptibility of a node following infection becomes Si = Si \u00d7 \u03b9, with \u03b9 being equal for all individuals (since theoretically dependent on the pathogen) and varying in [0, 1]. This accounts for a general property of immunizing diseases where individuals who have been infected and who have recovered are less likely to be re-infected, which is the basis of vaccination (though we note there is variation with respect to immunity which is unaccounted for in these models; e.g., waning immunity; Scherer and McLean, 2002). Interestingly, analogies can be drawn for very different contexts, such as that of information spread in social networks. The probability that a person will share a piece of information will rapidly decrease when receiving the same piece of information again. In the following, we will refer to this process as \u2018immunization\u2019, but it may also represent the path towards removal/death of an individual, corresponding to real world situations where repeated infections can be fatal. As in the case of Ri(t), Si(\u03b9) can also be adjusted to fit specific hypotheses.",
+            "cite_spans": [
+                {
+                    "start": 498,
+                    "end": 522,
+                    "mention": "Scherer and McLean, 2002",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "The Synthetic Network Epidemic Spread model (SNES) ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The parameters \u03c1 and \u03b9 combine to control disease behavior, for instance, the extent of disease spread in terms of number of infected nodes. These parameters also permit the model to be tuned to reflect typical epidemiological models such as SI (when \u03c1 = 0, \u03b9 = 1), SIS (when \u03c1 > 0, \u03b9 = 1), SIR(S) (when \u03c1 > 0 and \u03b9 \u2264 1), or to explore epidemic scenarios in a continuous and controlled way. For example, the SNES framework makes it possible to track how epidemic outcomes compare between the SI scenario to a typical SIS scenario (Pastor-Satorras et al., 2015) by progressively increasing the probability that a host will recover and become susceptible again. Additionally, the SNES model can also be easily adapted to more specific scenarios. For example, the addition of a simple rule controlling the lapse between the time a node is infected and the time it becomes infectious enables the SNES to emulate compartment models that include latency (such as the SEIRS, which includes an \u2018exposed\u2019 class).",
+            "cite_spans": [
+                {
+                    "start": 531,
+                    "end": 559,
+                    "mention": "Pastor-Satorras et al., 2015",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "The Synthetic Network Epidemic Spread model (SNES) ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We note that the SNES is conceptually similar to a SIRS model were the transition probabilities S \u2192 I, I \u2192 R, and R \u2192 S are adjusted to particular values. Nevertheless, by departing from the typical compartmental scheme, the formulation of SNES offers some advantages in terms of clarity. In particular, while the different, typical compartmental models (and possibly a \u2018tunable\u2019 SIRS) focus on the possibility (and probability) of a host's transition from a health status to another, and use this constraint to identify different epidemic categories on the basis of permitted and forbidden transitions, the SNES attempts to remove the boundaries between different models. Those, in fact, simply represent different regions of an ideal, continuous three-dimensional space defined by \u03c1, \u03b9 and \u03c4.",
+            "cite_spans": [],
+            "section": "The Synthetic Network Epidemic Spread model (SNES) ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We tested our model on 10,000 simulated networks. To grow each network, we selected at random a model between four different well-known ones (configuration model; Erdos Renyi, ER; Barabasi\u2013Albert, BA; and Watts\u2013Strogatz, WS) (Strogatz, 2001). To build networks using the configuration model (B\u00e9k\u00e9ssy et al., 1972), we selected a random exponent for the power law degree distribution varying between 2 and 3. In ER networks we set the number of nodes (V) to a random integer in [50, 500] and the number of edges to a random integer in [V, 1000]. In BA networks, we set the number of nodes to a random integer in [500, 1000], and the number of outgoing edges generated for each node to (V \u00d7 r \u00d7 0.01 + 1), with V being the number of nodes, and r being a random real number in [0, 1]. In WS networks, we set the dimension of the lattice to 1, the size of the lattice along all dimensions to a random integer in [50, 250], the distance within two nodes are connected to a random integer in [2, 10], and the rewiring probability to a random real number in [0, 1]. In this way, we obtained networks with a good variation in number of edges, nodes, connectance, clustering, and diameter (Fig. 1).",
+            "cite_spans": [
+                {
+                    "start": 226,
+                    "end": 240,
+                    "mention": "Strogatz, 2001",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 292,
+                    "end": 312,
+                    "mention": "B\u00e9k\u00e9ssy et al., 1972",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Generation of simulated networks ::: Materials and methods",
+            "ref_spans": [
+                {
+                    "start": 1181,
+                    "end": 1187,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Instead of focusing on directed and undirected networks separately, we applied the following conceptualization: an undirected network is in fact a directed network where, given any link connecting node A to node B, a reciprocal link B \u2192 A exists. The relative abundance of reciprocal links determines how much a directed network differs from its undirected counterpart. Thus, we generated all networks as directed and simple (that is without loops and reciprocal links), and then we added reciprocal links until reaching a preselected degree of reciprocity, extracted at random in [0, 1] (with 0 corresponding to a directed network with no reciprocal links, and 1 corresponding to an undirected network).",
+            "cite_spans": [],
+            "section": "Reciprocity ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To verify the validity of our results in real-world situations, we replicated the analysis also on a set of empirical networks, all representing the same specific setting. In particular, we used mark-recapture data of field voles (Microtus agrestis) collected over 7 years in four different sites, which we obtained from (Davis et al., 2015). In the original study (Davis et al., 2015), captures were performed at each of the four sites using 100 traps placed at the nodes on a regular grid of 5 m2 square cells. Trapping sessions were carried out every 28 days from March to November, and every 56 days from November to March (please refer to Davis et al., 2015 for a more complete description of the methodology and additional details). Starting from the raw data, which included a unique identifier for each field vole individual caught in a trap at least once, as well as the time (day) and location (node in the trap-grid) of capture, we built networks of potential contacts between voles by linking all individuals caught in the same cage, or in two neighbouring cages (i.e. at a distance smaller than 5 m), on the same day. We then retained only the networks including at least 100 edges. In this way, we built 296 networks, with relatively small variability in their structural properties (much smaller than that observed in the set of simulated networks, see Fig. 2).",
+            "cite_spans": [
+                {
+                    "start": 322,
+                    "end": 340,
+                    "mention": "Davis et al., 2015",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 366,
+                    "end": 384,
+                    "mention": "Davis et al., 2015",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 644,
+                    "end": 662,
+                    "mention": "Davis et al., 2015",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Real world contact networks ::: Materials and methods",
+            "ref_spans": [
+                {
+                    "start": 1368,
+                    "end": 1374,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Besides basic network properties such as clustering, connectance, diameter, number of nodes and edges, and spectral radius of the adjacency matrix (Wang et al., 2003), we also measured robustness as described in Schneider et al. (2011) for each network. Robustness is computed as: R\n=1/N\u2211r=1NQ, where N is the total number of network nodes and Q is the fraction of nodes in the largest connected cluster after removing r nodes. Although this measure was developed in a completely different context (in particular, to assess the resilience of a network against node removal), it is also closely related to the concept of percolation, which has fundamental implications for studying epidemics (Moore and Newman, 2000, Bogun\u00e1 et al., 2003, Serrano and Bogun\u00e1, 2006). In its original formulation, R was computed by removing nodes in decreasing order of their degree (i.e. their number of connections). The aim of sequentially removing nodes with the largest degree is to speed up the process of network disassembly, hence obtaining a conservative estimate of robustness in the worst case scenario of node removal. However, it has been pointed out that other criteria going beyond local properties (such as node degree) could offer more efficient ways to disrupt networks (Morone and Makse, 2015). Thus, we used PageRank (Page et al., 1999) to determine the order of node removal in the computation of R. Nevertheless, we also tested the sensitivity of R as a measure of intrinsic vulnerability (see section 2.10) to different criteria of node removal (namely, node degree and betweenness).",
+            "cite_spans": [
+                {
+                    "start": 148,
+                    "end": 165,
+                    "mention": "Wang et al., 2003",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 212,
+                    "end": 235,
+                    "mention": "Schneider et al. (2011)",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 692,
+                    "end": 714,
+                    "mention": "Moore and Newman, 2000",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 716,
+                    "end": 735,
+                    "mention": "Bogun\u00e1 et al., 2003",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 737,
+                    "end": 761,
+                    "mention": "Serrano and Bogun\u00e1, 2006",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1268,
+                    "end": 1290,
+                    "mention": "Morone and Makse, 2015",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1317,
+                    "end": 1334,
+                    "mention": "Page et al., 1999",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Unique Robustness Measure (R) ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To investigate the potential effect of individual node susceptibility (Si) on outbreak magnitude, we replicated the experiment on simulated networks in two alternative scenarios. In the first one (for which we report results in the main text), we attributed equal susceptibility (0.5) to all nodes in the network. In the second scenario, we attributed individual (Si) values to nodes by sampling them from a normal distribution with mean 0.5 and standard deviation 0.1.",
+            "cite_spans": [],
+            "section": "Node susceptibility ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For each model run, we varied \u03c1 and \u03b9 at random in order to produce very different scenarios, ranging from situations where the probability of a node to recover from infection was very low (\u03c1 = 0+) and where immunization required several repeated infections (\u03b9 = 1\u2212), to situations of fast recovery (\u03c1 = 1) and immunization (\u03b9 = 0\u2212). In all cases, we set \u03c1 > 0 and \u03b9 < 1, in order to produce contained epidemics. We ran each model until the infection disappeared from the network. In addition, we varied at random the disease transmission rate \u03c4 between (0, 1], in order to simulate different scenarios of pathogen infectivity. We simulated 100 epidemics on each network, starting from a randomly selected infected node, and then averaging the results (see next paragraph) over the 100 runs. For the set of real world networks, we performed 10000 replicates by randomly selecting one of the networks in the dataset (N = 296) and by averaging the outcomes of 100 epidemic spreads.",
+            "cite_spans": [],
+            "section": "Model runs ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For each virus spread simulation, we recorded five different measures of outbreak magnitude (Fig. 3, defined as follows: (I) epidemic persistence, i.e. the total number of performed simulation steps until complete immunization; (II) epidemic breadth, i.e. the fraction of nodes that have ever been infected over the total number of nodes; (III) epidemic peak, i.e. the ratio between the maximum number of simultaneously infected nodes, and the total number of nodes; (IV) epidemic strength, i.e. the mean fraction of infected nodes per step; (V) epidemic area, quantified as the area under the curve of the fraction of infected nodes over the total number of nodes vs. simulation time, rescaled to [0,1]. Although these measure are clearly not independent from one another, they still indicate different aspects of outbreak magnitude and, together, can depict subtle differences between different epidemic events.",
+            "cite_spans": [],
+            "section": "Outbreak magnitude measures ::: Materials and methods",
+            "ref_spans": [
+                {
+                    "start": 93,
+                    "end": 99,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "We used canonical correlation analysis (Hair et al., 2006) to compare the outbreak magnitude measures with the corresponding network structural properties and the epidemic parameters (\u03c1 and \u03b9), using the R package yacca (Butts, 2016). We standardized all data to z values as (xi \u2212 \u03bc)/\u03c3, with xi being the target value, and \u03bc and \u03c3 being, respectively, the average and standard deviation of the variable xi. We evaluated the strength of canonical relationships using canonical roots, and we used Rao's F test to assess significance of the relationships (Mardia et al., 1980). We evaluated the effects of dependent and independent variables on the respective canonical variates by examining cross canonical loadings, and we used redundancy analysis to evaluate the amount of variance in the set of dependent variables explained by independent variables (Hair et al., 2006). In both simulated and real-world networks, the redundancy values indicated that the first canonical dimension explained a consistent fraction of variance (respectively, 0.57 and 0.62), while the second canonical dimension added a limited contribution (0.04 and 0.05). Thus, in the main text, we limited our discussion the canonical loadings of the first dimension.",
+            "cite_spans": [
+                {
+                    "start": 40,
+                    "end": 57,
+                    "mention": "Hair et al., 2006",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 221,
+                    "end": 232,
+                    "mention": "Butts, 2016",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 553,
+                    "end": 572,
+                    "mention": "Mardia et al., 1980",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 852,
+                    "end": 869,
+                    "mention": "Hair et al., 2006",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Statistical analysis ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To assess the performance of the Unique Robustness Measure as an estimator of intrinsic network vulnerability to epidemic spread for a given class of pathogens (i.e. for pathogens whose spread can be modelled with similar epidemic parameters), we first ranked all the field vole contact networks according to their R. We then ran several sets of classical SIR models (Pastor-Satorras et al., 2015) under 100 different combinations of infection and recovery probabilities (with both ranging from 0.1 to 1 with a step of 0.1) on all networks. Each scenario correspond to a particular class of pathogens. For each network and model setting we replicated 100 epidemic simulations (each starting from a randomly selected infected node), averaging the total fraction of infected nodes throughout each simulation run. This value was used to rank networks within each set of simulations (i.e. for each combination of infection/recovery probability). Finally, we compared this rank with that provided by the Unique Robustness Measure (R). Networks for which the average fraction of infected nodes throughout the 100 simulations happened to be identical were ranked in random order.",
+            "cite_spans": [
+                {
+                    "start": 368,
+                    "end": 396,
+                    "mention": "Pastor-Satorras et al., 2015",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Testing R as a measure of intrinsic vulnerability ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "All the scripts and data needed to replicate the analyses in the present paper and reproduce figures are made freely available at: https://github.com/giovannistrona/network_intrinsic_vulnerability_to_epidemics.",
+            "cite_spans": [],
+            "section": "Reproducibility ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We conducted a large experiment to compare the vulnerability of a wide range of network topologies (Fig. 1) to a broad range of epidemic spread scenarios, that we obtained by varying randomly the three epidemic parameters of the SNES (\u03c1, \u03b9 and \u03c4, see Section 2). In simulated networks, the magnitude of epidemic outbreaks (Fig. 3) was well explained by the combination of epidemic parameters and by network properties (Table 1). Surprisingly, topological properties, and particularly the density of infection pathways (quantified by network connectance), and their redundancy (quantified by network clustering, that is how often two nodes pointing to another one are linked, and by network robustness, see below) had a stronger effect on outbreak magnitude than the epidemic parameters when a broad range of network topology is considered (Fig. 4). Network robustness (R) resulted also more important than epidemic parameters (and the second most important factor). This result was very consistent in two different scenarios where we assumed, respectively, that all nodes had the same susceptibility to infection (0.5), or a random susceptibility extracted from a normal distribution with mean 0.5 and standard deviation 0.1. This suggests that outbreak magnitude is driven by average susceptibility more than by its variation across individuals. Thus, we report and discuss here only the results referring to the first scenario.",
+            "cite_spans": [],
+            "section": "Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 100,
+                    "end": 106,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 323,
+                    "end": 329,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 840,
+                    "end": 846,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 419,
+                    "end": 426,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "We replicated the same procedure (as was applied to the simulated networks) using a set of real-world networks. The experiment with simulated networks explored a very broad range of network topologies, and demonstrated how network topology affects epidemic outbreak magnitude even more than epidemiological parameters. Conversely, for our test on real world scenarios, we focused on a set of networks representing independent replicates of the same exact real world setting, and that therefore exhibited a relatively low variability in their structural features (Fig. 2). This permitted us to investigate if (and to what extent) small variations in network properties may be major determinants of epidemic outbreak magnitude.",
+            "cite_spans": [],
+            "section": "Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 563,
+                    "end": 569,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Even in this case, where network topological variability was limited, important epidemiological parameters, such as the one controlling the duration of the infective stage (\u03c1), and the one modelling the immunizing effect of pathogens (\u03b9), had a negligible effect in determining outbreak magnitude (Fig. 4). Transmission rate (\u03c4) emerged as the most important factor, although both network robustness and network connectance had very strong effects (much higher than those of \u03c1 and \u03b9). The other network parameters were less relevant, and their effects were not always consistent with those observed in the set of simulated networks. For example, clustering was positively associated to epidemic magnitude in simulated networks, but negatively associated in real world networks (Fig. 4), which highlights how the dynamics and outcome of an epidemic event are affected by network structure in complicated ways that cannot be captured by individual basic network properties, and that do not offer a straightforward interpretation.",
+            "cite_spans": [],
+            "section": "Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 298,
+                    "end": 304,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 778,
+                    "end": 784,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "In both experiments, the Unique Robustness Measure (R) (Schneider et al., 2011) was consistently one of the most influential factors, and positively associated with outbreak magnitude (Figs. 4, 5). The R measure is computed by counting the number of nodes present in the largest connected component after nodes are progressively removed, thus representing the ability of a system such as a power grid or the Internet to delay collapse after subsequent failures (Schneider et al., 2011). In the context of epidemics, R may offer a synthetic picture of the redundancy of infection pathways. In a network with higher R, a pathogen will have many chances to spread between nodes and will be less affected by the immunization of many nodes (or their death, leading, in both cases, to their removal from the network).",
+            "cite_spans": [
+                {
+                    "start": 56,
+                    "end": 78,
+                    "mention": "Schneider et al., 2011",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 462,
+                    "end": 484,
+                    "mention": "Schneider et al., 2011",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 185,
+                    "end": 195,
+                    "mention": "Figs. 4, 5",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "This finding has two important implications. On the one hand, it indicates that the networks where a potential outbreak is predicted to be strongest will also be the most difficult to protect, since having a high R complicates immunization procedures based, for example, on targeted vaccination (Morone and Makse, 2015). On the other hand, it suggests that R's ability to synthesize various aspects of network structure in a single value might make it a useful index to rank networks on the basis of their intrinsic vulnerability, thereby offering a way to prioritize preparedness efforts by focusing preventive and surveillance actions on the most vulnerable networks.",
+            "cite_spans": [
+                {
+                    "start": 296,
+                    "end": 318,
+                    "mention": "Morone and Makse, 2015",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "This idea was supported by our experimental results, which confirmed the Unique Robustness Measure, R as an efficient measure of intrinsic network vulnerability. In particular, the rank of field vole networks according to R was very consistent with the rank obtained by ordering networks on the basis of their vulnerability in a broad range of epidemic scenarios, that we modeled by running a set of classical SIR models (Pastor-Satorras et al., 2015) under different combinations of infection/recovery probabilities (Fig. 6; adjusted R-squared: 0.59, p < 0.00001, regression line y = 0.77x + 0.12). We quantified vulnerability in terms of the total fraction of nodes reached by the infection throughout the epidemic simulation (see Fig. 3-II). This result is particularly convincing when considering the limited topological variability of the field vole contact networks (see Fig. 2), which makes them a challenging benchmark to test the sensitivity of R as a vulnerability measure. Using different criteria of node removal to compute R (namely, node degree and betweenness) led to very consistent results (adjusted R-squared: 0.60, p < 0.00001, regression line y = 0.78x + 0.11 when node degree was used; adjusted R-squared: 0.61, p < 0.00001, regression line y = 0.78x + 0.11 when node betweenness was used).",
+            "cite_spans": [
+                {
+                    "start": 422,
+                    "end": 450,
+                    "mention": "Pastor-Satorras et al., 2015",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 518,
+                    "end": 524,
+                    "mention": "Fig. 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 733,
+                    "end": 739,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 877,
+                    "end": 883,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Intuition suggests that the outcome of an epidemic should be affected mainly by disease behaviour (in terms, for example, of transmission, infection dynamics, or latency) (Lloyd-Smith et al., 2009). Yet, our results paint a very different picture where the structure of the infected network influences outbreak magnitude more than epidemic parameters used to model pathogens\u2019 features.",
+            "cite_spans": [
+                {
+                    "start": 172,
+                    "end": 196,
+                    "mention": "Lloyd-Smith et al., 2009",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "It should be highlighted that, in some cases, the structure of the network used to model a particular outbreak includes some implicit information about a pathogen's behavior, such as its transmission mode. For example, one will use a network of sexual contacts to model the spread of HIV within a community (Woodhouse et al., 1994), or a spatial network mapping crop distribution to model a plant pest spread (Strona et al., 2017), or again the air transportation network for describing airborne pathogens (Brockmann and Helbing, 2013). On the one hand, in such cases, looking at the pathogen and at the network as two separate entities would not be straightforward. On the other hand, however, the issue is more philosophical rather than applicative, since it does not prevent us from comparing network vulnerability both between and within broad classes of pathogen transmission strategies. Furthermore, it depicts more scenarios where our findings could be very useful. For example, one may generate different networks within the same context by considering different possible pathogen transmission strategies. Those could be either general ones, such as airborne or sexual transmission, or very specific strategies taking into account, for instance, vector vagility (Strona et al., 2017). Then, one may compare the structure of such networks in order to identify their relative risk towards different kinds of pathogens.",
+            "cite_spans": [
+                {
+                    "start": 308,
+                    "end": 330,
+                    "mention": "Woodhouse et al., 1994",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 410,
+                    "end": 429,
+                    "mention": "Strona et al., 2017",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 507,
+                    "end": 534,
+                    "mention": "Brockmann and Helbing, 2013",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1271,
+                    "end": 1290,
+                    "mention": "Strona et al., 2017",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our results are consistent with (and complementary to) previous studies that have shown how network structure can profoundly affect infectious disease dynamics (Keeling, 2005), and that taking this aspect into account may improve our ability to understand and predict epidemic patterns, and to implement intervention measures (Keeling and Eames, 2005). For example, the properties of the air-transportation-network have been identified as a main determinant of global patterns of emerging diseases, with complex features of the airline network being at heart of the global spread dynamics of diseases such as severe acute respiratory syndrome (Colizza et al., 2006). In addition, a more recent study showed that measuring the distance between the source and the target of an infection in network space can provide a more reliable prediction of epidemic spread rate than geographical distance, regardless of the nature of the disease (Brockmann and Helbing, 2013). Consistent with those ideas, our findings suggest that, in the face of many unmeasurable unknowns related to epidemiological parameters, focusing on network properties can facilitate the identification of vulnerabilities and the optimization of existing systems.",
+            "cite_spans": [
+                {
+                    "start": 161,
+                    "end": 174,
+                    "mention": "Keeling, 2005",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 327,
+                    "end": 350,
+                    "mention": "Keeling and Eames, 2005",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 644,
+                    "end": 664,
+                    "mention": "Colizza et al., 2006",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 934,
+                    "end": 961,
+                    "mention": "Brockmann and Helbing, 2013",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Results and discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Effects of network properties and epidemic parameters on outbreak magnitude. The table reports the results of the Canonical Correlation analysis performed on the outcomes of simulations performed on both the set of randomly generated networks, and the set of real-world networks indicating contacts between field voles (n = 10,000 in both cases). I: epidemic duration; II: cumulated fraction of nodes reached by the infection; III\u2013IV: maximum and average fraction of infected nodes per step; V: area under the curve of fraction of infected nodes per step); \u03c4: pathogen's transmission rate; \u03c1: duration of infection (i.e., survival time of the pathogen in the host); \u03b9: pathogen's immunization effect on hosts over repeated infections.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Fig. 1: Structural properties of the randomly generated networks. Black horizontal lines indicate median value, while black dots indicates mean values. The shape of the violin plots indicates the density of observations.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig. 2: Principal component analysis biplot showing the differences between the structure of simulated and real-world networks. The cumulative variance explained by the first two components was 0.99998.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Fig. 3: Measures of outbreak magnitude. The green line corresponds to the fraction of nodes infected at each step of a single simulation, while the blue line corresponds to the cumulative fraction of infected nodes. For each simulation we recorded the duration (I), the cumulative fraction of nodes reached by the infection (II), the maximum and the average fraction of infected nodes per step (III, IV), and the area under the curve that depicts the fraction of infected nodes per step (the green line) (V). (For interpretation of the references to color in text/this figure legend, the reader is referred to the web version of the article.)",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Fig. 4: Effects of network structural properties and epidemiological parameters (\u03c1, \u03b9, and \u03c4) on outbreak magnitude measures for both the experiments on random and real-world networks. The area of squares represents the absolute value of canonical loadings, which represent the relative importance of independent variables in determining outbreak magnitude (see Methods), with white and black squares indicating, respectively, positive and negative values. For simulated networks we report both results for all aggregated networks, and the results for the different kinds of networks. Since in both simulated and real-world networks the amount of variance in the set of dependent variables explained by that of independent variables was consistent in the first dimension, but not in the second one (see Table 1), we focus here on the loadings of the first canonical dimension. The graph was generated using the table.value function from the R package adegraphics (Dray and Siberchicot, 2017). Conn: network connectance; SR: spectral radius; Diam: network diameter; Clust: network clustering; R: network robustness; \u03c4: pathogen's transmission rate; \u03c1: duration of infection (i.e., survival time of the pathogen in the host); \u03b9: pathogen's immunization effect on hosts over repeated infections.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Fig. 5: Comparison between outbreak magnitude measures and network Unique Robustness Measure (R) in randomly generated and real-world networks. Vertical axes indicate the outbreak magnitude measures (I: epidemic duration; II: cumulated fraction of nodes reached by the infection; III\u2013IV: maximum and average fraction of infected nodes per step; V: area under the curve of fraction of infected nodes per step), while boxplots group the outcomes of simulations according to the respective network's R value. The Spearman's rank correlation coefficient (rs) was computed, for each plot, on the raw data (i.e. comparing all the outbreak magnitude values for a given measure with their corresponding R values).",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Fig. 6: The Unique Robustness Measure (R) as an index of network vulnerability to epidemic spread. The efficiency of (R) in ranking networks according to their vulnerability towards an unknown epidemic threat was evaluated by comparing the rank of the face-to-face contact networks (Isella et al., 2011) according to their R with their respective rank measured as the fraction of nodes reached by the infection in 100 different SIR scenarios (see Methods). The color scale maps the density of observations falling within each hexagon.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Asymptotic enumeration of regular matrices",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "B\u00e9k\u00e9ssy",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Bekessy",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Koml\u00f3s",
+                    "suffix": ""
+                }
+            ],
+            "year": 1972,
+            "venue": "Stud. Sci. Math. Hungar.",
+            "volume": "7",
+            "issn": "",
+            "pages": "343-353",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Absence of epidemic threshold in scale-free networks with degree correlations",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Bogun\u00e1",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Pastor-Satorras",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "90",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "The hidden geometry of complex, network-driven contagion phenomena",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Brockmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Helbing",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Science",
+            "volume": "342",
+            "issn": "6164",
+            "pages": "1337-1342",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "C.T.",
+                    "middle": [],
+                    "last": "Butts",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "The role of the airline transportation network in the prediction and predictability of global epidemics",
+            "authors": [
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Colizza",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Barrat",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Barth\u00e9lemy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proc. Natl. Acad. Sci. U.S.A.",
+            "volume": "103",
+            "issn": "7",
+            "pages": "2015-2020",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Spatial analyses of wildlife contact networks",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Abbasi",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Shah",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Telfer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Begon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "J. R. Soc. Interface",
+            "volume": "12",
+            "issn": "102",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "J.F.",
+                    "middle": [],
+                    "last": "Hair",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.C.",
+                    "middle": [],
+                    "last": "Black",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.J.",
+                    "middle": [],
+                    "last": "Babin",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.E.",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.L.",
+                    "middle": [],
+                    "last": "Tatham",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Disease surveillance on complex social networks",
+            "authors": [
+                {
+                    "first": "J.L.",
+                    "middle": [],
+                    "last": "Herrera",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Srinivasan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.S.",
+                    "middle": [],
+                    "last": "Brownstein",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.P.",
+                    "middle": [],
+                    "last": "Galvani",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.A.",
+                    "middle": [],
+                    "last": "Meyers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "PLoS Comput. Biol.",
+            "volume": "12",
+            "issn": "7",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "What's in a crowd? Analysis of face-to-face behavioral networks",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Isella",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Stehl\u00e9",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Barrat",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Cattuto",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.-F.",
+                    "middle": [],
+                    "last": "Pinton",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Van den Broeck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Theor. Biol.",
+            "volume": "271",
+            "issn": "1",
+            "pages": "166-180",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Networks and epidemic models",
+            "authors": [
+                {
+                    "first": "M.J.",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.T.",
+                    "middle": [],
+                    "last": "Eames",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. R. Soc. Interface",
+            "volume": "2",
+            "issn": "4",
+            "pages": "295-307",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "The implications of network structure for epidemic dynamics",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Keeling",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Theor. Pop. Biol.",
+            "volume": "67",
+            "issn": "1",
+            "pages": "1-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Epidemic dynamics at the human\u2013animal interface",
+            "authors": [
+                {
+                    "first": "J.O.",
+                    "middle": [],
+                    "last": "Lloyd-Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "George",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.M.",
+                    "middle": [],
+                    "last": "Pepin",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.E.",
+                    "middle": [],
+                    "last": "Pitzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.R.",
+                    "middle": [],
+                    "last": "Pulliam",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.P.",
+                    "middle": [],
+                    "last": "Dobson",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.J.",
+                    "middle": [],
+                    "last": "Hudson",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.T.",
+                    "middle": [],
+                    "last": "Grenfell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Science",
+            "volume": "326",
+            "issn": "5958",
+            "pages": "1362-1367",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "K.V.",
+                    "middle": [],
+                    "last": "Mardia",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.T.",
+                    "middle": [],
+                    "last": "Kent",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Bibby",
+                    "suffix": ""
+                }
+            ],
+            "year": 1980,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Epidemics and percolation in small-world networks",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.E.",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Phys. Rev. E",
+            "volume": "61",
+            "issn": "5",
+            "pages": "5678-5682",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Influence maximization in complex networks through optimal percolation",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Morone",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.A.",
+                    "middle": [],
+                    "last": "Makse",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Nature",
+            "volume": "524",
+            "issn": "7563",
+            "pages": "65-68",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Spread of epidemic disease on networks",
+            "authors": [
+                {
+                    "first": "M.E.",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Phys. Rev. E",
+            "volume": "66",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Page",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Brin",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Motwani",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Winograd",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Epidemic processes in complex networks",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Pastor-Satorras",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castellano",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Van Mieghem",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Rev. Mod. Phys.",
+            "volume": "87",
+            "issn": "3",
+            "pages": "925-979",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Social network analysis of wild chimpanzees provides insights for predicting infectious disease risk",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Rushmore",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Caillaud",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Matamba",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.M.",
+                    "middle": [],
+                    "last": "Stumpf",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.P.",
+                    "middle": [],
+                    "last": "Borgatti",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Altizer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J. Anim. Ecol.",
+            "volume": "82",
+            "issn": "5",
+            "pages": "976-986",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Mathematical models of vaccination",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Scherer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "McLean",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Br. Med. Bull.",
+            "volume": "62",
+            "issn": "1",
+            "pages": "187-199",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Mitigation of malicious attacks on networks",
+            "authors": [
+                {
+                    "first": "C.M.",
+                    "middle": [],
+                    "last": "Schneider",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.A.",
+                    "middle": [],
+                    "last": "Moreira",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.S.",
+                    "middle": [],
+                    "last": "Andrade",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Havlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.J.",
+                    "middle": [],
+                    "last": "Herrmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Proc. Natl. Acad. Sci. U.S.A.",
+            "volume": "108",
+            "issn": "10",
+            "pages": "3838-3841",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Percolation and epidemic thresholds in clustered networks",
+            "authors": [
+                {
+                    "first": "M.\u00c1.",
+                    "middle": [],
+                    "last": "Serrano",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Bogun\u00e1",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "97",
+            "issn": "8",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Exploring complex networks",
+            "authors": [
+                {
+                    "first": "S.H.",
+                    "middle": [],
+                    "last": "Strogatz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "410",
+            "issn": "6825",
+            "pages": "268-276",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Rapid decay in the relative efficiency of quarantine to halt epidemics in networks",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Strona",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castellano",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Phys. Rev. E",
+            "volume": "97",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Network analysis shows why Xylella fastidiosa will persist in Europe",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Strona",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.S.",
+                    "middle": [],
+                    "last": "Beck",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.J.",
+                    "middle": [],
+                    "last": "Carstens",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Sci. Rep.",
+            "volume": "7",
+            "issn": "71",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Efficient detection of contagious outbreaks in massive metropolitan encounter networks",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.W.",
+                    "middle": [],
+                    "last": "Axhausen",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.-H.",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Cebrian",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Sci. Rep.",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Epidemic spreading in real networks: An eigenvalue viewpoint",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Chakrabarti",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Faloutsos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Reliable Distributed Systems, 2003. Proceedings. 22nd International Symposium on, IEEE",
+            "volume": "",
+            "issn": "",
+            "pages": "25-34",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Mapping a social network of heterosexuals at high risk for HIV infection",
+            "authors": [
+                {
+                    "first": "D.E.",
+                    "middle": [],
+                    "last": "Woodhouse",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.B.",
+                    "middle": [],
+                    "last": "Rothenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.J.",
+                    "middle": [],
+                    "last": "Potterat",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.W.",
+                    "middle": [],
+                    "last": "Darrow",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.Q.",
+                    "middle": [],
+                    "last": "Muth",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.S.",
+                    "middle": [],
+                    "last": "Klovdahl",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.P.",
+                    "middle": [],
+                    "last": "Zimmerman",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.L.",
+                    "middle": [],
+                    "last": "Rogers",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.S.",
+                    "middle": [],
+                    "last": "Maldonado",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.B.",
+                    "middle": [],
+                    "last": "Muth",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "AIDS",
+            "volume": "8",
+            "issn": "9",
+            "pages": "1331-1336",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "An innovative influenza vaccination policy: targeting last season's patients",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Yamin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Gavious",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Solnik",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Davidovitch",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.D.",
+                    "middle": [],
+                    "last": "Balicer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.P.",
+                    "middle": [],
+                    "last": "Galvani",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.S.",
+                    "middle": [],
+                    "last": "Pliskin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS Comput. Biol.",
+            "volume": "10",
+            "issn": "5",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

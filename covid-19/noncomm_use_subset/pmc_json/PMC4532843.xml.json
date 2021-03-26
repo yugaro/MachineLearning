@@ -1,0 +1,664 @@
+{
+    "paper_id": "PMC4532843",
+    "metadata": {
+        "title": "Healthcare Utilization Monitoring System in Korea",
+        "authors": [
+            {
+                "first": "Hyun",
+                "middle": [
+                    "Chul"
+                ],
+                "last": "Shin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Young-Taek",
+                "middle": [],
+                "last": "Park",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Youn",
+                "middle": [
+                    "Tae"
+                ],
+                "last": "Lee",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Emmanuel",
+                "middle": [
+                    "C."
+                ],
+                "last": "Jo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "If governments or health insurance entities could monitor daily healthcare utilization or outbreaks of infectious diseases at the national level in real time, this would provide a great opportunity to manage healthcare and those diseases [1]. Healthcare policy makers and the managers of insurance companies could predict the best way of effectively managing serious diseases by monitoring healthcare utilization and diseases.",
+            "cite_spans": [
+                {
+                    "start": 239,
+                    "end": 240,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "I. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "For an example, the Republic of Korea (ROK) recently experienced an outbreak of Middle East Respiratory Syndrome (MERS) [2]. It was very difficult to identify the number of MERS-infected patients and the infection pathway of the disease at the national level. If the government has a system that could have monitored the occurrence of MERS, the government could have more effectively managed the situation and prevented secondary infections. Thus, it is important to construct systems to monitor healthcare utilization and the occurrence of diseases on a daily basis at the national level.",
+            "cite_spans": [
+                {
+                    "start": 121,
+                    "end": 122,
+                    "mention": "2",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "I. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The Health Insurance Review & Assessment Service (HIRA) has a similar system with limited functionalities. The HIRA is a governmental agency that provides professional health insurance claims review and quality assessment services, and it makes benefit guidelines for the national health insurance program in the ROK [3]. For these tasks, the HIRA collects national health insurance claims from all healthcare organizations, including hospitals, local clinics, and community pharmacies. In the reimbursement process in the ROK, a healthcare organization must send their bills for healthcare treatment to the HIRA to get reimbursement from the National Health Insurance Corporation (NHIC). Using this claims data, the HIRA developed a system involving functionalities of monitoring healthcare utilization.",
+            "cite_spans": [
+                {
+                    "start": 318,
+                    "end": 319,
+                    "mention": "3",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "I. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "There was a dramatic increase in surgical operations regarding urinary incontinence (UI) in 2007 in the ROK. Although HIRA collected all the health insurance claims in the ROK, the increase was not noticed by the HIRA until several months later. The HIRA realized that there was a dramatic increase in UI surgery through several field inspections of the medical providers [4]. The reason behind it was that there was discrepancy between payment from private health insurance companies and the new coverage expansion of the National Health Insurance (NHI) program as the NHI program was much less than the payment made by private health insurance companies. Many people who had private insurance policies that covered UI received medical care that included UI surgery. This episode enabled the HIRA to realize the necessity of a monitoring system for healthcare utilization of people for systematic maintenance of the NHI system in the ROK.",
+            "cite_spans": [
+                {
+                    "start": 373,
+                    "end": 374,
+                    "mention": "4",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "I. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The HIRA has run the Healthcare Utilization Monitoring System (HUMS) since 2008. The HUMS has a simple structure that quickly uploads users' requests regarding specific diseases. Many governmental agencies and insurance companies in other countries may have similar systems. However, those systems are mainly related to drugs, alcohol, and narcotics [5678]. Moreover, there have been few studies exploring healthcare utilization monitoring systems, how they work, and what specific functionalities they have.",
+            "cite_spans": [
+                {
+                    "start": 351,
+                    "end": 352,
+                    "mention": "5",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 352,
+                    "end": 353,
+                    "mention": "6",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 353,
+                    "end": 354,
+                    "mention": "7",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 354,
+                    "end": 355,
+                    "mention": "8",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "I. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The objective of this paper is to introduce HIRA's HUMS focusing on the system capacity, structure, and functionality, and output results. This study will provide an opportunity to share benchmarking ideas for the monitoring of healthcare utilization at the national level with funding by other international agencies or the direct provision of healthcare services.",
+            "cite_spans": [],
+            "section": "I. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Figure 1 presents the HUMS structure. The HUMS comprises a database management system (DBMS), extract-transfer-load (ETL), and online analytical processing (OLAP) severs. Each server has Oracle, the Pentaho Spoon ETL tool, MicroStrategy software, and SAS software for statistical analysis. The DBMS of the HUMS is operated on an HPUX operating system, and the other servers use Window NT and Window 7. One features of the HUMS is that it has an independently operated SAS server. The HUMS has servers for data mining to detect abnormal signs of healthcare utilization and to produce utilization predictions. Data produced through this process are stored at the DBMS server. The HUMS has been redesigned since 2013. Raw data loading and data loading for data mining take two days and at least five days, respectively.",
+            "cite_spans": [],
+            "section": "1) Hardware and software structure ::: 1. Introduction of a Healthcare Utilization Monitoring System in Korea ::: II. Methods",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The HUMS is a mini data warehouse (DW) system. Original data comes from the claim review support system [3] and the main DW system has all of the healthcare claims data reviewed and healthcare organization information. Those data are transferred to the HUMS DB server through the ETL server using ETL tools, such as extracting, transferring, and loading procedures. There are two types of data areas in the HUMS: specific detailed data and summary data. The detailed data area has application data, bills, the contents of care services, pharmacy prescription contents, and so on. The summary data area has a unified data analysis, showing increase trends such as unusual rapid increases in specific diseases or rates of utilization of a specific type of healthcare and so on. Users can extract data using a power PC and OLAP server (Figure 2).",
+            "cite_spans": [
+                {
+                    "start": 105,
+                    "end": 106,
+                    "mention": "3",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "2) Information flow and data structure ::: 1. Introduction of a Healthcare Utilization Monitoring System in Korea ::: II. Methods",
+            "ref_spans": [
+                {
+                    "start": 833,
+                    "end": 841,
+                    "mention": "Figure 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The HUMS has 14 terabyte data storage space. It includes storage space for ETL process, storage for producing data after data mining, and final data storage after ETL and data mining. The HUMS can now pile up the volume of data for a four-year of health insurance claims reviewed and assessed and it will be upgraded to the volume of data for a five-year period. For this, the storage size of the HUMS will increase to 30 terabyte data storage space",
+            "cite_spans": [],
+            "section": "3) Data storage structure ::: 1. Introduction of a Healthcare Utilization Monitoring System in Korea ::: II. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Figure 3 shows the main search screen of the HUMS. The system does not provide English version. Language format in the Figure 3 was graphically modified from Korean to English for the convenience of the readers. The HUMS monitors healthcare utilization and the volume of healthcare costs by diseases (ICD-10), types of services (e.g., diagnosis, lab test, long-term care, etc.), types of drugs, medical supply materials in order to detect abnormal signs of healthcare utilization. These data are produced through data mining process. The five types of the data mining models are applied in order to detect whether there is any abnormal signs of health care utilization. In addition, the HUMS uses a filtering process in order to produce two indices which are the percentage increase oscillator (PIO) and the relative strength index (RSI) values showing items that are out of specific data ranges. Items showing abnormal signs of health care utilization can be produced by the type of health care services such as the medical care, the dental care, the oriental medicine, and the pharmacies. Figure 3 is an example for health care costs with more than KRW 100,000,000 (approximately US$100,000) and filters them with PIO (\u226520) and RSI (\u226570) in order to detect abnormal sign of healthcare utilization.",
+            "cite_spans": [],
+            "section": "4) Main search screen ::: 1. Introduction of a Healthcare Utilization Monitoring System in Korea ::: II. Methods",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 3",
+                    "ref_id": null
+                },
+                {
+                    "start": 119,
+                    "end": 127,
+                    "mention": "Figure 3",
+                    "ref_id": null
+                },
+                {
+                    "start": 1091,
+                    "end": 1099,
+                    "mention": "Figure 3",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "This study analyzed the health insurance claim data submitted to HIRA between August 1, 2014 and May 31, 2015. Data was for monitoring abnormal signs of the healthcare utilization, which was processed through data mining, for the statistical analysis. This study pulled out monthly healthcare costs, recent trends of hospital days, and prediction for the next one-year period based on these data. These data are shown by the three-digit (ICD-10) disease diagnosis codes, services types (inpatient/outpatient), type of healthcare facilities such as tertiary hospitals, clinics, local area, age groups, and medical specialties. In addition, the monthly data are presented by diseases, type of services, pharmacies, medical supply materials in order to detect abnormal signs of the healthcare utilization.",
+            "cite_spans": [],
+            "section": "2. Data Collection Methods ::: II. Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Figure 4 shows the main screen of the HUMS when users log into the system. The screen is composed of four sections. The first section is the current status on health insurance claims shown as daily and monthly amount of healthcare costs and the number of claims. This section provides useful information for the directors and the managers of the HIRA to make decisions on the health insurance claims reviews and the overall health insurance budgets. The second section shows information on the total amount of healthcare costs and the proportion of healthcare costs assumed by the insurer (NHIC). This section helps decision-makers to figure out whether there are enough funds available compared to the total budget.",
+            "cite_spans": [],
+            "section": "1. Main Screen of HUMS ::: III. Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 4",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The third section shows the cumulative amount of healthcare costs and its proportion by healthcare facility and services (inpatient/outpatient) types. The last section presents the healthcare costs associated with several important governmental initiatives. This is shown monthly for one year. These sections provide important information to healthcare policy makers in making decisions regarding which governmental healthcare project developments or system operations require attention.",
+            "cite_spans": [],
+            "section": "1. Main Screen of HUMS ::: III. Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The HUMS shows healthcare utilization trends as the amount of healthcare costs and visit days by insurers (the national health insurance, medical aids, veterans) and healthcare services type (inpatient/outpatient). In addition, there are two indices. The first one is the increase rate calculated from the previous month, and the second one is compared against the same month in the previous year. For example, Figure 5 shows the results of the amount of healthcare costs for patients with diabetes (ICD-10) having codes E10-E14 with the users' follow-up costs for a period of 10 months. The HUMS provides the trend of healthcare costs of five diseases (Figure 5). The system provides various other items, such as the number of visit days, number of claims, and the amounts of drugs dispensed in the community. By analyzing the recent healthcare cost trends by diseases, users can collect important information on any aspects to help them set up appropriate healthcare policies by detecting whether there are any concerns.",
+            "cite_spans": [],
+            "section": "2. Screen for Healthcare Costs Trend by a Three-Digit Disease Code ::: III. Results",
+            "ref_spans": [
+                {
+                    "start": 411,
+                    "end": 419,
+                    "mention": "Figure 5",
+                    "ref_id": null
+                },
+                {
+                    "start": 654,
+                    "end": 662,
+                    "mention": "Figure 5",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The HUMS also investigates factors that contribute to increases in monthly healthcare costs. The extent of increases or decreases in healthcare costs is presented by service type (inpatient/outpatient/pharmacy), type of healthcare facility such as hospitals and clinics, and age group. Through this process, the HUMS helps the HIRA to explain the cause of a healthcare cost increase or decrease. The HUMS is able to find those areas that lead to healthcare cost changes using six categories. Figure 6 shows more detailed output to show the factors that contribute to increases in total healthcare costs.",
+            "cite_spans": [],
+            "section": "3. Screen for Causes of Monthly Healthcare Cost Changes ::: III. Results",
+            "ref_spans": [
+                {
+                    "start": 492,
+                    "end": 500,
+                    "mention": "Figure 6",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Figure 7 shows the output results ordered by users requesting abnormal healthcare utilization data. The HUMS shows the results by disease, type of services (e.g., diagnosis, lab test, long-term care, etc.), pharmacies, and medical supplies and materials in order to detect abnormalities. Among those cases, the HUMS shows the results after processing the five data mining models.",
+            "cite_spans": [],
+            "section": "4. Computer Screen for Detecting Abnormal Sign of Healthcare Utilization ::: III. Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 7",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "For an example, cases having the disease code (ICD-10) T80 showed sign of abnormal healthcare utilization when this study requested the cases by disease submitted in May. If users click this disease code, the screen shows monthly data and trends so that users can easily understand the trends of healthcare utilization of this disease. Users of the HUMS can verify whether there has been any increase in healthcare costs per claim with this disease code in May through further analysis of the main DW system.",
+            "cite_spans": [],
+            "section": "4. Computer Screen for Detecting Abnormal Sign of Healthcare Utilization ::: III. Results",
+            "ref_spans": []
+        },
+        {
+            "text": "One of limitations of the system is that there is time lag between actualization of data into the system and actual occurrence of healthcare services. The reason is that medical providers usually file health insurance claims into the HIRA's system one or two months after the actual provision of healthcare. Therefore, the HUMS is not a real-time system, even though it appears to be real-time. Another limitation is that the databases of the HUMS are composed of many tables to enable fast data loading, which is called structured data. If users want to see more detailed results or other information, they have to run a separate analysis from the main DW system. Lastly, as mentioned in the previous section, the HUMS is composed of various server systems, which inevitably makes the system more complex and difficult to maintain. These three factors are the main limitations of the HUMS.",
+            "cite_spans": [],
+            "section": "5. Limitations of the System ::: III. Results",
+            "ref_spans": []
+        },
+        {
+            "text": "This paper introduced the HUMS of the HIRA, which was developed for monitoring abnormal healthcare utilization of the national health insurance system by the general population based on health insurance claims data. This paper presented the system's hardware capacity, diverse structure, functionalities, and output format. Additionally, this paper looked at several fundamental limitations of the HUMS.",
+            "cite_spans": [],
+            "section": "IV. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "This study found that the HUMS has a 14 terabyte hardware storage capacity with various statistical tools, such as SAS, MSTR, OLAP. The monitoring of abnormal healthcare utilization is based on health insurance claim data. The system is well spread out over the past history of healthcare utilizations and provides future predictions based on past history and data mining approaches. However, users should input the contents of categories that they want to investigate through the system. Although the system was designed to monitor the abnormal utilization of healthcare, the actualization of the data set was based on the past history of healthcare, and there is a time lag of 2 to 3 months because hospitals and clinics tend to file health insurance claims a little late.",
+            "cite_spans": [],
+            "section": "IV. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "One limitation of this investigation was that we only observed the system, and we simply introduced the functionality of the HUMS. There was no testing of the system capacity of operation, measurement of the uploading results requested by users, or a time-motion study. Secondly, this research did not consider similar systems that are used in other countries. However, it is expected that there will be many social connections among various systems for the healthcare utilization monitoring of healthcare organizations in the near future.",
+            "cite_spans": [],
+            "section": "IV. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Based on this study, several suggestions can be made to improve the monitoring system. First, it is necessary for the HIRA to develop a healthcare utilization monitoring system for the national level. This system should have real-time functionality. The current system is based on the review of health insurance claims data, so there is some lag-time between the actual provision of healthcare and the results being available for monitoring by the HUMS. Therefore, a new system should be structured like the HIRA's drug utilization review (DUR) system, which provides possibilities of contraindication of drugs for drug-drug interaction, drug-age interaction, etc. Whenever medical doctors and pharmacists want to check whether there is any possibility of contraindication when they prescribe or dispense drugs to patients, they can obtain confirmation through the HIRA's DUR system by connecting the system. This can be used in a real-time manner. When medical doctors complete their treatment for patients, some important information, such as the patients' identification and disease codes should be able to be transferred to HIRA's new data system specializing in healthcare utilization monitoring. Through such a system, the HIRA would be able to monitor healthcare utilization at the national level. This kind of system could certainly help the government make timely decisions to stop contagion outbreaks, such as the recent spread of MERS, and prevent secondary infections.",
+            "cite_spans": [],
+            "section": "IV. Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In conclusion, the HUMS has a user-friendly interface to quickly analyze large-scale health utilization for monitoring and supporting decision-making processes. This is a good example of linking health information with information technology [9]. If we use human resources to manually identify the abnormal utilization of healthcare services at the national level, it could be impossible to deliver due to the manual process involving billions of claims containing various patients' information. To improve the managerial efficiency of analysis, we have to use information technologies in the health sector as well [1011]. This study has empirically shown how the HIRA uses information technology, namely, the HUMS, to monitor and identify healthcare utilization showing abnormal healthcare. This introduction of the HUMS will provide some opportunities to share benchmarking ideas regarding the use of information technologies with other international communities in the health informatics field.",
+            "cite_spans": [
+                {
+                    "start": 243,
+                    "end": 244,
+                    "mention": "9",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 616,
+                    "end": 618,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 618,
+                    "end": 620,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "IV. Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {},
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Internet-based surveillance systems for monitoring emerging infectious diseases",
+            "authors": [
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Milinovich",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Clements",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Lancet Infect Dis",
+            "volume": "14",
+            "issn": "2",
+            "pages": "160-168",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "HIRA's health insurance claim data and use of information and communication technology",
+            "authors": [
+                {
+                    "first": "YT",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "HIRA Policy Trends",
+            "volume": "7",
+            "issn": "6",
+            "pages": "42-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "The benefits of health information technology: a review of the recent literature shows predominantly positive results",
+            "authors": [
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Buntin",
+                    "suffix": ""
+                },
+                {
+                    "first": "MF",
+                    "middle": [],
+                    "last": "Burke",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Hoaglin",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Blumenthal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Health Aff (Millwood)",
+            "volume": "30",
+            "issn": "3",
+            "pages": "464-471",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gale",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Jun",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Korea's MERS outbreak highlights SARS lessons [Internet]",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Health insurance claim review using information technologies",
+            "authors": [
+                {
+                    "first": "YT",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Yoon",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Speedie",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Yoon",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Healthc Inform Res",
+            "volume": "18",
+            "issn": "3",
+            "pages": "215-224",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "HC",
+                    "middle": [],
+                    "last": "Shin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Healthcare utilization monitoring system: user guidance manual",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Monitoring utilization of a large scale addiction treatment system: the Drug and Alcohol Treatment Information System (DATIS)",
+            "authors": [
+                {
+                    "first": "NK",
+                    "middle": [],
+                    "last": "Rotondi",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Rush",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Subst Abuse",
+            "volume": "6",
+            "issn": "",
+            "pages": "73-84",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Combining electronic healthcare databases in Europe to allow for large-scale drug safety monitoring: the EU-ADR Project",
+            "authors": [
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Coloma",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Schuemie",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Trifiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gini",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Herings",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hippisley-Cox",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Pharmacoepidemiol Drug Saf",
+            "volume": "20",
+            "issn": "1",
+            "pages": "1-11",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "",
+            "authors": [],
+            "year": 2012,
+            "venue": "Narcotics Monitoring System (NMS): pharmacy reference manual",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Eadie",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Kreiner",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Strickler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Prescription drug monitoring programs: an assessment of the evidence for best practice [Internet]",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Use of information technology to improve the quality of health care in the United States",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Ortiz",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Clancy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Health Serv Res",
+            "volume": "38",
+            "issn": "2",
+            "pages": "xi-xxii",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

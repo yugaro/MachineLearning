@@ -1,0 +1,2389 @@
+{
+    "paper_id": "PMC2686459",
+    "metadata": {
+        "title": "VirHostNet: a knowledge base for the management and the analysis of proteome-wide virus\u2013host interaction networks",
+        "authors": [
+            {
+                "first": "Vincent",
+                "middle": [],
+                "last": "Navratil",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Beno\u00eet",
+                "middle": [],
+                "last": "de Chassey",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Laur\u00e8ne",
+                "middle": [],
+                "last": "Meyniel",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "St\u00e9phane",
+                "middle": [],
+                "last": "Delmotte",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Christian",
+                "middle": [],
+                "last": "Gautier",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Patrice",
+                "middle": [],
+                "last": "Andr\u00e9",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Vincent",
+                "middle": [],
+                "last": "Lotteau",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Chantal",
+                "middle": [],
+                "last": "Rabourdin-Combe",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Eukaryotic cells express a large panel of proteins that co-ordinately participate to the cellular machinery through a highly connected and regulated network of protein\u2013protein interactions (1). Physical architecture of model organisms and human cellular protein networks exhibits a strong robustness against random failures, and strikingly a high sensitivity to targeted attacks on highly connected and central proteins, also called \u2018hubs\u2019 (2,3). Cellular protein network is not static and its robustness may change dynamically according to various factors like tissue and cell-line origins, signals received by cellular environment or more specifically during viral infections (4). Replication and pathogenesis of viruses depend on a complex interplay between viral and host cellular proteins both acting through a complex network of protein\u2013protein interactions. In order to evade the cell innate immune response and/or to favour their own replication and transmission, viruses have developed strategies to hijack central functions of the cell (5\u20137). Viruses also use intra-viral, i.e. virus\u2013virus, protein\u2013protein interactions for virion assembly or viral egress from the cell. Accumulation of functional perturbations associated with such virus\u2013virus and virus\u2013host protein\u2013protein interactions may lead to severe and complex diseases, like the development of cancers (8,9). From a systems biology perspective, a deeper understanding of infectious diseases may rely on an exhaustive characterization of all potential interactions occurring between proteins encoded by viruses and those expressed in infected cells (10). Thus, integration of all protein\u2013protein interactions into an infected cellular network, or \u2018infectome\u2019, is a great challenge that may provide a powerful framework for virtual modelling and analysis of viral infection.",
+            "cite_spans": [
+                {
+                    "start": 190,
+                    "end": 191,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 441,
+                    "end": 442,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 443,
+                    "end": 444,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 679,
+                    "end": 680,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1047,
+                    "end": 1050,
+                    "mention": "5\u20137",
+                    "ref_id": null
+                },
+                {
+                    "start": 1373,
+                    "end": 1374,
+                    "mention": "8",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1375,
+                    "end": 1376,
+                    "mention": "9",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1619,
+                    "end": 1621,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The first draft of the human cellular network, also referred to the human interactome, has been explored at the proteome-wide level by the mean of high-throughput experiments such as yeast-two hybrid screens (11,12) or tap-tag procedure (13). The overall quality and completeness of this human cellular network has been significantly improved thanks to systematic approaches based on text-mining and literature-curated interactions extracted from low-throughput experiments. Many generalized and specialized databases are involved in the integration of these protein\u2013protein interactions, such as BIND (14), MINT (15), INTACT (16), HPRD (17), DIP (18), BIOGRID (19), REACTOME (20), GENERIF (21) and NETWORKIN (22). However, the low redundancy of interactions found between these databases has raised the need to unify such data resources for human and model organisms (23). Concerning virus\u2013virus and virus\u2013host protein\u2013protein interactions, few high-throughput experiments have been achieved, except some yeast-two hybrid screens completed for Herpes viruses (EBV, KSH, VZV, HSV-1) (24\u201326) and SARS (27). Although some generalist databases like BIND, MINT, INTACT and HIV-GENERIF provide access to virus\u2013virus and virus\u2013host protein\u2013protein interactions, no systematic approach has been reported to exhaustively mine and curate all interactions that have accumulated in scientific publications.",
+            "cite_spans": [
+                {
+                    "start": 209,
+                    "end": 211,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 212,
+                    "end": 214,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 238,
+                    "end": 240,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 603,
+                    "end": 605,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 614,
+                    "end": 616,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 627,
+                    "end": 629,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 638,
+                    "end": 640,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 648,
+                    "end": 650,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 662,
+                    "end": 664,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 677,
+                    "end": 679,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 691,
+                    "end": 693,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 710,
+                    "end": 712,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 869,
+                    "end": 871,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1084,
+                    "end": 1089,
+                    "mention": "24\u201326",
+                    "ref_id": null
+                },
+                {
+                    "start": 1101,
+                    "end": 1103,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In this context, we have developed VirHostNet (Virus\u2013Host Network), a public knowledge-based system specialized in the management, analysis and integration of virus\u2013virus, virus\u2013host and host\u2013host interactions as well as their functional annotations in the cell. Based on an extensive scientific literature expertise, VirHostNet provides a high-confidence resource of manually curated interactions defined for a wide range of viral species. The content of this high-confidence dataset has been illustrated by the analysis of cellular functions and pathways enriched in proteins targeted by one or many viruses. An integrated cellular network has also been reconstructed from public data and combined with viral data to provide the first draft of the infected cellular network. In addition, an original Web interface has been developed, which provides multi-criteria query and visualization tools for infection network navigation. The utility of the visualisator has been exemplified by network representation of the mTOR pathway and its interplay with viruses.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The low level of redundancy observed among available databases involved in molecular interactions management has emphasized the need to integrate these heterogeneous data sources (23). Virus\u2013virus, virus\u2013host and host\u2013host protein\u2013protein interactions and meta-data related to experimental procedures or publications were extracted from 10 databases (BIND, MINT, INTACT, HPRD, DIP, BIOGRID, REACTOME, GENERIF, HIV-GENERIF, NETWORKIN) (Figure 1). Due to the heterogeneity of protein sequence identification found across these databases (i.e. gene identification number, gene name, protein accession number, protein name), NCBI and ENSEMBL protein sequence databases were chosen to unify virus and host proteins respectively (see Supplementary Table 1A). Towards this end, the IPI database system (31) was chosen to cross-reference all the human protein sequences to ENSEMBL protein accession numbers. In addition, viral protein sequences defined at EMBL and UNIPROT were mapped on NCBI protein sequences by using BLAST Alignment software (32). Protein cross-referencing led to the definition of non-redundant protein\u2013protein interactions that were in many cases defined in different databases, publications or supported by distinct experimental procedures (see Supplementary Table 1B). Thus, all information associated with non-redundant interactions, like database origin, experimental procedure description in PSI-MI 2.5 standard format (33) or PUBMED identification (PMID) number, were retrieved in VirHostNet to provide the most documented interactions. This compilation of interaction meta-data will facilitate data quality filtering based on the number of databases, methods or PMIDs used (34,35).",
+            "cite_spans": [
+                {
+                    "start": 180,
+                    "end": 182,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 796,
+                    "end": 798,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1038,
+                    "end": 1040,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 1439,
+                    "end": 1441,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1695,
+                    "end": 1697,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1698,
+                    "end": 1700,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Public Database integration ::: INFECTION NETWORK INTEGRATION",
+            "ref_spans": [
+                {
+                    "start": 435,
+                    "end": 443,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "An automatic text-mining pipeline was developed and plugged into the VirHostNet system in order to prioritize scientific papers for protein\u2013protein interaction curation. As a first step, all abstracts containing keywords related to both viruses and experimental procedures used for interactions identification (mainly yeast-two hybrid, co-imunoprecipitation, pull-down and tandem affinity purification) were extracted for an in-depth expertise. During curation, protein\u2013protein interactions were carefully annotated according to: (i) the protein accession numbers of each of the protein interactor, the human and/or viral proteins being respectively referenced to ENSEMBL and NCBI accession numbers; (ii) the molecular interaction methods based on the PSI-MI 2.5 ontology vocabulary; and (iii) the PMIDs. Based on 1174 selected PMIDs, literature curation led to the annotation of 2186 redundant interactions in 723 papers (Supplementary Table 2). This effort significantly complemented data from public databases with 1297 new non-redundant protein\u2013protein interactions. In order to provide a higher level of data accuracy, virus\u2013virus and virus\u2013host protein\u2013protein interactions from public databases were also carefully inspected. From 2294 PMIDs for which at least one protein\u2013protein interaction was defined, database curation led to the validation of 2261 redundant interactions found in 789 papers, corresponding to 1374 confirmed non-redundant protein\u2013protein interactions (Supplementary Table 2). Strikingly, our experts confirmed 20% of BIND and GENERIF (HIV) against 90\u201395% for MINT and INTACT data. One reason is that all protein\u2013protein interactions defined by functional associations and/or genetic interactions between proteins were discarded from BIND and HIV-GENERIF.",
+            "cite_spans": [],
+            "section": "Literature- and Database-curated interactions ::: INFECTION NETWORK INTEGRATION",
+            "ref_spans": []
+        },
+        {
+            "text": "To our knowledge, VirHostNet provides the largest and the most confident infected cellular network. This network is composed of 2671 virus\u2013virus and virus\u2013host non-redundant protein\u2013protein interactions concerning 180 distinct viral species. The curated protein\u2013protein interactions were mainly defined by low-throughput and high-throughput yeast two-hybrid screens (40%), co\u2013immunoprecipitation (24%) and pull-down (21%) (Figure 2A). Even if only 65% of interactions rely on a single experimental procedure, a total of 944 protein\u2013protein interactions (35%) were defined by at least two independent methods, in good agreement with other high-confidence databases (36) (Figure 2B). All these interactions were defined in 36 distinct viral families, underlying the broad taxonomical diversity provided by VirHostNet (Figure 3A). In addition, the distribution of interactions observed among viral Baltimore groups should allow large-scale comparative study of virus\u2013virus (Figure 3B) and virus\u2013host networks (Figure 3C).\n",
+            "cite_spans": [
+                {
+                    "start": 665,
+                    "end": 667,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Infection network content ::: INFECTION NETWORK INTEGRATION",
+            "ref_spans": [
+                {
+                    "start": 423,
+                    "end": 431,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 670,
+                    "end": 678,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 816,
+                    "end": 824,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 971,
+                    "end": 979,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1007,
+                    "end": 1015,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "In the infection network, the virus\u2013host interactions occurred between 407 viral proteins and 1012 human proteins, suggesting the strong tendency of viruses to interact with a large number of cellular proteins. In order to characterize cellular functions targeted by the viral machinery, we performed functional enrichment analysis of host proteins interacting with viruses, by using Gene Ontology and KEGG databases and the same methodology described by Zheng and Wang (37) (Supplementary Tables 3 and 4, respectively). The results showed that viruses interact significantly with a large panel of cellular functions (e.g. cell cycle, apoptosis, cell communication, protein transport) and with canonical signalling pathways (e.g. Jak-Stat, Toll-like Receptor, MAPK, TGF-\u03b2, mTOR). The majority of these functions and pathways have already been described to participate in either viral infectious cycle, cellular anti-viral mechanisms or viral associated diseases (38). Interestingly, analysis of KEGG pathways revealed cellular mechanisms poorly documented in the case of viral infections. One example is focal adhesion, a pathway involved in cell contact with the extracellular matrix and in many other cellular processes including invasion, motility, proliferation and apoptosis (39). Indeed, on 202 protein members of the focal adhesion pathway, more than 25% (59) were found significantly targeted (exact Fisher test, Benjamini-Hochberg multiple correction test P-value < 0.05) by at least one viral protein in 36 distinct viral taxons. This may suggest the central role of focal adhesion during viral infections and its potential impact on viral induced cancer development that might be associated for instance to the loss of cellular adhesion. Although cellular functions of proteins are far from being completely known and/or annotated in public databases, based on the \u2018guilty by association\u2019 concept the human protein\u2013protein network may serve as a template to complete our understanding on cellular functions perturbed during viral infection. In order to include virus\u2013virus and virus\u2013host interactions in their cellular context, a human\u2013human protein interaction network containing roughly 70 000 non-redundant protein\u2013protein interactions and 10 000 proteins was built from public databases (details on interaction methods distribution are given in Supplementary Figure 1). Thus, based on roughly 40 000 unique proteins annotated in ENSEMBL, 25% (10 000/40 000) are connected within the human protein network. Analysis of the infection network revealed that surprisingly 88% (881/1012) of targeted human proteins interact with at least one cellular protein. Thus, targeted proteins tend to physically interact in the cell and may probably participate in cross-linked functions and pathways. Based on protein neighbourhood or sub-networks, the human protein\u2013protein interaction network may help to elucidate new protein regulators or modular functions associated to viral or cellular anti-viral strategies.",
+            "cite_spans": [
+                {
+                    "start": 471,
+                    "end": 473,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 963,
+                    "end": 965,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1281,
+                    "end": 1283,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "INFECTION NETWORK ANALYSIS",
+            "ref_spans": []
+        },
+        {
+            "text": "Once logged-in, VirHostNet users can directly query the knowledge base by using a wide range of information concerning viral (e.g. NCBI protein name or accession number) or human proteins (e.g. ENSEMBL gene or protein accession number, NCBI gene name, REFSEQ protein accession number and UNIPROT primary and secondary accession numbers) (Figure 4A). AJAX technology was incorporated to control protein name and accession number availability in VirHostNet. Another important feature of the interface is batch query. It allows in-depth analysis of interaction profiles with cellular and/or viral proteins from a list of proteins defined for instance in high-throughput studies (microarray, yeast-two hybrid). A list of genes or proteins of interest can also be assessed by the mean of contextual information, such as taxonomical information, Gene Ontology terms, KEGG pathways and INTERPRO protein domains. These properties offer a unique access to protein\u2013protein interaction networks: (i) associated to a specific virus taxon or (ii) underlying canonical sub-cellular localization, cellular functions and pathways.\n\n",
+            "cite_spans": [],
+            "section": "VirHostNet query interface ::: VIRHOSTNET WEB INTERFACE",
+            "ref_spans": [
+                {
+                    "start": 338,
+                    "end": 346,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "To access protein\u2013protein interactions from a list of proteins (Figure 4B), users have: (i) to select all or a subset of proteins of interest; (ii) to define the kind of interactions to retrieve (virus\u2013virus, virus\u2013host and host\u2013host) and their database origin and (iii) to select the mode of navigation to perform, either protein neighbours or protein subgraph (Figure 4C). Neighbours are viral or cellular proteins interacting directly with a protein of interest. A subgraph (or subnetwork) is a graph made of all interactions between a set of proteins. The resulting host\u2013host, virus\u2013host and/or virus\u2013virus protein\u2013protein interactions are then given into a tabulated format in three independent tabbed panels (Figure 4D). For each protein\u2013protein interaction, users have a privileged access to interaction meta-data (Figure 4E) and a colour code highlights interactions that have been checked by VirHostNet experts.",
+            "cite_spans": [],
+            "section": "VirHostNet query interface ::: VIRHOSTNET WEB INTERFACE",
+            "ref_spans": [
+                {
+                    "start": 64,
+                    "end": 72,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 363,
+                    "end": 371,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 715,
+                    "end": 723,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 822,
+                    "end": 830,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Beside table representation of protein\u2013protein interactions, a more dynamic and interactive network visualization tool was specifically developed for graph representation of infection networks. This new network visualisator was fully implemented in Jung 2.0 (http://jung.sourceforge.net) as a Java Web applet. It efficiently takes into account viruses and host nodes dichotomy for both graph rendering (colour of nodes) and navigation (host and viral neighbours). The visualisator provides also sliders to dynamically filter graphs based on the number of PMIDs and experimental procedures used to identify interactions. Additional features are also provided to draw protein node size according to the number of viral or host interacting partners (i.e. their degree into the virus\u2013virus, virus\u2013host, host\u2013host networks) or to highlight targeted proteins. As a case study, we built a protein sub-network view of the mTOR KEGG signalling pathway that has been found significatively enriched in targeted proteins (Supplementary Table 4). Indeed, the modulation of PI3K-Akt-mTOR signal transduction pathway by viruses has been shown to play a crucial role in inhibition of apoptosis, cell survival, cell transformation, viral replication and viral assembly (40,41). To identify and compare how viruses interplay with this network, virus\u2013host protein interactions annotated by VirHostNet were added. This mTOR-infection network is composed of 42 cellular interacting proteins (blue nodes), 10 viral proteins (coloured nodes according to viral taxonomy), 84 host\u2013host (blue edges) and 14 virus\u2013host (red edges) physical protein\u2013protein interactions (Figure 5). Protein network visualization showed that cellular proteins of this pathway are highly inter-connected in contrast to the classical representation given by the KEGG pathway, underlying the extreme complexity and regulation of this pathway. Moreover, graph visualization allows identifying viral proteins targeting multiple cellular proteins (e.g. NS5A protein interacting with AKT1, PDPK1 and PIK3CB) and reciprocally cellular proteins interacting with multiple viral proteins (e.g. HIF1A interacting with LANA of Human Herpes Virus 8 type P and X protein of Hepatitis B Virus). Hence, the VirHostNet interface allows users to visualize protein interaction networks associated to any kind of GO term, KEGG pathway, list of proteins or keywords and to analyse how they interplay with viruses.",
+            "cite_spans": [
+                {
+                    "start": 1253,
+                    "end": 1255,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 1256,
+                    "end": 1258,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "VirHostNet network visualisator ::: VIRHOSTNET WEB INTERFACE",
+            "ref_spans": [
+                {
+                    "start": 1643,
+                    "end": 1651,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "VirHostNet provides now a public access to the largest known resource of integrated virus\u2013virus, virus\u2013host and host\u2013host protein interaction networks. Literature- and database-curated interactions have led to the definition of an original and high-confidence protein\u2013protein interactions dataset. We have briefly illustrated the need of this high-confidence dataset for the characterization of cellular functions targeted by viruses. This resource may also be crucial for network-based analysis of molecular mechanisms involved during viral infections, such as cellular network properties disturbed after the connection of viral proteins. VirHostNet will also provide a backbone for automatic screening of specific protein domains or peptides motifs associated to virus\u2013host interactions and hence may help to delineate at the proteome-wide scale footprints in both viral and host proteins sequences. VirHostNet will allow systematic prediction of virus\u2013host protein\u2013protein interologs based on sequence homology criteria between closely related viral proteins. The knowledge-based system is also intended to integrate virus\u2013host protein\u2013protein interactions data derived by our team from high-throughput yeast-two hybrids experiments (Orthomyxovirus, Paramyxovirus, Flavivirus \u2026). Thus, the availability of virus\u2013virus and virus\u2013host networks for a broad range of viruses will encourage comparative analysis and will be very helpful for the identification of molecular interactions associated to viral pathogenesis or virulence. As virus\u2013host and virus\u2013virus protein\u2013protein interactions curation is one of the central features of the VirHostNet knowledge base, one of our missions is to keep these data up to date continuously from data published in scientific journals. The update of public databases will occur at least once or twice a year in order to keep the data as current as possible. In the next future, integration of other host species, such as mammals or insects, is envisaged. This will facilitate comparison of interaction profiles among different hosts and thus may help to elucidate the molecular basis underlying the ability of some viruses to overcome the inter-species barrier. Efforts will be made to facilitate data exchange with other generalist databases (MINT, INTACT) and to add Web2.0 capabilities to the Web interface (save, comparison and analysis of user customized networks). Altogether, VirHostNet provides an entry gate for proteome wide analysis of the virus\u2013host system and will greatly help scientists willing to take advantage of functional genomic and systems biology to decipher viral infection, evolution and pathogenesis mechanisms and/or to rationalize anti-viral drug design.",
+            "cite_spans": [],
+            "section": "CONCLUSION AND PERSPECTIVES",
+            "ref_spans": []
+        },
+        {
+            "text": "Public access to the VirHostNet knowledge base is available at http://pbildb1.univ-lyon1.fr/virhostnet. Access can be made either anonymously (by default) or by creating a personal account (register in the account menu). On simple request, this personal account allows users to participate to the literature-curation effort. Literature-curated and Database-curated protein\u2013protein interactions flat files are available in a tabulated format on request. Contact V.N. (navratil@univ-lyon-1.fr) for more information.",
+            "cite_spans": [],
+            "section": "DATABASE ACCESS AND FEEDBACK",
+            "ref_spans": []
+        },
+        {
+            "text": "Supplementary Data are available at NAR Online.",
+            "cite_spans": [],
+            "section": "SUPPLEMENTARY DATA",
+            "ref_spans": []
+        },
+        {
+            "text": "This work was funded by INRA, Universit\u00e9 Lyon 1, INSERM, Rh\u00f4ne Alpes region and the French Ministry of Industry. V.N. is supported by a grant from INRA.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        },
+        {
+            "text": "Conflict of interest statement. None declared.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1.: Flow chart of the VirHostNet knowledge-based system integration process. Virus\u2013virus, virus\u2013host and host\u2013host protein\u2013protein interactions were integrated from 10 external public databases. BLAST and IPI cross-reference databases were used to link protein interactor identification numbers to NCBI (viruses) and ENSEMBL protein accession numbers (e!) (host) databases respectively. Virus\u2013Virus and Virus\u2013Host protein\u2013protein interactions were also extracted from literature (Literature Curated Interactions) and curated from databases (Database Curated Interactions). Functional annotations of cellular proteins were extracted from Gene Ontology, KEGG and INTERPRO databases.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: Virus\u2013virus and virus\u2013host protein\u2013protein interaction methods summary. (A) Distribution of protein\u2013protein interactions according to experimental procedures (yeast-two hybrid, co-immunoprecipitation, pull-down and others). (B) Distribution of protein\u2013protein interactions identified by one, two or more distinct methods.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: VirHostNet protein\u2013protein interaction content. (A) In each Baltimore group (dsDNA, ssDNA, dsRNA, ssRNA\u2212, ssRNA+, retro transcribed), for each viral family, the number of virus\u2013host protein\u2013protein interactions (ppi) and the associated number of viral (v) and host cellular protein (h) interactors, the number of virus\u2013virus protein\u2013protein interactions (ppi) and the associated number of viral (v) interactors are given. (B) Distribution of virus\u2013virus interactions according to viral Baltimore groups. (C) Distribution of virus\u2013host interactions according to viral Baltimore groups.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: The VirHostNet Query interface. (A) Menu of the VirHostNet interface. Users are allowed to search for protein\u2013protein interactions according to gene, protein, biological function (GO), pathway (KEGG), protein domain (INTERPRO) or PMID information. For example, in the \u2018Pathway\u2019 query interface of the \u2018Query\u2019 menu, users can enter \u2018mTOR\u2019, then select the right pathway defined in KEGG database and ask for proteins annotated in this pathway (see result in Figure 4B). (B) List of the 49 proteins belonging to the mTOR pathway. The \u2018?\u2019 link at the end of each protein line allows users to access functional annotations of the protein in external databases. (C) Protein\u2013protein interactions research panel. Users can select one or more proteins from the list of proteins (by default, all proteins are selected). Then, from the preferences panel, they have to choose the kind of interaction to retrieve (virus\u2013virus, virus\u2013host or host\u2013host) or the database origin. Finally, they have to choose an operation (\u2018neighbours\u2019 or \u2018sub-graph\u2019). The \u2018neighbours\u2019 button allows users to retrieve all direct protein\u2013protein interactions from a single protein or a list of selected proteins. The \u2018sub-graph\u2019 button allows users to retrieve only protein\u2013protein interactions occurring between selected proteins (see result in Figure 4D). (D) List of the 89 protein\u2013protein interactions occurring between proteins of the mTOR pathway. For the interacting proteins, NCBI taxonomy name, ENSEMBL gene acc (host)\u2014NCBI protein acc (viruses) and official gene name (host)\u2014product name (viruses) are given. The \u2018?\u2019 link at the end of each interaction line allows users to access interaction annotations (Figure 4E). In the protein\u2013protein interactions research panel, in addition to \u2018neighbours\u2019 and \u2018sub-graph\u2019 buttons, the \u2018visualize\u2019 button allows from a list of interactions the graphical visualization of the resulting network (see result in Figure 5). (E) More detailed information concerning protein\u2013protein interactions are available. PMID, PSI-MI method accession number and database origin of the selected interaction are given.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5.: VirHostNet Visualisator. Graph representation of the mTOR-infection network is drawn (right of the applet). Only interacting proteins of the mTOR pathway are represented (cellular proteins = blue nodes; host\u2013host protein\u2013protein interactions = blue edges). Viral interacting proteins are also added to define the infection network (viral proteins = coloured nodes according to viral taxonomy; virus\u2013host protein\u2013protein interactions = red edges). Cellular proteins of the network targeted by at least one viral protein (red stroke) are highlighted. The width of the edges is roughly proportional to the number of PMIDs used to describe the interaction. The width of the nodes is roughly proportional to the cellular degree, i.e. the number of cellular partners in the whole network. The taxonomical classification of viral proteins interacting with the mTOR network is given (left panel of the applet). The menu of the applet (top of the applet) allows users to define nodes and edges preferences (width, colour, labelling), interaction filtering (according to the number of methods, number of PMIDs or both), network navigation (expand viral or host neighbours) and graph layout. To obtain this figure, from the list of the 89 selected protein\u2013protein interactions obtained in Figure 4E, users have to click on \u2018visualize\u2019 button. Then from the applet, in picking mode, they have to select all proteins and ask for viral proteins neighbours (in expand menu).",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "From molecular to modular cell biology",
+            "authors": [
+                {
+                    "first": "LH",
+                    "middle": [],
+                    "last": "Hartwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Hopfield",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Leibler",
+                    "suffix": ""
+                },
+                {
+                    "first": "AW",
+                    "middle": [],
+                    "last": "Murray",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nature",
+            "volume": "402",
+            "issn": "",
+            "pages": "C47-C52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Systems biology and the host response to viral infection",
+            "authors": [
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Ganji",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Paeper",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Proll",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Katze",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat. Biotechnol.",
+            "volume": "25",
+            "issn": "",
+            "pages": "1383-1389",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "A human protein-protein interaction network: a resource for annotating the proteome",
+            "authors": [
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Stelzl",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Worm",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lalowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Haenig",
+                    "suffix": ""
+                },
+                {
+                    "first": "FH",
+                    "middle": [],
+                    "last": "Brembeck",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Goehler",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Stroedicke",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Zenkner",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Schoenherr",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Cell",
+            "volume": "122",
+            "issn": "",
+            "pages": "957-968",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Towards a proteome-scale map of the human protein-protein interaction network",
+            "authors": [
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Rual",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Venkatesan",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hao",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hirozane-Kishikawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Dricot",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "GF",
+                    "middle": [],
+                    "last": "Berriz",
+                    "suffix": ""
+                },
+                {
+                    "first": "FD",
+                    "middle": [],
+                    "last": "Gibbons",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Dreze",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "1173-1178",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Large-scale mapping of human protein\u2013protein interactions by mass spectrometry",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Ewing",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Chu",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Elisma",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Taylor",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Climie",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "McBroom-Cerajewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "O\u2019Connor",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Mol. Syst. Biol.",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "The Biomolecular Interaction Network Database and related tools 2005 update",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Alfarano",
+                    "suffix": ""
+                },
+                {
+                    "first": "CE",
+                    "middle": [],
+                    "last": "Andrade",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Anthony",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bahroos",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bajec",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Bantoft",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Betel",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Bobechko",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Boutilier",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Burgess",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucleic Acids Res.",
+            "volume": "33",
+            "issn": "",
+            "pages": "D418-D424",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "MINT: the Molecular INTeraction database",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Chatr-aryamontri",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ceol",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Palazzi",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Nardelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "MV",
+                    "middle": [],
+                    "last": "Schneider",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Castagnoli",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Cesareni",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res.",
+            "volume": "35",
+            "issn": "",
+            "pages": "D572-D574",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "IntAct\u2014open source resource for molecular interaction data",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kerrien",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Alam-Faruque",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Aranda",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Bancarz",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bridge",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Derow",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Dimmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Feuermann",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Friedrichsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Huntley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res.",
+            "volume": "35",
+            "issn": "",
+            "pages": "D561-D565",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Human protein reference database\u20142006 update",
+            "authors": [
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Mishra",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Suresh",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kumaran",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Kannabiran",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Suresh",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Bala",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Shivakumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Anuradha",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Reddy",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Raghavan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res.",
+            "volume": "34",
+            "issn": "",
+            "pages": "D411-D414",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "The Database of Interacting Proteins: 2004 update",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Salwinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "FK",
+                    "middle": [],
+                    "last": "Pettit",
+                    "suffix": ""
+                },
+                {
+                    "first": "JU",
+                    "middle": [],
+                    "last": "Bowie",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Eisenberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res.",
+            "volume": "32",
+            "issn": "",
+            "pages": "D449-D451",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "The BioGRID Interaction Database: 2008 update",
+            "authors": [
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Breitkreutz",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Stark",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Reguly",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Boucher",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Breitkreutz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Livstone",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Oughtred",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Lackner",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bahler",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Wood",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Res.",
+            "volume": "36",
+            "issn": "",
+            "pages": "D637-D640",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Error and attack tolerance of complex networks",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Albert",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Jeong",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Barabasi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nature",
+            "volume": "406",
+            "issn": "",
+            "pages": "378-382",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Reactome: a knowledgebase of biological pathways",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Joshi-Tope",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gillespie",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Vastrik",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "D'Eustachio",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Schmidt",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "de Bono",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Jassal",
+                    "suffix": ""
+                },
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Gopinath",
+                    "suffix": ""
+                },
+                {
+                    "first": "GR",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Matthews",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucleic Acids Res.",
+            "volume": "33",
+            "issn": "",
+            "pages": "D428-D432",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Gene indexing: characterization and analysis of NLM\u2019s GeneRIFs",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Mitchell",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Aronson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Mork",
+                    "suffix": ""
+                },
+                {
+                    "first": "LC",
+                    "middle": [],
+                    "last": "Folk",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Humphrey",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Ward",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "AMIA Annu. Symp. Proc.",
+            "volume": "2003",
+            "issn": "",
+            "pages": "460-464",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "NetworKIN: a resource for exploring cellular phosphorylation networks",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Linding",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Jensen",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pasculescu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Olhovsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Colwill",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Bork",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Yaffe",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Pawson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Res.",
+            "volume": "36",
+            "issn": "",
+            "pages": "D695-D699",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "UniHI: an entry gate to the human protein interactome",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chaurasia",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Iqbal",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Hanig",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Herzel",
+                    "suffix": ""
+                },
+                {
+                    "first": "EE",
+                    "middle": [],
+                    "last": "Wanker",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Futschik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res.",
+            "volume": "35",
+            "issn": "",
+            "pages": "D590-D594",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Herpesviral protein networks and their interaction with the human proteome",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Uetz",
+                    "suffix": ""
+                },
+                {
+                    "first": "YA",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Zeretzke",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Atzler",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Baiker",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Berger",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Rajagopala",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Roupelieva",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Rose",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Fossum",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "311",
+            "issn": "",
+            "pages": "239-242",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Identification of structural protein\u2013protein interactions of herpes simplex virus type 1",
+            "authors": [
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Vittone",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Diefenbach",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Cunningham",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Diefenbach",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Virology",
+            "volume": "378",
+            "issn": "",
+            "pages": "347-354",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Epstein-Barr virus and virus human protein interaction maps",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Calderwood",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Venkatesan",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Xing",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Chase",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vazquez",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Holthaus",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Ewence",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Hirozane-Kishikawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Hill",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "104",
+            "issn": "",
+            "pages": "7606-7611",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Analysis of intraviral protein\u2013protein interactions of the SARS coronavirus ORFeome",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "von Brunn",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Teepe",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Simpson",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Pepperkok",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Friedel",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Zimmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Baric",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Haas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS ONE",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "The Gene Ontology Annotation (GOA) Database\u2014an integrated resource of GO annotations to the UniProt Knowledgebase",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Camon",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Barrell",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Dimmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Apweiler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "In Silico Biol.",
+            "volume": "4",
+            "issn": "",
+            "pages": "5-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "The KEGG database",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kanehisa",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Novartis Found Symp.",
+            "volume": "247",
+            "issn": "",
+            "pages": "91-101",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Lethality and centrality in protein networks",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Jeong",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Mason",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Barabasi",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZN",
+                    "middle": [],
+                    "last": "Oltvai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nature",
+            "volume": "411",
+            "issn": "",
+            "pages": "41-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "The InterPro database and tools for protein domain analysis",
+            "authors": [
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Mulder",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Apweiler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Curr. Protoc. Bioinformatics",
+            "volume": "Chap 2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "The International Protein Index: an integrated database for proteomics experiments",
+            "authors": [
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Kersey",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Duarte",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Karavidopoulou",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Birney",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Apweiler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proteomics",
+            "volume": "4",
+            "issn": "",
+            "pages": "1985-1988",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Basic local alignment search tool",
+            "authors": [
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Altschul",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Gish",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "EW",
+                    "middle": [],
+                    "last": "Myers",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "J. Mol. Biol.",
+            "volume": "215",
+            "issn": "",
+            "pages": "403-410",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Broadening the horizon\u2014level 2.5 of the HUPO-PSI format for molecular interactions",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kerrien",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Orchard",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Montecchi-Palazzi",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Aranda",
+                    "suffix": ""
+                },
+                {
+                    "first": "AF",
+                    "middle": [],
+                    "last": "Quinn",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Vinod",
+                    "suffix": ""
+                },
+                {
+                    "first": "GD",
+                    "middle": [],
+                    "last": "Bader",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Xenarios",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wojcik",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Sherman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Biol.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Increasing confidence of protein\u2013protein interactomes",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "HN",
+                    "middle": [],
+                    "last": "Chua",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Hsu",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Ng",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Saito",
+                    "suffix": ""
+                },
+                {
+                    "first": "WK",
+                    "middle": [],
+                    "last": "Sung",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Genome Inform.",
+            "volume": "17",
+            "issn": "",
+            "pages": "284-297",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Increasing the reliability of protein interactomes",
+            "authors": [
+                {
+                    "first": "HN",
+                    "middle": [],
+                    "last": "Chua",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Drug Discov. Today",
+            "volume": "13",
+            "issn": "",
+            "pages": "652-658",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "MINT: a Molecular INTeraction database",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Zanzoni",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Montecchi-Palazzi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Quondam",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Ausiello",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Helmer-Citterich",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Cesareni",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "FEBS Lett.",
+            "volume": "513",
+            "issn": "",
+            "pages": "135-140",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "GOEAST: a web-based software toolkit for Gene Ontology enrichment analysis",
+            "authors": [
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "XJ",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Res.",
+            "volume": "36",
+            "issn": "",
+            "pages": "358-363",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "The landscape of human proteins interacting with viruses and other pathogens",
+            "authors": [
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "Dyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Murali",
+                    "suffix": ""
+                },
+                {
+                    "first": "BW",
+                    "middle": [],
+                    "last": "Sobral",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS Pathog.",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Role of focal adhesion kinase in human cancer: a potential target for drug discovery",
+            "authors": [
+                {
+                    "first": "EK",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "McGonigal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Anticancer Agents Med. Chem.",
+            "volume": "7",
+            "issn": "",
+            "pages": "681-684",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Biological robustness in complex host-pathogen systems",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kitano",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Prog. Drug Res.",
+            "volume": "64",
+            "issn": "239",
+            "pages": "241-263",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "The pivotal role of phosphatidylinositol 3-kinase-Akt signal transduction in virus survival",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cooray",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Gen. Virol.",
+            "volume": "85",
+            "issn": "",
+            "pages": "1065-1076",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "The TORrid affairs of viruses: effects of mammalian DNA viruses on the PI3K-Akt-mTOR signalling pathway",
+            "authors": [
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Buchkovich",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Zampieri",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Alwine",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nat. Rev. Microbiol.",
+            "volume": "6",
+            "issn": "",
+            "pages": "266-275",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Viruses and interferon: a fight for supremacy",
+            "authors": [
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Katze",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Gale",
+                    "suffix": "Jr"
+                }
+            ],
+            "year": 2002,
+            "venue": "Nat. Rev. Immunol.",
+            "volume": "2",
+            "issn": "",
+            "pages": "675-687",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Host factors exploited by retroviruses",
+            "authors": [
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Goff",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat. Rev. Microbiol.",
+            "volume": "5",
+            "issn": "",
+            "pages": "253-263",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Regulation of mitochondrial antiviral signaling pathways",
+            "authors": [
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Ting",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Immunity",
+            "volume": "28",
+            "issn": "",
+            "pages": "735-739",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Human papillomaviruses: basic mechanisms of pathogenesis and oncogenicity",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Hebner",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Laimins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Rev. Med. Virol.",
+            "volume": "16",
+            "issn": "",
+            "pages": "83-97",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Viral lymphomagenesis",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Ahmed",
+                    "suffix": ""
+                },
+                {
+                    "first": "HE",
+                    "middle": [],
+                    "last": "Heslop",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Curr. Opin Hematol.",
+            "volume": "13",
+            "issn": "",
+            "pages": "254-259",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

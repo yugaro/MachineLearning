@@ -1,0 +1,141 @@
+{
+    "paper_id": "PMC5462161",
+    "metadata": {
+        "title": "Spread of Middle East Respiratory Coronavirus: Genetic versus\nEpidemiological Data",
+        "authors": [
+            {
+                "first": "Daniel",
+                "middle": [
+                    "A."
+                ],
+                "last": "Janies",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Colby",
+                "middle": [],
+                "last": "Ford",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Lambodhar",
+                "middle": [],
+                "last": "Damodaran",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Zachary",
+                "middle": [],
+                "last": "Witter",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Here we use novel methods of phylogenetic transmission graph analysis to reconstruct\nthe geographic spread of MERS-CoV. We compare these results to those derived from\ntext mining and visualization of the World Health Organization\u2019s (WHO)\nDisease Outbreak News.",
+            "cite_spans": [],
+            "section": "Objective",
+            "ref_spans": []
+        },
+        {
+            "text": "MERS-CoV was discovered in 2012 in the Middle East and human cases around the world\nhave been carefully reported by the WHO. MERS-CoV virus is a novel betacoronavirus\nclosely related to a virus (NeoCov) hosted by a bat, Neoromicia\ncapensis. MERS-CoV infects humans and camels. In 2015, MERS-CoV spread\nfrom the Middle East to South Korea which sustained an outbreak. Thus, it is clear\nthat the virus can spread among humans in areas in which camels are not\nhusbanded.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "We calculated a phylogenetic tree from 100 genomic sequences of MERS-CoV hosted\nby humans and camels using NeoCov as the outgroup. In order to evaluate the\nrelative order and significance of geographic places in spread of the virus, we\ngenerated a transmission graph (Figure 1) based on methods described in 1.",
+            "cite_spans": [],
+            "section": "Phylogenetic analyses ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The graph indicates places as nodes and transmission events as edges.\nTransmission direction and frequency are depicted with directed and weighted\nedges. Betweenness centrality, represented by node size, measures the number of\nshortest paths from all nodes to others that pass through the corresponding\nnode. Places with high betweenness represent key hubs for the spread of the\ndisease. In contrast, smaller nodes at the periphery of the network are less\nimportant for the spread of the disease.",
+            "cite_spans": [],
+            "section": "Phylogenetic analyses ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Due to the journalistic style of the WHO data, it had to be structured such that\nmapping software can ingest the data. We used Import.io to build the API. We\nprovided the software a sample page, selected the data that is pertinent, then\nprovided a list of all URLs for the software. We used Tableau to map the\ninformation both geographically and temporally.",
+            "cite_spans": [],
+            "section": "Web scraping and mapping ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Most important among the places in the MERS-CoV epidemic is Saudi Arabia as\nmeasured by the betweenness metric applied to a changes in place mapped to a\nphylogenetic tree. In figure 1, the circle representing Saudi Arabia is slightly\nlarger compared to other location indicating its high importance in the\nepidemic. Saudi Arabia is the source of virus for Jordan, England, Qatar, South\nKorea, UAE, Indiana, and Egypt. The United Arab Emirates has a bidirectional\nconnection with Saudi Arabia indicating the virus has spread between the two\ncountries. The United Arab Emirates also has high betweenness. The United Arab\nEmirates is between Saudi Arabia and Oman and Between Saudi Arabia and France.\nSouth Korea, and Qatar have mild betweeness. South Korea is between Saudi Arabia\nand China. Qatar is between Saudi Arabia and Florida. Other locations (Jordan,\nEngland, Indiana, and Egypt) have low betweenness as they have no outbound\nconnections.",
+            "cite_spans": [],
+            "section": "Geographic spread of Mers-CoV based on transmissions identified in\nphylogenetic data ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Certain articles include the infected individuals\u2019 countries of origin. ln\nconstrast, many reports are in a lean format that includes a single paragraph\nthat only summarizes the total number of cases for that country. If we build the\nAPI in a manner that recognizes features in the detailed reports, we can\ngenerate a map that draws lines from origin to reporting country and create\nvisualizations. However, since only some of the articles contain this extra\ninformation, mapping in this manner will miss many of the cases that are\nreported in the lean format.",
+            "cite_spans": [],
+            "section": "Visualization of geographical transmissions in WHO Data ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Our goal is to develop methods for understanding syndromic and pathogen genetic data\non the spread of diseases. Drawing parallels between the transmissions events in the\nWHO data and the genetic data has shown to be challenging. Analyses of the genetic\ninformation can be used to imply a transmission pathway but it is hard to find\nepidemiological data in the public domain to corroborate the transmission pathway.\nThere are rare cases in the WHO data that include travel history (e.g. \u201cThe\npatient is from Riyadh and flew to the UK\u201d). We conclude that epidemiological\ndata combined with genetic data and metadata have strong potential to understand the\ngeographic progression of an infectious disease. However, reporting standards need\nto be improved where travel history does not impinge on privacy.",
+            "cite_spans": [],
+            "section": "Conclusions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {},
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Phylogenetic visualization of the spread of H7\ninfluenza A viruses",
+            "authors": [
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Janies",
+                    "suffix": ""
+                },
+                {
+                    "first": "LW",
+                    "middle": [],
+                    "last": "Pomeroy",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Krueger",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "IF",
+                    "middle": [],
+                    "last": "Senturk",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Cladistics",
+            "volume": "31",
+            "issn": "",
+            "pages": "679-91",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/cla.12107"
+                ]
+            }
+        }
+    }
+}

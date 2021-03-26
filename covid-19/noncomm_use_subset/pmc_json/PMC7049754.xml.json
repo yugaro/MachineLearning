@@ -1,0 +1,3818 @@
+{
+    "paper_id": "PMC7049754",
+    "metadata": {
+        "title": "Immunoinformatics and Vaccine Development: An Overview",
+        "authors": [
+            {
+                "first": "Angus",
+                "middle": [
+                    "Nnamdi"
+                ],
+                "last": "Oli",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Wilson",
+                "middle": [
+                    "Okechukwu"
+                ],
+                "last": "Obialor",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Martins",
+                "middle": [
+                    "Ositadimma"
+                ],
+                "last": "Ifeanyichukwu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Damian",
+                "middle": [
+                    "Chukwu"
+                ],
+                "last": "Odimegwu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jude",
+                "middle": [
+                    "Nnaemeka"
+                ],
+                "last": "Okoyeh",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "George",
+                "middle": [
+                    "Ogonna"
+                ],
+                "last": "Emechebe",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Samson",
+                "middle": [
+                    "Adedeji"
+                ],
+                "last": "Adejumo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Gordon",
+                "middle": [
+                    "C"
+                ],
+                "last": "Ibeanu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Vaccination has been undeniably very helpful in promoting a healthy global population. It has severally saved lives, reduced healthcare costs and raised man\u2019s quality of life.1 It greatly reduces disease burden, disability and death. However, newly emerging and re-emerging infectious diseases (ERID), infectious agents with complex lifecycle and antigenic variability and the need for personalized vaccination present additional challenges in vaccine development.2,3",
+            "cite_spans": [
+                {
+                    "start": 175,
+                    "end": 176,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 464,
+                    "end": 465,
+                    "mention": "2",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 466,
+                    "end": 467,
+                    "mention": "3",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "For many pathogens (especially the emerging and those with antigenic variability), their genomes are known but their immune correlates of protection remain unclear.1,4 Some of these reasons are why vaccine development for ERID and multi-lifecycle pathogenic diseases is a tall order.",
+            "cite_spans": [
+                {
+                    "start": 164,
+                    "end": 165,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 166,
+                    "end": 167,
+                    "mention": "4",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Serendipitous discoveries in immunology coupled with knowledge of bioinformatics tools for epitope predictions have resulted in the emergence of new pattern of vaccine design.5,6 The art and science of efficient and comprehensive information extraction and analysis of data deposited in relevant databases is now increasingly essential in researches related to immunology.7 Even with this capacity (efficient information extraction), some challenges in the application of bioinformatics in immunology include structure and/or function analysis and immune process analyses as concern the immune interaction specificity. Fortunately, although researches in immunology are experimentally costly and very intensive, colossal amounts of data are usually generated. Such data can only be analyzed with high precision and speed using bioinformatics tools. For instance, genome sequencing as well as in vitro T-cell confirmation is done in few months as opposed to years using the conventional vaccine design.8 Also, computational immunological methods drastically reduce both time and labor needs in epitopes screening.5,9 With computational immunology techniques, it is possible to discover vaccine candidate epitopes simply by scanning the protein sequences in a pathogen of interest.5 Many of these proteins are yet to be isolated or at least cloned. Being pathogens specific and unique, they present ready candidates in vaccine construct.",
+            "cite_spans": [
+                {
+                    "start": 175,
+                    "end": 176,
+                    "mention": "5",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 177,
+                    "end": 178,
+                    "mention": "6",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 372,
+                    "end": 373,
+                    "mention": "7",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1001,
+                    "end": 1002,
+                    "mention": "8",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1112,
+                    "end": 1113,
+                    "mention": "5",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1114,
+                    "end": 1115,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1279,
+                    "end": 1280,
+                    "mention": "5",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "This review describes the need to use immunoinformatics-based techniques to unveil vital determinants of immunity made available in the genome sequence database and design vaccines. Also, this review gives insight into the need to focus on novel computational, experimental and computation-driven experimental approaches for studying of host\u2013pathogen interactions and thus making a case for its use in vaccine development. This review will further show the need for new approaches for effective drugs or vaccine design so as to combat the antigenic variability of some pathogens.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The process of generating vaccine-induced immunity is somewhat challenging in immunology. Current conventional vaccines came empirically when there were vague or no knowledge of vaccine immune system activation. A lot of research10\u201312 has been geared toward the understanding of this challenge, but the complexity of it requires a different dimension of approach.13 An approach that must accommodate many factors affecting vaccine development like pathogen antigenic variability, the emergence of infectious disease, human genetic variation is the goal of immunoinformatics [Figure 1].\n",
+            "cite_spans": [
+                {
+                    "start": 229,
+                    "end": 231,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 232,
+                    "end": 234,
+                    "mention": "12",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 363,
+                    "end": 365,
+                    "mention": "13",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Vaccine Immunology and Design",
+            "ref_spans": [
+                {
+                    "start": 575,
+                    "end": 583,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Activation of the immune system involves, among many processes, induction of the immune memory. The strength of this induction determines the efficacy of a vaccine. Hence, vaccine efficacy in the long run is influenced by the determinants of immunological memory stimulation, persisting antibodies and kind and type of immune memory cells induced.14",
+            "cite_spans": [
+                {
+                    "start": 347,
+                    "end": 349,
+                    "mention": "14",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Vaccine Immunology and Design",
+            "ref_spans": []
+        },
+        {
+            "text": "The primary vaccine-mediated immunological effectors (Table 1) are mainly the antibodies (from B lymphocytes/cell)15,16 and sometimes CD8+ and CD4+ T cells. These antibodies bind specifically to a particular kind of toxin or pathogen. Vaccines and most antigens evoke humoral as well as cell-mediated immune responses.17 Vaccines that mediate immune responses through these systems (B and T cell responses) are said to be more effective. Although B cells are regarded as the primary vaccine immune effectors, T cells induce immune memory cells and high-affinity antibodies. Studies in reverse vaccinology and immunomics had also proved T cells as prime immune effectors following the discovery of novel vaccine targets with EpiMatrix.18\u201320 This change of immune target has led to successful advances in vaccine design.\n",
+            "cite_spans": [
+                {
+                    "start": 114,
+                    "end": 116,
+                    "mention": "15",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 117,
+                    "end": 119,
+                    "mention": "16",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 318,
+                    "end": 320,
+                    "mention": "17",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 734,
+                    "end": 736,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 737,
+                    "end": 739,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Vaccine Immunology and Design",
+            "ref_spans": [
+                {
+                    "start": 54,
+                    "end": 61,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Even at the face of potential vaccine design advances, immune-related questions are now focused on specific vulnerable populations such as the young, elderly and immunocompromised.21,22 These concerns have propelled a better understanding of the efficacy of current vaccines on this vulnerable population and have also paved way for the application of new approaches that can put into consideration the differences of population and better targets that can generate optimum immune induction23\u201325 with the exception of type II T-cell-independent (TI-2) antigens (i.e., polysaccharide antigens)\ufeff.",
+            "cite_spans": [
+                {
+                    "start": 180,
+                    "end": 182,
+                    "mention": "21",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 183,
+                    "end": 185,
+                    "mention": "22",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 490,
+                    "end": 492,
+                    "mention": "23",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 493,
+                    "end": 495,
+                    "mention": "25",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Vaccine Immunology and Design",
+            "ref_spans": []
+        },
+        {
+            "text": "Antigens that could provoke the B lymphocytes as well as the T lymphocyte responses stimulate the germinal centers causing antigen-specific highly efficient B-cell multiplication and eventual differentiation into antibody-forming plasma cells and memory B cells. All existing protein and DNA antigens induce immunological memory B cells unlike type II T-cell-independent (TI-2) antigens (i.e., polysaccharide antigens). These polysaccharide antigens do not generate memory B cells but can induce long-lasting humoral immunity even when recall responses are lacking.26 Vaccine efficacy may be short term27 if only the B cells are activated.",
+            "cite_spans": [
+                {
+                    "start": 565,
+                    "end": 567,
+                    "mention": "26",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 602,
+                    "end": 604,
+                    "mention": "27",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Vaccine Immunology and Design",
+            "ref_spans": []
+        },
+        {
+            "text": "The traditional approach for developing vaccines for infectious disease threats has shifted to include other vaccine design techniques like cloning and expressing major surface antigens28 although this frequently resulted in the formulation of vaccines with poor immunogenicity, requiring strong adjuvantation.29 This approach is particularly likely to be less specific for pathogens with complex lifecycles (e.g., parasites) or very high mutability (e.g., RNA viruses). These pathogens do not depend on one route for their virulence of pathogenesis in human and thus to alter this process, increasing the specificity of the vaccine should be the aim and not just the effectiveness as seen in the current conventional vaccines.28,29",
+            "cite_spans": [
+                {
+                    "start": 185,
+                    "end": 187,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 310,
+                    "end": 312,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 727,
+                    "end": 729,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 730,
+                    "end": 732,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Vaccine Immunology and Design",
+            "ref_spans": []
+        },
+        {
+            "text": "Vaccines for several neglected tropical diseases are in various stages of development,30 thanks to mega drug companies that have continued to demonstrate a willingness to invest money in the research and development as regards to diseases plaguing the developing nations.16,30-32 It is very pertinent to invest in researches that have an interest in vaccine specificity on the pathogen antigens than totally on the efficacy. Fortunately, with global research efforts, the genomes for several pathogens causing neglected tropical diseases and several emerging pathogens are becoming available.33 Computational vaccinology may now be applied to screen these genomes for possible vaccine target. With these tools, many proteins of virulence interest can be sequenced and the most essential gene of interest modeled for a potential vaccine candidate specific for that pathogen. Immunoinformatics is the way forward in the identification of vaccine candidates for these tropical ERID, for pathogens with varying antigens and for individualized therapy.",
+            "cite_spans": [
+                {
+                    "start": 86,
+                    "end": 88,
+                    "mention": "30",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 271,
+                    "end": 273,
+                    "mention": "16",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 274,
+                    "end": 276,
+                    "mention": "30",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 277,
+                    "end": 279,
+                    "mention": "32",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 592,
+                    "end": 594,
+                    "mention": "33",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Vaccine Immunology and Design",
+            "ref_spans": []
+        },
+        {
+            "text": "Immunology studies produce data in colossal quantities. Also, with proteomics and genomics projects, extensive screening of pathogens and/or pathogen\u2013host interaction, it has become increasingly necessary to store, manage and analyze these data, hence the birth of immunoinformatics. Immunoinformatics deals with computational techniques and resources used to study the immune functions. Statistical, computational, mathematical and biological knowledge and tools are applied in immunoinformatics in order to accurately and specifically store, and analyze data concerning the immune system and its functions.",
+            "cite_spans": [],
+            "section": "Immunoinformatics and Infectious Disease",
+            "ref_spans": []
+        },
+        {
+            "text": "To handle evidence diversity, immunoinformatics uses tools that cut across several aspects of bioinformatics such as creation and management of databases,34,35 use and definition of both structural and functional signatures and the formation and application of predictive tools.35\u201337 These strategies can synergize toward a better understanding of the immune system of both man and animals and fight against some less predictable pathogenesis. The complex nature of vertebrates\u2019 immune system, the variable nature of pathogens and environmental antigens coupled with the multi-regulatory pathways show that colossal quantities of data will be needed to unveil how the human immune systems work. Conventionally, much cannot be achieved based on the complexity of the immune system and the virulent antigen but with the application of computational vaccinology, researches on vaccine design have been made easier, accurate and specific. Applying immunoinformatics in disease study (Table 2) requires the knowledge of disease pathogenesis, the immune system dynamics, and computational vaccinology, painstaking searches of the database, sequence comparison, structural modeling as well as motif analysis.35,38 These methods can go a long way in analyzing the pathogenesis of a disease and identification of vaccine candidates.\n\n",
+            "cite_spans": [
+                {
+                    "start": 154,
+                    "end": 156,
+                    "mention": "34",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 157,
+                    "end": 159,
+                    "mention": "35",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 278,
+                    "end": 280,
+                    "mention": "35",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 281,
+                    "end": 283,
+                    "mention": "37",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 1201,
+                    "end": 1203,
+                    "mention": "35",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 1204,
+                    "end": 1206,
+                    "mention": "38",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Immunoinformatics and Infectious Disease",
+            "ref_spans": [
+                {
+                    "start": 980,
+                    "end": 987,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "In order to help understand complex pathogen-related processes, computational models were developed for viral46,47 bacterial,48 parasitic49 and fungal pathogens.50",
+            "cite_spans": [
+                {
+                    "start": 109,
+                    "end": 111,
+                    "mention": "46",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 112,
+                    "end": 114,
+                    "mention": "47",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 125,
+                    "end": 127,
+                    "mention": "48",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 137,
+                    "end": 139,
+                    "mention": "49",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 161,
+                    "end": 163,
+                    "mention": "50",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "Immunoinformatics and Infectious Disease",
+            "ref_spans": []
+        },
+        {
+            "text": "The bioinformatics tools (Table 3) are used to identify possible epitopes for vaccine formulation. Each tool can screen protein sequences and identify aggregates of MHC binding and supertype motifs for possible use in epitope-based vaccine development and for use among human populations with genetic variability.\n\n",
+            "cite_spans": [],
+            "section": "Immunoinformatics and Infectious Disease",
+            "ref_spans": [
+                {
+                    "start": 26,
+                    "end": 33,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "There are several databases (Table 4) that can provide a wide range of information for all forms of immunological studies. Generated data from the studies are further organized and stored in the databases (Table 4) to provide a means for the development and advance in immunological research. A tour on these databases will actually stimulate some interest in the vaccinology of emerging and re-surging disorders attributable to pathogen including cancer.\n",
+            "cite_spans": [],
+            "section": "Immunoinformatics and Infectious Disease",
+            "ref_spans": [
+                {
+                    "start": 29,
+                    "end": 36,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                },
+                {
+                    "start": 206,
+                    "end": 213,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "Emerging infections (EIs) include infections that are entirely new in a population or that may have existed before in the population but are now gaining rapid and continued spread and/or wide geographical range. Re-emerging or re-surging infections represent the infections that were previously of historical relevance but are now quickly becoming relevant because of either increasing incidence or increasing geographical and/or human host range while emerging infections represent the infections that were not originally observed in man.66 Several factors such as human behavioral changes, environmental changes, and host/intermediate factors, animal-human switching and microbial genetic changes all affect infectious disease emergence and spread.67 These factors interact to promote the evolution of pathogens into new ecosystems, infect, spread and thrive in their new hosts.68 The overall consequences of these are continued infectious disease emergence and re-emergence, epidemics and public health challenges. Emerging infections and multi-antibiotic-resistant strains of pathogenic bacteria usually surge from one geographic location from where it spreads to other places due to immigration of people.67,69 Most emerging infections originate from a specific population and can spread to a new population or become selectively advantaged that it can lead to the emergence of new strains of the pathogen.67,70,71 Also, there could be microbial traffic, in which case, an infectious agent transfers from animals to humans or spreads from isolated groups to new populations.67,71,72",
+            "cite_spans": [
+                {
+                    "start": 539,
+                    "end": 541,
+                    "mention": "66",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 750,
+                    "end": 752,
+                    "mention": "67",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 880,
+                    "end": 882,
+                    "mention": "68",
+                    "ref_id": "BIBREF67"
+                },
+                {
+                    "start": 1210,
+                    "end": 1212,
+                    "mention": "67",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 1213,
+                    "end": 1215,
+                    "mention": "69",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 1411,
+                    "end": 1413,
+                    "mention": "67",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 1414,
+                    "end": 1416,
+                    "mention": "70",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 1417,
+                    "end": 1419,
+                    "mention": "71",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 1579,
+                    "end": 1581,
+                    "mention": "67",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 1582,
+                    "end": 1584,
+                    "mention": "71",
+                    "ref_id": "BIBREF70"
+                },
+                {
+                    "start": 1585,
+                    "end": 1587,
+                    "mention": "72",
+                    "ref_id": "BIBREF71"
+                }
+            ],
+            "section": "Case of Emerging and Re-Surging Disorders/Diseases Attributable to Pathogens",
+            "ref_spans": []
+        },
+        {
+            "text": "Several factors, including ecology, are known to be associated with infectious disease outbreaks. These factors bring man into close contact with a natural disease reservoir/host.70 With an increasing world population and poor infection control, the emergence of infection and increased microbial populations are sure. The human growth population will only increase the spread of the infection across populations. The information provided in Table 5 is the list of remerging infections and current emerging diseases put forward during the WHO 2018 annual review.73 The review noted that these infections, if not well controlled, can cause disease outbreaks, bioterrorism and similar occurrences requiring urgent public health attention and that with the dearth of efficacious medicines or vaccines, there is a compelling demand for continuous as well as accelerated research and development in those areas.\n\n",
+            "cite_spans": [
+                {
+                    "start": 179,
+                    "end": 181,
+                    "mention": "70",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 562,
+                    "end": 564,
+                    "mention": "73",
+                    "ref_id": "BIBREF72"
+                }
+            ],
+            "section": "Case of Emerging and Re-Surging Disorders/Diseases Attributable to Pathogens",
+            "ref_spans": [
+                {
+                    "start": 442,
+                    "end": 449,
+                    "mention": "Table 5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "Advances in Genomics, proteomics, immunomics, vaccinomics and nanotechnology are being continually exploited in diagnostic, therapeutic and in rational drug and vaccine development. These advances have also served in the control of the afore-mentioned emergences.74,75 The knowledge of the emerging pathogen\u2019s genome, protein make-up, pathogen-immune system interactions and researching the possible therapeutics will go a long way in directing the optimum path to containing the infection spread and controlling potential re-emergence or emergence in a different population. Approaches in direct and computer-based structural determinations,76 protein\u2013protein interactions predicting, and bioinformatics tools now exist and are used in modern-day development of drug and biologics.77",
+            "cite_spans": [
+                {
+                    "start": 263,
+                    "end": 265,
+                    "mention": "74",
+                    "ref_id": "BIBREF73"
+                },
+                {
+                    "start": 266,
+                    "end": 268,
+                    "mention": "75",
+                    "ref_id": "BIBREF74"
+                },
+                {
+                    "start": 642,
+                    "end": 644,
+                    "mention": "76",
+                    "ref_id": "BIBREF75"
+                },
+                {
+                    "start": 782,
+                    "end": 784,
+                    "mention": "77",
+                    "ref_id": "BIBREF76"
+                }
+            ],
+            "section": "Case of Emerging and Re-Surging Disorders/Diseases Attributable to Pathogens",
+            "ref_spans": []
+        },
+        {
+            "text": "Vaccine development has been sped up through the advance in the knowledge of the immune system of man. Researches in the traditional targets of vaccines (adaptive immune response) and the less specific and fast-acting innate immune responses have been clear evidences for this advance.78\u201380 As our understanding of the intercourse between innate and adaptive immunity increases, reasons and opportunities for more effective vaccine adjuvants will open up. This can be a step forward in solving a critical world\u2019s health challenge per population. Following the conventional approach of vaccine design, much cannot be achieved but when the knowledge of immunoinformatics is applied, population safety and disease control can be achieved through pathogen\u2019s genome sequencing leading to optimum new vaccine design or development of a novel vaccine for the infection.",
+            "cite_spans": [
+                {
+                    "start": 285,
+                    "end": 287,
+                    "mention": "78",
+                    "ref_id": "BIBREF77"
+                },
+                {
+                    "start": 288,
+                    "end": 290,
+                    "mention": "80",
+                    "ref_id": "BIBREF79"
+                }
+            ],
+            "section": "Case of Emerging and Re-Surging Disorders/Diseases Attributable to Pathogens",
+            "ref_spans": []
+        },
+        {
+            "text": "Species of the genus Neisseria are champions in the rapid change of surface antigens amongst bacterial pathogens. Pathogenic forms exhibit an amount of phenotypic variability not found in the commensal species. The pathogenic forms are implicated in STD and meningitis. They employ amazing varieties of antigenic variability mechanisms.\nThey can recombine their pilin genes in a similar manner that eukaryotes recombine their own genes, such that they can express variable surface protein.85Some cell-surface proteins and enzymes synthesizing bacterial cell-surface carbohydrates are expressed in a variety of ways. This is as a result of replication slipping or slippage errors and repairs of simple tandem nucleotide repeats involving either the di-, or tri- or tetra-nucleotides.86Neisseria is able to take up and incorporate environmental DNA into its genomes.83,87Again, the chances of Neisseria acquiring new mutations by replication errors are high compared to other bacteria like E. coli.88",
+            "cite_spans": [
+                {
+                    "start": 489,
+                    "end": 491,
+                    "mention": "85",
+                    "ref_id": "BIBREF84"
+                },
+                {
+                    "start": 782,
+                    "end": 784,
+                    "mention": "86",
+                    "ref_id": "BIBREF85"
+                },
+                {
+                    "start": 864,
+                    "end": 866,
+                    "mention": "83",
+                    "ref_id": "BIBREF82"
+                },
+                {
+                    "start": 867,
+                    "end": 869,
+                    "mention": "87",
+                    "ref_id": "BIBREF86"
+                },
+                {
+                    "start": 996,
+                    "end": 998,
+                    "mention": "88",
+                    "ref_id": "BIBREF87"
+                }
+            ],
+            "section": "Neisseria ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "These are why an effective vaccine against Neisseria infections is not yet developed. Neisseria may be considered as an extreme example. However, many other bacterial pathogens like Streptococcus and Mycoplasma in promoting their antigenic variation tend to utilize one or more of these techniques. Additionally, there are reports that DNA-related defects have a much greater association with bacterial pathogen from symptomatic patients than samples of the same bacterial species isolated from environmental sources.87\u201389",
+            "cite_spans": [
+                {
+                    "start": 517,
+                    "end": 519,
+                    "mention": "87",
+                    "ref_id": "BIBREF86"
+                },
+                {
+                    "start": 520,
+                    "end": 522,
+                    "mention": "89",
+                    "ref_id": "BIBREF88"
+                }
+            ],
+            "section": "Neisseria ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "Streptococcus pneumoniae, Gram-positive cocci bacteria that cause otitis media, bacteremia and pneumonia, are a public health concern, causing morbidity and mortality in adults and children.90 Two forms of vaccines (polysaccharide and conjugate vaccines) are currently marketed for the prevention of pneumococcal infections. While the polysaccharide vaccines are for vaccination in the adult population, conjugate vaccines have an added immunogenic non-pneumococcal protein conjugated to the pneumococcal polysaccharides for enhanced immunogenicity in children. It is not yet known that these vaccines can evoke complete immunity against the infection.",
+            "cite_spans": [
+                {
+                    "start": 190,
+                    "end": 192,
+                    "mention": "90",
+                    "ref_id": "BIBREF89"
+                }
+            ],
+            "section": "Pneumococcus ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "A polysaccharide capsule is a major virulence factor in the bacteria. Several of these capsule types have been identified, and these form the basis of pathogen\u2019s antigenic serotyping.91,92 Current pneumococcal vaccines are combinations of various capsular (polysaccharide) antigens from the serotypes most common in a particular population. Currently, over 100 different serotypes are known but are not all covered in the available vaccines.92 The discovery of a common antigen(s) will produce an effective vaccine. Knowledge of the genome of the organism and the different strains has led to a possible advance in driving the pneumococcal potential vaccine search through a different approach. And this consideration will help solve a lot of concerns about the current vaccines. With this knowledge, many methods are been tried to determine whether they can be a source of effective vaccine design that can accommodate all the serotypes of the organism. Search for antigen that is common to all the serotypes can be achieved with the knowledge of Genomics and immunoinformatics. The introduction of genomic and computational technologies has given new directions in the study of bacterial pathogenesis and vaccine design.93,94",
+            "cite_spans": [
+                {
+                    "start": 183,
+                    "end": 185,
+                    "mention": "91",
+                    "ref_id": "BIBREF90"
+                },
+                {
+                    "start": 186,
+                    "end": 188,
+                    "mention": "92",
+                    "ref_id": "BIBREF91"
+                },
+                {
+                    "start": 441,
+                    "end": 443,
+                    "mention": "92",
+                    "ref_id": "BIBREF91"
+                },
+                {
+                    "start": 1222,
+                    "end": 1224,
+                    "mention": "93",
+                    "ref_id": "BIBREF92"
+                },
+                {
+                    "start": 1225,
+                    "end": 1227,
+                    "mention": "94",
+                    "ref_id": "BIBREF93"
+                }
+            ],
+            "section": "Pneumococcus ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "Plasmodium falciparum undergoes two life cycles: one in humans and the other in mosquitoes. The human host\u2019s erythrocytes and hepatocytes usually display modified parasite proteins called Plasmodium falciparum erythrocyte membrane protein 1 (PfEMP1) and Plasmodium falciparum hepatocyte membrane protein 1 (PfHMP1), respectively. These proteins function to assist the parasite to evade destruction by the host immune systems.95,96 The PfEMP1 proteins were identified as the prime ligands responsible for cytoadherence and resetting.97 They cause the infected RBCs of host tissues to sequester thus helping the parasite to circumvent clearance by the host\u2019s spleen.98 The membrane proteins also shield infected host cells from destruction by the spleen by adhering to the endothelium. Luckily, if the PfEMP1 protein is expressed for a long while; it comes under attack by the naturally acquired immunity.98,99 In defence to this, the parasite has expanded the var genes coding for PfEMP1 such that the genes can exist as a polymorphic family of as much as over 50 members in every genomic haploid. Antigenic switches work well here in that members of the polymorphic family (also called antigenic-variant-protein family) can be interchanged and cannot express their proteins at the same time. In this way, only one particular protein at the surface of the infected RBC is expressed at any given time.97,100",
+            "cite_spans": [
+                {
+                    "start": 425,
+                    "end": 427,
+                    "mention": "95",
+                    "ref_id": "BIBREF94"
+                },
+                {
+                    "start": 428,
+                    "end": 430,
+                    "mention": "96",
+                    "ref_id": "BIBREF95"
+                },
+                {
+                    "start": 532,
+                    "end": 534,
+                    "mention": "97",
+                    "ref_id": "BIBREF96"
+                },
+                {
+                    "start": 664,
+                    "end": 666,
+                    "mention": "98",
+                    "ref_id": "BIBREF97"
+                },
+                {
+                    "start": 903,
+                    "end": 905,
+                    "mention": "98",
+                    "ref_id": "BIBREF97"
+                },
+                {
+                    "start": 906,
+                    "end": 908,
+                    "mention": "99",
+                    "ref_id": "BIBREF98"
+                },
+                {
+                    "start": 1399,
+                    "end": 1401,
+                    "mention": "97",
+                    "ref_id": "BIBREF96"
+                },
+                {
+                    "start": 1402,
+                    "end": 1405,
+                    "mention": "100",
+                    "ref_id": "BIBREF99"
+                }
+            ],
+            "section": "Plasmodium ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "When studying antigenic-variant-protein families, it is pertinent to understand if grouping them into single-family results in any meaningful antigenic activity. Studies have tried to understand the \u201clanguages\u201d of the antigenic variant of PfEMP1 proteins.97,101,102 They sought to know the PfEMP1 proteins binding properties or search to understand the correlation between motifs and infection severity.",
+            "cite_spans": [
+                {
+                    "start": 255,
+                    "end": 257,
+                    "mention": "97",
+                    "ref_id": "BIBREF96"
+                },
+                {
+                    "start": 258,
+                    "end": 261,
+                    "mention": "101",
+                    "ref_id": "BIBREF100"
+                },
+                {
+                    "start": 262,
+                    "end": 265,
+                    "mention": "102",
+                    "ref_id": "BIBREF101"
+                }
+            ],
+            "section": "Plasmodium ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "The varDB database is a repository for protein sequences involved in antigenic variation and their associated functionalities.103 Antigenic variant data obtained from several pathogens may be regrouped into a unified database. This will enable researches from several multi-copy gene families to be accessed and compared swiftly in a single moment. Updated varDB database contains close to 10,000 DNA sequences, several protein translations, tens of infectious diseases and pathogens with their gene families. With a novel sequencing-based approach, PacBio, the different PfEMP1 proteins can be sequenced and the related sequences used as potential vaccine targets.104,105",
+            "cite_spans": [
+                {
+                    "start": 126,
+                    "end": 129,
+                    "mention": "103",
+                    "ref_id": "BIBREF102"
+                },
+                {
+                    "start": 665,
+                    "end": 668,
+                    "mention": "104",
+                    "ref_id": "BIBREF103"
+                },
+                {
+                    "start": 669,
+                    "end": 672,
+                    "mention": "105",
+                    "ref_id": "BIBREF104"
+                }
+            ],
+            "section": "Plasmodium ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "For many pathogens, antigenic variability occurs during the infection pathogenesis and is to enable them to escape destruction by the host antibodies. For instance, some eukaryotic parasites take to genetic assortment and re-arrangement thereby changing their surface antigens. A ready example is seen in Trypanosoma brucei, the causative organism for sleeping sickness. Trypanosoma brucei replicates in the bloodstream (outside the cells) of their host, but at maturity, it crosses the blood\u2013brain barrier to cause several fatal complications. During replication in the bloodstream, the parasites are subjected to humoral as well as cellular immune responses. It evades the host defenses by encasing itself in homogeneous coat of glycoprotein called the variant surface glycoprotein (VSG).106,107 Though at initial invasion, the protein coat tends to protect the microbe from the immune system but on constant exposure, the coat will be identified as a foreign matter, and at this point the immune effectors can launch an attack against it. In a particular Trypanosoma brucei, there are diversities of the VSG protein being coded by more than a thousand genes in the parasite\u2019s genome. Unfortunately for the host, the expression of these genes is mutually exclusive. Expressed VSG gene is normally due to genetic re-assortments causing new alleles to be copied into the sites of expression. Some trypanosomes with these abnormal VSG genes evade humoral immunity and multiply thereby causing re-infection and chronic recurring infections.107",
+            "cite_spans": [
+                {
+                    "start": 790,
+                    "end": 793,
+                    "mention": "106",
+                    "ref_id": "BIBREF105"
+                },
+                {
+                    "start": 794,
+                    "end": 797,
+                    "mention": "107",
+                    "ref_id": "BIBREF106"
+                },
+                {
+                    "start": 1538,
+                    "end": 1541,
+                    "mention": "107",
+                    "ref_id": "BIBREF106"
+                }
+            ],
+            "section": "Trypanosoma ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "Influenza is a viral infectious disease due to infection by any of the three types of RNA viruses, namely influenza Types A, B and C. Current vaccines contain double Type A and single Type B strains and induce strong antibody responses to neuraminidase and the surface glycoprotein hemagglutinin. These vaccines, however, cannot effectively protect against newly emerging viruses with antigenic shift and drift.108,109",
+            "cite_spans": [
+                {
+                    "start": 411,
+                    "end": 414,
+                    "mention": "108",
+                    "ref_id": "BIBREF107"
+                },
+                {
+                    "start": 415,
+                    "end": 418,
+                    "mention": "109",
+                    "ref_id": "BIBREF108"
+                }
+            ],
+            "section": "Influenza Virus ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "Antigenic drift results in changes in the antigenic site (a minor change) while antigenic shift results in a new virus subtype. Hemagglutinin and neuraminidase are the two enzymes dictating the antigenic properties of the viruses. While inside its host, defined host proteases break the peptide bonds in the hemagglutinin molecule to form hemagglutinin 1 and 2 subunits. Virulence tendencies are decreased when the amino acids at the cleavage sites are lipophobic, the virus exhibits high virulence tendencies.110 The surface glycoprotein can be regarded as antigen and hence can serve as a target for the immune system which if sequenced, using the new immunoinformatics approach and a common site for the varying proteins identified, a potent vaccine can be developed which can accommodate the antigenic drift/shifts of the virus.",
+            "cite_spans": [
+                {
+                    "start": 510,
+                    "end": 513,
+                    "mention": "110",
+                    "ref_id": "BIBREF109"
+                }
+            ],
+            "section": "Influenza Virus ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "Influenza viruses are able to thrive for a long while in a given human population.111,112 The virus has a high mutation rate such that a once effective vaccine can easily lose efficacy. Antigenic variability is only one of the evidences of phenotypic variation in the biology of the Influenza virus.",
+            "cite_spans": [
+                {
+                    "start": 82,
+                    "end": 85,
+                    "mention": "111",
+                    "ref_id": "BIBREF110"
+                },
+                {
+                    "start": 86,
+                    "end": 89,
+                    "mention": "112",
+                    "ref_id": "BIBREF111"
+                }
+            ],
+            "section": "Influenza Virus ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "The use of immunoinformatics in vaccine development has been accelerated toward the design of a multiepitope vaccine construct which has and will fully address the challenges faced with pathogens with mutagenic antigens. Previous vaccines developed by conventional approaches consist of several proteins or a whole pathogen. This constitutes unwarranted antigenic load and increases the chances of inducing allergy. The use of peptide-based vaccines surmounts these challenges. The vaccines are made from short peptide fragments capable of eliciting highly specific immune responses, precision targeting and multiepitope constructs, in the case of varying antigenic peptides, which has been made feasible with the advancements in the field of computational biology.113\u2013116",
+            "cite_spans": [
+                {
+                    "start": 765,
+                    "end": 768,
+                    "mention": "113",
+                    "ref_id": "BIBREF112"
+                },
+                {
+                    "start": 769,
+                    "end": 772,
+                    "mention": "116",
+                    "ref_id": "BIBREF115"
+                }
+            ],
+            "section": "Multiepitope Vaccines ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "Vaccines for pathogens with immune escape potentials can basically be constructed by using most, if not all, of their immunogenic peptides116,117 because such vaccines prove to be better than single-epitope and classical vaccines. Multiepitope vaccines enjoy the following advantages over single-epitope and classical vaccines: a) they are an assemblage of several epitopes obtained from distinct protein targets/antigens of an intended infection; b) the multiple T-cell receptors (TCRs) in the vaccine recipient can easily recognize vaccines with multiple HLA epitopes; c); they can be easily adjuvanted to improve their immunogenicity; d) they can activate antibody-mediated and cell-mediated immunological responses because of their overlapping helper T lymphocytes (HTL), CD8+ T-cell and B-cell epitopes; and e) unwanted protein antigens are excluded in such construct thereby reducing the chances of untoward effects and/or immune responses likely to cause disease(s).118\u2013123 Thus producing a vaccine with these qualities can provide chances of combating most infections such as Streptococcus pneumoniae and HIV infections.",
+            "cite_spans": [
+                {
+                    "start": 138,
+                    "end": 141,
+                    "mention": "116",
+                    "ref_id": "BIBREF115"
+                },
+                {
+                    "start": 142,
+                    "end": 145,
+                    "mention": "117",
+                    "ref_id": "BIBREF116"
+                },
+                {
+                    "start": 973,
+                    "end": 976,
+                    "mention": "118",
+                    "ref_id": "BIBREF117"
+                },
+                {
+                    "start": 977,
+                    "end": 980,
+                    "mention": "123",
+                    "ref_id": "BIBREF122"
+                }
+            ],
+            "section": "Multiepitope Vaccines ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "Immunoinformatics can be employed in the docking of single and multiepitope vaccines and subsequently to predict their properties (physicochemical, allergenic and antigenic). This approach has seen the use of diverse tools and database in the analysis of ligands with their targets and has greatly helped to predict the binding score of antigenic peptides with the immune proteins like HLA. Peptides and HLA allele modeling can be done by the 3D structural designing of the epitopes using PEPFOLD3 (an online server),124 retrieving from Protein Data Bank (PDB) the x-ray crystallographic structure of human population most occurring HLA alleles (HLA-DRB1 01:01, 15:01 and HLA-A 02:01) followed by filtration of previously bound ligands.",
+            "cite_spans": [
+                {
+                    "start": 517,
+                    "end": 520,
+                    "mention": "124",
+                    "ref_id": "BIBREF123"
+                }
+            ],
+            "section": "Multiepitope Vaccines ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "The following is a step-wise detail on how to construct a single or multiepitope-based vaccine and its property prediction;\nMolecular Docking Analysis: to determine the interaction pattern of the screened out epitopes with the HLA alleles by employing ClusPro v.2 (a protein-protein docking web server). This server performs this task by energy minimization, calculation of both the binding energy scores of the docked complex and electrostatic/shape complementarity.Target-Protein Comparative Modeling and associated Structure Validation: the sequence of the amino acid in the target protein (e.g., TLR-9) can be retrieved from UniProt and the tertiary structure with Raptor-X and I tasser (online comparative modeling tools). The server constructs and creates a 3D model (mathematical representation) of the target protein using hierarchical algorithms.118,125Designing of Final Single/Multiepitope Vaccine Construct: in the case of multiepitope-based vaccine; the different epitopes can be linked to each other using AAY and GPGPG linkers and to the adjuvant using EAAAK linker.Predicting the antigenicity and allergenicity together with other physicochemical information: allergenicity of the final vaccine construct can be analyzed by Vaxijen v.2 tool, antigenicity of the vaccine by the use of AlgPred server and the physicochemical properties (isoelectric point, half-life, solubility, molecular weight, aliphatic index, and average hydropathicity) with the ProtParam server.Structure modeling, Refinement and Validation of the final Vaccine-these can be investigated using the SOPMA server/Raptor-x, Galaxy Refine Server and ProSA-web, respectively. This process is being followed by molecular docking and molecular dynamics of receptor and the epitope vaccine using ClusPro and Molecular Dynamic Simulation (Desmond)126 respectively.",
+            "cite_spans": [
+                {
+                    "start": 855,
+                    "end": 858,
+                    "mention": "118",
+                    "ref_id": "BIBREF117"
+                },
+                {
+                    "start": 859,
+                    "end": 862,
+                    "mention": "125",
+                    "ref_id": "BIBREF124"
+                },
+                {
+                    "start": 1825,
+                    "end": 1828,
+                    "mention": "126",
+                    "ref_id": "BIBREF125"
+                }
+            ],
+            "section": "Multiepitope Vaccines ::: Pathogens with Variable Antigens",
+            "ref_spans": []
+        },
+        {
+            "text": "Vaccines are developed to take care of haplotype and polymorphism knowing that they can retard the formation of a protective immune response or become pointers to the risk of an adverse vaccine reaction.",
+            "cite_spans": [],
+            "section": "The Individual Level ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "This is needed when it is clear that females produce a higher antibody titre against a particular vaccine antigen than do their male counterparts.",
+            "cite_spans": [],
+            "section": "The Gender Level ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "Where it is clear that a particular human race or ethnic group has a higher or lower immune response to a particular vaccine antigen.",
+            "cite_spans": [],
+            "section": "The Racial/Ethnic Level ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "Personalized vaccines arise due to known complex interactions between host environmental, genetic and some other factors that may be influencing the vaccine immune responses. The associations between the immune response gene polymorphisms and variations in immune responses to a particular gene must be pine-pointed when it is clear that a particular drug either suppresses or augments the transcription of an immune response gene.127,128 This could help in designing vaccines or vaccine adjuvants that can circumvent restrictions due to immunological differences arising from varying genetic compositions.129,130",
+            "cite_spans": [
+                {
+                    "start": 431,
+                    "end": 434,
+                    "mention": "127",
+                    "ref_id": "BIBREF126"
+                },
+                {
+                    "start": 435,
+                    "end": 438,
+                    "mention": "128",
+                    "ref_id": "BIBREF127"
+                },
+                {
+                    "start": 606,
+                    "end": 609,
+                    "mention": "129",
+                    "ref_id": "BIBREF128"
+                },
+                {
+                    "start": 610,
+                    "end": 613,
+                    "mention": "130",
+                    "ref_id": "BIBREF129"
+                }
+            ],
+            "section": "The Subpopulation Level ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "Personalized vaccines stem from our understanding of how, within the human leukocyte antigen (HLA) system \u2013 also referred to as the major histocompatibility complex (MHC), the T cells are able to recognize peptides of pathogenic origin.131,132 HLA molecules enjoy the double advantages of having stable polymorphisms and being fully characterized.133 These advantages make good candidates for personalized vaccine design. HLA polymorphism, although stable, is complex. For instance, more than 12,000 alleles of HLA class I molecules and greater than 4000 class II molecules have been identified among human populations.133,134 HLA class I and II molecules have heterodimeric character comprising of \u03b1 and \u03b2 chains, three highly variable extracellular domains (\u03b11, \u03b12, and \u03b13) and then transmembrane and intracytoplasmic domains that are less variable.133,135 HLA genes contain eight exons. Exon 1 is responsible for producing the leader peptide; exons 2,3,4 produce \u03b11, \u03b12, and \u03b13 extracellular domains, respectively, for MHC class 1 or \u03b11, \u03b21and \u03b13, respectively, for MHC class II; exon 5 encodes transmembrane anchor; exons 6 and 7 encodes the cytoplasmic tail while exon 8 encodes the 3\u02b9-untranslated region.135 Most of the several forms associated with the class I and II genes are seen in \u03b1-1 and \u03b1-2 (as known as class I) and in \u03b1-1 and \u03b2-1 (as known as class II) domains.133 MHC I and II bind and present the peptide to T cells.",
+            "cite_spans": [
+                {
+                    "start": 236,
+                    "end": 239,
+                    "mention": "131",
+                    "ref_id": "BIBREF130"
+                },
+                {
+                    "start": 240,
+                    "end": 243,
+                    "mention": "132",
+                    "ref_id": "BIBREF131"
+                },
+                {
+                    "start": 347,
+                    "end": 350,
+                    "mention": "133",
+                    "ref_id": "BIBREF132"
+                },
+                {
+                    "start": 619,
+                    "end": 622,
+                    "mention": "133",
+                    "ref_id": "BIBREF132"
+                },
+                {
+                    "start": 623,
+                    "end": 626,
+                    "mention": "134",
+                    "ref_id": "BIBREF133"
+                },
+                {
+                    "start": 851,
+                    "end": 854,
+                    "mention": "133",
+                    "ref_id": "BIBREF132"
+                },
+                {
+                    "start": 855,
+                    "end": 858,
+                    "mention": "135",
+                    "ref_id": "BIBREF134"
+                },
+                {
+                    "start": 1211,
+                    "end": 1214,
+                    "mention": "135",
+                    "ref_id": "BIBREF134"
+                },
+                {
+                    "start": 1378,
+                    "end": 1381,
+                    "mention": "133",
+                    "ref_id": "BIBREF132"
+                }
+            ],
+            "section": "The Subpopulation Level ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "T cell responses to viral pathogens differ from one patient to the other, basically because of the expression of differing HLA (MHC) alleles which determine the several viral amino acid sequence brought to the T cells to read.136,137 It is most likely that during an infection, diverse epitopes are usually presented to the T cells to read owing to the several forms of HLA alleles and also because each human person expresses six HLA Class I and six HLA Class II alleles.138 Now, antibody-binding sites in a given HLA (MHC) molecule are mostly prediction-servers pre-determined on the basis of particular binding motifs and the anchor residues.139,140 These residues refer to known amino acids located at defined locations in the peptide chain and which are peculiar to each MHC molecule.141,142 Prediction-server database of peptide motifs and/or of MHC ligands may be obtained from web-based and/or from prediction-servers dedicated to NetMHC family.143,144",
+            "cite_spans": [
+                {
+                    "start": 226,
+                    "end": 229,
+                    "mention": "136",
+                    "ref_id": "BIBREF135"
+                },
+                {
+                    "start": 230,
+                    "end": 233,
+                    "mention": "137",
+                    "ref_id": "BIBREF136"
+                },
+                {
+                    "start": 472,
+                    "end": 475,
+                    "mention": "138",
+                    "ref_id": "BIBREF137"
+                },
+                {
+                    "start": 645,
+                    "end": 648,
+                    "mention": "139",
+                    "ref_id": "BIBREF138"
+                },
+                {
+                    "start": 649,
+                    "end": 652,
+                    "mention": "140",
+                    "ref_id": "BIBREF139"
+                },
+                {
+                    "start": 789,
+                    "end": 792,
+                    "mention": "141",
+                    "ref_id": "BIBREF140"
+                },
+                {
+                    "start": 793,
+                    "end": 796,
+                    "mention": "142",
+                    "ref_id": "BIBREF141"
+                },
+                {
+                    "start": 953,
+                    "end": 956,
+                    "mention": "143",
+                    "ref_id": "BIBREF142"
+                },
+                {
+                    "start": 957,
+                    "end": 960,
+                    "mention": "144",
+                    "ref_id": "BIBREF143"
+                }
+            ],
+            "section": "The Subpopulation Level ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "In another example, sequence analysis of Lassa fever virus (the LASV) and other viruses\u2019 immunoproteomic was used to identify the best immunogenic protein predicting T-cell as well as B-cell epitopes and also target sequence and binding sites.145,146 The SSNLYKGVY peptide sequence at AA41-49 of glycoprotein 1 (produced by the L segment) was the best candidate epitope for the induction of humoral as well as the cell-mediated immunity for Lassa fever vaccine construct. 17 HLA-I and 16 HLA-II molecules have been proven in sizable African populations and their combination with the SSNLYKGVY peptide sequence may prove useful in such Lassa fever virus endemic areas.145 This approach will strongly improve individualized vaccination and help combat emerging infections. The HLA region is suspected to contribute, to a large extent, to genetic propensity to infections and differences in vaccine expected immune responses.132,147",
+            "cite_spans": [
+                {
+                    "start": 243,
+                    "end": 246,
+                    "mention": "145",
+                    "ref_id": "BIBREF144"
+                },
+                {
+                    "start": 247,
+                    "end": 250,
+                    "mention": "146",
+                    "ref_id": "BIBREF145"
+                },
+                {
+                    "start": 668,
+                    "end": 671,
+                    "mention": "145",
+                    "ref_id": "BIBREF144"
+                },
+                {
+                    "start": 923,
+                    "end": 926,
+                    "mention": "132",
+                    "ref_id": "BIBREF131"
+                },
+                {
+                    "start": 927,
+                    "end": 930,
+                    "mention": "147",
+                    "ref_id": "BIBREF146"
+                }
+            ],
+            "section": "The Subpopulation Level ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "Studies show that females exhibit stronger immune responses to immunization compared to males.148,149 There are differential antibody responses to rubella and measles viral protein between males and females and that both hormonal and genetic difference may be influencing the immune responses.148,150,151",
+            "cite_spans": [
+                {
+                    "start": 94,
+                    "end": 97,
+                    "mention": "148",
+                    "ref_id": "BIBREF147"
+                },
+                {
+                    "start": 98,
+                    "end": 101,
+                    "mention": "149",
+                    "ref_id": "BIBREF148"
+                },
+                {
+                    "start": 293,
+                    "end": 296,
+                    "mention": "148",
+                    "ref_id": "BIBREF147"
+                },
+                {
+                    "start": 297,
+                    "end": 300,
+                    "mention": "150",
+                    "ref_id": "BIBREF149"
+                },
+                {
+                    "start": 301,
+                    "end": 304,
+                    "mention": "151",
+                    "ref_id": "BIBREF150"
+                }
+            ],
+            "section": "The Subpopulation Level ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "Practical issues may stand in the way of achieving this new development (personalized vaccinology). Having to use different vaccines for different persons based because of personal genetic composition requires more time and labor during the vaccination process. Also, screening for individual factors for targeted vaccination can significantly increase vaccination cost. But with all these challenges, personalized vaccination is the new age approach in achieving an optimum immunization that takes into consideration the individual immune differences in a particular population and it is a new dawn for vaccine development.",
+            "cite_spans": [],
+            "section": "The Subpopulation Level ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "Personalized vaccine development is strongly improved by vaccinomics. The field of vaccinomics looks at how immune response gene polymorphisms affect the cell-mediated, humoral and innate immune responses to vaccine antigens at population and specific individual levels. \u201cVaccinomics\u201d encompasses both immunogenomics and immunogenetics as it concerns immune responses to vaccine antigen.152 The fields of personalized vaccinology and vaccinomics were the products of Phase I of the international HapMap and that of the Human Genome Project. Also, modern molecular assay techniques permitting high-throughput detection of variations at gene level, in particular linkage disequilibrium maps and single nucleotide polymorphism (SNP), played significant roles in the development of personalized vaccinology and vaccinomics. It has also been shown that polymorphisms at vital immune response genes can bring about differing immune responses to biopharmaceutical products including vaccines.152\u2013154",
+            "cite_spans": [
+                {
+                    "start": 387,
+                    "end": 390,
+                    "mention": "152",
+                    "ref_id": "BIBREF151"
+                },
+                {
+                    "start": 985,
+                    "end": 988,
+                    "mention": "152",
+                    "ref_id": "BIBREF151"
+                },
+                {
+                    "start": 989,
+                    "end": 992,
+                    "mention": "154",
+                    "ref_id": "BIBREF153"
+                }
+            ],
+            "section": "The Subpopulation Level ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "Newer, accurate, cheap and reproducible sequencing technologies; validated databases containing genotype-phenotype data; statistical and bioinformatics tools are needed in order to analyze and interpret data that will help and improve vaccine adverse and immune response quantifiability and predictability.155 The information will enhance clinical practice and accelerate rational and directed vaccine development.",
+            "cite_spans": [
+                {
+                    "start": 306,
+                    "end": 309,
+                    "mention": "155",
+                    "ref_id": "BIBREF154"
+                }
+            ],
+            "section": "The Subpopulation Level ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "Safe vaccines are a critical requirement for any immunization program.156 Conventional vaccination has been an approach targeted at all groups and individuals but has failed toward the enrolment of pregnant women into vaccination programs because of presumed fetal and maternal harms.157,158 Evidence on the safety of vaccination in pregnancy is very small because pregnant women were usually excluded from participating in vaccine trials.159 Pregnancy can alter the maternal as well as fetal immunological responses.160 It is pertinent to explore research opportunities presented in advanced vaccine designs such as immunoinformatics (multiepitope vaccine docking) by studying human immune system functions and responses specific to pregnant women and their unborn children.157",
+            "cite_spans": [
+                {
+                    "start": 70,
+                    "end": 73,
+                    "mention": "156",
+                    "ref_id": "BIBREF155"
+                },
+                {
+                    "start": 284,
+                    "end": 287,
+                    "mention": "157",
+                    "ref_id": "BIBREF156"
+                },
+                {
+                    "start": 288,
+                    "end": 291,
+                    "mention": "158",
+                    "ref_id": "BIBREF157"
+                },
+                {
+                    "start": 439,
+                    "end": 442,
+                    "mention": "159",
+                    "ref_id": "BIBREF158"
+                },
+                {
+                    "start": 517,
+                    "end": 520,
+                    "mention": "160",
+                    "ref_id": "BIBREF159"
+                },
+                {
+                    "start": 775,
+                    "end": 778,
+                    "mention": "157",
+                    "ref_id": "BIBREF156"
+                }
+            ],
+            "section": "The Pregnant Women ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "According to a report161 from the Dominican Republic of Congo, during the 2016\u20132017 Zika virus outbreaks, over a thousand pregnant women were suspected of being infected with the virus and a sizable number were at their first trimester. The report further stated that fetal loss was approximately one-tenth of the pregnancies and that there were up to 3 cases of fetus with head circumferences smaller than normal. The widespread morbidity during the epidemic showed that Zika virus infection adversely affects pregnancy outcome.160,161",
+            "cite_spans": [
+                {
+                    "start": 21,
+                    "end": 24,
+                    "mention": "161",
+                    "ref_id": "BIBREF160"
+                },
+                {
+                    "start": 529,
+                    "end": 532,
+                    "mention": "160",
+                    "ref_id": "BIBREF159"
+                },
+                {
+                    "start": 533,
+                    "end": 536,
+                    "mention": "161",
+                    "ref_id": "BIBREF160"
+                }
+            ],
+            "section": "The Pregnant Women ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "Currently, there is no proof that pregnancy predisposes to Ebola virus infections in comparison with the non-pregnant population, but there is some evidence suggesting pregnancy to worsen the disease prognosis including fetal loss. Also, evidence showed that the virus can pass the placental barriers to establish infection in the unborn child.162 Designing, implementing and enrolling pregnant women as well as perspective pregnant women into vaccine trials and programs is imperative in order to protect this group and ensure good vaccine uptake by them during infection outbreaks and epidemics.157,163",
+            "cite_spans": [
+                {
+                    "start": 344,
+                    "end": 347,
+                    "mention": "162",
+                    "ref_id": "BIBREF161"
+                },
+                {
+                    "start": 597,
+                    "end": 600,
+                    "mention": "157",
+                    "ref_id": "BIBREF156"
+                },
+                {
+                    "start": 601,
+                    "end": 604,
+                    "mention": "163",
+                    "ref_id": "BIBREF162"
+                }
+            ],
+            "section": "The Pregnant Women ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "These recommendations will give an informed decision to be investigated using the immunoinformatic tools to determine the immunogenic responses worthy of safe vaccine development for the pregnant women and perspective pregnant women group.",
+            "cite_spans": [],
+            "section": "The Pregnant Women ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "Maternal immunization offers palpable benefits in several ways. Some vaccines are primarily administered to shield these pregnant women from morbid conditions and/or death including fetal death.164,165 Pregnant women stand the risk of being exposed to virulent pathogens and may be at a higher risk of morbidity and/or mortality when compared to the general population.166",
+            "cite_spans": [
+                {
+                    "start": 194,
+                    "end": 197,
+                    "mention": "164",
+                    "ref_id": "BIBREF163"
+                },
+                {
+                    "start": 198,
+                    "end": 201,
+                    "mention": "165",
+                    "ref_id": "BIBREF164"
+                },
+                {
+                    "start": 369,
+                    "end": 372,
+                    "mention": "166",
+                    "ref_id": "BIBREF165"
+                }
+            ],
+            "section": "The Pregnant Women ::: Case of Personalized Vaccination",
+            "ref_spans": []
+        },
+        {
+            "text": "Immunoinformatics depends on experimental science (wet laboratory) to produce raw data for analysis. The predictions are not formal proofs of any concepts. They do not replace the traditional experimental research methods of actually testing hypotheses.The quality of immunoinformatics predictions depends on the quality of data and the sophistication of the algorithms being used. Sequence data from high-throughput analysis often contain errors. If the sequences are wrong, or annotations incorrect, the results from the downstream analysis are misleading as well.167",
+            "cite_spans": [
+                {
+                    "start": 566,
+                    "end": 569,
+                    "mention": "167",
+                    "ref_id": "BIBREF166"
+                }
+            ],
+            "section": "Limitation of Immunoinformatics Predictions in Vaccine Design ::: Conclusion and Future Research Directions",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Functions of the Immunological Memories\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: The Importance of Bioinformatics in the Research on Infectious Diseases\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Bioinformatics Tools for MHC Cluster Binding and Super-Type Motifs and Protein Sequences\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: List of Some Immunological Databases\n",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5: Current Emerging and Re-Surging Infectious Disease\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Schematic illustration of the cases stemming the need for immunoinformatics vaccine development approach.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Time for T? Immunoinformatics addresses vaccine design for neglected tropical and emerging infectious diseases",
+            "authors": [],
+            "year": 2015,
+            "venue": "Expert Rev Vaccines",
+            "volume": "14",
+            "issn": "1",
+            "pages": "21-35",
+            "other_ids": {
+                "DOI": [
+                    "10.1586/14760584.2015.955478"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Vaccinology in the third millennium: scientific and social challenges",
+            "authors": [],
+            "year": 2016,
+            "venue": "Curr Opin Virol",
+            "volume": "17",
+            "issn": "",
+            "pages": "116-125",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.coviro.2016.03.003"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Antigenic variability: obstacles on the road to vaccines against traditionally difficult targets",
+            "authors": [],
+            "year": 2016,
+            "venue": "Hum Vaccin Immunother",
+            "volume": "12",
+            "issn": "10",
+            "pages": "2640-2648",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/21645515.2016.1191718"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Complex immune correlates of protection in HIV-1 vaccine efficacy trials",
+            "authors": [],
+            "year": 2017,
+            "venue": "Immunol Rev",
+            "volume": "275",
+            "issn": "1",
+            "pages": "245-261",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/imr.12514"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Immunoinformatics approach to design a novel epitope-based oral vaccine against Helicobacter pylori",
+            "authors": [],
+            "year": 2019,
+            "venue": "J Comput Biol",
+            "volume": "(2019",
+            "issn": "May",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1089/cmb.2019.0062"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Immunoinformatics approach for multiepitopes vaccine prediction against glycoprotein B of avian infectious laryngotracheitis virus",
+            "authors": [],
+            "year": 2019,
+            "venue": "Adv Bioinformatics",
+            "volume": "2019",
+            "issn": "1270485",
+            "pages": "1-23",
+            "other_ids": {
+                "DOI": [
+                    "10.1155/2019/1270485"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Genome, transcriptome and proteome: the rise of omics data and their integration in biomedical sciences",
+            "authors": [],
+            "year": 2018,
+            "venue": "Brief Bioinform",
+            "volume": "19",
+            "issn": "2",
+            "pages": "286-302",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bib/bbw114"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Neoantigen vaccine: an emerging tumor immunotherapy",
+            "authors": [],
+            "year": 2019,
+            "venue": "Mol Cancer",
+            "volume": "18",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s12943-019-1055-6"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Designing of CD8+ and CD8+-overlapped CD4+ epitope vaccine by targeting late and early proteins of human papillomavirus",
+            "authors": [],
+            "year": 2018,
+            "venue": "Biologics",
+            "volume": "12",
+            "issn": "",
+            "pages": "107-125",
+            "other_ids": {
+                "DOI": [
+                    "10.2147/BTT.S177901"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Immunization with a recombinant antigen composed of conserved blocks from TSA56 provides broad genotype protection against scrub typhus",
+            "authors": [],
+            "year": 2019,
+            "venue": "Emerg Microbes Infect",
+            "volume": "8",
+            "issn": "1",
+            "pages": "946-958",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/22221751.2019.1632676"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Vaccine mediated protection against zika virus-induced congenital disease",
+            "authors": [],
+            "year": 2017,
+            "venue": "Cell",
+            "volume": "170",
+            "issn": "2",
+            "pages": "273-283. e12",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.cell.2017.06.040"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Vaccination with sporozoites: models and correlates of protection",
+            "authors": [],
+            "year": 2019,
+            "venue": "Front Immunol",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fimmu.2019.01227"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Novel approaches for the design, delivery and administration of vaccine technologies",
+            "authors": [],
+            "year": 2019,
+            "venue": "Clin Exp Immunol",
+            "volume": "196",
+            "issn": "2",
+            "pages": "189-204",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/cei.13287"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Vaccination to gain humoral immune memory",
+            "authors": [],
+            "year": 2016,
+            "venue": "Clin Transl Immunol",
+            "volume": "5",
+            "issn": "12",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/cti.2016.81"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Humoral and cell-mediated immune responses after a booster dose of HBV vaccine in HIV-infected children, adolescents and young adults",
+            "authors": [],
+            "year": 2018,
+            "venue": "PLoS One",
+            "volume": "13",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0192638"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "An evaluation of the cold chain technology in South-East, Nigeria using Immunogenicity study on the measles vaccines",
+            "authors": [],
+            "year": 2017,
+            "venue": "Pan Afr Med J",
+            "volume": "27",
+            "issn": "Suppl 3",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.11604/pamj.supp.2017.27.3.11491"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "A review of the immunological mechanisms following mucosal vaccination of finfish",
+            "authors": [],
+            "year": 2015,
+            "venue": "Front Immunol",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fimmu.2015.00427"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Reverse vaccinology 2.0: human immunology instructs vaccine antigen design",
+            "authors": [],
+            "year": 2016,
+            "venue": "J Exp Med",
+            "volume": "213",
+            "issn": "4",
+            "pages": "469-481",
+            "other_ids": {
+                "DOI": [
+                    "10.1084/jem.20151960"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Large screen approaches to identify novel malaria vaccine candidates",
+            "authors": [],
+            "year": 2015,
+            "venue": "Vaccine",
+            "volume": "33",
+            "issn": "52",
+            "pages": "7496-7505",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.vaccine.2015.09.059"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Reverse vaccinology and subtractive genomics reveal new therapeutic targets against Mycoplasma pneumoniae: a causative agent of pneumonia",
+            "authors": [],
+            "year": 2019,
+            "venue": "R Soc Open Sci",
+            "volume": "6",
+            "issn": "7",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rsos.190907"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Evolution of the immune system in humans from infancy to old age",
+            "authors": [],
+            "year": 2015,
+            "venue": "Proc Biol Sci",
+            "volume": "282",
+            "issn": "1821",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rspb.2014.3085"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "The twilight of immunity: emerging concepts in aging of the immune system",
+            "authors": [],
+            "year": 2018,
+            "venue": "Nat Immunol",
+            "volume": "19",
+            "issn": "",
+            "pages": "10-19",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41590-017-0006-x"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Pneumococcal vaccination strategies. An update and perspective",
+            "authors": [],
+            "year": 2016,
+            "venue": "Ann Am Thorac Soc",
+            "volume": "13",
+            "issn": "6",
+            "pages": "933-944",
+            "other_ids": {
+                "DOI": [
+                    "10.1513/AnnalsATS.201511-778FR"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Progress and challenges in TB vaccine development",
+            "authors": [],
+            "year": 2018,
+            "venue": "F1000Res",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.12688/f1000research.13588.1"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Vaccines for the elderly: current use and future challenges",
+            "authors": [],
+            "year": 2018,
+            "venue": "Immun Ageing",
+            "volume": "15",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s12979-017-0107-2"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Remembrance of things past: long-term B cell memory after infection and vaccination",
+            "authors": [],
+            "year": 2019,
+            "venue": "Front Immunol",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fimmu.2019.01787"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Global practices of meningococcal vaccine use and impact on invasive disease",
+            "authors": [],
+            "year": 2014,
+            "venue": "Pathog Glob Health",
+            "volume": "108",
+            "issn": "1",
+            "pages": "11-20",
+            "other_ids": {
+                "DOI": [
+                    "10.1179/2047773214Y.0000000126"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "New vaccine technologies to combat outbreak situations",
+            "authors": [],
+            "year": 2018,
+            "venue": "Front Immunol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fimmu.2018.01963"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "What are the most powerful immunogen design vaccine strategies? Reverse vaccinology 2.0 shows great promise",
+            "authors": [],
+            "year": 2017,
+            "venue": "Cold Spring Harb Perspect Biol",
+            "volume": "9",
+            "issn": "11",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1101/cshperspect.a030262"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "The new malaria vaccine program for African children is promising but still quite limited",
+            "authors": [],
+            "year": 2019,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Merck\u2019s Ebola vaccine helps combat deadly outbreak in the Congo as the virus spreads",
+            "authors": [],
+            "year": 2019,
+            "venue": "BIOTECH and PHARMA",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Innovation for the \u2018bottom 100 million\u2019: eliminating neglected tropical diseases in the Americas",
+            "authors": [],
+            "year": 2013,
+            "venue": "Adv Exp Med Biol",
+            "volume": "764",
+            "issn": "",
+            "pages": "1-12",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Emerging and neglected infectious diseases: insights, advances, and challenges",
+            "authors": [],
+            "year": 2017,
+            "venue": "Biomed Res Int",
+            "volume": "2017",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1155/2017/5245021"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Exploitation of reverse vaccinology and immunoinformatics as promising platform for genome-wide screening of new effective vaccine candidates against Plasmodium falciparum",
+            "authors": [],
+            "year": 2019,
+            "venue": "BMC Bioinformatics",
+            "volume": "19",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s12859-018-2482-x"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "The use of databases, data mining and immunoinformatics in vaccinology: where are we?",
+            "authors": [],
+            "year": 2018,
+            "venue": "Expert Opin Drug Discov",
+            "volume": "13",
+            "issn": "2",
+            "pages": "117-130",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/17460441.2018.1413088"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "Systems vaccinology and big data in the vaccine development chain",
+            "authors": [],
+            "year": 2019,
+            "venue": "Immunology",
+            "volume": "156",
+            "issn": "1",
+            "pages": "33-46",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/imm.13012"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "Biochemical functional predictions for protein structures of unknown or uncertain function",
+            "authors": [],
+            "year": 2015,
+            "venue": "Comput Struct Biotechnol J",
+            "volume": "13",
+            "issn": "",
+            "pages": "182-191",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.csbj.2015.02.003"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "",
+            "authors": [],
+            "year": 2016,
+            "venue": "Vaccine Design. Methods in Molecular Biology",
+            "volume": "1403",
+            "issn": "",
+            "pages": "87-106",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/978-1-4939-3387-7_4"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Universal genotyping for tuberculosis prevention programs: a 5-year comparison with on-request genotyping",
+            "authors": [],
+            "year": 2018,
+            "venue": "J Clin Microbiol",
+            "volume": "56",
+            "issn": "5",
+            "pages": "e01778-17",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JCM.01778-17"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "Integrating Whole-genome sequencing data into quantitative risk assessment of foodborne antimicrobial resistance: a review of opportunities and challenges",
+            "authors": [],
+            "year": 2019,
+            "venue": "Front Microbiol",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fmicb.2019.01107"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "Bioinformatics and drug discovery",
+            "authors": [],
+            "year": 2017,
+            "venue": "Curr Top Med Chem",
+            "volume": "17",
+            "issn": "15",
+            "pages": "1709-1726",
+            "other_ids": {
+                "DOI": [
+                    "10.2174/1568026617666161116143440"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "New technologies in predicting, preventing and controlling emerging infectious diseases",
+            "authors": [],
+            "year": 2015,
+            "venue": "Virulence",
+            "volume": "6",
+            "issn": "6",
+            "pages": "558-565",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/21505594.2015.1040975"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "How genomics can be used to understand host susceptibility to enteric infection, aiding in the development of vaccines and immunotherapeutic interventions",
+            "authors": [],
+            "year": 2019,
+            "venue": "Vaccine",
+            "volume": "37",
+            "issn": "34",
+            "pages": "4805-4810",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.vaccine.2019.01.016"
+                ]
+            }
+        },
+        "BIBREF43": {
+            "title": "In silico analysis of epitope-based vaccine candidates against hepatitis B virus polymerase protein",
+            "authors": [],
+            "year": 2017,
+            "venue": "Viruses",
+            "volume": "9",
+            "issn": "5",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3390/v9050112"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "Advances in designing and developing vaccines, drugs and therapeutic approaches to counter human papilloma virus",
+            "authors": [],
+            "year": 2018,
+            "venue": "Front Immunol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fimmu.2018.02478"
+                ]
+            }
+        },
+        "BIBREF45": {
+            "title": "Computational approaches and challenges to developing universal influenza vaccines",
+            "authors": [],
+            "year": 2019,
+            "venue": "Vaccines (Basel)",
+            "volume": "7",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3390/vaccines7020045"
+                ]
+            }
+        },
+        "BIBREF46": {
+            "title": "Experimental and computational analyses reveal that environmental restrictions shape HIV-1 spread in 3D cultures",
+            "authors": [],
+            "year": 2019,
+            "venue": "Nat Commun",
+            "volume": "10",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41467-019-09879-3"
+                ]
+            }
+        },
+        "BIBREF47": {
+            "title": "Dynamic computational model of symptomatic bacteremia to inform bacterial separation treatment requirements",
+            "authors": [],
+            "year": 2016,
+            "venue": "PLoS One",
+            "volume": "11",
+            "issn": "9",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0163167"
+                ]
+            }
+        },
+        "BIBREF48": {
+            "title": "A model of Plasmodium vivax concealment based on Plasmodium cynomolgi infections in Macaca mulatta",
+            "authors": [],
+            "year": 2017,
+            "venue": "Malar J",
+            "volume": "16",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s12936-017-2008-4"
+                ]
+            }
+        },
+        "BIBREF49": {
+            "title": "A computational modeling approach predicts interaction of the antifungal protein AFP from Aspergillus giganteus with fungal membranes via its \u03b3-core motif",
+            "authors": [],
+            "year": 2018,
+            "venue": "mSphere",
+            "volume": "3",
+            "issn": "5",
+            "pages": "e00377-18",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/mSphere.00377-18"
+                ]
+            }
+        },
+        "BIBREF50": {
+            "title": "An overview of bioinformatics tools for epitope prediction: implications on vaccine development",
+            "authors": [],
+            "year": 2015,
+            "venue": "J Biomed Inform",
+            "volume": "53",
+            "issn": "",
+            "pages": "405-414",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jbi.2014.11.003"
+                ]
+            }
+        },
+        "BIBREF51": {
+            "title": "Bioinformatics tools for identifying class I-restricted epitopes",
+            "authors": [],
+            "year": 2003,
+            "venue": "Methods",
+            "volume": "29",
+            "issn": "3",
+            "pages": "289-298",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1046-2023(02)00351-1"
+                ]
+            }
+        },
+        "BIBREF52": {
+            "title": "In silico-accelerated identification of conserved and immunogenic variola/vaccinia T-cell epitopes",
+            "authors": [],
+            "year": 2009,
+            "venue": "Vaccine",
+            "volume": "27",
+            "issn": "46",
+            "pages": "6471-6479",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.vaccine.2009.06.018"
+                ]
+            }
+        },
+        "BIBREF53": {
+            "title": "NHLBI-AbDesigner: an online tool for design of peptide-directed antibodies",
+            "authors": [],
+            "year": 2012,
+            "venue": "Am J Physiol",
+            "volume": "302",
+            "issn": "1",
+            "pages": "C154-C164",
+            "other_ids": {
+                "DOI": [
+                    "10.1152/ajpcell.00325.2011"
+                ]
+            }
+        },
+        "BIBREF54": {
+            "title": "iVAX: an integrated toolkit for the selection and optimization of antigens and the design of epitope-driven vaccines",
+            "authors": [],
+            "year": 2015,
+            "venue": "Hum Vaccin Immunother",
+            "volume": "11",
+            "issn": "9",
+            "pages": "2312-2321",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/21645515.2015.1061159"
+                ]
+            }
+        },
+        "BIBREF55": {
+            "title": "iVAX - EpiVax, Inc",
+            "authors": [],
+            "year": 2013,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "From genome to vaccine: in silico predictions, ex vivo verification",
+            "authors": [],
+            "year": 2015,
+            "venue": "Vaccine",
+            "volume": "19",
+            "issn": "31",
+            "pages": "4385-4395",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0264-410X(01)00145-1"
+                ]
+            }
+        },
+        "BIBREF57": {
+            "title": "Designing string-of-beads vaccines with optimal spacers",
+            "authors": [],
+            "year": 2016,
+            "venue": "Genome Med",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s13073-016-0263-6"
+                ]
+            }
+        },
+        "BIBREF58": {
+            "title": "HIV vaccine development by computer assisted design: the GAIA vaccine",
+            "authors": [],
+            "year": 2005,
+            "venue": "Vaccine",
+            "volume": "18",
+            "issn": "",
+            "pages": "2136-48",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.vaccine.2005.01.097"
+                ]
+            }
+        },
+        "BIBREF59": {
+            "title": "NERVE: new Enhanced reverse vaccinology environment",
+            "authors": [],
+            "year": 2006,
+            "venue": "BMC Biotechnol",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1472-6750-6-35"
+                ]
+            }
+        },
+        "BIBREF60": {
+            "title": "Jenner-predict server: prediction of protein vaccine candidates (PVCs) in bacteria based on host-pathogen interactions",
+            "authors": [],
+            "year": 2013,
+            "venue": "BMC Bioinformatics",
+            "volume": "14",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2105-14-211"
+                ]
+            }
+        },
+        "BIBREF61": {
+            "title": "Genome-wide prediction of vaccine target of human herpes simplex viruses using Vaxign RV",
+            "authors": [],
+            "year": 2013,
+            "venue": "BMC Bioinformatics",
+            "volume": "14",
+            "issn": "Suppl4",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2105-14-S4-S2"
+                ]
+            }
+        },
+        "BIBREF62": {
+            "title": "VaxiJen: a server for prediction of protective antigens, tumour antigens and subunit vaccines",
+            "authors": [],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2105-8-4"
+                ]
+            }
+        },
+        "BIBREF63": {
+            "title": "VacSol: a high throughput in silico pipeline to predict potential therapeutic targets in prokaryotic pathogens using subtractive reverse vaccinology",
+            "authors": [],
+            "year": 2017,
+            "venue": "BMC Bioinformatics",
+            "volume": "18",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s12859-017-1540-0"
+                ]
+            }
+        },
+        "BIBREF64": {
+            "title": "PanRV: pangenome-reverse vaccinology approach for identifications of potential vaccine candidates in microbial pangenome",
+            "authors": [],
+            "year": 2019,
+            "venue": "BMC Bioinformatics",
+            "volume": "20",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s12859-019-2713-9"
+                ]
+            }
+        },
+        "BIBREF65": {
+            "title": "",
+            "authors": [],
+            "year": 2007,
+            "venue": "Understanding Emerging and Re-Emerging Infectious Diseases",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "The consequences of human actions on risks for infectious diseases: a review",
+            "authors": [],
+            "year": 2015,
+            "venue": "Infect Ecol Epidemiol",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3402/iee.v5.30048"
+                ]
+            }
+        },
+        "BIBREF67": {
+            "title": "",
+            "authors": [],
+            "year": 2009,
+            "venue": "Microbial evolution and co-adaptation: a tribute to the life and scientific legacies of joshua lederberg: workshop summary",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.17226/12586"
+                ]
+            }
+        },
+        "BIBREF68": {
+            "title": "Trends in antimicrobial resistance of bacterial pathogens in Harare, Zimbabwe, 2012\u20132017: a secondary dataset analysis",
+            "authors": [],
+            "year": 2019,
+            "venue": "BMC Infect Dis",
+            "volume": "19",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s12879-019-4295-6"
+                ]
+            }
+        },
+        "BIBREF69": {
+            "title": "",
+            "authors": [],
+            "year": 2007,
+            "venue": "Understanding Emerging and Re-Emerging Infectious Diseases",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF70": {
+            "title": "Evolution and emergence of infectious diseases in theoretical and real-world networks",
+            "authors": [],
+            "year": 2015,
+            "venue": "Nat Commun",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ncomms7101"
+                ]
+            }
+        },
+        "BIBREF71": {
+            "title": "Carbapenem-resistant enterobacteriaceae posing a dilemma in effective healthcare delivery",
+            "authors": [],
+            "year": 2019,
+            "venue": "Antibiotics (Basel)",
+            "volume": "8",
+            "issn": "4",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3390/antibiotics8040156"
+                ]
+            }
+        },
+        "BIBREF72": {
+            "title": "A research and development blueprint for action to prevent epidemics, 2018 annual review of diseases prioritized under the research and development blueprint",
+            "authors": [],
+            "year": 2019,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF73": {
+            "title": "The role of nanotechnology in the treatment of viral infections",
+            "authors": [],
+            "year": 2017,
+            "venue": "Ther Adv Infect Dis",
+            "volume": "4",
+            "issn": "4",
+            "pages": "105-131",
+            "other_ids": {
+                "DOI": [
+                    "10.1177/2049936117713593"
+                ]
+            }
+        },
+        "BIBREF74": {
+            "title": "Proteomics for development of vaccine",
+            "authors": [],
+            "year": 2011,
+            "venue": "J Proteomics",
+            "volume": "74",
+            "issn": "12",
+            "pages": "2596-2616",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jprot.2011.01.019"
+                ]
+            }
+        },
+        "BIBREF75": {
+            "title": "Computational methods in drug discovery",
+            "authors": [],
+            "year": 2013,
+            "venue": "Pharmacol Rev",
+            "volume": "66",
+            "issn": "1",
+            "pages": "334-395",
+            "other_ids": {
+                "DOI": [
+                    "10.1124/pr.112.007336"
+                ]
+            }
+        },
+        "BIBREF76": {
+            "title": "Computational approaches for prediction of pathogen-host protein-protein interactions",
+            "authors": [],
+            "year": 2015,
+            "venue": "Front Microbiol",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fmicb.2015.00094"
+                ]
+            }
+        },
+        "BIBREF77": {
+            "title": "New approaches to understanding the immune response to vaccination and infection",
+            "authors": [],
+            "year": 2015,
+            "venue": "Vaccine",
+            "volume": "33",
+            "issn": "40",
+            "pages": "5271-5281",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.vaccine.2015.06.117"
+                ]
+            }
+        },
+        "BIBREF78": {
+            "title": "Adaptive immune responses mediated by natural killer cells",
+            "authors": [],
+            "year": 2010,
+            "venue": "Immunol Rev",
+            "volume": "235",
+            "issn": "1",
+            "pages": "286-296",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.0105-2896.2010.00906.x"
+                ]
+            }
+        },
+        "BIBREF79": {
+            "title": "Friend retrovirus studies reveal complex interactions between intrinsic, innate and adaptive immunity",
+            "authors": [],
+            "year": 2019,
+            "venue": "FEMS Microbiol Rev",
+            "volume": "43",
+            "issn": "5",
+            "pages": "435-456",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/femsre/fuz012"
+                ]
+            }
+        },
+        "BIBREF80": {
+            "title": "From entry to early dissemination-Toxoplasma gondii\u2019s initial encounter with its host",
+            "authors": [],
+            "year": 2019,
+            "venue": "Front Cell Infect Microbiol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fcimb.2019.00046"
+                ]
+            }
+        },
+        "BIBREF81": {
+            "title": "Evolution and divergence of H3N8 equine influenza viruses circulating in the United Kingdom from 2013 to 2015",
+            "authors": [],
+            "year": 2017,
+            "venue": "Pathogens",
+            "volume": "6",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3390/pathogens6010006"
+                ]
+            }
+        },
+        "BIBREF82": {
+            "title": "Neisseria genomics: current status and future perspectives",
+            "authors": [],
+            "year": 2017,
+            "venue": "Pathog Dis",
+            "volume": "75",
+            "issn": "6",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1093/femspd/ftx060"
+                ]
+            }
+        },
+        "BIBREF83": {
+            "title": "Antigenic variation in Plasmodium falciparum malaria involves a highly structured switching pattern",
+            "authors": [],
+            "year": 2011,
+            "venue": "PLoS Pathog",
+            "volume": "7",
+            "issn": "3",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.ppat.1001306"
+                ]
+            }
+        },
+        "BIBREF84": {
+            "title": "Neisseria gonorrhoeae MutS affects pilin antigenic variation through mismatch correction and not by pilE guanine quartet binding",
+            "authors": [],
+            "year": 2015,
+            "venue": "J Bacteriol",
+            "volume": "197",
+            "issn": "",
+            "pages": "1828-1838",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JB.02594-14"
+                ]
+            }
+        },
+        "BIBREF85": {
+            "title": "Antigenic variation in bacterial pathogens",
+            "authors": [],
+            "year": 2016,
+            "venue": "Microbiology Spectrum",
+            "volume": "4",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1128/microbiolspec.VMBF-0005-2015"
+                ]
+            }
+        },
+        "BIBREF86": {
+            "title": "Mechanisms and regulation of extracellular DNA release and its biological roles in microbial communities",
+            "authors": [],
+            "year": 2017,
+            "venue": "Front Microbiol",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fmicb.2017.01390"
+                ]
+            }
+        },
+        "BIBREF87": {
+            "title": "Mobile genetic elements in Neisseria gonorrhoeae: movement for change",
+            "authors": [],
+            "year": 2017,
+            "venue": "Pathog Dis",
+            "volume": "75",
+            "issn": "6",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1093/femspd/ftx071"
+                ]
+            }
+        },
+        "BIBREF88": {
+            "title": "Genomic characterization of novel Neisseria species",
+            "authors": [],
+            "year": 2019,
+            "venue": "Sci Rep",
+            "volume": "9",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41598-019-50203-2"
+                ]
+            }
+        },
+        "BIBREF89": {
+            "title": "The pneumococcus: epidemiology, microbiology, and pathogenesis",
+            "authors": [],
+            "year": 2013,
+            "venue": "Cold Spring Harb Perspect Med",
+            "volume": "3",
+            "issn": "7",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1101/cshperspect.a010215"
+                ]
+            }
+        },
+        "BIBREF90": {
+            "title": "Purification of capsular polysaccharides of Streptococcus pneumoniae: traditional and new methods",
+            "authors": [],
+            "year": 2018,
+            "venue": "Front Bioeng Biotechnol",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fbioe.2018.00145"
+                ]
+            }
+        },
+        "BIBREF91": {
+            "title": "Pneumococcal capsules and their types: past, present, and future",
+            "authors": [],
+            "year": 2015,
+            "venue": "Clin Microbiol Rev",
+            "volume": "28",
+            "issn": "3",
+            "pages": "871-899",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/CMR.00024-15"
+                ]
+            }
+        },
+        "BIBREF92": {
+            "title": "Whole-genome sequencing of bacterial pathogens: the future of nosocomial outbreak analysis",
+            "authors": [],
+            "year": 2017,
+            "venue": "Clin Microbiol Rev",
+            "volume": "30",
+            "issn": "4",
+            "pages": "1015-1063",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/CMR.00016-17"
+                ]
+            }
+        },
+        "BIBREF93": {
+            "title": "Human genomic loci important in common infectious diseases: role of high-throughput sequencing and genome-wide association studies",
+            "authors": [],
+            "year": 2018,
+            "venue": "Can J Infect Dis Med Microbiol.",
+            "volume": "2018",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1155/2018/1875217"
+                ]
+            }
+        },
+        "BIBREF94": {
+            "title": "Immune response and evasion mechanisms of Plasmodium falciparum parasites",
+            "authors": [],
+            "year": 2018,
+            "venue": "J Immunol Res",
+            "volume": "Article ID 6529681",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1155/2018/6529681"
+                ]
+            }
+        },
+        "BIBREF95": {
+            "title": "Plasmodium falciparum PfEMP1 modulates monocyte/macrophage transcription factor activation and cytokine and chemokine responses",
+            "authors": [],
+            "year": 2017,
+            "venue": "Infect Immun",
+            "volume": "86",
+            "issn": "1",
+            "pages": "e00447-17",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.00447-17"
+                ]
+            }
+        },
+        "BIBREF96": {
+            "title": "Plasmodium falciparum proteins involved in cytoadherence of infected erythrocytes to chemokine CX3CL1",
+            "authors": [],
+            "year": 2016,
+            "venue": "Sci Rep.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/srep33786"
+                ]
+            }
+        },
+        "BIBREF97": {
+            "title": "Effect of mature blood-stage Plasmodium parasite sequestration on pathogen biomass in mathematical and in vivo models of malaria",
+            "authors": [],
+            "year": 2014,
+            "venue": "Infect Immun",
+            "volume": "82",
+            "issn": "1",
+            "pages": "212-220",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.00705-13"
+                ]
+            }
+        },
+        "BIBREF98": {
+            "title": "Controlled human malaria infection with Plasmodium falciparum demonstrates impact of naturally acquired immunity on virulence gene expression",
+            "authors": [],
+            "year": 2019,
+            "venue": "PLoS Pathog",
+            "volume": "15",
+            "issn": "7",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.ppat.1007906"
+                ]
+            }
+        },
+        "BIBREF99": {
+            "title": "Multiple Plasmodium falciparum erythrocyte membrane protein 1 variants per genome can bind IgM via Its Fc fragment Fc\u03bc",
+            "authors": [],
+            "year": 2015,
+            "venue": "Infect Immun",
+            "volume": "83",
+            "issn": "10",
+            "pages": "3972-3981",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.00337-15"
+                ]
+            }
+        },
+        "BIBREF100": {
+            "title": "Plasmodium falciparum malaria parasite var gene expression is modified by host antibodies: longitudinal evidence from controlled infections of Kenyan adults with varying natural exposure",
+            "authors": [],
+            "year": 2017,
+            "venue": "BMC Infect Dis",
+            "volume": "17",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s12879-017-2686-0"
+                ]
+            }
+        },
+        "BIBREF101": {
+            "title": "Expression of the Plasmodium falciparum Clonally variant clag3 genes in human infections",
+            "authors": [],
+            "year": 2017,
+            "venue": "J Infect Dis",
+            "volume": "215",
+            "issn": "6",
+            "pages": "938-945",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/infdis/jix053"
+                ]
+            }
+        },
+        "BIBREF102": {
+            "title": "varDB: a pathogen-specific sequence database of protein families involved in antigenic variation",
+            "authors": [],
+            "year": 2008,
+            "venue": "Bioinformatics",
+            "volume": "24",
+            "issn": "21",
+            "pages": "2564-2565",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btn477"
+                ]
+            }
+        },
+        "BIBREF103": {
+            "title": "VAR2CSA binding phenotype has ancient origin and arose before Plasmodium falciparum crossed to humans: implications in placental malaria vaccine design",
+            "authors": [],
+            "year": 2019,
+            "venue": "Sci Rep",
+            "volume": "9",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41598-019-53334-8"
+                ]
+            }
+        },
+        "BIBREF104": {
+            "title": "Global genetic diversity of var2csa in Plasmodium falciparum with implications for malaria in pregnancy and vaccine development",
+            "authors": [],
+            "year": 2018,
+            "venue": "Sci Rep",
+            "volume": "8",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41598-018-33767-3"
+                ]
+            }
+        },
+        "BIBREF105": {
+            "title": "How does the VSG coat of bloodstream form African trypanosomes interact with external proteins?",
+            "authors": [],
+            "year": 2015,
+            "venue": "PLoS Pathog",
+            "volume": "11",
+            "issn": "12",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.ppat.1005259"
+                ]
+            }
+        },
+        "BIBREF106": {
+            "title": "Variant surface glycoprotein density defines an immune evasion threshold for African trypanosomes undergoing antigenic variation",
+            "authors": [],
+            "year": 2017,
+            "venue": "Nat Commun",
+            "volume": "8",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41467-017-00959-w"
+                ]
+            }
+        },
+        "BIBREF107": {
+            "title": "Towards a universal influenza vaccine: different approaches for one goal",
+            "authors": [],
+            "year": 2018,
+            "venue": "Virol J",
+            "volume": "15",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s12985-017-0918-y"
+                ]
+            }
+        },
+        "BIBREF108": {
+            "title": "The emerging influenza virus threat: status and new prospects for its therapy and control",
+            "authors": [],
+            "year": 2018,
+            "venue": "Arch Virol",
+            "volume": "163",
+            "issn": "4",
+            "pages": "831-844",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00705-018-3708-y"
+                ]
+            }
+        },
+        "BIBREF109": {
+            "title": "Influenza A virus hemagglutinin antibody escape promotes neuraminidase antigenic variation and drug resistance",
+            "authors": [],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0015190"
+                ]
+            }
+        },
+        "BIBREF110": {
+            "title": "A comprehensive review on equine influenza virus: etiology, epidemiology, pathobiology, advances in developing diagnostics, vaccines, and control strategies",
+            "authors": [],
+            "year": 2018,
+            "venue": "Front Microbiol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fmicb.2018.01941"
+                ]
+            }
+        },
+        "BIBREF111": {
+            "title": "Novel platforms for the development of a universal influenza vaccine",
+            "authors": [],
+            "year": 2018,
+            "venue": "Front Immunol",
+            "volume": "9",
+            "issn": "600",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fimmu.2018.00600"
+                ]
+            }
+        },
+        "BIBREF112": {
+            "title": "Computer aided epitope design as a peptide vaccine component against Lassa virus",
+            "authors": [],
+            "year": 2017,
+            "venue": "Bioinformation",
+            "volume": "13",
+            "issn": "12",
+            "pages": "417-429",
+            "other_ids": {
+                "DOI": [
+                    "10.6026/97320630013417"
+                ]
+            }
+        },
+        "BIBREF113": {
+            "title": "Genome-wide identification of novel vaccine candidates for Plasmodium falciparum malaria using integrative bioinformatics approaches",
+            "authors": [],
+            "year": 2017,
+            "venue": "3 Biotech",
+            "volume": "7",
+            "issn": "5",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s13205-017-0947-7"
+                ]
+            }
+        },
+        "BIBREF114": {
+            "title": "In-silico design of a multi-epitope vaccine candidate against onchocerciasis and related filarial diseases",
+            "authors": [],
+            "year": 2019,
+            "venue": "Sci Rep",
+            "volume": "9",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41598-019-40833-x"
+                ]
+            }
+        },
+        "BIBREF115": {
+            "title": "Antigenic variation and immune escape in the MTBC",
+            "authors": [],
+            "year": 2017,
+            "venue": "Adv Exp Med Biol",
+            "volume": "1019",
+            "issn": "",
+            "pages": "171-190",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/978-3-319-64371-7_9"
+                ]
+            }
+        },
+        "BIBREF116": {
+            "title": "Vaccinomics approach for designing potential peptide vaccine by targeting Shigella spp. Serine Protease autotransporter subfamily protein SigA",
+            "authors": [],
+            "year": 2017,
+            "venue": "J Immunol Res",
+            "volume": "2017",
+            "issn": "6412353",
+            "pages": "1-14",
+            "other_ids": {
+                "DOI": [
+                    "10.1155/2017/6412353"
+                ]
+            }
+        },
+        "BIBREF117": {
+            "title": "Designing a multi-epitope based vaccine to combat Kaposi Sarcoma utilizing immunoinformatics approach",
+            "authors": [],
+            "year": 2019,
+            "venue": "Sci Rep",
+            "volume": "9",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41598-019-39299-8"
+                ]
+            }
+        },
+        "BIBREF118": {
+            "title": "Efficient control of chronic LCMV infection by a CD4 T cell epitope-based heterologous prime-boost vaccination in a murine model",
+            "authors": [],
+            "year": 2018,
+            "venue": "Cell Mol Immunol",
+            "volume": "15",
+            "issn": "9",
+            "pages": "815-826",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/cmi.2017.3"
+                ]
+            }
+        },
+        "BIBREF119": {
+            "title": "A novel multi-epitope vaccine from MMSA-1 and DKK1 for multiple myeloma immunotherapy",
+            "authors": [],
+            "year": 2017,
+            "venue": "Br J Haematol.",
+            "volume": "178",
+            "issn": "3",
+            "pages": "413-426",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/bjh.14686"
+                ]
+            }
+        },
+        "BIBREF120": {
+            "title": "Evaluation of tandem Chlamydia trachomatis MOMP multi-epitopes vaccine in BALB/c mice model",
+            "authors": [],
+            "year": 2017,
+            "venue": "Vaccine",
+            "volume": "35",
+            "issn": "23",
+            "pages": "3096-3103",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.vaccine.2017.04.031"
+                ]
+            }
+        },
+        "BIBREF121": {
+            "title": "Development of a multi-epitope peptide vaccine inducing robust T cell responses against brucellosis using immunoinformatics based approaches",
+            "authors": [],
+            "year": 2017,
+            "venue": "Infect Genet Evol",
+            "volume": "51",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.meegid.2017.04.009"
+                ]
+            }
+        },
+        "BIBREF122": {
+            "title": "Identification of a CD4 T-cell epitope in the hemagglutinin stalk domain of pandemic H1N1 influenza virus and its antigen-driven TCR usage signature in BALB/c mice",
+            "authors": [],
+            "year": 2017,
+            "venue": "Cell Mol Immunol",
+            "volume": "14",
+            "issn": "6",
+            "pages": "511-520",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/cmi.2016.20"
+                ]
+            }
+        },
+        "BIBREF123": {
+            "title": "PEP-FOLD3: faster de novo structure prediction for linear peptides in solution and in complex",
+            "authors": [],
+            "year": 2016,
+            "venue": "Nucleic Acids Res",
+            "volume": "44",
+            "issn": "W1",
+            "pages": "W449-54",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkw329"
+                ]
+            }
+        },
+        "BIBREF124": {
+            "title": "The Protein Model Portal\u2013a comprehensive resource for protein structure and model information",
+            "authors": [],
+            "year": 2013,
+            "venue": "Database (Oxford)",
+            "volume": "2013",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1093/database/bat031"
+                ]
+            }
+        },
+        "BIBREF125": {
+            "title": "Exploring Leishmania secretory proteins to design B and T cell multi-epitope subunit vaccine using immunoinformatics approach",
+            "authors": [],
+            "year": 2017,
+            "venue": "Sci Rep",
+            "volume": "7",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41598-017-08842-w"
+                ]
+            }
+        },
+        "BIBREF126": {
+            "title": "AP-1 transcription factors as regulators of immune responses in cancer",
+            "authors": [],
+            "year": 2019,
+            "venue": "Cancers (Basel)",
+            "volume": "11",
+            "issn": "7",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3390/cancers11071037"
+                ]
+            }
+        },
+        "BIBREF127": {
+            "title": "Vaccinomics and personalized vaccinology: is science leading us toward a new path of directed vaccine development and discovery?",
+            "authors": [],
+            "year": 2011,
+            "venue": "PLoS Pathog",
+            "volume": "7",
+            "issn": "12",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.ppat.1002344"
+                ]
+            }
+        },
+        "BIBREF128": {
+            "title": "Distinctive roles of age, sex, and genetics in shaping transcriptional variation of human immune responses to microbial challenges",
+            "authors": [],
+            "year": 2018,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "115",
+            "issn": "3",
+            "pages": "E488-E497",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.1714765115"
+                ]
+            }
+        },
+        "BIBREF129": {
+            "title": "Evaluation of levamisole as an adjuvant for typhoid fever vaccine formulation",
+            "authors": [],
+            "year": 2019,
+            "venue": "PhOL",
+            "volume": "2",
+            "issn": "",
+            "pages": "336-346",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF130": {
+            "title": "HLA and infectious diseases",
+            "authors": [],
+            "year": 2009,
+            "venue": "Clin Microbiol Rev",
+            "volume": "22",
+            "issn": "2",
+            "pages": "370-85, Table of Contents",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/CMR.00048-08"
+                ]
+            }
+        },
+        "BIBREF131": {
+            "title": "Predicting antigen presentation-what could we learn from a million peptides?",
+            "authors": [],
+            "year": 2018,
+            "venue": "Front Immunol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fimmu.2018.01716"
+                ]
+            }
+        },
+        "BIBREF132": {
+            "title": "Development of a human leukocyte antigen-based HIV vaccine",
+            "authors": [],
+            "year": 2018,
+            "venue": "F1000Res",
+            "volume": "7",
+            "issn": "",
+            "pages": "F1000Faculty Rev-874",
+            "other_ids": {
+                "DOI": [
+                    "10.12688/f1000research.13759.1"
+                ]
+            }
+        },
+        "BIBREF133": {
+            "title": "HLA DNA sequence variation among human populations: molecular signatures of demographic and selective events",
+            "authors": [],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0014643"
+                ]
+            }
+        },
+        "BIBREF134": {
+            "title": "",
+            "authors": [],
+            "year": 2013,
+            "venue": "Autoimmunity: From Bench to Bedside [Internet]",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF135": {
+            "title": "Harnessing the power of T cells: the promising hope for a universal influenza vaccine",
+            "authors": [],
+            "year": 2018,
+            "venue": "Vaccines (Basel)",
+            "volume": "6",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3390/vaccines6020018"
+                ]
+            }
+        },
+        "BIBREF136": {
+            "title": "Recalling the future: immunological memory toward unpredictable influenza viruses",
+            "authors": [],
+            "year": 2019,
+            "venue": "Front Immunol",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fimmu.2019.01400"
+                ]
+            }
+        },
+        "BIBREF137": {
+            "title": "Human leukocyte antigen (HLA)-binding epitopes dataset for the newly identified T-cell antigens of Mycobacterium immunogenum",
+            "authors": [],
+            "year": 2016,
+            "venue": "Data Brief",
+            "volume": "8",
+            "issn": "",
+            "pages": "1069-1071",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.dib.2016.06.045"
+                ]
+            }
+        },
+        "BIBREF138": {
+            "title": "Fundamentals and methods for T- and B-cell epitope prediction",
+            "authors": [],
+            "year": 2017,
+            "venue": "J Immunol Res",
+            "volume": "2017",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1155/2017/2680160"
+                ]
+            }
+        },
+        "BIBREF139": {
+            "title": "Human Leukocyte Antigen (HLA) and immune regulation: how do classical and non-classical HLA alleles modulate immune response to human immunodeficiency virus and hepatitis C virus infections?",
+            "authors": [],
+            "year": 2017,
+            "venue": "Front Immunol",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fimmu.2017.00832"
+                ]
+            }
+        },
+        "BIBREF140": {
+            "title": "Amino acid signatures of HLA Class-I and II molecules are strongly associated with SLE susceptibility and autoantibody production in Eastern Asians",
+            "authors": [],
+            "year": 2019,
+            "venue": "PLoS Genet",
+            "volume": "15",
+            "issn": "4",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pgen.1008092"
+                ]
+            }
+        },
+        "BIBREF141": {
+            "title": "Predicting HLA class I non-permissive amino acid residues substitutions",
+            "authors": [],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "8",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0041710"
+                ]
+            }
+        },
+        "BIBREF142": {
+            "title": "Major histocompatibility complex class I binding predictions as a tool in epitope discovery",
+            "authors": [],
+            "year": 2010,
+            "venue": "Immunology",
+            "volume": "130",
+            "issn": "3",
+            "pages": "309-318",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1365-2567.2010.03300.x"
+                ]
+            }
+        },
+        "BIBREF143": {
+            "title": "Prediction of MHC class I binding peptides using profile motifs",
+            "authors": [],
+            "year": 2002,
+            "venue": "Hum Immunol",
+            "volume": "63",
+            "issn": "9",
+            "pages": "701-709",
+            "other_ids": {
+                "DOI": [
+                    "10.16/s0198-8859(02)00432-9"
+                ]
+            }
+        },
+        "BIBREF144": {
+            "title": "Design of peptide-based epitope vaccine and further binding site scrutiny led to groundswell in drug discovery against Lassa virus",
+            "authors": [],
+            "year": 2018,
+            "venue": "3 Biotech",
+            "volume": "8",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s13205-018-1106-5"
+                ]
+            }
+        },
+        "BIBREF145": {
+            "title": "Immunoinformatics Approach for epitope-based peptide vaccine design and active site prediction against polyprotein of emerging oropouche virus",
+            "authors": [],
+            "year": 2018,
+            "venue": "J Immunol Res",
+            "volume": "2018",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1155/2018/6718083"
+                ]
+            }
+        },
+        "BIBREF146": {
+            "title": "Polymorphisms of immunoglobulin receptors and the effects on clinical outcome in cancer immunotherapy and other immune diseases: a general review",
+            "authors": [],
+            "year": 2017,
+            "venue": "Int Immunol",
+            "volume": "29",
+            "issn": "7",
+            "pages": "319-325",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/intimm/dxx041"
+                ]
+            }
+        },
+        "BIBREF147": {
+            "title": "Sex differences in vaccine-induced humoral immunity",
+            "authors": [],
+            "year": 2019,
+            "venue": "Semin Immunopathol",
+            "volume": "41",
+            "issn": "2",
+            "pages": "239-249",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00281-018-0726-5"
+                ]
+            }
+        },
+        "BIBREF148": {
+            "title": "Sex differences in older adults\u2019 immune responses to seasonal influenza vaccination",
+            "authors": [],
+            "year": 2019,
+            "venue": "Front Immunol",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fimmu.2019.00180"
+                ]
+            }
+        },
+        "BIBREF149": {
+            "title": "Biological sex affects vaccine efficacy and protection against influenza in mice",
+            "authors": [],
+            "year": 2018,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "115",
+            "issn": "49",
+            "pages": "12477-12482",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.1805268115"
+                ]
+            }
+        },
+        "BIBREF150": {
+            "title": "Differential antibody responses to rubella virus infection in males and females",
+            "authors": [],
+            "year": 1992,
+            "venue": "J Infect Dis",
+            "volume": "166",
+            "issn": "",
+            "pages": "1258-1265",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/infdis/166.6.1258"
+                ]
+            }
+        },
+        "BIBREF151": {
+            "title": "Genomics of immune response to typhoid and cholera vaccines",
+            "authors": [],
+            "year": 2015,
+            "venue": "Philos Trans R Soc",
+            "volume": "370",
+            "issn": "1671",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rstb.2014.0142"
+                ]
+            }
+        },
+        "BIBREF152": {
+            "title": "Human immune system variation",
+            "authors": [],
+            "year": 2017,
+            "venue": "Nat Rev Immunol",
+            "volume": "17",
+            "issn": "1",
+            "pages": "21-29",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nri.2016.125"
+                ]
+            }
+        },
+        "BIBREF153": {
+            "title": "OMIC Technologies and vaccine development: from the identification of vulnerable individuals to the formulation of invulnerable vaccines",
+            "authors": [],
+            "year": 2019,
+            "venue": "J Immunol Res",
+            "volume": "2019",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1155/2019/8732191"
+                ]
+            }
+        },
+        "BIBREF154": {
+            "title": "Advances in genetics and genomics: use and limitations in achieving malaria elimination goals",
+            "authors": [],
+            "year": 2015,
+            "venue": "Pathog Glob Health",
+            "volume": "109",
+            "issn": "3",
+            "pages": "123-141",
+            "other_ids": {
+                "DOI": [
+                    "10.1179/2047773215Y.0000000015"
+                ]
+            }
+        },
+        "BIBREF155": {
+            "title": "Safety evaluation in mice of the childhood immunization vaccines from two south-eastern states of Nigeria",
+            "authors": [],
+            "year": 2015,
+            "venue": "Asian Pac J Trop Biomed",
+            "volume": "5",
+            "issn": "2",
+            "pages": "132-137",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S2221-1691(15)30157-X"
+                ]
+            }
+        },
+        "BIBREF156": {
+            "title": "PREVENT working group. Pregnant women & vaccines against emerging epidemic threats: ethics guidance for preparedness, research, and response",
+            "authors": [],
+            "year": 2019,
+            "venue": "Vaccine",
+            "volume": "S0264-410X",
+            "issn": "19",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.vaccine.2019.01.011"
+                ]
+            }
+        },
+        "BIBREF157": {
+            "title": "Vaccinations for pregnant women",
+            "authors": [],
+            "year": 2015,
+            "venue": "Obstet Gynecol",
+            "volume": "125",
+            "issn": "1",
+            "pages": "212-226",
+            "other_ids": {
+                "DOI": [
+                    "10.1097/AOG.0000000000000581"
+                ]
+            }
+        },
+        "BIBREF158": {
+            "title": "Efficacy and safety of pertussis vaccination for pregnant women - a systematic review of randomised controlled trials and observational studies",
+            "authors": [],
+            "year": 2017,
+            "venue": "BMC Pregnancy Childbirth",
+            "volume": "17",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s12884-017-1559-2"
+                ]
+            }
+        },
+        "BIBREF159": {
+            "title": "Beyond passive immunity: is there priming of the fetal immune system following vaccination in pregnancy and what are the potential clinical implications?",
+            "authors": [],
+            "year": 2018,
+            "venue": "Front Immunol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3389/fimmu.2018.01548"
+                ]
+            }
+        },
+        "BIBREF160": {
+            "title": "Zika Virus epidemic in pregnant women, dominican republic, 2016\u20132017",
+            "authors": [],
+            "year": 2019,
+            "venue": "Emerg Infect Dis",
+            "volume": "25",
+            "issn": "2",
+            "pages": "247-255",
+            "other_ids": {
+                "DOI": [
+                    "10.3201/eid2502.181054"
+                ]
+            }
+        },
+        "BIBREF161": {
+            "title": "Ebola virus disease in pregnancy: clinical, histopathologic, and immunohistochemical findings",
+            "authors": [],
+            "year": 2017,
+            "venue": "J Infect Dis",
+            "volume": "215",
+            "issn": "1",
+            "pages": "64-69",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/infdis/jiw206"
+                ]
+            }
+        },
+        "BIBREF162": {
+            "title": "",
+            "authors": [],
+            "year": 2017,
+            "venue": "Pregnant Women & the Zika Virus Vaccine Research Agenda: Ethics Guidance on Priorities, Inclusion, and Evidence Generation",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF163": {
+            "title": "Maternal Immunization",
+            "authors": [],
+            "year": 2017,
+            "venue": "N Engl J Med",
+            "volume": "376",
+            "issn": "13",
+            "pages": "1256-1267",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJMra1509044"
+                ]
+            }
+        },
+        "BIBREF164": {
+            "title": "Maternal immunization: where are we now and how to move forward?",
+            "authors": [],
+            "year": 2018,
+            "venue": "Ann Med",
+            "volume": "50",
+            "issn": "3",
+            "pages": "193-208",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/07853890.2017.1421320"
+                ]
+            }
+        },
+        "BIBREF165": {
+            "title": "Strengthening maternal immunisation to improve the health of mothers and infants",
+            "authors": [],
+            "year": 2016,
+            "venue": "Lancet",
+            "volume": "388",
+            "issn": "10059",
+            "pages": "2562-2564",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0140-6736(16)30882-0"
+                ]
+            }
+        },
+        "BIBREF166": {
+            "title": "Immunoinformatics: in Silico approaches and computational design of a multi-epitope, immunogenic protein",
+            "authors": [],
+            "year": 2019,
+            "venue": "Int Rev Immunol",
+            "volume": "38",
+            "issn": "6",
+            "pages": "307-322",
+            "other_ids": {
+                "DOI": [
+                    "10.1080/08830185.2019.1657426"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,4697 @@
+{
+    "paper_id": "PMC4824079",
+    "metadata": {
+        "title": "Chemo-enzymatic synthesis of site-specific isotopically labeled nucleotides for use in NMR resonance assignment, dynamics and structural characterizations",
+        "authors": [
+            {
+                "first": "Andrew",
+                "middle": [
+                    "P."
+                ],
+                "last": "Longhini",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Regan",
+                "middle": [
+                    "M."
+                ],
+                "last": "LeBlanc",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Owen",
+                "middle": [],
+                "last": "Becette",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Carolina",
+                "middle": [],
+                "last": "Salguero",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Christoph",
+                "middle": [
+                    "H."
+                ],
+                "last": "Wunderlich",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Bruce",
+                "middle": [
+                    "A."
+                ],
+                "last": "Johnson",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Victoria",
+                "middle": [
+                    "M."
+                ],
+                "last": "D'Souza",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Christoph",
+                "middle": [],
+                "last": "Kreutz",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "T.",
+                "middle": [
+                    "Kwaku"
+                ],
+                "last": "Dayie",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The tertiary architectures RNAs adopt are crucial for modulating gene expression across all domains of life, making them important targets of structural and dynamics studies. For instance, for riboswitches, the presence or absence of specific ligands drives the folding of one of two or more mutually exclusive, regulatory states (1\u20134). In viral RNA genomes, structured, untranslated regions commonly exercise direct control over viral gene expression (5,6). In the ribosome, the ability to distinguish between cognate and near-cognate tRNAs is governed in part by the extrahelical flipping of adenines A1492 and A1493 (7). Both the global architecture and the subtle motions of specific base and ribose moieties are thus demonstrably important and can profoundly modulate an RNA's function (8).",
+            "cite_spans": [
+                {
+                    "start": 331,
+                    "end": 332,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 333,
+                    "end": 334,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 453,
+                    "end": 454,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 455,
+                    "end": 456,
+                    "mention": "6",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 620,
+                    "end": 621,
+                    "mention": "7",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 792,
+                    "end": 793,
+                    "mention": "8",
+                    "ref_id": "BIBREF77"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "However, in spite of this importance, directly establishing how dynamics modulates the structure and function of RNAs has been difficult because X-ray crystallography and nuclear magnetic resonance spectroscopy are plagued by distinct but equally challenging problems. In crystallography, motions can only be observed in the ps\u2013ns timescales and the strain imposed by crystal packing can obscure and distort structural data (9,10).",
+            "cite_spans": [
+                {
+                    "start": 425,
+                    "end": 426,
+                    "mention": "9",
+                    "ref_id": "BIBREF88"
+                },
+                {
+                    "start": 427,
+                    "end": 429,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In contrast, NMR spectroscopy can probe dynamic fluctuations directly over a wide range of timescales. Unfortunately, NMR suffers from both narrow chemical shift dispersion and rapid signal decay, exacerbated by direct one-bond and multi-bond spin-spin couplings. The former leads to spectral crowding and the spin-spin couplings can lead to decreased spectral resolution and inaccurate measurements of 13C relaxation rates such as longitudinal relaxation rates (R1), transverse relaxation rates (R2), and heteronuclear Overhauser effect (hNOE) (11\u201313). Furthermore, these problems become more pronounced as the size of the RNA increases: the spectral quality deteriorates because of increased line broadening.",
+            "cite_spans": [
+                {
+                    "start": 546,
+                    "end": 548,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 549,
+                    "end": 551,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Addressing these problems requires the development of new technologies. In the past, spectral overlap has been addressed using heteronuclear multi-dimensional pulse sequences applied to uniformly 13C/15N labeled RNAs (14\u201316). By spreading the poorly dispersed proton resonances over the better resolved carbon and/or nitrogen dimensions, it is possible to resolve overlapped proton peaks in small RNAs. While these advances have greatly aided NMR structural studies of RNAs with a median size of 30 nt, they fail for RNAs larger than 60 nt. Out of 460 RNA structures in the PDB (Protein Data Bank), only seven RNA structures with sizes >60 nt have been solved by NMR (17\u201325). Of these seven, three RNA structures of 101, 132 and 155 nt have been solved using mostly homonuclear two-dimensional (2D) NOESY methods based on nucleotide-specific and fragmentation-based segmental 2H-labeling approaches (18,20,25). Thus, current uniform labeling approaches while valuable are quite limiting (26,27).",
+            "cite_spans": [
+                {
+                    "start": 218,
+                    "end": 220,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 221,
+                    "end": 223,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 668,
+                    "end": 670,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 671,
+                    "end": 673,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 900,
+                    "end": 902,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 903,
+                    "end": 905,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 906,
+                    "end": 908,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 988,
+                    "end": 990,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 991,
+                    "end": 993,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Also of great interest are the large couplings of adjacent 13C nuclei within the ribose and base ring systems which cause several complications in RNA relaxation measurements. The foremost concern is that uniform labeling introduces strong couplings that can render 13C R1, hNOE and CPMG (Carl-Purcell-Meiboom-Gill) relaxation measurements inaccurate. These couplings also complicate and limit the range of applicability of CEST (Chemical Exchange Saturation Transfer) and rotating-frame relaxation rate (R1\u03c1) measurements and analyses while also decreasing the attainable resolution and sensitivity of NMR experiments (11,13,28\u201334).",
+            "cite_spans": [
+                {
+                    "start": 620,
+                    "end": 622,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 623,
+                    "end": 625,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 626,
+                    "end": 628,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 629,
+                    "end": 631,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Numerous robust spectroscopic solutions have been proposed in the past to circumvent these coupling problems (33\u201341). Unwanted splittings can be removed using constant time (CT) evolution (35\u201338), adiabatic band selective decoupling (39\u201341), or a series of selective pulses. Constant time evolution limits the acquisition time that can be used to obtain adequate resolution. To improve resolution requires long constant-time delays that lead to significant signal loss for large RNA molecules (41). Additionally, obtaining accurate relaxation parameters are problematic for 13C-CPMG based relaxation dispersion rates for quantifying millisecond (ms) time-scale processes, as well as R1 and proton\u2013carbon hNOE (28,42) important for quantifying ns-ps time-scale motions in RNA (43,44). Several precautions are needed to obtain accurate R1 and R1\u03c1 measurements (28,45\u201346): provided R1 is derived from the initial slope of the relaxation decay curve, fairly accurate rates can be extracted for small RNAs; for R1\u03c1 experiments, distortions can arise from transfer between adjacent 13C atoms with similar chemical shifts via a Hartmann\u2013Hahn mechanism and these need to be minimized (28,45\u201346); to suppress the echo-modulation caused by the large scalar couplings during the 13C relaxation delay, R1\u03c1 can be measured instead of CPMG (28,47\u201349). Still for nucleic acids high power spinlocks (>1 kHz) are needed to study isolated spin pairs such as C2 found in adenine and C8 in both adenine and guanine. For low spin lock power levels (<1 kHz), oscillations can be observed in the monoexponential decay of peak intensity, arising from residual scalar coupling interactions within neighbouring nuclei (48,50\u201351).",
+            "cite_spans": [
+                {
+                    "start": 110,
+                    "end": 112,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 113,
+                    "end": 115,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 189,
+                    "end": 191,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 192,
+                    "end": 194,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 234,
+                    "end": 236,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 237,
+                    "end": 239,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 494,
+                    "end": 496,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 710,
+                    "end": 712,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 713,
+                    "end": 715,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 776,
+                    "end": 778,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 779,
+                    "end": 781,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 859,
+                    "end": 861,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 862,
+                    "end": 864,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 865,
+                    "end": 867,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1177,
+                    "end": 1179,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 1180,
+                    "end": 1182,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1183,
+                    "end": 1185,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1327,
+                    "end": 1329,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 1330,
+                    "end": 1332,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 1333,
+                    "end": 1335,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1693,
+                    "end": 1695,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 1696,
+                    "end": 1698,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 1699,
+                    "end": 1701,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition, application of selective cross-polarization (52\u201355) using weak radio-frequency fields can effectively decouple homonuclear J-couplings. This elegant spectroscopic solution has been exploited to measure nitrogen R1\u03c1 in proteins and both carbon and nitrogen R1\u03c1 in uniformly labeled nucleic acids (56\u201359). While this scheme obviates the need for selective 13C isotopic enrichment, in uniformly labeled samples, the presence of large homonuclear scalar couplings again limits the range of applicability of these methods (56,51). Finally building upon schemes for protein 15N and 13C CEST measurements by Kay and co-workers, Zhang et al. developed a set of nucleic-acid-optimized 1D/2D 13C CEST experiments that use various shaped pulses to refocus carbon\u2013carbon scalar coupling and showed that accurate exchange parameters can be obtained for all CEST profiles in uniformly labeled RNA samples for purines and ribose carbons(34,60\u201362). Nonetheless, they and others acknowledged the following limitations for both CEST and R1\u03c1 in uniformly labeled RNA and protein samples (33\u201334,60\u201363). First, the lowest spinlock or saturating B1 field that can be used is limited (\u223c3\u00d7 the scalar coupling) to \u223c45 Hz for Ade C2, \u223c45 Hz for purine C8, \u223c150 Hz for C1\u2019. For pyrimidine ring carbons with large carbon-carbon couplings of \u223c66 Hz, it would require \u223c200 Hz spinlock fields for C5 and C6, clearly intractable with uniformly labeled samples. Second, even though 13C\u201313C couplings do not introduce errors in extracted chemical shifts for purines, these homonuclear couplings decrease the resolution. Ultimately, the coupling effects need to be considered in the CEST data analyses for couplings greater than 15 Hz. Otherwise, exchange parameters (kex) are overestimated and population ratios are underestimated (33). Thus, uniformly labeled samples do limit the range of wide applicability of both CEST and R1\u03c1 to biological problems.",
+            "cite_spans": [
+                {
+                    "start": 58,
+                    "end": 60,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 61,
+                    "end": 63,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 309,
+                    "end": 311,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 312,
+                    "end": 314,
+                    "mention": "59",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 531,
+                    "end": 533,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 534,
+                    "end": 536,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 935,
+                    "end": 937,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 938,
+                    "end": 940,
+                    "mention": "60",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 941,
+                    "end": 943,
+                    "mention": "62",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 1082,
+                    "end": 1084,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 1085,
+                    "end": 1087,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1088,
+                    "end": 1090,
+                    "mention": "60",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 1091,
+                    "end": 1093,
+                    "mention": "63",
+                    "ref_id": "BIBREF59"
+                },
+                {
+                    "start": 1812,
+                    "end": 1814,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "These spectroscopic tools notwithstanding, an alternative, straightforward and effective solution for overcoming the problem of spectral crowding and J-coupling would complement existing methodologies. A promising method is to synthesize site-specific isotopically labeled nucleotides (11,64\u201365) as we recently demonstrated with our chemo-enzymatic production of pyrimidine nucleotides (30,31). Here, we extend that approach to improving the synthesis of purine nucleotides. Our synthesis offers improvements in speed, streamlined reaction conditions, and higher yields. By combining the newly developed purine nucleotides with our previous pyrimidine nucleotides we present an improvement to the traditional NOESY structural assignment protocol. Additionally, we show that the measurements of relaxation parameters using CPMG, R1\u03c1, and CEST are possible for both small and large RNAs. Furthermore, we demonstrate substantial improvements in signal-to-noise and line width for relaxation optimized spectroscopy (TROSY) experiments compared to the traditional heteronuclear single quantum coherence (HSQC) experiments for isolated two-spin systems approximated by our purine and pyrimidine labeling schemes (30\u201331,66\u201367).",
+            "cite_spans": [
+                {
+                    "start": 286,
+                    "end": 288,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 289,
+                    "end": 291,
+                    "mention": "64",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 292,
+                    "end": 294,
+                    "mention": "65",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 387,
+                    "end": 389,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 390,
+                    "end": 392,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1207,
+                    "end": 1209,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1210,
+                    "end": 1212,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1213,
+                    "end": 1215,
+                    "mention": "66",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 1216,
+                    "end": 1218,
+                    "mention": "67",
+                    "ref_id": "BIBREF63"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Reagents and solvents were purchased from Sigma-Aldrich. 8-13C adenine and 8-13C guanine were either purchased from Cambridge Isotope Laboratories or synthesized as described in the supplementary materials. Similarly, preparative chemical synthesis of labeled adenine and guanine, chemo-enzymatic nucleotide synthesis, RNA preparation, and NMR experiments are detailed in the supplementary materials.",
+            "cite_spans": [],
+            "section": "General procedures ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "NMR spectral processing was done in Topspin (Bruker Biospin) and NVFx (One Moon Scientific). Peak intensities were selected using in-house software by David Fushman. CPMG data were fit to a two-state exchange model using the full Bloch-McConnell matrix. The time-dependent evolution of magnetization during the CPMG period was solved numerically by non-linear least squares fitting using in-house Matlab software. Errors in fits were calculated using Jacobian or 200 Monte Carlo simulations (33), and the larger of the two errors was reported for CPMG and CEST relaxation dispersion analysis.",
+            "cite_spans": [
+                {
+                    "start": 492,
+                    "end": 494,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Data analysis ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "NMRViewJ was used for peak assignments. Hydrogen and carbon chemical shifts are predicted based on the secondary structure of the input RNA molecule. Expected cross peaks for different experiment types and labeling patterns were then generated using the RNA Peak Generator tool. Expected cross-peaks were generated for HSQC spectra based on the covalent structure and for NOESY spectra using inter-atomic distances typically observed in RNA helices. For bacterial A-site RNA, of which there are no deposited chemical shifts in the BMRB database, the RNA Peak Generator accurately predicted 15 of the 18 expected C1\u2032-H1\u2032 resonances, 7 of the 9 C2\u2032-H2\u2032, and 20 of the 27 C6/8-H6/8 resonance within 0.1 ppm of their actual values in the HSQC spectra. Since the NOESY peak generator was used in a mode where it only predicts peaks in helical regions, peaks in bulge and tetraloop regions of the A-site RNA were not predicted. Further assignment of the NOESY spectra utilized the RNA peak slider tool within NMRViewJ. This links the predicted peaks into a network connected by atoms shared between the different peaks. Peaks are then interactively positioned in a way that utilizes the network of peaks typically connected within the NOESY \u2018walk\u2019. Overall, the combined tools of NMRViewJ allowed for relatively rapid assignment of the resonance in the specifically labeled A-site RNA model system and provides a powerful tool that, when combined with selective labeling, can streamline resonance assignment for RNA than previously reported (41).",
+            "cite_spans": [
+                {
+                    "start": 1536,
+                    "end": 1538,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Data analysis ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We have created an improved method for the synthesis of site-selective isotopically labeled ATP and GTP with increased yields and speed of synthesis. Both purine reactions proceed to completion without the need to purify intermediate species. Final yields of >90% and >75% respectively for ATP and GTP were achieved relative to starting input adenine or guanine. Both yields are better than previously reported (72\u201377). In addition to improved yields, ATP synthesis is complete in 4\u20135 h while GTP synthesis is complete in 7\u20138 h. Previously, ATP synthesis was reported to take 29\u201348 h and GTP synthesis 48\u201370 h (72\u201377). These improvements allow reactions to be complete in a single day. Additionally we have taken advantage of the ability of creatine kinase to act on a variety of substrates to convert NDPs to NTPs and adapted the use of dATP as the energy source in the energy regeneration system (77\u201379). The use of dATP is ideal since the lack of a 2\u2032-OH of the ribose in dATP prevents its interaction with the boronate column used to purify ATP and GTP. This offers a more robust synthesis, free of contaminants, and does not dilute the synthesized labels with unlabeled ATP. The effectiveness of these nucleotides is demonstrated by their incorporation into a number of interesting RNAs.",
+            "cite_spans": [
+                {
+                    "start": 412,
+                    "end": 414,
+                    "mention": "72",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 415,
+                    "end": 417,
+                    "mention": "77",
+                    "ref_id": "BIBREF74"
+                },
+                {
+                    "start": 611,
+                    "end": 613,
+                    "mention": "72",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 614,
+                    "end": 616,
+                    "mention": "77",
+                    "ref_id": "BIBREF74"
+                },
+                {
+                    "start": 899,
+                    "end": 901,
+                    "mention": "77",
+                    "ref_id": "BIBREF74"
+                },
+                {
+                    "start": 902,
+                    "end": 904,
+                    "mention": "79",
+                    "ref_id": "BIBREF76"
+                }
+            ],
+            "section": "Chemo-enzymatic synthesis of GTP and ATP ::: RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The production of GTP was achieved in a two-step, one pot reaction. Specifically-labeled ribose and guanine were combined in the presence of phosphoribosyl pyrophosphate synthetase (PRPPS), ribokinase (RK), and xanthine-guanine phosphoribosyl transferase (XGPRT), with a dATP regeneration system. The dATP regeneration system was composed of myokinase and creatine kinase, with creatine phosphate acting as the high energy phosphate donor. The formation of GMP was monitored by FPLC and NMR (Supplementary Figure S2). However, due to the low solubility of guanine (0.01 mM) FPLC was unsuitable to track its disappearance, thus making it difficult to monitor the progression of the reaction. However, by NMR spectroscopy, the resonance chemical shift between the labeled 13C-1\u2032 position of unreacted ribose and newly formed GMP was used to determine the completion of the first step of the reaction (Supplementary Figure S2A). When the majority of guanine was converted to GMP, in approximately 4\u20135 h, guanylate kinase was added to the reaction. Guanylate kinase phosphorylates GMP to GDP. GDP is phosphorylated to GTP by creatine kinase which acts promiscuously to convert NDPs to NTPs. This was unexpected, as CK is said to be highly specific (78,79). GMP is completely converted to GTP in an additional 3 h. We confirmed by FPLC that conversion is complete and further validate this observation by 31P NMR (Supplementary Figure S2B).",
+            "cite_spans": [
+                {
+                    "start": 1245,
+                    "end": 1247,
+                    "mention": "78",
+                    "ref_id": "BIBREF75"
+                },
+                {
+                    "start": 1248,
+                    "end": 1250,
+                    "mention": "79",
+                    "ref_id": "BIBREF76"
+                }
+            ],
+            "section": "Chemo-enzymatic synthesis of GTP and ATP ::: RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The production of ATP and the progression of the reaction is monitored as reported for GTP. A notable difference is that adenine's greater solubility (8 mM) allowed the use of FPLC to monitor the disappearance of uncoupled base and the formation of product for all steps of the reaction. Labeled adenine and ribose were combined in the presence of PRPPS, RK, adenine phosphoribosyl transferase (APRT), and the dATP regeneration system. The dATP regeneration system acts on both AMP and ADP and takes the reaction to completion in \u223c 4 h. The reaction is similarly monitored by FPLC and NMR (Supplementary Figure S2C&D).",
+            "cite_spans": [],
+            "section": "Chemo-enzymatic synthesis of GTP and ATP ::: RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "When studying large RNAs (>40 nts) by NMR, slow molecular tumbling leads to broadened linewidths and losses in signal intensity. Careful selection of appropriate NMR experiments to address these losses are necessary for successful measurement of many NMR parameters. TROSY experiments take advantage of the interference between the dipolar coupling and chemical shift anisotropy (CSA) components of T2 relaxation (66). For the base C8 position of adenine and guanine, these contributions effectively cancel at \u223c800 MHz field strength leading to reduction in the R2 relaxation rate (80,81). Thus, RNAs synthesized with our selective site-specifically labeled NTPs should benefit from TROSY based NMR experiments that reduce the problems of crowding, fast signal decay, low resolution, and decreased S/N ratios (12,34,31,66\u201367,80\u201381).",
+            "cite_spans": [
+                {
+                    "start": 414,
+                    "end": 416,
+                    "mention": "66",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 582,
+                    "end": 584,
+                    "mention": "80",
+                    "ref_id": "BIBREF78"
+                },
+                {
+                    "start": 585,
+                    "end": 587,
+                    "mention": "81",
+                    "ref_id": "BIBREF79"
+                },
+                {
+                    "start": 810,
+                    "end": 812,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 813,
+                    "end": 815,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 816,
+                    "end": 818,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 819,
+                    "end": 821,
+                    "mention": "66",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 822,
+                    "end": 824,
+                    "mention": "67",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 825,
+                    "end": 827,
+                    "mention": "80",
+                    "ref_id": "BIBREF78"
+                },
+                {
+                    "start": 828,
+                    "end": 830,
+                    "mention": "81",
+                    "ref_id": "BIBREF79"
+                }
+            ],
+            "section": "Synthesis of nucleotides with isolated base C6 or C8 offers large sensitivity improvements ::: RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The benefits of TROSY increases with the size of the RNA. For small RNAs such as IRE (29 nt) we saw substantial, yet modest, improvements for the base region. These improvements in signal intensities ranged from 2.2- to 3.4-fold (average: 2.9 \u00b1 0.5) when comparing TROSY with conventional HSQC sequences (Figures 1A and 2A). For the larger HCV SARS RNA (59 nt), the signal improvements are larger and ranged from 2.0- to 5.4-fold (average 3.3 \u00b1 1.0) (Figures 1B and 2B). For the C1\u2032 and C5\u2032 peaks the improvements were more modest since these positions have lower CSA values (Supplementary Figure S3). Our labeled C8 approximates an isolated two spin system necessary for these gains in signal. Thus, the large improvements seen for these positions when using our site-specifically labeled nucleotides can be harnessed for assignment, structural, and dynamics measurements (82).",
+            "cite_spans": [
+                {
+                    "start": 874,
+                    "end": 876,
+                    "mention": "82",
+                    "ref_id": "BIBREF80"
+                }
+            ],
+            "section": "Synthesis of nucleotides with isolated base C6 or C8 offers large sensitivity improvements ::: RESULTS AND DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 313,
+                    "end": 315,
+                    "mention": "1A",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 320,
+                    "end": 322,
+                    "mention": "2A",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 459,
+                    "end": 461,
+                    "mention": "1B",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 466,
+                    "end": 468,
+                    "mention": "2B",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The above observations led us to run 13C-TROSY version of the 15N-TROSY experiment of Kay et al. (68). We decided that to validate this TROSY pulse sequence it would be appropriate to mirror measurements made previously on a fluoride riboswitch construct (34). Interestingly, our construct isolated from Bacillus anthracis showed similar behavior to the construct from Bacillus cereus studied by Zhang et al., albeit with slightly shifted values. While for B. cereus kex = 112 \u00b1 4 s\u22121 and pb = 10.1 \u00b1 0.1% at 30\u00b0C, the B. anthracis construct had exchange parameters of kex = 617 \u00b1 54 s\u22121 and pb = 3.0 \u00b1 0.1% at 35\u00b0C for a global fit to both C1\u2032 and C6 (Figure 3). Further, when comparing TROSY CEST (68) to the traditional HSQC CEST (34), S/N improvements of \u2248 2:1 were obtained (Supplementary Figure S4). While the fits of both the HQSC and CEST data sets gave similar exchange parameters, comparing the \u03c72 of the fits showed significant improvements for the TROSY CEST experiment (0.6\u201342.5) when both experiments were run using the same parameters and experiment time. These measurements were made on the C1\u2032 and C6 positions of a 1\u2032,6-13C-1,3-15N-5-2H UTP labeled sample.",
+            "cite_spans": [
+                {
+                    "start": 98,
+                    "end": 100,
+                    "mention": "68",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 256,
+                    "end": 258,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 700,
+                    "end": 702,
+                    "mention": "68",
+                    "ref_id": "BIBREF64"
+                },
+                {
+                    "start": 734,
+                    "end": 736,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "CEST measurements on RNAs >50 nucleotides ::: RESULTS AND DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 660,
+                    "end": 661,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "What then are some of the benefits of a selectively labeled sample when uniformly labeled samples have been shown to be adequate? Strong coupling eliminated between ribose carbons allowed a straightforward analysis of the CEST data without the need to account for and correct J-coupling (33,34). In particular obtaining CEST data for C6 pyrimidine is particularly problematic because of complications mentioned above in the introduction using uniformly labeled samples and that field strengths of >180 Hz needed preclude their use in uniformly labeled samples. With our selective labeled samples, we were able to obtain excellent CEST profiles readily for both purine and pyrimidines.",
+            "cite_spans": [
+                {
+                    "start": 288,
+                    "end": 290,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 291,
+                    "end": 293,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "CEST measurements on RNAs >50 nucleotides ::: RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "CPMG relaxation dispersion measurements facilitate the extraction of information about exchange phenomenon occurring on the \u03bcs\u2013ms timescale (83\u201389). Previously, others have used similar approaches to measure CPMG experiments for RNAs smaller than 50 nucleotides with specifically labeled pyrimidine bases (35,36). Here, we present data that illustrates the effect of creating an isolated, labeled C8 and C2\u2032 positions in our nucleotides, and show that measurements of CPMG parameters are readily accessible without the problem of J-coupled induced oscillations (28,90).",
+            "cite_spans": [
+                {
+                    "start": 141,
+                    "end": 143,
+                    "mention": "83",
+                    "ref_id": "BIBREF81"
+                },
+                {
+                    "start": 144,
+                    "end": 146,
+                    "mention": "89",
+                    "ref_id": "BIBREF87"
+                },
+                {
+                    "start": 306,
+                    "end": 308,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 309,
+                    "end": 311,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 562,
+                    "end": 564,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 565,
+                    "end": 567,
+                    "mention": "90",
+                    "ref_id": "BIBREF89"
+                }
+            ],
+            "section": "CPMG measurements on purine nucleotides and RNAs >50 nucleotides ::: RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "We have transcribed a 59 nt viral RNA with 1\u2032,8-13C labeling pattern as a proof of concept. The data indicate that while a majority of the nucleotides within the RNA do not experience exchange on the ms time-scale, a few residues sample a lowly populated state. Without data being fit at multiple static magnetic field strengths, the only meaningful parameter that can be extracted is a kex value (Figure 4A). The exchange rates extracted from the CPMG experiments on the viral RNA match well with those from CEST experiments (unpublished). Even though similar information, and perhaps more, can be derived from R1\u03c1 data, we find that CPMG is straightforward to setup and analyse compared to R1\u03c1 experiments. Thus having labeled RNA that facilitates CPMG measurements is important for the field.",
+            "cite_spans": [],
+            "section": "CPMG measurements on purine nucleotides and RNAs >50 nucleotides ::: RESULTS AND DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 405,
+                    "end": 407,
+                    "mention": "4A",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Using in-house Matlab scripts, CPMG data were fit to a two-state exchange model using the Bloch\u2013McConnell matrix as previously described by Kay et al. (90). Site-selective labels allow us to prepare isolated two spin systems without the carbon-carbon or carbon-nitrogen scalar couplings. In the past, such scalar couplings have hindered the interpretation of relaxation dispersion data (89,90). Using the bacterial A-site RNA as a model system, we were able to capture motions on the microsecond timescale using CPMG experiments to monitor exchange of the ribose C2\u2032 residues. It is widely accepted that motions in residues A1492 and A1493 are involved in the discrimination between cognate and near-cognate tRNAs (7\u20138,91\u201393). Most notably, A1493, a residue that flips in and out of the bulge region of A-site showed characteristic dispersion profiles (Figure 4B). The extracted kex and pb values of 3800 \u00b1 200 s\u22121 and 1.8 \u00b1 0.1% match well the previously reported values of 4000 s\u22121 and 2.5% determined by relaxation dispersion measurements on the C1\u2032 positions of the ribose moieties (8). Thus, our labels can be used to readily and straightforwardly capture lowly populated states in RNA.",
+            "cite_spans": [
+                {
+                    "start": 152,
+                    "end": 154,
+                    "mention": "90",
+                    "ref_id": "BIBREF89"
+                },
+                {
+                    "start": 387,
+                    "end": 389,
+                    "mention": "89",
+                    "ref_id": "BIBREF87"
+                },
+                {
+                    "start": 390,
+                    "end": 392,
+                    "mention": "90",
+                    "ref_id": "BIBREF89"
+                },
+                {
+                    "start": 715,
+                    "end": 716,
+                    "mention": "7",
+                    "ref_id": "BIBREF66"
+                },
+                {
+                    "start": 717,
+                    "end": 718,
+                    "mention": "8",
+                    "ref_id": "BIBREF77"
+                },
+                {
+                    "start": 719,
+                    "end": 721,
+                    "mention": "91",
+                    "ref_id": "BIBREF90"
+                },
+                {
+                    "start": 722,
+                    "end": 724,
+                    "mention": "93",
+                    "ref_id": "BIBREF92"
+                },
+                {
+                    "start": 1087,
+                    "end": 1088,
+                    "mention": "8",
+                    "ref_id": "BIBREF77"
+                }
+            ],
+            "section": "CPMG measurements on purine nucleotides and RNAs >50 nucleotides ::: RESULTS AND DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 860,
+                    "end": 862,
+                    "mention": "4B",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The relatively narrow spectral width over which base and sugar carbons and protons resonate is a major limitation of RNA NMR that must be overcome (82). Overlap of signals is only partially alleviated by 2D and 3D NMR experiments in samples in which all 4 nucleotides are uniformly 13C- and 15N-labeled. We reasoned that what would be critical for de-cluttering spectra to manageable levels for large RNAs is not only the ability to choose which of the four nucleotides to label, but also which of the atomic sites to isotopically enrich. To demonstrate the power of this approach, we have examined RNAs ranging in size from 27 to 59 nucleotides in length.",
+            "cite_spans": [
+                {
+                    "start": 148,
+                    "end": 150,
+                    "mention": "82",
+                    "ref_id": "BIBREF80"
+                }
+            ],
+            "section": "Reduction of spectral crowding for large RNAs ::: RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "For a large RNAs transcribed with only 1\u2032,8-13C2 ATP, the resonances that belong to the adenine C8 can be identified rapidly when compared to a sample that has all four nucleotides fully-labeled (not shown). While it is possible to achieve a similar result using a fully labeled ATP only sample, one bond 13C\u201313C and 13C\u201315N couplings quickly degrade the quality of the spectrum. With a view to design a new NOESY assignment protocol, we synthesized RNA samples that maximize the information content of their spectra while simultaneously alleviating spectral overlap.",
+            "cite_spans": [],
+            "section": "Reduction of spectral crowding for large RNAs ::: RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The classic approach to assign resonances in a helical stretch of an RNA employs a NOESY walk methodology (41,94). Protons close in space (<5 \u00c5) can produce cross peaks in a NOESY spectrum indicative of a through-space transfer of longitudinal magnetization between the adjacent nuclei. For nucleotides in a helix, the protons attached to the C8/C6 of the base and the C1\u2032/C2\u2032 of the sugar fulfill this distance requirement. By labeling all nucleotides at the C1\u2032 and C8/C6, the base and ribose of adjacent nucleotides can be connected. However, as the size of the RNAs increases, spectral crowding becomes especially pronounced in the sugar resonances and may lead to incorrect peak assignments. In the past the solution to this problem might have been to remove these resonances by transcribing the RNA with unlabeled cytosine. While the spectra would then be simplified, the NOESY walk is broken in any helical stretches that contain cytosine. Here we propose an alternative approach. Instead of transcribing the RNA with unlabeled cytosine, a different labeling pattern such as 2\u2032,8-13C could be used. In this way, the NOESY walk is preserved while removing the overlapping C1\u2032 resonances.",
+            "cite_spans": [
+                {
+                    "start": 107,
+                    "end": 109,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 110,
+                    "end": 112,
+                    "mention": "94",
+                    "ref_id": "BIBREF93"
+                }
+            ],
+            "section": "NOESY resonance assignments: an alternating 13C-1\u2032 and 13C-2\u2032 labeling scheme ::: RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Thus, by combining our previous work on pyrimidine synthesis with our current purine synthesis, we can make RNAs that provide labeling patterns that enable an important advance in NOESY assignment strategies (41,94). For the conventional uniformly labeled samples, the C2\u2032 and C1\u2032 resonances are both extremely crowded as discussed above. In a traditional NOESY walk all nucleotides or various permutations are fully-labeled. NOE crosspeaks between protons attached to the C1\u2032 and C2\u2032 and the C8/C6 of the same and previous nucleotides are observed for helical regions. As we have illustrated, spectral crowding can severely hinder this assignment process. However, by labeling the base of C6/C8 of each nucleotide and alternating the label on the ribose between C1\u2032 and C2\u2032 a sample is created that not only distinguishes the purines from the pyrimidines but also the A\u2013U and the G\u2013C pairs. We first made nucleotide specific labeled samples, and from the overlaid spectra, we could immediately tell that C/U and G/A showed more spectral overlap in their sugar resonances. Thus it was necessary to label C/G on their C1\u2032 carbons and U/A on their C2\u2032 carbons. As a proof of concept we have labeled the bacterial A-site RNA with 1\u2032,6-13C-1,3-15N CTP, 2\u2032,6-13C-1,3-15N UTP, 1\u2032,8-13C GTP, and 2\u2032,8-13C ATP (Figure 5). By combining this alternative labeling strategy with NOESY experiments that allow for filtering/editing of 1H cross-peaks based on the attached carbons (12C versus 13C), we can create a unique and powerful system to assign resonances without ambiguity (94\u201396). For ambiguous or overlapped cross-peaks, we utilized 3D 13C-NOESY-HSQC experiments. This alternating ribose pattern allowed us to unambiguously assign helical regions of RNA. In future work, we will streamline this methodology for use in larger RNAs.",
+            "cite_spans": [
+                {
+                    "start": 209,
+                    "end": 211,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 212,
+                    "end": 214,
+                    "mention": "94",
+                    "ref_id": "BIBREF93"
+                },
+                {
+                    "start": 1567,
+                    "end": 1569,
+                    "mention": "94",
+                    "ref_id": "BIBREF93"
+                },
+                {
+                    "start": 1570,
+                    "end": 1572,
+                    "mention": "96",
+                    "ref_id": "BIBREF95"
+                }
+            ],
+            "section": "NOESY resonance assignments: an alternating 13C-1\u2032 and 13C-2\u2032 labeling scheme ::: RESULTS AND DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 1310,
+                    "end": 1311,
+                    "mention": "5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "The resulting assignment matched those previously determined (8). In situations where there is significant overlap in the base region, samples in which certain bases are unlabeled or even deuterated can be made allowing for the assignment bottleneck to be quickly circumvented.",
+            "cite_spans": [
+                {
+                    "start": 62,
+                    "end": 63,
+                    "mention": "8",
+                    "ref_id": "BIBREF77"
+                }
+            ],
+            "section": "NOESY resonance assignments: an alternating 13C-1\u2032 and 13C-2\u2032 labeling scheme ::: RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "This work extends our previous synthesis of pyrimidine (30,31) to purine nucleotides. We have shown that the ability to easily synthesize a variety of purine and pyrimidine nucleotides facilitates the study of large RNAs. These nucleotides are suitable for use in three key aspects of RNA NMR structural biology: assignment, structural and dynamics measurements.",
+            "cite_spans": [
+                {
+                    "start": 56,
+                    "end": 58,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 59,
+                    "end": 61,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "CONCLUSIONS",
+            "ref_spans": []
+        },
+        {
+            "text": "The first advantage of these new site-specific labels is the potential for new assignment schemes. We have coupled alternate labeling of either C1\u2032 or C2\u2032 labeled ribose to C8 labeled purine bases. These combinations have allowed us to develop a new NOESY assignment strategy that benefits from reduced spectral crowding. This new strategy takes advantage of the large proton chemical shift differences between the C1\u2032 and C2\u2032 ribose carbons. By using an alternating C1\u2032 and C2\u2032 pattern with labeled bases, the NOESY spectrum is greatly simplified without compromising the information content present. Since all nucleotides are labeled, a complete NOESY walk is possible in helical regions. Additionally if the purines and pyrimidines labeled with C1\u2032 and C2\u2032 enrichment are reversed, orthogonal data is generated that can confirm the previous assignment.",
+            "cite_spans": [],
+            "section": "CONCLUSIONS",
+            "ref_spans": []
+        },
+        {
+            "text": "The second advantage of these new labels is that the removal of the strong 13C J-coupling leads to substantial improvements in signal intensity in the protonated base C6 and C8 positions. Additionally, these isolated spin pairs have facilitated the measurement of \u03bcs-ms dynamics using CPMG and CEST pulse sequences without the complications of large carbon-carbon couplings. Finally with these isolated \u2018two-spin\u2019 labels, these couplings need not be explicitly taken into account in the data analysis of CEST profiles as required in previous studies using uniformly labeled RNA or protein (33,34), but also be able to probe more useful sites such as pyrimidine C5 and C6 sites. It is important to note that other dispersion experiments such as R1\u03c1 will also benefit from using RNAs transcribed with isolated spin systems. The improvements we see from TROSY based pulse sequences scales with the size of the RNA.",
+            "cite_spans": [
+                {
+                    "start": 590,
+                    "end": 592,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 593,
+                    "end": 595,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "CONCLUSIONS",
+            "ref_spans": []
+        },
+        {
+            "text": "A price to pay for not using spectroscopic tools to minimize the 13C-13C coupling problem is that the number of probe sites is now limited to the labeled sites. Nonetheless, it still remains useful because our method allows for very rapid accumulation of chemical shifts, a set of parameters that are easily and accurately measured and available at very early stages of NMR data analyses. Thus by measuring various chemical shifts (H1\u2032/C1\u2032, H2\u2032/C2\u2032, H5\u2032,H5\u2033/C5\u2032, H2/C2, C4, H5/C5, H6/C6, H8/C8, N1, N3, N7, N9), we think the availability of such parameters will facilitate chemical shift based structure calculations of RNA, especially for constructing structural models for transiently and sparsely populated RNA states as has been done, so far, only for proteins (97).",
+            "cite_spans": [
+                {
+                    "start": 766,
+                    "end": 768,
+                    "mention": "97",
+                    "ref_id": "BIBREF96"
+                }
+            ],
+            "section": "CONCLUSIONS",
+            "ref_spans": []
+        },
+        {
+            "text": "We, therefore, anticipate that as the size of the RNAs under investigation becomes greater than 100 nucleotides the combined use of these selective labels with TROSY- and HMQC-based pulse elements will be critical for advancing NMR for the study of the structure and dynamics of a large number of new and interesting RNAs.",
+            "cite_spans": [],
+            "section": "CONCLUSIONS",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1.: TROSY improvements for IRE and HCV site-specifically labeled samples. (A) The base region of 1\u2032,5\u2032,8-13C3 GTP labeled IRE. Comparisons of the HSQC and TROSY pulse sequences show an average intensity improvement of 2.9 \u00b1 0.5. The inset displays the overlaid slices of the highlighted residue. (B) The base region of 1\u2032,5\u2032,8-13C3 ATP labeled HCV. Again comparisons of the HSQC and TROSY pulse sequences show an average intensity improvement of 3.3 \u00b1 1.0. The inset displays the overlaid slices of the highlighted residue.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: The improvement of HSQC versus TROSY pulse sequences for IRE (A) and HCV (B).",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: The 13C-TROSY CEST profile for the fluoride riboswitch recorded at 35\u00b0C. Measurements were made on the C1\u2032 (gray) and C6 (black) site of a 1\u2032,6-13C-1,3-15N-5-2H UTP. Data were globally fit to a 2-site full Bloch\u2013McConnell equation. The residue shown is proposed to be involved in an unstructured to base-paired transition involved in the formation of a pseudoknot. The B. anthracis construct had exchange parameters of kex = 617 \u00b1 54 s-1 and pb = 3.0 \u00b1 0.1%.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: CPMG fits for HCV SARS (A) and A-site (B). (A) The CPMG data revealed kex for select residues in the Human corona virus RNA element. Data were measured on the C1\u2019 position of a 1\u2032,8-13C labeled sample. (B) CPMG was run at 14.1 (\u25aa) and 18.8 (\u2022) T static field strengths for the A-site RNA. A global fit revealed kex = 3800 \u00b1 200 s-1 and pb = 1.8 \u00b1 0.1%. These results were in agreement with previously reported values (8). Measurements were made on the C2\u2032 position of 2\u2032,8-13C labeled sample. The A1493 position that these curves belong to has been implicated in the discrimination of cognate and near-cognate tRNAs in the ribosome.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5.: (A) NOESY walk of the bacterial A-site RNA using alternatively labeled nucleotides. Starting at the H1\u2032 of C14, the connectivity from the sugar H1\u2032/H2\u2032 to C8/C6 of the N+1 base enables sequential assignment all the way to the H1\u2032 of G19. This allowed the consecutive assignment of 6 residues present in the helical environment. Connectivities follow the placed arrows and move sequentially from cyan to magenta to yellow to black. (B) Pymol representation of the NOESY walk using the same coloring scheme as used in the NOESY walk (PDB: 1A3M (98)). (C) Predicted versus actual chemical shift values for the assigned residues as determined by NMRViewJ (One Moon Scientific). The offset from the central line represents how far the assigned resonance is from its predicted value. Blue circles represent resonances that are less than 0.1 ppm from predicted values, red circles have predicted ppm more than 0.1 ppm away from observed chemical shift.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Thiamine derivatives bind messenger RNAs directly to regulate bacterial gene expression",
+            "authors": [
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Winkler",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Nahvi",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.R.",
+                    "middle": [],
+                    "last": "Breaker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nature",
+            "volume": "419",
+            "issn": "",
+            "pages": "952-956",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Time-resolved structural studies of protein reaction dynamics: A smorgasbord of X-ray approaches",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Westenhoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Nazarenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Malmerberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Davidsson",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Katona",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Neutze",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Acta Crystallogr. A",
+            "volume": "66",
+            "issn": "",
+            "pages": "207-219",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Alternate-site isotopic labeling of ribonucleotides for NMR studies of ribose conformational dynamics in RNA",
+            "authors": [
+                {
+                    "first": "J.E.",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "K.R.",
+                    "middle": [],
+                    "last": "Julien",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.G.",
+                    "middle": [],
+                    "last": "Hoogstraten",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Biomol. NMR",
+            "volume": "35",
+            "issn": "",
+            "pages": "261-274",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Selective 13C labeling of nucleotides for large RNA NMR spectroscopy using an E. coli strain disabled in the TCA cycle",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Thakur",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Sama",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Jackson",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Dayie",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Biomol. NMR",
+            "volume": "48",
+            "issn": "",
+            "pages": "179-192",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Selective 13C labeling of nucleotides for large RNA NMR spectroscopy using an E. coli strain disabled in the TCA cycle",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Thakur",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Sama",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Jackson",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.K.",
+                    "middle": [],
+                    "last": "Dayie",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Biomol. NMR",
+            "volume": "48",
+            "issn": "",
+            "pages": "179-192",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Three-dimensional heteronuclear NMR studies of RNA",
+            "authors": [
+                {
+                    "first": "E.P.",
+                    "middle": [],
+                    "last": "Nikonowicz",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Pardi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Nature",
+            "volume": "355",
+            "issn": "",
+            "pages": "184-186",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Preparation of 13C and 15N labelled RNAs for heteronuclear multi-dimensional NMR studies",
+            "authors": [
+                {
+                    "first": "E.P.",
+                    "middle": [],
+                    "last": "Nikonowicz",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Sirr",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Legault",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.M.",
+                    "middle": [],
+                    "last": "Jucker",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.M.",
+                    "middle": [],
+                    "last": "Baer",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Pardi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Nucleic Acids Res.",
+            "volume": "20",
+            "issn": "",
+            "pages": "4507-4513",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Preparation of isotopically labeled ribonucleotides for multidimensional NMR spectroscopy of RNA",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [
+                        "T."
+                    ],
+                    "last": "Batey",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Inada",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Kujawinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [
+                        "D."
+                    ],
+                    "last": "Puglisi",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [
+                        "R."
+                    ],
+                    "last": "Williamson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "Nucleic Acids Res.",
+            "volume": "20",
+            "issn": "",
+            "pages": "4515-4523",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Structure of HCVIRES domain II determined by NMR",
+            "authors": [
+                {
+                    "first": "P.J.",
+                    "middle": [],
+                    "last": "Lukavsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.A.",
+                    "middle": [],
+                    "last": "Otto",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.D.",
+                    "middle": [],
+                    "last": "Puglisi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nat. Struct. Biol.",
+            "volume": "10",
+            "issn": "",
+            "pages": "1033-1038",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "NMR structure of the 101-nucleotide core encapsidation signal of the Moloney murine leukemia virus",
+            "authors": [
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "D'Souza",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Dey",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Habib",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.F.",
+                    "middle": [],
+                    "last": "Summers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Mol. Biol.",
+            "volume": "337",
+            "issn": "",
+            "pages": "427-442",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Solution structure of tRNA(Val) from refinement of homology model against residual dipolar coupling and SAXS data",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Grishaev",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Ying",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.D.",
+                    "middle": [],
+                    "last": "Canny",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Pardi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Bax",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Biomol. NMR",
+            "volume": "42",
+            "issn": "",
+            "pages": "99-109",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Widespread genetic switches and toxicity resistance proteins for fluoride",
+            "authors": [
+                {
+                    "first": "J.L.",
+                    "middle": [],
+                    "last": "Baker",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Sudarsan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Weinberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Roth",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.B.",
+                    "middle": [],
+                    "last": "Stockbridge",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.R.",
+                    "middle": [],
+                    "last": "Breaker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Science",
+            "volume": "335",
+            "issn": "",
+            "pages": "233-235",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Structure of a conserved retroviral RNA packaging element by NMR spectroscopy and cryo-electron tomography",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Miyazaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.N.",
+                    "middle": [],
+                    "last": "Irobalieva",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.S.",
+                    "middle": [],
+                    "last": "Tolbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Smalls-Mantey",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Iyalla",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Loeliger",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "D'Souza",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Khant",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.F.",
+                    "middle": [],
+                    "last": "Schmid",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.L.",
+                    "middle": [],
+                    "last": "Garcia",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Mol. Biol.",
+            "volume": "404",
+            "issn": "",
+            "pages": "751-772",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Solution structure of the cap-independent translational enhancer and ribosome-binding element in the 3\u2032 UTR of turnip crinkle virus",
+            "authors": [
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Zuo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Eyler",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.R.",
+                    "middle": [],
+                    "last": "Starich",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.M.",
+                    "middle": [],
+                    "last": "Tiede",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.E.",
+                    "middle": [],
+                    "last": "Simon",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Kasprzak",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.D.",
+                    "middle": [],
+                    "last": "Schwieters",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Proc. Natl. Acad. Sci. U.S.A.",
+            "volume": "107",
+            "issn": "",
+            "pages": "1385-1390",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Structure of the yeast U2/U6 snRNA complex",
+            "authors": [
+                {
+                    "first": "J.E.",
+                    "middle": [],
+                    "last": "Burke",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.G.",
+                    "middle": [],
+                    "last": "Sashital",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Zuo",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.-X.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.E.",
+                    "middle": [],
+                    "last": "Butcher",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "RNA",
+            "volume": "18",
+            "issn": "",
+            "pages": "673-683",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "A structure-based mechanism for tRNA and retroviral RNA remodelling during primer annealing",
+            "authors": [
+                {
+                    "first": "S.B.",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.Z.",
+                    "middle": [],
+                    "last": "Yildiz",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.A.",
+                    "middle": [],
+                    "last": "Lo",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.M.",
+                    "middle": [],
+                    "last": "D'Souza",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nature",
+            "volume": "515",
+            "issn": "",
+            "pages": "591-595",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "The NMR structure of the II-III-VI three-way junction from the Neurospora VS ribozyme reveals a critical tertiary interaction and provides new insights into the global ribozyme structure",
+            "authors": [
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Bonneau",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Girard",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Lemieux",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Legault",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "RNA",
+            "volume": "21",
+            "issn": "",
+            "pages": "1621-1632",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Structure of the HIV-1 RNA packaging signal",
+            "authors": [
+                {
+                    "first": "S.C.",
+                    "middle": [],
+                    "last": "Keane",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Heng",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Kharytonchyk",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Ramakrishnan",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Carter",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Barton",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Hosic",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Florwick",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Santos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Science",
+            "volume": "348",
+            "issn": "",
+            "pages": "917-921",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Key labeling technologies to tackle sizeable problems in RNA structural biology",
+            "authors": [
+                {
+                    "first": "K.T.",
+                    "middle": [],
+                    "last": "Dayie",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Int. J. Mol. Sci.",
+            "volume": "9",
+            "issn": "",
+            "pages": "1214-1240",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Isotope labeling strategies for NMR studies of RNA",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Miyazaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.F.",
+                    "middle": [],
+                    "last": "Summers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Biomol. NMR",
+            "volume": "46",
+            "issn": "",
+            "pages": "113-125",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "NMR experiments for the measurement of carbon relaxation properties in highly enriched, uniformly 13C,15N-labeled proteins: application to 13C\u03b1 carbons",
+            "authors": [
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Yamazaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Muhandiram",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.E.",
+                    "middle": [],
+                    "last": "Kay",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "116",
+            "issn": "",
+            "pages": "8266-8278",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Site-specific labeling of nucleotides for making RNA for high resolution NMR studies using an E. coli strain disabled in the oxidative pentose phosphate pathway",
+            "authors": [
+                {
+                    "first": "T.K.",
+                    "middle": [],
+                    "last": "Dayie",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Thakur",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Biomol. NMR",
+            "volume": "47",
+            "issn": "",
+            "pages": "19-31",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Multiple conformations of SAM-II riboswitch detected with SAXS and NMR spectroscopy",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Zuo",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.-X.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.K.",
+                    "middle": [],
+                    "last": "Dayie",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res.",
+            "volume": "40",
+            "issn": "",
+            "pages": "3117-3130",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Regio-selective chemical-enzymatic synthesis of pyrimidine nucleotides facilitates RNA structure and dynamics studies",
+            "authors": [
+                {
+                    "first": "L.J.",
+                    "middle": [],
+                    "last": "Alvarado",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.M.",
+                    "middle": [],
+                    "last": "LeBlanc",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.P.",
+                    "middle": [],
+                    "last": "Longhini",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.C.",
+                    "middle": [],
+                    "last": "Keane",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Jain",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.F.",
+                    "middle": [],
+                    "last": "Yildiz",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.S.",
+                    "middle": [],
+                    "last": "Tolbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.M.",
+                    "middle": [],
+                    "last": "D'Souza",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.F.",
+                    "middle": [],
+                    "last": "Summers",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Kreutz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Chembiochem",
+            "volume": "15",
+            "issn": "",
+            "pages": "1573-1577",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "L.J.",
+                    "middle": [],
+                    "last": "Alvarado",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.P.",
+                    "middle": [],
+                    "last": "Longhini",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.M.",
+                    "middle": [],
+                    "last": "LeBlanc",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Kreutz",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.K.",
+                    "middle": [],
+                    "last": "Dayie",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Methods Enzymol",
+            "volume": "549",
+            "issn": "",
+            "pages": "133-162",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "A computational study of the effects of C-13-C-13 scalar couplings on C-13 CEST NMR spectra: towards studies on a uniformly C-13-labeled protein",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Vallurupalli",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Bouvignies",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.E.",
+                    "middle": [],
+                    "last": "Kay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Chembiochem",
+            "volume": "14",
+            "issn": "",
+            "pages": "1709-1713",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Effects of J-couplings and unobservable minor states on kinetics parameters extracted from CEST data",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J. Magn. Reson.",
+            "volume": "249",
+            "issn": "",
+            "pages": "118-125",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Characterizing slow chemical exchange in nucleic acids by carbon CEST and low spin-lock field R1\u03c1 NMR spectroscopy",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.L.",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "136",
+            "issn": "",
+            "pages": "20-23",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Homonuclear broadband-decoupled absorption-spectra, with linewidths which are independent of the transverse relaxation rate",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Bax",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.F.",
+                    "middle": [],
+                    "last": "Mehlkopf",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Smidt",
+                    "suffix": ""
+                }
+            ],
+            "year": 1979,
+            "venue": "J. Magn. Reson.",
+            "volume": "35",
+            "issn": "",
+            "pages": "167-169",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Investigation of complex networks of spin-spin coupling by two-dimensional NMR",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Bax",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Freeman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1981,
+            "venue": "J. Magn. Reson.",
+            "volume": "44",
+            "issn": "",
+            "pages": "542-561",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Improved 3D triple-resonance NMR techniques applied to a 31-KDa protein",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Grzesiek",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Bax",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "J. Magn. Reson.",
+            "volume": "96",
+            "issn": "",
+            "pages": "432-440",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Optimization of constant-time evolution in multidimensional NMR experiments",
+            "authors": [
+                {
+                    "first": "F.J.M.",
+                    "middle": [],
+                    "last": "Vandeven",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.E.P.",
+                    "middle": [],
+                    "last": "Philippens",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "J. Magn. Reson.",
+            "volume": "97",
+            "issn": "",
+            "pages": "637-644",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Multisite band-selective decoupling in proteins",
+            "authors": [
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Kupce",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Wagner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "J. Magn. Reson., Ser. B",
+            "volume": "110",
+            "issn": "",
+            "pages": "309-312",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Three-state mechanism couples ligand and temperature sensing in riboswitches",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Reining",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Nozinovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Schlepckow",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Buhr",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "F\u00fcrtig",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Schwalbe",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nature",
+            "volume": "499",
+            "issn": "",
+            "pages": "355-359",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Base-type-selective high-resolution C-13 edited NOESY for sequential assignment of large RNAs",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Brutscher",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Boisbouvier",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Kupce",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Tisne",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Dardel",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Marion",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.P.",
+                    "middle": [],
+                    "last": "Simorre",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J. Biomol. NMR",
+            "volume": "19",
+            "issn": "",
+            "pages": "141-151",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Resolution enhanced homonuclear carbon decoupled triple resonance experiments for unambiguous RNA structural characterization",
+            "authors": [
+                {
+                    "first": "K.T.",
+                    "middle": [],
+                    "last": "Dayie",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J Biomol. NMR.",
+            "volume": "32",
+            "issn": "",
+            "pages": "129-139",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Carbonyl carbon probe of local mobility in C-13,N-15-enriched proteins using high-resolution nuclear magnetic resonance",
+            "authors": [
+                {
+                    "first": "K.T.",
+                    "middle": [],
+                    "last": "Dayie",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Wagner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "119",
+            "issn": "",
+            "pages": "7797-7806",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Alternate-site isotopic labeling of ribonucleotides for NMR studies of ribose conformational dynamics in RNA",
+            "authors": [
+                {
+                    "first": "J.E.",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": "Jr"
+                },
+                {
+                    "first": "K.R.",
+                    "middle": [],
+                    "last": "Julien",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.G.",
+                    "middle": [],
+                    "last": "Hoogstraten",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Biomol. NMR",
+            "volume": "35",
+            "issn": "",
+            "pages": "261-274",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Extensive backbone dynamics in the GCAA RNA tetraloop analyzed using 13C NMR spin relaxation and specific isotope labeling",
+            "authors": [
+                {
+                    "first": "J.E.",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.G.",
+                    "middle": [],
+                    "last": "Hoogstraten",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "130",
+            "issn": "",
+            "pages": "16757-16769",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Rotational diffusion tensor of nucleic acids from 13C NMR relaxation",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Boisbouvier",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Ono",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kainosho",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Bax",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J. Biomol. NMR",
+            "volume": "27",
+            "issn": "",
+            "pages": "133-142",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Dynamics of large elongated RNA by NMR carbon relaxation",
+            "authors": [
+                {
+                    "first": "A.L.",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.M.",
+                    "middle": [],
+                    "last": "Al-Hashimi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "129",
+            "issn": "",
+            "pages": "16072-16082",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "2D hetereonuclear NMR measurements of spin-lattice relaxation-times in the rotating frame of X nuclei in heteronuclear HX spin systems",
+            "authors": [
+                {
+                    "first": "J.W.",
+                    "middle": [],
+                    "last": "Peng",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Thanabal",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Wagner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "J. Magn. Reson.",
+            "volume": "94",
+            "issn": "",
+            "pages": "82-100",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Active site dynamics in the lead-dependent ribozyme",
+            "authors": [
+                {
+                    "first": "C.G.",
+                    "middle": [],
+                    "last": "Hoogstraten",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.R.",
+                    "middle": [],
+                    "last": "Wank",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Pardi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Biochem.",
+            "volume": "39",
+            "issn": "",
+            "pages": "9951-9958",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "NMR methods for studying the structure and dynamics of RNA",
+            "authors": [
+                {
+                    "first": "M.P.",
+                    "middle": [],
+                    "last": "Latham",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.J.",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.A.",
+                    "middle": [],
+                    "last": "McCallum",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Pardi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Chembiochem",
+            "volume": "6",
+            "issn": "",
+            "pages": "1492-1505",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "The 3\u2032 untranslated region of pea enation mosaic virus contains two T-shaped, ribosome-binding, cap-independent translation enhancers",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.K.",
+                    "middle": [],
+                    "last": "Kasprzak",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Szarko",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.A.",
+                    "middle": [],
+                    "last": "Shapiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.E.",
+                    "middle": [],
+                    "last": "Simon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J. Virol.",
+            "volume": "88",
+            "issn": "",
+            "pages": "11696-11712",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Biosynthetic C-13 labeling of aromatic side chains in proteins for NMR relaxation measurements",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Teilum",
+                    "suffix": ""
+                },
+                {
+                    "first": "U.",
+                    "middle": [],
+                    "last": "Brath",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Lundstrom",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Akke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "128",
+            "issn": "",
+            "pages": "2506-2507",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Characterizing RNA excited states using NMR relaxation dispersion",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Xue",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Kellogg",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.J.",
+                    "middle": [],
+                    "last": "Kimsey",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Sathyamoorthy",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.W.",
+                    "middle": [],
+                    "last": "Stein",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "McBrairty",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.M.",
+                    "middle": [],
+                    "last": "Al-Hashimi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Methods Enzymol.",
+            "volume": "558",
+            "issn": "",
+            "pages": "39-73",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Selective cross-polarization in solution state NMR",
+            "authors": [
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Chiarparin",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Pelupessy",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Bodenhausen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Mol. Phys.",
+            "volume": "95",
+            "issn": "",
+            "pages": "759-767",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Excitation of selected proton signals in NMR of isotopically labeled macromolecules",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Pelupessy",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Chiarparin",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Bodenhausen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J. Magn. Reson.",
+            "volume": "138",
+            "issn": "",
+            "pages": "178-181",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Hartmann-Hahn polarization transfer in liquids: An ideal tool for selective experiments",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Pelupessy",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Chiarparin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Conc. Magn. Reson.",
+            "volume": "12",
+            "issn": "",
+            "pages": "103-124",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Frequency-switched single-transition cross-polarization: A tool for selective experiments in biomolecular NMR",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Ferrage",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.R.",
+                    "middle": [],
+                    "last": "Eykyn",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Bodenhausen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Chemphyschem",
+            "volume": "5",
+            "issn": "",
+            "pages": "76-84",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Extending the range of microsecond-to-millisecond chemical exchange detected in labeled and unlabeled nucleic acids by selective carbon R-1 rho NMR spectroscopy",
+            "authors": [
+                {
+                    "first": "A.L.",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.N.",
+                    "middle": [],
+                    "last": "Nikolova",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Casiano-Negroni",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.M.",
+                    "middle": [],
+                    "last": "Al-Hashimi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "131",
+            "issn": "",
+            "pages": "3818-3819",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "NMR R-1 rho rotating-frame relaxation with weak radio frequency fields",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Massi",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.Y.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Rance",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.G.",
+                    "middle": [],
+                    "last": "Palmer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Am. Chem.Soc.",
+            "volume": "126",
+            "issn": "",
+            "pages": "2247-2256",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Off-resonance R1(p) NMR studies of exchange dynamics in proteins with low spin-lock fields: An application to a fyn SH3 domain",
+            "authors": [
+                {
+                    "first": "D.M.",
+                    "middle": [],
+                    "last": "Korzhnev",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.Y.",
+                    "middle": [],
+                    "last": "Orekhov",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.E.",
+                    "middle": [],
+                    "last": "Kay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "127",
+            "issn": "",
+            "pages": "713-721",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Probing transient hoogsteen hydrogen bonds in canonical duplex DNA using NMR relaxation dispersion and single-atom substitution",
+            "authors": [
+                {
+                    "first": "E.N.",
+                    "middle": [],
+                    "last": "Nikolova",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.L.",
+                    "middle": [],
+                    "last": "Gottardo",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.M.",
+                    "middle": [],
+                    "last": "Al-Hashimi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "134",
+            "issn": "",
+            "pages": "3667-3670",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Identification of a Minimal Region of the HIV-1 5-Leader Required for RNA Dimerization, NC Binding, and Packaging",
+            "authors": [
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Heng",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Kharytonchyk",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.L.",
+                    "middle": [],
+                    "last": "Garcia",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.S.",
+                    "middle": [],
+                    "last": "Divakaruni",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "LaCotti",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Edme",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Telesnitsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.F.",
+                    "middle": [],
+                    "last": "Summers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Mol. Biol.",
+            "volume": "417",
+            "issn": "",
+            "pages": "224-239",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Probing slowly exchanging protein systems via C-13\u03b1-CEST: monitoring folding of the Im7 protein",
+            "authors": [
+                {
+                    "first": "A.L.",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Bouvignies",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.E.",
+                    "middle": [],
+                    "last": "Kay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J. Biomol. NMR",
+            "volume": "55",
+            "issn": "",
+            "pages": "279-289",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Probing slow chemical exchange at carbonyl sites in proteins by chemical exchange saturation transfer NMR spectroscopy",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Vallurupalli",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.E.",
+                    "middle": [],
+                    "last": "Kay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Angew. Chem. Int.",
+            "volume": "52",
+            "issn": "",
+            "pages": "4156-4159",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Visualizing side chains of invisible protein conformers by solution NMR",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Bouvignies",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Vallurupalli",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.E.",
+                    "middle": [],
+                    "last": "Kay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J. Mol. Biol.",
+            "volume": "426",
+            "issn": "",
+            "pages": "763-774",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "C-13\u03b1 CEST experiment on uniformly C-13-labeled proteins",
+            "authors": [
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "J. Biomol. NMR",
+            "volume": "61",
+            "issn": "",
+            "pages": "89-94",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "Probing RNA dynamics via longitudinal exchange and CPMG relaxation dispersion NMR spectroscopy using a sensitive 13C-methyl label",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Kloiber",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Spitzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Tollinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Konrat",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Kreutz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nucleic Acids Res.",
+            "volume": "39",
+            "issn": "",
+            "pages": "4340-4351",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Synthesis of (6\u201313C)pyrimidine nucleotides as spin-labels for RNA dynamics",
+            "authors": [
+                {
+                    "first": "C.H.",
+                    "middle": [],
+                    "last": "Wunderlich",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Spitzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Santner",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Fauster",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Tollinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Kreutz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "134",
+            "issn": "",
+            "pages": "7558-7569",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "Attenuated T2 relaxation by mutual cancellation of dipole\u2013dipole coupling and chemical shift anisotropy indicates an avenue to NMR structures of very large biological macromolecules in solution",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Pervushin",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Riek",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Wider",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "W\u00fcthrich",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Proc. Natl. Acad. Sci. U.S.A.",
+            "volume": "94",
+            "issn": "",
+            "pages": "12366-12371",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Relaxation-optimized NMR spectroscopy of methylene groups in proteins and nucleic acids",
+            "authors": [
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Miclet",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.C.",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.M.",
+                    "middle": [],
+                    "last": "Clore",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.L.",
+                    "middle": [],
+                    "last": "Bryce",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Boisbouvier",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Bax",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "126",
+            "issn": "",
+            "pages": "10560-10570",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "Measuring hydrogen exchange rates in invisible protein excited states",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Long",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Bouvignies",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.E.",
+                    "middle": [],
+                    "last": "Kay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Proc. Natl. Acad. Sci. U.S.A.",
+            "volume": "111",
+            "issn": "",
+            "pages": "8820-8825",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "Off-resonance rotating-frame relaxation dispersion experiment for C-13 in aromatic side chains using L-optimized TROSY-selection",
+            "authors": [
+                {
+                    "first": "U.",
+                    "middle": [],
+                    "last": "Weininger",
+                    "suffix": ""
+                },
+                {
+                    "first": "U.",
+                    "middle": [],
+                    "last": "Brath",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Modig",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Teilum",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Akke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J. Biomol. NMR",
+            "volume": "59",
+            "issn": "",
+            "pages": "23-29",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "Flipping of the Ribosomal A-Site Adenines Provides a Basis for tRNA Selection",
+            "authors": [
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Zeng",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Chugh",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Casiano-Negroni",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.M.",
+                    "middle": [],
+                    "last": "Al-Hashimi",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.L.",
+                    "middle": [
+                        "III"
+                    ],
+                    "last": "Brooks",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J. Mol. Biol.",
+            "volume": "426",
+            "issn": "",
+            "pages": "3201-3213",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Conformational exchange of aromatic side chains characterized by L-optimized TROSY-selected C-13 CPMG relaxation dispersion",
+            "authors": [
+                {
+                    "first": "U.",
+                    "middle": [],
+                    "last": "Weininger",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Respondek",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Akke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Biomol. NMR",
+            "volume": "54",
+            "issn": "",
+            "pages": "9-14",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "C-13 relaxation experiments for aromatic side chains employing longitudinal- and transverse-relaxation optimized NMR spectroscopy",
+            "authors": [
+                {
+                    "first": "U.",
+                    "middle": [],
+                    "last": "Weininger",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Diehl",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Akke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Biomol. NMR",
+            "volume": "53",
+            "issn": "",
+            "pages": "181-190",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "Pathway engineered enzymatic de novo purine nucleotide synthesis",
+            "authors": [
+                {
+                    "first": "H.L.",
+                    "middle": [],
+                    "last": "Schultheisz",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.R.",
+                    "middle": [],
+                    "last": "Szymczyna",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.G.",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.R.",
+                    "middle": [],
+                    "last": "Williamson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "ACS Chem. Biol.",
+            "volume": "3",
+            "issn": "",
+            "pages": "499-511",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF70": {
+            "title": "Preparation of specifically deuterated RNA for NMR studies using a combination of chemical and enzymatic synthesis",
+            "authors": [
+                {
+                    "first": "T.J.",
+                    "middle": [],
+                    "last": "Tolbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.R.",
+                    "middle": [],
+                    "last": "Williamson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "118",
+            "issn": "",
+            "pages": "7929-7940",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF71": {
+            "title": "Preparation of specifically deuterated and 13C-labeled RNA for NMR studies using enzymatic synthesis",
+            "authors": [
+                {
+                    "first": "T.J.",
+                    "middle": [],
+                    "last": "Tolbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.R.",
+                    "middle": [],
+                    "last": "Williamson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "119",
+            "issn": "",
+            "pages": "12100-12108",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF72": {
+            "title": "Preparation and characterization of a uniformly 2H/15N-labeled RNA oligonucleotide for NMR studies",
+            "authors": [
+                {
+                    "first": "E.P.",
+                    "middle": [],
+                    "last": "Nikonowicz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Michnicka",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Kalurachchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Dejong",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nucleic Acids Res.",
+            "volume": "25",
+            "issn": "",
+            "pages": "1390-1396",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF73": {
+            "title": "3D C(CC)H TOCSY experiment for assigning protons and carbons in uniformly 13C- and selectively 2H-labeled RNA",
+            "authors": [
+                {
+                    "first": "K.T.",
+                    "middle": [],
+                    "last": "Dayie",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.J.",
+                    "middle": [],
+                    "last": "Tolbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.R.",
+                    "middle": [],
+                    "last": "Williamson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J. Mag. Reson.",
+            "volume": "130",
+            "issn": "",
+            "pages": "97-101",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF74": {
+            "title": "Enzymatic synthesis and 19F NMR studies of 2-fluoroadenine-substituted RNA",
+            "authors": [
+                {
+                    "first": "L.G.",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.H.",
+                    "middle": [],
+                    "last": "Geierstanger",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.R.",
+                    "middle": [],
+                    "last": "Williamson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Hennig",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "126",
+            "issn": "",
+            "pages": "11776-11777",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF75": {
+            "title": "Stereospecificity, substrate, and inhibitory properties of nucleoside diphosphate analogs for creatine and pyruvate kinases",
+            "authors": [
+                {
+                    "first": "C.K.",
+                    "middle": [],
+                    "last": "Wennefors",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.I.",
+                    "middle": [],
+                    "last": "Dobrikov",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.R.",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Bioorg. Chem.",
+            "volume": "36",
+            "issn": "",
+            "pages": "169-177",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF76": {
+            "title": "Relating structure to mechanism in creatine kinase",
+            "authors": [
+                {
+                    "first": "M.J.",
+                    "middle": [],
+                    "last": "McLeish",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.L.",
+                    "middle": [],
+                    "last": "Kenyon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Crit. Rev. Biochem. Mol.",
+            "volume": "40",
+            "issn": "",
+            "pages": "1-20",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF77": {
+            "title": "Visualizing transient low-populated structures of RNA",
+            "authors": [
+                {
+                    "first": "E.A.",
+                    "middle": [],
+                    "last": "Dethoff",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Petzold",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Chugh",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Casiano-Negroni",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.M.",
+                    "middle": [],
+                    "last": "Al-Hashimi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nature",
+            "volume": "491",
+            "issn": "",
+            "pages": "724-728",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF78": {
+            "title": "Transverse relaxation optimized triple-resonance NMR experiments for nucleic acids",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Fiala",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Czernek",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Sklenar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J. Biomol. NMR",
+            "volume": "16",
+            "issn": "",
+            "pages": "291-302",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF79": {
+            "title": "Improved sensitivity and resolution in 1H-13C NMR experiments of RNA",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Brutscher",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Boisbouvier",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Pardi",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Marion",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.P",
+                    "middle": [],
+                    "last": "Simorre",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J. Am. Che. Soc.",
+            "volume": "120",
+            "issn": "",
+            "pages": "11845-11851",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF80": {
+            "title": "The use of NMR methods for conformational studies of nucleic acids",
+            "authors": [
+                {
+                    "first": "S.S.",
+                    "middle": [],
+                    "last": "Wijmenga",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.N.M.",
+                    "middle": [],
+                    "last": "van\u00a0Buuren",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Prog. Nucl. Mag. Res. Sp.",
+            "volume": "32",
+            "issn": "",
+            "pages": "287-387",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF81": {
+            "title": "Direct measurements of the dissociation-rate constant for inhibitor-enzyme complexes via the T1\u03c1 and T2 (CPMG) methods",
+            "authors": [
+                {
+                    "first": "D.G.",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.E.",
+                    "middle": [],
+                    "last": "Perlman",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.E.",
+                    "middle": [],
+                    "last": "London",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J. Magn. Res. Ser. B",
+            "volume": "104",
+            "issn": "",
+            "pages": "266-275",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF82": {
+            "title": "Effect of diffusion on free precession in nuclear magnetic resonance experiments",
+            "authors": [
+                {
+                    "first": "H.Y.",
+                    "middle": [],
+                    "last": "Carr",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.M.",
+                    "middle": [],
+                    "last": "Purcell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1954,
+            "venue": "Phys. Rev.",
+            "volume": "94",
+            "issn": "",
+            "pages": "630-638",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF83": {
+            "title": "Modified spin-echo method for measuring nuclear relation times",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Meiboom",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Gill",
+                    "suffix": ""
+                }
+            ],
+            "year": 1958,
+            "venue": "Rev. Sci. Instrum.",
+            "volume": "29",
+            "issn": "",
+            "pages": "688-691",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF84": {
+            "title": "Spin Echoes",
+            "authors": [
+                {
+                    "first": "E.L.",
+                    "middle": [],
+                    "last": "Hahn",
+                    "suffix": ""
+                }
+            ],
+            "year": 1950,
+            "venue": "Phys. Rev.",
+            "volume": "80",
+            "issn": "",
+            "pages": "580-594",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF85": {
+            "title": "A general two-site solution for the chemical exchange produced dependence of T2 upon the carr-Purcell pulse separation",
+            "authors": [
+                {
+                    "first": "J.P.",
+                    "middle": [],
+                    "last": "Carver",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.E.",
+                    "middle": [],
+                    "last": "Richards",
+                    "suffix": ""
+                }
+            ],
+            "year": 1972,
+            "venue": "J. Magn. Reson. (1969)",
+            "volume": "6",
+            "issn": "",
+            "pages": "89-105",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF86": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "A.G.",
+                    "middle": [
+                        "III"
+                    ],
+                    "last": "Palmer",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.D.",
+                    "middle": [],
+                    "last": "Kroenke",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Patrick\u00a0Loria",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Methods Enzymol",
+            "volume": "339",
+            "issn": "",
+            "pages": "204-238",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF87": {
+            "title": "Measurement of carbonyl chemical shifts of excited protein states by relaxation dispersion NMR spectroscopy: comparison between uniformly and selectively 13C labeled samples",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Lundstr\u00f6m",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.F.",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Kay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Biomol. NMR",
+            "volume": "42",
+            "issn": "",
+            "pages": "35-47",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF88": {
+            "title": "Integrated description of protein dynamics from room-temperature X-ray crystallography and NMR",
+            "authors": [
+                {
+                    "first": "R.B.",
+                    "middle": [],
+                    "last": "Fenwick",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "van\u00a0den\u00a0Bedem",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.S.",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.E.",
+                    "middle": [],
+                    "last": "Wright",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Proc. Natl. Acad Sci. U.S.A.",
+            "volume": "111",
+            "issn": "",
+            "pages": "E445-E454",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF89": {
+            "title": "Low-populated folding intermediates of Fyn SH3 characterized by relaxation dispersion NMR",
+            "authors": [
+                {
+                    "first": "D.M.",
+                    "middle": [],
+                    "last": "Korzhnev",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Salvatella",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Vendruscolo",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.A.",
+                    "middle": [],
+                    "last": "Di\u00a0Nardo",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.R.",
+                    "middle": [],
+                    "last": "Davidson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.M.",
+                    "middle": [],
+                    "last": "Dobson",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.E.",
+                    "middle": [],
+                    "last": "Kay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "430",
+            "issn": "",
+            "pages": "586-590",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF90": {
+            "title": "Aminoglycoside-induced reduction in nucleotide mobility at the ribosomal RNA A-site as a potentially key determinant of antibacterial activity",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kaul",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.M.",
+                    "middle": [],
+                    "last": "Barbieri",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.S.",
+                    "middle": [],
+                    "last": "Pilch",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Am. Chem. Soc.",
+            "volume": "128",
+            "issn": "",
+            "pages": "1261-1271",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF91": {
+            "title": "Monitoring molecular recognition of the ribosomal decoding site",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Shandrick",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.K.",
+                    "middle": [],
+                    "last": "Ayida",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Takahashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.C.",
+                    "middle": [],
+                    "last": "Winters",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.B.",
+                    "middle": [],
+                    "last": "Simonsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Vourloumis",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Hermann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Angew. Chem. Int.",
+            "volume": "116",
+            "issn": "",
+            "pages": "3239-3244",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF92": {
+            "title": "Stochastic gating and drug\u2013ribosome interactions",
+            "authors": [
+                {
+                    "first": "A.C.",
+                    "middle": [],
+                    "last": "Vaiana",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.Y.",
+                    "middle": [],
+                    "last": "Sanbonmatsu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J. Mol. Biol.",
+            "volume": "386",
+            "issn": "",
+            "pages": "648-661",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF93": {
+            "title": "New applications of 2D filtered/edited NOESY for assignment and structure elucidation of RNA and RNA-protein complexes",
+            "authors": [
+                {
+                    "first": "R.D.",
+                    "middle": [],
+                    "last": "Peterson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.A.",
+                    "middle": [],
+                    "last": "Theimer",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.H.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Feigon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Biomol. NMR",
+            "volume": "28",
+            "issn": "",
+            "pages": "59-67",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF94": {
+            "title": "Synthesis and NMR of RNA with Selective isotopic enrichment in the bases",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "SantaLucia",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.X.",
+                    "middle": [],
+                    "last": "Shen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Cai",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Lewis",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Tinoco",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Nucleic Acids Res.",
+            "volume": "23",
+            "issn": "",
+            "pages": "4913-4921",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF95": {
+            "title": "Isotope-filtered NMR methods for the study of biomolecular structure and interactions",
+            "authors": [
+                {
+                    "first": "A.L.",
+                    "middle": [],
+                    "last": "Breeze",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Prog. Nucl. Mag. Res. Spec.",
+            "volume": "36",
+            "issn": "",
+            "pages": "323-372",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF96": {
+            "title": "NMR paves the way for atomic level descriptions of sparsely populated, transiently formed biomolecular conformers",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Sekhar",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.E.",
+                    "middle": [],
+                    "last": "Kay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Proc. Natl. Acad. Sci. U.S.A.",
+            "volume": "110",
+            "issn": "",
+            "pages": "12867-12874",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF97": {
+            "title": "Paromomycin binding induces a local conformational change in the A-site of 16 s rRNA1",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Fourmy",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Yoshizawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.D.",
+                    "middle": [],
+                    "last": "Puglisi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J. Mol. Biol.",
+            "volume": "277",
+            "issn": "",
+            "pages": "333-345",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

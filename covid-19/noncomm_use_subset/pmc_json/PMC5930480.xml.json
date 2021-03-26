@@ -1,0 +1,2758 @@
+{
+    "paper_id": "PMC5930480",
+    "metadata": {
+        "title": "Protein Sequence Comparison and DNA-binding Protein Identification with Generalized PseAAC and Graphical Representation",
+        "authors": [
+            {
+                "first": "Chun",
+                "middle": [],
+                "last": "Li",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jialing",
+                "middle": [],
+                "last": "Zhao",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Changzhong",
+                "middle": [],
+                "last": "Wang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Yuhua",
+                "middle": [],
+                "last": "Yao",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "DNA-binding proteins (DNA-BPs) are very important functional proteins in a cell. These proteins play vital roles in various cellular processes, including DNA replication, transcription, regulation of gene expression, packaging, and other activities associated with DNA [1-5]. It is therefore substantially important to distinguish DNA-BPs from non-DNA-binding proteins (NBPs). In the past, many experimental and computational techniques have been developed for identifying DNA-BPs. Experimental techniques can provide a clear-cut answer to a query protein. However, the experimental methods are cost-intensive and time-consuming, and thus impractical for large datasets [3-7]. Computational methods can be broadly divided into two categories: structure-based method and sequence-based method. The former can discriminate DNA-binding and non-binding proteins with high accuracy, but these methods can't be employed in high throughput annotation, as they require the structure information of a query protein [1]. Though tremendous progress has been achieved in experimental determination of protein structures in the past five decades, it can't keep pace with the explosive growth of sequence information resulting from modern sequencing technology [8]. Yet as suggested by Anfinsen [9], proteins contain within their amino acid sequences enough information to determine their native conformation. Therefore, it is more promising to use sequence-based methods to identify DNA-BPs.",
+            "cite_spans": [
+                {
+                    "start": 270,
+                    "end": 271,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 272,
+                    "end": 273,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 671,
+                    "end": 672,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 673,
+                    "end": 674,
+                    "mention": "7",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 1007,
+                    "end": 1008,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1248,
+                    "end": 1249,
+                    "mention": "8",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1282,
+                    "end": 1283,
+                    "mention": "9",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "One of the core issues to the sequence-based methods is how to characterize protein sequences and harvest the fruits hidden in them. The most typical approach is using the amino acid composition (AAC) to formulate a protein sequence. Owing to its simplicity, the AAC model was widely applied in a number of earlier statistic-based methods. However, as pointed out in Ref [6], if we denote by n1,n2,\u22ef,n20 the counts of 20 standard amino acids in a protein sequence, then we can see that there are a total of n1+n2+\u22ef\u2219n20!n1!\u2219n2!\u2219\u22ef\u2219n20! different sequences/strings possessing the same AAC. The reason is that AAC model neglects the order relation among elements of a sequence. To overcome this drawback, the concept of pseudo amino acid composition (PseAAC, or Chou\u2019s PseAAC) was proposed [10-18]. The essence of PseAAC is that it not only covers AAC, but also contains additional order-correlated factors along a protein sequence. Another popular way for sequence analysis is to convert the protein primary sequence over 20 amino acids into a reduced one. The earliest and simplest reduction was the well-known HP model, in which 20 standard amino acids are divided into two types, hydrophobic (H) (or non-polar) and polar (P) (or hydrophilic). On the basis of the classic model, a detailed HP model was introduced by dividing the polar class into three subclasses: positive polar, uncharged polar and negative polar [19]. In addition, a few five-group classifications of amino acids were presented for practical purposes [20-23]. By considering property-based triples, Li et al. [6] put forward a six-letter model of amino acids. Also based on three physical-chemical properties of amino acids, Yao et al. [24] mapped the 20 standard amino acids to eight vertices of a cube with the center of origin, and thus an eight-group model of amino acids is obtained. ",
+            "cite_spans": [
+                {
+                    "start": 372,
+                    "end": 373,
+                    "mention": "6",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 787,
+                    "end": 789,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 790,
+                    "end": 792,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1416,
+                    "end": 1418,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1521,
+                    "end": 1523,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 1524,
+                    "end": 1526,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1579,
+                    "end": 1580,
+                    "mention": "6",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 1706,
+                    "end": 1708,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Motivated by the work mentioned above, we propose a generalized PseAAC which is grounded on a three-letter model and 2-D graphical representation of a protein sequence. We summarize the main work of this paper as follows: In section 2, we briefly introduce five datasets used in this study. In section 3, on the basis of two important physicochemical properties of amino acids, we cluster the 20 standard amino acids into three groups. By assigning to each group a representative symbol, we transform a protein sequence into a three-letter sequence. Then a 2-D graph without loops and multiple edges and its geometric line adjacency matrix are obtained. A sequence-derived feature vector of dimension (25+\u03bb) is thus constructed to characterize a protein sequence. Our scheme is similar to, but obviously different from that of PseAAC. In section 4, we apply the presented feature vector to compare \u03b2-globin proteins of 17 species and 72 spike proteins of coronaviruses respectively. Also, we develop a SVM (support vector machine) model using the generalized PseAAC to identify DNA-binding and non-binding proteins on three datasets. Experiment results show that the presented method outperforms the existing methods including DNAbinder [1], DNA-Prot [2], iDNA-Prot [3] and enDNA-Prot [4]. Finally, conclusions are given in section 5. ",
+            "cite_spans": [
+                {
+                    "start": 1238,
+                    "end": 1239,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 1252,
+                    "end": 1253,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1267,
+                    "end": 1268,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1286,
+                    "end": 1287,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The dataset called BetaSet is composed of \u03b2-globin protein of 17 species: Human (ALU64020), Gorilla (P02024), Chimpanzee (P68873), Cattle (CAA25111), Banteng (BAJ05126), Goat (AAA30913), Sheep (ABC86525), European hare (CAA68429), Rabbit (CAA24251), House mouse (ADD52660), Western wild mouse (ACY03394), Spiny mouse (ACY03377), Norway rat (CAA29887), Opossum (AAA30976), Guttata (ACH46399), Gallus (CAA23700), Muscovy duck (CAA33756). This dataset is used to determine the adjustable parameters in a feature vector. ",
+            "cite_spans": [],
+            "section": "BetaSet  ::: Datasets",
+            "ref_spans": []
+        },
+        {
+            "text": "This dataset consists of 72 spike proteins of coronaviruses (CoVs), 23 of which are MERS-CoVs, and 30 are SARS-CoVs. CoVs can be divided into three groups according to serotypes. Group alpha (formerly known as CoV-1) and group beta (formerly CoV-2) contain mammalian viruses, while group gamma (formerly CoV-3) contains only avian viruses. The name, accession number, and abbreviation of the 72 sequences are listed in Table 1. According to the existing taxonomic groups, sequences 1-5 belong to the first group, sequences 6-8 belong to the third group, and the remainings belong to the second group. ",
+            "cite_spans": [],
+            "section": "CoVSet  ::: Datasets",
+            "ref_spans": [
+                {
+                    "start": 425,
+                    "end": 426,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "This is a benchmark dataset created in 2007 by Kumar et al. [1]. It contains 396 sequences, 146 of which are DNA-BPs (positive samples), and 250 NBPs (negative samples). In both the positive and the negative sets, the sequence similarity between any two proteins is not more than 25%. ",
+            "cite_spans": [
+                {
+                    "start": 61,
+                    "end": 62,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "DNASet  ::: Datasets",
+            "ref_spans": []
+        },
+        {
+            "text": "This dataset was also generated by Kumar et al. [1] which is based on the work of Wang and Brown [25]. It originally contains 92 DNA-BPs and 100 NBPs. In order to avoid overestimating a given method, those sequences having \u226540% sequence similarity with DNASet were removed by Xu et al. [4], and the final dataset is composed of 82 DNA-BPs and 100 NBPs. ",
+            "cite_spans": [
+                {
+                    "start": 49,
+                    "end": 50,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 98,
+                    "end": 100,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 287,
+                    "end": 288,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "DNAiSet  ::: Datasets",
+            "ref_spans": []
+        },
+        {
+            "text": "As an expanded benchmark dataset, DNAeSet was constructed in 2014 by Xu et al. [4]. According to a sequence filter criteria which is identical to DNASet, they added a number of NBPs to DNASet, and the total number of NBPs is 2125. By removing the sequence which has \u226540% sequence identity with DNAiSet, the current version of DNAeSet has 146 DNA-BPs and 1710 NBPs. ",
+            "cite_spans": [
+                {
+                    "start": 80,
+                    "end": 81,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "DNAeSet  ::: Datasets",
+            "ref_spans": []
+        },
+        {
+            "text": "Isoelectric point (pI) and relative distance (RD) are two important physicochemical properties of the 20 standard amino acids [26-28]. Their original numerical values are listed in Table 2. As can be seen from this table, the values of P10(isoelectric point) are in the range [2.97, 10.76], while ",
+            "cite_spans": [
+                {
+                    "start": 127,
+                    "end": 129,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 130,
+                    "end": 132,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 187,
+                    "end": 188,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "\nP20 (relative distance) varies between 1469 and 3355. Therefore, the normalization of these values is needed. Here, we scale them into the interval [0,1] by the formulary below: ",
+            "cite_spans": [
+                {
+                    "start": 152,
+                    "end": 153,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\nPn*AAi=Pn0AAi-minj=1,\u2026,20\u2061Pn0AAjmaxj=1,\u2026,20\u2061pn0AAj-minj=1,\u2026,20\u2061Pn0AAj , ",
+            "cite_spans": [],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\ni=1,2,\u2026, 20, n=1,2. (1)",
+            "cite_spans": [],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The corresponding values are listed in Table 3. The last row in this table gives the average values. ",
+            "cite_spans": [],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 45,
+                    "end": 46,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "For the i-th amino acid AAi, if P1*AAi\u2265P1\u00af, then we label it by \u201c+\u201d, otherwise we will label it by \u201c-\u201d. Similarly, if property P2* is considered, the second label for amino acid AAi can be obtained. In this way, each of the 20 standard amino acids has a label pair. In Table 3, the corresponding labels are also listed. Amino acids with a same label pair are viewed as members of a same group. Thus, the 20 standard amino acids are distributed to the following groups:",
+            "cite_spans": [],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 275,
+                    "end": 276,
+                    "mention": "3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": " GI={ A,Y,V,Q,M,L,I,E }, ",
+            "cite_spans": [],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": " GII={ C,W,S,N,G,F,D }, ",
+            "cite_spans": [],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": " GIII={ H,T,R,P,K }. ",
+            "cite_spans": [],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For each group, the first amino acid is used to stand for the group. Thus the three groups have three representative letters, they are A, C and H, respectively. The value for the property of a group is defined as the average value for the property of all members in the group. In the left-hand side of Table 4, we list the corresponding values of the three groups. Obviously, each group can be viewed as a 2-D vector. In order to make the vectors of the three groups have unit length, we further normalize them to be unit vectors, and list  ",
+            "cite_spans": [],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 308,
+                    "end": 309,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "the normalized values (Pi) in the right-hand side of Table 4. In Fig. (1), we show the 2-D map of the 20 standard amino acids according to the classification above. ",
+            "cite_spans": [],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 65,
+                    "end": 73,
+                    "mention": "Fig. (1)",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 59,
+                    "end": 60,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "By substituting each amino acid with its representative letter, a protein primary sequence is reduced into a three-letter sequence. For example, the three-letter sequence of the sequence segment EKAAVTGFWGKVKVDEVGAEA is AHAAAHCCCCHAHACAACAAA. To obtain the graphical representation of a reduced sequence, we start from the origin (0,0) and move in xoy-plane in the direction dictated by Fig. (1). In mathematics, one can let S=S1S2\u22efSL be a given three-letter sequence. And then one has a map \u2205, which maps S into a plot set. Explicitly, \u2205S)=\u2205(S1\u2205S2\u22ef\u2205(SL), and \u2205 is given by ",
+            "cite_spans": [],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 387,
+                    "end": 395,
+                    "mention": "Fig. (1)",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "\n\u2205Si=xi,yiT=\u2211k=1iSk1,\u2211k=1iSk2T\n",
+            "cite_spans": [],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where, T represents the transpose of a matrix, Skj (j=1,2) represents the j-th component of the unit vector corresponding to Sk (cf. Fig. 1 and Table 4). Connecting all points of the plot set in turn, a 2-D curve is drawn. In Fig. (2), we show the 2-D graphical representation of sequence AHAAAHCCCCHAHACAACAAA. It is not difficult to find that the 2-D graphical representation has no degeneracy, and thus is a simple graph, that is, a graph without loops and multiple edges.",
+            "cite_spans": [],
+            "section": "Three-letter Sequence of Protein Sequence and its 2-D Graphical Representation  ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 138,
+                    "end": 139,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 226,
+                    "end": 234,
+                    "mention": "Fig. (2)",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 150,
+                    "end": 151,
+                    "mention": "4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "In this section, we give a numerical characterization of a protein sequence that will facilitate quantitative comparisons of protein sequences. As is known, once a graphical representation is given, it can be transformed into some structural matrices, such as the matrices ED, GD, M/M, and L/L [6, 24, 29-37]. Here we employ the L/L matrix. L/L is a nonnegative symmetric matrix whose off-diagonal entries are defined as a quotient of the Euclidean distance between two vertices of the graph and the sum of geometrical lengths of edges between the two vertices. By definition all diagonal elements are zero. Obviously, the entries in a L/L matrix are less than or equal to one. The higher order kL/kL matrix is the matrix whose (i,j)-entry is L/Lijk. As the exponent k approaches positive infinity, kL/kL converges to a (0,1) matrix (denoted by bL/bL). With respect to the proposed 2-D graph, [bL/bL]ij=1 if and only if the two corresponding vertices lie on a straight line in the curve, including the cases of adjacency and non-adjacency. In this sense, we call such a matrix a geometric line adjacency matrix (GLAM), or simply a generalized adjacency matrix (GAM), generated by a graph, and denote it by MG. ",
+            "cite_spans": [
+                {
+                    "start": 295,
+                    "end": 296,
+                    "mention": "6",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 298,
+                    "end": 300,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 302,
+                    "end": 304,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 305,
+                    "end": 307,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The first Zagreb index is a well-known vertex-degree-based molecular structure descriptor. This index was first time considered by Gutman and Trinajstic about 45 years ago, and since then discussed and used in numerous studies (see [38-40] and the references cited therein). The first Zagreb index is defined as ",
+            "cite_spans": [
+                {
+                    "start": 233,
+                    "end": 235,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 236,
+                    "end": 238,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\nZg1=Zg1G=\u2211u\u2208Vdu2 (2)",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where du denotes the degree (=number of first neighbors) of the vertex u in graph G. If G is a simple graph (i.e. without loops and multiple edges), Zg1 can be also obtained directly from its adjacency matrix since the row-sums of this matrix are equal to degrees of the corresponding vertices. ",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "It should be mentioned that the Zagreb index gives greater weights to inner vertices and edges than to outer vertices and edges of a graph [38]. One way to amend it is to insert inverse values of the vertex-degree into Eq(2), and thus the modified Zagreb index has been proposed [38]: ",
+            "cite_spans": [
+                {
+                    "start": 140,
+                    "end": 142,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 280,
+                    "end": 282,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\n(3)Zg1m=Zg1mG=\u2211u\u03b5Vdu2\u22121\n",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Clearly, mZg1 gives greater weights to outer vertices/edges than to inner ones in a graph.",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "At the same time, on the basis of our geometric line adjacency matrix, we can count the vertex-pair with generalized adjacency relationship. It should be noted that, in our case, the 'neighbors' include not only the conventional neighbors, i.e. the first neighbors, but also the second neighbors, the third neighbors, and so on. We call the corresponding number of graph G a line-adjacency index, and denote it by La(G). Then we have a graph-based index: ",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\nfg1=La(G)Zg1(G)+ mZg1(G)\n",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For a symmetric matrix, eigenvalue-based indices, such as the leading eigenvalue [29-33, 35] and the graph energy [17], are often used as the matrix invariants. Moreover, in our previous paper [41], an alternative invariant called \u2018ALE-index\u2019 was proposed. The ALE-index is defined by the following formula: ",
+            "cite_spans": [
+                {
+                    "start": 82,
+                    "end": 84,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 85,
+                    "end": 87,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 89,
+                    "end": 91,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 115,
+                    "end": 117,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 194,
+                    "end": 196,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\u03c7=121L\u2219m1+L-1L\u2219F (4)",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where L is the order of the matrix, \u2219m1 and \u2219F are the m1- and F-norms of a matrix respectively. In order to reduce variations caused by comparison of matrices with different sizes, we consider a normalized ALE-index \u03c7<MG=\u03c7(MG)3L instead of \u03c7(MG). For convenience, we denote this matrix-based index by fg2. ",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition, with respect to three-letter sequence S=S1S2\u22efSL, we define a coupling mode function gn(S,k) by ",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\ngnS,k=\u2211i=1L-kPnSi-PnSi+k2 , (n=1, 2) (5)",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where P1 and P2 are values for properties of the corresponding representative letter (group), integer k represents the counted rank (or tier) of the coupling mode. Then, following the similar procedures in [10, 11], we can extract global sequence-order information of the three-letter sequence S by ",
+            "cite_spans": [
+                {
+                    "start": 207,
+                    "end": 209,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 211,
+                    "end": 213,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\u03b81=1L-1\u00d712\u00d7\u2211n=12gn(S,1),",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\u03b82=1L-2\u00d712\u00d7\u2211n=12gn(S,2),",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\u22ef\n",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\n\u03b8\u03bb=1L-\u03bb\u00d712\u00d7\u2211n=12gn(S,\u03bb).",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\n(\u03bb<L)\n",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": " (6)where \u03b8k (k=1,2,\u2026,\u03bb) is called the k-th tier correlation factor. Clearly, \u03b81 reflects the coupling mode between the most contiguous elements along three-letter sequence S, \u03b82 is the coupling mode between the second most contiguous, \u03b83 the third most contiguous, and so forth. ",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Furthermore, if the respective counts of the three representative letters (A, C and H) in sequence S are cA,  cC,  cH, respectively, then we can obtain a so-called group composition (GC): ",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\nfc1,fc2,fc3=  cA#GAL,cC#GCL , cH#GHL\n",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where, #. denotes the size of a group (set). ",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Consequently, 5+\u03bb elements are derived, which reflect the information about the reduced sequence and, particularly, the 2-D graphical representation. By combining these elements with the conventional amino acid composition (AAC), a 25+\u03bb dimensional feature vector Vgp can be constructed to numerically characterize a protein sequence: ",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\nVgp=(v1,\u2026,v23,v23+1,\u2026,v23+\u03bb,v23+\u03bb+1,v23+\u03bb+2), (7)",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "\nvi=fi                                1\u2264i\u226420     w1fc(i-20)21\u2264i\u226423w2\u03b8i-2323+1\u2264i\u226423+\u03bbw3fg(i-23-\u03bb)23+\u03bb+1\u2264i\u226423+\u03bb+2 (8)",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Here, f1,f2,\u2026,f20 are frequencies of occurrence of the 20 standard amino acids in a protein sequence, w1, w2 and w3 are weight factors. As will be described later in detail, the four adjustable parameters in Eqs (7) and (8) can be determined by a set of known samples. Roughly speaking, the vector contains the feature of AAC, and the information beyond AAC as well, which is similar to Chou\u2019s PseAAC in form. Therefore, we call such a vector formulated by Eqs (7) and (8) the generalized PseAAC of a protein sequence.",
+            "cite_spans": [],
+            "section": "(25 + \u03bb) Dimensional Feature Vector ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "According to the method mentioned above, we first associate each of 17 protein sequences in BetaSet with a m=25+\u03bb dimensional vector (cf. Eqs (7) and (8)), and then calculate the pair-wise Euclidean distance between any two of the 17 protein sequences via their m-D vectors. Thus a 17\u00d717 real symmetric matrix D17 is obtained. On the basis of the achieved distance matrix D17, a UPGMA tree is constructed using MEGA4 package. The result will depend on values of the rank \u03bb and the three weight factors. It is found that when \u03bb=6, w1=0.6,  w2=1.13, and w3=1.0, the three non-mammals (Muscovy duck, Gallus and Guttata) form a separate branch and stay outside of the mammals. Moreover, in the subtree of mammals, primate species (Human, Chimpanzee, Gorilla) are grouped closely. Also, rodent species (Norway rat, Spiny mouse, House mouse, Western wild mouse) and lagomorph species (Rabbit, European hare) are situated at independent branches, respectively. While Goat, Sheep, Cattle and Banteng appear to cluster together (Fig. 3). This result is analogous to that reported in the literature [6, 29, 30, 35, 36]. Accordingly, the four numerical values are respectively used for the four uncertain parameters, and a 31-D feature vector is thus obtained. ",
+            "cite_spans": [
+                {
+                    "start": 1090,
+                    "end": 1091,
+                    "mention": "6",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 1093,
+                    "end": 1095,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 1097,
+                    "end": 1099,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1101,
+                    "end": 1103,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1105,
+                    "end": 1107,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Parameter Determination ::: Results and Discussion ",
+            "ref_spans": [
+                {
+                    "start": 1025,
+                    "end": 1026,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "In order to evaluate the effectiveness of our method, we test it by phylogenetic analysis on the CoVSet dataset. Coronaviruses (CoVs) belong to the genus Coronavirus of family Coronaviridae [42]. The first coronavirus (HCoV-229E) was isolated from humans in 1965. Until 2003, coronaviruses attracted little interest beyond causing mild upper respiratory tract infections. However, this phenomenon changed dramatically with the emergence of SARS-CoV and MERS-CoV. As of July 2017, 2040 laboratory-confirmed cases of MERS-CoV infection were reported in over 27 countries, and at least 710 individuals have died (crude CFR 34.8%) [43]. ",
+            "cite_spans": [
+                {
+                    "start": 191,
+                    "end": 193,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 628,
+                    "end": 630,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Test I: Phylogenetic Analysis of Coronavirus Spike Proteins  ::: Results and Discussion ",
+            "ref_spans": []
+        },
+        {
+            "text": "Using the above-determined values for parameters \u03bb, w1, w2, and w3, we calculate the 31-D feature vectors of 72 coronavirus spike proteins and their Euclidean distance matrix; then the corresponding phylogenetic tree (Fig. 4) is constructed. Observing Fig. (4), we find that the 72 coronavirus spike proteins are clustered into three groups: one contains the five alpha coronaviruses (PEDVC, PEDV, TGEVG, TGEV, and HCoV-229E), the second includes the three gamma coronaviruses (IBV, IBVBJ, IBVC), and the third corresponds to the group beta. A closer look at the subtree of beta coronaviruses shows that MERS-CoVs are clearly clustered together, so it is with SARS-CoVs, while MHV, MHVA, MHVM, MHVP, MHVJHM, BCoV, BCoVE, BCoVL, BCoVM, BCoVQ and HCoV-OC43 are situated at an independent branch. The resulting cluster agrees well with the established taxonomic groups. ",
+            "cite_spans": [],
+            "section": "Test I: Phylogenetic Analysis of Coronavirus Spike Proteins  ::: Results and Discussion ",
+            "ref_spans": [
+                {
+                    "start": 223,
+                    "end": 224,
+                    "mention": "4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 252,
+                    "end": 260,
+                    "mention": "Fig. (4)",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "This experiment is made on DNASet itself. To obtain a reliable result with few error, the SVM model on DNASet is established by 5-fold cross-validation (5CV) with 3 runs. Here the 31-D feature vector of a protein sequence serves as the input for SVM. In a 5CV, the positive and negative samples are randomly distributed into five subsets or the so-called folds, and the test is repeated five times. In each of the five iterations, one subset is used as the testing set, while the remaining four subsets are combined together and used to build a classifier (training). The predictions made for the test data instances in all the five iterations yield the final result. The sensitivity, specificity, ACC, MCC and F1M are calculated for each run, and the corresponding results and their average values are listed in Table 5. As can be seen from this table, we achieve the accuracy (ACC) of 89.65%, with MCC of 0.776 and F1M of 84.91%. This result shows that our SVM model performs well on the benchmark dataset DNASet. ",
+            "cite_spans": [],
+            "section": "Predictive Performance on Benchmark Dataset  ::: Test II: Identification of DNA-binding Proteins ::: Results and Discussion ",
+            "ref_spans": [
+                {
+                    "start": 819,
+                    "end": 820,
+                    "mention": "5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "It is important to examine the performance of the newly developed method on an independent dataset. In this experiment, we establish the classifier with the benchmark dataset DNASet and then test it on the independent dataset DNAiSet. To decide the parameter pair (\u03b3, C), we utilize a systematic grid search for \u03b3=2i and C=2j, where integers i and j are in ranges [-3, 3] and [0, 3], respectively. It is find that \u03b3=0.125 and C=2 are the optimal values for DNASet. With the best pair (\u03b3, C), DNAiSet is fed to the SVM. As a result, our model correctly predicts 68 out of 82 DNA-BPs and 92 out of 100 NBPs. The ACC arrives at 87.91%, with the MCC, sensitivity, specificity, and F1M of 0.756, 82.93%, 92.00% and 86.07%, respectively (see Table 6). This demonstrates that our SVM model performs equally well on independent dataset. ",
+            "cite_spans": [
+                {
+                    "start": 369,
+                    "end": 370,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 380,
+                    "end": 381,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Predictive Performance on Blind Dataset ::: Test II: Identification of DNA-binding Proteins ::: Results and Discussion ",
+            "ref_spans": [
+                {
+                    "start": 742,
+                    "end": 743,
+                    "mention": "6",
+                    "ref_id": "TABREF5"
+                }
+            ]
+        },
+        {
+            "text": "For convenience of comparison, results of some existing methods including DNAbinder [1], DNA-Prot [2], iDNA-Prot [3] and enDNA-Prot [4] are also listed in Table 6. DNAbinder developed by Kumar et al. [1] can extract evolutionary information in form of position specific scoring matrix (PSSM) from the corresponding protein sequence. PSSM-21 and PSSM-400 are two feature vectors generated by means of PSSM, whose dimensions are 21 and 400, respectively. In [1], PSSM-400 based SVM model was mainly used for predicting DNA-BPs. DNA-Prot [2] is a Random Forest based method, in which the feature vector includes sequence information and structure information, such as the composition of 20 standard amino acids, composition of 10 amino acid groups, and secondary structure information predicted from a protein sequence. iDNA-Prot [3] constructs the feature vector via the grey model, and Random Forest is also used as the operation engine. EnDNA-Prot [4] is a predictor which encodes a protein sequence into a feature vector with dimension of 188 and adopts an ensemble classifier constructed with four types of machine learning classifiers. All these methods are tested on the same datasets to make an unbiased comparison with our method. Observing Table 6, we can see that the current approach outperforms other methods by 3.29-10.44% in terms of ACC, 0.056-0.206 in terms of MCC, and 1.45-15.76% in terms of F1M. This result indicates that our method achieves highly comparable performance.",
+            "cite_spans": [
+                {
+                    "start": 85,
+                    "end": 86,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 99,
+                    "end": 100,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 114,
+                    "end": 115,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 133,
+                    "end": 134,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 201,
+                    "end": 202,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 457,
+                    "end": 458,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 536,
+                    "end": 537,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 828,
+                    "end": 829,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 949,
+                    "end": 950,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Predictive Performance on Blind Dataset ::: Test II: Identification of DNA-binding Proteins ::: Results and Discussion ",
+            "ref_spans": [
+                {
+                    "start": 161,
+                    "end": 162,
+                    "mention": "6",
+                    "ref_id": "TABREF5"
+                },
+                {
+                    "start": 1253,
+                    "end": 1254,
+                    "mention": "6",
+                    "ref_id": "TABREF5"
+                }
+            ]
+        },
+        {
+            "text": "When the size of positive samples is comparable to that of negative samples, many machine learning algorithms should have better performance. However, in real life, the number of non-binding proteins is much greater than that of DNA-BPs, i.e.,",
+            "cite_spans": [],
+            "section": "Impact of the Number of Negative Samples  ::: Test II: Identification of DNA-binding Proteins ::: Results and Discussion ",
+            "ref_spans": []
+        },
+        {
+            "text": "\nTN+FP\u226bTP+FN. (10) ",
+            "cite_spans": [],
+            "section": "Impact of the Number of Negative Samples  ::: Test II: Identification of DNA-binding Proteins ::: Results and Discussion ",
+            "ref_spans": []
+        },
+        {
+            "text": "In this case, the frequency of NBPs is generally much greater than that of the binding ones in the predictions, that is, ",
+            "cite_spans": [],
+            "section": "Impact of the Number of Negative Samples  ::: Test II: Identification of DNA-binding Proteins ::: Results and Discussion ",
+            "ref_spans": []
+        },
+        {
+            "text": "\nTN\u226bFP. (11) ",
+            "cite_spans": [],
+            "section": "Impact of the Number of Negative Samples  ::: Test II: Identification of DNA-binding Proteins ::: Results and Discussion ",
+            "ref_spans": []
+        },
+        {
+            "text": "Eqs (10) and (11) lead to that the value of ACC defined by Eq (9) tends towards 1. To solve this problem, instead of using the definition of ACC in Eq (9), here we use the alternative definition [49, 50]: ",
+            "cite_spans": [
+                {
+                    "start": 196,
+                    "end": 198,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 200,
+                    "end": 202,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Impact of the Number of Negative Samples  ::: Test II: Identification of DNA-binding Proteins ::: Results and Discussion ",
+            "ref_spans": []
+        },
+        {
+            "text": "\nacc=12Se+Sp . (12)",
+            "cite_spans": [],
+            "section": "Impact of the Number of Negative Samples  ::: Test II: Identification of DNA-binding Proteins ::: Results and Discussion ",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to analyze the influence of the number of negative samples in a benchmark dataset on the predictive performance of the current method, we construct a series of subsets Sk of DNAeSet and use them as training set in turn, while DNAiSet is always used as the testing set. Each subset Sk contains all the 146 DNA-BPs and a part of NBPs in DNAeSet. In detail, if the set of NBPs in Sk is denoted by Sk-, k=1, 2, ..., then S1- consists of 250 NBPs randomly selected from DNAeSet. And Sk+1- is obtained by adding 50 NBPs to Sk-, until 1700 NBPs are contained in it. For each subset Sk, k=1, 2, ..., 30, we develop the SVM model by 5CV with 3 runs. The results averaging over the three runs are given in Fig. (5). From Fig. (5) we can see that the curves of ACC and acc visibly split with each other when n, the size of Sk-, is larger. With increasing of n, ACC increases rapidly, while acc tends to be steady. The value of ACC seems higher and higher on the surface, but it cannot correctly reflect the performance because it is nothing but a false appearance. ",
+            "cite_spans": [],
+            "section": "Impact of the Number of Negative Samples  ::: Test II: Identification of DNA-binding Proteins ::: Results and Discussion ",
+            "ref_spans": [
+                {
+                    "start": 705,
+                    "end": 713,
+                    "mention": "Fig. (5)",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 720,
+                    "end": 728,
+                    "mention": "Fig. (5)",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "In order to show the advantage of their method, Xu et al. [4] created a dataset called expanded benchmark dataset1100 with all the 146 positive samples and 1100 negative samples in DNAeSet, which is employed as another training dataset to evaluate the predictive performance on the independent dataset DNAiSet. For convenience of comparison, we also select the expanded benchmark dataset S18 (n=1100) to establish the classifier and test it on DNAiSet. Repeating this procedure five times, the average results are given in Table 7 (the first row). Results obtained by the other four methods (DNAbinder, DNA-Prot, iDNA-Prot and enDNA-Prot) trained on the expanded benchmark dataset with n=1100 are also listed in Table 7. From this table we see that the overall accuracy of our method is about 92%, with MCC of 0.84 and F1M of 91.24%, which outperforms other methods with improvement in the range of 2.49-19.12% in terms of ACC, 0.05-0.32 in terms of MCC, and 3.82-33.85% in terms of F1M. This suggests that our method performs well on unbalanced datasets. ",
+            "cite_spans": [
+                {
+                    "start": 59,
+                    "end": 60,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Impact of the Number of Negative Samples  ::: Test II: Identification of DNA-binding Proteins ::: Results and Discussion ",
+            "ref_spans": [
+                {
+                    "start": 529,
+                    "end": 530,
+                    "mention": "7",
+                    "ref_id": "TABREF6"
+                },
+                {
+                    "start": 718,
+                    "end": 719,
+                    "mention": "7",
+                    "ref_id": "TABREF6"
+                }
+            ]
+        },
+        {
+            "text": "Based on two important physicochemical properties, 20 standard amino acids were distributed into three groups, and to each of which a representative symbol was assigned. By replacing each amino acid with its representative letter, a protein primary sequence was converted into a three-letter sequence, which can be viewed as a coarse-grained description of the protein primary sequence. On the basis of the three-letter sequence, a graph without loops and multiple edges was obtained. By taking the advantage of the 2-D graph, we constructed a geometric line adjacency matrix (GLAM) and then the corresponding ALE-index, the line-adjacency index, the first Zagreb index and its modification were calculated. In addition, \u03bb order-correlated factors were extracted via the reduced sequence. By combining these elements with the frequencies of occurrence of 20 standard amino acids and their three representative letters, a generalized PseAAC model of a protein sequence was constructed. On five popular datasets, the proposed method was tested by phylogenetic analysis and identification of DNA-binding proteins. The results illustrated the better performance of our method. ",
+            "cite_spans": [],
+            "section": "Impact of the Number of Negative Samples  ::: Test II: Identification of DNA-binding Proteins ::: Results and Discussion ",
+            "ref_spans": []
+        },
+        {
+            "text": "Not applicable.",
+            "cite_spans": [],
+            "section": "Consent for Publication",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: The accession number, name and abbreviation for 72 coronavirus spike proteins.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: The original numerical values for properties of the 20 standard amino acids.\na: taken from [26-28]",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: The scaled values for properties of the 20 standard amino acids.\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4: The values for properties of the three groups.\n",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5: The results of 5CV for 3 runs.\n",
+            "type": "table"
+        },
+        "TABREF5": {
+            "text": "Table 6: Performance of different methods (trained on DNASet and tested on DNAiSet).\n",
+            "type": "table"
+        },
+        "TABREF6": {
+            "text": "Table 7: Performance of different methods (trained on DNAeSet and tested on DNAiSet).\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Fig. (1): The 2-D map of the 20 standard amino acids.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig. (2): The 2-D graphical representation.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Fig. (3): The relationship tree of 17 species.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Fig. (4): The relationship tree of 72 coronavirus spike proteins.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Fig. (5): The influence of the number of negative samples.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Identification of DNA-binding proteins using support vector machines and evolutionary profiles.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.M.",
+                    "middle": [],
+                    "last": "Gromiha",
+                    "suffix": ""
+                },
+                {
+                    "first": "G-P.S.",
+                    "middle": [],
+                    "last": "Raghava",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Prediction of protein cellular attributes using pseudo-amino acid composition.",
+            "authors": [
+                {
+                    "first": "K.C.",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proteins",
+            "volume": "43",
+            "issn": "",
+            "pages": "246-255",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Using amphiphilic pseudo amino acid composition to predict enzyme subfamily classes.",
+            "authors": [
+                {
+                    "first": "K.C.",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Bioinformatics",
+            "volume": "21",
+            "issn": "",
+            "pages": "10-19",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Pseudo amino acid composition and its applications in bioinformatics, proteomics and system biology.",
+            "authors": [
+                {
+                    "first": "K.C.",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Curr. Proteomics",
+            "volume": "6",
+            "issn": "",
+            "pages": "262-274",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "iNuc-STNC: a sequence-based predictor for identification of nucleosome positioning in genomes by extending the concept of SAAC and Chou\u2019s PseAAC.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Tahir",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Hayat",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Mol. Biosyst.",
+            "volume": "12",
+            "issn": "",
+            "pages": "2587-2593",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "PseKNC-General: a cross-platform package for generating various modes of pseudo nucleotide compositions.",
+            "authors": [
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Brooker",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.C.",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Bioinformatics",
+            "volume": "31",
+            "issn": "",
+            "pages": "119-120",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "iRSpot-PseDNC: Identify recombination spots with pseudo dinucleotide composition.",
+            "authors": [
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.M.",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.C.",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nucleic Acids Res.",
+            "volume": "41",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Sequence-based identification of recombination spots using pseudo nucleic acid representation and recursive feature extraction by linear kernel SVM.",
+            "authors": [
+                {
+                    "first": "L.Q.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.J.",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.D.",
+                    "middle": [],
+                    "last": "Xiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.S.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.Q.",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.W.",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "BMC Bioinformatics",
+            "volume": "15",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Protein sequence comparison based on physicochemical properties and the position-feature energy matrix.",
+            "authors": [
+                {
+                    "first": "L.L.",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.S.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Gutman",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.T.",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Dehmer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Sci. Rep.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "A Novel protein characterization based on pseudo amino acids composition and star-like graph topological indices.",
+            "authors": [
+                {
+                    "first": "P.A.",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Tao",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.T.",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Dai",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Yao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Comb. Chem. High Throughput Screen.",
+            "volume": "20",
+            "issn": "4",
+            "pages": "328-337",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Chaos game representation of protein sequences based on the detailed HP model and their multifractal and correlation analyses.",
+            "authors": [
+                {
+                    "first": "Z.G.",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Anh",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.S.",
+                    "middle": [],
+                    "last": "Lau",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Theor. Biol.",
+            "volume": "226",
+            "issn": "",
+            "pages": "341-348",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "DNA-prot: identification of DNA binding proteins from protein sequence information using random forest.",
+            "authors": [
+                {
+                    "first": "K.K.",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Pugalenthi",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.N.",
+                    "middle": [],
+                    "last": "Suganthan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J. Biomol. Struct. Dyn.",
+            "volume": "26",
+            "issn": "6",
+            "pages": "679-686",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "A computational approach to simplifying the protein folding problem.",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nat. Struct. Biol.",
+            "volume": "6",
+            "issn": "",
+            "pages": "1033-1038",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Modeling study on the validity of a possibly simplified representation of proteins.",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Phys. Rev. E Stat. Phys. Plasmas Fluids Relat. Interdiscip. Topics",
+            "volume": "61",
+            "issn": "",
+            "pages": "6981-6986",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "2-D graphical representation of protein sequences and its application to coronavirus phylogeny.",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.L.",
+                    "middle": [],
+                    "last": "Xing",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMB Rep.",
+            "volume": "41",
+            "issn": "",
+            "pages": "217-222",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Clustering of the protein design alphabets by using hierarchical self-organizing map.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Cheon",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J. Korean Phys. Soc.",
+            "volume": "44",
+            "issn": "",
+            "pages": "1577-1580",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "A novel descriptor of protein sequences and its application.",
+            "authors": [
+                {
+                    "first": "Y.H.",
+                    "middle": [],
+                    "last": "Yao",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Dai",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.A.",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J. Theor. Biol.",
+            "volume": "347",
+            "issn": "",
+            "pages": "109-117",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "BindN: a web-based tool for efficient prediction of DNA and RNA binding sites in amino acid sequences.",
+            "authors": [
+                {
+                    "first": "L.J.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.J.",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res.",
+            "volume": "34",
+            "issn": "",
+            "pages": "W243-W248",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Amino acid difference formula to help explain protein.",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Grantham",
+                    "suffix": ""
+                }
+            ],
+            "year": 1974,
+            "venue": "Science",
+            "volume": "185",
+            "issn": "",
+            "pages": "862-864",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Correlation analysis of some physical chemistry properties among genetic codons and amino acids.",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.T.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.F.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J. Anhui Agricul. Univ.",
+            "volume": "30",
+            "issn": "",
+            "pages": "439-445",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Similarity analysis of protein sequences based on the normalized relative entropy.",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Comb. Chem. High Throughput Screen.",
+            "volume": "11",
+            "issn": "",
+            "pages": "477-481",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "On 3-D graphical representation of DNA primary sequences and their numerical characterization.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Randic",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Vracko",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Nandy",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.C.",
+                    "middle": [],
+                    "last": "Basak",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J. Chem. Inf. Comput. Sci.",
+            "volume": "40",
+            "issn": "",
+            "pages": "1235-1244",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "iDNA-prot: identification of DNA binding proteins using random forest with grey model.",
+            "authors": [
+                {
+                    "first": "W.Z.",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.A.",
+                    "middle": [],
+                    "last": "Fang",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Xiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.C.",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "9",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Analysis of similarity/dissimilarity of DNA sequences based on novel 2-D graphical representation.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Randic",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Vracko",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Lers",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Plavsic",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Chem. Phys. Lett.",
+            "volume": "371",
+            "issn": "",
+            "pages": "202-207",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Milestones in graphical bioinformatics.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Randic",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Novic",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Plavsic",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Int. J. Quantum Chem.",
+            "volume": "113",
+            "issn": "",
+            "pages": "2413-2446",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Graphical representation of proteins.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Randic",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Zupan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.T.",
+                    "middle": [],
+                    "last": "Balaban",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Viki\u0107-Topi\u0107",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Plav\u0161i\u0107",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Chem. Rev.",
+            "volume": "111",
+            "issn": "",
+            "pages": "790-862",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Representation of proteins as walks in 20-D space.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Novic",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Randic",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "SAR QSAR Environ. Res.",
+            "volume": "19",
+            "issn": "",
+            "pages": "317-337",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Phylogenetic analysis of DNA sequences based on k-word and rough set theory.",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.D.",
+                    "middle": [],
+                    "last": "Jia",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Physica A",
+            "volume": "398",
+            "issn": "",
+            "pages": "162-171",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "On the characterization of DNA primary sequences by triplet of nucleic acid bases.",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Randic",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.F.",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.C.",
+                    "middle": [],
+                    "last": "Basak",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J. Chem. Inf. Comput. Sci.",
+            "volume": "41",
+            "issn": "",
+            "pages": "619-626",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "DV-Curve: A novel intuitive tool for visualizing and analyzing DNA sequences.",
+            "authors": [
+                {
+                    "first": "Z.J.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "9",
+            "pages": "1112-1117",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "A Novel method for similarity analysis and protein sub-cellular localization prediction.",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.Y.",
+                    "middle": [],
+                    "last": "Liao",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.M.",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q.G.",
+                    "middle": [],
+                    "last": "Zeng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Bioinformatics",
+            "volume": "26",
+            "issn": "21",
+            "pages": "2678-2683",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "The Zagreb indices 30 years after.",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Nikolic",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Kovacevic",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Milicevic",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Trinajstic",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Croat. Chem. Acta",
+            "volume": "76",
+            "issn": "",
+            "pages": "113-124",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "On vertex-degree-based molecular structure descriptors.",
+            "authors": [
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Doslic",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Furtula",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Graovac",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Gutman",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Moradi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Yarahmadi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "MATCH Commun. Math. Comput. Chem.",
+            "volume": "66",
+            "issn": "",
+            "pages": "613-626",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "enDNA-Prot: identification of DNA-binding proteins by applying ensemble learning.",
+            "authors": [
+                {
+                    "first": "R.F.",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.Y.",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Yao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q.",
+                    "middle": [],
+                    "last": "Zou",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "BioMed Res. Int.",
+            "volume": "2014",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Graphs with fixed number of pendent vertices and minimal Zeroth-order general Randic index.",
+            "authors": [
+                {
+                    "first": "G.F.",
+                    "middle": [],
+                    "last": "Su",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.H.",
+                    "middle": [],
+                    "last": "Tu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K-Ch.",
+                    "middle": [],
+                    "last": "Das",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Appl. Math. Comput.",
+            "volume": "270",
+            "issn": "",
+            "pages": "705-710",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "New invariant of DNA sequences.",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Chem. Inf. Model.",
+            "volume": "36",
+            "issn": "",
+            "pages": "115-120",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Genetic drift of human coronavirus OC43 spike gene during adaptive evolution.",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Ren",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Xiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Paranhos-Baccal\u00e0",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Sci. Rep.",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Meyer",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Dimitriadou",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Hornik",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Weingessel",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Leisch",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Assessing the accuracy of prediction algorithms for classification: an overview.",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Baldi",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Brunak",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Chauvin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.A.",
+                    "middle": [],
+                    "last": "Andersen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Bioinformatics",
+            "volume": "16",
+            "issn": "",
+            "pages": "412-424",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "iPro54-PseKNC: a sequence-based predictor for identifying sigma-54 promoters in prokaryote with pseudo k-tuple nucleotide composition.",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.Z.",
+                    "middle": [],
+                    "last": "Deng",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.C.",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nucleic Acids Res.",
+            "volume": "42",
+            "issn": "",
+            "pages": "12961-12972",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Using deformation energy to analyze nucleosome positioning in genomes.",
+            "authors": [
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.C.",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Genomics",
+            "volume": "107",
+            "issn": "",
+            "pages": "69-75",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "iRNA-PseU: identifying RNA pseudouridine sites.",
+            "authors": [
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Ye",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.C.",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Mol. Ther. Nucleic Acids",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Recognition of protein coding genes in the yeast genome at better than 95% accuracy based on the Z curve.",
+            "authors": [
+                {
+                    "first": "C.T.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nucleic Acids Res.",
+            "volume": "28",
+            "issn": "",
+            "pages": "2804-2814",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Wuyunqiqige; Zheng, W.; Liu, S.Y.; Zhao, C.G. gDNA-Prot: predict DNA-binding proteins by employing support vector machine and a novel numerical characterization of Protein sequence.",
+            "authors": [
+                {
+                    "first": "Y.P.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "J. Theor. Biol.",
+            "volume": "406",
+            "issn": "",
+            "pages": "8-16",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Using a Euclid distance discriminant method to find protein coding genes in the yeast genome.",
+            "authors": [
+                {
+                    "first": "C.T.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Comput. Chem.",
+            "volume": "26",
+            "issn": "",
+            "pages": "195-206",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Numerical characterization of protein sequences based on the generalized Chou\u2019s pseudo amino acid composition.",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "X.Q.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.X.",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Appl. Sci. (Basel)",
+            "volume": "6",
+            "issn": "12",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Light-directed synthesis of peptide nucleic acids (PNAs) chips.",
+            "authors": [
+                {
+                    "first": "Z.C.",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.S.",
+                    "middle": [],
+                    "last": "Shin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Shokouhimehr",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.N.",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.W.",
+                    "middle": [],
+                    "last": "Yoo",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.K.",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.S.",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Biosens. Bioelectron.",
+            "volume": "22",
+            "issn": "",
+            "pages": "2891-2897",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Protein structure prediction from sequence variation.",
+            "authors": [
+                {
+                    "first": "D.S.",
+                    "middle": [],
+                    "last": "Marks",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.A.",
+                    "middle": [],
+                    "last": "Hopf",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Sander",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nat. Biotechnol.",
+            "volume": "30",
+            "issn": "11",
+            "pages": "1072-1080",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Principles that govern the folding of protein chains.",
+            "authors": [
+                {
+                    "first": "C.B.",
+                    "middle": [],
+                    "last": "Anfinsen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1973,
+            "venue": "Science",
+            "volume": "181",
+            "issn": "",
+            "pages": "223-230",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

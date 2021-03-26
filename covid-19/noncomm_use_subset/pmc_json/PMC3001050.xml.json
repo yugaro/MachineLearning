@@ -1,0 +1,2312 @@
+{
+    "paper_id": "PMC3001050",
+    "metadata": {
+        "title": "Stimulation of ribosomal frameshifting by antisense LNA",
+        "authors": [
+            {
+                "first": "Chien-Hung",
+                "middle": [],
+                "last": "Yu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Mathieu",
+                "middle": [
+                    "H.",
+                    "M."
+                ],
+                "last": "Noteborn",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ren\u00e9",
+                "middle": [
+                    "C.",
+                    "L."
+                ],
+                "last": "Olsthoorn",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Programmed ribosomal frameshifting is a translational recoding event that increases the versatility of gene expression. It is mainly utilized by eukaryotic RNA viruses (1\u20133), though some prokaryotic (4) and mammalian genes (5\u20137) are also controlled by ribosomal frameshifting. The requirements for \u22121 ribosomal frameshifting are the presence of a slippery heptanucleotide sequence X XXY YYZ (where X can be A, U, G or C; Y can be A or U; and Z does not equal Y; the spaces indicate the original reading frame) (8) followed by a downstream structural element, such as a pseudoknot, a hairpin or an antisense oligonucleotide duplex [for reviews, see (9)]. Although the mechanism of frameshifting is still elusive, a promising model has been proposed by Brierley and co-workers using cryo-electron microscopy to image mammalian 80S ribosomes (10). In their model, the ribosome is paused by its inability to unwind a pseudoknot structure resulting in a blockage of the A-site by eEF-2. During translocation, the P-site tRNA is bent in the 3\u2032-direction by opposing forces. To release the tension, the P-site tRNA may un-pair and subsequently re-pair in the \u22121 frame with a certain frequency, followed by A-site tRNA delivery into the new \u22121 reading frame. These and other recent data obtained by mechanical unfolding of frameshifter pseudoknots suggest that mRNA secondary structures with certain conformational features that resist ribosomal helicase-mediated unwinding and eEF-2 catalyzed translocation are key players in ribosomal frameshifting.",
+            "cite_spans": [
+                {
+                    "start": 169,
+                    "end": 172,
+                    "mention": "1\u20133",
+                    "ref_id": null
+                },
+                {
+                    "start": 200,
+                    "end": 201,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 224,
+                    "end": 227,
+                    "mention": "5\u20137",
+                    "ref_id": null
+                },
+                {
+                    "start": 511,
+                    "end": 512,
+                    "mention": "8",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 649,
+                    "end": 650,
+                    "mention": "9",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 840,
+                    "end": 842,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Small oligonucleotides have been used for several years to regulate gene expression by RNaseH-dependent RNA degradation (11), blocking translation (12), or re-directing splicing (13). More recently, microRNAs (miRNAs) (14) and small interfering RNAs (siRNAs) have appeared on the scene of post-transcriptional gene regulation (15). siRNAs may be effective in treatment of chronic hepatitis-B virus infection (16), HIV infection (17), cancer (18) and age-related macular degeneration (19). Very few antisense oligonucleotides, for example against the bcl-2 oncogene have reached the stage of clinical trials (20) or have actually been approved by the FDA, for instance for the treatment of human cytomegalovirus retinitis (21).",
+            "cite_spans": [
+                {
+                    "start": 121,
+                    "end": 123,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 148,
+                    "end": 150,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 179,
+                    "end": 181,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 219,
+                    "end": 221,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 327,
+                    "end": 329,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 409,
+                    "end": 411,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 429,
+                    "end": 431,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 442,
+                    "end": 444,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 484,
+                    "end": 486,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 608,
+                    "end": 610,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 722,
+                    "end": 724,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Enhancing the stability of small oligonucleotides to prolong circulation and meanwhile increasing target specificity are major concerns for therapeutic applications. Various kinds of modifications in backbones, sugars or even analogs have already been studied extensively [for reviews, see (22,23)] to meet these requirements. Locked nucleic acid (LNA) is a rather novel nucleic acid analog comprising a class of bicyclic high-affinity RNA analogs in which the furanose ring of LNA monomers is conformationally locked in an RNA-mimicking C3\u2032-endo/N-type conformation (24). The LNA modification also resists degradation by cellular nucleases. Furthermore, introducing LNA into DNA or RNA oligonucleotides improves the affinity for complementary sequences and increases the melting temperature by several degrees (25). A recent study showed that LNA/DNA mix-mers against miRNA-122 can be acutely administered at high dosage with long lasting effects without any evidence of LNA-associated toxicities or histopathological changes in the studied animals (26). These data suggests that LNA is a promising candidate for small oligonucleotide applications.",
+            "cite_spans": [
+                {
+                    "start": 291,
+                    "end": 293,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 294,
+                    "end": 296,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 568,
+                    "end": 570,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 812,
+                    "end": 814,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1051,
+                    "end": 1053,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "We and others have demonstrated that small RNA oligonucleotides are able to mimic the function of frameshifter pseudoknots or hairpins by redirecting ribosomes into new reading frames (27,28). In this article, we have investigated the length and concentration of RNA oligonucleotides for optimal frameshifting, as well as the effects of introducing LNA-type sugars in DNA oligonucleotides.",
+            "cite_spans": [
+                {
+                    "start": 185,
+                    "end": 187,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 188,
+                    "end": 190,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The \u22121 ribosomal frameshifting events were monitored by the SF reporter construct described earlier (27). Complementary oligonucleotides (Eurogentec, Liege, Belgium) SF462 (CTAGTTGACCTCAACCCTTGGAA) and SF463 (CATGTTCCAAGGGTTGAGGTCAA) and SF468 (CTAGTTGAGCGCGCTGGAGGCCATGG) and SF469 (CATGCCATGGCCTCCAGCGCGCTCA) were annealed and ligated into SpeI/NcoI digested SF reporter to construct the SF462 and SF468 templates, respectively. All constructs were verified by DNA sequencing on an ABI PRISM\u00ae 3730xl analyzer (LGTC, Leiden, The Netherlands). RNA oligonucleotides (except for RNA13 which was obtained from Invitrogen) were purchased from Dharmacon (Lafayette, USA). The RNAs from Dharmacon carried a 2\u2032-O-ACE protection group, which was removed by incubation with 100 mM acetic acid pH 3.8 and TEMED at 60\u00b0C for 30 min. The sequences of RNA oligos were as follows:",
+            "cite_spans": [
+                {
+                    "start": 101,
+                    "end": 103,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Frameshift reporter construct and oligonucleotides ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "RNA6: GCGCGC, RNA9: CCAGCGCGC, RNA12: CCUCCAGCGCGC, RNA15: UGGCCUCCAGCGCGC, RNA18: CCAUGGCCUCCAGCGCGC, 18RNA: GCGCGCUGGAGGCCAUGG, and RNA13: CCAAGGGGUUGAGG.",
+            "cite_spans": [],
+            "section": "Frameshift reporter construct and oligonucleotides ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "DNA and LNA/DNA mix-mers were synthesized by Eurogentec. Custom oligonucleotides were extracted by phenol/chloroform followed by ethanol precipitated before use. The sequences of DNA and LNA/DNA mix-mers were as follows (lower case represents the LNA modification and capital represents DNA): DNA18: CCATGGCCTCCAGCGCGC. DNA13: CCAAGGGTTGAGG, LNA2: CCATGGCCTCCAGCGCgc, LNA4: CCATGGCCTCCAGCgcgc, LNA6: CCATGGCCTCCAgcgcgc, LNA2-1: CCATGGCCTCCAGCgcGC, LNA2-2: CCATGGCCTCCAgcGCGC, LNA2-3: ccATGGCCTCCAGCGCGC, LNA2-4: CCATGGCCTCCAGCgCGc, LD1: CCAAGGGTTGAGg, LD2: CCAAGGGTTGAgg, LD4: CCAAGGGTTgagg, LD6: CCAAGGGttgagg.",
+            "cite_spans": [],
+            "section": "Frameshift reporter construct and oligonucleotides ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Plasmids were linearized by BamHI and purified by phenol/chloroform extraction followed by ethanol precipitation. In vitro transcription was conducted by SP6 RNA polymerase and carried out in the 30 \u03bcl reaction mixture of: 1 \u03bcg of linearized template, 5 mM of rNTPs, 20 units of RNase inhibitor and 15 units of SP6 RNA polymerase with buffer (all from Promega, Benelux). After 2 h incubation at 37\u00b0C, the integrity and quantity of transcripts were checked by agarose gel and appropriate amount of the RNA were diluted in nuclease free water for in vitro translation.",
+            "cite_spans": [],
+            "section": "In vitro transcription ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "In vitro translations were carried out in nuclease treated rabbit reticulocyte lysate (RRL) (Promega). The amount of mRNA was 0.025 pmol and different amounts of oligonucleotides (0.025\u201315.625 pmol) were mixed with template for 20 min at room temperature. After incubation, 4 \u03bcl of RRL, 0.01 mM amino acids mixture except methionine, 2 \u03bcCi of 35S methionine (10 mCi/ml, MP Biomedicals, in vitro translational grade) were added in total volume of 10 \u03bcl and incubated at 28\u00b0C for 1 h. After translation, samples were mixed with 2\u00d7 Laemmli buffer, boiled at 90\u00b0C for 5 min and resolved by 13% SDS polyacrylamide gels. Gels were fixed in 10% acetic acid and 30% methanol for 20 min, dried under vacuum, and exposed to phosphoimager screens (Biorad). The screen was scanned and the 0 frame and \u22121 frameshift protein products were quantified by Quantity One software (Biorad). Frameshift percentages were calculated by dividing the amount of \u22121 frameshift product by the amount of 0-frame and \u22121 frameshift products after correction for the number of methionines in the protein sequence, multiplied by 100.",
+            "cite_spans": [],
+            "section": "In vitro translation ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "RNA oligonucleotide 18RNA (5\u2032GCGCGCUGGAGGCCAUGG3\u2032, Dharmacon, USA) was mixed in a 1:1 molar ratio with RNA18, DNA18 or one of the various DNA/LNA mix-mers, in UV-melting buffer (100 mM NaCl, 10 mM Cacodylate acid, pH 6.8). The analysis was performed on a Varian Cary 300 spectrophotometer using temperature ramps of 0.25\u00b0C /min during heating and cooling. The absorbance at 260 nm was recorded and normalized to the blank control.",
+            "cite_spans": [],
+            "section": "Determination of the melting temperature of oligonucleotide duplexes ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Although antisense oligonucleotides were found to induce ribosomal frameshifting (27,28), the optimal number of base pairs has not been addressed yet. To investigate this we designed antisense RNA oligonucleotides that are 6, 9, 12, 15 and 18 bases complementary to the region downstream of an UUUAAAC slippery sequence in our reporter plasmid SF468 (Figure 1). First, titration with RNA6 and RNA9 oligonucleotides revealed that a 625-fold molar excess of oligonucleotides over mRNA resulted in the highest level of frameshifting (Figure 2a); this ratio was used in the following experiments. The shortest oligonucleotide, RNA6, was not capable of inducing significant levels of frameshifting (Figure 2b), whereas RNA9 induced \u223c3.5% of frameshifting. Maximum levels were obtained with RNA12, RNA15 and RNA18; all three induced \u223c12% of frameshifting. In the following experiments oligonucleotides between 12 and 18 nt in length were used.\n\n",
+            "cite_spans": [
+                {
+                    "start": 82,
+                    "end": 84,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 85,
+                    "end": 87,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Length-dependent RNA oligonucleotide-induced ribosomal frameshifting ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 351,
+                    "end": 359,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 531,
+                    "end": 539,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 694,
+                    "end": 702,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Since we have absent knowledge about the efficacy of LNA-induced ribosomal frameshifting, LNA/DNA mix-mers of 18 nt in length were designed to investigate this (Figure 3). A DNA oligonucleotide, as expected, was less capable (3.5%) of inducing frameshift due to the lower thermodynamic stability of RNA\u2013DNA duplexes, see also below. Surprisingly, substituting the 3\u2032-cytosine and guanosine in this DNA oligonucleotide by their LNA analogs enhanced its frameshift inducing capacity to 8.7%, i.e. as high as an RNA oligonucleotide (8.8%). Increasing the LNA content of this oligonucleotide further did not lead to higher frameshifting. On the contrary, the efficiency of LNA4 was with 7.7% lower than that of LNA2 and that of LNA6 was a mere 1.1%. Since the overall translation efficiency seemed not affected by LNA6 we suspected an effect of the oligonucleotide itself (see below).\n",
+            "cite_spans": [],
+            "section": "LNA/DNA mix-mers induced-ribosomal frameshifting ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 161,
+                    "end": 169,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "To demonstrate that the enhanced effect of LNA oligonucleotides is a general feature we designed another construct (SF462) in which the target sequence was replaced by an unrelated sequence (Figure 4). LNA/DNA mix-mers were designed in which nucleotides starting from the 3\u2032-end were gradually replaced by LNA (Figure 4). Increasing the number of LNAs from one to two and four in these DNA oligonucleotides improved their frameshift inducing ability, reaching an apparent optimum of 7.0% with four LNA substitutions. Further increase of the LNA content to 6 nt (LD6) did not improve frameshift efficiency, but, on the other hand, LD6 also did not lead to the dramatic decrease as observed above for the LNA6 oligonucleotide applied in the SF468 construct. We suspected that (partial) self-complementarity may be limiting the effective concentration of free LNA/DNA oligonucleotides. To check this possibility, we ran all the oligonucleotides on a non-denaturing polyacrylamide gel. Figure 5 showes that the LNA6 oligonucleotide indeed migrated more slowly indicative of partial dimer formation, presumably by intermolecular base pairing of the palindromic GCGCGC sequences in each oligonucleotide (compare the migration to that of the full dimer formed by annealing of oligonucleotides DNA18 and 18DNA). The LD series, as predicted, migrated as monomers. We noted that LD2, though loaded in equal amount, based on its UV absorbance, showed a higher affinity to ethidium bromide than its counterparts. At present we have no explanation for this unexpected behavior of LD2, since its migration and therefore its conformation was identical to the other LNA/DNA mix-mers.\n\n",
+            "cite_spans": [],
+            "section": "The effectiveness of LNA/DNA mix-mers is universal ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 191,
+                    "end": 199,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 311,
+                    "end": 319,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 982,
+                    "end": 990,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "These results demonstrate that LNA modifications indeed enhance the antisense-induced frameshifting efficiency probably due to higher thermodynamic stability and RNA-like structural properties. This phenomenon appears to be general, at least in our experiments.",
+            "cite_spans": [],
+            "section": "The effectiveness of LNA/DNA mix-mers is universal ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "To investigate which positions in a DNA oligonucleotide would exert the largest effect when substituted by an LNA analog, we designed LNA/DNA mix-mer mutants based on LNA2, which is the most efficient LNA/DNA mix-mer in our experiments and would give a good read-out. When the two LNA substitutions were moved two positions more inward (L2-1), compared to LNA2, frameshift efficiency decreased to 6.7% (Figure 6). However, when the LNA modifications were moved another two positions more inward (L2-2), activity dropped to 2.7% (Figure 6) which is comparable to an unmodified DNA oligonucleotide. Similarly, when the LNA groups were introduced at the other end of the oligonucleotide, activity was as low as DNA18 (Figure 6). Finally, L2-4, in which the first and fourth position were LNA, was only half as efficient as LNA2. These results indicate that the choice of the location of the LNA modifications is crucial for the frameshift-inducing efficiency of an oligonucleotide.\n",
+            "cite_spans": [],
+            "section": "Position effect of LNA substitutions ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 403,
+                    "end": 411,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 529,
+                    "end": 537,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 715,
+                    "end": 723,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "Theoretically the position effect of the LNA substitutions could simply be explained by differences in thermodynamic stability of the resulting mRNA/oligonucleotide duplexes. To investigate this possibility we carried out UV-melting studies of the 18-nt LNA oligonucleotides in a 1:1 complex with an 18-nt RNA (18RNA) representing the mRNA. The melting temperatures (Tm) are shown in Table 1. The Tm of the 18RNA/RNA18 duplex was the highest with 82\u00b0C in agreement with its high frameshifting efficiency. The 18RNA/DNA18 duplex had a much lower Tm of 72\u00b0C, which is expected for an RNA/DNA hybrid, and also agreed with the lower frameshifting efficiency. The LNA substituted oligonucleotides, all had higher Tms (+4 to +9\u00b0C) than DNA18. The Tm of L2-2 was with 81\u00b0C almost as high as that of RNA18. Remarkably there was no correlation between the Tm of the LNA oligonucleotides and their frameshifting inducing capacity. For example, the Tm of LNA2 was rather low with 76\u00b0C but it had the highest frameshifting activity, and L2-2, which had the highest Tm, actually had the lowest frameshifting activity. Tms of L2-3 and L2-4 were identical but their frameshifting activities were 2.3 and 4.6%, respectively. We also noted that both L2-2 and L2-3 were comparable to DNA18 in frameshifting activity but formed far more stable duplexes. These data suggest that the position effect of the LNA substitutions is related to the mechanism of frameshifting and not per se to their thermodynamic stability.\n",
+            "cite_spans": [],
+            "section": "Thermodynamic stability of frameshift-inducing oligonucleotides ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 384,
+                    "end": 391,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Previously, we have demonstrated that antisense oligonucleotides can induce high levels of \u22121 frameshifting (27). The optimal length of small antisense oligonucleotides, however, was not investigated. Understanding the optimal length of trans-acting oligonucleotides that can induce the most efficient frameshifting and, at the same time, escape RNAi interference will be an important issue for future in vivo applications. Here we found that maximum levels of frameshifting were obtained with oligonucleotides of 12 nt and more. This is comparable to the stem lengths (S1+S2) of known examples of highly frameshift inducing H-type pseudoknots, such as the 6+6 bp of the Simian retrovirus type\u22121 pseudoknot (29), the 11+6 bp of the minimal Infectious Bronchitis virus (IBV) pseudoknot (30), and the 6+6 bp chimeric Mouse Mammary Tumor virus (MMTV)-IBV pseudoknot (31). In addition, in known examples of hairpin-induced frameshifts, the stem length of hairpins is around 12 bp (32\u201334). This may imply that a full helical turn of an RNA helix either in one single stem or in two stacking stems of a pseudoknot (S1+S2) is selected by viruses to induce efficient ribosomal frameshifting.",
+            "cite_spans": [
+                {
+                    "start": 109,
+                    "end": 111,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 708,
+                    "end": 710,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 786,
+                    "end": 788,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 864,
+                    "end": 866,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 977,
+                    "end": 982,
+                    "mention": "32\u201334",
+                    "ref_id": null
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition to RNA oligonucleotides, we demonstrated that LNA/DNA mix-mers are also capable of stimulating efficient \u22121 ribosomal frameshifting in contrast to DNA oligonucleotides. Replacing 2 nt in a DNA oligonucleotide by LNA was already sufficient to reach the same level of frameshifting as with a comparable RNA oligonucleotide. However, the excellent affinity of LNA oligonucleotides could be a double-edged sword in certain cases. In our experimental system, the oligonucleotides are partly self-complementary and this resulted in the formation of dimers (Figure 5), which were apparently unable to induce frameshifting (LNA6, Figure 3). Hence, LNA substitutions should be optimized in a sequence that is prone to form dimers. In our SF462 construct (Figure 4), the optimal number of LNA substitutions to induce the most significant amount of frameshifting is four. LD6 with two additional LNA substitutions did not improve the efficiency. Thus, our results suggest that the first 4 bp are critical for antisense-induced frameshifting. A likely explanation is that when a ribosome that is translating the slippery sequence, the helicase active site is around position +11, with respect to the first nucleotide of the P-site, which is close to the first base pair of the mRNA/oligonucleotide duplex (35). Increasing the local thermodynamic stability in this region may prevent ribosomes to unwind RNA structures, causing ribosomal pausing at the slippery sequence, and finally results in a higher frequency of ribosomal frameshifting.",
+            "cite_spans": [
+                {
+                    "start": 1306,
+                    "end": 1308,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 563,
+                    "end": 571,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 634,
+                    "end": 642,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 758,
+                    "end": 766,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Our data also showed that a single LNA modification is not sufficient to turn a DNA oligonucleotide into an efficient frameshift inducer but that a second LNA is needed. The best position for the second modification appeared to be also close to the 3\u2032-end of the oligonucleotide. Although one could expect that spacing of two LNA groups by two non-modified sugars as applied in probes for miRNAs, results in the optimal induction of the 3\u2032-endo conformation in the neighboring sugars (36), this was not the case in our frameshift assays. Here such a spacing was less efficient (see data for L2-4, Figure 6). However, we have not investigated if possible differences of self-dimerization behavior of these oligonucleotides accounts for the different stimulating activities, since such effects were only observed when six LNA modifications were introduced in an oligonucleotide of this sequence.",
+            "cite_spans": [
+                {
+                    "start": 485,
+                    "end": 487,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 597,
+                    "end": 605,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "The observation that different positions of LNA substitutions induced different levels of ribosomal frameshifting is interesting. Even though the overall thermodynamic stability of these oligonucleotides is roughly the same, they still create different degrees of barriers for ribosomes to unwind and these differences could be the reason for different level of induced frameshifting.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The finding that local stability at the 3\u2032-end of the LNA/DNA mix-mers is important for frameshifting is in agreement with the observation that in natural examples of frameshift stimulators, most of them have high GC content in the first few nucleotides (1). Hence, our data support the notion that the stability of the 3\u2032-end of the oligonucleotide, which may reside in the active site of the ribosomal helicase, is critical for frameshift-inducing structural elements. In pseudoknots this stability is probably attained by triple interactions, since nature has no other way to increase the stability of a GC-rich A-type helix. Triplex structures have been documented for a number of frameshifter pseudoknots, e.g. BWYV (37), SRV\u22121 (38) and in a telomerase pseudoknot (39).",
+            "cite_spans": [
+                {
+                    "start": 255,
+                    "end": 256,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 722,
+                    "end": 724,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 734,
+                    "end": 736,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 770,
+                    "end": 772,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Several models of ribosomal frameshifting have been proposed (1,40,41). The consistency from these studies is that ribosomal pausing at shifty sites by downstream structural elements is important but that pausing caused by RNA secondary structure, does not always result in frameshifting. In addition, a lack of correlation between the extent of pausing and the efficiency of frameshifting by IBV pseudoknots has been observed (42). A recent study also showed that pseudoknots with a similar global structure can still induce very different levels of frameshifting although their thermodynamic stabilities were different (43). These data complicate the view on the role of the downstream structure. Experiments involving simple oligonucleotides such as shown here may be better alternatives to elucidate the role of the downstream element.",
+            "cite_spans": [
+                {
+                    "start": 62,
+                    "end": 63,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 64,
+                    "end": 66,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 67,
+                    "end": 69,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 428,
+                    "end": 430,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 622,
+                    "end": 624,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Several groups have correlated the mechanical force of unfolding of a pseudoknot with its frameshifting efficiency by using optical tweezers (39,44\u201346) and suggest that frameshift efficiency is dependent on the unfolding force rather than on differences of thermodynamic stability between folded and unfolded states. Since we showed here that antisense oligonucleotides can induce frameshifting presumably by serving as a physical barrier for the elongating ribosome, it will be interesting to measure the strength of these linear oligonucleotides in complex with (a piece of) mRNA by optical tweezers and see if there is a correlation with their frameshifting efficiency.",
+            "cite_spans": [
+                {
+                    "start": 142,
+                    "end": 144,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 145,
+                    "end": 150,
+                    "mention": "44\u201346",
+                    "ref_id": null
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Finally, several properties of LNA, including its good aqueous solubility, low toxicity, highly efficient binding to complementary nucleic acids, high biostability, and, improved mismatch discrimination relative to natural nucleic acid (47) make LNA a promising candidate for in vivo applications of antisense-induced frameshifting.",
+            "cite_spans": [
+                {
+                    "start": 237,
+                    "end": 239,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Funding for open access charge: Leiden Institute of Chemistry, Leiden university.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        },
+        {
+            "text": "Conflict of interest statement. None declared.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Tm measurements of frameshift-inducing oligos hybridized to complementary RNA\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1.: Schematic representation of frameshift reporter constructs. ORF1 (19 kD) is in the 0 frame and ORF2 (46 kD) is in the \u22121 translational frame with respect to ORF1. The appearance of the 65 kD fusion protein represents the occurrence of \u22121 frameshifting. The UUUAAAC slippery sequence is indicated in italics. The 0-reading frame and \u22121 reading frames codons are indicated above and below the sequences, respectively. RNA18, 12, 15, 9 and 6 are antisense RNA oligonucleotides complementary to the indicated region downstream of the slippery sequence in SF468 mRNA.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: Optimizing the ratio and lengths of frameshift-inducing RNA oligonucleotides. (a) An amount of 0.05 pmol of SF468 mRNA were mixed with 0.05, 0.25, 1.25, 6.25 and 31.25 pmol of RNA6 and RNA9 oligonucleotides, respectively. Mixtures were subsequently translated in the presence of 35S-methionine and the labeled proteins were examined by 13% SDS\u2013PAGE. Frameshift efficiencies [FS (%)] were calculated after quantification and correction of in-frame and frameshifted product. (b) A total of 625 M excess of different lengths of RNA oligos (RNA6, 9, 12, 15, 18, respectively) and control without added oligonucleotide were mixed with 0.05 pmol of SF468 mRNA. Mixtures were translated and examined by 13% SDS\u2013PAGE. In-frame and frameshifted protein products are indicated by NFS and FS, respectively. Frameshifting efficiency [FS (%)] and standard deviation (SD) of three independent duplicate assays are indicated below each lane.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: Effect of LNA substitutions on oligonucleotide-induced frameshifting. SF468 mRNA was translated in the presence of a 625-fold molar excess of DNA, RNA or LNA substituted DNA oligonucleotides in rabbit reticulocyte lysate. DNA and RNA oligonucleotides are indicated in capital and LNA substitutions are denoted by lowercase characters. See legend to Figure 2 for more details.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: Frameshift enhancing activity of LNA-substituted deoxy-oligonucleotides. mRNA SF462 was translated in the absence or presence of 625-fold molar excess of DNA, RNA or LNA substituted DNA oligonucleotides, in rabbit reticulocyte lysate. LNA modifications are indicated by lowercase characters. See legend to Figure 2 for more details.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5.: Self-dimerization of frameshift-inducing oligonucleotides. An amount of 31.25 pmol of the indicated oligonucleotides were left at room temperature for 10 min. and then loaded on a 15% non-denaturing polyacrylamide gel. After electrophoresis, the gel was stained by EtBr and photographed under UV-light.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6.: Position effect of LNA substitutions on their frameshift-inducing activity. LNA substitutions are indicated by lowercase characters. See legend to Figure 2 for more details.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Structure, stability and function of RNA pseudoknots involved in stimulating ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Giedroc",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Theimer",
+                    "suffix": ""
+                },
+                {
+                    "first": "PL",
+                    "middle": [],
+                    "last": "Nixon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J. Mol. Biol.",
+            "volume": "298",
+            "issn": "",
+            "pages": "167-85",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "A mechanical explanation of RNA pseudoknot function in programmed ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Namy",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Moran",
+                    "suffix": ""
+                },
+                {
+                    "first": "DI",
+                    "middle": [],
+                    "last": "Stuart",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Gilbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "441",
+            "issn": "",
+            "pages": "244-247",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Progress in antisense technology",
+            "authors": [
+                {
+                    "first": "ST",
+                    "middle": [],
+                    "last": "Crooke",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Annu. Rev. Med.",
+            "volume": "55",
+            "issn": "",
+            "pages": "61-95",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Morpholino oligos: making sense of antisense? Dev",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Heasman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Biol.",
+            "volume": "243",
+            "issn": "",
+            "pages": "209-214",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Functional amounts of dystrophin produced by skipping the mutated exon in the mdx dystrophic mouse",
+            "authors": [
+                {
+                    "first": "QL",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Mann",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Lou",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bou-Gharios",
+                    "suffix": ""
+                },
+                {
+                    "first": "GE",
+                    "middle": [],
+                    "last": "Morris",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Xue",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Fletcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Partridge",
+                    "suffix": ""
+                },
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Wilton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nat. Med.",
+            "volume": "9",
+            "issn": "",
+            "pages": "1009-1014",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "MicroRNAs: target recognition and regulatory functions",
+            "authors": [
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Bartel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Cell",
+            "volume": "136",
+            "issn": "",
+            "pages": "215-233",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Small silencing RNAs: an expanding universe",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ghildiyal",
+                    "suffix": ""
+                },
+                {
+                    "first": "PD",
+                    "middle": [],
+                    "last": "Zamore",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nat. Rev. Genet.",
+            "volume": "10",
+            "issn": "",
+            "pages": "94-108",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Potent and persistent in vivo anti-HBV activity of chemically modified siRNAs",
+            "authors": [
+                {
+                    "first": "DV",
+                    "middle": [],
+                    "last": "Morrissey",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Lockridge",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Blanchard",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Jensen",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Breen",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Hartsough",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Machemer",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Radka",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Jadhav",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nat. Biotechnol.",
+            "volume": "23",
+            "issn": "",
+            "pages": "1002-1007",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "RNA interference as an antiviral approach: targeting HIV\u20131",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Berkhout",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Curr. Opin. Mol. Ther.",
+            "volume": "6",
+            "issn": "",
+            "pages": "141-145",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Small interfering RNA therapy in cancer: mechanism, potential targets, and clinical applications",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Yao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Expert Opin. Ther. Targets",
+            "volume": "12",
+            "issn": "",
+            "pages": "637-645",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Ocular delivery of nucleic acids: antisense oligonucleotides, aptamers and siRNA",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Fattal",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bochot",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Adv. Drug Deliv. Rev.",
+            "volume": "58",
+            "issn": "",
+            "pages": "1203-1223",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Programmed ribosomal frameshifting in HIV-1 and the SARS-CoV",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "BrierleyI",
+                    "suffix": ""
+                },
+                {
+                    "first": "FJ",
+                    "middle": [],
+                    "last": "Dos Ramos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Virus Res.",
+            "volume": "119",
+            "issn": "",
+            "pages": "29-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Bcl-2-targeted antisense therapy (Oblimersen sodium): towards clinical reality",
+            "authors": [
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Moreira",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Santos",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sim\u00f5es",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Rev Recent Clin Trials.",
+            "volume": "1",
+            "issn": "",
+            "pages": "217-235",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Fomivirsen",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Perry",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Balfour",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Drugs",
+            "volume": "57",
+            "issn": "",
+            "pages": "375-380",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Antisense technology: a selective tool for gene expression regulation and gene targeting",
+            "authors": [
+                {
+                    "first": "NK",
+                    "middle": [],
+                    "last": "Sahu",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Shilakari",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nayak",
+                    "suffix": ""
+                },
+                {
+                    "first": "DV",
+                    "middle": [],
+                    "last": "Kohli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Curr. Pharm. Biotechnol.",
+            "volume": "8",
+            "issn": "",
+            "pages": "291-304",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Chemical modification: the key to clinical application of RNA interference?",
+            "authors": [
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Corey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Clin. Invest.",
+            "volume": "117",
+            "issn": "",
+            "pages": "3615-3622",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "LNA (locked nucleic acid): high-affinity targeting of complementary RNA and DNA",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Vester",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wengel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biochemistry",
+            "volume": "43",
+            "issn": "",
+            "pages": "13233-13241",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Locked nucleic acid (LNA): fine-tuning the recognition of DNA and RNA",
+            "authors": [
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Braasch",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Corey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Chem. Biol.",
+            "volume": "8",
+            "issn": "",
+            "pages": "1-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "LNA-mediated microRNA silencing in non-human primates",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Elm\u00e9n",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lindow",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Sch\u00fctz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lawrence",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Petri",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Obad",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lindholm",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hedtj\u00e4rn",
+                    "suffix": ""
+                },
+                {
+                    "first": "HF",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Berger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nature",
+            "volume": "452",
+            "issn": "",
+            "pages": "896-899",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Novel application of sRNA: stimulation of ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "RC",
+                    "middle": [],
+                    "last": "Olsthoorn",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Laurs",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Sohet",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Hilbers",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Heus",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Pleij",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "RNA",
+            "volume": "10",
+            "issn": "",
+            "pages": "1702-1703",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Efficient stimulation of site-specific ribosome frameshifting by antisense oligonucleotides",
+            "authors": [
+                {
+                    "first": "MT",
+                    "middle": [],
+                    "last": "Howard",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "RNA",
+            "volume": "10",
+            "issn": "",
+            "pages": "1653-1661",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Identification and analysis of the pseudoknot-containing gag-pro ribosomal frameshift signal of simian retrovirus\u20131",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "ten Dam",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Inglis",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Pleij",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Nucleic Acids Res.",
+            "volume": "22",
+            "issn": "",
+            "pages": "2304-2310",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "A -1 ribosomal frameshift in a double-stranded RNA virus of yeast forms a gag-pol fusion protein",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Icho",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Wickner",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "88",
+            "issn": "",
+            "pages": "174-178",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Evidence for an RNA pseudoknot loop-helix interaction essential for efficient \u22121 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Liphardt",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Napthine",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kontos",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J. Mol. Biol.",
+            "volume": "288",
+            "issn": "",
+            "pages": "321-335",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "The role of RNA pseudoknot stem 1 length in the promotion of efficient \u22121 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Napthine",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Liphardt",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bloys",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Routledge",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "J. Mol. Biol.",
+            "volume": "288",
+            "issn": "",
+            "pages": "305-320",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Characterization of the frameshift stimulatory signal controlling a programmed \u22121 ribosomal frameshift in the human immunodeficiency virus type 1",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Dulude",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Baril",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Brakier-Gingras",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Nucleic Acids Res.",
+            "volume": "30",
+            "issn": "",
+            "pages": "5094-5102",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Regulation of \u22121 ribosomal frameshifting directed by cocksfoot mottle sobemovirus genome",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lucchesi",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "M\u00e4kel\u00e4inen",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Merits",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tamm",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "M\u00e4kinen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Eur. J. Biochem.",
+            "volume": "267",
+            "issn": "",
+            "pages": "3523-3529",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Structural probing and mutagenic analysis of the stem-loop required for Escherichia coli dnaX ribosomal frameshifting: programmed efficiency of 50%",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Larsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "J. Mol. Biol.",
+            "volume": "271",
+            "issn": "",
+            "pages": "47-60",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "mRNA helicase activity of the ribosome",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Takyar",
+                    "suffix": ""
+                },
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Hickerson",
+                    "suffix": ""
+                },
+                {
+                    "first": "HF",
+                    "middle": [],
+                    "last": "Noller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Cell",
+            "volume": "120",
+            "issn": "",
+            "pages": "49-58",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Sensitive and specific detection of microRNAs by northern blot analysis using LNA-modified oligonucleotide probes",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "V\u00e1l\u00f3czi",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Hornyik",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Varga",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Burgy\u00e1n",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kauppinen",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Havelda",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res.",
+            "volume": "32",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Minor groove RNA triplex in the crystal structure of a ribosomal frameshifting viral pseudoknot",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Su",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Egli",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Berger",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rich",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nat. Struct. Biol.",
+            "volume": "6",
+            "issn": "",
+            "pages": "285-292",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Solution structure of the pseudoknot of SRV\u20131 RNA, involved in ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Michiels",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Versleijen",
+                    "suffix": ""
+                },
+                {
+                    "first": "PW",
+                    "middle": [],
+                    "last": "Verlaan",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Pleij",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Hilbers",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Heus",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "J. Mol. Biol.",
+            "volume": "310",
+            "issn": "",
+            "pages": "1109-1123",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Triplex structures in an RNA pseudoknot enhance mechanical stability and increase efficiency of \u22121 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "KY",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "MY",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Bustamante",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Tinoco",
+                    "suffix": "Jr"
+                }
+            ],
+            "year": 2009,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "106",
+            "issn": "",
+            "pages": "12706-12711",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Recoding in bacteriophages and bacterial IS elements",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Fayet",
+                    "suffix": ""
+                },
+                {
+                    "first": "RW",
+                    "middle": [],
+                    "last": "Hendrix",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Trends Genet.",
+            "volume": "22",
+            "issn": "",
+            "pages": "174-181",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Structure and function of the stimulatory RNAs involved in programmed eukaryotic\u20131 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Pennell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Cold Spring Harb Symp Quant Biol.",
+            "volume": "66",
+            "issn": "",
+            "pages": "233-248",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "The 9-A solution: how mRNA pseudoknots promote efficient programmed \u22121 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Plant",
+                    "suffix": ""
+                },
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Harger",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Meskauskas",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Baxter",
+                    "suffix": ""
+                },
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Petrov",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "RNA",
+            "volume": "9",
+            "issn": "",
+            "pages": "168-174",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Ribosomal pausing at a frameshifter RNA pseudoknot is sensitive to reading phase but shows little correlation with frameshift efficiency",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kontos",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Napthine",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Mol. Cell Biol.",
+            "volume": "21",
+            "issn": "",
+            "pages": "8657-8670",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "The global structures of a wild-type and poorly functional plant luteoviral mRNA pseudoknot are essentially identical",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Cornish",
+                    "suffix": ""
+                },
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Stammler",
+                    "suffix": ""
+                },
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Giedroc",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "RNA",
+            "volume": "12",
+            "issn": "",
+            "pages": "1959-1969",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Correlation between mechanical strength of messenger RNA pseudoknots and ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Hansen",
+                    "suffix": ""
+                },
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Reihani",
+                    "suffix": ""
+                },
+                {
+                    "first": "LB",
+                    "middle": [],
+                    "last": "Oddershede",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "S\u00f8rensen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "104",
+            "issn": "",
+            "pages": "5830-5835",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Interaction of the HIV\u20131 frameshift signal with the ribosome",
+            "authors": [
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Mazauric",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Seol",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Yoshizawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Visscher",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Fourmy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Res.",
+            "volume": "37",
+            "issn": "",
+            "pages": "7654-7664",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Characterization of the mechanical unfolding of RNA pseudoknots",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Bustamante",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Tinoco",
+                    "suffix": "Jr"
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Mol. Biol.",
+            "volume": "375",
+            "issn": "",
+            "pages": "511-528",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Locked nucleic acid oligonucleotides: the next generation of antisense agents?",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gr\u00fcnweller",
+                    "suffix": ""
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "Hartmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BioDrugs.",
+            "volume": "21",
+            "issn": "",
+            "pages": "235-243",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "A functional -1 ribosomal frameshift signal in the human paraneoplastic Ma3 gene",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Wills",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "RF",
+                    "middle": [],
+                    "last": "Gesteland",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Biol. Chem.",
+            "volume": "281",
+            "issn": "",
+            "pages": "7082-7088",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Characterization of the frameshift signal of Edr, a mammalian example of programmed -1 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Manktelow",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Shigemoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucleic Acids Res.",
+            "volume": "33",
+            "issn": "",
+            "pages": "1553-563",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Mammalian gene PEG10 expresses two reading frames by high efficiency \u22121 frameshifting in embryonic-associated tissues",
+            "authors": [
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "J\u00e4nicke",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Gottesb\u00fchren",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kleffmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Legge",
+                    "suffix": ""
+                },
+                {
+                    "first": "ES",
+                    "middle": [],
+                    "last": "Poole",
+                    "suffix": ""
+                },
+                {
+                    "first": "WP",
+                    "middle": [],
+                    "last": "Tate",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Biol. Chem.",
+            "volume": "282",
+            "issn": "",
+            "pages": "37359-37369",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Mutational analysis of the \u201cslippery-sequence\u201d component of a coronavirus ribosomal frameshifting signal",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Jenner",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Inglis",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "J. Mol. Biol.",
+            "volume": "227",
+            "issn": "",
+            "pages": "463-479",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Frameshifting RNA pseudoknots: structure and mechanism",
+            "authors": [
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "Giedroc",
+                    "suffix": ""
+                },
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Cornish",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Virus Res.",
+            "volume": "139",
+            "issn": "",
+            "pages": "193-208",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

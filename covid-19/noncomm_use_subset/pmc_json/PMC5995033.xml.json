@@ -1,0 +1,2116 @@
+{
+    "paper_id": "PMC5995033",
+    "metadata": {
+        "title": "Differential network as an indicator of osteoporosis with network entropy",
+        "authors": [
+            {
+                "first": "Lili",
+                "middle": [],
+                "last": "Ma",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Hongmei",
+                "middle": [],
+                "last": "Du",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Guangdong",
+                "middle": [],
+                "last": "Chen",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Osteoporosis is a common skeletal disorder characterized by a decrease in bone mass and density, which results in an increased risk of fractures among the elderly (1). Women, especially postmenopausal women, are more susceptible to osteoporosis comparad to other groups. Bone mass and strength achieved at the end of the growth period is defined as peak bone mass (PBM), which is a significant determinant of osteoporosis (2,3). It is regarded that an increase of PBM by one standard deviation would reduce the fracture risk by 50% (4).",
+            "cite_spans": [
+                {
+                    "start": 164,
+                    "end": 165,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 423,
+                    "end": 424,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 425,
+                    "end": 426,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 533,
+                    "end": 534,
+                    "mention": "4",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Peripheral blood monocytes can serve as early precursors of osteoclasts (5\u20137). A growing body of literature has explored that blood monocytes deliver many kinds of factors for bone metabolism, such as interleukin-1 and tumor necrosis factor-\u03b1 (8). Osteoclasts in peripheral skeleton (9) and the central skeleton come from circulating monocytes (10). Substantial research has focused on the effect of circulating monocytes on pathogenesis of osteoporosis in young and middle aged adults.",
+            "cite_spans": [
+                {
+                    "start": 73,
+                    "end": 74,
+                    "mention": "5",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 75,
+                    "end": 76,
+                    "mention": "7",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 244,
+                    "end": 245,
+                    "mention": "8",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 284,
+                    "end": 285,
+                    "mention": "9",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 345,
+                    "end": 347,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Research in systems biology has shown that variety in the activity of gene network and frame structure play an important role in the disease progression (11,12). Network-based systems biology approaches have emerged as powerful tools for analysis of molecular mechanisms of diseases (13\u201316). An integrated network method was applied to predict conserved regulators related to high and low viral pathogenicity, leading to therapeutic targets for intervention (17). In addition, recent study confirmed that signaling entropy computable from integrating a gene expression profile with a protein-protein interaction network (PPIN), correlate with phenotypic plasticity and is increased in disease compared to normal controls (18). Based on information theory, entropy opens new perspectives for gene inference methods and increases the accuracy of PPINs (19). Jin et al (20) compared the IAV-induced inflammatory regulatory networks and normal cellular networks by integrating the data from the highly pathogenic avian H5N1 and the pandemic H1N1 with PPINs, and these findings provide significant hypotheses for further exploring the molecular mechanisms of infectious diseases and developing control strategies.",
+            "cite_spans": [
+                {
+                    "start": 154,
+                    "end": 156,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 157,
+                    "end": 159,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 284,
+                    "end": 286,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 287,
+                    "end": 289,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 459,
+                    "end": 461,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 722,
+                    "end": 724,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 851,
+                    "end": 853,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 867,
+                    "end": 869,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "To gain insights into the indicating effect of PBM to osteoporosis, this study focused on characterizing the PBM networks and identifying key genes by combining high-throughput data and computational techniques. In PPINs, we searched for genes functionally significant for PBM variation, which might were related to circulating monocytes in human premenopausal subjects. The findings are expected to provide effective insights for further exploring the pathology mechanisms of osteoporosis and obtaining better treatment strategies.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "One biological data set E-GEOD-7158 of osteoporosis was derived from the Gene Expression Omnibus (GEO) database (http://www.ncbi.nlm.nih.gov/geo/) (3). There were 12 monocyte low PBM samples and 11 high PBM samples in the total 23 samples. The platform is A-AFFY-44-Affymetrix GeneChip Human Genome U133 Plus 2.0 (HG-U133 Plus 2.0). The Linear Models for Microarray Data (LIMMA) was then used to preprocess data. After quantile data normalization performed by robust multi-array average (RMA) (21), 20,545 genes were obtained.",
+            "cite_spans": [
+                {
+                    "start": 148,
+                    "end": 149,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 494,
+                    "end": 496,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Datasets and construction of PPINs :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The human PPIN was collected from the Retrieval of Interacting Genes (STRING; version 9.0) (22). Only edges whose correlations are greater than the threshold \u03b4 were chosen, and set at 0.8. A total of 8,590 nodes and 53,975 protein-protein interaction (PPI) sets remained. Then we constructed anosteoporosis PPI subnet after getting intersection with expression profiles and the PPIN, which contained 7,953 genes and 48,778 PPI sets.",
+            "cite_spans": [
+                {
+                    "start": 92,
+                    "end": 94,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Datasets and construction of PPINs :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Using the human subnet as a backbone, we infer a re-weighted PPIN with expression and mutation profiles of monocyte low PBM and high PBM in osteoporosis. Every side of the constructed PPIN was assigned with absolute value of Spearman correlation coefficient of every interaction according to gene expression data.",
+            "cite_spans": [],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Based on clique-merging, module-identification algorithm was used to identify modules from PPINs (23\u201325). We found all maximal cliques from low and high PBM PPIN, and the nodes <4 or >20 were filtered out. Then 8,002 maximal cliques in osteoporosis were obtained.",
+            "cite_spans": [
+                {
+                    "start": 98,
+                    "end": 100,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 101,
+                    "end": 103,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We identified the set C of all maximal cliques of size at least k in the two groups using a fast depth-first search with pruning-based algorithm (CLIQUES). Next, we calculated its weighted interaction density score (C) as (equation 1):",
+            "cite_spans": [],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We ranked these cliques in descending order of their score (C) (23). A predefined overlap-threshold t0=0.5 was set to go through the list repeatedly. The modules were gathered by merging highly overlapping cliques. Accordingly, we captured the effect of differences in interaction weights between monocyte low and high PBM group via the weighted density-based ranking of cliques.",
+            "cite_spans": [
+                {
+                    "start": 64,
+                    "end": 66,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The set of disrupted or altered module pairs were identified by modeling it as a maximum weight bipartite matching. The module correlation density was calculated between low and high PBM group as follows (equation 2):",
+            "cite_spans": [],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Characterizing networks from network entropy. Destination networks were constructed with modules of common genes of monocyte low and high PBM groups.",
+            "cite_spans": [],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Network entropy, one of metrics of the inflammatory network, was detected in osteoporosis (20). The local network entropy of a node i, denoted Si, is defined as (equation 3):",
+            "cite_spans": [
+                {
+                    "start": 91,
+                    "end": 93,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In which, kj is the degree of node j, N(i) is the set of neighbor nodes of node i and pij defines a stochastic probability matrix on the PBM network, which is defined by (equation 4):",
+            "cite_spans": [],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "cij is the PCC between protein i and j.",
+            "cite_spans": [],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The global entropy of destination networks, denoted S, is defined as follows (equation 5):",
+            "cite_spans": [],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "n is the total number of nodes in the destination networks, and Ci is the degree centrality of node i, which is defined by (equation 6):",
+            "cite_spans": [],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The differential network entropy, denoted \u0394Si, is defined as follows (equation 7):",
+            "cite_spans": [],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "SiI, SNi is the local network entropy of node i in low and high PBM networks.",
+            "cite_spans": [],
+            "section": "Identification of modules and paired comparison :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The non-parametric one-tailed Wilcoxon rank sum test was explored to judge whether the distributions of the global entropy of low and high PBM networks were significantly different (20). We first permutated sample labels and recalculated the global entropy of the low PBM network, which was repeated L times. The significance level (P-value) of the tests was calculated by {#l|SIl \u2264SNo bs for l =l,\u2026,L}/L. SIl and SNo bs are the global entropy of the low PBM network at the 1st time-point and of the high PBM network before this test, respectively. A P-value <0.05 was used to define significantly differential network in this study.",
+            "cite_spans": [
+                {
+                    "start": 182,
+                    "end": 184,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Significance test :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A total of 60 female SD rats were purchased from Hebei Medical University Animal Center. All rats were housed at room temperature with 12 h light-dark cycle, and fed with normal chow diet and free access to water. The rat ovariectomy experiment was approved by the Ethics Committee of Hebei Cangzhou Central Hospital, (Cangzhou, China).",
+            "cite_spans": [],
+            "section": "Animals and modeling :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "After a week of feeding, all rats were randomly and on average separated into 2 groups in which rats were ovariectomized and sham operated at the age of 6 months. Three months after surgery, bone mineral density examination was used to verify if the model was successfully established. All rats in ovariectomized and sham groups were euthanized via exposure to gradually increasing concentrations of isoflurane and carbon dioxide gas (30% gradual-fill chamber vol/min), blood was drawn from the abdominal aorta of rats in each group after the blood pressure and the right femur and then the right femur and third lumbar spine were quickly removed. The number of animals used and their suffering was minimized. Surface-attached soft tissue were removed, eardrums, vertebral bows and other accessories were retained. The obtained bone tissue was packaged by gauze soaked with saline, and kept at \u221280\u00b0C in a refrigerator. Dual-energy X-ray absorptiometry (Lunar-DPX-IQ; GE Medical Systems, Madison, WI, USA) was used to detect bone density of right femur and third lumbar vertebra.",
+            "cite_spans": [],
+            "section": "Animals and modeling :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Venous blood sample of models were collected and total RNA was extract by TRIzol RNA kit (Invitrogen; Thermo Fisher Scientific, Inc., Waltham, MA, USA) according to the manufacturer's instructions. The concentration and purity of total RNA were measured by ultraviolet spectrophotometer. Reverse transcription into cDNA was then conducted by a reverse cDNA transcription kit (Takara Bio, Inc., Otsu, Japan). SYBR Ex Script RT-PCR kit (Takara Bio, Inc.) was used to detect the expression of target genes and the primers used in this study is shown in Table I.",
+            "cite_spans": [],
+            "section": "Reverse transcription-quantitative PCR (RT-qPCR) :::  ::: Materials and methods",
+            "ref_spans": [
+                {
+                    "start": 550,
+                    "end": 557,
+                    "mention": "Table I",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "GraphPad Prism version 5 software (GraphPad Software, Inc., La Jolla, CA, USA) was used for statistical analyses. All data were shown as mean \u00b1 standard deviation (SD). For experiments with two groups, t-test was performed. P<0.05 was considered to indicate a statistically significant difference. Experiments were repeated with a minimum of 3 times for each condition.",
+            "cite_spans": [],
+            "section": "Statistical analysis :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "We used the expression profile data to construct PPINs for the low and high PBM group, respectively. Based on merging highly overlapping cliques, we captured the effect of differences in interaction weights between monocyte low and high PBM group via the weighted density-based ranking of cliques. After the simplification of the modules, 19 modules in low PBM network and 38 in high PBM network were obtained. Then module correlation density was calculated to identify sets of disrupting or altering module pairs between the two networks. A total of 66 modules were identified by modeling it as a maximum weight bipartite matching.",
+            "cite_spans": [],
+            "section": "Identification of modules :::  ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "We constructed 32 destination networks with modules divided from monocyte low and high PBM networks. The characteristics of 32 networks are shown in Table II. The network entropy was ranged from \u22123.09 to 0.87 and the max value of network entropy of PBM was 0.87 in network 11. Among them, network 11 was the only significantly differential one with P-value of 0.047 (P<0.05). Fig. 1 shows the differential PBM network with 8 nodes and 28 edges. All genes belonged to precursors of osteoclasts, which were related to calcium transport as well as blood monocytes. It indicated that the network was a novel therapeutic indicator for osteoporosis during the bone monocyte processes.",
+            "cite_spans": [],
+            "section": "Characterizing differential networks from network entropy :::  ::: Results",
+            "ref_spans": [
+                {
+                    "start": 376,
+                    "end": 382,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 149,
+                    "end": 157,
+                    "mention": "Table II",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "As shown in Fig. 2, 3 months after operation, bone density of right femur and third lumbar vertebra in the osteoporosis group was significant lower than that in the sham operated group (P<0.05). The result showed that the model was successfully established.",
+            "cite_spans": [],
+            "section": "Bone density of osteoporosis models :::  ::: Results",
+            "ref_spans": [
+                {
+                    "start": 12,
+                    "end": 18,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The results of RT-qPCR showed that compared with sham controls, the expression of target genes in osteoporosis was obviously increased (Fig. 3). The results indicated that these precursors of osteoclasts, such as PSMD7, PSMC1, PSMA2 and PSMB1, are novel therapeutic indicators for osteoporosis during the bone monocyte progression.",
+            "cite_spans": [],
+            "section": "Expression of target genes in osteoporosis models :::  ::: Results",
+            "ref_spans": [
+                {
+                    "start": 136,
+                    "end": 142,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Recently genome-wide gene expression profiles and PPIs hold the major promise to uncover the biological progression, which are subsequently pivotal in getting across molecular mechanisms of diseases (26). Based on the landscape, functional network entropy can be readily detected to facilitate the valuable application of PPIs on disease research. Previous studies have revealed that increased entropy appears to be a hallmark of cancer systems (27,28). Thus we utilized the previous hypothesis that the network entropy could discriminate the inflammatory network from the normal network (20). The systematic calculation and comparison were performed to test whether the network entropy can also discriminate the low PBM network from high PBM network. By applying a significance test for the difference in global network entropy of low and high PBM networks, we found the global network entropy of PBM networks is significantly differential (P<0.05). The result claimed that the network entropy provided good discrimination between low and high PBM networks. Moreover, this method can serve as a significant foundation for further exploring the molecular mechanisms of other diseases and developing control strategies.",
+            "cite_spans": [
+                {
+                    "start": 200,
+                    "end": 202,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 446,
+                    "end": 448,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 449,
+                    "end": 451,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 589,
+                    "end": 591,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "One unique advantage of the present method compared with custom networks identifying analysis is that the entropy performs better than other topological metrics of the network in characterizing the inflammatory disease, which was detected by the Network Analyzer plug-in in Cytoscape (20,29). Thereby, the significantly different network we captured was more valuable and promising in understanding molecular mechanisms of diseases and reliable in therapeutic options.",
+            "cite_spans": [
+                {
+                    "start": 285,
+                    "end": 287,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 288,
+                    "end": 290,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Identifying key genes and modules from PPINs is of great help for uncovering the biological functions of genes in networks (30,31). In the present study, a total of 8 genes, PSMA2, PSMB1, PSMC1, PSMC4, PSMD5, PSMD7, PSMD8 and PSMD11, were identified in both monocyte low and high PBM networks. They belonged to precursors of macropain, which were related to calcium transport as well as blood monocytes. In a previous study, the surplus/PSMD5 was found to inhibit the assembly and activity of 26S proteasome in human disease (32). Importantly, neuronal activity and calcium/calmodulin-dependent protein kinase II could regulate the expression of proteasome (33). Intracellular calcium mobilization regulates the activity of 26S proteasome during the metaphase-anaphase transition in meiotic cell cycle (34). At the same time, proteasome inhibitor lactacystin hinders the calcium homeostasis of dopamine neurons (35). Similar results were also obtained in this study, the results of RT-qPCR in this study showed that compared with sham controls, the expression of target genes in osteoporosis were obviously increased. In other words, the method of network entropy could be used to detect differential networks as indicator of disease. These 8 genes may play important roles in controlling inflammation of the osteoporosis. It suggested that the network is a novel therapeutic indicator for osteoporosis during the bone monocyte progression. These findings are helpful in disclosing the pathogenetic mechanisms of osteoporosis.",
+            "cite_spans": [
+                {
+                    "start": 124,
+                    "end": 126,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 127,
+                    "end": 129,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 526,
+                    "end": 528,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 658,
+                    "end": 660,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 803,
+                    "end": 805,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 912,
+                    "end": 914,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table I.: The primer sequences for the amplification of target genes.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table II.: The characteristics of 32 destination networks.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1.: The significantly differential network divided from PBM PPI. The differential PBM network with 8 nodes and 28 edges, a total of 8 genes, PSMA2, PSMB1, PSMC1, PSMC4, PSMD5, PSMD7, PSMD8 and PSMD11, were identified in both monocyte low and high PBM networks. They belonged to precursors of macropain, which were related to calcium transport as well as blood monocytes. PBM, peak bone mass; PPI, protein-protein interaction.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: Bone density of right femur and third lumbar vertebra (*P<0.05).",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: The expression of target genes in network. OVX and SHAM represent ovariectomized and sham operated group, respectively (*P<0.05).",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Current understanding of osteoporosis according to the position of the World Health Organization (WHO) and International Osteoporosis Foundation",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Czerwi\u0144ski",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Badurski",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Marcinowska-Suchowierska",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Osieleniec",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Ortop Traumatol Rehabil",
+            "volume": "9",
+            "issn": "",
+            "pages": "337-356",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Osteonal and hemi-osteonal remodeling: The spatial and temporal framework for signal traffic in adult human bone",
+            "authors": [
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Parfitt",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J Cell Biochem",
+            "volume": "55",
+            "issn": "",
+            "pages": "273-286",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/jcb.240550303"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Revealing pathway dynamics in heart diseases by analyzing multiple differential networks",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Karamanlidis",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "CF",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Garcia-Menendez",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Tian",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "PLOS Comput Biol",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pcbi.1004332"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Gene network reconstruction reveals cell cycle and antiviral genes as major drivers of cervical cancer",
+            "authors": [
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Mine",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Shulzhenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Yambartsev",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rochman",
+                    "suffix": ""
+                },
+                {
+                    "first": "GF",
+                    "middle": [],
+                    "last": "Sanson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lando",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Varma",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Skinner",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Volfovsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Deng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nat Commun",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ncomms2693"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Network medicine: A network-based approach to human disease",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Barab\u00e1si",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Gulbahce",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Loscalzo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nat Rev Genet",
+            "volume": "12",
+            "issn": "",
+            "pages": "56-68",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nrg2918"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Metagenomic systems biology of the human gut microbiome reveals topological shifts associated with obesity and inflammatory bowel disease",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Greenblum",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Turnbaugh",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Borenstein",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "109",
+            "issn": "",
+            "pages": "594-599",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.1116053109"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Chapter 5: Network biology approach to complex diseases",
+            "authors": [
+                {
+                    "first": "DY",
+                    "middle": [],
+                    "last": "Cho",
+                    "suffix": ""
+                },
+                {
+                    "first": "YA",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Przytycka",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLOS Comput Biol",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pcbi.1002820"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Anticipating critical transitions",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Scheffer",
+                    "suffix": ""
+                },
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": "Carpenter",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Lenton",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bascompte",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Brock",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Dakos",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "van de Koppel",
+                    "suffix": ""
+                },
+                {
+                    "first": "IA",
+                    "middle": [],
+                    "last": "van de Leemput",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Levin",
+                    "suffix": ""
+                },
+                {
+                    "first": "EH",
+                    "middle": [],
+                    "last": "van Nes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Science",
+            "volume": "338",
+            "issn": "",
+            "pages": "344-348",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1225244"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "A network integration approach to predict conserved regulators related to pathogenicity of influenza and SARS-CoV respiratory viruses",
+            "authors": [
+                {
+                    "first": "HD",
+                    "middle": [],
+                    "last": "Mitchell",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Eisfeld",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Sims",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "McDermott",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Matzke",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Webb-Robertson",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Tilton",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Tchitchek",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Josset",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "PLoS One",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0069374"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Increased signaling entropy in cancer requires the scale-free property of protein interaction networks",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Teschendorff",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Banerji",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Severini",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kuehn",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Sollich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Sci Rep",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/srep09646"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Inference of gene regulatory networks from time series by Tsallis entropy",
+            "authors": [
+                {
+                    "first": "FM",
+                    "middle": [],
+                    "last": "Lopes",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "de Oliveira",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Cesar",
+                    "suffix": "Jr"
+                }
+            ],
+            "year": 2011,
+            "venue": "BMC Syst Biol",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1752-0509-5-61"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Peak bone mass",
+            "authors": [
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Heaney",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Abrams",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Dawson-Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Looker",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Marcus",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Matkovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Weaver",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Osteoporos Int",
+            "volume": "11",
+            "issn": "",
+            "pages": "985-1009",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s001980070020"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Characterizing and controlling the inflammatory network during influenza A virus infection",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jin",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Pan",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Zou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Sci Rep",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/srep03799"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Exploration, normalization, and summaries of high density oligonucleotide array probe level data",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Irizarry",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Hobbs",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Collin",
+                    "suffix": ""
+                },
+                {
+                    "first": "YD",
+                    "middle": [],
+                    "last": "Beazer-Barclay",
+                    "suffix": ""
+                },
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Antonellis",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Scherf",
+                    "suffix": ""
+                },
+                {
+                    "first": "TP",
+                    "middle": [],
+                    "last": "Speed",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Biostatistics",
+            "volume": "4",
+            "issn": "",
+            "pages": "249-264",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/biostatistics/4.2.249"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "STRING v9.1: Protein-protein interaction networks, with increased coverage and integration",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Franceschini",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Szklarczyk",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Frankild",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Simonovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Roth",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Minguez",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Bork",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "von Mering",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nucleic Acids Res",
+            "volume": "41",
+            "issn": "D1",
+            "pages": "D808-D815",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gks1094"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Systematic tracking of dysregulated modules identifies novel genes in cancer",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Srihari",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Ragan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Bioinformatics",
+            "volume": "29",
+            "issn": "",
+            "pages": "1553-1561",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btt191"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Complex discovery from weighted PPI networks",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "HN",
+                    "middle": [],
+                    "last": "Chua",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "",
+            "pages": "1891-1897",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btp311"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "A survey of computational methods for protein complex prediction from protein interaction networks",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Srihari",
+                    "suffix": ""
+                },
+                {
+                    "first": "HW",
+                    "middle": [],
+                    "last": "Leong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J Bioinform Comput Biol",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1142/S021972001230002X"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Gene co-expression network and functional module analysis of ovarian cancer",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Hong",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Dong",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Jin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Xiong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Int J Comput Biol Drug Des",
+            "volume": "4",
+            "issn": "",
+            "pages": "147-164",
+            "other_ids": {
+                "DOI": [
+                    "10.1504/IJCBDD.2011.041008"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Increased entropy of signal transduction in the cancer metastasis phenotype",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Teschendorff",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Severini",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "BMC Syst Biol",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1752-0509-4-104"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Differential network entropy reveals cancer system hallmarks",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "West",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bianconi",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Severini",
+                    "suffix": ""
+                },
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Teschendorff",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Sci Rep",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/srep00802"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Computing topological parameters of biological networks",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Assenov",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Ram\u00edrez",
+                    "suffix": ""
+                },
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "Schelhorn",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Lengauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Albrecht",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Bioinformatics",
+            "volume": "24",
+            "issn": "",
+            "pages": "282-284",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btm554"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "An in vivo genome wide gene expression study of circulating monocytes suggested GBP1, STAT1 and CXCL10 as novel risk genes for the differentiation of peak bone mass",
+            "authors": [
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Lei",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "FY",
+                    "middle": [],
+                    "last": "Deng",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Xiao",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bone",
+            "volume": "44",
+            "issn": "",
+            "pages": "1010-1014",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.bone.2008.05.016"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Identifying protein complexes and functional modules - from static PPI networks to dynamic PPI networks",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Fan",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "FX",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Brief Bioinform",
+            "volume": "15",
+            "issn": "",
+            "pages": "177-194",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bib/bbt039"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Shaping organs by a wingless-int/Notch/nonmuscle myosin module which orients feather bud elongation",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "TX",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Nie",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Widelitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Chuong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "110",
+            "issn": "",
+            "pages": "E1452-E1461",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.1219813110"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Role of S5b/PSMD5 in proteasome inhibition caused by TNF-\u03b1/NF\u03baB in higher eukaryotes",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Shim",
+                    "suffix": ""
+                },
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "YK",
+                    "middle": [],
+                    "last": "Jung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Cell Rep",
+            "volume": "2",
+            "issn": "",
+            "pages": "603-615",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.celrep.2012.07.013"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Regulation of the proteasome by neuronal activity and calcium/calmodulin-dependent protein kinase II",
+            "authors": [
+                {
+                    "first": "SN",
+                    "middle": [],
+                    "last": "Djakovic",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Schwarz",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Barylko",
+                    "suffix": ""
+                },
+                {
+                    "first": "GN",
+                    "middle": [],
+                    "last": "DeMartino",
+                    "suffix": ""
+                },
+                {
+                    "first": "GN",
+                    "middle": [],
+                    "last": "Patrick",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Biol Chem",
+            "volume": "284",
+            "issn": "",
+            "pages": "26655-26665",
+            "other_ids": {
+                "DOI": [
+                    "10.1074/jbc.M109.021956"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Intracellular calcium mobilization regulates the activity of 26 S proteasome during the metaphase-anaphase transition in the ascidian meiotic cell cycle",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kawahara",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Yokosawa",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Dev Biol",
+            "volume": "166",
+            "issn": "",
+            "pages": "623-633",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/dbio.1994.1342"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Proteasome inhibitor lactacystin disturbs the intracellular calcium homeostasis of dopamine neurons in ventral mesencephalic cultures",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Peng",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Le",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Neurochem Int",
+            "volume": "50",
+            "issn": "",
+            "pages": "959-965",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.neuint.2007.04.014"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "The importance and relevance of peak bone mass in the prevalence of osteoporosis",
+            "authors": [
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Bonjour",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Chevalley",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ferrari",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rizzoli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Salud Publica Mex",
+            "volume": "51",
+            "issn": "Suppl 1",
+            "pages": "S5-S17",
+            "other_ids": {
+                "DOI": [
+                    "10.1590/S0036-36342009000700004"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "Origin of osteoclasts: Mature monocytes and macrophages are capable of differentiating into osteoclasts under a suitable microenvironment prepared by bone marrow-derived stromal cells",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Udagawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Takahashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Akatsu",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Tanaka",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Sasaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Nishihara",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Koga",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Suda",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "87",
+            "issn": "",
+            "pages": "7260-7264",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.87.18.7260"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "The human osteoclast precursor circulates in the monocyte fraction",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Fujikawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Quinn",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sabokbar",
+                    "suffix": ""
+                },
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "McGee",
+                    "suffix": ""
+                },
+                {
+                    "first": "NA",
+                    "middle": [],
+                    "last": "Athanasou",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "Endocrinology",
+            "volume": "137",
+            "issn": "",
+            "pages": "4058-4060",
+            "other_ids": {
+                "DOI": [
+                    "10.1210/endo.137.9.8756585"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "title": "Human osteoclast formation from blood monocytes, peritoneal macrophages, and bone marrow cells",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Quinn",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Neale",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Fujikawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "JO",
+                    "middle": [],
+                    "last": "McGee",
+                    "suffix": ""
+                },
+                {
+                    "first": "NA",
+                    "middle": [],
+                    "last": "Athanasou",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Calcif Tissue Int",
+            "volume": "62",
+            "issn": "",
+            "pages": "527-531",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s002239900473"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Fasciola hepatica excretory-secretory products induce CD4+T cell anergy via selective up-regulation of PD-L2 expression on macrophages in a Dectin-1 dependent way",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Guasconi",
+                    "suffix": ""
+                },
+                {
+                    "first": "LS",
+                    "middle": [],
+                    "last": "Chiapello",
+                    "suffix": ""
+                },
+                {
+                    "first": "DT",
+                    "middle": [],
+                    "last": "Masih",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Immunobiology",
+            "volume": "220",
+            "issn": "",
+            "pages": "934-939",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.imbio.2015.02.001"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Recognition of cryptic sites in human and mouse laminins by rat osteoclasts is mediated by beta 3 and beta 1 integrins",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Horton",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Spragg",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Bodary",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Helfrich",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Bone",
+            "volume": "15",
+            "issn": "",
+            "pages": "639-646",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/8756-3282(94)90312-3"
+                ]
+            }
+        }
+    }
+}

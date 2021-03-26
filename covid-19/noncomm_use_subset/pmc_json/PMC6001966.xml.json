@@ -1,0 +1,1470 @@
+{
+    "paper_id": "PMC6001966",
+    "metadata": {
+        "title": "Spatio-temporal spread of infectious pathogens of humans",
+        "authors": [
+            {
+                "first": "Julien",
+                "middle": [],
+                "last": "Arino",
+                "suffix": "",
+                "email": "Julien.Arino@umanitoba.ca",
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Define mobility as the collection of processes through which individuals change their current location. Under such a general definition, human mobility is multi-modal and happens in colossal volumes. We give here a very brief and partial review of mobility, focusing on its link with the spread of infectious pathogens of humans. We present a modelling technique, metapopulations, that can be used when considering such issues. The presentation builds on previous work of the author and collaborators, in particular Arino (2009). Note that we assume here that the reader is familiar with the basic steps involved in the study of a model in mathematical epidemiology.",
+            "cite_spans": [
+                {
+                    "start": 516,
+                    "end": 528,
+                    "mention": "Arino (2009)",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The duration of mobility is the length of time an individual spends away from their place of residence during a mobility event; it varies from minutes to years. A simple arbitrary classification follows. Long-term mobility involves durations longer than six months and typically concerns relocation (immigration, move) or long term displacement from the place of residence (refugees). Six months is chosen as a cut point because public health authorities typically require that individuals affiliate with them if they spend this amount of time in their midst. Medium-term mobility involves events lasting from 1 to 6 months, typically related to domestic and foreign migrant workers, with individuals often maintaining two places of residence. Short-term mobility ranges from over 1 day to 1 month and corresponds to travel away from and back to the place of residence for work or leisure. Finally, instantaneous mobility involves events lasting no more than one day. These events can be daily commute but also work-related travel.",
+            "cite_spans": [],
+            "section": "Duration of mobility ::: Range and duration of mobility",
+            "ref_spans": []
+        },
+        {
+            "text": "We call range of mobility the distance away from the place of residence that an individual travels for a mobility event. Ranges vary from metres (local) to thousands of kilometres (intercontinental). Human mobility has evolved greatly over the course of human history. For many years, long range mobility was mainly linked to trade. Most humans were mobile only very locally (within a village or to neighbouring villages). It is only since the beginning of the 20th century that travel for leisure has become more prevalent and that as a consequence, more and more humans undertake short-duration long-range trips.",
+            "cite_spans": [],
+            "section": "Range of mobility ::: Range and duration of mobility",
+            "ref_spans": []
+        },
+        {
+            "text": "Different durations and ranges of mobilities can occur simultaneously for a given individual. For instance, a migrant worker can be at the same time undertaking a long-term and long-range mobility event while commuting daily to work from their temporary place of residence.",
+            "cite_spans": [],
+            "section": "Coexistence of ranges and durations for a given individual ::: Range and duration of mobility",
+            "ref_spans": []
+        },
+        {
+            "text": "Another important factor in mobility is the time it takes to achieve mobility on a certain range. For instance, long-range continental and even intercontinental mobility has been going on for centuries. However, as technology evolves, the time it takes to achieve a certain range decreases.",
+            "cite_spans": [],
+            "section": "Time to achieve a range ::: Range and duration of mobility",
+            "ref_spans": []
+        },
+        {
+            "text": "Migration usually results in a change of the place of residence. Migration has always existed; it is through migration that earth was populated. The International Organization for Migration (IOM) defines a migrant as a person living in a country that is not their country of birth and under this definition, estimates that there are more than 200 million migrants around the world today, with 60% of these migrants living in developed countries. For instance, from 1980 to 2015, there were 7.4 million new Permanent Residents to Canada, out of an estimated total population in 2015 of 35.8 millions (Government of Canada, 2015). There is also a sizeable migration from rich countries; e.g., the French population registered at a foreign embassy was 1.7 million on December 31st, 2015 (Minist\u00e8re des Affaires \u00e9trang\u00e8res et du D\u00e9veloppement international, 2016). Finally, refugees constitute an important factor of international migration, particularly relevant in the context of public health as they represent populations often in precarious health conditions. UNHCR estimates there were 15 million refugees (mid-2015), 1.2 million asylum-seekers (end 2014), 38 million internally displaced persons (end 2014) and 10 million stateless persons.",
+            "cite_spans": [
+                {
+                    "start": 600,
+                    "end": 626,
+                    "mention": "Government of Canada, 2015",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 785,
+                    "end": 858,
+                    "mention": "Minist\u00e8re des Affaires \u00e9trang\u00e8res et du D\u00e9veloppement international, 2016",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Migrations ::: Volume of mobility",
+            "ref_spans": []
+        },
+        {
+            "text": "In today's globalized world, an important source of mobility is that of migrant workers, who spend extensive periods of time working in a location that is not their primary place of residence. It is estimated that in China alone, there were 273.95 million migrant workers in 2014 (National Bureau of Statistics of the People's Republic of China, 2015). Agricultural workers are another source of temporary migrance, often involving temporary work in richer countries. For instance, there are about 45,000 people per year coming to Canada to work in farms (Government of Canada, 2017).",
+            "cite_spans": [
+                {
+                    "start": 281,
+                    "end": 350,
+                    "mention": "National Bureau of Statistics of the People's Republic of China, 2015",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 556,
+                    "end": 582,
+                    "mention": "Government of Canada, 2017",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Medium-term mobility ::: Volume of mobility",
+            "ref_spans": []
+        },
+        {
+            "text": "In China, the Chunyun period is a 40 days movement period around Chinese New Year. Estimates are it involved 3.6 billion people-trips in 2014 (Wang, Liu, Mao, Hu, & Gu, 2014). The yearly pilgrimage to Mecca involves an average 2.5 million people (including 1.7 million non-Saudis) (Khan et al., 2010). Instantaneous mobility, such as one's daily commute to work, occurs in numbers that are difficult to evaluate but can safely be estimated to represent tens to hundreds of billions of people-kilometres each day.",
+            "cite_spans": [
+                {
+                    "start": 143,
+                    "end": 173,
+                    "mention": "Wang, Liu, Mao, Hu, & Gu, 2014",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 282,
+                    "end": 299,
+                    "mention": "Khan et al., 2010",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Short-term and instantaneous mobility ::: Volume of mobility",
+            "ref_spans": []
+        },
+        {
+            "text": "The severe acute respiratory syndrome (SARS) propagated worldwide in 2002\u20132003. Although it caused only 8273 cases in 28 countries, SARS illustrated the capacity for modern transportation methods to facilitate the rapid and global spread of an infectious pathogen. SARS also inflamed imaginations because its case fatality ratio was high (it caused 775 deaths, i.e., a CFR of 9.4%). The spatial extent and temporal organization of that spread is shown in Fig. 1.",
+            "cite_spans": [],
+            "section": "Fast spatial spread \u2013 the case of SARS ::: Spatio-temporal spread of pathogens",
+            "ref_spans": [
+                {
+                    "start": 455,
+                    "end": 461,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Public health systems are typically administered at political geography levels: counties, provinces, states or countries. However, pathogens ignore borders and thus mobility-induced interconnections between administrative units have consequences. One striking example is that of poliomyelitis in Nigeria in 2004. Because of a vaccine scare that started in 2002 (Raufu, 2002), authorities in the northern Nigeria state of Kano interrupted polio vaccination in 2004 (Olusanya, 2004). This occurred in a context where neighbouring countries had polio vaccine coverage that was not ideal; see Fig. 2a.",
+            "cite_spans": [
+                {
+                    "start": 362,
+                    "end": 373,
+                    "mention": "Raufu, 2002",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 465,
+                    "end": 479,
+                    "mention": "Olusanya, 2004",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Interactions between health systems \u2013 polyomyelitis ::: Spatio-temporal spread of pathogens",
+            "ref_spans": [
+                {
+                    "start": 589,
+                    "end": 595,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Vaccinations resumed in July the same year (Fleck, 2004), but between the official interruption and the longer lasting public distrust, the damage was done: cases spiked in Nigeria (Cheng, 2008) but also in close countries such as Cameroon (Endegue-Zanga et al., 2016). The effect is clearly visible in Fig. 2b.",
+            "cite_spans": [
+                {
+                    "start": 44,
+                    "end": 55,
+                    "mention": "Fleck, 2004",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 182,
+                    "end": 193,
+                    "mention": "Cheng, 2008",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 241,
+                    "end": 267,
+                    "mention": "Endegue-Zanga et al., 2016",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Interactions between health systems \u2013 polyomyelitis ::: Spatio-temporal spread of pathogens",
+            "ref_spans": [
+                {
+                    "start": 303,
+                    "end": 309,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "From the discussion above, formulating mathematical models to help understand the spatio-temporal spread of infectious diseases is very important. Many different methods are available. We focus here on metapopulation models, but stress that understanding complex phenomena such as these requires a multi-faceted approach and the interested reader would benefit greatly from looking into other alternatives. For partial differential equations models, see for instance (Rass & Radcliffe, 2003) and the references therein. Also, the early paper (Bailey, 1980) is worth reading. Concerning the spread of diseases on networks, a standard reference is Newman (2002).",
+            "cite_spans": [
+                {
+                    "start": 468,
+                    "end": 490,
+                    "mention": "Rass & Radcliffe, 2003",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 543,
+                    "end": 555,
+                    "mention": "Bailey, 1980",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 646,
+                    "end": 658,
+                    "mention": "Newman (2002",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Metapopulation models \u2013 general introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In metapopulation models, space is discrete and consists of individual spatial units called patches. Patches range in spatial extent from a house or neighbourhood all the way up to countries or even continents. There are several types of metapopulation models. We focus here on models with explicit movement, in which each patch contains a dynamical system describing the dynamics of the disease in the populations present within the patch and a coupling function describes the explicit movement of individuals between patches. Other model types, not considered here, assume that there is an implicit coupling between patches and do not incorporate movement explicitly.",
+            "cite_spans": [],
+            "section": "Metapopulation models \u2013 general introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Assume geographical locations are elements of a set P with cardinality |P| (the number of patches). Each patch is a vertex in a directed graph (digraph). In each patch, there are individuals from a variety of compartments in the sense of Jacquez and Simon (1993). A compartment could contain for instance individuals susceptible to the disease, another individuals infected with the disease; there could be compartments for the different species affected by the disease, etc. We denote C the set of all compartments that exist in the general system and Cp\u2286C those compartments present in patch p\u2208P.",
+            "cite_spans": [
+                {
+                    "start": 238,
+                    "end": 262,
+                    "mention": "Jacquez and Simon (1993)",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Metapopulation models \u2013 general introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Individuals in a given compartment may move between patches, with mcqp the rate of movement of individuals in compartment c\u2208C from patch p\u2208P to patch q\u2208P\u2216{p}. This defines a digraph Gc with arcs Ac for each compartment c\u2208C, with an arc from p to q if mcqp>0 and no arc otherwise. Because there are |C| compartments in the overall system (whether they are present in each patch or not), each pair (p,q) of patches is joined in each direction by at most |C| arrows, so the general context is that of a multi-digraph.",
+            "cite_spans": [],
+            "section": "Metapopulation models \u2013 general introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In turn, each patch p\u2208P is endowed with a dynamical system describing the evolution of numbers or densities of individuals in the compartments in Cp. Usually, all the patches are equipped with the same type of system; this is what we describe here. Also, we assume here that movement is instantaneous between patches and that individuals do not change compartments as they move, so that, for instance, an individual leaves their patch of origin and arrives in the destination patch while susceptible. Some models have assumed that infection can happen during transport, e.g., (Arino, Sun, & Yang, 2016); others have considered the role of travel time, e.g., Liu, Wu and Zhou (2008). Such models are beyond the scope of this introductory review.",
+            "cite_spans": [
+                {
+                    "start": 577,
+                    "end": 601,
+                    "mention": "Arino, Sun, & Yang, 2016",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 658,
+                    "end": 681,
+                    "mention": "Liu, Wu and Zhou (2008)",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Metapopulation models \u2013 general introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The general form of a metapopulation model is then, \u2200c\u2208C and \u2200p\u2208P,(1)xcp\u2032=fcp(Xp)+\u2211q\u2208Pmcpqxcq,where Xp=(x1p,\u2026,x|C|p)T\u2208\u211d|C| is the distribution of individuals of the different compartments present in the patch and(2)mcpp=\u2212\u2211q\u2208P\u2216{p}mcqp,is used to make the notation more compact. The function fcp(Xp) indicates that processes are localized to the patch where they take place. This excludes for example the model in Arino and van den Driessche (2003), wherein birth occurs in the patch of residence but depends on the total resident population of that patch. If it is important to take into account individuals from the same compartment present in other patches, we define Xc=(xc1,\u2026,xc|P|)T\u2208\u211d|P| and use fcp(Xp,Xc). However, to simplify the discussion, we assume the form in (1) from now on.",
+            "cite_spans": [
+                {
+                    "start": 412,
+                    "end": 446,
+                    "mention": "Arino and van den Driessche (2003)",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Metapopulation models \u2013 general introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The general form (1) can be used to summarize many different types of metapopulation models, not only ones for the spread of infectious pathogens. (Metapopulations have a rich history in their originating field of Ecology; see, e.g., Hanski and Gilpin (1997).) To focus on epidemiology, we let U\u228aC and I\u228aC be uninfected and infected compartments, respectively, with U\u2229I=\u2205 and U\u222aI=C. Let skp and i\u2113p be the number or density of individuals in uninfected and infected compartments, respectively, with k\u2208U, \u2113\u2208I and p\u2208P. Then for all k\u2208U, \u2113\u2208I and p\u2208P, (1) can be written(3a)skp\u2032=fkp(Sp,Ip,Np)+\u2211q\u2208Pmkpqskq(3b)i\u2113p\u2032=g\u2113p(Sp,Ip,Np)+\u2211q\u2208Pm\u2113pqi\u2113q,where Sp=(s1p,\u2026,s|U|p), Ip=(i1p,\u2026,i|I|p) and Np=\u2211u\u2208Usup+\u2211\u2113\u2208Ii\u2113p.",
+            "cite_spans": [
+                {
+                    "start": 234,
+                    "end": 258,
+                    "mention": "Hanski and Gilpin (1997)",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Metapopulation models \u2013 general introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Consider the total population Np=Sp+Lp+Ip+Rp in (5). We have(6)Np\u2032=bp\u2212dpNp+\u2211X\u2208{S,L,I,R}\u2211q\u2208PmXpqXq.",
+            "cite_spans": [],
+            "section": "Behaviour of the total population ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Writing X\u2208{S,L,I,R}, let b=(b1,\u2026,b|P|)T,N=(N1,\u2026,N|P|)T,X=(X1,\u2026,X|P|)T\u2208\u211d|P| be vectors and d=diag(d1,\u2026,d|P|), MX be |P|\u00d7|P|-matrices, with(7)MX=(\u2212\u2211q\u2208PmXq1mX12mX1|P|mX21\u2212\u2211q\u2208PmXq2mX2|P|mX|P|1mX|P|2\u2212\u2211q\u2208PmXq|P|).",
+            "cite_spans": [],
+            "section": "Behaviour of the total population ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Then (6) can be written as(8)N\u2032=b\u2212dN+\u2211X\u2208{S,L,I,R}MXX.",
+            "cite_spans": [],
+            "section": "Behaviour of the total population ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "It is useful to derive some properties of the movement matrix (7). For a matrix M, define \u03c3(M)={\u03bb\u2208\u2102;Av=\u03bbv,v\u22600}, the spectrum of M, \u03c4(M)=max{\u211c(\u03bb);\u03bb\u2208\u03c3(M)} the spectral absissa of M and \u03c1(M)=max{|\u03bb|;\u03bb\u2208\u03c3(M)} the spectral radius of M. Furthermore, we use the same notation as Berman and Plemmons (1994) for matrices and vectors: M\u22650 if mij\u22650 for all i,j; M>0 if M\u22650 and \u2203(i,j) such that mij>0; M\u226b0 if mij>0 for all i,j.Lemma 1Let\nMc\nbe a\n|P|\u00d7|P|-movement matrix for compartment\nc\u2208C. Then the following hold true:1.\u2212Mc\nis a singular M-matrix.2.\u03c4(Mc)=0.3.\u03c4(Mc)\u2208\u03c3(Mc).4.One of the left eigenvectors associated to the eigenvalue\n\u03c4(Ms)=0\nis the vector\n1|P|T=(1,\u2026,1).5.If additionally, Mc\nis irreducible, then\n\u03c4(Mc)=0\nhas multiplicity 1, 1|P|T\nis (to a multiple) the only strongly positive left eigenvector associated with\nMc\nand there is a strongly positive eigenvector\nv*\ncorresponding to\n\u03c4(Mc).6.Let\nD>0\nbe a diagonal matrix. If\nD\u226b0, then\nD\u2212Mc\nis a nonsingular M-matrix and\n(D\u2212Mc)\u22121>0. If\nMc\nis irreducible, then\nD\u2212Mc\nis a nonsingular M-matrix and\n(D\u2212Mc)\u22121\u226b0.PROOF. Points 1\u20135 are shown for example in Arino and Portet (2015). To prove 6, first consider the case D\u226b0. Define d\u00af=minp\u2208P{dpp}>0. Then \u2212Mc\u2264d\u00afI\u2212Mc\u2264D\u2212Mc. From Fiedler (2008, Theorem 5.2.5), d\u00afI\u2212Mc is an M-matrix. Since \u03c4(Mc)=0, using a \u201cspectrum shift\u201d (Horn & Johnson, 2013, Problem 1.2.P8), all eigenvalues of d\u00afI\u2212Mc have real parts larger than d\u00af, so d\u00af\u2212Mc is a nonsingular M-matrix. In turn, Fiedler (2008, Theorem 5.1.1.4) implies that D\u2212Mc is a nonsingular M-matrix and Fiedler (2008, Theorem 5.1.1.11) allows to conclude. Suppose now that Mc is irreducible. Let d\u00af=maxp\u2208P{dpp}>0. Then D\u2212Mc is irreducibly diagonally dominant with all columns k\u2208P such that dkk=d\u00af satisfying the strict diagonal dominance requirement. As a consequence, Varga (2004, Theorem 1.11) implies that D\u2212Mc is nonsingular and inverse positivity follows from Fiedler (2008), Theorem 5.2.10).",
+            "cite_spans": [
+                {
+                    "start": 271,
+                    "end": 297,
+                    "mention": "Berman and Plemmons (1994)",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 1094,
+                    "end": 1117,
+                    "mention": "Arino and Portet (2015)",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1212,
+                    "end": 1225,
+                    "mention": "Fiedler (2008",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1307,
+                    "end": 1327,
+                    "mention": "Horn & Johnson, 2013",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1449,
+                    "end": 1462,
+                    "mention": "Fiedler (2008",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1529,
+                    "end": 1561,
+                    "mention": "Fiedler (2008, Theorem 5.1.1.11)",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1795,
+                    "end": 1821,
+                    "mention": "Varga (2004, Theorem 1.11)",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1891,
+                    "end": 1905,
+                    "mention": "Fiedler (2008)",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Behaviour of the total population ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Note also that for each compartment, \u2212Mc is a nonsymmetric Laplacian matrix. This implies that additional results are available about the spectrum of Mc; see, e.g., Agaev and Chebotarev (2005). We characterize the relations between movement matrices as follows. We say movement is equal for all compartments if MS=ML=MI=MR=:M; movement is similar for all compartments if the zero/nonzero patterns in all matrices are the same but not the entries. Finally, movement is dissimilar across compartments if there are two movement matrices with different zero/nonzero patterns.",
+            "cite_spans": [
+                {
+                    "start": 165,
+                    "end": 192,
+                    "mention": "Agaev and Chebotarev (2005)",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Behaviour of the total population ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Case of movement equal for all compartments. Equation (8) reduces to(9)N\u2032=b\u2212dN+MN,giving the equilibrium solution N*=(d\u2212M)\u22121b, which, by 6 in Lemma 1, exists if all death rates are positive or M is irreducible. Assume either of these properties holds. To show that N* attracts all solutions of (9), consider Df, the Jacobian of f(N):=b\u2212dN+MN. We have Df=M\u2212d. Since d is nonsingular, we have \u03c4(M\u2212d)<0, so limt\u2192\u221eN(t)=(d\u2212M)\u22121b. This is summarized as follows.Theorem 2Suppose that movement is equal for all compartments and that all death rates are positive or the (common) movement matrix\nM\nis irreducible. ThenN*:=limt\u2192\u221eN(t)\u226b0.",
+            "cite_spans": [],
+            "section": "Behaviour of the total population ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "It is actually quite \u201cdifficult\u201d to be in a situation where Image 1: if b\u226b0 and d\u2212M is a nonsingular M-matrix, then strong positivity of N* is guaranteed. Thus, except if d=0 or b\u22650 with some zero entries, N*\u226b0.",
+            "cite_spans": [],
+            "section": "Behaviour of the total population ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Case of unequal movement. When movement is not equal for all compartments, the problem is more complicated and, to the best of our knowledge, still open in general. To operate within a manageable context, assume movement rates are similar for all compartments. This situation might arise for instance in the case where infectious individuals are less prone to travel. LetM\u00af=[minX\u2208{S,L,I,R}mXpq]pq,p\u2260qM\u00af=[maxX\u2208{S,L,I,R}mXpq]pq,p=qandM\u00af=[maxX\u2208{S,L,I,R}mXpq]pq,p\u2260qM\u00af=[minX\u2208{S,L,I,R}mXpq]pq,p=q.",
+            "cite_spans": [],
+            "section": "Behaviour of the total population ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Using these matrices in (8) gives the following inequality:b\u2212dN+M\u00afN\u2264N\u2032\u2264b\u2212dN+M\u00afN.here, M\u00af and M\u00af are obtained from movement matrices but are not movement matrices in the sense of Lemma 1; in particular, their column sums are not all zero. It follows that the upper bound grows unbounded and the lower bound does not guarantee nonnegativity.",
+            "cite_spans": [],
+            "section": "Behaviour of the total population ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Note that this does not preclude conducting an analysis of the system. Indeed, some authors have considered models with movement similar for all compartments or even dissimilar across compartments (as might arise if infectious individuals are not allowed some movements \u2013 as has been the case with HIV positive individuals travelling to some countries, for instance). However, in this case, results such as Theorem 2 are not readily available and the analysis typically relies on properties of the system embedded in the patches.",
+            "cite_spans": [],
+            "section": "Behaviour of the total population ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Assume (5) is at equilibrium with Lp=Ip=0 for p\u2208P. Then \u03a6p=0 and for all p\u2208P,0=bp\u2212dpSp+\u03bdpRp+\u2211q\u2208PmpqSSq0=\u2212(\u03bdp+dp)Rp+\u2211q\u2208PmpqRRq,which we must solve for Sp,Rp. Here again, we write the problem in vector form. We have0=b\u2212dS*+\u03bdR*+MSS*0=\u2212(\u03bd+d)R*+MRR*,where S*,R*,b\u2208\u211d|P| and d,\u03bd=diag(\u03bd1,\u2026,\u03bd|P|),MS,MR are |P|\u00d7|P|-matrices. We have0=\u2212(\u03bd+d)R*+MRR*\u21d4(MR\u2212\u03bd\u2212d)R*=0,so the solution R*=0 is unique if MR\u2212\u03bd\u2212d is invertible. This is similar to the proof of Theorem 2 and uses Lemma 1. We thus find that limt\u2192\u221eR(t)=0 provided that \u03bd+d\u226b0 or Mr irreducible. Provided this is true, at the DFE, there holds that L*=I*=R*=0 and b\u2212dS+MSS*=0, i.e., S*=(d\u2212MS)\u22121b. To summarize, provided all death rates are positive or MR and MS irreducible, then the DFE takes the form(S*,L*,I*,R*)=((d\u2212MS)\u22121b,0,0,0).",
+            "cite_spans": [],
+            "section": "The disease free equilibrium (DFE) ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Note that S*=N* at the DFE.",
+            "cite_spans": [],
+            "section": "The disease free equilibrium (DFE) ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Use the next generation method (van den Driessche & Watmough, 2002) with infected variables L and I ordered asXI={L1,\u2026,L|P|,I1,\u2026,I|P|}.",
+            "cite_spans": [
+                {
+                    "start": 32,
+                    "end": 66,
+                    "mention": "van den Driessche & Watmough, 2002",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Computation of R0 and local stability of the DFE ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Write the dynamics of the subsystem of (5) in the variables XI as XI\u2032=F\u2212V, with F=(\u03a61,\u2026,\u03a6|P|,0,\u2026,0)T and V having all other flows (with a negative sign). Differentiating F with respect to XI, first note that whenever k\u2260p,\u2202\u03a6p\u2202Lk=\u2202\u03a6p\u2202Ik=0,since there are no contacts between individuals not located in the same patch. Thus,DF=(diag(\u2202\u03a61\u2202L1,\u2026,\u2202\u03a6|P|\u2202L|P|)diag(\u2202\u03a61\u2202I1,\u2026,\u2202\u03a6|P|\u2202I|P|)00).",
+            "cite_spans": [],
+            "section": "Computation of R0 and local stability of the DFE ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Suppose that \u03a6p=\u03b2pSpIp, i.e., \u03b7p=0. Then \u2202\u03a6p/\u2202Lp=0 and \u2202\u03a6p/\u2202Ip=\u03b2pSp. At the DFE, \u2202\u03a6p/\u2202Ip=\u03b2pNp*. Suppose that \u03a6p=\u03b2pSpIp/Np, i.e., \u03b7p=1. Then \u2202\u03a6p/\u2202Lp=\u2212\u03b2pSpIp/Np2 and \u2202\u03a6p/\u2202Ip=\u03b2pSp/Np\u2212\u03b2pSpIp/Np. Thus, at the DFE, \u2202\u03a6p/\u2202Lp=0 and \u2202\u03a6p/\u2202Ip=\u03b2p. Thus,\u2202\u03a6p\u2202Lp|DFE=0and\u2202\u03a6p\u2202Ip|DFE=\u03b2p(N*)1\u2212\u03b7p.",
+            "cite_spans": [],
+            "section": "Computation of R0 and local stability of the DFE ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "As a consequence,(10)F=DF|DFE=(0diag(\u2202\u03a61\u2202I1|DFE,\u2026,\u2202\u03a6|P|\u2202I|P||DFE)00)=:(0F1200).",
+            "cite_spans": [],
+            "section": "Computation of R0 and local stability of the DFE ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "On the other hand,V=DV|DFE=(diagp(\u03b5p+dp)\u2212ML0\u2212diagp(\u03b5p)diagp(\u03b3p+dp)\u2212MI),where the notation diagp(zp)=diag(z1,\u2026,z|P|) is used for simplicity. Thus, using the formula for the inverse of a 2\u00d72 block matrix (Horn & Johnson, 2013), Section 7.3,V\u22121=((diagp(\u03b5p+dp)\u2212ML)\u221210V\u02dc21\u22121(diagp(\u03b3p+dp)\u2212MI)\u22121),where(11)V\u02dc21\u22121=(diagp(\u03b5p+dp)\u2212ML)\u22121diagp(\u03b5p)(diagp(\u03b3p+dp)\u2212MI)\u22121.",
+            "cite_spans": [
+                {
+                    "start": 203,
+                    "end": 223,
+                    "mention": "Horn & Johnson, 2013",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Computation of R0 and local stability of the DFE ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "So we obtain the next generation matrixFV\u22121=(0F1200)(V\u02dc11\u221210V\u02dc21\u22121V\u02dc22\u22121)=(F12V\u02dc21\u22121F12V\u02dc22\u2212100),where V\u02dcij\u22121 is the block ij in V\u22121. So R0=\u03c1(F12V\u02dc21\u22121). It is difficult to go further without more information. However, given parameter values, R0 is easy to compute numerically. In terms of the local asymptotic stability of the DFE, (van den Driessche & Watmough, 2002), Theorem 2 gives the following result.Theorem 3Define\nR0\nfor the\n|P|-SLIRS (5) as(12)R0=\u03c1(F12V\u02dc21\u22121),with\nF12\nand\nV\u02dc21\u22121\ndefined by (10) and (11), respectively. Then the DFE(S*,L*,I*,R*)=((d\u2212MS)\u22121b,0,0,0)is locally asymptotically stable if\nR0<1\nand unstable if\nR0>1.",
+            "cite_spans": [
+                {
+                    "start": 334,
+                    "end": 368,
+                    "mention": "van den Driessche & Watmough, 2002",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Computation of R0 and local stability of the DFE ::: Metapopulation models \u2013 an example",
+            "ref_spans": []
+        },
+        {
+            "text": "Several methods are available to consider global stability properties of the DFE in metapopulation models and have been used successfully in many cases. Note that it has also been shown that metapopulation models can exhibit backward bifurcations (Arino, Ducrot, & Zongo, 2012), so proving the global asymptotic stability of the DFE will not always be possible.",
+            "cite_spans": [
+                {
+                    "start": 248,
+                    "end": 276,
+                    "mention": "Arino, Ducrot, & Zongo, 2012",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Global stability of the DFE ::: Further considerations",
+            "ref_spans": []
+        },
+        {
+            "text": "The problem of existence and stability of an endemic equilibrium point where the disease is present in all patches is more complex and cannot yet be attacked in full generality. Some interesting examples are those in Iggidr et al., 2012, Li and Shuai, 2009.",
+            "cite_spans": [
+                {
+                    "start": 217,
+                    "end": 236,
+                    "mention": "Iggidr et al., 2012",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 238,
+                    "end": 256,
+                    "mention": "Li and Shuai, 2009",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Existence and stability of an endemic equilibrium point (EEP) ::: Further considerations",
+            "ref_spans": []
+        },
+        {
+            "text": "Most of the problems mentioned above are solved by exploiting the fact that metapopulations are linearly coupled copies of constituting units whose behaviour is known. This poses a very interesting problem, the inheritance problem. Consider model (3) with no movement,(13a)skp\u2032=fkp(Sp,Ip,Np)(13b)i\u2113p\u2032=g\u2113p(Sp,Ip,Np),where k\u2208U, \u2113\u2208I and p\u2208P. Think of (13) as representing any model for a single population found in the literature. Within a given patch p, suppose some dynamical properties are known about (13). Which of these properties also hold for the general system with mobility (3)? It is relatively easy to show that such things as existence and boundedness of solutions is preserved. As shown in this article, the same is true to some extent of existence and local asymptotic stability of the DFE. As we have just seen, global asymptotic stability is not as easy to settle. Techniques such as the one in Li and Shuai (2010) allow to envision a general treatment of this issue when a Lyapunov function is known for the isolated model.",
+            "cite_spans": [
+                {
+                    "start": 909,
+                    "end": 928,
+                    "mention": "Li and Shuai (2010)",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Inheritance of dynamical properties ::: Further considerations",
+            "ref_spans": []
+        },
+        {
+            "text": "A problem essentially dual to that of inheritance consists in seeking properties that hold for the metapopulation system (3) but not for uncoupled population level model (13). A prototypical example here is the problem of mixed equilibria, first considered in Arino and van den Driessche (2003). Consider a metapopulation such as (3) in which, when there is no movement, i.e., in the case of (13), some patches are at the DFE while others are at an EEP. It is shown in Arino (2009) that for such mixed equilibria to persist in the presence of movement, movement must be dissimilar between uninfected and infected compartments.",
+            "cite_spans": [
+                {
+                    "start": 260,
+                    "end": 294,
+                    "mention": "Arino and van den Driessche (2003)",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 469,
+                    "end": 481,
+                    "mention": "Arino (2009)",
+                    "ref_id": "BIBREF22"
+                }
+            ],
+            "section": "Metapopulation specific behaviour \u2013 mixed equilibria ::: Further considerations",
+            "ref_spans": []
+        },
+        {
+            "text": "It is worth noting that numerical simulations of metapopulation models such as (5) are simple to set up and not extremely onerous on modern computers for systems with a reasonable number of patches. Sample code in R and MatLab is provided as electronic appendices to the present paper to illustrate this.",
+            "cite_spans": [],
+            "section": "Deterministic simulations ::: Further considerations",
+            "ref_spans": []
+        },
+        {
+            "text": "When dealing with problems related to the fast spatial spread of a pathogen such as SARS (Section 4.1), systems of ordinary differential equations allow to investigate an average behaviour but do not capture the range of potential outcomes that occur in an actual \u201creal life\u201d crisis. For this reason, stochastic simulations of metapopulation models have been carried out; see, e.g., Arino et al., 2011, Colizza and Vespignani, 2008.",
+            "cite_spans": [
+                {
+                    "start": 383,
+                    "end": 401,
+                    "mention": "Arino et al., 2011",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 403,
+                    "end": 431,
+                    "mention": "Colizza and Vespignani, 2008",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Stochastic simulations ::: Further considerations",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Fig.\u00a01: Time in days to first confirmed case of SARS, with time 0 the time at which the first international spreading event took place in Hong Kong. China is represented differently as the epidemic was ongoing there at the time. The data was compiled from the WHO website and is available as an electronic appendix.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig.\u00a02: (Left) Estimated percentage of the population having, in 2004, received the third dose of polio vaccine in several African countries (WHO). (Right) Annual number of polio cases in countries shown left.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Reproduction numbers and sub-threshold endemic equilibria for compartmental models of disease transmission",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "van den Driessche",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Watmough",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Mathematical Biosciences",
+            "volume": "180",
+            "issn": "",
+            "pages": "29-48",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "O.J.",
+                    "middle": [],
+                    "last": "Benedictow",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Berman",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.J.",
+                    "middle": [],
+                    "last": "Plemmons",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Nigeria struggles to contain poliomyelitis",
+            "authors": [
+                {
+                    "first": "M.H.",
+                    "middle": [],
+                    "last": "Cheng",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Lancet",
+            "volume": "372",
+            "issn": "",
+            "pages": "1287-1290",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Epidemic modeling in metapopulation systems with heterogeneous coupling pattern: Theory and simulations",
+            "authors": [
+                {
+                    "first": "V.",
+                    "middle": [],
+                    "last": "Colizza",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Journal of Theoretical Biology",
+            "volume": "251",
+            "issn": "3",
+            "pages": "450-467",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Importation and outbreak of wild polioviruses from 2000 to 2014 and interruption of transmission in Cameroon",
+            "authors": [
+                {
+                    "first": "M.C.",
+                    "middle": [],
+                    "last": "Endegue-Zanga",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.A.",
+                    "middle": [],
+                    "last": "Sadeuh-Mba",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Iber",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.C.",
+                    "middle": [],
+                    "last": "Burns",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.G.",
+                    "middle": [],
+                    "last": "Moeletsi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Baba",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Journal of Clinical Virology",
+            "volume": "79",
+            "issn": "",
+            "pages": "18-24",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Fiedler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Nigerian state of Kano resumes polio vaccination",
+            "authors": [
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Fleck",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "British Medical Journal",
+            "volume": "329",
+            "issn": "7457",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Disease propagation in connected host populations with density-dependent dynamics: The case of the Feline Leukemia virus",
+            "authors": [
+                {
+                    "first": "E.",
+                    "middle": [],
+                    "last": "Fromont",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Pontier",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Langlais",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Journal of Theoretical Biology",
+            "volume": "223",
+            "issn": "",
+            "pages": "465-475",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Government of Canada",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Government of Canada",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "On the spectra of nonsymmetric Laplacian matrices",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Agaev",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Chebotarev",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Linear Algebra and Its Applications",
+            "volume": "399",
+            "issn": "",
+            "pages": "157-168",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "I.A.",
+                    "middle": [],
+                    "last": "Hanski",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.E.",
+                    "middle": [],
+                    "last": "Gilpin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Horn",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Global stability analysis of a metapopulation SIS epidemic model",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Iggidr",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Sallet",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Tsanou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Mathematical Population Studies",
+            "volume": "19",
+            "issn": "3",
+            "pages": "115-129",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Qualitative theory of compartmental systems",
+            "authors": [
+                {
+                    "first": "J.A.",
+                    "middle": [],
+                    "last": "Jacquez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.P.",
+                    "middle": [],
+                    "last": "Simon",
+                    "suffix": ""
+                }
+            ],
+            "year": 1993,
+            "venue": "SIAM Review",
+            "volume": "35",
+            "issn": "1",
+            "pages": "43-79",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Global public health implications of a mass gathering in Mecca, Saudi Arabia during the midst of an influenza pandemic",
+            "authors": [
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Khan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.A.",
+                    "middle": [],
+                    "last": "Memish",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Chabbra",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Liauw",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.A.",
+                    "middle": [],
+                    "last": "Janes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Journal of Travel Medicine",
+            "volume": "17",
+            "issn": "2",
+            "pages": "75-81",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Global stability of an epidemic model in a patchy environment",
+            "authors": [
+                {
+                    "first": "M.Y.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Shuai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Canadian Applied Mathematics Quarterly",
+            "volume": "17",
+            "issn": "1",
+            "pages": "175-187",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Global-stability problem for coupled systems of differential equations on networks",
+            "authors": [
+                {
+                    "first": "M.Y.",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Shuai",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Journal of Differential Equations",
+            "volume": "248",
+            "issn": "1",
+            "pages": "1-20",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Modeling disease spread via transport-related infection by a delay differential equation",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Rocky Mountain Journal of Mathematics",
+            "volume": "38",
+            "issn": "5",
+            "pages": "1525-1540",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Minist\u00e8re des Affaires \u00e9trang\u00e8res et du D\u00e9veloppement international",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "National Bureau of Statistics of the People\u2019s Republic of China",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Arino",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Spread of epidemic disease on networks",
+            "authors": [
+                {
+                    "first": "M.E.J.",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Physical Review E",
+            "volume": "66(1)",
+            "issn": "016128",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Polio-vaccination boycott in Nigeria",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Olusanya",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Lancet",
+            "volume": "363",
+            "issn": "9424",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Rass",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Radcliffe",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Polio cases rise in Nigeria as vaccine is shunned for fear of AIDS",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Raufu",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "British Medical Journal",
+            "volume": "324",
+            "issn": "7351",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "R.S.",
+                    "middle": [],
+                    "last": "Varga",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Mao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Gu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "A\u00a0metapopulation model for malaria with transmission-blocking partial immunity in hosts",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Arino",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Ducrot",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "Zongo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Journal of Mathematical Biology",
+            "volume": "64",
+            "issn": "3",
+            "pages": "423-448",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Some methodological aspects involved in the study by the Bio. Diaspora Project of the spread of infectious diseases along the global air transportation network",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Arino",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Khan",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Kossowsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Sanz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Canadian Applied Mathematics Quarterly",
+            "volume": "19",
+            "issn": "2",
+            "pages": "125-137",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Epidemiological implications of mobility between a large urban centre and smaller satellite cities",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Arino",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Portet",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Journal of Mathematical Biology",
+            "volume": "71",
+            "issn": "5",
+            "pages": "1243-1265",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Revisiting a two-patch SIS model with infection during transport",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Arino",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Mathematical Medicine and Biology",
+            "volume": "33",
+            "issn": "1",
+            "pages": "29-55",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "A\u00a0multi-city epidemic model",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Arino",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "van den Driessche",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Mathematical Population Studies",
+            "volume": "10",
+            "issn": "3",
+            "pages": "175-193",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "N.T.J.",
+                    "middle": [],
+                    "last": "Bailey",
+                    "suffix": ""
+                }
+            ],
+            "year": 1980,
+            "venue": "Biological growth and spread, volume 38 of lecture notes in biomathematics",
+            "volume": "",
+            "issn": "",
+            "pages": "233-261",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

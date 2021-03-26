@@ -1,0 +1,2525 @@
+{
+    "paper_id": "PMC3560527",
+    "metadata": {
+        "title": "Quantifying Pathogen Surveillance Using Temporal Genomic Data",
+        "authors": [
+            {
+                "first": "Joseph",
+                "middle": [
+                    "M."
+                ],
+                "last": "Chan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Raul",
+                "middle": [],
+                "last": "Rabadan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Despite many therapeutic and epidemiological advances, infectious diseases\u2014the number one cause of death among children\u2014remain directly responsible for roughly 15 million (>25%) of the annual deaths that occur worldwide (1). Of particular concern are emerging infections (EIs) that include novel entities like HIV/AIDS and severe acute respiratory syndrome and previously existing but rapidly spreading diseases like cholera and the plague (2, 3). Zoonosis is a rich source of such EI transmission into human hosts (4), suggesting that pathogen surveillance of animals, as well as humans, is an important method of early detection of potential outbreaks and of capturing the entire biodiversity of a pathogen population at any given place and time.",
+            "cite_spans": [
+                {
+                    "start": 221,
+                    "end": 222,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 441,
+                    "end": 442,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 444,
+                    "end": 445,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 516,
+                    "end": 517,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Clinical, serologic, and genomic surveillance systems serve as invaluable tools for detecting early outbreaks, determining the genetic variation of a population, improving vaccine design, and evading antibiotic resistance. In the case of influenza A virus, coordinated global efforts like those of the World Health Organization (WHO) identify cases of influenza-like symptoms, conduct serology studies, and sequence viral isolates (5). Despite such efforts, there remain areas of sparse data, particularly in potential tropical influenza hot spots like India, Africa, or South America. Such sampling bias in strain selection can skew the predicted dominant virus used in annual vaccine design (6, 7).",
+            "cite_spans": [
+                {
+                    "start": 432,
+                    "end": 433,
+                    "mention": "5",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 694,
+                    "end": 695,
+                    "mention": "6",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 697,
+                    "end": 698,
+                    "mention": "7",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Similarly, influenza virus surveillance has historically centered on human influenza cases but ignored animal hosts, despite the importance of zoonosis in influenza virus transmission. One particular animal host that deserves special attention is poultry, which has played a crucial role in the transmission of highly pathogenic avian influenza (HPAI) virus H5N1 to humans. First reported in Hong Kong in 1997 and 2003, this virus has spread quickly from waterfowl to chickens, crows, pigeons, and other birds in Europe, Africa, and particularly Asia, leading to the deaths by infection and forced culling of millions of birds and resulting in appreciable economic losses (8). Concurrently, sporadic infections among humans and other mammals have claimed, as of January 2012, a high rate of 340 deaths out of 578 confirmed human infections since 2003 (9).",
+            "cite_spans": [
+                {
+                    "start": 673,
+                    "end": 674,
+                    "mention": "8",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 852,
+                    "end": 853,
+                    "mention": "9",
+                    "ref_id": "BIBREF44"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "At present, no human-to-human transmission of HPAI virus has been documented. However, scientists have recently discovered the set of mutations that enable the transmission of avian influenza virus between ferrets (10), the animal model most closely mimicking human pathogenesis because of shared host cellular receptors for viral attachment (11). These developments, combined with the virus\u2019s atypically high rate of mortality and apparent resistance to oseltamavir (12), have raised worldwide concerns about whether our current avian influenza virus surveillance is sufficient to identify wild strains that have the potential for mammalian adaptation.",
+            "cite_spans": [
+                {
+                    "start": 215,
+                    "end": 217,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 343,
+                    "end": 345,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 468,
+                    "end": 470,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The swine is another animal that demands adequate surveillance (13). Researchers have observed that epithelial cells in the pig trachea contain sialyloligosaccharides SA\u03b12,3 and SA\u03b12,6, which are unique host determinants for birds and humans, respectively (14). This feature confers tropism in pigs on both avian and human influenza viruses (15), allowing swine to serve as mixing vessels for antigenic shift, in which different strains infecting the same host can reassort RNA segments to create a novel viral strain (16). Such reassortments have engendered at least two major human pandemics in the 20th century, in 1957 and 1968 (17). The most recent pandemic of swine origin influenza virus (SOIV) in 2009, in particular, was a reassortant between Eurasian and North American swine lineages, and although the virus most likely came from a pig, a definitive geographic origin has yet to be determined (13, 18). Interestingly, the closest ancestors of the 2009 pandemic virus were related to viruses isolated from swine more than a decade prior (13, 19), suggesting that relevant strains circulating in swine herds have escaped detection because of inadequate sampling (18).",
+            "cite_spans": [
+                {
+                    "start": 64,
+                    "end": 66,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 257,
+                    "end": 259,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 342,
+                    "end": 344,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 519,
+                    "end": 521,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 633,
+                    "end": 635,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 905,
+                    "end": 907,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 909,
+                    "end": 911,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1048,
+                    "end": 1050,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1052,
+                    "end": 1054,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1172,
+                    "end": 1174,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In response to the dearth of avian and swine influenza virus isolates, invaluable programs like the Global Initiative on Sharing Avian Influenza Data (GISAID) and the PREDICT program sponsored by the U.S. Agency for International Development Emerging Pandemic Threats were established to focus the monitoring of circulating strains on wildlife, as well as to collect and make public clinical, epidemiological, and molecular data on influenza virus (20, 21). Despite such initiatives, many countries with the greatest number of poultry or pig stocks do not proportionately contribute avian and swine influenza virus sequences to public repositories (7).",
+            "cite_spans": [
+                {
+                    "start": 449,
+                    "end": 451,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 453,
+                    "end": 455,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 649,
+                    "end": 650,
+                    "mention": "7",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Currently, there is no standard quantitative measurement of the appropriate level of genomic surveillance of a given pathogen. One immediate approach might be to consider the absolute number of sequenced isolates, but this method fails to account for the diversity and time information of the population sampled. A comparatively large number of sequences may be insufficient to capture high genetic diversity in a pathogen population. Another possible strategy appeals to clustering techniques. After representing sequences as points in a mutational landscape, a highly clustered structure could potentially reflect highly biased sampling. Once again, this method ignores time and can be confounded by evolutionary processes like bottlenecks. A final tactic might be to measure the genetic diversity within a sample of the pathogen. Phylogenetic reconstruction and tallying of species richness is one method that characterized the subclades of avian H5N1 (8), but such analyses are cumbersome, with arbitrary boundaries for classifying clades. Techniques more grounded in information theory include Shannon\u2019s entropy and Rao\u2019s quadratic entropy (22), but high diversity in a sample does not necessarily correlate with high surveillance either.",
+            "cite_spans": [
+                {
+                    "start": 956,
+                    "end": 957,
+                    "mention": "8",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 1146,
+                    "end": 1148,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this paper, we propose a readily interpretable and computable quantitative measurement for genomic surveillance of a pathogen that directly accounts for the number of isolates, the evolutionary rate, and the time of sample collection without the need to define arbitrary clades or species or the need for a full phylogenetic reconstruction. This measure ranks a surveillance system as more complete if it is able to capture a greater proportion of the pathogen\u2019s diversity. We apply this measure to influenza virus and compare the surveillance of different influenza virus strains in different hosts and geographic regions. We find that, compared to human seasonal strains, sampling is indeed substantially lower for swine H1N1 and avian non-H5N1 influenza virus, historically overlooked strains despite their pandemic potential. We also find that avian H5N1 influenza virus surveillance in the WHO transmission zones of northern and western Africa; eastern, southern, and southeastern Asia; and eastern, southwestern, and northern Europe is high and may potentially serve as an effective early warning system given a list of genetic determinants of mammalian adaptation. Avian H5N1 influenza virus surveillance in North America, however, is much less comprehensive. We similarly apply our methodology to other RNA viruses and show inadequate surveillance of both dengue and West Nile viruses. Finally, we perform a comparative analysis of the q2 coefficient and other methods, particularly phylogenetic and clustering alternatives, and find that the q2 coefficient produces similar results with negligible computation time.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "We propose a quantitative measure of pathogen surveillance that reflects both the evolutionary rate and the biodiversity of a given population. For each host and subtype, sequences were first temporally ordered from the oldest sequence to the newest. For each sequence, we identified the sequence from the past with the highest homology and recorded its genetic distance, such that for N sequences, we compiled a vector of N distances. We defined the surveillance measurement q2 coefficient, a measurement between 0 and 1, as the proportion of sequences within genetic distance R of the most closely related ancestor.",
+            "cite_spans": [],
+            "section": "Measurement of surveillance: the q2 coefficient. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Given a viral evolutionary rate of \u03bc substitutions per site per year, R = t \u00d7 \u03bc is thus the expected proportion of mutations that have accumulated over the span of t years. In this report, we examine short time periods on the order of a decade and do not expect the true genetic distance to diverge greatly from the Hamming distance. However, we calculate the q2 coefficient by using a number of distance methods, including Hamming distance, Jukes-Cantor, Kimura, Tamura, Tajima-Nei, Hasegawa, and Nei-Tamura, and find little significant change (see Results). If the surveillance of a pathogen in a given time and place is sufficient, we would therefore expect a maximal number of viral isolates to have a closest ancestor in the sequence database with a sequence identity of greater than 1 \u2212 R. For the q coefficient, we chose to use t = 2 years since antigenic variant strains of influenza virus emerge and become predominant over a period of roughly 2 to 5 years (23); however, any value of t can be used. One consideration is that substitution rates can vary over time and across different lineages. To incorporate such variability into our calculation of the q2 coefficient, we used the 95% highest posterior density (HPD) interval of the evolutionary rate collected from the literature (see Table S1 in the supplemental material) (24\u201326).",
+            "cite_spans": [
+                {
+                    "start": 967,
+                    "end": 969,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1337,
+                    "end": 1339,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1340,
+                    "end": 1342,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Measurement of surveillance: the q2 coefficient. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "A major motivation behind use of the q2 coefficient is the ability to evaluate the surveillance of different strains, hosts, and geographic regions. Sampling during variable windows of time, however, can compromise an appropriate comparison. For example, a high q2 coefficient derived from a local weeklong outbreak should not be extrapolated to surveillance during an entire season. For any comparisons of surveillance over a span of years, we therefore exclude from analysis any groups not sampled for more than a month.",
+            "cite_spans": [],
+            "section": "Measurement of surveillance: the q2 coefficient. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Complete coding sequences of hemagglutinin (HA), the major antigenic segment of influenza virus, were collected from the NCBI (National Center for Biotechnology Information) and GISAID databases and multiply aligned. To compare the levels of surveillance of different strains, we separately considered sequences for human (H3N2, seasonal H1N1 pre-2009, SOIV H1N1 post-2009, and H5N1), avian (H5N1 and non-H5N1), and swine H1N1 influenza viruses. Figure 1A and B depict the absolute number of sequences isolated across time as a first measure of surveillance. However, we wanted a measure of surveillance that would take into account the evolutionary rate of the virus, as well as the biodiversity of the viral pool. Calculation of Shannon\u2019s entropy in Fig. 1C is an effective measure of genetic diversity but, by itself, is no measure of surveillance.",
+            "cite_spans": [],
+            "section": "Influenza virus surveillance. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 446,
+                    "end": 461,
+                    "mention": "Figure 1A and B",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 752,
+                    "end": 759,
+                    "mention": "Fig. 1C",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Toward a measure that synthesizes both the absolute number of isolates and the evolutionary rate, we calculated the q2 coefficient as a function of time for each influenza virus strain in Fig. 1D as a representation of surveillance history. We also tabulated their final q2 coefficients (see Tables S2 and S3 in the supplemental material) and mapped these values among WHO transmission zones (27) in Fig. 2 (and Fig. S2 in the supplemental material) to denote the present state of surveillance around the world. We showed that our q2 coefficient calculations did not drastically change for different genetic distances (<0.035 difference in the q2 coefficient).",
+            "cite_spans": [
+                {
+                    "start": 393,
+                    "end": 395,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Influenza virus surveillance. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 188,
+                    "end": 195,
+                    "mention": "Fig. 1D",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 400,
+                    "end": 406,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Analysis of each strain reflects a different state of geographic and host surveillance. Overall, surveillance of human seasonal strains was high; the q2 coefficient values of both human seasonal H3N2 and seasonal H1N1 viruses, which had been sampled and sequenced long before 2003, approached 1 from 2003 to the present (Fig. 1D). Clustering of sequences by transmission zone began to uncover weakness in the surveillance of seasonal H3N2, particularly in central Asia (see Fig. S1A and S2A in the supplemental material). In addition to central Asia, several parts of Europe, western Asia, and especially central Africa, yielded lower q2 coefficients of seasonal H1N1 (see Fig. S1B and S2B in the supplemental material). As a testament to the global response to the pandemic, human SOIV H1N1 shot up to a q2 coefficient of 1 shortly after its arrival in March 2009 in all transmission zones except central and southern Africa and central Asia (Fig. 1D; see Fig. S1C and S2C in the supplemental material).",
+            "cite_spans": [],
+            "section": "Influenza virus surveillance. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 321,
+                    "end": 328,
+                    "mention": "Fig. 1D",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 944,
+                    "end": 951,
+                    "mention": "Fig. 1D",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "In contrast, despite a moderate increase in the number of sequences following H1N1pdm\u2019s arrival (Fig. 1B), the q2 coefficient of classical H1N1 swine isolates has lagged much further behind (Fig. 1D) and is consistently high only in the eastern Asian (q2 coefficient = 0.753, Hamming distance) and North American (q2 coefficient = 0.877, Hamming distance) transmission zones (Fig. 2A; see Fig. S1D in the supplemental material). These findings suggest that surveillance of pigs is still not enough to capture the high biodiversity of swine flu, as indicated by entropy (Fig. 1C).",
+            "cite_spans": [],
+            "section": "Influenza virus surveillance. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 97,
+                    "end": 104,
+                    "mention": "Fig. 1B",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 191,
+                    "end": 198,
+                    "mention": "Fig. 1D",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 376,
+                    "end": 383,
+                    "mention": "Fig. 2A",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 570,
+                    "end": 577,
+                    "mention": "Fig. 1C",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Analysis of H5N1 influenza virus describes the effects of implementing international sequencing initiatives like GISAID. Immediately following the second outbreak of HPAI virus among humans in 2003, the q2 coefficient of H5N1 in both human and avian hosts rose to approximately 0.7 to 0.85. With the establishment of GISAID in 2006, both human and avian H5N1 influenza virus q2 coefficients increased further to high levels of around 0.9, affirming the effectiveness of the global consortium. Beyond 2007, however, the surveillance of human H5N1 influenza virus has waned compared to that of avian H5N1 influenza virus (Fig. 1D). This discrepancy is most likely due to the fact that human HPAI cases represent a subsampling of avian H5N1 influenza virus genotypes, as reflected by the slight drop in human H5N1 entropy compared to that in birds (Fig. 1C).",
+            "cite_spans": [],
+            "section": "Influenza virus surveillance. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 620,
+                    "end": 627,
+                    "mention": "Fig. 1D",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 846,
+                    "end": 853,
+                    "mention": "Fig. 1C",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Within H5N1, there is biased sampling in different transmission zones. Following particularly large outbreaks, H5N1 human surveillance is high, with q2 coefficients of roughly 0.9 in northern Africa and eastern and southeastern Asia. Over time, the q2 coefficient has decreased in eastern and southeastern Asia most likely because of a decline in the number of sporadic introductions into the local human populations compared to that in northern Africa, specifically Egypt (see Fig. S1E and S2D in the supplemental material). H5N1 avian influenza virus surveillance is high in northern and western Africa; eastern, southeastern, and southern Asia; and eastern, southwestern, and northern Europe. On the other hand, the q2 coefficient indicates less avian H5N1 influenza virus surveillance in North America. In the United States, for example, only until 2006 were the reporting and tracking of H5 in birds mandated by the USDA (28). The smaller push for reporting stems from the low pathogenicity displayed by North American avian H5N1 influenza virus strains, which have antigenic and genetic differences from the Asian HPAI virus lineage (see Fig. S1F and S2E in the supplemental material) (29).",
+            "cite_spans": [
+                {
+                    "start": 927,
+                    "end": 929,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 1192,
+                    "end": 1194,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Influenza virus surveillance. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "These results indicate that H5N1 influenza virus surveillance of avian hosts is much more complete than H1N1 surveillance of swine. However, potential zoonotic transmission from other avian strains is possible, as well. Performance of the same analysis of non-H5N1 avian influenza virus strains yielded a low q2 coefficient beginning at 0.5 in 2003 and plateauing at a level just below 0.7 in spite of GISAID (Fig. 1D) and the resulting increase in sequenced isolates (Fig. 1B). This finding potentially reflects the extremely high genetic diversity of influenza A virus in its natural reservoir (Fig. 1C) that is not fully captured by current surveillance systems. Transmission zone analysis of non-H5N1 avian influenza virus strains indicates that non-H5N1 surveillance is concentrated in southwestern Europe, the Central American-Caribbean region, North America, northern Africa, and eastern and southeastern Asia (Fig. 2B; see Fig. S1G in the supplemental material).",
+            "cite_spans": [],
+            "section": "Influenza virus surveillance. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 410,
+                    "end": 417,
+                    "mention": "Fig. 1D",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 469,
+                    "end": 476,
+                    "mention": "Fig. 1B",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 597,
+                    "end": 604,
+                    "mention": "Fig. 1C",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 918,
+                    "end": 925,
+                    "mention": "Fig. 2B",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Calculation of the q2 coefficient for other complete coding segments of influenza virus was also performed. Since observed differences in sequences should reflect the evolutionary rates of each segment, any differences in the q2 coefficient should reflect differences in sampling alone. For H3N2, H1N1pdm, and seasonal H1N1, the q2 coefficient exhibited little change among different segments (differences of <0.02) and moderate change for other strains. The largest change in the q2 coefficient was 0.186 between swine H1N1 HA and PB2. Despite such differences between segments, results showed that generally surveillance of human H3N2, H1N1pdm, and seasonal H1N1 across all segments surpassed that of human H5N1, avian H5N1, swine H1N1, and non-H5N1 avian influenza viruses (see Tables S2 and S3 in the supplemental material).",
+            "cite_spans": [],
+            "section": "Influenza virus surveillance. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "As a proof of concept, we have also shown that the q2 coefficient can be used to monitor surveillance efforts for other RNA viruses, such as dengue virus and West Nile virus. Here, we focus on the env gene of these viruses, as it encodes the longest of the structural proteins, which is prevalently sequenced for subtyping and has the best-documented evolutionary rates of all flavivirus proteins (25, 26, 30, 31).",
+            "cite_spans": [
+                {
+                    "start": 398,
+                    "end": 400,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 402,
+                    "end": 404,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 406,
+                    "end": 408,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 410,
+                    "end": 412,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Dengue and West Nile virus surveillance. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Calculation of the q2 coefficients of dengue virus subtypes 1, 2, and 3 depicts poor surveillance in general (Fig. 3; see Fig. S3 and Table S4 in the supplemental material). These sampling gaps may reflect the current limited funding and staff in many tropical countries around the world (32). The incorporation of other genetic distances besides Hamming distance produced a <0.118 change in the q2 coefficient of dengue virus.",
+            "cite_spans": [
+                {
+                    "start": 289,
+                    "end": 291,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Dengue and West Nile virus surveillance. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 110,
+                    "end": 116,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The q2 coefficient of West Nile virus in the United States, on the other hand, was higher in the first few years after its introduction into the United States (see Fig. S4 and Table S5 in the supplemental material). However, despite the implementation of early warning systems for West Nile virus, by sampling dead birds (33) and mosquito populations (34), the q2 coefficient beyond 2003 dropped over time, even with the addition of multiple isolates within a short period of time. This decline in the q2 coefficient coincided with a rapid population growth of West Nile virus in the United States during 2002 and 2003 spurred by the establishment of the WN02 strain marked by a V159A mutation in its E protein (35). This analysis suggests that current surveillance is being outpaced by the growing diversity of the virus in the New World. Other genetic distances besides the Hamming distance produced a <0.094 change in the q2 coefficient of West Nile virus.",
+            "cite_spans": [
+                {
+                    "start": 322,
+                    "end": 324,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 352,
+                    "end": 354,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 712,
+                    "end": 714,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Dengue and West Nile virus surveillance. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "One may wonder if other alternative methods that account for pathogen evolution may suffice to characterize the genetic surveillance of a pathogen. Phylogenetics has been used in many studies to characterize pathogen surveillance qualitatively without producing a quantitative measure of sampling completeness (36). A possible phylogenetic analogue to the q2 coefficient might entail the reconstruction of a tree based on available sequences and measurement of the distribution of branch lengths. The true distance between two isolates, A and B, is represented by the sum of their patristic distances, dA and dB, which are the branch lengths from each respective sequence to their common ancestral node. Sequences are time ordered, however, and if we assume an approximate molecular clock, then dA < dB given that sequence A occurs before sequence B. An estimate of distance is then the larger patristic distance. A parallel to our q2 coefficient would predict high surveillance to correspond to a maximal number (#) of patristic distances d to their closest ancestor in the past less than 2 years as follows:",
+            "cite_spans": [
+                {
+                    "start": 311,
+                    "end": 313,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Comparison to phylogenetic methods. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Moreover, homogeneity of surveillance can be confirmed if branch lengths d have low variance.",
+            "cite_spans": [],
+            "section": "Comparison to phylogenetic methods. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Phylogenies can be divided into those that are distance based and those that are character based. Since the q2 coefficient readily incorporates different genetic distance methods, it is equivalent to any p2 coefficient calculated from distance-based trees. On the other hand, character-based trees, including maximum-likelihood and Bayesian inference methods, incorporate site heterogeneity by considering one character (a site in the alignment) at a time to reconstruct a tree (37); moreover, Markov chain Monte Carlo (MCMC) methods like BEAST (38) can incorporate relaxed clock rates. The q2 coefficient does not take into account either site or clock rate heterogeneity.",
+            "cite_spans": [
+                {
+                    "start": 479,
+                    "end": 481,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 546,
+                    "end": 548,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Comparison to phylogenetic methods. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "To determine the impact of site and clock rate heterogeneity in quantifying surveillance completeness, we calculated the p2 coefficient of the human H5N1 HA data set of 158 sequences by using BEAST (see Materials and Methods). We accounted for site heterogeneity by using the gamma model (39) and reconstructed trees under both strict and relaxed molecular clocks. We calculated the p2 coefficients to be 0.848 (0.740 to 0.917) and 0.860 (0.721 to 0.911) for the strict and relaxed clocks, respectively. Given our q2 coefficient of 0.821 (0.795 to 0.848) for human H5N1 HA, we concluded that incorporating site heterogeneity and a relaxed molecular clock did not make a significant difference.",
+            "cite_spans": [
+                {
+                    "start": 289,
+                    "end": 291,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Comparison to phylogenetic methods. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "While these phylogenetic techniques can examine the fit of a number of evolutionary models, they suffer from problems of robustness. For example, tree topology can be highly unstable; the addition or deletion of a single sequence can radically restructure the tree. Moreover, different methods of phylogenetic inference, such as maximum likelihood or Bayesian inference, can lead to variable results, rendering interpretation of surveillance complicated. Finally, computation time, particularly for BEAST, can be very expensive; for data sets of more than 1,000 sequences, several weeks may be needed for the MCMC to converge to a stable tree solution. In our analysis of 158 human H5N1 HA sequences, p2 coefficients needed days of computation to complete, whereas q2 coefficient analysis was finished in a matter of seconds.",
+            "cite_spans": [],
+            "section": "Comparison to phylogenetic methods. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Another possible surveillance measurement characterizes the cluster structure of isolates. In an ideal situation, a well-sampled population of sequences separated by genetic distance would be represented by points densely and homogeneously spread across a continuum. Therefore, clustering techniques such as hierarchical, k-means, or expectation-maximization clustering can be used to ascertain how poorly sampled a pathogen is on the basis of the number of clusters in a data set. Bar coding is an alternative strategy based on the field of persistent homology that identifies topologically invariant clusters in cloud data; in particular, it calculates the b0 Betti number, the number of connected components in a set of simplicial complexes constructed from sequences at different filtration Hamming distances (see Materials and Methods) (40). A lower b0 would indicate better sampling.",
+            "cite_spans": [
+                {
+                    "start": 842,
+                    "end": 844,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "Comparison to clustering methods. ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "As a comparison to the q2 coefficient, we applied bar coding to determine the b0 values of different influenza virus strains at filtration Hamming distances \u03b5 ranging from 0 to 200 (Fig. 4A). This threshold \u03b5 is analogous to the R threshold of the q2 coefficient: 2 years of influenza virus evolution equivalent to 2 \u00d7 (5 \u00d7 10\u22123) = 1% genetic distance. We therefore considered b0 at a Hamming distance of 1% of the length of HA, or roughly 17 nucleotides, to be appropriate for comparison to the q2 coefficient (Fig. 4B). For the most part, the q2 coefficient and b0 are inversely correlated. For example, the low b0 and high q2 coefficient of human H3N2, seasonal H1N1, and H1N1pdm indicate good surveillance. Non-H5N1 avian influenza virus has an extremely high b0 and a low q2 coefficient. It should be noted that the non-H5N1 avian influenza virus data set contains 15 different HA subtypes, as opposed to all of the other single-subtype HA data sets considered. Thus, b0 may need to be normalized by the expected number of HA subtypes. Nevertheless, b0 for non-H5N1 avian influenza virus remains high even with normalization. However, as with p2, calculation of b0 demands substantial computing power and time on the order of hours.",
+            "cite_spans": [],
+            "section": "Comparison to clustering methods. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 182,
+                    "end": 189,
+                    "mention": "Fig. 4A",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 512,
+                    "end": 519,
+                    "mention": "Fig. 4B",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Other alternative methods of gauging sampling bias may exist. For instance, there are many diversity metrics in ecology, including Chao\u2019s estimate of asymptotic species richness (41), and in information theory, techniques like Shannon\u2019s entropy, which was applied in Fig. 1C. In particular, it is well known that the empirical Shannon entropy of a sample underestimates the entropy of the true distribution. Bootstrapping techniques can be used to estimate the bias produced by a low number of sequences. This method is attractive for its ability to measure surveillance by assaying the diversity of a pathogen directly. However, like the phylogenetic and bar coding methods considered, implementation for a large number of trials is substantially more difficult, computationally expensive, and time-consuming.",
+            "cite_spans": [
+                {
+                    "start": 179,
+                    "end": 181,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Comparison to diversity metrics. ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 267,
+                    "end": 274,
+                    "mention": "Fig. 1C",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "In this paper, we offer a quantitative method of measuring the quality of surveillance of a particular pathogen that reflects its evolutionary rate and genetic diversity. The q2 coefficient represents an easily interpretable quantitative measure of genomic surveillance that does not rely on a full phylogenetic reconstruction. A number between 0 and 1, the q2 coefficient reflects the fraction of isolates with a closest isolate in the past within 2 years of evolution. However, in its simplicity, the q2 coefficient does not capture the complexity of evolutionary processes such as variable evolutionary rates, recombination, reassortment, and population genetic effects. We decided on the q2 coefficient instead of other equally valid metrics (Q1, q5, or q100) because 2 years represents the median influenza A virus vaccine update time. However, different metrics may be applicable, depending on the specific aim of the surveillance program.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "We applied this measure to multiple influenza virus strains and found that current surveillance is generally complete for humans, particularly H1N1pdm, H3N2, and seasonal H1N1, but poor for other hosts, particularly swine. Indeed, the calculated q2 coefficient of swine H1N1 is most likely an overestimate, considering that influenza virus evolves more slowly in swine than in humans because of a lesser degree of immune selection (42). This finding reaffirms the need for increased surveillance of swine, which can serve as mixing vessels for pandemic strain selection.",
+            "cite_spans": [
+                {
+                    "start": 432,
+                    "end": 434,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Compared to human H3N2 and H1N1 surveillance, human and avian H5N1 influenza virus surveillance is lower at q2 coefficients of 0.838 and 0.923, respectively. Although these the q2 coefficients are already high, the difference in the q2 coefficient may suggest that there are strains of H5N1 circulating in bird and even possibly human hosts that remain undetected. Given the recent discovery of molecular determinants that enable ferret-to-ferret transmission of H5N1 virus (10), it is all the more important to increase viral isolation to match or exceed the levels of human H3N2 and H1N1 surveillance.",
+            "cite_spans": [
+                {
+                    "start": 475,
+                    "end": 477,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "In our analysis, we also noted geographic disparities; a preponderance of H5N1 avian influenza virus isolates derived from northern and western Africa; eastern, southeastern, and southern Asia; and eastern, southwestern, and northern Europe. Although North America\u2019s surveillance of non-H5N1 avian influenza virus sequences is trending upward, it is particularly deficient in the sampling of H5N1 avian influenza virus. Even though only low-pathogenicity avian influenza virus has been discovered in North America, it is clear that current surveillance is not sufficient to capture the complete diversity of even this H5N1 population.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "One may wonder whether factors beyond the completeness of surveillance, such as natural selection, may influence the q2 coefficient. For instance, bottlenecks and selective sweeps can reduce the diversity of a pathogen population, thus increasing the q2 coefficient. However, it is important to note that in such cases, the q2 coefficient behaves appropriately, for it simply reflects surveillance completeness. If only a few sequences are enough to capture the reduced biodiversity following a bottleneck, the q2 coefficient will be close to 1.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Another possible confounding effect stems from selection bias in the submission of sequences to public databases. We account for any possible duplication of sequences by considering only unique sequences from each date and location. Beyond this safeguard, we acknowledge that the q2 coefficient may fall prey to selection bias. However, without prior knowledge of such biases, it would be difficult for any method to address these confounders satisfactorily.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "We compared the q2 coefficient to other possible quantitative methods, including those based on phylogenetics and clustering. A drawback common to many of these surveillance methods is that they are slow, computationally expensive techniques that are not explicitly designed to capture pathogen diversity. For this reason, we developed the q2 coefficient, which is readily computable and captures surveillance at any given time point. Applying the q2 coefficient revealed deficient sampling of swine H1N1 and nonavian H5N1, dengue, and West Nile viruses. These results bear great potential to guide the future allocation of energy and resources for gathering viral isolates. We also foresee further ecological applications of the q2 coefficient as an effective measure of asymptotic species richness without relying on arbitrary criteria for defining species, unlike classic techniques like Chao\u2019s estimate. This feature can be particularly valuable for assessing the number of additional samples needed to represent all of the species of an organism in metagenomic studies. In conclusion, the scientific community as a whole must improve its surveillance networks and share information for the advancement of scientific inquiry and public health interventions, and we offer the q2 coefficient as a means of evaluating the effectiveness of such efforts.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Complete coding sequences of all influenza virus coding segments were collected from the NCBI influenza virus resource (43) and the GISAID database (20) downloaded as of October 2012 for human, avian, and swine hosts. Complete coding sequences for the envelope (env) gene of dengue virus subtypes 1, 2, and 3, as well as West Nile virus, were collected from the Virus Pathogen Resource and Broad Institute downloaded as of May 2012. All sequences were filtered for year and month information. If no day information was provided, isolation was assumed to have occurred on the 15th of the month. To avoid the effect of depositing duplicated sequences, only unique sequences were considered for each date and location. Sequences were then aligned using ClustalW2 v. 2.0.12, using default parameters, and then manually curated. Influenza virus sequences were annotated by transmission zones, defined by the WHO as geographically contiguous regions with similar peaks in the influenza season (27). All alignments and the code used are available upon request.",
+            "cite_spans": [
+                {
+                    "start": 120,
+                    "end": 122,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 149,
+                    "end": 151,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 988,
+                    "end": 990,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Sequence collection, annotation, and alignment. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Our measurement of pathogen surveillance incorporates the evolutionary rate, which contributes to population diversity. To measure genetic diversity directly, we chose to employ Shannon\u2019s entropy, a popular and intuitive measure that avoids cumbersome phylogenetic reconstruction, and applied it to the distribution of alleles at each nucleotide position within an alignment. This calculation recovers the number of bits of information per base. Assuming the independence of each position, the total entropy of a population is the sum of the entropies of each base position of the alignment. To correct for bias stemming from a variable number of isolates (n), we estimate Shannon\u2019s entropy (H) for a given base position on the basis of the following algorithm of Miller et al., where m is the number of alleles (44):",
+            "cite_spans": [
+                {
+                    "start": 813,
+                    "end": 815,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Shannon\u2019s entropy as a measurement of genetic diversity. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Sequences were analyzed by using BEAST v1.7.4, a Bayesian MCMC approach, to sample time-structured evolutionary trees from their joint posterior probability distribution. Because of computational and time limits, we restricted our phylogenetic analysis to human H5N1, as BEAST analysis of data sets of over a thousand sequences can take weeks to converge to a stationary condition. This data set was analyzed by using an exponential-growth coalescent as a tree prior with an HKY + \u0393 model of nucleotide substitution. Relaxed and strict molecular clocks were employed. For the strict (relaxed) clock, 20 independent runs of 750,000 (1,500,000) steps each were performed, compared for convergence, and combined, with a burn-in of 150,000 (500,000) steps from each. Each run finished after an average of 32.47 (19.14) h using one 3.00-GHz Intel Xeon CPU with 12 GB of random-access memory. A single maximum clade credibility (MCC) tree was created from each set of simulations with the average length determined for each branch. We found the corresponding evolutionary rates to be 5.11 \u00d7 10\u22123 (range, 4.58 \u00d7 10\u22123 to 5.62 \u00d7 10\u22123) and 5.39 \u00d7 10\u22123 (range 4.39 \u00d7 10\u22123 to 5.80 \u00d7 10\u22123), similar to the evolutionary rate we used for influenza virus HA analysis. The 95% HPD of each branch length of the MCC tree was used to set a confidence interval for each p2 coefficient.",
+            "cite_spans": [],
+            "section": "Phylogeny as a measurement of surveillance. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Another possible surveillance measure can be derived by using persistence homology techniques like bar coding (40), a method of identifying topological invariants in cloud data. First, sequenced isolates can be transformed in high-dimensional space by using distance measures, such as pairwise genetic distance. From these cloud data, points can be linked together on the basis of certain criteria to form a simplicial complex, i.e., a network of points, line segments, triangles, and even n-dimensional counterparts. When this criterion is a distance less than some \u03b5, a filtered simplicial complex or Vietoris-Rips stream is created.",
+            "cite_spans": [
+                {
+                    "start": 111,
+                    "end": 113,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "Persistence homology as a measurement of surveillance. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "An objective in the study of topology is to identify features of filtered simplicial complexes that persist across all values of \u03b5. A useful characteristic is the Betti number, which in dimension 0 is b0, the number of connected components in a particular simplicial complex. Trivially, with a large enough \u03b5, b0 is 1, but what is interesting is the minimum value of \u03b5 that yields a b0 value of 1. Low values would indicate a higher degree of surveillance.",
+            "cite_spans": [],
+            "section": "Persistence homology as a measurement of surveillance. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The calculation of Vietoris-Rips streams for large point cloud data can be computationally expensive, and an alternative method called witness streams (45) can be used to estimate \u03b5. Suppose a landmark subset of points (L) is preselected from point cloud data either at random or using a max-min scheme. Let d(L, p) be a vector of distances between a point p and all points in L. In dimension 0, a pair of points is then linked if there exists a witness point z such that the maximum d(L, p) is less than the sum of \u03b5 and the minimum d(L, p).",
+            "cite_spans": [
+                {
+                    "start": 152,
+                    "end": 154,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Persistence homology as a measurement of surveillance. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Using the Javaplex software package at http://code.google.com/p/javaplex, we implemented a witness stream to filter different strains of influenza virus. Of N total sequences per strain, n sequences were chosen as landmarks by using the max-min selection algorithm, such that N/n = 3 (45). Bar coding was performed at filtration Hamming distances \u03b5 at intervals of 20 from 0 to 100.",
+            "cite_spans": [
+                {
+                    "start": 285,
+                    "end": 287,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Persistence homology as a measurement of surveillance. ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "FIG\u00a01\u00a0: Surveillance of influenza A virus. (A) Numbers of human H3N2 and H1N1 sequences over time. (B) Numbers of H5N1 and swine H1N1pdm sequences over time. (C) Measurement of influenza A virus genetic diversity by entropy. (D) Measurement of influenza A virus surveillance by the q2 coefficient over time. The width of each plotted line denotes the interval of q2 based on the 95% HPD of the evolutionary rate. n = 7,083 H3N2 human (dark blue), 2,567 H1N1 human (blue), 11,626 H1N1pdm human (cyan), 878 H1N1 swine (green), 1,193 H5N1 avian (yellow), 158 H5N1 human (orange), and 3,418 non-H5N1 avian (red) influenza virus sequences.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "FIG\u00a02\u00a0: Global map of influenza A virus surveillance in animal hosts by transmission zones. The strains depicted include swine H1N1 (A) and non-H5N1 (B) avian influenza virus strains. Each zone is colored in the blue-to-red spectrum to indicate the q2 coefficient. Gray areas denote regions with viruses isolated over a span of no more than 1 month.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "FIG\u00a03\u00a0: Global map of dengue virus (DENV) surveillance in different countries. The strains depicted include DENV-1 (A), DENV-2 (B), and DENV-3 (C). Each zone is colored in the blue-to-red spectrum to indicate the q2 coefficient. Gray areas denote regions with viruses isolated over a span of no more than 1 month.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "FIG\u00a04\u00a0: Persistence homology analysis of influenza virus. (A) Bar coding plots of b0 for each strain of influenza virus. b0, or the number of simplicial complexes, can be determined by counting the bars present at each filtration Hamming distance. A lower b0 value indicates better surveillance, although this number may be higher in a setting of bottleneck effects. (B) Comparison of persistence homology and the q2 coefficient applied to influenza virus. The top bar plot displays b0 at a Hamming distance of 17, roughly 1% of the length of HA. The bottom bar plot displays q2 coefficients, with a threshold of 2 years of influenza virus evolution, or 2 \u00d7 (5 \u00d7 10\u22123) = 1%.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "",
+            "authors": [],
+            "year": 2004,
+            "venue": "The world health Report 2004\u2014changing history",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Pause on avian flu transmission studies",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Fouchier",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Garc\u00eda-Sastre",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kawaoka",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nature",
+            "volume": "481",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "The limits of avian flu studies in ferrets",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Science",
+            "volume": "335",
+            "issn": "",
+            "pages": "512-513",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Avian flu: isolation of drug-resistant H5N1 virus",
+            "authors": [
+                {
+                    "first": "QM",
+                    "middle": [],
+                    "last": "Le",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kiso",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Someya",
+                    "suffix": ""
+                },
+                {
+                    "first": "YT",
+                    "middle": [],
+                    "last": "Sakai",
+                    "suffix": ""
+                },
+                {
+                    "first": "TH",
+                    "middle": [],
+                    "last": "Nguyen",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Nguyen",
+                    "suffix": ""
+                },
+                {
+                    "first": "ND",
+                    "middle": [],
+                    "last": "Pham",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Ngyen",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Yamada",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Muramoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Horimoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Takada",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Goto",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Suzuki",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Suzuki",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kawaoka",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Geographic dependence, surveillance, and origins of the 2009 influenza A (H1N1) virus",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Trifonov",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Khiabanian",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rabadan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "N. Engl. J. Med.",
+            "volume": "361",
+            "issn": "",
+            "pages": "115-119",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Molecular basis for the generation in pigs of influenza A viruses with pandemic potential",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ito",
+                    "suffix": ""
+                },
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Couceiro",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kelm",
+                    "suffix": ""
+                },
+                {
+                    "first": "LG",
+                    "middle": [],
+                    "last": "Baum",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Krauss",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Castrucci",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Donatelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kida",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Paulson",
+                    "suffix": ""
+                },
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Webster",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kawaoka",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J. Virol.",
+            "volume": "72",
+            "issn": "",
+            "pages": "7367-7373",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Potential for transmission of avian influenza viruses to pigs",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kida",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ito",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yasuda",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Shimizu",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Itakura",
+                    "suffix": ""
+                },
+                {
+                    "first": "KF",
+                    "middle": [],
+                    "last": "Shortridge",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kawaoka",
+                    "suffix": ""
+                },
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Webster",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J. Gen. Virol.",
+            "volume": "75",
+            "issn": "",
+            "pages": "2183-2188",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Pigs as \u201cmixing vessels\u201d for the creation of new pandemic influenza A viruses",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Scholtissek",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "Med. Principles Pract.",
+            "volume": "2",
+            "issn": "",
+            "pages": "65-71",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Pandemic influenza: an inconvenient mutation",
+            "authors": [
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Layne",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Monto",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Science",
+            "volume": "323",
+            "issn": "",
+            "pages": "1560-1561",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Understanding the origins of a pandemic virus",
+            "authors": [
+                {
+                    "first": "CX",
+                    "middle": [],
+                    "last": "Hernandez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Joseph",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Khiabanian",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rabadan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "arXiv",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Origins and evolutionary genomics of the 2009 swine-origin H1N1 influenza A epidemic",
+            "authors": [
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Vijaykrishna",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bahl",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Lycett",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Worobey",
+                    "suffix": ""
+                },
+                {
+                    "first": "OG",
+                    "middle": [],
+                    "last": "Pybus",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Cheung",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Raghwani",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bhatt",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Peiris",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rambaut",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nature",
+            "volume": "459",
+            "issn": "",
+            "pages": "1122-1125",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "The challenge of emerging and re-emerging infectious diseases",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Morens",
+                    "suffix": ""
+                },
+                {
+                    "first": "GK",
+                    "middle": [],
+                    "last": "Folkers",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Fauci",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nature",
+            "volume": "430",
+            "issn": "",
+            "pages": "242-249",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "A global initiative on sharing avian flu data",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Bogner",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Capua",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Cox",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nature",
+            "volume": "442",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Predict: surveillance and prediction for emerging pathogens of wildlife",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Karesh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "BMC Proc",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Measuring diversity from dissimilarities with Rao\u2019s quadratic entropy: are any dissimilarities suitable?",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Pavoine",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ollier",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Pontier",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Theor. Popul. Biol.",
+            "volume": "67",
+            "issn": "",
+            "pages": "231-239",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "The molecular epidemiology of influenza viruses",
+            "authors": [
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Cox",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Bender",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Semin. Virol.",
+            "volume": "6",
+            "issn": "",
+            "pages": "359-370",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "The genomic and epidemiological dynamics of human influenza A virus",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rambaut",
+                    "suffix": ""
+                },
+                {
+                    "first": "OG",
+                    "middle": [],
+                    "last": "Pybus",
+                    "suffix": ""
+                },
+                {
+                    "first": "MI",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Viboud",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Taubenberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "EC",
+                    "middle": [],
+                    "last": "Holmes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nature",
+            "volume": "453",
+            "issn": "",
+            "pages": "615-619",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Phylogeography and evolutionary history of dengue virus type 3",
+            "authors": [
+                {
+                    "first": "JMG",
+                    "middle": [],
+                    "last": "Ara\u00fajo",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Nogueira",
+                    "suffix": ""
+                },
+                {
+                    "first": "HG",
+                    "middle": [],
+                    "last": "Schatzmayr",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Zanotto",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bello",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Infect. Genet. Evol.",
+            "volume": "9",
+            "issn": "",
+            "pages": "716-725",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Diversity and evolution of west Nile virus in Illinois and the United States, 2002\u20132005",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Bertolotti",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Kitron",
+                    "suffix": ""
+                },
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Goldberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Virology",
+            "volume": "360",
+            "issn": "",
+            "pages": "143-149",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Influenza transmission zones",
+            "authors": [],
+            "year": 2011,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Release no. 0296.06",
+            "authors": [],
+            "year": 2006,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Characterization of low-pathogenicity H5N1 avian influenza viruses from North America",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Spackman",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Swayne",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Suarez",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Senne",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Pedersen",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Killian",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Pasick",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Handel",
+                    "suffix": ""
+                },
+                {
+                    "first": "SP",
+                    "middle": [],
+                    "last": "Pillai",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Stallknecht",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Slemons",
+                    "suffix": ""
+                },
+                {
+                    "first": "HS",
+                    "middle": [],
+                    "last": "Ip",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Deliberto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Virol.",
+            "volume": "81",
+            "issn": "",
+            "pages": "11612-11619",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Factors in the emergence of infectious diseases",
+            "authors": [
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Morse",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Emerg. Infect. Dis.",
+            "volume": "1",
+            "issn": "",
+            "pages": "7-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Molecular evolution and epidemiology of dengue-3 viruses",
+            "authors": [
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Lanciotti",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Lewis",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Gubler",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Trent",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J. Gen. Virol.",
+            "volume": "75",
+            "issn": "",
+            "pages": "65-75",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "West Nile virus envelope proteins: nucleotide sequence analysis of strains differing in mouse neuroinvasiveness",
+            "authors": [
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Chambers",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Halevy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nestorowicz",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Rice",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lustig",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J. Gen. Virol.",
+            "volume": "79",
+            "issn": "",
+            "pages": "2375-2380",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Best practices in dengue surveillance: A report from the Asia-Pacific and Americas Dengue Prevention Boards",
+            "authors": [
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Beatty",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Stone",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Fitzsimons",
+                    "suffix": ""
+                },
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Hanna",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lam",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Vong",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Guzman",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Mendez-Galvan",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Halstead",
+                    "suffix": ""
+                },
+                {
+                    "first": "GW",
+                    "middle": [],
+                    "last": "Letson",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kuritsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Mahoney",
+                    "suffix": ""
+                },
+                {
+                    "first": "HS",
+                    "middle": [],
+                    "last": "Margolis",
+                    "suffix": ""
+                },
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Asia-Pacific",
+                    "suffix": ""
+                },
+                {
+                    "first": "Dengue",
+                    "middle": [],
+                    "last": "Americas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Negl. Trop. Dis.",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Crow deaths as a sentinel surveillance system for West Nile virus in the northeastern United States, 1999",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eison",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Komar",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Sorhage",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Nelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Talbot",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Mostashari",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "McLean",
+                    "suffix": ""
+                },
+                {
+                    "first": "Nile",
+                    "middle": [],
+                    "last": "West",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Emerg. Infect. Dis.",
+            "volume": "7",
+            "issn": "",
+            "pages": "615-620",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Mosquito surveillance for west Nile virus in Connecticut, 2000: isolation from Culex pipiens, Cx. restuans, Cx. salinarius, and Culiseta melanura",
+            "authors": [
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Andreadis",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Anderson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Vossbrinck",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Emerg. Infect. Dis.",
+            "volume": "7",
+            "issn": "",
+            "pages": "670-674",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "West Nile virus population genetics and evolution",
+            "authors": [
+                {
+                    "first": "KN",
+                    "middle": [],
+                    "last": "Pesko",
+                    "suffix": ""
+                },
+                {
+                    "first": "GD",
+                    "middle": [],
+                    "last": "Ebel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Infect. Genet. Evol.",
+            "volume": "12",
+            "issn": "",
+            "pages": "181-190",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Phylogenetic surveillance of viral genetic diversity and the evolving molecular epidemiology of human immunodeficiency virus type 1",
+            "authors": [
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Gifford",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "de Oliveira",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rambaut",
+                    "suffix": ""
+                },
+                {
+                    "first": "OG",
+                    "middle": [],
+                    "last": "Pybus",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Dunn",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Vandamme",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Kellam",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Pillay",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J. Virol.",
+            "volume": "81",
+            "issn": "",
+            "pages": "13050-13056",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Molecular phylogenetics: principles and practice",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Rannala",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nat. Rev. Genet.",
+            "volume": "13",
+            "issn": "",
+            "pages": "303-314",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Bayesian phylogenetics BEAUti and the BEAST 1.7",
+            "authors": [
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Drummond",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Suchard",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Xie",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rambaut",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Mol. Biol. Evol",
+            "volume": "29",
+            "issn": "",
+            "pages": "1969-1973",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Maximum likelihood phylogenetic estimation from DNA sequences with variable rates over sites: approximate methods",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "J. Mol. Evol.",
+            "volume": "39",
+            "issn": "",
+            "pages": "306-314",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Emerging infectious diseases of wildlife\u2014threats to biodiversity and human health",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Daszak",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Cunningham",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Hyatt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Science",
+            "volume": "287",
+            "issn": "",
+            "pages": "443-449",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Persistence bar codes for shapes",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Carlsson",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Zomorodian",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Guibas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proceedings of the Eurographics/ACM SIGGRAPH Symposium on Geometry Processing",
+            "volume": "",
+            "issn": "",
+            "pages": "124-135",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Sufficient sampling for asymptotic minimum species richness estimators",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Chao",
+                    "suffix": ""
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "Colwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "CW",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Gotelli",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Ecology",
+            "volume": "90",
+            "issn": "",
+            "pages": "1125-1133",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Hemagglutinin mutations related to antigenic variation in H1 swine influenza viruses",
+            "authors": [
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Luoh",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "McGregor",
+                    "suffix": ""
+                },
+                {
+                    "first": "VS",
+                    "middle": [],
+                    "last": "Hinshaw",
+                    "suffix": ""
+                }
+            ],
+            "year": 1992,
+            "venue": "J. Virol.",
+            "volume": "66",
+            "issn": "",
+            "pages": "1066-1073",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "The influenza virus resource at the National Center for Biotechnology Information",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Bao",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Bolotov",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Dernovoy",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Kiryutin",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zaslavsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tatusova",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ostell",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Lipman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Virol.",
+            "volume": "82",
+            "issn": "",
+            "pages": "596-601",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Note on the bias of information estimates",
+            "authors": [
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                }
+            ],
+            "year": 1955,
+            "venue": "Information theory in psychology: problems and methods. Proceedings of a conference on the estimation of information flow, Monticello, Illinois, July 5-9, 1954, and related papers",
+            "volume": "",
+            "issn": "",
+            "pages": "95-100",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Topological estimation using witness complexes",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "de Silva",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Carlsson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Eurographics Symposium on Point-Based Graphics",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "The global agenda on influenza surveillance and control",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "St\u00f6hr",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Vaccine",
+            "volume": "21",
+            "issn": "",
+            "pages": "1744-1748",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Network analysis of global influenza spread",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Holmes",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rabadan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Comput. Biol.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Flu surveillance lacking",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Butler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nature",
+            "volume": "483",
+            "issn": "",
+            "pages": "520-522",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "H5N1 influenza\u2014continuing evolution and spread",
+            "authors": [
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Webster",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Govorkova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "N Engl J. Med.",
+            "volume": "355",
+            "issn": "",
+            "pages": "2174-2177",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "H5N1: flu transmission work is urgent",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kawaoka",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nature",
+            "volume": "482",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

@@ -1,0 +1,2148 @@
+{
+    "paper_id": "PMC5952104",
+    "metadata": {
+        "title": "Potential mechanism and drug candidates for sepsis-induced acute lung injury",
+        "authors": [
+            {
+                "first": "Chenyuan",
+                "middle": [],
+                "last": "Xu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Zhengqiang",
+                "middle": [],
+                "last": "Guo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Chuncheng",
+                "middle": [],
+                "last": "Zhao",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Xufeng",
+                "middle": [],
+                "last": "Zhang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Zheng",
+                "middle": [],
+                "last": "Wang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Acute lung injury (ALI) is a life threatening condition. The major clinical manifestations of ALI include inflammatory cell infiltration, arterial hypoxaemia and pulmonary oedema (1). The prognosis of patients with ALI is poor and the mortality rate of such patients remains high (35\u201345%) (2).",
+            "cite_spans": [
+                {
+                    "start": 180,
+                    "end": 181,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 290,
+                    "end": 291,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "ALI is caused by direct lung damage or by indirect injury, including via bacterial infection of the blood. Sepsis, which is a severe infection of the bloodstream, is the most common cause of ALI (3). ALI may also be caused by collagen vascular diseases, drugs, ingestants, inhalants, shock, acute eosinophilic pneumonia, immunologically mediated pulmonary hemorrhage and vasculitis and radiation pneumonitis (4). However, it remains unclear whether all patients with sepsis develop ALI and studies are being conducted to determine whether this is the case. Exaggerated responses to inflammatory stimuli and endothelial dysfunction occur in patients with ALI and in those with sepsis. In addition, platelets serve an important role in sepsis-induced lung injury by increasing the expression of Mac-1 (5). However, the mechanisms underlying the development of sepsis-induced ALI remain largely unknown. Several treatment options for ALI have been developed, including low tidal volume ventilation, fluid-conservative therapy and anti-inflammatory drugs (6), however at present there is no single recommended therapy available. Thus, it is also important to identify the underlying cause of sepsis-induced ALI and the most effective method of treating it.",
+            "cite_spans": [
+                {
+                    "start": 196,
+                    "end": 197,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 409,
+                    "end": 410,
+                    "mention": "4",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 800,
+                    "end": 801,
+                    "mention": "5",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1052,
+                    "end": 1053,
+                    "mention": "6",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Although there have been a few studies investigating the treatment of ALI (6,7), much remains unknown. Therefore, the current study systematically investigated the genes that were differentially expressed between patients with sepsis alone and those with sepsis and ALI. Genome-wide expression profiling was performed using methods previously described by Guo et al (8) in order to identify the genes and mechanisms involved in the pathogenesis of sepsis-induced ALI. Furthermore, the potential interactions between drug and differentially expressed gene (DEG) targets were analyzed, with the aim of identifying a novel effective therapeutic strategy for patients with sepsis-induced ALI.",
+            "cite_spans": [
+                {
+                    "start": 75,
+                    "end": 76,
+                    "mention": "6",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 77,
+                    "end": 78,
+                    "mention": "7",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 367,
+                    "end": 368,
+                    "mention": "8",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The gene expression data set GSE10474, generated by Howrylak et al (9) were retrieved from the Gene Expression Omnibus (GEO) database (ncbi.nlm.nih.gov/geo/). These data were obtained from whole blood of 34 patients, including 13 with ALI and sepsis (6 males and 7 females; mean age, 54.2 years) and 21 patients with sepsis alone (10 males and 11 females; mean age, 60.1 years) within 48 h of admission. All patients were recruited from the Medical Intensive Care Unit of the University of Pittsburgh Medical Center (Pittsburgh, PA, USA) between February 2005 and June 2007.",
+            "cite_spans": [
+                {
+                    "start": 68,
+                    "end": 69,
+                    "mention": "9",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Microarray data :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Raw array data were preprocessed using the R Bioconductor package \u2018affy\u2019 (version 1.30.0; Affymetrix; Thermo Fisher Scientific, Inc., Waltham, MA, USA) as previously described (10) using the following three steps: Background-adjustment, quantile normalization and log2 transformation. Multiple probe sets were mapped to a single transcript and the mean expression value of all probe sets was then calculated.",
+            "cite_spans": [
+                {
+                    "start": 177,
+                    "end": 179,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "Data processing and normalization :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The differential expression of genes between patients with ALI and sepsis, and those with sepsis alone, were detected using the limma package (version 3.14.0) (11) from R/Bioconductor. If the difference in expression between genes in the two groups of patients was P<0.05, they were classed as DEGs.",
+            "cite_spans": [
+                {
+                    "start": 160,
+                    "end": 162,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "Differential expression analysis :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "PCA is a procedure used to emphasize principal components (uncorrelated variables) in a multivariate dataset. Raw data with k-dimension subspace were mapped to n dimensions space (k<n) using SIMCA version P10.0 (Umetrics; Satorius Stedim, Umea, Sweden) for DEGs.",
+            "cite_spans": [],
+            "section": "Principal component analysis (PCA) :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Clue gene ontology (GO) (http://apps.cytoscape.org/apps/cluego) (12) and CluePedia (http://apps.cytoscape.org/apps/cluepedia) (13) are two plug-in portions of Cytoscape (14), Clue GO was used for GO term and Kyoto encyclopedia of genes and genomes (KEGG) pathway enrichment analysis of DEGs. CluePedia was used to explore the functional network. Terms with P<0.05 and a \u03ba score of 0.4 were regarded as significantly enriched terms.",
+            "cite_spans": [
+                {
+                    "start": 65,
+                    "end": 67,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 127,
+                    "end": 129,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 170,
+                    "end": 172,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Functional enrichment analysis :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Co-expression networks (CEN) are typically constructed based on co-expression between gene pairs. Modules obtained from gene differential co-expression analysis were assessed using GO biological process (BP) using the Biological Networks Gene Ontology tool (psb.ugent.be/cbd/papers/BiNGO/; version 2.3) (15). P<0.05 was defined as the threshold for a differentially expressed gene. The differential co-expression network (DCEN) was constructed with the absolute value of correlation coefficient \u22650.9. Correlation analysis between genes was measured using Pearson's correlation coefficient.",
+            "cite_spans": [
+                {
+                    "start": 304,
+                    "end": 306,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "Differential co-expression analysis :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The drug-gene interaction database (DGIdb; dgidb.org) is a web resource that integrates disparate data sources to help researchers to search for drug-gene interactions (16). The present study analyzed drugs targeted by genes using this database with default parameter values.",
+            "cite_spans": [
+                {
+                    "start": 169,
+                    "end": 171,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Gene and drug interaction analysis :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As presented in Fig. 1, gene expression was uniformly distributed following data normalization. In addition, total 209 DEGs including 107 upregulated and 102 downregulated genes were screened. In the PCA diagram, the light blue circles represent samples from patients with ALI and the pink circles represent samples from patients with sepsis. The majority of circles are separate, which indicates that all DEGs were able to distinguish between samples from patients with ALI and sepsis, and those from patients with sepsis alone (Fig. 2).",
+            "cite_spans": [],
+            "section": "Normalized data and DEGs :::  ::: Results",
+            "ref_spans": [
+                {
+                    "start": 16,
+                    "end": 22,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 530,
+                    "end": 536,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Significantly enriched GO-BP terms, as well as the enriched genes in each term, are presented in Fig. 3. DEGs were associated with the cellular response to unfolded protein and response to unfolded protein, cell cycle phase, cell adhesion mediated by integrin, B cell proliferation and T cell receptor signaling as the nodes were notably larger. Furthermore, heat shock protein family A, Hsp70, member 5 (HSPA5), heat shock protein 90 kDa \u03b2, member 1 (HSP90B1), zinc finger and BTB domain containing 17 (ZBTB17), Golgi SNAP receptor complex member 2 (GOSR2), TatD DNase domain containing 2 and hypoxia upregulated 1 (HYOU1) were differentially regulated to a greater extent than other genes in the network (Fig. 3).",
+            "cite_spans": [],
+            "section": "Enriched GO-BP term and KEGG pathways :::  ::: Results",
+            "ref_spans": [
+                {
+                    "start": 97,
+                    "end": 103,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 707,
+                    "end": 713,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Fig. 4 indicated that DEGs are primarily involved in pathways associated with antigen processing and presentation, glycerophospholipid metabolism, transcriptional misregulation in cancer, thyroid hormone synthesis and pathways associated with diseases, such as asthma. In addition, major histocompatibility complex, class II, DR \u03b1 (HLA-DRA) and major histocompatibility complex, class II, DQ \u03b21 (HLA-DQB1) were highlighted in the network. Cluster of differentiation 86 (CD86) was associated with several signaling pathways including, rheumatoid arthritis, autoimmune thyroid disease and graft-versus-host disease and it was also determined to be involved in the network.",
+            "cite_spans": [],
+            "section": "Enriched GO-BP term and KEGG pathways :::  ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 6,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The DCEN, which was composed of 2,482 edges and 2,109 nodes was obtained following the comparison of the ALI.CEN and the Sepsis.CEN (Fig. 5). Ubiquitin-conjugating enzyme E2D 4 (UBE2D4; putative; degree=529), (tubulin, \u03b3 complex associated protein 3, (TUBGCP3; degree=271) and centromere protein O (CENPO; degree=269) which were co-expressed in ALI samples, were the top three genes in the network.",
+            "cite_spans": [],
+            "section": "The constructed DCEN :::  ::: Results",
+            "ref_spans": [
+                {
+                    "start": 133,
+                    "end": 139,
+                    "mention": "Fig. 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "GO-BP enrichment analysis revealed that UBE2D4 and TUBGCP3 were primarily associated with cell differentiation, phylogeny and RNA stability, whereas CENPO may participate in intercellular communication (data not shown).",
+            "cite_spans": [],
+            "section": "The constructed DCEN :::  ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Interactions between target DEGs and drugs are presented in Table I. These included interactions between HSP90B1 and adenosine-5\u2032-diphosphate and radicicol; HLA-DQB1 and amoxicillin, HLA-DQB1 and insulin, porcine; HSPA5 and antihemophilic factor; and CD86 and abatacept as well as antithymocyte globulin. Interactions mean that these DEGs may target the corresponding drugs.",
+            "cite_spans": [],
+            "section": "Interactions between DEGs and different drugs :::  ::: Results",
+            "ref_spans": [
+                {
+                    "start": 60,
+                    "end": 67,
+                    "mention": "Table I",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "ALI is a rapidly progressive disease and the mortality rate of patients with this condition is high. Systemic sepsis may be a predisposing factor for the onset and development of ALI. The current study investigated the mechanism by which sepsis-induced ALI progresses and identified the genes involved in this process. A total of 209 DEGs, including 107 upregulated and 102 downregulated genes, were screened. DEGs, including HSPA5, HSP90B1 and HLA-DRA, and GO terms including unfolded protein response and cell adhesion, as well as pathways of transcriptional misregulation in cancer and thyroid hormone synthesis were identified. In addition, a DCEN containing UBE2D4 and TUBGCP3 was constructed. Certain DEG-drug interactions, including between HSP90B1 and adenosine-5\u2032-diphosphate, were identified. This may help to clarify the complex mechanisms underlying the progression of sepsis-induced ALI.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "It has been demonstrated that HLA-DRA and HLA-DRB, which are associated with antigen processing and presentation, are expressed at low levels in patients with ALI (17). In the current study, HLA-DRA and HLA-DQB1 were downregulated in patients with ALI and enriched in pathways associated with antigen processing and presentation, metabolism and the immune response. It has been previously confirmed that CD86 is downregulated in a monkey model of ALI (18). It has been demonstrated that systemic and pulmonary inflammation occur in ALI (19), the results of the current study are in accordance with those of previous studies.",
+            "cite_spans": [
+                {
+                    "start": 164,
+                    "end": 166,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 452,
+                    "end": 454,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 537,
+                    "end": 539,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "ZBTB17 encodes the zinc finger protein Miz-1 required for cell cycle progression (20,21). It also serves a role in lymphocyte development and lymphomagenesis (22). In addition, ZBTB24 is associated with centromere instability (23). This may indicate a connection between ZBTB17 and the centromere. Other cell cycle-associated DEGs were obtained in the current study. CENPO is required for bipolar mitotic spindle assembly and segregation of chromosome during mitosis (24). TUBGCP3 is required for gamma-tubulin binding and microtubule nucleation at the centrosome (25,26). Cell proliferation is directly correlated with enhancing endothelial barrier integrity and repairing leaking microvessels (27). Therefore, ZBTB17 not only participates in the development of lymphocytes, but may also be important in the maintenance of endothelial cell integrity in sepsis-induced ALI.",
+            "cite_spans": [
+                {
+                    "start": 82,
+                    "end": 84,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 85,
+                    "end": 87,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 159,
+                    "end": 161,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 227,
+                    "end": 229,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 468,
+                    "end": 470,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 565,
+                    "end": 567,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 568,
+                    "end": 570,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 696,
+                    "end": 698,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "UBE2D4 was determined to be a significant node in the DCEN. The protein encoded by UBE2D4 introduces covalent attachment of the E1 complex to other proteins and promotes polyubiquitination (28). The results of the current study indicated that protein misfolding and the unfolded protein response were enriched by DEGs, including HSPA5, HSP90B1 and HYOU1. The results of previous studies suggested that the endoplasmic reticulum-located HSPA5 is involved in protein folding and protein assembly (29) and may be critical for the intercellular transport of proteins (30). It has also been demonstrated that the protein Grp94, which is encoded by HSP90B1, induces similar effects (31). HYOU1 functions as a molecular chaperone and participates in protein folding and secretion (32). In a previous study, certain DEGs associated with membrane protein transport, such as GOSR2 (33) were also obtained. All these DEGs may participant in sepsis-induced ALI through protein folding, assembly and secretion.",
+            "cite_spans": [
+                {
+                    "start": 190,
+                    "end": 192,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 495,
+                    "end": 497,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 564,
+                    "end": 566,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 677,
+                    "end": 679,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 774,
+                    "end": 776,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 872,
+                    "end": 874,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Several potential drug targets, including HSP90B1, HLA-DQB1, CD86 and HSPA5 were identified in the current study. Adenosine-5\u2032-diphosphate, which participates in the aggregation of human blood-platelets and myocardial infarction (34), was found to target HSP90B1. HLA-DQB1 was targeted by amoxicillin, clavulanate and insulin. Amoxicillin and clavulanate are widely used as anti-inflammatory drugs and it is thought that insulin may also exhibit anti-inflammatory activity (35). Previous study showed that ALI was associated with inflammation (36). Antihemophilic factor was found to target HSPA5, whereas abatacept, which inhibits T lymphocyte activation (37), was found to target CD86.",
+            "cite_spans": [
+                {
+                    "start": 230,
+                    "end": 232,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 474,
+                    "end": 476,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 544,
+                    "end": 546,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 657,
+                    "end": 659,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In conclusion, the results of the current study indicate that ZBTB17, which is associated with the cell cycle and lymphocyte development, and UBE2D4, HSPA5 and HSP90B1, which are associated with protein folding and secretion, may be involved in the pathomechanism of sepsis-induced ALI. Drugs targeting DEGs, including adenosine-5\u2032-diphosphate that acts on HSP90B1, may be developed as a novel therapeutic agent to treat patients with ALI induced by sepsis. However, the small sample size included in the current study was a major limitation and further experiments are required to confirm the results of the current study.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table I.: Interactions between DEGs and different drugs.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1.: Boxplot of gene profiles across samples. Light blue bars indicate samples from patients with acute lung injury (ALI) and pink bars indicate samples from patients with sepsis.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: The results of principal component analysis of differentially expressed gene profiles. The light blue circles represent samples from patients with acute lung injury samples and pink circles represent samples from patients with sepsis. Numbers on each axis represent eigenvectors for each dimension after dimensionality reduction.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: BP categories of Gene Ontology and genes in the biological network. The size of BP nodes represents the significance of gene enrichment; bigger nodes indicate a smaller P-value. Different colored nodes represent the different functional classes of genes. The node names with the corresponding color represent the names of the functional classes in each color class. The small white circles represent gene nodes. All gene nodes in the network were the same size. Edges between BP nodes and gene nodes represent their ownership. Highlighted terms represent the most significantly enriched annotations. BP, biological process.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: Biological network of Kyoto encyclopedia of genes and genomes pathways and differentially expressed genes. The size of pathway nodes is associated with the significance of enrichment; bigger nodes indicate smaller P-values. Different colored nodes represent their different functional classes. The node names with the corresponding color represent the names of the functional classes in each color class. All gene nodes of the network were the same size. Edges between pathway nodes and gene nodes represent the ownership of them.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5.: Differential CEN between the ALI and sepsis groups. The red nodes represent upregulated genes; green nodes represent downregulated genes; the blue nodes represent normally expressed genes in samples taken from patients with ALI. The red edges were more common in the ALI.CEN group; the blue edges were more common in the Sepsis.CEN. Black edges are common in all of them. The size of the nodes indicates the degree of them. The bigger the size of the nodes is, the higher the degree is. CEN, co-expression networks; ALI, acute lung injury.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Treatment of acute lung injury by targeting MG53-mediated cell membrane repair",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Jia",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Lin",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Lieber",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nishi",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Yao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "BA",
+                    "middle": [],
+                    "last": "Whitson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nat Commun",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ncomms5387"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Affy-analysis of Affymetrix GeneChip data at the probe level",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Gautier",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Cope",
+                    "suffix": ""
+                },
+                {
+                    "first": "BM",
+                    "middle": [],
+                    "last": "Bolstad",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Irizarry",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Bioinformatics",
+            "volume": "20",
+            "issn": "",
+            "pages": "307-315",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btg405"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Robust hyperparameter estimation protects against hypervariable genes and improves power to detect differential expression",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Phipson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "IJ",
+                    "middle": [],
+                    "last": "Majewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "WS",
+                    "middle": [],
+                    "last": "Alexander",
+                    "suffix": ""
+                },
+                {
+                    "first": "GK",
+                    "middle": [],
+                    "last": "Smyth",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Ann Appl Stat",
+            "volume": "10",
+            "issn": "",
+            "pages": "946-963",
+            "other_ids": {
+                "DOI": [
+                    "10.1214/16-AOAS920"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "ClueGO: A Cytoscape plug-in to decipher functionally grouped gene ontology and pathway annotation networks",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bindea",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Mlecnik",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Hackl",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Charoentong",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Tosolini",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kirilovsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "WH",
+                    "middle": [],
+                    "last": "Fridman",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Pag\u00e8s",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Trajanoski",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Galon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "",
+            "pages": "1091-1093",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btp101"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "CluePedia Cytoscape plugin: Pathway insights using integrated experimental and in silico data",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bindea",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Galon",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Mlecnik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Bioinformatics",
+            "volume": "29",
+            "issn": "",
+            "pages": "661-663",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/btt019"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Cytoscape: A software environment for integrated models of biomolecular interaction networks",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Shannon",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Markiel",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Ozier",
+                    "suffix": ""
+                },
+                {
+                    "first": "NS",
+                    "middle": [],
+                    "last": "Baliga",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ramage",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Amin",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Schwikowski",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ideker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Genome Res",
+            "volume": "13",
+            "issn": "",
+            "pages": "2498-2504",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.1239303"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "BiNGO: A Cytoscape plugin to assess overrepresentation of gene ontology categories in biological networks",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Maere",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Heymans",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kuiper",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Bioinformatics",
+            "volume": "21",
+            "issn": "",
+            "pages": "3448-3449",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/bioinformatics/bti551"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "DGIdb: Mining the druggable genome",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Griffith",
+                    "suffix": ""
+                },
+                {
+                    "first": "OL",
+                    "middle": [],
+                    "last": "Griffith",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Coffman",
+                    "suffix": ""
+                },
+                {
+                    "first": "JV",
+                    "middle": [],
+                    "last": "Weible",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "McMichael",
+                    "suffix": ""
+                },
+                {
+                    "first": "NC",
+                    "middle": [],
+                    "last": "Spies",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Koval",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Das",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Callaway",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Eldred",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nat Methods",
+            "volume": "10",
+            "issn": "",
+            "pages": "1209-1210",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nmeth.2689"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Acute respiratory distress syndrome is a TH17-like and Treg immune disease",
+            "authors": [
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Cornell University Library",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Distinct severe acute respiratory syndrome coronavirus-induced acute lung injury pathways in two different nonhuman primate species",
+            "authors": [
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Smits",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "van den Brand",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "de Lang",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Leijten",
+                    "suffix": ""
+                },
+                {
+                    "first": "WF",
+                    "middle": [],
+                    "last": "van Ijcken",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "van Amerongen",
+                    "suffix": ""
+                },
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Osterhaus",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Andeweg",
+                    "suffix": ""
+                },
+                {
+                    "first": "BL",
+                    "middle": [],
+                    "last": "Haagmans",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J Virol",
+            "volume": "85",
+            "issn": "",
+            "pages": "4234-4245",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/JVI.02395-10"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Activation and regulation of systemic inflammation in ARDS: Rationale for prolonged glucocorticoid therapy",
+            "authors": [
+                {
+                    "first": "GU",
+                    "middle": [],
+                    "last": "Meduri",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Annane",
+                    "suffix": ""
+                },
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Chrousos",
+                    "suffix": ""
+                },
+                {
+                    "first": "PE",
+                    "middle": [],
+                    "last": "Marik",
+                    "suffix": ""
+                },
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "Sinclair",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Chest",
+            "volume": "136",
+            "issn": "",
+            "pages": "1631-1643",
+            "other_ids": {
+                "DOI": [
+                    "10.1378/chest.08-2408"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Mortality of patients with respiratory insufficiency and adult respiratory distress syndrome after surgery the obesity paradox",
+            "authors": [
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Memtsoudis",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Bombardieri",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Walz",
+                    "suffix": ""
+                },
+                {
+                    "first": "YL",
+                    "middle": [],
+                    "last": "Chiu",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mazumdar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J Intensive Care Med",
+            "volume": "27",
+            "issn": "",
+            "pages": "306-311",
+            "other_ids": {
+                "DOI": [
+                    "10.1177/0885066611411410"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Schneider",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Peukert",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eilers",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "H\u00e4nel",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "C-Myc in B-Cell Neoplasia",
+            "volume": "",
+            "issn": "",
+            "pages": "137-146",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/978-3-642-60801-8_14"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Repression of p15INK4b expression by Myc through association with Miz-1",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Staller",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Peukert",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kiermaier",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Seoane",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lukas",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Karsunky",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "M\u00f6r\u00f6y",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bartek",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Massagu\u00e9",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "H\u00e4nel",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eilers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nat Cell Biol",
+            "volume": "3",
+            "issn": "",
+            "pages": "392-399",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/35070076"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "The role of the transcription factor Miz-1 in lymphocyte development and lymphomagenesis-Binding Myc makes the difference",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "M\u00f6r\u00f6y",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Saba",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Kosan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Semin Immunol",
+            "volume": "23",
+            "issn": "",
+            "pages": "379-387",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.smim.2011.09.001"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "POK/ZBTB proteins: An emerging family of proteins that regulate lymphoid development and function",
+            "authors": [
+                {
+                    "first": "SU",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Maeda",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Immunol Rev",
+            "volume": "247",
+            "issn": "",
+            "pages": "107-119",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1600-065X.2012.01116.x"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Centromeres: Unique chromatin structures that drive chromosome segregation",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Verdaasdonk",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Bloom",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nat Rev Mol Cell Biol",
+            "volume": "12",
+            "issn": "",
+            "pages": "320-332",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nrm3107"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Crystal structure of \u03b3-tubulin complex protein GCP4 provides insight into microtubule nucleation",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Guillet",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Knibiehler",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Gregory-Pauron",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Remy",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chemin",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Raynaud-Messina",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Bon",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Kollman",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Agard",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Merdes",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Mourey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nat Struct Mol Biol",
+            "volume": "18",
+            "issn": "",
+            "pages": "915-919",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nsmb.2083"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Regulation of microtubule assembly and organization in mitosis by the AAA+ ATPase pontin",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ducat",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kawaguchi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Yates",
+                    "suffix": "III"
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zheng",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Mol Biol Cell",
+            "volume": "19",
+            "issn": "",
+            "pages": "3097-3110",
+            "other_ids": {
+                "DOI": [
+                    "10.1091/mbc.E07-11-1202"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Transgenic expression of FoxM1 promotes endothelial repair following lung injury induced by polymicrobial sepsis in mice",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "YY",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1371/journal.pone.0050094"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "The E2 ubiquitin-conjugating enzymes direct polyubiquitination to preferred lysines",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "David",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ziv",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Admon",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Navon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Biol Chem",
+            "volume": "285",
+            "issn": "",
+            "pages": "8595-8604",
+            "other_ids": {
+                "DOI": [
+                    "10.1074/jbc.M109.089003"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "The unfolded protein response: Controlling cell fate decisions under ER stress and beyond",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Hetz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nat Rev Mol Cell Biol",
+            "volume": "13",
+            "issn": "",
+            "pages": "89-102",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nrm3270"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "The acute respiratory distress syndrome",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Matthay",
+                    "suffix": ""
+                },
+                {
+                    "first": "LB",
+                    "middle": [],
+                    "last": "Ware",
+                    "suffix": ""
+                },
+                {
+                    "first": "GA",
+                    "middle": [],
+                    "last": "Zimmerman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J Clin Invest",
+            "volume": "122",
+            "issn": "",
+            "pages": "2731-2740",
+            "other_ids": {
+                "DOI": [
+                    "10.1172/JCI60331"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Localization of the gene encoding human BiP/GRP78, the endoplasmic reticulum cognate of the HSP70 family, to chromosome 9q34",
+            "authors": [
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Hendershot",
+                    "suffix": ""
+                },
+                {
+                    "first": "VA",
+                    "middle": [],
+                    "last": "Valentine",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Morris",
+                    "suffix": ""
+                },
+                {
+                    "first": "DN",
+                    "middle": [],
+                    "last": "Shapiro",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Genomics",
+            "volume": "20",
+            "issn": "",
+            "pages": "281-284",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/geno.1994.1166"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Grp94 acts as a mediator of curcumin-induced antioxidant defence in myogenic cells",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Pizzo",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Scapin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Vitadello",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Florean",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Gorza",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Cell Mol Med",
+            "volume": "14",
+            "issn": "",
+            "pages": "970-981",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1582-4934.2008.00681.x"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "The role of ER stress and the unfolded protein response in obesity associated type 2 diabetes",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Omikorede",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "University of Leicester",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "A SNARE involved in protein transport through the Golgi apparatus",
+            "authors": [
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Lowe",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Peter",
+                    "suffix": ""
+                },
+                {
+                    "first": "VN",
+                    "middle": [],
+                    "last": "Subramaniam",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Hong",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Nature",
+            "volume": "389",
+            "issn": "",
+            "pages": "881-884",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/39923"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Relation of microcirculatory thrombosis to thrombus in the proximal coronary artery: Effect of aspirin, dipyridamole and thrombolysis",
+            "authors": [
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Moschos",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Lahiri",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Lyons",
+                    "suffix": ""
+                },
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Weisse",
+                    "suffix": ""
+                },
+                {
+                    "first": "HA",
+                    "middle": [],
+                    "last": "Oldewurtel",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Regan",
+                    "suffix": ""
+                }
+            ],
+            "year": 1973,
+            "venue": "Am Heart J",
+            "volume": "86",
+            "issn": "",
+            "pages": "61-68",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0002-8703(73)90010-0"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Is insulin an antiinflammatory molecule?",
+            "authors": [
+                {
+                    "first": "UN",
+                    "middle": [],
+                    "last": "Das",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nutrition",
+            "volume": "17",
+            "issn": "",
+            "pages": "409-413",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0899-9007(01)00518-4"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "Cytokine-mediated inflammation in acute lung injury",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Cytokine Growth Factor Rev",
+            "volume": "14",
+            "issn": "",
+            "pages": "523-535",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S1359-6101(03)00059-5"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "Treatment of rheumatoid arthritis with the selective costimulation modulator abatacept: Twelve-month results of a phase IIb, double-blind, randomized, placebo-controlled trial",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Kremer",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Dougados",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Emery",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Durez",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sibilia",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Shergy",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Steinfeld",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Tindall",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Becker",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Arthritis Rheum",
+            "volume": "52",
+            "issn": "",
+            "pages": "2263-2271",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/art.21201"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "Acute lung injury: A clinical and molecular review",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Butt",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kurdowska",
+                    "suffix": ""
+                },
+                {
+                    "first": "TC",
+                    "middle": [],
+                    "last": "Allen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Arch Pathol Lab Med",
+            "volume": "140",
+            "issn": "",
+            "pages": "345-350",
+            "other_ids": {
+                "DOI": [
+                    "10.5858/arpa.2015-0519-RA"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "title": "Platelets support pulmonary recruitment of neutrophils in abdominal sepsis",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Asaduzzaman",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lavasani",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Rahman",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "OO",
+                    "middle": [],
+                    "last": "Braun",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Jeppsson",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Thorlacius",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Crit Care Med",
+            "volume": "37",
+            "issn": "",
+            "pages": "1389-1396",
+            "other_ids": {
+                "DOI": [
+                    "10.1097/CCM.0b013e31819ceb71"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Treatment of acute lung injury: current and emerging pharmacological therapies",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Sweeney",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Griffiths",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Mcauley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Semin Respir Crit Care Med",
+            "volume": "34",
+            "issn": "",
+            "pages": "487-498",
+            "other_ids": {
+                "DOI": [
+                    "10.1055/s-0033-1351119"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Ventilation with lower tidal volumes as compared with traditional tidal volumes for acute lung injury and the acute respiratory distress syndrome",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Dreyfuss",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "N Engl J Med",
+            "volume": "342",
+            "issn": "",
+            "pages": "1301-1308",
+            "other_ids": {
+                "DOI": [
+                    "10.1056/NEJM200005043421801"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "Gene expression profiles analysis identifies key genes for acute lung injury in patients with sepsis",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Diagn Pathol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s13000-014-0176-x"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "Discovery of the gene signature for acute lung injury in patients with sepsis",
+            "authors": [
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Howrylak",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Dolinay",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Lucht",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Christiani",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Sethi",
+                    "suffix": ""
+                },
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Xing",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Donahoe",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Physiol Genomics",
+            "volume": "37",
+            "issn": "",
+            "pages": "133-139",
+            "other_ids": {
+                "DOI": [
+                    "10.1152/physiolgenomics.90275.2008"
+                ]
+            }
+        }
+    }
+}

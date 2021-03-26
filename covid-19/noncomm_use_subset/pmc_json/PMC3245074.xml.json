@@ -1,0 +1,2821 @@
+{
+    "paper_id": "PMC3245074",
+    "metadata": {
+        "title": "ELM\u2014the database of eukaryotic linear motifs",
+        "authors": [
+            {
+                "first": "Holger",
+                "middle": [],
+                "last": "Dinkel",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Sushama",
+                "middle": [],
+                "last": "Michael",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Robert",
+                "middle": [
+                    "J."
+                ],
+                "last": "Weatheritt",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Norman",
+                "middle": [
+                    "E."
+                ],
+                "last": "Davey",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Kim",
+                "middle": [],
+                "last": "Van Roey",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Brigitte",
+                "middle": [],
+                "last": "Altenberg",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Grischa",
+                "middle": [],
+                "last": "Toedt",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Bora",
+                "middle": [],
+                "last": "Uyar",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Markus",
+                "middle": [],
+                "last": "Seiler",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Aidan",
+                "middle": [],
+                "last": "Budd",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Lisa",
+                "middle": [],
+                "last": "J\u00f6dicke",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Marcel",
+                "middle": [
+                    "A."
+                ],
+                "last": "Dammert",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Christian",
+                "middle": [],
+                "last": "Schroeter",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Maria",
+                "middle": [],
+                "last": "Hammer",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Tobias",
+                "middle": [],
+                "last": "Schmidt",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Peter",
+                "middle": [],
+                "last": "Jehl",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Caroline",
+                "middle": [],
+                "last": "McGuigan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Magdalena",
+                "middle": [],
+                "last": "Dymecka",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Claudia",
+                "middle": [],
+                "last": "Chica",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Katja",
+                "middle": [],
+                "last": "Luck",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Allegra",
+                "middle": [],
+                "last": "Via",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Andrew",
+                "middle": [],
+                "last": "Chatr-aryamontri",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Niall",
+                "middle": [],
+                "last": "Haslam",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Gleb",
+                "middle": [],
+                "last": "Grebnev",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Richard",
+                "middle": [
+                    "J."
+                ],
+                "last": "Edwards",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Michel",
+                "middle": [
+                    "O."
+                ],
+                "last": "Steinmetz",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Heike",
+                "middle": [],
+                "last": "Meiselbach",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Francesca",
+                "middle": [],
+                "last": "Diella",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Toby",
+                "middle": [
+                    "J."
+                ],
+                "last": "Gibson",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Short linear motifs (SLiMs, LMs or MiniMotifs) are regulatory protein modules characterized by their compact interaction interfaces (the affinity and specificity determining residues are usually encoded between 3 and 11 contiguous amino acids (1)) and their enrichment in natively unstructured, or disordered, regions of proteins (2). As a result of limited intermolecular contacts with their interaction partners, SLiMs bind with relatively low affinity (in the low-micromolar range), an advantageous attribute for use as transient, conditional and tunable interactions necessary for many regulatory processes. Due to the limited number of mutations necessary for the genesis of a novel motif, SLiMs are amenable to convergent evolution, functioning as a driver of network evolution by adding novel interaction interfaces, and thereby new functionality, to proteins. This evolutionary plasticity facilitates the rapid proliferation within a proteome, and as a result, motif use is ubiquitous in higher eukaryotes.",
+            "cite_spans": [
+                {
+                    "start": 244,
+                    "end": 245,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 331,
+                    "end": 332,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "SLiMs play an important role for many regulatory processes such as signal transduction, protein trafficking and post-translational modification (3,4). Their importance to the correct functionality of the cell is also reflected by the outcome of motif deregulation. For example, point mutations in SLiMs have been shown to lead severe pathologies such as \u2018Noonan-like syndrome\u2019 (5), \u2018Liddle\u2019s syndrome\u2019 (6) or \u2018Retinitis pigmentosa\u2019 (7). Furthermore, mimicry of linear motifs by viruses to hijack their hosts\u2019 existing cellular machinery plays an important role in many viral life cycles (8). However, despite their obvious importance to eukaryotic cell regulation, our understanding of SLiM biology is relatively limited, and it has been suggested that, to date, we have only discovered a small portion of the human motifs (9).",
+            "cite_spans": [
+                {
+                    "start": 145,
+                    "end": 146,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 147,
+                    "end": 148,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 378,
+                    "end": 379,
+                    "mention": "5",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 403,
+                    "end": 404,
+                    "mention": "6",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 433,
+                    "end": 434,
+                    "mention": "7",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 588,
+                    "end": 589,
+                    "mention": "8",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 824,
+                    "end": 825,
+                    "mention": "9",
+                    "ref_id": "BIBREF41"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Several resources are devoted to the annotation and/or detection of SLiMs [Prosite (10), MiniMotifMiner (11) and Scansite (12)]. Here, we report on the 2012 status of the Eukaryotic Linear Motif database.",
+            "cite_spans": [
+                {
+                    "start": 84,
+                    "end": 86,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 105,
+                    "end": 107,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 123,
+                    "end": 125,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Since the last release (14), 24 new ELM classes have been added to the ELM database (Table 1) and several more have been updated. One of the newly annotated motif classes is the AGC kinase docking motif (LIG_AGCK_PIF), consisting of three distinct classes. It is present in the non-catalytic C-terminal tail of AGC kinases that constitute a family of serine/threonine kinases consisting of 60 members that regulate critical processes, including cell growth and survival. Deregulation of these enzymes is a causative factor in different diseases such as cancer and diabetes. The motif interacts with the PDK1 Interacting Fragment (PIF) pocket in the kinase domain of AGC kinases. It mediates intramolecular binding to the PIF pocket, serving as a cis-activating module together with other regulatory sequences in the C-tail. Interestingly, in some kinases the motif also acts as a PDK1 docking site that trans-activates PDK1, which itself lacks the regulatory C-tail, by interacting with the PDK1 PIF pocket. PDK1 in turn will phosphorylate and activate the docked kinase. Other novel classes (Table 2) include phosphodegrons, which are important mediators of phosphorylation-dependent protein destruction, and the LYPxL motif, which is involved in endosomal sorting of membrane proteins but is also implicated in retrovirus budding.\n",
+            "cite_spans": [
+                {
+                    "start": 24,
+                    "end": 26,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "New ELM classes ::: THE ELM RESOURCE",
+            "ref_spans": [
+                {
+                    "start": 85,
+                    "end": 92,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1093,
+                    "end": 1100,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Annotated ELM instances serve as representative examples of the respective ELM class. They are also invaluable for the computational analysis and classification of motifs (15). Therefore, special emphasis has been put on the curation of more than 500 novel ELM instances (in 40 different classes) by scanning and annotating more than 400 articles. The number of protein databank (PDB) entries annotated have been increased to 195 (Table 1), meaning that for \u223c10% of all instances there is a 3D protein structure annotated, giving more detailed information about the biological context of the respective motif.",
+            "cite_spans": [
+                {
+                    "start": 172,
+                    "end": 174,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "New ELM instances ::: THE ELM RESOURCE",
+            "ref_spans": [
+                {
+                    "start": 431,
+                    "end": 438,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The database user interface, having been stable for many years, has been overhauled and replaced by a novel interface introducing several new features (Figure 1). Up-to-date web technologies have been used to improve the general user experience: the PYTHON framework DJANGO (http://www.djangoproject.com) dynamically creates and serves all HTML pages, while JavaScript was used to make the whole site more interactive and thus improve the user experience. In particular, the ELM detail pages (Figure 3), which hold the most important information about each ELM class including references, regular expression, taxonomic distribution and gene ontology terms (Table 3), have been updated by annotating the protein domain interacting with the respective motif. Where available, a 3D model of representative protein databank structures of linear motif interactions was added to the ELM detail page (Figure 3, top right).\n\n",
+            "cite_spans": [],
+            "section": "User interface ::: NEW FEATURES",
+            "ref_spans": [
+                {
+                    "start": 152,
+                    "end": 160,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 493,
+                    "end": 501,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 894,
+                    "end": 902,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 657,
+                    "end": 664,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "To cope with the increasing amount of annotated classes as well as instances, a novel query interface was introduced to assist the user in finding information of interest. The ELM browser (Figure 4) now features a search interface for free text search. In addition, the search results can also be filtered and reordered using buttons (Figure 4, left side) and table headers, respectively, and be downloaded as tab-separated values (TSV).\n",
+            "cite_spans": [],
+            "section": "User interface ::: NEW FEATURES",
+            "ref_spans": [
+                {
+                    "start": 189,
+                    "end": 197,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 335,
+                    "end": 343,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Further, improvements to the ELM database include revising the experimental methods used for annotation by using a standardized methods vocabulary [in sync with PSI-MI ontology (16,17)].",
+            "cite_spans": [
+                {
+                    "start": 178,
+                    "end": 180,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 181,
+                    "end": 183,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "User interface ::: NEW FEATURES",
+            "ref_spans": []
+        },
+        {
+            "text": "A candidate page has been introduced to display novel ELM classes that have not yet been annotated in detail or are currently undergoing annotation. We invite researchers to send us their feedback and expert opinion on these classes and to contribute novel motif classes that will be added to the candidate page and ultimately be turned into full ELM classes (Figure 5). Minimum requirements are at least one literature reference as well as a short description. In addition, a draft regular expression or a 3D structure showing the relevant interaction would also be helpful. Currently, the number of possible ELM classes on this candidate list (awaiting further annotation) exceeds the number of completely annotated classes, indicating the great demand for further annotation.\n",
+            "cite_spans": [],
+            "section": "User interface ::: NEW FEATURES",
+            "ref_spans": [
+                {
+                    "start": 360,
+                    "end": 368,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "The ELM motif detection pipeline scans protein sequences for matches to the regular expressions of annotated ELM classes (Figure 2). The query output combines these putative instances with information from the database (annotated ELM instances) as well as predictions from different algorithms/filters. The ELM resource employs a structural filter (18) to highlight and mask secondary structure elements, as well as SMART (19) to detect protein domains. Furthermore, an additional disorder prediction algorithm (IUPred) (20) has been included to predict ordered/disordered regions within the protein. IUPred uses a cutoff of 0.5 to classify a sequence region as either structured or disordered, with values above this threshold corresponding to disorder, highlighted in green background and lower values indicating structured regions, displayed in red background in the output graph. Disorder and domain information is combined by background coloring to highlight structured regions within the protein, which allows inspection of SLiMs that reside at domain boundaries and emphasizes motifs in disordered regions.",
+            "cite_spans": [
+                {
+                    "start": 349,
+                    "end": 351,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 423,
+                    "end": 425,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 521,
+                    "end": 523,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Graphical representation of sequence search ::: NEW FEATURES",
+            "ref_spans": [
+                {
+                    "start": 122,
+                    "end": 130,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The conservation of linear motifs can help in assessing the functional relevance of putative instances, with functional instances showing higher overall sequence conservation than non-functional ones (21). Therefore, sequence conservation of the query protein is calculated using a tree-based conservation scoring method (22) and highlighted in the graphical output. Here, lighter shades of blue represent low conservation while dark blue shading corresponds to high-sequence conservation. The actual conservation score can be inspected by moving the mouse over the respective ELM instance (Figure 2).",
+            "cite_spans": [
+                {
+                    "start": 201,
+                    "end": 203,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 322,
+                    "end": 324,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Graphical representation of sequence search ::: NEW FEATURES",
+            "ref_spans": [
+                {
+                    "start": 591,
+                    "end": 599,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The functionality of linear motifs can be modulated by modifications such as phosphorylation (23,24). To enable the user to investigate phosphorylation data in the context of putative linear motif instances, phosphorylation annotations from the Phospho.ELM resource (25) have been added to the graphical output (Figure 2, top row). The phosphorylated residues are highlighted in different colors (serine: green, threonine: blue, tyrosine: red); each phosphorylation site is linked to a page showing detailed information about the respective modification site from the manually curated data set of the Phospho.ELM resource.",
+            "cite_spans": [
+                {
+                    "start": 94,
+                    "end": 96,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 97,
+                    "end": 99,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 267,
+                    "end": 269,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "Graphical representation of sequence search ::: NEW FEATURES",
+            "ref_spans": [
+                {
+                    "start": 312,
+                    "end": 320,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The importance of the short linear motifs in virus\u2013host interactions makes the ELM resource an important tool for the viral research community. For example, Cruz et al. (26) analyzed a protein phosphatase 1 (PP1) docking motif in \u2018protein 7\u2019 of transmissible gastroenteritis virus using the ELM class LIG_PP1. This conserved sequence motif mediates binding to the PP1 catalytic subunit, a key regulator of the cellular antiviral defense mechanisms, and is also found in other viral proteomes, suggesting that it might be a recurring strategy to counteract the hosts\u2019 defense against RNA viruses by dephosphorylating eukaryotic translation initiation factor 2\u03b1 and ultimately ribonuclease L.",
+            "cite_spans": [
+                {
+                    "start": 170,
+                    "end": 172,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "VIRAL INSTANCES",
+            "ref_spans": []
+        },
+        {
+            "text": "To reflect our increasing awareness of viral motifs (8), special focus has been attributed to the annotation of viral instances in the ELM database: in the latest release, more than 200 novel ELM instances found in 84 different viral taxons have been added. The notion of viruses abusing existing SLiMs in their hosts is demonstrated by viral instances being annotated alongside instances in their hosts\u2019 proteins. For example, the ELM class LIG_PDZ_Class_1 contains 12 instances in human proteins but has recently been expanded with 5 instances from 5 different human pathogenic virus proteins.",
+            "cite_spans": [
+                {
+                    "start": 53,
+                    "end": 54,
+                    "mention": "8",
+                    "ref_id": "BIBREF40"
+                }
+            ],
+            "section": "VIRAL INSTANCES",
+            "ref_spans": []
+        },
+        {
+            "text": "The importance of SLiMs is further corroborated by the occurrence of pathologies that are caused by mutations that either mutate existing linear motifs or create novel linear motifs (of undesired function) (27). Examples include \u2018Usher's syndrome\u2019 (28), \u2018Liddle's Syndrome\u2019 (6) or \u2018Golabi-Ito-Hall Syndrome\u2019 (29). The developmental disorder \u2018Noonan Syndrome\u2019 can be caused by mutations in Raf-1 that abrogate the interaction with 14-3-3 proteins mediated by corresponding SLiMs and thereby deregulate the Raf-1 kinase activity (30) (the Raf-1 protein sequence features two LIG_14-3-3_1 binding sites that are annotated at 256-261 and 618-623 in the ELM resource). A related disease, \u2018Noonan-like Syndrome\u2019, is caused by an S to G mutation at position 2 of the SHOC2 protein, creating a novel myristoylation site (annotated as ELM class MOD_NMyristoyl). This irreversible modification results in aberrant targeting of SHOC2 to the plasma membrane and impaired translocation to the nucleus upon growth factor stimulation (5). More information about the implication of short linear motifs on diseases is collected at http://elm.eu.org/infos/diseases.html.",
+            "cite_spans": [
+                {
+                    "start": 207,
+                    "end": 209,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 249,
+                    "end": 251,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 275,
+                    "end": 276,
+                    "mention": "6",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 309,
+                    "end": 311,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 528,
+                    "end": 530,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1020,
+                    "end": 1021,
+                    "mention": "5",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "LINEAR MOTIFS AND DISEASES",
+            "ref_spans": []
+        },
+        {
+            "text": "By providing a high-quality, manually curated data set of linear motif classes with experimentally validated SLiM instances, the ELM database has proven to be invaluable to the community: small-scale (single protein) analyzes benefit from the detailed annotation of each ELM class in attributing novel features to proteins of interest. By using in vitro and in vivo studies, von Nandelstadh et al. (31) could validate a PDZ class III motif, detected by ELM at the carboxy terminus of myotilin and the FATZ (calsarcin/myozenin) families. This evolutionarily conserved carboxy-terminal motif mediates binding to PDZ domains of ZASP/Cypher and other Enigma family members (ALP, CLP-36 and RIL) and disruption of these interactions results in myofibrillar myopathies (32). Additionally, ELM annotations can contribute to high-throughput screenings (33) as well as development of novel algorithms (34\u201336), methods (37) and databases (38). Furthermore, the highly curated data of the ELM resource are used as a benchmarking data set to evaluate the accuracy of prediction algorithms (21,39,40).",
+            "cite_spans": [
+                {
+                    "start": 399,
+                    "end": 401,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 764,
+                    "end": 766,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 845,
+                    "end": 847,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 893,
+                    "end": 898,
+                    "mention": "34\u201336",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 910,
+                    "end": 912,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 929,
+                    "end": 931,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 1078,
+                    "end": 1080,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1081,
+                    "end": 1083,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1084,
+                    "end": 1086,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "APPLICATION OF THE ELM RESOURCE",
+            "ref_spans": []
+        },
+        {
+            "text": "For any such analysis, the user should be aware that many matches to ELM regular expressions are false positives. Before conducting experiments based on ELM results, it is strongly advisable to check if a motif match is conserved, exposed in a cell compartment in which the motif is known to be functional. The ELM resource applies several filters to provide the user with such information that should ideally also be supported by the experimental evidence.",
+            "cite_spans": [],
+            "section": "APPLICATION OF THE ELM RESOURCE",
+            "ref_spans": []
+        },
+        {
+            "text": "The importance of SLiMs is highlighted by the growing number of instances with relevance to diseases or viruses. Yet, despite their importance and abundance, our understanding of linear motifs is still limited. This is mainly owing to the fact that they are still quite difficult to predict computationally and to investigate experimentally (3,41,42). By better understanding the biology of linear motifs, we hope to increase our insight into diseases and viruses (and vice versa). The ELM resource tries to aid the researcher in the search for putative SLiM instances by providing a feature-rich toolset for sequence analysis. Consequently, with the aforementioned additions and changes, we hope that the ELM resource continues to be a valuable asset to the community.",
+            "cite_spans": [
+                {
+                    "start": 342,
+                    "end": 343,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 344,
+                    "end": 346,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 347,
+                    "end": 349,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "SUMMARY",
+            "ref_spans": []
+        },
+        {
+            "text": "EMBL international PhD program (to R.J.W.); EMBL Interdisciplinary PostDoc fellowship (EIPOD to N.E.D.); NGFN framework by the Federal Government Department of Education and Science [FKZ01GS0862 (DiGtoP) to M.S. and M.H.]; European Community's Seventh Framework Programme FP7/2009 (SysCilia) (241955 to G.T.) and (SyBoSS) (242129 to K.V.R.); Polish Ministry of Science and Higher Education within Iuventus Plus project (IP2010-0483-70 to M.D.); Biotechnology and Biological Sciences Research Council (BB/F010486/1 to A.C.); R\u00e9gion Alsace and Coll\u00e8ge Doctoral Europ\u00e9en (to K.L.); Science Foundation Ireland (08/IN.1/B1864 to G.G.); BBSRC New Investigator Award (BB/I006230/1 to R.J.E.); German Research Foundation (SFB796 Project A2 to H.M.); grants from the Swiss National Science Foundation (to M.O.S.). Funding for open access charge: EMBL.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        },
+        {
+            "text": "Conflict of interest statement. None declared.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Summary of data stored in the ELM databasea\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2.: List of novel ELM classesa\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3.: Main cellular compartments used in ELM annotation\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1.: ELM start page. The user can submit a query sequence to the motif detection pipeline either as UniProt accession number or in FASTA format. Filtering criteria such as taxonomic range or cellular compartment should be activated to limit the resulting list of SLiM instances.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: ELM motif detection pipeline output page. The top legend explains the different colors/symbols used. The graphical output of ELM concentrates the output of multiple sequence classification algorithms; phosphorylation sites from Phospho.ELM, protein domains detected by SMART/Pfam, disorder predictions by GlobPlot and IUPred and secondary structure (18). The lower part contains the annotated and putative ELM instances for the given protein sequence (Epsin1, UniProt accession Q9Y6I3). The background is colored according to the structural information available. Each box represents one ELM instance, the color of which indicates the likelihood that this instance is functional: grey instances are buried within structured regions, while shades of blue represent instances outside of structured regions and hint on sequence conservation, with pale blue representing weak sequence conservation and dark blue indicating strong sequence conservation. Red ellipses or boxes mark instances that are annotated in the query sequence or a homologous sequence, respectively.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: ELM detail page showing information about the ELM class TRG_AP2beta_CARGO_1.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: ELM instances browse page. A full-text search (here, search term used was \u2018AP2\u2019, filtering for \u2018true positive\u2019 instances in taxon \u2018Homo sapiens\u2019, yielding 58 instances) assists in finding annotated instances. A search can be restricted to a particular taxonomy or instance logic (top) or ELM class type (buttons on the left). The list can also be exported to TSV or FASTA format for further processing.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5.: Schema of the ELM resource and data life cycle. Annotated ELM classes, and instances thereof, can be searched by database query. Via sequence search by the motif detection pipeline, annotated ELM classes yield putative instances in query sequences. By adding experimental evidence and references, these putative instances become candidate instances for annotation, and, with further curation, ultimately become fully annotated instances.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Attributes of short linear motifs",
+            "authors": [
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Davey",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Van Roey",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Weatheritt",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Toedt",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Uyar",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Altenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Budd",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Diella",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Dinkel",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Mol Biosyst.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "The 20 years of PROSITE",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Hulo",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bairoch",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Bulliard",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Cerutti",
+                    "suffix": ""
+                },
+                {
+                    "first": "BA",
+                    "middle": [],
+                    "last": "Cuche",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "de Castro",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Lachaize",
+                    "suffix": ""
+                },
+                {
+                    "first": "PS",
+                    "middle": [],
+                    "last": "Langendijk-Genevaux",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Sigrist",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Res.",
+            "volume": "36",
+            "issn": "",
+            "pages": "D245-D249",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Minimotif miner 2nd release: a database and web system for motif search",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Rajasekaran",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Balla",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Gradie",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Gryk",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kadaveru",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Kundeti",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Maciejewski",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Mi",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Rubino",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Vyas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Res.",
+            "volume": "37",
+            "issn": "",
+            "pages": "D185-D190",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Scansite 2.0: proteome-wide prediction of cell signaling interactions using short sequence motifs",
+            "authors": [
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Obenauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "LC",
+                    "middle": [],
+                    "last": "Cantley",
+                    "suffix": ""
+                },
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Yaffe",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res.",
+            "volume": "13",
+            "issn": "",
+            "pages": "3635-3641",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "ELM server: a new resource for investigating short functional sites in modular eukaryotic proteins",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Puntervoll",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Linding",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Gemund",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Chabanis-Davidson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mattingsdal",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cameron",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Ausiello",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Brannetti",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Costantini",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nucleic Acids Res.",
+            "volume": "13",
+            "issn": "",
+            "pages": "3625-3630",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "ELM: the status of the 2010 eukaryotic linear motif resource",
+            "authors": [
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Gould",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Diella",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Via",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Puntervoll",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Gemund",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Chabanis-Davidson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Michael",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sayadi",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Bryne",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nucleic Acids Res.",
+            "volume": "38",
+            "issn": "",
+            "pages": "D167-D180",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Computational identification and analysis of protein short linear motifs",
+            "authors": [
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Davey",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Shields",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Front. Biosci.",
+            "volume": "15",
+            "issn": "",
+            "pages": "801-825",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "The HUPO PSI's molecular interaction format\u2013a community standard for the representation of protein interaction data",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Hermjakob",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Montecchi-Palazzi",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bader",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wojcik",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Salwinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ceol",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Orchard",
+                    "suffix": ""
+                },
+                {
+                    "first": "U",
+                    "middle": [],
+                    "last": "Sarkans",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "von Mering",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nat. Biotechnol.",
+            "volume": "2",
+            "issn": "",
+            "pages": "177-183",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "The Ontology Lookup Service, a lightweight cross-platform tool for controlled vocabulary queries",
+            "authors": [
+                {
+                    "first": "RG",
+                    "middle": [],
+                    "last": "Cote",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Apweiler",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Hermjakob",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Bioinformatics.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "A structure filter for the Eukaryotic Linear Motif Resource",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Via",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Gould",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Gemund",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Helmer-Citterich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "BMC Bioinformatics.",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "SMART 6: recent updates and new developments",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Letunic",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Doerks",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Bork",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Res.",
+            "volume": "37",
+            "issn": "",
+            "pages": "D229-D232",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Local structural disorder imparts plasticity on linear motifs",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Fuxreiter",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Tompa",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Simon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Bioinformatics",
+            "volume": "8",
+            "issn": "",
+            "pages": "950-956",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "IUPred: web server for the prediction of intrinsically unstructured regions of proteins based on estimated energy content",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Dosztanyi",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Csizmok",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Tompa",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Simon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Bioinformatics",
+            "volume": "16",
+            "issn": "",
+            "pages": "3433-3434",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "A computational strategy for the prediction of functional linear peptide motifs in proteins",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Dinkel",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sticht",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Bioinformatics",
+            "volume": "24",
+            "issn": "",
+            "pages": "3297-3303",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "A tree-based conservation scoring method for short linear motifs in multiple alignments of protein sequences",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chica",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Labarga",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Gould",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lopez",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMC Bioinformatics",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "The LAT story: a tale of cooperativity, coordination, and choreography",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Balagopalan",
+                    "suffix": ""
+                },
+                {
+                    "first": "NP",
+                    "middle": [],
+                    "last": "Coussens",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Sherman",
+                    "suffix": ""
+                },
+                {
+                    "first": "LE",
+                    "middle": [],
+                    "last": "Samelson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Sommers",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Cold Spring Harb. Perspect. Biol.",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Protein phosphorylation in signaling\u201350 years and counting",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Pawson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Scott",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Trends Biochem. Sci.",
+            "volume": "6",
+            "issn": "",
+            "pages": "286-290",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Phospho.ELM: a database of phosphorylation sites\u2013update 2011",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Dinkel",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chica",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Via",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Gould",
+                    "suffix": ""
+                },
+                {
+                    "first": "LJ",
+                    "middle": [],
+                    "last": "Jensen",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Diella",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nucleic Acids Res.",
+            "volume": "39",
+            "issn": "",
+            "pages": "D261-D267",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Coronavirus gene 7 counteracts host defenses and modulates virus virulence",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Cruz",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Sola",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Becares",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Alberca",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Plana",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Enjuanes",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Zuniga",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS Pathog.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Viral infection and human disease\u2013insights from minimotifs",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kadaveru",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Vyas",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Schiller",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Front. Biosci.",
+            "volume": "13",
+            "issn": "",
+            "pages": "6455-6471",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Usher syndrome type I G (USH1G) is caused by mutations in the gene encoding SANS, a protein that associates with the USH1C protein, harmonin",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Weil",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "El-Amraoui",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Masmoudi",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Mustapha",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kikkawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Laine",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Delmaghani",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Adato",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Nadifi",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZB",
+                    "middle": [],
+                    "last": "Zina",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Hum. Mol. Genet.",
+            "volume": "5",
+            "issn": "",
+            "pages": "463-471",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Y65C missense mutation in the WW domain of the Golabi-Ito-Hall syndrome protein PQBP1 affects its binding activity and deregulates pre-mRNA splicing",
+            "authors": [
+                {
+                    "first": "VE",
+                    "middle": [],
+                    "last": "Tapia",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Nicolaescu",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "McDonald",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Musi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Oka",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Inayoshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Satteson",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Mazack",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Humbert",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Gaffney",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J. Biol. Chem.",
+            "volume": "25",
+            "issn": "",
+            "pages": "19391-19401",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Understanding eukaryotic linear motifs and their role in cell signaling and regulation",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Diella",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Haslam",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Chica",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Budd",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Michael",
+                    "suffix": ""
+                },
+                {
+                    "first": "NP",
+                    "middle": [],
+                    "last": "Brown",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Trave",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Front. Biosci.",
+            "volume": "",
+            "issn": "",
+            "pages": "6580-6603",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Gain-of-function RAF1 mutations cause Noonan and LEOPARD syndromes with hypertrophic cardiomyopathy",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Pandit",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sarkozy",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Pennacchio",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Carta",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Oishi",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Martinelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Pogna",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Schackwitz",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ustaszewska",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Landstrom",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nat. Genet.",
+            "volume": "8",
+            "issn": "",
+            "pages": "1007-1012",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "A class III PDZ binding motif in the myotilin and FATZ families binds enigma family proteins: a common link for Z-disc myopathies",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "von Nandelstadh",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ismail",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Gardin",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Suila",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Zara",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Belgrano",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Valle",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Carpen",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Faulkner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Mol. Cell Biol.",
+            "volume": "3",
+            "issn": "",
+            "pages": "822-834",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Mutations in myotilin cause myofibrillar myopathy",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Selcen",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Engel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Neurology",
+            "volume": "8",
+            "issn": "",
+            "pages": "1363-1371",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "The multiple-specificity landscape of modular peptide recognition domains",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Gfeller",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Butty",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Wierzbicka",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Verschueren",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Vanhee",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Huang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ernst",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Dar",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Stagljar",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Serrano",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Mol. Syst. Biol.",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Sorting the nuclear proteome",
+            "authors": [
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Bauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Willadsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "FA",
+                    "middle": [],
+                    "last": "Buske",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Le Cao",
+                    "suffix": ""
+                },
+                {
+                    "first": "TL",
+                    "middle": [],
+                    "last": "Bailey",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Dellaire",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Boden",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Bioinformatics",
+            "volume": "13",
+            "issn": "",
+            "pages": "i7-i14",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "CSpritz: accurate prediction of protein disorder segments with annotation for homology, secondary structure and linear motifs",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Walsh",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Di Domenico",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vullo",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Pollastri",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Tosatto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nucleic Acids Res.",
+            "volume": "39",
+            "issn": "",
+            "pages": "W190-W196",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Large-scale discovery and characterization of protein regulatory motifs in eukaryotes",
+            "authors": [
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Lieber",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Elemento",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tavazoie",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS One",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "A differential proteome screening system for post-translational modification-dependent transcription factor interactions",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Pless",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Kowenz-Leutz",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Dittmar",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Leutz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nat. Protoc.",
+            "volume": "3",
+            "issn": "",
+            "pages": "359-364",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Human protein reference database and human proteinpedia as discovery resources for molecular biotechnology",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Goel",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Muthusamy",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Pandey",
+                    "suffix": ""
+                },
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Prasad",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Mol. Biotechnol.",
+            "volume": "1",
+            "issn": "",
+            "pages": "87-95",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "SLiMFinder: a probabilistic method for identifying over-represented, convergently evolved, short linear motifs in proteins",
+            "authors": [
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                },
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Davey",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Shields",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS One",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Cell regulation: determined to signal discrete cooperation",
+            "authors": [
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Trends Biochem. Sci.",
+            "volume": "34",
+            "issn": "",
+            "pages": "471-482",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "CompariMotif: quick and easy comparisons of sequence motifs",
+            "authors": [
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                },
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Davey",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Shields",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Bioinformatics",
+            "volume": "10",
+            "issn": "",
+            "pages": "1307-1309",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Transient protein-protein interactions: structural, functional, and network properties",
+            "authors": [
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Perkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Diboun",
+                    "suffix": ""
+                },
+                {
+                    "first": "BH",
+                    "middle": [],
+                    "last": "Dessailly",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Lees",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Orengo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Structure",
+            "volume": "10",
+            "issn": "",
+            "pages": "1233-1243",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Interactome-wide prediction of short, disordered protein interaction motifs in humans",
+            "authors": [
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Edwards",
+                    "suffix": ""
+                },
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Davey",
+                    "suffix": ""
+                },
+                {
+                    "first": "KO",
+                    "middle": [],
+                    "last": "Brien",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Shields",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Mol. Biosyst.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Mutation of SHOC2 promotes aberrant protein N-myristoylation and causes Noonan-like syndrome with loose anagen hair",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Cordeddu",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Di Schiavi",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Pennacchio",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ma'ayan",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sarkozy",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Fodale",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cecchetti",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Cardinale",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Martin",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Schackwitz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nat. Genet.",
+            "volume": "9",
+            "issn": "",
+            "pages": "1022-1026",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Liddle's syndrome caused by a novel mutation in the proline-rich PY motif of the epithelial sodium channel beta-subunit",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Furuhashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Kitamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Adachi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Miyoshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Wakida",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Ura",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Shikano",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Shinshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Sakamoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hayashi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "J. Clin. Endocrinol. Metab.",
+            "volume": "1",
+            "issn": "",
+            "pages": "340-344",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Regulation of sorting and post-Golgi trafficking of rhodopsin by its C-terminal sequence QVS(A)PA",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Deretic",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Schmerl",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Hargrave",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Arendt",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "McDowell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Proc. Natl Acad. Sci. USA.",
+            "volume": "18",
+            "issn": "",
+            "pages": "10620-10625",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "How viruses hijack cell regulation",
+            "authors": [
+                {
+                    "first": "NE",
+                    "middle": [],
+                    "last": "Davey",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Trave",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Trends Biochem. Sci.",
+            "volume": "3",
+            "issn": "",
+            "pages": "159-169",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Systematic discovery of new recognition peptides mediating protein interaction networks",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Neduva",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Linding",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Su-Angrand",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Stark",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "de Masi",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lewis",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Serrano",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Russell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "PLoS Biol.",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

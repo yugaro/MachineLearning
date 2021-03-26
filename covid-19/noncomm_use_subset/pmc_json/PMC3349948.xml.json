@@ -1,0 +1,1209 @@
+{
+    "paper_id": "PMC3349948",
+    "metadata": {
+        "title": "Genome Stability of Pandemic Influenza A (H1N1) 2009 Based on Analysis of Hemagglutinin and Neuraminidase Genes",
+        "authors": [
+            {
+                "first": "Emilio",
+                "middle": [
+                    "E"
+                ],
+                "last": "Esp\u00ednola",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Influenza A viruses belong to the Orthomyxoviridae family, and have a genome composed of eight segments of single-stranded, negative-sense RNA. Their surfaces are composed by a lipid envelope, originated from the plasmatic membrane of infected epithelial cells, and two antigenic proteins: Hemagglutinin (HA) and Neuraminidase (NA); these two antigens exhibit higher variability compared with their remaining proteins [1]. Depending on the extent of variability of two surface proteins, until now are known 16 HA (H1-H16), and 9 NA genotypes (N1-N9), respectively, which can be combined in different combinations [1, 2].",
+            "cite_spans": [
+                {
+                    "start": 419,
+                    "end": 420,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 614,
+                    "end": 615,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 616,
+                    "end": 618,
+                    "mention": " 2",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In early April 2009, authorities from the Mexican public health observed a high number of influenza-like illnesses in their territory, and informed about this outbreak to the regional office of the World Health Organization (WHO). In mid April, the Centers for Disease Control from USA identified the new virus in two cases from California. The new virus spread rapidly throughout the world, and as a consequence the WHO authorities declared the \u201cPandemic (H1N1) 2009\u201d on June 11, 2009 [3]. It is thought that the new 2009 H1N1 pandemic virus (from here, 2009 H1N1pdm) has emerged through at least four reassortment and transmission events among swine, avian and human H1N1 lineages, probably in Asia and North America [4]. Particularly, the HA segment of 2009 H1N1pdm was originated from American swine lineage, whereas the NA segment derived from the European swine lineage [5, 6]. It is believed that the ancestors of this pandemic strain remained undetected for approximately one decade due to lack of a surveillance system in pigs, the historical \u201cmixing vessel\u201d for new influenza viruses. Furthermore, the closest ancestors of the new pandemic strains emerged probably in January 2009 [4].",
+            "cite_spans": [
+                {
+                    "start": 487,
+                    "end": 488,
+                    "mention": "3",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 720,
+                    "end": 721,
+                    "mention": "4",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 877,
+                    "end": 878,
+                    "mention": "5",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 879,
+                    "end": 881,
+                    "mention": " 6",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 1192,
+                    "end": 1193,
+                    "mention": "4",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The objective of this study was to analyze a dataset of complete nucleotide (nt) sequences of HA and NA genes, in order to assess the extent of diversity among circulating 2009-2010 strains, estimate if these genes evolved through positive, negative, or neutral selection models of evolution during the pandemic phase, and analyze the worldwide percentage of detection of important amino acid mutations that could enhance the viral performance, such as transmissibility or resistance to drugs. ",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Complete CoDing Sequences (CDS) of HA (1701 nt) and NA (1410 nt) genes corresponding to 2009 H1N1pdm, isolated from humans, were downloaded from the Influenza Virus Resource (http://www.ncbi.nlm.nih.gov/genomes/FLU /SwineFlu.html) from the National Center for Biotechnology Information, by the year of sequence repository. The first dataset consisted of 3765 HA and 2996 NA sequences, respectively, which were reported in the period 2009-2010. After discarding exact duplicates in sequence using a Perl script, we obtained 2038 HA and 1273 NA sequences, respectively; these sequences were different in at least one nucleotide among all representatives. Reassortant strains were discarded, as well as incomplete CDS sequences.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Nucleotide sequences were manually edited in FASTA format, using BioEdit v7.0.5 [7], and aligned with CLUSTAL W [8]. Sequence information (GenBank accession number, strain, and year of isolation) for each sample used in this study are available for HA (Table S1) and NA genes (Table S2), respectively. Pairwise distances were calculated with MEGA v5 [9]. The percentages of identities were calculated by applying the formula 100 - (pairwise distance value x 100). A graph was constructed by plotting the percentage identities in the abscissa (x axis) vs the frequency of each of the calculated pairwise identities in the ordinate (y axis). The graphs were prepared in the R environment, using ggplot2 package (www.r-project.org).",
+            "cite_spans": [
+                {
+                    "start": 81,
+                    "end": 82,
+                    "mention": "7",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 113,
+                    "end": 114,
+                    "mention": "8",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 351,
+                    "end": 352,
+                    "mention": "9",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The models of nucleotide substitution that best fitted each dataset were determined with MEGA v5 [9], and were: GTR+I model for HA genes, and T92+G model for NA genes, respectively. Phylogenetic relationships were reconstructed by the Neighbor-Joining method [10], with the appropriate models of nucleotide substitution for each dataset (as described above) and bootstrap analysis of 1000 replicates, as incorporated in MEGA v5 [9]. Outgroup sequences for HA and NA genes corresponded to strain A/Puerto Rico/8/1934.",
+            "cite_spans": [
+                {
+                    "start": 98,
+                    "end": 99,
+                    "mention": "9",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 260,
+                    "end": 262,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 429,
+                    "end": 430,
+                    "mention": "9",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Mutations in each CDS were analyzed by the method of Nei and Gojobori [11]. Codon aligned sequences for each dataset were analyzed using the Perl-based SNAP program (http://www.hiv.lanl.gov/content/sequence/SNAP/SNAP.html) [12] in order to calculate the variability of each CDS. The selective pressure was measured by comparing the rate of non-synonymous nucleotide substitutions per non-synonymous site (dN) against that of synonymous substitutions per synonymous site (dS). The ratio dN/dS was used as an index to assess positive selection. A ratio dN/dS >1 means positive (diversifying) selection, =1 means neutral selection, and <1 means negative (purifying) selection.",
+            "cite_spans": [
+                {
+                    "start": 71,
+                    "end": 73,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 224,
+                    "end": 226,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The analysis of pairwise identity frequencies showed high percentage of similarities among circulating 2009-2010 pandemic influenza strains (Fig. 1). The average percentage of identity was 99.7% for both HA and NA genes. Thus, in this period of pandemic circulation, both genes did not segregate into different clusters, but on the contrary showed a constant and stable evolution.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 146,
+                    "end": 147,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The high percentages of nucleotide identity were in accordance with the single clustering of all 2009-2010 strains in the phylogenetic tree of HA and NA genes (Fig. 2), without temporal or geographical distribution. It is interesting to note that the overall genetic diversity among 2009 H1N1pdm was less than typically observed among seasonal influenza. This is in accordance with its short period of time of circulation in humans [13]. The single clustering of 2009 H1N1pdm observed in this report, however, is in contrast with other studies [14], in which the authors observe differences by using small datasets of sequences. The single clustering of 2009 H1N1pdm, furthermore, agrees with serological data in which it was observed that antigenically, the new pandemic viruses were all similar [6], and thus not requiring a new update of the vaccine (strain A/California/07/2009) until now.",
+            "cite_spans": [
+                {
+                    "start": 433,
+                    "end": 435,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 545,
+                    "end": 547,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 798,
+                    "end": 799,
+                    "mention": "6",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 165,
+                    "end": 166,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Given that 2009 H1N1pdm constituted a homogeneous phylogenetic group, it was hypothesized that the diversity in nucleotide sequences localized (in average) in the 0.3% of differences within each analyzed gene. Taking into account the complete CDS for HA and NA genes, this percentage of differences constitutes approximately four to five nucleotide random variations among circulating strains.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Calculation of average dN/dS rates of evolution showed that both HA and NA genes evolved through negative (purifying) selection (Table 1), with dN/dS values of 0.2762 and 0.1939, respectively. Even though in general, both genes underwent negative selection, some positions can evolve through positive selection. For example, an early study showed that two sites involved in receptor binding specificity of HA (220 and 278) were under positive selection, and these sites were not found in swine or seasonal H1N1 viruses [15]. Thus, changes in receptor binding sites could lead to alterations in receptor binding specificities.",
+            "cite_spans": [
+                {
+                    "start": 520,
+                    "end": 522,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 135,
+                    "end": 136,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "In other viruses such as SARS-CoV, it was observed that they can develop through positive selection through the cross-species transmission in early epidemics, and negative selection during late epidemics [16]. It is possible that the same mechanism was the driven force of evolution of 2009 H1N1pdm, with positive selection at least during cross-species transmission.",
+            "cite_spans": [
+                {
+                    "start": 205,
+                    "end": 207,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "A number of different amino acid mutations that could confer new functionalities to the new virus were reported worldwide, including those related to increased pathogenicity or antiviral resistance (Table 2).",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 205,
+                    "end": 206,
+                    "mention": "2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Polymorphism at position 239 in HA has been associated with severe clinical outcomes, especially in immunocompromised patients; in particular, substitution 239G was found to correlate with fatal outcomes in different countries [17, 18]. Furthermore, this mutation can arise de novo from wildtype (D239) virus in the same patient throughout the disease course [19]. Mutation at position 239 can induce alterations in the receptor binding site, and 239G mutants bind a broader range of \u03b12-3-linked sialyl receptors sequences expressed on cells from the lower respiratory tract, which suggested that its presence could be responsible for the exacerbation of disease [20]. Mutants 239E target mainly non-ciliated cells. We found no significant difference between sequences bearing mutations 239G (2.6%) and 239E (5.5%). The low percentage of global circulation of mutants 239G found in this study is in accordance with its lower potential to transmit to other individuals [21].",
+            "cite_spans": [
+                {
+                    "start": 228,
+                    "end": 230,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 231,
+                    "end": 234,
+                    "mention": " 18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 360,
+                    "end": 362,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 664,
+                    "end": 666,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 969,
+                    "end": 971,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Positions 239 and 220 are localized within the HA antigenic site called Ca. The amino acid S220, though not exposed to the surface, is localized in the receptor binding domain (RBD), and its change could affect the transmissibility and infectivity of H1N1 in humans. The fixed mutation, S220T, has been found at high percentage (76.7%) in this study. To test whether change 220T could contribute to antigenic drift, it would be interesting to compare its antigenic profile against a wildtype isolate (S220). This mutation, probably, has become fixed in all pandemic strains through optimization of viral fitness, rather than immune selection or adaptation to the host.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Substitution S101N has been proposed previously as a reversion to the seasonal H1N1 residue 101N and thus possibly an adaptation to the human host, being found in some studies at high frequencies. Its global impact, however, is controvertible because it was found in only 0.2% of our sequences. Substitution E391K, found at 15.6% in our study, has been identified as part of a highly conserved epitope in the 1918 H1N1 virus with a possible role in membrane fusion [22]. Another proximal substitution found in other studies, N387H, was found in only 1.7% of our sequences.",
+            "cite_spans": [
+                {
+                    "start": 466,
+                    "end": 468,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In the NA gene, it was showed that mutations V106I and N248D were present in samples at increasing numbers through early pandemic month (April to December 2009) [23]. We found both mutations at high percentages, 85.1% and 85.9% respectively, in our dataset. Change 106I was present in the 20th century cases of H1N1 (in 1918 [pandemic], and 1977), as well as 248D (in 1977). Since residue at position 248 is located at the drug target domain (DTD) region, as residue 275, it could potentially affect the sensitivity to NA inhibitors. Another substitution of possible interest in NA sequences is D199N, which was previously associated with an increase in oseltamivir resistance in both seasonal and H5N1 virus strains [24]. We found, however, only 4 out of 1273 NA sequences (0.3%) containing this change. The rare substitution I223R, which was reported in association with resistance to oseltamivir, zanamivir, and peramivir [25], was also found in only 2 out of 1273 NA sequences (0.2%). Substitution H275Y has been related to oseltamivir resistance, especially in immunocompromised or severely ill persons [26]. It was found, however, in sporadic cases in most of the countries at low frequencies (~1%) [27]. In our study, we found 2% of sequences containing this change.",
+            "cite_spans": [
+                {
+                    "start": 162,
+                    "end": 164,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 718,
+                    "end": 720,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 926,
+                    "end": 928,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1109,
+                    "end": 1111,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1206,
+                    "end": 1208,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In conclusion, the stable evolution of 2009 H1N1pdm offers an opportunity to control its spread and prevent infections. Reports about new mutations, however, will still be important if those changes can confer an enhanced transmissibility or resistance to drugs. Furthermore, a continuous surveillance by public health authorities will be critical to monitor the appearance of new influenza variants, especially in animal reservoirs such as swine and birds, in order to prevent the potential animal-human transmission of viruses with pandemic potential.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Nucleotide Variation for HA and NA Genes\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2.: Mutations in HA and NA Genes of 2009 H1N1pdm. Numbering Corresponds to the Pandemic Prototype and Vaccine Strain, A/California/07/2009\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Fig. (1): Pairwise identity frequencies for (a) Hemagglutinin and (b) Neuraminidase genes, respectively.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig. (2): Phylogenetic reconstruction for (a) Hemagglutinin and (b) Neuraminidase genes, respectively. The vertical black lines indicate the\nmonophyletic clustering of complete nucleotide CDS for both genes. Branch distances are indicated by a scale bar (0.02 nt substitution per\nsite) at the bottom of each tree.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Orthomyxoviridae: The viruses and their\nreplication",
+            "authors": [
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": " Lamb",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Krug",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Fields Virology",
+            "volume": "",
+            "issn": "",
+            "pages": "1487-531",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "The neighbor-joining method a new method for\nreconstructing phylogenetic trees",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": " Saitou",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nei",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "Mol Biol Evol",
+            "volume": "4",
+            "issn": "",
+            "pages": "406-25",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Simple methods for estimating the numbers of\nsynonymous and nonsynonymous nucleotide substitutions",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": " Nei",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Gojobori",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Mol\nBiol Evol",
+            "volume": "3",
+            "issn": "",
+            "pages": "418-26",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": " Korber",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "HIV Signature and Sequence Variation Analysis.\nComputational Analysis of HIV Molecular Sequences",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Evolutionary\npathways of the pandemic influenza A (H1N1) 2009 in the UK",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": " Galiano",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Agapow",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Thompson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "\nPLoS One",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Differentiation\nof two distinct clusters among currently circulating influenza\nA(H1N1)v viruses, March-September 2009",
+            "authors": [
+                {
+                    "first": "SR",
+                    "middle": [],
+                    "last": " Fereidouni",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Beer",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Vahlenkamp",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Starick",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Euro Surveill",
+            "volume": "14",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Comparison of\nselection pressures on the HA gene of pandemic (2009) and\nseasonal human and swine influenza A H1 subtype viruses",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": " Furuse",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Shimabukuro",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Odagiri",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "\nVirology",
+            "volume": "405",
+            "issn": "",
+            "pages": "314-21",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "The Chinese SARS Molecular Epidemiology Consotium. Evolution\nof the SARS coronavirus during the course of the SARS epidemic\nin China",
+            "authors": [],
+            "year": 2004,
+            "venue": "Science",
+            "volume": "303",
+            "issn": "",
+            "pages": "1666-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Sequence analysis of the 2009 pandemic\ninfluenza A H1N1 virus haemagglutinin gene from 2009-2010\nBrazilian clinical samples",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": " Ferreira",
+                    "suffix": ""
+                },
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "Borborema",
+                    "suffix": ""
+                },
+                {
+                    "first": "LF",
+                    "middle": [],
+                    "last": "Brigido",
+                    "suffix": ""
+                },
+                {
+                    "first": "MI",
+                    "middle": [],
+                    "last": "de Oliveira",
+                    "suffix": ""
+                },
+                {
+                    "first": "\nTM",
+                    "middle": [],
+                    "last": "de Paiva",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "dos Santos",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Mem Inst Oswaldo Cruz",
+            "volume": "106",
+            "issn": "",
+            "pages": "613-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Observed\nassociation between the HA1 mutation D222G in the 2009\npandemic influenza A(H1N1) virus and severe clinical outcome\nNorway 2009-2010",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": " Kilander",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Rykkvin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Dudman",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Hungnes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Euro Surveill",
+            "volume": "15",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Clinical and virological course\nof infection with haemagglutinin D222G mutant strain of 2009\npandemic influenza A (H1N1) virus",
+            "authors": [
+                {
+                    "first": "PK",
+                    "middle": [],
+                    "last": " Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Joynt",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J Clin Virol",
+            "volume": "50",
+            "issn": "",
+            "pages": "320-4",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Emergence and pandemic\npotential of swine-origin H1N1 influenza virus",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": " Neumann",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Noda",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kawaoka",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nature",
+            "volume": "459",
+            "issn": "",
+            "pages": "931-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Altered receptor\nspecificity and cell tropism of D222G hemagglutinin mutants\nisolated from fatal cases of pandemic A(H1N1) 2009 influenza\nvirus",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": " Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Childs",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Matrosovich",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Virol",
+            "volume": "84",
+            "issn": "",
+            "pages": "12069-74",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Transmission of\nhemagglutinin D222G mutant strain of pandemic (H1N1) 2009\nvirus",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": " Puzelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Facchini",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Spagnolo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Emerg Infect Dis",
+            "volume": "16",
+            "issn": "",
+            "pages": "863-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Antibody recognition of\na highly conserved influenza virus epitope",
+            "authors": [
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": " Ekiert",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bhabha",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Elsliger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Science",
+            "volume": "324",
+            "issn": "",
+            "pages": "246-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Genomic signature and mutation\ntrend analysis of pandemic (H1N1) 2009 influenza A virus",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": " Pan",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Cheung",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS\nOne",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Detection of molecular\nmarkers of antiviral resistance in influenza A (H5N1) viruses using\na pyrosequencing method",
+            "authors": [
+                {
+                    "first": "VM",
+                    "middle": [],
+                    "last": " Deyde",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Nguyen",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Bright",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Antimicrob Agents Chemother",
+            "volume": "\n53",
+            "issn": "",
+            "pages": "1039-47",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Emergence of a\nmultidrug-resistant pandemic influenza A (H1N1) virus",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": " van der Vries",
+                    "suffix": ""
+                },
+                {
+                    "first": "FF",
+                    "middle": [],
+                    "last": "Stelma",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Boucher",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "N Engl J\nMed",
+            "volume": "363",
+            "issn": "",
+            "pages": "1381-2",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "The emergence of\noseltamivir-resistant pandemic influenza A (H1N1) 2009 virus\namongst hospitalised immunocompromised patients in Scotland\nNovember-December, 2009",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": " Harvala",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gunson",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Simmonds",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Euro Surveill",
+            "volume": "15",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Neuraminidase-inhibitor\nresistance testing for pandemic influenza A (H1N1) 2009 in\nOntario Canada",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": " Longtin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Patel",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Eshaghi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J Clin Virol",
+            "volume": "50",
+            "issn": "",
+            "pages": "257-61",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "WHO. Pandemic (H1N1) 2009, update 75. Accessed on: January 1,\n2012. Available from http://www.who.int",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Evolutionary\ngenomics of the pandemic 2009 H1N1 influenza viruses (pH1N\n1v)",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": " Qu",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Cui",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Duan",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Lei",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Virol J",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Origin of the\n2009 Mexico influenza virus a comparative phylogenetic analysis\nof the principal external antigens and matrix protein",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": " Babakir-Mina",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Dimonte",
+                    "suffix": ""
+                },
+                {
+                    "first": "CF",
+                    "middle": [],
+                    "last": "Perno",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ciotti",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Arch Virol\n",
+            "volume": "154",
+            "issn": "",
+            "pages": "1349-52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Antigenic and genetic\ncharacteristics of swine-origin 2009 A(H1N1) influenza viruses\ncirculating in humans",
+            "authors": [
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": " Garten",
+                    "suffix": ""
+                },
+                {
+                    "first": "CT",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Russell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Science",
+            "volume": "325",
+            "issn": "",
+            "pages": "197-201",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "BioEdit a user-friendly biological sequence alignment\neditor and analysis program for Windows 95/98/NT",
+            "authors": [
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": " Hall",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nucl Acids\nSymp Ser",
+            "volume": "41",
+            "issn": "",
+            "pages": "95-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "CLUSTAL W improving\nthe sensitivity of progressive multiple sequence alignment through\nsequence weighting, position-specific gap penalties and weight\nmatrix choice",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": " Thompson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DG",
+                    "middle": [],
+                    "last": "Higgins",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Gibson",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Nucleic Acids Res",
+            "volume": "22",
+            "issn": "",
+            "pages": "4673-80",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "\nMEGA5 molecular evolutionary genetics analysis using maximum\nlikelihood evolutionary distance and maximum parsimony\nmethods",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": " Tamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Peterson",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Peterson",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Stecher",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nei",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Mol Biol Evol",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

@@ -1,0 +1,1220 @@
+{
+    "paper_id": "PMC5161610",
+    "metadata": {
+        "title": "Fractional Dosing of Yellow Fever Vaccine to Extend Supply: A Modeling Study",
+        "authors": [
+            {
+                "first": "Joseph",
+                "middle": [
+                    "T."
+                ],
+                "last": "Wu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Corey",
+                "middle": [
+                    "M."
+                ],
+                "last": "Peak",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Gabriel",
+                "middle": [
+                    "M."
+                ],
+                "last": "Leung",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Marc",
+                "middle": [],
+                "last": "Lipsitch",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Yellow fever (YF) has resurged in Angola and threatens to spread to other countries with relatively low YF vaccine coverage. As of 8 July 2016, YF cases have been exported from Angola to Kenya (2 cases), China (11), and DRC (59), raising concern that YF could resurge in other populations where competent vectors are present and vaccine coverage is low.1,2 Indeed, DRC has already declared a YF epidemic in Kinshasa and two other provinces. A broad band of sub-Saharan Africa north of Namibia and Zambia is at risk (http://www.cdc.gov/yellowfever/maps/africa.html), as is much of the northern portion of South America (http://www.cdc.gov/yellowfever/maps/south_america.html). The global community is increasingly concerned for the risk of YF emergence in Asia, where the disease has been curiously absent despite seemingly amenable conditions.",
+            "cite_spans": [
+                {
+                    "start": 353,
+                    "end": 354,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 355,
+                    "end": 356,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "There is a safe, highly effective live-attenuated vaccine against YF.3 However, the global emergency stockpile of YF vaccines, which has been maintained at approximately 6\u00b78 million doses before 2016, has already been depleted twice by the Angola outbreak. With a throughput of only 2 to 4 million doses per month, YF vaccine supply is inadequate given the large urban populations at risk for YF infection. In response to such shortage, dose fractionation has been proposed to maximize the public health benefit of the available YF vaccines.4 Under dose fractionation, a smaller amount of antigen would be used per dose in order to increase the number of persons who can be vaccinated with a given quantity of vaccine.3 This strategy was previously proposed to extend pre-pandemic influenza vaccine supplies.5 If dose fractionation were consistently adopted, equity of YF vaccine access would also be enhanced both within and across countries at risk, as more people could benefit from vaccination without depriving others.6",
+            "cite_spans": [
+                {
+                    "start": 69,
+                    "end": 70,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 541,
+                    "end": 542,
+                    "mention": "4",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 718,
+                    "end": 719,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 808,
+                    "end": 809,
+                    "mention": "5",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 1023,
+                    "end": 1024,
+                    "mention": "6",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Indeed, following the SAGE endorsement on 17 June 2016, the WHO recommended dose fractionation in its emergency YF vaccination campaign in July\u2013August 2016 to vaccinate 8 million people in Kinshasa, 3 million in anterior Angola and 4\u00b73 million along the DRC-Angola corridor.7 Specifically, 2\u00b75 million standard-dose vaccines would be allocated to Kinshasa where 200,000 standard-dose vaccines would be given to children age 9 months to 2 years and the remaining allocation are to be fractionated five-fold and administered to the rest of the population.",
+            "cite_spans": [
+                {
+                    "start": 274,
+                    "end": 275,
+                    "mention": "7",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The evidence base for fractional-dose YF vaccines is built upon two studies that compared the safety and immunogenicity of standard-dose and five-fold fractional-dose YF vaccines. The first is a randomized, noninferiority trial which showed that 0\u00b71 ml intradermal (ID) vaccination with the 17D YF vaccine was equally safe and immunogenic compared to the standard 0\u00b75ml subcutaneous vaccination.8 The second is a randomized trial of subcutaneous administration of the 17DD vaccine given in Brazil which showed that there was no significant difference in immunogenicity and viremia kinetics when the currently administered vaccine (containing 27,476 IU of virus) was given at subdoses as low as 11% of the full dose (3,013 IU).9 Even lower doses produced noninferior immune responses, but not equivalent viremia kinetics.9 For comparison, the WHO minimum for YF vaccines is 1,000 IU per dose at the end of shelf life.10 No efficacy trial of YF vaccines, however, has ever been performed in humans,11 so the comparative efficacy of different doses and routes of administration remains uncertain. In particular, it is not known whether equal immunogenicity implies equal vaccine efficacy for YF vaccines. Moreover, the findings of equal immunogenicity of reduced doses are limited to healthy adults; no comparable data exist in children (thus the age cutoff of 2 years for fractional-dose vaccines in Kinshasa), elderly or immunocompromised individuals (e.g. HIV-infected people, pregnant women, etc.). As such, while noninferior immunogenicity of fractional-dose vaccines provide a strong basis for an initial consideration of dose-sparing strategies for YF vaccines, it would be prudent to ensure the robustness of this strategy by carefully evaluating the risk and epidemiologic impact of reduced vaccine efficacy in fractional-dose vaccines. Such an evaluation is nontrivial because even if dose fractionation reduces vaccine efficacy, higher vaccine coverage may confer higher herd immunity in which case the number of infections could be significantly reduced by the indirect effect of large-scale vaccination.12 The lower the transmissibility, the larger the number of infections that can be averted by indirect protection, as illustrated by the previous study of dose fractionation for pre-pandemic influenza vaccines.5 The importance of herd immunity for YF vaccination is unknown because transmissibility of YF in urban settings has never been adequately characterized due to limited data.",
+            "cite_spans": [
+                {
+                    "start": 395,
+                    "end": 396,
+                    "mention": "8",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 726,
+                    "end": 727,
+                    "mention": "9",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 820,
+                    "end": 821,
+                    "mention": "9",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 916,
+                    "end": 918,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 996,
+                    "end": 998,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 2113,
+                    "end": 2115,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 2323,
+                    "end": 2324,
+                    "mention": "5",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "To strengthen the evidence base for the public health benefit of dose fractionation of YF vaccines, we use simple mathematical models to assess the potential reduction in infection attack rate (IAR, defined as the proportion of population infected over the course of a sustained epidemic) conferred by five-fold dose fractionation under different epidemic scenarios and reductions in vaccine efficacy. We find that all dose-sparing strategies considered are likely to provide significant benefit epidemiologically, and that the best policy will be determined by balancing logistical and regulatory considerations against the extent of epidemiologic benefit. In particular, we conclude that the WHO Kinshasa dose-sparing vaccination campaign in July\u2013August 2006 would be an effective strategy for reducing infection attack rate, and the results would be robust against a large margin for error in case five-fold fractional-dose efficacy turns out to be lower than expected.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "First, to parameterize realistic epidemic scenarios for our analysis, we estimate the reproductive number of YF over the course of the Angola outbreak and use the estimates during the early epidemic stages (before large-scale vaccination affected transmission) as the range of basic reproductive number (R0) for future outbreaks in other populations. To this end, we use the Wallinga and Teunis method13 to estimate the reproductive number of YF from the daily number of confirmed YF cases recorded in the 17 April 2016 WHO Angola Situation Report,14 assuming that all cases were attributed to local transmission (i.e. no importation of cases). When estimating the extrinsic incubation period, we assume that the average temperature in Angola was 28 degrees Celsius during the outbreak. To estimate the serial interval distribution, we make the following assumptions: (i) the extrinsic incubation period follows the Weibull distribution estimated by ref.15 which has mean 12\u00b77 days at 28 degrees Celsius; (ii) the intrinsic incubation period follows the lognormal distribution estimated by ref.15 which has mean 4\u00b76 days; (iii) the infectious period in human is exponentially distributed with mean 4 days;16 (iv) the mosquito lifespan is exponentially distributed with mean 7 to 14 days.17 We estimate the initial reproductive number of the YF outbreak in Angola as the average reproductive number among all cases who developed symptoms one serial interval before vaccination campaign began to affect disease transmission (see Figure 1).",
+            "cite_spans": [
+                {
+                    "start": 401,
+                    "end": 403,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 548,
+                    "end": 550,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 954,
+                    "end": 956,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1094,
+                    "end": 1096,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1205,
+                    "end": 1207,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1287,
+                    "end": 1289,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Estimating the epidemiologic parameters for YF ::: METHODS",
+            "ref_spans": [
+                {
+                    "start": 1527,
+                    "end": 1535,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Let S0 be the proportion of population susceptible just before the vaccination campaign begins and V be the vaccine coverage achievable with standard-dose vaccines. Suppose each standard-dose vaccine can be fractionated into n, n-fold fractional-dose vaccines (i.e. each of which contains 1/n-th the amount of the antigen in a standard-dose vaccine) with vaccine efficacy VE(n). That is, the vaccine efficacy of standard-dose vaccines is VE(1) which was assumed to be 1. Given V, the highest fractionation sensible is nmax = S0/V if the susceptible population can be identified for targeted vaccination and nmax = 1/V otherwise, i.e. the fractionation n must lie between 1 and nmax. To avoid overstating the benefit of dose fractionation, we assume that vaccine efficacy of n-fold fractional-dose vaccines for n between 1 and 5 increases linearly with the amount of antigen in the vaccines (see appendix for explanation). Potential increases in vaccine wastage during dose-sparing would be mostly due to unused, reconstituted vaccines18 or increased vaccine failure due to inexperience with intradermal administration among vaccinators. In the setting of mass vaccination campaigns, wastage due to unused vaccine doses will likely to be negligible because vaccination sessions will be large.",
+            "cite_spans": [
+                {
+                    "start": 1034,
+                    "end": 1036,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Dose-response for fractional-dose vaccines ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We use IAR as the outcome measure for evaluating the impact of dose fractionation. We calculate IAR using the classical final size approach which is exact for directly transmitted SIR-type diseases19 but only an approximation for vector-borne diseases.20 Nonetheless, this approximation is excellent over realistic parameter ranges because only a very small proportion of mosquitoes are infected with YF virus even during epidemics (necessitating pooled testing).21 See appendix for the mathematical details.",
+            "cite_spans": [
+                {
+                    "start": 197,
+                    "end": 199,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 252,
+                    "end": 254,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 463,
+                    "end": 465,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Infection attack rate ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We denote the IAR under n-fold dose fractionation by IAR(n). To evaluate the outcome of fractional-dose vaccination against that of standard-dose vaccination, we calculate the absolute and relative reductions in IAR as IAR(1) \u2212 IAR(n) and 1 \u2212 IAR(n) / IAR(1), respectively. We assume that the vaccination campaign is completed before the start of the epidemic.",
+            "cite_spans": [],
+            "section": "Infection attack rate ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We assume that vaccine action is all-or-nothing, i.e. n-fold fractional-dose vaccines provide 100% protection against infection in a proportion VE(n) of vaccinees and no protection in the remainder. In this case, n-fold dose fractionation results in lower IAR if and only if the vaccine efficacy of n-fold fractional-dose vaccines is at least 1/n times that of standard-dose vaccines, i.e. VE(n) > VE(1) / n (see appendix for details). We term this the benefit threshold for dose fractionation. We also consider the alternative case in which vaccine action is leaky, i.e. n-fold fractional-dose vaccines reduce the hazard of infection (the probability of disease transmission per mosquito bite) of each vaccinee by a proportion VE(n).22,23 Compared to all-or-nothing vaccines, leaky vaccines have substantially higher benefit thresholds, especially when transmissibility is high (see Results). However, YF vaccine action is much more likely to be all-or-nothing than leaky (see Discussion). As such, we present our main results in the context of all-or-nothing vaccine action. In principle, disease transmission can be halted if the effective vaccine coverage, defined as the proportion of population immunized (e.g.V \u00d7 n \u00d7 VE(n) if vaccination comprises n-fold fractional-dose vaccines only), exceeds the herd immunity threshold 1 \u2212 1/R0.",
+            "cite_spans": [
+                {
+                    "start": 734,
+                    "end": 736,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 737,
+                    "end": 739,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Vaccine action ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We consider two vaccination scenarios with various levels of transmissibility and efficacy reduction in fractional-dose vaccines:\nRandom vaccination in a hypothetical population. To illustrate the potential impact of dose fractionation, we first consider a hypothetical scenario where the entire population is susceptible (S0 = 1) and each individual has the same probability of receiving vaccination. We compare the outcome of using the entire vaccine stockpile for either standard-dose or five-fold fractional-dose vaccination. If some individuals are immune (S0 < 1, due to previous exposure or vaccination) and vaccination can be targeted at susceptible individuals only, then the resulting IAR within the susceptible population would be the same as that for random vaccination in a completely susceptible population with coverage V / S0 and basic reproductive number R0S0.The Kinshasa vaccination campaign in July\u2013August 2016. The population size of Kinshasa is estimated to be around 12.46 million (https://www.cia.gov/library/publications/the-world-factbook/graphics/population/CG_popgraph%202015.bmp) and around 2\u00b75 million standard-dose vaccines is expected to be administered to the Kinshasa population during this vaccination campaign (personal communication, Bruce Aylward and Alejandro Costa, WHO). Under the WHO dose-sparing strategy, 200,000 standard-dose vaccines will be given to children aged between 9 months and 2 years (which is sufficient for vaccinating all unvaccinated children in this age range) and the remaining allocation will be fractionated to one-fifth of the standard dose and given to the rest of the population. We compare the outcome when the vaccines are administered (i) in standard dose only (strategy S) and (ii) according to the WHO dose-sparing strategy with alternative age cutoffs for fractional-dose vaccines ranging from 2 to 20 years (strategy F). For the latter, let Z be the age cutoff and p(Z) be the proportion of population targeted for standard-dose vaccination. For a given standard-dose vaccine coverage V, the proportion of population receiving standard-dose and fractional-dose vaccines are min(V, p(Z)) and 5 max(V \u2212 p(Z), 0), respectively. Therefore, the effective vaccine coverage after the vaccination campaign is B + min(V, p(Z)) \u00b7 VE(1) + 5 max(V \u2212 p(Z), 0) \u00b7 VE(5) where B is the vaccine coverage immediately before the campaign (i.e. at the end of June 2016). See appendix for the calculation details.\n",
+            "cite_spans": [],
+            "section": "Vaccination scenarios ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The sponsors of the study had no role in the study design, data collection, data analysis, writing of the report, or the decision to publish. All authors had access to the data; the corresponding authors had final responsibility to submit for publication.",
+            "cite_spans": [],
+            "section": "Role of the funding source ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Figure 1 shows that the initial reproductive number of YF in Angola was 5\u00b72 (95% CI 4\u00b73, 6\u00b71) and 7\u00b71 (5\u00b75, 8\u00b77) if the mean mosquito lifespan was 7 and 14 days, respectively. While these estimates may reflect partial immunity due to prior vaccination or exposure among some of the population (we estimated that around 28% of the Angola population had been vaccinated before the YF epidemic; see appendix for calculation details), we assume that the basic reproductive number of a future outbreak in another population would range between 4 and 12 due to varying vector ecology and levels of preexisting immunity in the population.",
+            "cite_spans": [],
+            "section": "Reproductive number of yellow fever in Angola ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Figure 2A\u2013B shows the effective vaccine coverage and IAR under standard-dose and fractional-dose vaccination as a function of standard-dose vaccine coverage V given varying levels of transmission and five-fold fractionation vaccine efficacy when vaccine action is all-or-nothing. Figures 2C\u2013D show the corresponding absolute and relative reduction in IAR and confirm our earlier claim that fractional-dose vaccination reduces IAR when VE(5) > VE(1) / 5 = 0.2. Fractional-dose vaccination substantially reduces IAR if V > 10% and such reduction only diminishes to insignificant levels when V is close to the herd immunity threshold 1\u22121/R0 (e.g. 75% and 88% for R0 = 4 and 8, respectively). In short, dose fractionation reduces IAR when (i) the standard-dose vaccine supply is insufficient to halt disease transmission and (ii) fractional-dose vaccine efficacy is above 0\u00b72.",
+            "cite_spans": [],
+            "section": "Random vaccination in a hypothetical population ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 11,
+                    "mention": "Figure 2A\u2013B",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 280,
+                    "end": 292,
+                    "mention": "Figures 2C\u2013D",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "If vaccine action is \u201cleaky,\u201d then the benefit threshold (the efficacy of n-fold fractionated doses necessary to reduce IAR) is higher than 1/n and increases with transmission intensity (Figure 3). This occurs because under the leaky model each infectious bite is assumed to be less likely to cause infection if the host is vaccinated, but the probability of infection grows as the person receives more infectious bites. Figure 3 shows, under the leaky model of vaccine action, dose fractionation is much less beneficial if vaccine action is leaky, efficacy is modest, and R0 is high. See appendix for the mathematical details.",
+            "cite_spans": [],
+            "section": "Random vaccination in a hypothetical population ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 187,
+                    "end": 195,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 421,
+                    "end": 429,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "A recent study suggested that the mosquito biting rate for individuals aged 20 or above is 1\u00b722 times higher than those age under 20.24 We performed a sensitivity analysis to show that our results are unaffected by such heterogeneity. See \u201cHetereogeneity in biting rates\u201d in the appendix for details.",
+            "cite_spans": [
+                {
+                    "start": 133,
+                    "end": 135,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Random vaccination in a hypothetical population ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "We estimate that the vaccine coverage in Kinshasa was 20% at the end of June 2016 before the vaccination campaign began. The WHO vaccination campaign would increase the effective vaccine coverage to 37% if all the vaccines were administered only in standard dose. Under the WHO dose-sparing strategy, the effective vaccine coverage can be increased to 99%, 91%, 68% and 44% if the vaccine efficacy of five-fold fractional-dose vaccines VE(5) is 1, 0\u00b79, 0\u00b76 and 0\u00b73, respectively. The corresponding absolute reduction in IAR is 57%, 57%, 43% and 10% if R0 = 4 and around 63%, 63%, 32% and 8% if R0 is 8 to 12. These IAR reductions correspond to 7\u00b710, 7\u00b710, 5\u00b736, 1\u00b725 million infections averted if R0 = 4 and around 7\u00b785, 7\u00b785, 3\u00b799 and 1\u00b70 million infections averted if R0 is 8 to 12. The age cutoff for fractional-dose vaccines chosen by the WHO (namely, 2 years) provides the largest reduction in IAR as long as VE(5) is above 0\u00b72. That is, the WHO dose-sparing strategy is optimal as long as five-fold fractional vaccines are at least 20% efficacious. These figures are based on the assumption of a sustained epidemic such that transmission declines when the population of susceptible hosts is depleted.",
+            "cite_spans": [],
+            "section": "The WHO vaccination campaign in Kinshasa ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Our primary analysis shows that dose fractionation of YF vaccine, if there is no loss of efficacy as currently assumed, could provide a substantial benefit to reducing the attack rate of YF in a population. We consider this assumption of full efficacy for five-fold fractionation to be the most likely scenario, despite the lack of efficacy data on any YF vaccine, for several reasons: 1) two studies of five- or greater-fold vaccination doses have shown indistinguishable immunogenicity in humans; 2) at least some preparations of YF vaccine substantially exceed the WHO minimum standard for potency of 1,000 IU/dose, so fractionation at some level could be performed without dropping below that threshold; 3) YF vaccine is live attenuated virus, so a biological rationale exists that if a productive vaccine-virus infection can be established by a fractionated dose, protection should be comparable to that with a higher dose. Nonetheless, to assess the robustness of the conclusion that dose fractionation is likely to be beneficial, against the possibility that in fact efficacy of fractionated doses is lower than anticipated, we consider the possibility that five-fold fractionated dosing fails to immunize a proportion (1\u2212VE(5)) of recipients. We find that as long as at least 20% of recipients are fully immunized by the vaccine, more people would be immunized by vaccinating five times as many people with one-fifth the dose, and so the population-wide benefits of higher coverage would outweigh the lower efficacy of fractionated dosing for individual vaccinees.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Even more unlikely, in our opinion, is that fractionated doses would be substantially less efficacious according to a \u201cleaky\u201d model, in which all vaccinated individuals were imperfectly protected against infection from each infectious bite, with the same probability of infection from each bite, reduced by vaccine by a proportion VE (see appendix for details). If this were the case however, we found that especially in high-transmission areas, the fractionated-dose vaccine would need to be 80\u201390% efficacious to provide a benefit over standard dosing.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Our analysis is not intended to recommend extending coverage to the point of knowingly compromising efficacy. Rather, our analysis indicates that a strategy of fractionation to a dose that provides equivalent immunogenicity to standard dosing would be greatly beneficial if efficacy is equivalent to standard dosing, and would still be beneficial if, unexpectedly, efficacy were somewhat lower than for standard dosing.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "We have used five-fold fractionation as an example because it is the strategy with the best evidence base of equal immunogenicity. However, some data suggest that more than five-fold fractionation could be equally immunogenic, and of course the benefits of fractionation would be greater if more than five-fold fractionation were logistically possible and comparably efficacious.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "We have considered fractional dosing for residents of areas at high risk for transmission. Another group of interest are travelers, for whom we must also consider longevity of response, lower levels of exposure, and more detailed discussions on equity outside the scope of this modeling paper. The cost of fractional-dose strategies will depend on the route of administration, but could potentially be substantially less expensive per vaccine recipient.18 Our simple model has several limitations. We assume homogeneous mixing of the population (reasonable at least locally for a vector-borne disease). We also fix a particular value of R0 for each calculation, and assume this value is maintained until the epidemic has swept through a population. In reality, R0 will vary seasonally as vector abundance, extrinsic incubation period, and other factors vary. The existence of a high-transmission season might enhance the benefits of fractional-dose vaccination. Most importantly, there will be a premium on achieving high vaccine coverage before the peak of transmission to maximally impact transmission, and this will be limited by supply constraints that could be partially relieved by fractionation. However, the cases-averted estimates might not all be achieved in a single transmission season if seasonal declines in mosquito abundance abrogate transmission before the large majority of the population has become infected.",
+            "cite_spans": [
+                {
+                    "start": 453,
+                    "end": 455,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "We have focused on the benefits of increasing vaccine coverage within a single population. Given the global shortage of YF vaccines, an additional benefit of fractionated dosing is to extend coverage to a wider geographic area, covering more populations with vaccine than could be achieved with standard dosing. Indeed, part of the WHO plan is to vaccinate border areas between Angola and Congo25, providing benefit to that population as well as an \"immune buffer\" to slow movement of disease toward Kinshasa.26",
+            "cite_spans": [
+                {
+                    "start": 394,
+                    "end": 396,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 509,
+                    "end": 511,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "We conclude that dose fractionation could be a very effective strategy for improving coverage of YF vaccines and reducing infection attack rate in populations -- possibly by a large absolute and relative margin -- if high to moderate efficacy is maintained by reduced-dose formulations. For vaccines whose standard formulations exceed WHO minimum concentration of viral particles,10 this dose fractionation could be accomplished without changing the WHO recommendations. In particular, the WHO plan to use fractional dosing to extend the coverage of vaccination within Kinshasa and in surrounding areas is robust in the sense that it is expected to provide greater benefit than the use of full dosages, even if, counter to current evidence, efficacy of fractionated doses is substantially lower than that of standard doses.",
+            "cite_spans": [
+                {
+                    "start": 380,
+                    "end": 382,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Rollout of fractionated dosing should perhaps be preceded or accompanied by noninferiority studies of the intended vaccine's immunogenicity at fractional doses in the intended populations. Ongoing programs should be monitored by observational studies of safety, immunogenicity and, if possible, effectiveness18 to assure that the assumptions underlying the rationale for such programs continue to be met. However, it is worth noting that if full-dose vaccine efficacy is indeed 100% or nearly so as currently believed, estimating the relative efficacy of fractional vs. standard doses in a comparative study would be challenging or impossible, as there might be few or no cases accrued in the standard-dose arm.",
+            "cite_spans": [
+                {
+                    "start": 308,
+                    "end": 310,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Appendix Table 1: Estimated age distribution and vaccine coverage of Angola at the end of 2015.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Appendix Table 2: Estimated age distribution and vaccine coverage of Kinshasa at the end of June 2016.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: A Epidemic curve of confirmed cases by dates of symptom onset in Angola and vaccine coverage in Luanda province achieved by the reactive YF vaccination campaign that started on 2 February 2016.28 The first cases of this YF outbreak were identified in Luanda province which accounted for 90 of the 121 cases confirmed in Angola up to 26 February 2016. B\u2013C Estimates of the daily reproductive number (Rt) assuming that the mean mosquito lifespan was 7 and 14 days, respectively. The red data points correspond to the cases that were used to estimate the initial reproductive number. These cases had symptom onset one mean serial interval before the vaccination campaign began to affect disease transmission (which was assumed to be 7 days after the start of the campaign to account for the time it takes for adaptive immunity to develop). The orange and purple horizontal bars indicate the length of the mean mosquito lifespan and serial interval on the scale of the x-axis, respectively.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: We assume that (i) the whole population is susceptible, (ii) vaccine action is all-or-nothing, and (iii) standard-dose vaccine efficacy is 1. If the standard-dose vaccine coverage V exceeds 20%, then everyone in the population can be vaccinated under five-fold fractionated-dose vaccination, in which case the fractionation would only be n = 1/V. A The effective vaccine coverage (VE(n) \u00d7 nV), which is essentially the percentage of population immunized, as a function of standard-dose vaccine coverage V under standard-dose vaccination (solid curves) and five-fold fractional-dose vaccination (dashed curves). B Infection attack rate (IAR) under standard-dose vaccination and five-fold fractional-dose vaccination. IAR is reduced to 0 when the effective vaccine coverage reaches the herd immunity threshold 1\u22121/R0. C Absolute reduction in IAR. As V increases from 0, a kink appears when the herd-immunity threshold is attained or everyone is vaccinated under five-fold fractional-dose vaccination (i.e., V = 20%). If five-fold fractional-dose vaccination at 100% coverage cannot attain the herd immunity threshold (because of low fractional-dose vaccine efficacy), then a second kink appears when V is large enough such that fractional-dose vaccination attains herd-immunity threshold due to the increase in VE(n) resulting from lower fractionation (namely n = 1/V). D Relative reduction in IAR.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Five-fold fractionated dosing reduces IAR compared to standard dosing if the leaky vaccine efficacy of fractional-dose is above the threshold. This threshold becomes high for large values of R0 because under the \u201cleaky\u201d vaccine action model, multiple exposures eventually overcome vaccine protection and lead to infection of vaccinated individuals.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: A Effective vaccine coverage (i.e. the percentage of population immunized). The green line indicates the pre-campaign coverage. The black solid and dashed lines indicate the post-campaign coverage if vaccines are administered (i) in standard dose only (strategy S) and (ii) according to the WHO dose-sparing strategy with alternative age cutoffs for fractional-dose vaccines (strategy F). B IAR under strategy S and F for different R0. C\u2013D Absolute and relative reduction in IAR.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Situation Report: Yellow Fever",
+            "authors": [],
+            "year": 2016,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Expert Committee on Biological Standardization. Requirements for yellow fever vaccine",
+            "authors": [],
+            "year": 2008,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Yellow Fever Vaccine: Recommendations of the Advisory Committee",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Staples",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gershman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Fischer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Morb Mortal Wkly Rep",
+            "volume": "59",
+            "issn": "",
+            "pages": "1-27",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "\u2018Herd immunity\u2019: A rough guide",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Fine",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Eames",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Heymann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Clin Infect Dis",
+            "volume": "52",
+            "issn": "",
+            "pages": "911-916",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Different Epidemic Curves for Severe Acute Respiratory Syndrome Reveal Similar Impacts of Control Measures",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wallinga",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Teunis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Am J Epidemiol",
+            "volume": "160",
+            "issn": "",
+            "pages": "509-516",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Yellow fever outbreak in Angola: Situation Report",
+            "authors": [],
+            "year": 2016,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Incubation Periods of Yellow Fever Virus",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Johansson",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Arana-Vizcarrondo",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Biggerstaff",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Staples",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Am J Trop Med Hyg",
+            "volume": "83",
+            "issn": "",
+            "pages": "183-188",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "The Transmission of Yellow Fever",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Hindle",
+                    "suffix": ""
+                }
+            ],
+            "year": 1930,
+            "venue": "Lancet",
+            "volume": "219",
+            "issn": "",
+            "pages": "835-842",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Assessing the risk of international spread of yellow fever virus: a mathematical analysis of an urban outbreak in Asuncion, 2008",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Johansson",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Arana-Vizcarrondo",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Biggerstaff",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Gallagher",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Marano",
+                    "suffix": ""
+                },
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Staples",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Am J Trop Med Hyg",
+            "volume": "86",
+            "issn": "",
+            "pages": "349-358",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Yellow fever vaccination: The potential of dose-sparing to increase vaccine supply and",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Hickling",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Tandem",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Path",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Diekmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Heesterbeek",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Mathematical Epidemiology of Infectious Diseases: Model Building, Analysis and Interpretation",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Why is the yellow fever outbreak in Angola a \u2018threat to the entire world\u2019?",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Woodall",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Yuill",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Int J Infect Dis",
+            "volume": "48",
+            "issn": "",
+            "pages": "96-97",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "The Spatial Spread and Final Size of Models for the Deterministic Host- Vector Epidemic",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Radcliffe",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Rass",
+                    "suffix": ""
+                }
+            ],
+            "year": 1984,
+            "venue": "Math Biosci",
+            "volume": "70",
+            "issn": "",
+            "pages": "123-146",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Rapid field entomological assessment during yellow fever outbreaks in Africa",
+            "authors": [],
+            "year": 2014,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Assessment of the Protective Efficacy of Vaccines against Common Diseases Using Case-Control and Cohort Studies",
+            "authors": [
+                {
+                    "first": "PG",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "LC",
+                    "middle": [],
+                    "last": "Rodrigues",
+                    "suffix": ""
+                },
+                {
+                    "first": "PEM",
+                    "middle": [],
+                    "last": "Fine",
+                    "suffix": ""
+                }
+            ],
+            "year": 1984,
+            "venue": "Int J Epidemiol",
+            "volume": "13",
+            "issn": "",
+            "pages": "87-93",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Halloran",
+                    "suffix": ""
+                },
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Longini",
+                    "suffix": ""
+                },
+                {
+                    "first": "CJ",
+                    "middle": [],
+                    "last": "Struchiner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Design and Analysis of Vaccine Studies: Introduction",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Heterogeneous Feeding Patterns of the Dengue Vector, Aedes aegypti, on Individual Human Hosts in Rural Thailand",
+            "authors": [
+                {
+                    "first": "LC",
+                    "middle": [],
+                    "last": "Harrington",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Fleisher",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Ruiz-Moreno",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS Negl Trop Dis",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Yellow fever vaccination campaign in the Democratic Republic of the Congo",
+            "authors": [],
+            "year": 2016,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Ross",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "WHO to launch emergency yellow fever vaccination in Angola, Congo",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "17DD yellow fever vaccine: a double blind, randomized clinical trial of immunogenicity and safety on a dose-response study",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Martins",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Maia",
+                    "suffix": ""
+                },
+                {
+                    "first": "LS",
+                    "middle": [],
+                    "last": "de",
+                    "suffix": ""
+                },
+                {
+                    "first": "RHG",
+                    "middle": [],
+                    "last": "Farias",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Hum Vaccin Immunother",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Situation Report: Yellow Fever",
+            "authors": [],
+            "year": 2016,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "",
+            "authors": [],
+            "year": 2005,
+            "venue": "Control of Yellow Fever: FIeld Guide",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Yellow fever vaccine supply: a possible solution",
+            "authors": [
+                {
+                    "first": "TP",
+                    "middle": [],
+                    "last": "Monath",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Woodall",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Gubler",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Lancet",
+            "volume": "387",
+            "issn": "",
+            "pages": "1599-1600",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Yellow Fever in Angola and Beyond \u2014 The Problem of Vaccine Supply and Demand",
+            "authors": [
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Barrett",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "N Engl J Med",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Optimizing the dose of pre-pandemic influenza vaccines to reduce the infection attack rate",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Leung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "PLoS Med",
+            "volume": "4",
+            "issn": "",
+            "pages": "1032-1040",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Applying an equity lens in the Decade of Vaccines",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Brearley",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Eggers",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Steinglass",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Vandelaer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Vaccine",
+            "volume": "31",
+            "issn": "",
+            "pages": "B103-B107",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "WHO plans to stretch vaccine as yellow fever persists in Africa. CIDRAP News",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Schnirring",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Intradermally Administered Yellow Fever Vaccine at Reduced Dose Induces a Protective Immune Response: A Randomized Controlled Non-Inferiority Trial",
+            "authors": [
+                {
+                    "first": "AH",
+                    "middle": [],
+                    "last": "Roukens",
+                    "suffix": ""
+                },
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Vossen",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "Bredenbeek",
+                    "suffix": ""
+                },
+                {
+                    "first": "JT",
+                    "middle": [],
+                    "last": "van Dissel",
+                    "suffix": ""
+                },
+                {
+                    "first": "LG",
+                    "middle": [],
+                    "last": "Visser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS One",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Subdoses of 17DD yellow fever vaccine elicit equivalent virological/immunological kinetics timeline",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Campi-Azevedo",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "de Almeida Estevam",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Coelho-Dos-Reis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "BMC Infect Dis",
+            "volume": "14",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

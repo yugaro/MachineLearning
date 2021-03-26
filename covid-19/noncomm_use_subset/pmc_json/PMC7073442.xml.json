@@ -1,0 +1,1325 @@
+{
+    "paper_id": "PMC7073442",
+    "metadata": {
+        "title": "Deep Learning-Based Method of Diagnosing Hyperlipidemia and Providing Diagnostic Markers Automatically",
+        "authors": [
+            {
+                "first": "Yuliang",
+                "middle": [],
+                "last": "Liu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Quan",
+                "middle": [],
+                "last": "Zhang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Geng",
+                "middle": [],
+                "last": "Zhao",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Guohua",
+                "middle": [],
+                "last": "Liu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Zhiang",
+                "middle": [],
+                "last": "Liu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "In recent years, with the gradual awakening of global health awareness, human beings have shown an urgent need for further development of the medical level.1\u20133 Artificial intelligence (AI) has great potential to promote the further development of medical diagnostic technology because of its excellent performance in the field of data processing beyond human experts. Despite it has an excellent performance in the field of automatic diagnosis using medical images, the interpretability and text-based medical data analyzability of AI still faces great challenges.4,5,45",
+            "cite_spans": [
+                {
+                    "start": 156,
+                    "end": 157,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 158,
+                    "end": 159,
+                    "mention": "3",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 564,
+                    "end": 565,
+                    "mention": "4",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 566,
+                    "end": 567,
+                    "mention": "5",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 568,
+                    "end": 570,
+                    "mention": "45",
+                    "ref_id": "BIBREF44"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to solve the problems above, on the global scale, researchers have gradually integrated deep learning technology with a medical diagnosis. Edward Choi and his colleagues used a recurrent neural network to process electronic health records (EHR) for diagnosing heart failure onset.6 Laila Rasmy et al used recurrent neural networks to predict the risk of heart failure based on a large number of mixed EHR data.7 Sasank Chilamkurthy et al used natural language processing model to recognize non-contrast head CT scan to identify various head diseases, such as intracranial haemorrhages and cranial fractures et al.8 Kang Zhang et al used transfer learning algorithm and Google\u2019s Inception-V3 model to rapidly diagnose many kinds of diseases of eye and children pulmonary diseases.9 Michael A. Schwemmer et al used a deep neural network decoding framework to classify intracortical recording, and then controlled the motor to help patients complete corresponding actions, according to the classification results.10 Although deep learning technology has shown a strong competitive advantage in the field of automatic diagnosis using medical images, it still faces many major challenges, such as processing medical text information. In the actual clinical diagnosis processing, in addition to the diseases that can be diagnosed by medical images, there are many diseases that need to be diagnosed by medical text data, such as hyperlipidemia, diabetes, etc.11,12",
+            "cite_spans": [
+                {
+                    "start": 289,
+                    "end": 290,
+                    "mention": "6",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 419,
+                    "end": 420,
+                    "mention": "7",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 622,
+                    "end": 623,
+                    "mention": "8",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 788,
+                    "end": 789,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1019,
+                    "end": 1021,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 1462,
+                    "end": 1464,
+                    "mention": "11",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 1465,
+                    "end": 1467,
+                    "mention": "12",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to realize the purpose of automatically diagnosing diseases using text-based medical data, long-short time memory (LSTM) neural network was proposed.13,14 The physiological parameters obtained in the clinic are usually a vector rather than image data. Sequential data also play an important role in clinical diagnosis. Convolutional neural network (CNN) is more suitable for processing image data because of its translation invariance. Because of the need to learn the interrelationship between different physiological parameters, LSTM is a good choice when processing sequence data.",
+            "cite_spans": [
+                {
+                    "start": 158,
+                    "end": 160,
+                    "mention": "13",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 161,
+                    "end": 163,
+                    "mention": "14",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "LSTM mentioned above relying on memory cells to learn long-range dependence information. As we know, each human physiological parameter is not independent, they are interrelated, and this relationship is difficult to be found by simple coding or logistic regression algorithm. Therefore, we need a deep learning model that can learn the relationship better of far apart data to complete the task of processing text-based medical data. Simply, the LSTM neural network takes the original text-based medical data as input, and then use many special neurons to extract the joint features automatically from the original data, and finally use the classification function to classify the samples automatically to achieve the purpose of automatic diagnosis of diseases. This architecture makes it possible to process medical text data which have complex internal relationships, deep learning technology has been widely used in various fields.15,16",
+            "cite_spans": [
+                {
+                    "start": 935,
+                    "end": 937,
+                    "mention": "15",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 938,
+                    "end": 940,
+                    "mention": "16",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The deep learning technology-based text data classification method replaces the mathematical distance-based traditional clustering method, which greatly improves the performance of the model in processing text data. The key elements of traditional automatic diagnosis method using medical text data are: (1) patient description pathological characteristics, (2) researchers extract features manually based on patient descriptions or patient\u2019s EHR, (3) the extracted features are encoded according to the requirements, (4) classification algorithm is used to classify the coded physiological features.17 The traditional automatic diagnosis method needs to extract features manually, and the quality of extracted feature vectors is greatly affected by the researcher\u2019s clinical experience and professional level, so it has uncertainty. At the same time, the traditional method will lose some original information artificially in the process of feature extraction, which may lose some joint features of physiological parameters, so the traditional method also has a degree of one-sidedness. Although it is not only the pathological features described by patients, EHR are also widely used in the research of automatic diagnosis. But there is no objective and unified standard to evaluate the quality of EHR. This is one of the important factors that limit the performance of automatic diagnosis algorithms using EHR.18,20 Deep learning algorithm has the ability of feature extraction automatically, so it overcomes the one-sidedness caused by manual feature extraction, saves labor resources and improves the efficiency and accuracy of automatic diagnosis.20\u201322",
+            "cite_spans": [
+                {
+                    "start": 600,
+                    "end": 602,
+                    "mention": "17",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1413,
+                    "end": 1415,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1416,
+                    "end": 1418,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1653,
+                    "end": 1655,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 1656,
+                    "end": 1658,
+                    "mention": "22",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Another challenge in applying deep learning algorithms to auxiliary diagnosis is the interpretability. Up to now, the deep learning model is still a black-box model, which cannot explain exactly which kind of physiological parameters plays a vital role in the process of data processing. The development of disease diagnosis technology depends not only on the improvement of diagnostic accuracy but also on the discovery of more effective diagnostic markers and the relationship between different physiological parameters (diseases). It is difficult to meet the requirements above by the auxiliary diagnosis system which only gives the diagnosis results. As we know, the human brain tends to have an attention focus when processing things, and it is able to find out important features purposefully according to the environment, this mechanism is called the attention mechanism. The combination of attention mechanism and deep learning model can imitate the functions of the human brain mentioned above, which has been proved to have the ability to focus on important features and has been applied in many fields such as image recognition and semantic recognition.23\u201325 Therefore, in order to solve the above problems, this paper not only studies the automatic diagnosis of diseases with human physiological parameters, but also applies the attention mechanism to the auxiliary diagnosis model. This method gives the importance of different physiological parameters for disease diagnosis while automatically diagnosing diseases, enhances the interpretability of the model, and further enhances the assistant ability of the auxiliary diagnosis system for clinical research. This algorithm is called attention deep learning.",
+            "cite_spans": [
+                {
+                    "start": 1164,
+                    "end": 1166,
+                    "mention": "23",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1167,
+                    "end": 1169,
+                    "mention": "25",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The advancement of medical diagnostic techniques should not rely solely on the improvement of diagnostic accuracy, but should also rely on the study of diagnostic markers or diagnostic basis that are more effective. Therefore, research on the prediction of diagnostic markers is of great significance. The traditional method of studying diagnostic markers is often to collect dozens of sample data, and to predict the diagnostic markers according to the regression model, it is difficult to synthesize large quantities of samples. The above situation has caused the traditional research methods to have certain blindness and subjectivity. In order to solve the above series of problems, an auxiliary diagnostic system that can automatically provide disease markers while automatically diagnosing diseases is of positive significance for the development of medical level.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Hyperlipidemia refers to the excessive level of blood lipids, which can directly cause some diseases that seriously endanger human health, such as coronary heart disease, atherosclerosis and so on. However, due to the absence of obvious symptoms and abnormal signs, the diseases mentioned above have strong concealment and are difficult to be detected purposefully. At the same time, with the continuous development of medical level, researchers have found that more and more diseases are highly related to hyperlipidemia, such as AIDS, depression and so on.26,27 Therefore, in the world, hyperlipidemia has become one of the most important diseases threatening human life and health to a large extent. Although there is no uniform international standard for the diagnosis of hyperlipidemia, hematological parameters are widely used in the diagnosis of hyperlipidemia and the evaluation of treatment methods, which is capable of use hematological parameters to automatically diagnose hyperlipidemia.28\u201331",
+            "cite_spans": [
+                {
+                    "start": 558,
+                    "end": 560,
+                    "mention": "26",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 561,
+                    "end": 563,
+                    "mention": "27",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 999,
+                    "end": 1001,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 1002,
+                    "end": 1004,
+                    "mention": "31",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this paper, we sought to propose an auxiliary diagnosis algorithm that can not only diagnose hyperlipidemia rapidly and accurately according to human hematological parameters but also provide diagnostic markers automatically, which improves the objectivity of traditional methods and the interpretability of deep learning model algorithm. Compared with previous work, our proposed new model not only automatically determines the patient\u2019s health but also automatically provides diagnostic markers. Compared with the auxiliary diagnostic system that only provides the diagnosis result, the new model proposed in this paper has higher interpretability and credibility. Therefore, the above model can not only speed up the patient\u2019s medical treatment process but also further improve research efficiency of diagnostic markers, and have great potential for discovering new diagnostic markers. Artificial intelligence aided diagnosis system can effectively simplify the process of patients seeking medical treatment, alleviate the contradiction of lack of medical resources, and improve the survival rate of emergency patients, as shown in Figure 1.\n",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": [
+                {
+                    "start": 1138,
+                    "end": 1146,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Further, the improvement of medical diagnostic technology depends not only on the improvement of diagnostic accuracy but also on the research of diagnostic markers. Traditional research methods for diagnostic markers are usually difficult to synthesize hundreds and thousands of samples, the research cycle is long and the cost is high. The research method of diagnostic markers based on deep learning technology proposed in this paper can not only automatically synthesize large quantities of data but also effectively simplify the research process, thus reducing the research cost, as shown in Figure 2.\n",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": [
+                {
+                    "start": 596,
+                    "end": 604,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "In this paper, the attention deep learning algorithm is preliminarily illustrated with human hematological data, and the performance of different algorithms are compared. Compared with EHR without unified evaluation standards, this paper used human hematological parameters which had unified standards as training data, so that the algorithm has higher reliability. Our attention deep learning algorithm has been preliminarily applied to the automatic diagnosis of hyperlipidemia with hematological parameters; the corresponding diagnostic markers and the significance of different markers are given at the same time. The hematological parameters used in this study include cholesterol, triglyceride, high-density lipoprotein, low-density lipoprotein, hemoglobin and red blood cells. Despite different blood parameters are often obtained by different methods, their acquisition methods have a unified standard. These parameters can reflect different health conditions of human body.32,33 At the same time, compared with the auxiliary diagnostic method which only provides diagnostic results, the algorithm proposed by this paper can also predict the diagnostic markers of diseases and the corresponding importance automatically, which improve the possibility of finding more effective new diagnostic markers, and accelerate the development of medical diagnostic technology further. This paper compares the results of the model\u2019s automatic prediction with the gold standard. Although no new diagnostic markers were obtained using limited data, it proved that the model has the potential to reasonably predict the diagnostic basis. Our work is the first time to systematically study an artificial intelligence aided diagnosis system that integrates automatic diagnosis and automatic prediction diagnostic markers, which is of great significance to the development of medical level. The improvement of recognition accuracy does not mean the improvement of medical diagnosis, but also the explanation of disease mechanism. Increasing the interpretability of the model will further improve the diagnostic level of the disease.34 In addition, a method that can automatically process a large number of samples and provide biomarkers can speed up the study of disease mechanism. In conclusion, the combination of deep learning technology and medical diagnostic technology is of great significance for disease research.",
+            "cite_spans": [
+                {
+                    "start": 982,
+                    "end": 984,
+                    "mention": "32",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 985,
+                    "end": 987,
+                    "mention": "33",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 2121,
+                    "end": 2123,
+                    "mention": "34",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "LSTM is the core of attention deep learning algorithm. It can learn the features of the data far apart in the text data, which provides support for learning the relationship between physiological parameters mentioned above, and improves the performance of the auxiliary diagnostic model. The purpose of LSTM is to study the joint representation of different physiological parameters. In clinical practice, disease-related physiological parameters are not independent, so LSTM is more suitable for analyzing textual medical data with joint characteristics than traditional methods. The schematic diagram of LSTM layer is shown in Figure 3.\n",
+            "cite_spans": [],
+            "section": "LSTM ::: Method ::: Methods and Subject",
+            "ref_spans": [
+                {
+                    "start": 629,
+                    "end": 637,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "where \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$I$$\n\\end{document}is the current input of LSTM cell, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$O$$\n\\end{document}is the current output of LSTM cell, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$S$$\n\\end{document}is the current status of the LSTM cell. The key element of LSTM is to use three control switches to control the long-term state of cell. The names of the three gates mentioned above are Forgotten Gate, Input Gate and Output Gate. The control principle is shown in Figure 4.\n",
+            "cite_spans": [],
+            "section": "LSTM ::: Method ::: Methods and Subject",
+            "ref_spans": [
+                {
+                    "start": 1601,
+                    "end": 1609,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "where FG is Forgotten Gate, OG is Output Gate, IG is Input Gate. The updating principle of LSTM long-term state is shown in Equation 1.\n(1)\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$${S^{(t)}} = F{G^{(t)}}{S^{(t -1)}} + I{G^{(t)}}\\sigma (b + \\sum {U{x^{(t)}} + \\sum {W{O^{(t -1)}}} } )$$\n\\end{document}",
+            "cite_spans": [],
+            "section": "LSTM ::: Method ::: Methods and Subject",
+            "ref_spans": []
+        },
+        {
+            "text": "In this equation, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$b,U,W$$\n\\end{document}are bias, the input weight and forgotten gate\u2019s loop weight of LSTM cell, respectively. The output of LSTM is shown in Equation 2.\n(2)\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$${O^{(t)}} = \\tanh ({s^{(t)}})O{G^{(t)}}$$\n\\end{document}",
+            "cite_spans": [],
+            "section": "LSTM ::: Method ::: Methods and Subject",
+            "ref_spans": []
+        },
+        {
+            "text": "The purpose of using attention mechanism is to make task processing system focus more on finding useful information that is significantly related to the target output in the input data, so as to improve the quality of output. In other words, attentional mechanisms are used to search for disease-related physiological parameters in the hope of finding more disease-related biomarkers. This is significantly useful information that can be used to identify diagnostic markers of disease. Just as the human brain processes information, it is purposefully focused on the information most relevant to the purpose and ignores other things that do not matter. Disease biomarkers can be identified by visualizing these levels of concern for different physiological parameters. The principle is shown in Equation 3 and Equation 4.\n(3)\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$${\\mathop{\\rm Attention}\\nolimits} = {\\mathop{\\rm softmax}\\nolimits} [F(x)]$$\n\\end{document}(4)\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$I = x\\cdot {\\mathop{\\rm Attention}\\nolimits} $$\n\\end{document}",
+            "cite_spans": [],
+            "section": "Attention Mechanism ::: Method ::: Methods and Subject",
+            "ref_spans": []
+        },
+        {
+            "text": "iwhere \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$${\\mathop{\\rm Attention}\\nolimits} $$\n\\end{document}is attention vector, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$F$$\n\\end{document}is the encoding function of the original data, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$x$$\n\\end{document}is raw data, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$I$$\n\\end{document}is the input data of the LSTM layer. The possibility that the target output is related to each input physiological parameter is obtained by coding process F. Then, the output of the coding process is normalized by Softmax to obtain the attention distribution probability value that conforms to the probability distribution value range. The use of attention mechanisms provides more information on which physiological parameters are more important for the diagnosis of the target disease. At the same time, the attention mechanism helps the model to process effective information and discards useless data, improving the model\u2019s ability to process more complex information. The Softmax function is shown in Equation 5.\n(5)\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$${\\rm{softmax}}(z)\\, = \\,{{{e^{{z_j}}}} \\over {\\sum\\limits_{n = 1}^N {{e^{{z_n}}}} }}\\,j = 1,...,N$$\n\\end{document}",
+            "cite_spans": [],
+            "section": "Attention Mechanism ::: Method ::: Methods and Subject",
+            "ref_spans": []
+        },
+        {
+            "text": "Adam algorithm is different from the traditional stochastic gradient descent algorithm. Adam algorithm designs independent self-adaptive learning rates for different parameters by first-moment estimation and second-moment estimation of the gradient. ADAM is an adaptive learning algorithm. Compared with the traditional stochastic gradient descent algorithm, ADAM can automatically adjust the learning rate to make the model converge to a better value faster. The updating method of global parameters of the deep learning model is shown in Equation 6.\n(6)\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$\\theta {'} = \\theta - \\varepsilon {{\\hat s} \\over {\\sqrt {\\hat r} + \\delta }}$$\n\\end{document}",
+            "cite_spans": [],
+            "section": "Adam Algorithm ::: Method ::: Methods and Subject",
+            "ref_spans": []
+        },
+        {
+            "text": "In this equation, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$\\theta $$\n\\end{document} is global parameters, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$\\varepsilon $$\n\\end{document} is learning rate, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$\\hat s$$\n\\end{document} is corrected first moment, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$\\hat r$$\n\\end{document} is corrected second moment. \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$\\delta $$\n\\end{document} is a very small value; its function is to ensure that the denominator is not zero. The gradient of small-batch data, as shown in Equation 7.\n(7)\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$g = {1 \\over m}{\\nabla _\\theta }\\sum\\limits_i {L(f({x^{(i)}};\\theta ),{y^{(i)}})}$$\n\\end{document}",
+            "cite_spans": [],
+            "section": "Adam Algorithm ::: Method ::: Methods and Subject",
+            "ref_spans": []
+        },
+        {
+            "text": "where \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$m$$\n\\end{document}is the size of small-batch data, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$L$$\n\\end{document}is the loss function, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$x$$\n\\end{document}is the input data, and \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$y$$\n\\end{document}is the target output. Cross entropy loss function is used in this paper.",
+            "cite_spans": [],
+            "section": "Adam Algorithm ::: Method ::: Methods and Subject",
+            "ref_spans": []
+        },
+        {
+            "text": "All the data involved in this experiment were collected from the Metabolic Disease Hospital of Tianjin Medical University. The data were collected from December 15, 2017 to January 20, 2018 and from March 1, 2018 to May 20, 2018. All the samples in the experiment came from patients who went to the hospital for health testing. We obtained permission from the Metabolic Disease Hospital of Tianjin Medical University Ethics Committee and written informed consent from patients. Before analyzing the data, we anonymous the patient\u2019s name and other basic information.",
+            "cite_spans": [],
+            "section": "Subject ::: Methods and Subject",
+            "ref_spans": []
+        },
+        {
+            "text": "We collected 600 data, each consisting of triglyceride (TG), cholesterol, low-density lipoprotein (LDL), high-density lipoprotein (HDL), hemoglobin (HB), red blood cell (RBC) and diagnostic results. All data included 348 males (58%) and 252 females (42%), aged 21\u201387, the average age was 55.6 years. There were 321 hyperlipidemia patients (53.5%) in the entire data. Subjects excluded pregnant women, lactation and patients who long-term taking anti-hyperlipidemia drugs. All hematological parameters were obtained by a fellowship-trained laboratory physician according to the golden criteria. All diagnostic results were determined by an endocrinologist with 8\u201310 years of clinical experience. Five hundred samples were used to train model and remaining 100 samples were used to evaluate the model\u2019s performance; two parts above are independent of each other. There are 50 hyperlipidemia samples (50%) and 50 healthy samples (50%) in the testing dataset to ensure the sample balance (64 male patients (64%) and 36 female (36%) patients in the testing dataset). A completely independent testing dataset can evaluate the system\u2019s performance to identify data not in the training dataset.",
+            "cite_spans": [],
+            "section": "Subject ::: Methods and Subject",
+            "ref_spans": []
+        },
+        {
+            "text": "The raw data are multidimensional vector, it consists of hematological parameters urological parameters and doctors\u2019 diagnostic results. It is shown in Figure 5. The raw data include blood routine parameters, biochemical test parameters, blood sugar parameters, glycosylated hemoglobin parameters and urine routine parameter. We extracted the above hematological data and diagnostic results as training vectors, and will consider adding more types of parameters in future work.",
+            "cite_spans": [],
+            "section": "Subject ::: Methods and Subject",
+            "ref_spans": [
+                {
+                    "start": 152,
+                    "end": 160,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Diagnostic results of hyperlipidemia samples were quantified as 1, and health was 0. The parameter order of the feature sequence has not been specially designed. LSTM model can automatically learn the joint features between parameters that are close or far apart. Because there are complex internal relations between different physiological parameters, the LSTM model is a better choice.\n",
+            "cite_spans": [],
+            "section": "Subject ::: Methods and Subject",
+            "ref_spans": []
+        },
+        {
+            "text": "We used 500 data to train the deep learning model, and the remaining 100 data were used to test the final performance of the model. The physiological characteristic sequence was fed to train the model. The training data mentioned above were divided into two parts: (1) Training-Sample: 90% of the training data was used to optimize the global parameters of the model and (2) Hyperparameters-Sample: the remaining 10% of the training data was used to fine-tune the hyperparameters of the model (such as the number of neurons), and this part of the data maintains sample balance. The schematic diagram of attention deep learning algorithm is shown in Figure 6.\n",
+            "cite_spans": [],
+            "section": "Experiment and Result",
+            "ref_spans": [
+                {
+                    "start": 649,
+                    "end": 657,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "The model was built and trained by Keras using TensorFlow as backend. The experimental platform is Ubuntu 16.04 computer with NVIDIA GTX 1080 GPU. The test dataset and training dataset are completely independent and do not cross each other. The test dataset contains 50 hyperlipidemia samples (50%). In the test dataset, there are 64 male patients (64%) and 36 female patients (36%). We kept the test set in a sample equilibrium state so that any health condition can be verified with the same probability.",
+            "cite_spans": [],
+            "section": "Experiment and Result",
+            "ref_spans": []
+        },
+        {
+            "text": "During the training process, the size of mini-batch was 20, the loss function was the cross-entropy cost function, and Adam algorithm was used to optimize the global parameters (\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$\\varepsilon $$\n\\end{document}=0.001,\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$${p_1}$$\n\\end{document}=0.9,\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$${p_2}$$\n\\end{document}=0.999, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$\\delta $$\n\\end{document}=\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$${10^{ - 8}}$$\n\\end{document}). At the same time, one-hot technology was also applied to the representation of data labels. Each dimension of the output vector represents a different health condition, only the corresponding element is 1 and the rest is 0. Because this paper distinguished two kinds of health conditions, the two-dimensional vector was used to code the data label, the normal diagnosis result was coded to 10, and the diagnosis result of hyperlipidemia was coded to 01. One-hot technology is helpful to improve the robustness of the model. At the same time, the sigmoid function was used in the classification function, because of the binary classification task. As mentioned above, the cross-entropy was used as loss function, the principle of cross-entropy is shown in Equation 8.\n(8)\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$loss = - {1 \\over n}\\sum {[T\\ln a+ (1 - T)\\ln (1 - a)]} $$\n\\end{document}",
+            "cite_spans": [],
+            "section": "Experiment and Result",
+            "ref_spans": []
+        },
+        {
+            "text": "In Equation 11, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$T$$\n\\end{document} is the target output, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$a$$\n\\end{document} is the actual output, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$$n$$\n\\end{document} is the number of samples. The training process of the model is shown in Figure 7.\n",
+            "cite_spans": [],
+            "section": "Experiment and Result",
+            "ref_spans": [
+                {
+                    "start": 1395,
+                    "end": 1403,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "The model achieved a 94% ACC performance in the test set. From the training images, we could find that the performance of the model on the training set is similar to that on the test set, this phenomenon proved that the model had good robustness. The model can not only judge the health condition of samples in training set but also diagnosis unknown samples. ROC curve was also used to evaluate the model\u2019s ability in diagnosing diseases, the ROC curve of the model mentioned above is shown in Figure 8.\n",
+            "cite_spans": [],
+            "section": "Experiment and Result",
+            "ref_spans": [
+                {
+                    "start": 495,
+                    "end": 503,
+                    "mention": "Figure 8",
+                    "ref_id": "FIGREF7"
+                }
+            ]
+        },
+        {
+            "text": "The area under the ROC curve is 97.48%. The confusion matrix for the model is shown in Figure 9.\n",
+            "cite_spans": [],
+            "section": "Experiment and Result",
+            "ref_spans": [
+                {
+                    "start": 87,
+                    "end": 95,
+                    "mention": "Figure 9",
+                    "ref_id": "FIGREF8"
+                }
+            ]
+        },
+        {
+            "text": "According to the confusion matrix, the specificity and sensitivity of the model can be obtained. The model achieved 92% specificity and 96% sensitivity in the test set. In conclusion, it can be proved that our attention deep learning model achieved a better performance, it can diagnose hyperlipidemia automatically and accurately, even faced with samples that do not exist in the training set.",
+            "cite_spans": [],
+            "section": "Experiment and Result",
+            "ref_spans": []
+        },
+        {
+            "text": "Diagnostic markers of hyperlipidemia can be predicted by the model automatically, the result is shown in Figure 10.\n",
+            "cite_spans": [],
+            "section": "Experiment and Result",
+            "ref_spans": [
+                {
+                    "start": 105,
+                    "end": 114,
+                    "mention": "Figure 10",
+                    "ref_id": "FIGREF9"
+                }
+            ]
+        },
+        {
+            "text": "In this study, our work is the first systematic study on the auxiliary diagnostic system that used human hematological data to automatically diagnose hyperlipidemia and provide the relevant diagnostic basis (automatically prompt diagnostic markers). Experimental results show that our attention deep learning algorithm can not only accurately and automatically diagnose hyperlipidemia but also automatically provide the diagnostic markers of hyperlipidemia and the importance of different diagnostic markers. As shown in Figure 7, the model achieved good and similar performance on both the training set and the validation set, and the model achieved 94% ACC with a completely independent test dataset. Therefore, this phenomenon can be proved that our model has good generalization ability, and it can still achieve better performance in the facing of data that does not exist in the training set. As shown in Figures 8 and 9, the model achieved 97.48% AUC, 92% specificity and 96% sensitivity. It can be proved that the model not only achieves better diagnostic accuracy but also has the good distinguishing ability and high reliability in the facing of different health conditions. An AI system which can auxiliary diagnosis of disease can alleviate the problem of uneven distribution of medical resources and improve the medical level in areas where medical resources are scarce. At the same time, the auxiliary diagnosis system can also speed up the patient\u2019s medical treatment process and enhance the patient\u2019s medical experience. Because the AI system proposed in this paper does not have the segment of manual feature extraction, it has higher comprehensiveness and objectivity, and reduces the dependence of diagnostic results in the professional level of doctors.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 521,
+                    "end": 529,
+                    "mention": "Figure 7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 911,
+                    "end": 920,
+                    "mention": "Figures 8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 925,
+                    "end": 926,
+                    "mention": "9",
+                    "ref_id": "FIGREF8"
+                }
+            ]
+        },
+        {
+            "text": "In a limited range, we found similar work. Edward Choi and his colleagues used recurrent neural networks to process electronic health records of varying lengths for early diagnosis of heart failure, reaching 88.3% of AUC.6 Michael A. Schwemmer et al used a deep neural network decoding framework to classify intracortical recording, reaching 93.78% ACC.10 Oliver Faust et al used LSTM neural network to process RR interval signals for automatic diagnosis of atrial fibrillation.36 All the work had achieved better performance in the test set. Although EHR data are widely used in the research of auxiliary diagnostic system, there is no unified standard to evaluate the quality of EHR data at present. The EHR data include artificial description, which limits the credibility of EHR data, which is also one of the important factors limiting the further improvement of model performance. Moreover, because EHR data does not have a uniform format, it is necessary to extract features manually before data are utilized, which not only causes the loss of original information but also increases labor costs. In the training process of this model, physiological parameters with standardized criteria were applied to the training of the model, and there was no manual description process. At the same time, the proposed model does not need to manually extract features, so that the model can obtain more potentially useful information, thus improving the performance of the model and increasing the reliability of the model. In addition, the explanation of disease mechanism and biomarker should be added. Only the improvement of diagnostic accuracy can be used to prove that the improvement of medical diagnostic technology is not very comprehensive. The accuracy of diagnosis is difficult to represent the level of comprehensive diagnosis.",
+            "cite_spans": [
+                {
+                    "start": 221,
+                    "end": 222,
+                    "mention": "6",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 353,
+                    "end": 355,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 478,
+                    "end": 480,
+                    "mention": "36",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We also compared the performance of SVM and fully connected neural network with our model. The type of SVM is C-SVC, and the kernel function is RBF. It achieved 63% ACC with the same testing dataset. The SVM which used sigmoid kernel function polynomial kernel achieved 50% ACC and 81% ACC in the same testing data, respectively. Fully connected neural network achieved 89% ACC with test data mentioned above. We speculated that it is due to the fact that the traditional classification method is difficult to learn the relationship between different physiological parameters and cannot learn the importance of different physiological parameters for disease. Each physiological parameter is not independent. Actually, the parameters interact with each other. One physiological parameter is the same, while the other physiological parameters are different, which may reflect different health conditions. Different physiological parameters are interrelated in physiological mechanism. Like the semantic environment, the same words have different interpretations in different semantic environments. For example, when both lipids and HDL are high, patients may experience a temporary increase in blood lipids due to diet rather than hyperlipidemia. Moreover, HDL reflects the synthesis of lipid metabolism, and it is not the higher the better. We also compared the performance of the simple recurrent neural network (RNN) with the model proposed by this paper. This RNN model also used the Adam algorithm to update global parameters. It achieved 93% ACC in the test dataset mentioned above. The performance of these two models is very close. However, LSTM can better synthesize the relationship between different physiological parameters to give a judgment, and the simple RNN model only considers the state at the nearest moment. The more complex the data processed, the more obvious the difference in performance between the two models. We also found similar work in the limited range. Manjeevan Seeraa37 and his colleges classify transcranial Doppler signals using individual and ensemble RNN, it archives 85.52% AUC. These works have also achieved good results in the test set. However, we speculate that human physiological features are not independent, it is not sufficient to consider only one parameter which is the reason for the better performance of LSTM that can analyze joint characteristics.38,40 Therefore, LSTM is a better choice for dealing with physiological parameter sequences with complex intrinsic relationships, similar to the recognition of semantic environments or voice signals.",
+            "cite_spans": [
+                {
+                    "start": 2000,
+                    "end": 2002,
+                    "mention": "37",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 2401,
+                    "end": 2403,
+                    "mention": "38",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 2404,
+                    "end": 2406,
+                    "mention": "40",
+                    "ref_id": "BIBREF39"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Further, the above studies on the auxiliary diagnostic system show good performance in the test set, but do not provide the basis for model classification data. The development of medical diagnosis depends not only on the improvement of diagnosis accuracy but also on the researching diagnostic markers, diagnostic basis or the influence of different physiological parameters on diseases. Compared with previous work, this paper proposed a deep learning model that integrated the attention mechanism. By using the attention mechanism, we could observe which physiological parameters are more important for disease diagnosis. Model can automatically provide disease diagnostic markers while diagnosing diseases. When using only LSTM, we found that the model reached 92% ACC in the same test dataset. We suspect that this is because the use of the attentional mechanism can help the model process more efficient information purposefully, thus alleviating the problem of over-fitting. In addition, the use of attention mechanism is more convenient for the study of diagnostic markers, which can effectively reflect the importance of different physiological parameters for disease diagnosis. The performance is very close. We speculate that this is because the data is not very complex. In the future, we will study and use more types of physiological parameters to identify more complex diseases. As shown in Figure 10, in the process of diagnosing hyperlipidemia, the model mainly judged hyperlipidemia according to cholesterol and triglyceride. This phenomenon coincides with the diagnostic criteria of hyperlipidemia. At the same time, HDL was also found to be associated with hyperlipidemia. We speculate that this phenomenon is due to the fact that HDL functions as a carrier of cholesterol in the surrounding tissues, so it has a close relationship with hyperlipidemia.40,41 The model mentioned above not only shows a high correlation between hyperlipidemia and direct markers, but also provide indirect markers. This phenomenon not only shows that the model proposed in this paper can learn the relationship between different physiological parameters but also shows that the model has great potential to discover new diagnostic markers. Although the model does not give new diagnostic markers using limited data, the prediction results of the model are in line with the gold standard, which proves the reliability of the model, and the model has the potential to reasonably analyze more evidence for disease diagnosis. As shown in Figure 10, although the model pays little attention to the remaining items, in fact, the attention is not zero. We speculate that this is due to there is a correlation between human different physiological parameters. The model shows a strong concern for the physiological parameters directly related to disease, but does not give high attention to the physiological parameters not related to disease, such as red blood cells, which further proves the reliability of the model. By using the visualization method, the diagnostic basis of the auxiliary diagnostic model can be clearly presented, which improve a certain degree of transparency to the black-box model. The AI diagnosis system proposed in this paper not only provided accurate and robust diagnosis results but also provided the diagnostic basis of diseases (94% ACC, 97.48% AUC, 96% sensitivity and 92% specificity with test dataset). It not only increases the intelligence of the model but also broadens the application scope of the system, such as medical teaching (provide recommended diagnosis results and evidence to inexperienced physicians). Most importantly, the traditional method of researching diagnostic markers is often to observe the clinical manifestations of dozens or hundreds of patients artificially, and then find the diagnostic markers of diseases according to the method of statistics. The traditional methods mentioned above are often difficult to synthesize large quantities of data and have a long research cycle.42,43 Andrei M. Beliaevc et al used 96 patients samples to discover diagnostic markers of acute cholangitis. Akihiko Yuki et al found CADM1 is a diagnostic marker in early-stage mycosis fungoides with 58 cases.44 Their research results have achieved good performance. Artificial analysis of limited data (dozens of samples) has the characteristics of one-sidedness and long research time, which undoubtedly increases the difficulty of researching diagnostic markers. The auxiliary diagnostic system proposed in this paper can automatically provide diagnostic markers by integrating a large amount of clinical data, which reduces the blindness of researching diagnostic markers and speeds up the discovery process of new diagnostic markers to a certain extent. In addition, automatic analysis of large quantities of samples can improve the reliability of the model and reduce the contingency caused by small quantities of samples.",
+            "cite_spans": [
+                {
+                    "start": 1872,
+                    "end": 1874,
+                    "mention": "40",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 1875,
+                    "end": 1877,
+                    "mention": "41",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 4035,
+                    "end": 4037,
+                    "mention": "42",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 4038,
+                    "end": 4040,
+                    "mention": "43",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 4245,
+                    "end": 4247,
+                    "mention": "44",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 1406,
+                    "end": 1415,
+                    "mention": "Figure 10",
+                    "ref_id": "FIGREF9"
+                },
+                {
+                    "start": 2535,
+                    "end": 2544,
+                    "mention": "Figure 10",
+                    "ref_id": "FIGREF9"
+                }
+            ]
+        },
+        {
+            "text": "Despite it is potential, it still has limitations. One limitation of our study is that the data we used included only a few human hematological parameters. Some diseases can not only be determined by these parameters but also need other information, such as biochemical testing and so on. Diseases may also be associated with other physiological parameters that are not part of the training set. Another limitation is that the diagnosis of many chronic diseases is also related to many other types of information, such as sex, age, disease history, family history and so on. Finally, because the experimental data were collected in the metabolic disease hospital, there were many samples with metabolic diseases in the training data, which was also a factor limiting the further improvement of the performance of the model. Therefore, in the future work, we will study how to add more types of parameters to the auxiliary diagnostic system and collect more samples of different health status, so as to further improve the performance of the model. In the future work, we will also research more types of model in order to find more effective model can process human physiological parameters.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In this paper, an algorithm of attention deep learning is proposed which has the potential to automatically diagnose hyperlipidemia with human hematological parameters and provide the diagnostic markers and the importance of different markers for the diagnosis results at the same time. It achieved 97.48% AUC, 92% specificity and 96% sensitivity with the test dataset.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "A new method proposed can accurately and automatically diagnose hyperlipidemia and provide disease diagnostic markers at the same time. The visualization of the model diagnosis basis enhances the transparency of the black-box model, increases the interpretability of deep learning algorithm, and enhances the credibility of the model. The attention deep learning algorithm proposed in this paper realizes the providing diagnostic basis while diagnosing disease. This phenomenon proves that it has the potential to discover new diagnostic markers, and expands the application scope of the auxiliary diagnostic system. At the same time, the experimental results show that the algorithm also has the capability to learn the relationship between different physiological parameters, so it has a high generalization ability. Therefore, it can save medical resources, speed up the researching process of diagnostic markers to a certain extent, speed up the work efficiency of the hospital, and enhance the patient\u2019s medical experience. Increasing the explanatory power of the model can effectively increase the research on biomarkers.34",
+            "cite_spans": [
+                {
+                    "start": 1127,
+                    "end": 1129,
+                    "mention": "34",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "Conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "The future work is still around to improve the performance of the auxiliary diagnostic system. In order to further improve the accuracy of the model, we will consider how to input more types of data into the model, such as patient history, etc. At the same time, in order to diagnose more kinds of diseases, we will collect more data to expand our existing data set. Because there are some complex diseases that require a joint judgment of multiple types of diagnostic information, we will study how to use cross-media diagnostic data as an input training model in the next step. Due to the limited data types, no new diagnostic markers are proposed in this model. Although the experiment confirmed that the diagnostic markers predicted by the model were the same as the gold standard, we will add more physiological parameter types and multiple diseases in the future work, with a view to finding more disease-related biomarkers. Not only in medicine but also from the perspective of engineering, we will further study the optimization methods of auxiliary diagnostic systems, such as the adjustment methods of hyperparameters. We will also further expand the sample data, consider more factors that may influence the diagnosis of the disease such as different races, diverse age groups et al to further enhance the reliability of the model.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Traditional diagnostic process and optimized diagnostic process.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Methods for studying diagnostic markers before and after optimization.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Schematic of LSTM Layer (unfolded-drawing).",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: The control principle of LSTM.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Schematic diagram of the original data format (\\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$${H_n}$$\n\\end{document}represents a value of a hematological test, \\documentclass[12pt]{minimal}\n\\usepackage{wasysym}\n\\usepackage[substack]{amsmath}\n\\usepackage{amsfonts}\n\\usepackage{amssymb}\n\\usepackage{amsbsy}\n\\usepackage[mathscr]{eucal}\n\\usepackage{mathrsfs}\n\\DeclareFontFamily{T1}{linotext}{}\n\\DeclareFontShape{T1}{linotext}{m}{n} {linotext }{}\n\\DeclareSymbolFont{linotext}{T1}{linotext}{m}{n}\n\\DeclareSymbolFontAlphabet{\\mathLINOTEXT}{linotext}\n\\begin{document}\n$${U_n}$$\n\\end{document}represents a value of a Urological test, result is diagnostic results from doctors).",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: Principle diagram of attention deep learning algorithm.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7: Plotting the performance of the model on the validation set and the training set ((A) is the accuracy of the model on the validation set and the training set, and (B) is the loss of the model on the validation set and the training set, respectively).",
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Figure 8: ROC Curve of attention deep learning algorithm.",
+            "type": "figure"
+        },
+        "FIGREF8": {
+            "text": "Figure 9: Confusion matrix of attention deep learning algorithm. Abbreviation: HL, Hyperlipidemia",
+            "type": "figure"
+        },
+        "FIGREF9": {
+            "text": "Figure 10: Prediction of diagnostic markers and their importance by attention deep learning algorithm. Abbreviation: TG, Triglyceride; LDL, Low-density lipoprotein; HDL, Low-density lipoprotein; RBC, Red blood cell; Hb, Hemoglobin",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "The final frontier in cancer diagnosis",
+            "authors": [],
+            "year": 2017,
+            "venue": "Nature",
+            "volume": "542",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature21492"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Deep learning for biology",
+            "authors": [],
+            "year": 2018,
+            "venue": "Nature",
+            "volume": "554",
+            "issn": "7693",
+            "pages": "555-557",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/d41586-018-02174-z"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Next-generation machine learning for biological networks",
+            "authors": [],
+            "year": 2018,
+            "venue": "Cell",
+            "volume": "173",
+            "issn": "7",
+            "pages": "1581-1592",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.cell.2018.05.015"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Developing a diagnostic decision support system for benign paroxysmal positional vertigo using a deep-learning model",
+            "authors": [],
+            "year": 2019,
+            "venue": "J Clin Med",
+            "volume": "8",
+            "issn": "5",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.3390/jcm8050633"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "Machine learning and medical education",
+            "authors": [],
+            "year": 2018,
+            "venue": "Npj Digital Med",
+            "volume": "1",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41746-018-0061-1"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Using recurrent neural network models for early detection of heart failure onset",
+            "authors": [],
+            "year": 2016,
+            "venue": "J Am Med Inf Assoc Jamia",
+            "volume": "24",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "A study of generalizability of recurrent neural network-based predictive models for heart failure onset risk using a large and heterogeneous EHR data set",
+            "authors": [],
+            "year": 2018,
+            "venue": "J Biomed Inform",
+            "volume": "84",
+            "issn": "",
+            "pages": "11-16",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jbi.2018.06.011"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "Deep learning algorithms for detection of critical findings in head CT scans: a retrospective study",
+            "authors": [],
+            "year": 2018,
+            "venue": "Lancet",
+            "volume": "392",
+            "issn": "10162",
+            "pages": "2388-2396",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0140-6736(18)31645-3"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Identifying medical diagnoses and treatable diseases by image-based deep learning",
+            "authors": [],
+            "year": 2018,
+            "venue": "Cell",
+            "volume": "172",
+            "issn": "5",
+            "pages": "1122-1131.e9",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.cell.2018.02.010"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Meeting brain\u2013computer interface user performance expectations using a deep neural network decoding framework",
+            "authors": [],
+            "year": 2018,
+            "venue": "Nat Med",
+            "volume": "24",
+            "issn": "",
+            "pages": "1669-1676",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41591-018-0171-y"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Albumin synthesis, albuminuria and hyperlipemia in nephrotic patients",
+            "authors": [],
+            "year": 1987,
+            "venue": "Kidney Int",
+            "volume": "31",
+            "issn": "",
+            "pages": "1368-1376",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/ki.1987.151"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Non-cholesterol sterols in different forms of primary hyperlipemias",
+            "authors": [],
+            "year": 2012,
+            "venue": "Nutr Metab Cardiovasc Dis",
+            "volume": "22",
+            "issn": "3",
+            "pages": "231-236",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.numecd.2010.05.010"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Speech emotion recognition using deep 1D & 2D CNN LSTM networks",
+            "authors": [],
+            "year": 2019,
+            "venue": "Biomed Signal Process Control",
+            "volume": "47",
+            "issn": "",
+            "pages": "312-323",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.bspc.2018.08.035"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Predicting hospital readmission for lupus patients: an RNN-LSTM-based deep-learning methodology",
+            "authors": [],
+            "year": 2018,
+            "venue": "Comput Biol Med",
+            "volume": "101",
+            "issn": "",
+            "pages": "199-209",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.compbiomed.2018.08.029"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Deep learning: a rapid and efficient route to automatic metasurface design",
+            "authors": [],
+            "year": 2019,
+            "venue": "Adv Sci",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1002/advs.v6.12"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Cuffless blood pressure estimation from electrocardiogram and photoplethysmogram using waveform based ANN-LSTM network",
+            "authors": [],
+            "year": 2019,
+            "venue": "Biomed Signal Process Control",
+            "volume": "51",
+            "issn": "",
+            "pages": "382-392",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.bspc.2019.02.028"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Detecting glaucoma progression using guided progression analysis with OCT and visual field assessment in eyes classified by international classification of disease severity codes",
+            "authors": [],
+            "year": 2019,
+            "venue": "Ophthalmol Glaucoma",
+            "volume": "2",
+            "issn": "1",
+            "pages": "36-46",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.ogla.2018.11.004"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Methods and dimensions of electronic health record data quality assessment: enabling reuse for clinical research",
+            "authors": [],
+            "year": 2013,
+            "venue": "J Am Med Inf Assoc",
+            "volume": "20",
+            "issn": "1",
+            "pages": "144-151",
+            "other_ids": {
+                "DOI": [
+                    "10.1136/amiajnl-2011-000681"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Improving diagnostic accuracy using EHR in emergency departments: a simulation-based study",
+            "authors": [],
+            "year": 2015,
+            "venue": "J Biomed Inform",
+            "volume": "55",
+            "issn": "",
+            "pages": "31-40",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jbi.2015.03.004"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Detecting diseases by human-physiological-parameter-based deep learning",
+            "authors": [],
+            "year": 2019,
+            "venue": "IEEE Access",
+            "volume": "7",
+            "issn": "",
+            "pages": "22002-22010",
+            "other_ids": {
+                "DOI": [
+                    "10.1109/ACCESS.2019.2893877"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "An automatic diagnostic system based on deep learning, to diagnose hyperlipidemia",
+            "authors": [],
+            "year": 2019,
+            "venue": "Diabetes Metab Syndrome Obesity",
+            "volume": "12",
+            "issn": "",
+            "pages": "637-645",
+            "other_ids": {
+                "DOI": [
+                    "10.2147/DMSO.S198547"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Classification and mutation prediction from non\u2013small cell lung cancer histopathology images using deep learning",
+            "authors": [],
+            "year": 2018,
+            "venue": "Nat Med",
+            "volume": "24",
+            "issn": "",
+            "pages": "1559-1567",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41591-018-0177-5"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "A frontal attention mechanism in the visual mismatch negativity",
+            "authors": [],
+            "year": 2015,
+            "venue": "Behav Brain Res",
+            "volume": "293",
+            "issn": "",
+            "pages": "173-181",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.bbr.2015.07.022"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Bidirectional LSTM with attention mechanism and convolutional layer for text classification",
+            "authors": [],
+            "year": 2019,
+            "venue": "Neurocomputing",
+            "volume": "337",
+            "issn": "",
+            "pages": "325-338",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.neucom.2019.01.078"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "Using recurrent neural networks with attention for detecting problematic slab shapes in steel rolling",
+            "authors": [],
+            "year": 2019,
+            "venue": "Appl Math Model",
+            "volume": "70",
+            "issn": "",
+            "pages": "365-377",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.apm.2019.01.027"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Effects of Chinese herbal medicine on hyperlipidemia and the risk of cardiovascular disease in HIV-infected patients in Taiwan",
+            "authors": [],
+            "year": 2018,
+            "venue": "J Ethnopharmacol",
+            "volume": "219",
+            "issn": "",
+            "pages": "71-80",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jep.2018.03.006"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Increased risk of anxiety or depression after traumatic spinal cord injury in patients with preexisting hyperlipidemia: a population-based study",
+            "authors": [],
+            "year": 2017,
+            "venue": "World Neurosurg",
+            "volume": "106",
+            "issn": "",
+            "pages": "402-408",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.wneu.2017.06.182"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "Clinical significance of analysis of the level of blood fat, CRP and hemorheological indicators in the diagnosis of elder coronary heart disease",
+            "authors": [],
+            "year": 2018,
+            "venue": "Saudi J Biol Sci",
+            "volume": "25",
+            "issn": "8",
+            "pages": "1812-1816",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.sjbs.2018.09.002"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Cholesterol metabolism differs after statin therapy according to the type of hyperlipemia",
+            "authors": [],
+            "year": 2012,
+            "venue": "Life Sci",
+            "volume": "90",
+            "issn": "21\u201322",
+            "pages": "846-850",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.lfs.2012.03.038"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "Effect of gap junction uncoupler heptanol on resistance arteries reactivity in experimental models of diabetes, hyperlipemia and hyperlipemia-diabetes",
+            "authors": [],
+            "year": 2006,
+            "venue": "Vascul Pharmacol",
+            "volume": "44",
+            "issn": "6",
+            "pages": "513-518",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.vph.2006.03.005"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "Meta-analysis of the effect and safety of berberine in the treatment of type 2 diabetes mellitus, hyperlipemia and hypertension",
+            "authors": [],
+            "year": 2015,
+            "venue": "J Ethnopharmacol",
+            "volume": "161",
+            "issn": "",
+            "pages": "69-81",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jep.2014.09.049"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "Multidisciplinary care in the hematology clinic: implementation of geriatric oncology",
+            "authors": [],
+            "year": 2018,
+            "venue": "J Geriatr Oncol",
+            "volume": "10",
+            "issn": "3",
+            "pages": "497-503",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Polyenylphosphatidylcholine decreases alcoholic hyperlipemia without affecting the alcohol-induced rise of HDL-cholesterol",
+            "authors": [],
+            "year": 1997,
+            "venue": "Life Sci",
+            "volume": "61",
+            "issn": "19",
+            "pages": "1907-1914",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0024-3205(97)00830-8"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Deep learning and medical diagnosis",
+            "authors": [],
+            "year": 2019,
+            "venue": "Lancet",
+            "volume": "394",
+            "issn": "10210",
+            "pages": "1709-1710",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0140-6736(19)32501-2"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "ADAM: a method for stochastic optimization",
+            "authors": [],
+            "year": 2014,
+            "venue": "arXiv:1412.6980",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Automated detection of atrial fibrillation using long short-term memory network with RR interval signals",
+            "authors": [],
+            "year": 2018,
+            "venue": "Comput Biol Med",
+            "volume": "102",
+            "issn": "",
+            "pages": "327-335",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.compbiomed.2018.07.001"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "Classification of transcranial Doppler signals using individual and ensemble recurrent neural networks",
+            "authors": [],
+            "year": 2017,
+            "venue": "Neurocomputing",
+            "volume": "249",
+            "issn": "",
+            "pages": "337-344",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.neucom.2016.05.117"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Modeling asynchronous event sequences with RNNs",
+            "authors": [],
+            "year": 2018,
+            "venue": "J Biomed Inform",
+            "volume": "83",
+            "issn": "",
+            "pages": "167-177",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jbi.2018.05.016"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Classification of ECG Arrhythmia using Recurrent Neural Networks",
+            "authors": [],
+            "year": 2018,
+            "venue": "Procedia Comput Sci",
+            "volume": "132",
+            "issn": "",
+            "pages": "1290-1297",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.procs.2018.05.045"
+                ]
+            }
+        },
+        "BIBREF39": {
+            "title": "HDL and cardiovascular disease",
+            "authors": [],
+            "year": 2014,
+            "venue": "Lancet",
+            "volume": "384",
+            "issn": "9943",
+            "pages": "618-625",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0140-6736(14)61217-4"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "High HDL cholesterol: a risk factor for diabetic retinopathy? Findings from NO BLIND study",
+            "authors": [],
+            "year": 2019,
+            "venue": "Diabetes Res Clin Pract",
+            "volume": "150",
+            "issn": "",
+            "pages": "236-244",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.diabres.2019.03.028"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "Diagnostic inflammatory markers in acute cholangitis",
+            "authors": [],
+            "year": 2018,
+            "venue": "J Surg Res",
+            "volume": "228",
+            "issn": "",
+            "pages": "35-41",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jss.2018.02.048"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "Informativeness of diagnostic marker values and the impact of data grouping",
+            "authors": [],
+            "year": 2018,
+            "venue": "Comput Stat Data Anal",
+            "volume": "117",
+            "issn": "",
+            "pages": "76-89",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.csda.2017.07.008"
+                ]
+            }
+        },
+        "BIBREF43": {
+            "title": "CADM1 is a diagnostic marker in early-stage mycosis fungoides: multicenter study of 58 cases",
+            "authors": [],
+            "year": 2018,
+            "venue": "J Am Acad Dermatol",
+            "volume": "6",
+            "issn": "79",
+            "pages": "1039-1046",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jaad.2018.06.025"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "Automated identification of normal and diabetes heart rate signals using nonlinear measures",
+            "authors": [],
+            "year": 2013,
+            "venue": "Comput Biol Med",
+            "volume": "43",
+            "issn": "10",
+            "pages": "1523-1529",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.compbiomed.2013.05.024"
+                ]
+            }
+        }
+    }
+}

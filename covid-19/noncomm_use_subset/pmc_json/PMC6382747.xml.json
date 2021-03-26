@@ -1,0 +1,2195 @@
+{
+    "paper_id": "PMC6382747",
+    "metadata": {
+        "title": "Modeling the impact of quarantine during an outbreak of Ebola virus disease",
+        "authors": [
+            {
+                "first": "Attila",
+                "middle": [],
+                "last": "D\u00e9nes",
+                "suffix": "",
+                "email": "denesa@math.u-szeged.hu",
+                "affiliation": {}
+            },
+            {
+                "first": "Abba",
+                "middle": [
+                    "B."
+                ],
+                "last": "Gumel",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Ebola virus disease (EVD), which first appeared in 1976 in Zaire (Bowen et al., 1977; Johnson, Webb, Lange, & Murphy, 1977), is one of the most virulent viral diseases of humans, with a case fatality ratio estimated between 25 and 90% (World Health Organization, 2018a). EVD is transmitted between humans through contact with blood, secretions, organs or other bodily fluids of infected or dead humans or animals, and its incubation period range between 2 and 21 days. The symptoms are vomiting, diarrhea, body rash, tremors and in some cases, both internal and external bleeding. The largest Ebola outbreak so far started in Guinea in December 2013 (World Health Organization, 2015). During this epidemic, almost 29,000 people contracted the disease which resulted in more than 11,000 deaths, mostly in Guinea, Liberia and Sierra Leone. A new outbreak started recently (on 4 April 2018) in the Democratic Republic of the Congo and (as of October 20, 2018) there have already been 237 Ebola cases and 153 deaths (World Health Organization, 2018b).",
+            "cite_spans": [
+                {
+                    "start": 66,
+                    "end": 84,
+                    "mention": "Bowen et al., 1977",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 86,
+                    "end": 122,
+                    "mention": "Johnson, Webb, Lange, & Murphy, 1977",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 236,
+                    "end": 268,
+                    "mention": "World Health Organization, 2018a",
+                    "ref_id": "BIBREF34"
+                },
+                {
+                    "start": 651,
+                    "end": 682,
+                    "mention": "World Health Organization, 2015",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1013,
+                    "end": 1045,
+                    "mention": "World Health Organization, 2018b",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Quarantine, defined loosely as the temporary removal (from their immediate abode or the general population) of people suspected of being exposed to a communicable disease, has historically been used as an effective basic public health control measure to prevent the spread of infectious diseases. There are numerous issues pertaining to the logistic of the actual implementation of quarantine as a control strategy, such as who should be quarantined and for how long suspected people should be in quarantine (these have major socio-economic and public health implications). For instance, in the case of the 2014 outbreaks of the EVD, some US states imposed a three-week quarantine period for all health care workers who returned to the United States from the Ebola-affected regions (where they may have cared for patients with Ebola) (Campbell, Adan, & Morgado, 2017; Drazen et al., 2014). It was, however, shown by Haas (Haas, 2014) that the three-week period may not be optimal (in particular, it was shown that exposed individuals with 0.2%\u201312% risk of developing disease may be released from quarantine prior to the end of the incubation period). On August 1, 2014, the three Western African countries affected by the epidemic (Guinea, Liberia and Sierra Leone) announced the enforcement of a mass quarantine in vast forest areas around their common borders that are considered the epicentre of the outbreak (a few days later, Liberian authorities imposed a 10-day quarantine over West Point; Sierra Leone announced, on September 6, a nationwide mass quarantine between September 19 and 21) (Eba, 2014).",
+            "cite_spans": [
+                {
+                    "start": 835,
+                    "end": 866,
+                    "mention": "Campbell, Adan, & Morgado, 2017",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 868,
+                    "end": 887,
+                    "mention": "Drazen et al., 2014",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 922,
+                    "end": 932,
+                    "mention": "Haas, 2014",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1596,
+                    "end": 1605,
+                    "mention": "Eba, 2014",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Numerous mathematical modeling studies have been conducted to study the transmission dynamics and control of EVD. In fact, the earliest mathematical models for EVD appeared long before the 2014\u201315 epidemic. Chowell et al. (Chowell, Hengartner, Castillo-Chavez, Fenimore, & Hyman, 2004) proposed a stochastic SEIR model to fit data from the 1995 and 2000 outbreaks in Congo and Uganda. This model was further developed by Legrand et al. (Legrand, Grais, Boelle, Valleron, & Flahault, 2007) by including two new compartments for hospitalized people and for people who died from Ebola but have not yet been buried. Several new models appeared soon after the start of the 2014 outbreak (Nishiura & Chowell, 2014; Towers, Patterson-Lomba, & Castillo-Chavez, 2014). The model by Legrand et al. was used to study the 2014\u201315 Ebola outbreaks by Rivers et al. (Rivers, Lofgren, Marathe, Eubank, & Lewis, 2014). Webb and Browne incorporated age of infection in their model (Webb & Browne, 2016). Tsanou et al. considered the role of host-reservoir transmission (with bats as reservoir) of EVD and spillover potential to humans (Tsanou, Bowong, Lubuma, & Mbang, 2017). Furthermore, Tsanou et al. (Tsanou, Lubuma, Ouemba Tass\u00e9, & Tenkam, 2018) studied the impact of environmental contamination on the transmission dynamics of EVD. Several other studies incorporated the effect of anti-EVD control measures, such as increasing hospitalization, timely burial of people who died from EVD and distribution and use of protective kits in households (Althaus, 2014; Barbarossa et al., 2015; Lewnard et al., 2014). For instance, Agusto et al. (Agusto, Teboh-Ewungkem, & Gumel, 2015) studied the effect of traditional beliefs and customs on the transmission dynamics of the disease.",
+            "cite_spans": [
+                {
+                    "start": 223,
+                    "end": 284,
+                    "mention": "Chowell, Hengartner, Castillo-Chavez, Fenimore, & Hyman, 2004",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 437,
+                    "end": 487,
+                    "mention": "Legrand, Grais, Boelle, Valleron, & Flahault, 2007",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 683,
+                    "end": 707,
+                    "mention": "Nishiura & Chowell, 2014",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 709,
+                    "end": 757,
+                    "mention": "Towers, Patterson-Lomba, & Castillo-Chavez, 2014",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 852,
+                    "end": 899,
+                    "mention": "Rivers, Lofgren, Marathe, Eubank, & Lewis, 2014",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 964,
+                    "end": 983,
+                    "mention": "Webb & Browne, 2016",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1118,
+                    "end": 1155,
+                    "mention": "Tsanou, Bowong, Lubuma, & Mbang, 2017",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1186,
+                    "end": 1230,
+                    "mention": "Tsanou, Lubuma, Ouemba Tass\u00e9, & Tenkam, 2018",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1532,
+                    "end": 1545,
+                    "mention": "Althaus, 2014",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 1547,
+                    "end": 1570,
+                    "mention": "Barbarossa et al., 2015",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1572,
+                    "end": 1592,
+                    "mention": "Lewnard et al., 2014",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 1624,
+                    "end": 1661,
+                    "mention": "Agusto, Teboh-Ewungkem, & Gumel, 2015",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "A number of mathematical models, typically of the form of deterministic systems of nonlinear differential equations, have been designed and used to gain insight into the population-level impact of quarantine (of people suspected of being exposed to a disease) and isolation (of people with clinical symptoms of a communicable disease) on the spread and control of infectious diseases (see, for instance, the models in (Day, Park, Madras, Gumel, & Wu, 2006; Gumel et al., 2004; Hethcote, Zhien, & Shengbing, 2002; Lipsitch et al., 2003; Mubayi, Kribs Zaleta, Martcheva, & Castillo-Ch\u00e1vez, 2010; Nu\u00f1o, Feng, Martcheva, & Castillo-Chavez, 2005; Safi & Gumel, 2010; Safi & Gumel, 2013; Safi & Gumel, 2015; Yan & Zou, 2008)). Hethcote (Hethcote et al., 2002) presented SIQS (susceptible-infected-quarantined-susceptible) and SIQR (susceptible-infected-quarantined-recovered) models for the dynamics of an infectious disease that is controllable using quarantine and isolation, showing that the use of quarantine-adjusted incidence induces the phenomenon of Hopf bifurcation in the transmission dynamics of the disease. Nu\u00f1o et al. (2005) also showed oscillatory dynamics in an SIQR model for the dynamics of two strains of influenza in a population. Similarly, a probabilistic model was designed and used by Day et al. (Day et al., 2006) to determine the conditions under which quarantine is expected to be useful. The Day et al. study showed that the number of infections averted through quarantine is expected to be low if isolation is effective, but the number increases abruptly as the effectiveness of isolation diminishes. It is worth mentioning, however, that in majority of the quarantine, or quarantine and isolation, models in the literature (including the models in all of the aforementioned studies, with exception of those in (Lipsitch et al., 2003; Mubayi et al., 2010; Safi & Gumel, 2013)), the term \u201cquarantine\u201d was generally incorrectly used to refer to the removal of individuals who already have been infected with the disease (either in the exposed/latent (Day et al., 2006; Gumel et al., 2004; Safi & Gumel, 2010; Safi & Gumel, 2015), or even in the symptomatic (Hethcote et al., 2002; Nu\u00f1o et al., 2005) class). In other words, the term \u201cquarantine\u201d was used instead of the more epidemiologically-appropriate term, \u201cisolation\u201d. As stated earlier, quarantine is the temporary removal of susceptible individuals who are feared to have been exposed to a communicable disease. These (currently-susceptible-but-feared-exposed) individuals are temporarily removed from the actively-mixing population until, at the very least, after the incubation period of the disease, after which they are tested to determine whether or not they have the disease. If they have acquired the infection, they are then placed in isolation. If they do not show clinical symptoms of the disease at the end of the quarantine period, they return to the susceptible (and actively-mixing) population. People can be quarantined at home (i.e., self-quarantine) or in public health facility (such as hospital, health centers or makeshift facility, such as the military tents used during the 2014 ebola outbreaks (Drazen et al., 2014)). Quarantine is correctly modeled in a few studies, including in (Lipsitch et al., 2003; Mubayi et al., 2010; Safi & Gumel, 2013). In particular, Lipsitch et al. (Lipsitch et al., 2003) modeled quarantine of susceptible individuals based on the number of individuals with clinical symptoms of the disease in the community. In addition to allowing for the quarantine of susceptible individuals, the model developed by Safi and Gumel (Safi & Gumel, 2013) also accounted for the adjustment of the disease incidence function to account for the actively-mixing population (in line with Hethcote (Hethcote et al., 2002)). These features were also incorporated in the model developed by Mubayi et al. (Mubayi et al., 2010). It is worth stating, however, that the quarantine models in (Lipsitch et al., 2003; Mubayi et al., 2010) do not allow breakthrough infection during quarantine. In other words, the models in (Lipsitch et al., 2003; Mubayi et al., 2010) assume perfect quarantine (this assumption is relaxed in the current study).",
+            "cite_spans": [
+                {
+                    "start": 419,
+                    "end": 455,
+                    "mention": "Day, Park, Madras, Gumel, & Wu, 2006",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 457,
+                    "end": 475,
+                    "mention": "Gumel et al., 2004",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 477,
+                    "end": 511,
+                    "mention": "Hethcote, Zhien, & Shengbing, 2002",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 513,
+                    "end": 534,
+                    "mention": "Lipsitch et al., 2003",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 536,
+                    "end": 592,
+                    "mention": "Mubayi, Kribs Zaleta, Martcheva, & Castillo-Ch\u00e1vez, 2010",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 594,
+                    "end": 640,
+                    "mention": "Nu\u00f1o, Feng, Martcheva, & Castillo-Chavez, 2005",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 642,
+                    "end": 660,
+                    "mention": "Safi & Gumel, 2010",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 662,
+                    "end": 680,
+                    "mention": "Safi & Gumel, 2013",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 682,
+                    "end": 700,
+                    "mention": "Safi & Gumel, 2015",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 702,
+                    "end": 717,
+                    "mention": "Yan & Zou, 2008",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 731,
+                    "end": 752,
+                    "mention": "Hethcote et al., 2002",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1114,
+                    "end": 1132,
+                    "mention": "Nu\u00f1o et al. (2005)",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 1315,
+                    "end": 1331,
+                    "mention": "Day et al., 2006",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 1835,
+                    "end": 1856,
+                    "mention": "Lipsitch et al., 2003",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 1858,
+                    "end": 1877,
+                    "mention": "Mubayi et al., 2010",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 1879,
+                    "end": 1897,
+                    "mention": "Safi & Gumel, 2013",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 2072,
+                    "end": 2088,
+                    "mention": "Day et al., 2006",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 2090,
+                    "end": 2108,
+                    "mention": "Gumel et al., 2004",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 2110,
+                    "end": 2128,
+                    "mention": "Safi & Gumel, 2010",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 2130,
+                    "end": 2148,
+                    "mention": "Safi & Gumel, 2015",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 2179,
+                    "end": 2200,
+                    "mention": "Hethcote et al., 2002",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 2202,
+                    "end": 2219,
+                    "mention": "Nu\u00f1o et al., 2005",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 3196,
+                    "end": 3215,
+                    "mention": "Drazen et al., 2014",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 3283,
+                    "end": 3304,
+                    "mention": "Lipsitch et al., 2003",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 3306,
+                    "end": 3325,
+                    "mention": "Mubayi et al., 2010",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 3327,
+                    "end": 3345,
+                    "mention": "Safi & Gumel, 2013",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 3380,
+                    "end": 3401,
+                    "mention": "Lipsitch et al., 2003",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 3650,
+                    "end": 3668,
+                    "mention": "Safi & Gumel, 2013",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 3808,
+                    "end": 3829,
+                    "mention": "Hethcote et al., 2002",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 3912,
+                    "end": 3931,
+                    "mention": "Mubayi et al., 2010",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 3995,
+                    "end": 4016,
+                    "mention": "Lipsitch et al., 2003",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 4018,
+                    "end": 4037,
+                    "mention": "Mubayi et al., 2010",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 4125,
+                    "end": 4146,
+                    "mention": "Lipsitch et al., 2003",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 4148,
+                    "end": 4167,
+                    "mention": "Mubayi et al., 2010",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The purpose of the current study is to design a new model for realistically assessing the population-level impact of quarantine (assumed to be imperfect, so that individuals in quarantine can acquire infection during quarantine) on the spread and control of the 2014\u20132015 EVD outbreaks in the three affected Western African countries. The paper is organized as follows. The model is formulated and fitted with observed data in Section 2 (the basic properties of the model, as well as the local asymptotic stability result for the associated disease-free equilibrium, are also given). A special case of the model, in the absence of quarantine, is rigorously analysed in Section 3. Numerical simulations of the full model are reported in Section 5.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The basic qualitative properties of the model (2), with respect to the nonnegativity and boundedness of solutions, will now be explored.Lemma 2.1Suppose that the initial values\nSU(0),\nSQ(0),\nEU(0),\nEQ(0),\nIU(0),\nIT(0),\nIQ(0),\nR(0),\nD(0),\nB(0)\nof the model (2) are all nonnegative. Then, the solution of (2) starting with these initial values will remain nonnegative for all time\nt>0. Furthermore, all solutions of the model (2) are bounded.",
+            "cite_spans": [],
+            "section": "Basic qualitative properties ::: Formulation of mathematical model",
+            "ref_spans": []
+        },
+        {
+            "text": "Proof. The proof for the nonnegativity component of the theorem is by contradiction (see Theorem A4 of (Thieme, 2003)). Suppose that the statement of the lemma (with respect to nonnegativity) does not hold. That is, there is at least one of the nine state variables of the model (2), and a t=t*\u22650, such that the value of this state variable goes through 0 at t=t*, and all state variables of the model take nonnegative values for 0\u2264t\u2264t*. For example, consider the state variable is SU(t). It can be seen that the derivative of SU(t) is positive if SU(t)=0. Hence, SU(t) cannot decrease further once it has reached 0. The case of each of the other state variable of the model can be shown in a similar way.",
+            "cite_spans": [
+                {
+                    "start": 104,
+                    "end": 116,
+                    "mention": "Thieme, 2003",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Basic qualitative properties ::: Formulation of mathematical model",
+            "ref_spans": []
+        },
+        {
+            "text": "To show that all solutions of the model (2) are bounded, it is convenient to define N(t)=SU(t)+SQ(t)+EU(t)+EQ(t)+IU(t)+IT(t)+IQ(t)+R(t)+D(t) and \u03b4=min{f,d}. Thus,N'(t)=\u03a0\u2212d[SU(t)+SQ(t)+EU(t)+EQ(t)+IU(t)+IT(t)+IQ(t)+R(t)]\u2212fD(t)\u2264\u03a0\u2212\u03b4N(t),from which it follows that limsupt\u2192\u221eN(t)\u2264\u03a0\u03b4. Using the fact that all solutions are nonnegative, the second statement of the lemma is established. \u220e",
+            "cite_spans": [],
+            "section": "Basic qualitative properties ::: Formulation of mathematical model",
+            "ref_spans": []
+        },
+        {
+            "text": "Define the following feasible region for the model (2):\u0393={(SU(t),SQ(t),EU(t),EQ(t),IU(t),IT(t),IQ(t),R(t),D(t))\u2208\u211d+9:N(t)\u2264\u03a0\u03b4}.The result below follows from the above analyses.Lemma 2.2The region\n\u0393\nis positively-invariant for the model (2) for every nonnegative initial condition in\n\u211d+9.",
+            "cite_spans": [],
+            "section": "Basic qualitative properties ::: Formulation of mathematical model",
+            "ref_spans": []
+        },
+        {
+            "text": "It should, first of all, be stated that good estimates for pretty much all the non-quarantine related parameters of the model (2) are available in the literature, as tabulated in Table 1. Further, good estimates for one of the four quarantine-related parameters (\u03b7Q) are available. Thus, our task is to find good estimates for the remaining three quarantine-related parameters of the model (kQQ, rQ and q). In order to do so, and to subsequently validate the model, we fitted the model using the available cumulative data for the 2014\u201315 Ebola outbreaks in three affected West African countries. We apply Latin Hypercube Sampling (a Monte-Carlo sampling method used in statistics to measure simultaneous variation of several model parameters (McKay, Beckman, & Conover, 1979)) to generate a representative sample set from the parameter ranges for the three quarantine-related parameters (kQQ, rQ and q), while the baseline values for the rest of the parameters, given in Table 1, are used as well. For all elements of this representative sample set, we numerically calculate the solutions of the model (2) with the given parameter values and apply the least squares method to find the parameters which give the best fit. We consider the data of the first 40 weeks of the outbreak (World Health Organization, 2018d) (as tabulated in Table 2), as after this time, several intervention measures were implemented (hence, the estimates for many of the control-related parameters of the model, including the transmission, hospitalization and burial rates, changed significantly). The estimated values of the two quarantine-related parameters of the model obtained from the fitting exercise are tabulated in Table 1. The simulation results obtained for the cumulative number of cases, by fitting the model with the data of the first 40-week period, are depicted in Fig. 2. The figure shows a reasonably good fit (thereby adding realism to the predictive capacity of the model (2)). The goodness of the fit is theoretically measured by computing the associated average relative error of the fit using the formula 140\u2211i=140|yi\u2212y\u02c6i||yi|\u22480.8163, where yi and y\u02c6i are the exact and estimated cumulative number of cases for Week i(i=1,2,\u22ef,40) (depicted in Table 2), respectively. The reasonably small value of the relative error (0.8134) confirms the goodness of the fit obtained.",
+            "cite_spans": [
+                {
+                    "start": 743,
+                    "end": 774,
+                    "mention": "McKay, Beckman, & Conover, 1979",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 1281,
+                    "end": 1313,
+                    "mention": "World Health Organization, 2018d",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Data fitting ::: Formulation of mathematical model",
+            "ref_spans": [
+                {
+                    "start": 1858,
+                    "end": 1864,
+                    "mention": "Fig. 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 179,
+                    "end": 186,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 971,
+                    "end": 978,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 1332,
+                    "end": 1339,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 1701,
+                    "end": 1708,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 2243,
+                    "end": 2250,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "The global asymptotic stability property of the DFE (E0) of the model (3) will be explored using the approach in [38, Theorem2.1]. It is worth recalling the following result.Theorem A([ (Shuai & van den Driessche, 2013), Theorem2.1]).Consider the system(4)x\u2032=F(x,y)\u2212V(x,y),y\u2032=g(x,y)with g=(g1,\u2026,gm)T. The vectors x=(x1,\u2026,xn)\u2208\u211dn and y=(y1,\u2026,ym)T\u2208\u211dm represent the populations in the disease compartments and the disease-free compartments, respectively. The functions F and V are defined as F=(F1,\u2026,Fn)T and V=(V1,\u2026,Vn)T such that Fi denotes the rate of new infections in the ith disease compartment and Vi,i=1,\u2026,n denote transition terms. Assume that the disease-free system y\u2032=g(0,y) has a unique equilibrium y0>0 which is locally asymptotically stable within the disease-free space. Define the two n\u00d7n matrices F and V asF=(\u2202Fi\u2202xj(0,y0))andV=(\u2202Vi\u2202xj(0,y0)),and let,\u03d5(x,y):=(F\u2212V)x\u2212F(x,y)+V(x,y).Furthermore, let \u03c9T\u22650 be the left eigenvector of the matrix V\u22121F corresponding to the eigenvalue R0. If \u03d5(x,y)\u22640 in \u0393\u2282\u211d+n+m, F\u22650, V\u22121\u22650 and R0\u22641, then Q=\u03c9TV\u22121x is a Lyapunov function for (4) on \u0393.Theorem 3.1The disease-free equilibrium\nE0\nof the model (3) is globally-asymptotically stable in\n\u0393\u02dc:={(SU(t),EU(t),IU(t),IT(t),R(t),D(t))\u2208\u211d+6}\nwhenever\nR0\u22641.",
+            "cite_spans": [
+                {
+                    "start": 187,
+                    "end": 218,
+                    "mention": "Shuai & van den Driessche, 2013",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Disease-free equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": []
+        },
+        {
+            "text": "Proof. Using the notation in Theorem A above, the next generation matrices, V and F, associated with the model (3) are given, respectively, byV=(d+p000\u2212pd+m+v+w000\u2212wd+m+v00\u2212m\u2212mf)andF=(0b\u03a0kdb\u03a0k\u03b7TdbBk\u03b7Dd000000000000),and the function \u03d5 is given by\u03d5(SU,EU,IU,IT,R,D)T=(bk(\u03a0\u2212dSU)(D\u03b7D+\u03b7TIT+IU)d,0,0,0).",
+            "cite_spans": [],
+            "section": "Disease-free equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": []
+        },
+        {
+            "text": "Hence, each condition of Theorem A is satisfied. Further, it follows from the above derivations that \u03c9TV\u22121x is a Lyapunov function for (3), where \u03c9 is the left eigenvector of the matrix V\u22121F corresponding to the eigenvalue R0. The statement of the theorem follows from LaSalle's Invariance Principle (LaSalle & Lefschetz, 1961). \u220e",
+            "cite_spans": [
+                {
+                    "start": 301,
+                    "end": 326,
+                    "mention": "LaSalle & Lefschetz, 1961",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Disease-free equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": []
+        },
+        {
+            "text": "The global asymptotic stability property of the endemic equilibrium E1 of the model (3) will be explored using results from (Shuai & van den Driessche, 2013). It is worth recalling the following result.Theorem B([ (Shuai & van den Driessche, 2013), Theorem3.5]).Let U be an open set in\n\u211dn. Consider a differential equation system(5)zk\u2032=fk(z1,z2,\u2026,zm),k=1,2,\u2026,m,",
+            "cite_spans": [
+                {
+                    "start": 125,
+                    "end": 156,
+                    "mention": "Shuai & van den Driessche, 2013",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 215,
+                    "end": 246,
+                    "mention": "Shuai & van den Driessche, 2013",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Endemic equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": []
+        },
+        {
+            "text": "with z=(z1,z2,\u2026,zm)\u2208U.",
+            "cite_spans": [],
+            "section": "Endemic equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": []
+        },
+        {
+            "text": "Suppose the following assumptions are satisfied.1.There exist functions Di:U\u2192\u211d, Gij:U\u2192\u211d and constants aij\u22650 such that for every 1\u2264i\u2264n, Di\u2032=Di\u2032|(5)\u2264\u2211j=1naijGij(z) for z\u2208U.2.For A=[aij], each directed cycle C of the weighted digraph G defined by the weight matrix A has \u2211(s,r)\u2208E(C)Grs(z)\u22640 for z\u2208U, where E(C) denotes the arc set of the directed cycle C.",
+            "cite_spans": [],
+            "section": "Endemic equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": []
+        },
+        {
+            "text": "Then, there exist constants ci\u22650 such that the function D(z)=\u2211i=1nciDi(z) is a Lyapunov function for (5).",
+            "cite_spans": [],
+            "section": "Endemic equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": []
+        },
+        {
+            "text": "We claim the following result.Theorem 3.2The endemic equilibrium\nE1\nof the model (3) is globally-asymptotically stable in\u0393\u02dc\u2216{(SU(t),EU(t),IU(t),IT(t),R(t),D(t))\u2208\u211d+6:EU(t)=IU(t)=IT(t)=D(t)=0}",
+            "cite_spans": [],
+            "section": "Endemic equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": []
+        },
+        {
+            "text": "if R0>1.",
+            "cite_spans": [],
+            "section": "Endemic equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": []
+        },
+        {
+            "text": "Proof. Define h:\u211d\u2192\u211d as h(x)=x\u22121\u2212lnx and let D1=h(SU(t)SU**)+E**SU**h(EU(t)E**), D2=h(IU(t)IU**), D3=h(IT(t)IT**) and D4=h(D(t)D**). At the endemic equilibrium, the following equalities hold:\u03a0=kbSU**IU**+kb\u03b7TSU**IT**+kb\u03b7DSU**D**+dSU**,p+d=kbSU**IU**+kb\u03b7TSU**IT**+kb\u03b7DSU**D**E**,v+m+w+d=pE**IU**,v+m+d=wIU**IT**,f=mIU**+IT**D**.",
+            "cite_spans": [],
+            "section": "Endemic equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": []
+        },
+        {
+            "text": "Noting that h(x)\u22650 for all x>0 and h(x)=0 if and only if x=1, and applying the above equalities, gives:D1\u2032(t)\u2264kbIU**(IU(t)IU**\u2212lnIU(t)IU**\u2212EU(t)E**\u2212lnEU(t)E**)+kb\u03b7TIT**(IT(t)IT**\u2212lnIT(t)IT**\u2212EU(t)E**\u2212lnEU(t)E**)+kb\u03b7DD**(D(t)D**\u2212lnIU(t)IU**\u2212EU(t)E**\u2212lnEU(t)E**):=a12G12+a13G13+a14G14,D2\u2032(t)\u2264pE**IU**(EU(t)E**\u2212lnEU(t)E**\u2212IU(t)IU**\u2212lnIU(t)IU**):=a21G21,D3\u2032(t)\u2264wIU*IT**(IU(t)IU**\u2212lnIU(t)IU**\u2212IT(t)IT**\u2212lnIT(t)IT**):=a32G32,and,D4\u2032(t)\u2264mIU**D**(IU(t)IU**\u2212lnIU(t)IU**\u2212D(t)D**\u2212lnD(t)D**)+mIT**D**(IT(t)IT**\u2212lnIT(t)IT**\u2212D(t)D**\u2212lnD(t)D**),:=a43G43+a42G42.",
+            "cite_spans": [],
+            "section": "Endemic equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": []
+        },
+        {
+            "text": "Hence, Assumption (1) of Theorem B holds. Define the weighted digraph (G,A) associated with the weight matrix A=[aij], with aij defined as the constants in the above inequalities (and all other aij's not mentioned above are set to zero; see also Fig. 3).",
+            "cite_spans": [],
+            "section": "Endemic equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": [
+                {
+                    "start": 246,
+                    "end": 252,
+                    "mention": "Fig. 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "For all cycles of (G,A), the Assumption (2) of Theorem B can easily be verified. For instance, the case of the cycle \u2460\u2192\u2461\u2192\u2462\u2192\u2463 is verified as follows. For this cycle,G14+G43+G32+G21=(D(t)D**\u2212lnIU(t)IU**\u2212EU(t)E**\u2212lnEU(t)E**)+(IT(t)IT**\u2212lnIT(t)IT**\u2212D(t)D**\u2212lnD(t)D**)+(IU(t)IU**\u2212lnIU(t)IU**\u2212IT(t)IT**\u2212lnIT(t)IT**)+(EU(t)E**\u2212lnEU(t)E**\u2212IU(t)IU**\u2212lnIU(t)IU**)=0.The other cases can be handled in a similar way. Hence, the statement of the theorem follows from Theorem B.",
+            "cite_spans": [],
+            "section": "Endemic equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": []
+        },
+        {
+            "text": "It is worth stating that, using the baseline values of the parameters in Table 1, the value of the basic reproduction number (R0) is R0=1.403>1 (hence, it follows from Theorem 3.2 that the disease will persist in the population). It is further worth noting that this value of R0 lies in the range given in numerous modeling studies for the 2014 EVD outbreaks (such as those in (Agusto et al., 2015; Barbarossa et al., 2015; Gomes et al., 2014; Nishiura & Chowell, 2014; Towers et al., 2014)).",
+            "cite_spans": [
+                {
+                    "start": 378,
+                    "end": 397,
+                    "mention": "Agusto et al., 2015",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 399,
+                    "end": 422,
+                    "mention": "Barbarossa et al., 2015",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 424,
+                    "end": 442,
+                    "mention": "Gomes et al., 2014",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 444,
+                    "end": 468,
+                    "mention": "Nishiura & Chowell, 2014",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 470,
+                    "end": 489,
+                    "mention": "Towers et al., 2014",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Endemic equilibrium ::: Global asymptotic stability of equilibria ::: Analysis of special case of the model: quarantine-free with mass action incidence",
+            "ref_spans": [
+                {
+                    "start": 73,
+                    "end": 80,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The model (2) contains numerous parameters, and uncertainties are expected to arise in the estimates of the parameter values used in the model simulations. Uncertainty analysis, using Latin Hypercube Sampling (LHS) (Blower & Dowlatabadi, 1994), is used to account for such uncertainty. The baseline values and ranges of the parameters in Table 1 are used for this analysis, and it is assumed each parameter of the model obeys a uniform distribution. Using the quarantine reproduction number (R0Q) as the response function, the results for the uncertainty analysis obtained show that R0Q lies in the range (0.268,2.585), with a mean 1.013>1 (Fig. 4(a)). This simulation suggests that, although the community-wide implementation of quarantine significantly reduces the basic reproduction number (R0=1.403 in this case), this level (and effectiveness) of quarantine is unable to lead to the effective control of the disease (since R0Q>1, albeit only slightly). However, if the parameter \u03b7Q, for the reduction of infectiousness of quarantined-infected individuals, is further reduced from its baseline value (e.g., if it is reduced from 0.502 to 0), the mean value of R0Q reduces to 0.997<1 (so that effective disease control is feasible in this case) (see Fig. 4(b)). Similarly, increasing the quarantine rate (q) from the current baseline value of q=0.125 to q=0.4, for instance, leads to a reduction of mean R0Q from R0Q=1.009 to R0Q=0.997 (see Fig. 4(c)). In other words, these simulations show that the singular implementation of quarantine strategy in the community can lead to the effective control (or elimination) of the disease if the coverage (q) and effectiveness of quarantine to prevent transmission during quarantine (i.e., reduce \u03b7Q) is high enough.",
+            "cite_spans": [
+                {
+                    "start": 216,
+                    "end": 242,
+                    "mention": "Blower & Dowlatabadi, 1994",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Uncertainty and sensitivity analysis ::: Analysis of full model with quarantine and standard incidence",
+            "ref_spans": [
+                {
+                    "start": 641,
+                    "end": 647,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1253,
+                    "end": 1259,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1444,
+                    "end": 1450,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 338,
+                    "end": 345,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Furthermore, sensitivity analysis is carried out, using Partial Rank Correlation Coefficients (PRCCs (Blower & Dowlatabadi, 1994)), to determine the parameters of the model (2) that have the highest impact on the disease dynamics. For these simulations, the cumulative number of new cases is chosen as the response function. The sensitivity analysis based on the PRCC ranks the effect of the parameters on the response function (or outcome), while varying the parameters in their given ranges (parameters with higher positive (negative) PRCC values are positively (negatively) correlated with the response function). Table 3 depicts the resulting PRCC values obtained for the parameters of the model, from which it follows that the average contact rate in the community (k) and the probability of transmission per contact (b) are the most dominant parameters that affect the response function (the cumulative number of cases). The mean length of time for the burial of Ebola-deceased individuals (1/f) is also shown to be influential, as expected (having the third highest PRCC value in magnitude). Further, of the quarantine-related parameters, those related to the quarantine of susceptible individuals (q) and the reduction of the infectiousness of quarantined-infected individuals (\u03b7QQ) are also influential (albeit with significantly decreased PRCC values in magnitude in comparison to the PRCC values of k and b). Thus, this study suggests that a quarantine program that significantly decreases the value of \u03b7QQ (which can be achieved by effectively treating infected quarantined individuals and/or limiting their contacts with susceptible individuals during quarantine) or increase q (by increasing the contact tracing and quarantining of people feared exposed to EVD infection) can lead to a significant reduction in disease burden.",
+            "cite_spans": [
+                {
+                    "start": 102,
+                    "end": 128,
+                    "mention": "Blower & Dowlatabadi, 1994",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Uncertainty and sensitivity analysis ::: Analysis of full model with quarantine and standard incidence",
+            "ref_spans": [
+                {
+                    "start": 617,
+                    "end": 624,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "Further numerical simulations are carried out to assess the population-level impact of the quarantine-related parameters of the model (2). These simulations show, in particular, that while the quarantine of susceptible individuals (q) and the average duration in quarantine (1/rQ) have marginal impact on the cumulative number of new Ebola cases (Fig. 5, Fig. 6, respectively), the modification parameter for transmission during quarantine (\u03b7Q) and the contact rate during quarantine (kQQ) have significant impact on the disease burden (Fig. 7, Fig. 8, respectively). In other words, these simulations show that the parameters related to the efficacy of quarantine (\u03b7Q and kQQ) play a more significant role on the disease dynamics than the parameters related to quarantine rate of susceptible individuals (q) and length of quarantine (rQ). A contour plot of the quarantine reproduction number (R0Q), as a function of \u03b7Q and q, is depicted in Fig. 9, from which it follows that R0Q decreases with decreasing values of \u03b7Q and increasing values of q. Hence, this plot further supports the earlier result that the implementation of a quarantine strategy that reduces the infectiousness of quarantined-infected individuals (coupled with increased quarantine rate, q) will result in significant reduction of disease burden in the community.",
+            "cite_spans": [],
+            "section": "Numerical simulations",
+            "ref_spans": [
+                {
+                    "start": 347,
+                    "end": 353,
+                    "mention": "Fig. 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 355,
+                    "end": 361,
+                    "mention": "Fig. 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 537,
+                    "end": 543,
+                    "mention": "Fig. 7",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 545,
+                    "end": 551,
+                    "mention": "Fig. 8",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 942,
+                    "end": 948,
+                    "mention": "Fig. 9",
+                    "ref_id": "FIGREF8"
+                }
+            ]
+        },
+        {
+            "text": "Quarantine of individuals suspected of being exposed to a contagious disease is one of the oldest public health measures for combatting the spread of such contagious diseases in populations. This study presents a new deterministic model for assessing the population-level impact of the implementation of quarantine on the control of the 2014 Ebola outbreaks in West Africa. The model was fitted using data relevant to the EVD dynamics in Guinea, Liberia and Sierra Leone. Some of the notable features of the model include the explicit modeling of quarantine of both susceptible and infected individuals (in line with the approach by Lipsitch et al. (Lipsitch et al., 2003)) and the assumption that quarantine is imperfect (so that disease transmission can occur during quarantine). Detailed theoretical analysis of a special case of the model, in the absence of quarantine and with constant total population, was carried out. The analysis revealed that the disease-free equilibrium of the resulting quarantine-free model is globally-asymptotically stable whenever a certain epidemiological quantity (the basic reproduction number of the model, denoted by R0) is less than unity. The epidemiological implication of this result is that, in the absence of quarantine, bringing R0 to a value less than unity is necessary and sufficient for the effective control of the disease in the population. The quarantine-free model is also shown to have a unique endemic equilibrium (where Ebola persists in the population), which is globally-asymptotically stable, whenever R0>1. The full model with quarantine was also analysed, from which it was deduced that adding imperfect quarantine to the quarantine-free model introduces a dynamic phenomenon (backward bifurcation) that was not present in the former model. Thus, the community-wide implementation of imperfect quarantine measures (except if implemented with high efficacy to minimize disease transmission during quarantine) may fail to lead to the effective control of the disease. The presence of backward bifurcation in the transmission dynamics of a disease makes its effective control more difficult (since a lot more effort is needed to reduce the associated reproduction number further below unity, outside the backward bifurcation region).",
+            "cite_spans": [
+                {
+                    "start": 650,
+                    "end": 671,
+                    "mention": "Lipsitch et al., 2003",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "Discussion and conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "Detailed uncertainty and sensitivity analysis are carried out on the parameters of the model to assess the impact of uncertainties in the estimates of parameter values (on the numerical simulation results obtained) and determine the parameters that are most influential to the disease transmission dynamics (as measured in terms of the cumulative number of new infections). It was shown that while the current level and efficacy of quarantine significantly reduces the value of the basic reproduction number (R0) of the model (hence, significantly reduces disease burden), it fails to bring this number to a value less than one (so that disease elimination is feasible). However, a modest increase in quarantine rate and/or the effectiveness level of quarantine (with respect to either reduction in the infectiousness of quarantined-infected individuals (\u03b7Q) or minimizing contact during quarantine (kQQ)) can reduce the quarantine reproduction number of the model (R0Q) to a value less than one (thereby making effective disease control or elimination feasible).",
+            "cite_spans": [],
+            "section": "Discussion and conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "The results of the sensitivity analysis carried out show that the contact rate in the community (k), transmission probability per contact (b) and the mean duration before burying Ebola-deceased individuals (1/f) have the most influence on the disease burden (as measured in terms of the cumulative number of new cases). Thus, these simulation results suggest that control measures that decrease the impact of these parameters (e.g., minimizing contacts with people suspected of the disease or reducing the time before an Ebola-deceased individual is buried) will be quite effective in minimizing disease burden. Our results suggest that the quarantine of susceptible individuals and the average duration in quarantine have a smaller effect on the number of infected, the modified transmission rate during quarantine and the contact rate for quarantined people have an important effect on the spread of the disease. The results of this study show that the prospects of the effective control of EVD using quarantine alone are bright, provided the coverage and effectiveness levels are high enough.",
+            "cite_spans": [],
+            "section": "Discussion and conclusion",
+            "ref_spans": []
+        },
+        {
+            "text": "The authors declare no conflict of interest.",
+            "cite_spans": [],
+            "section": "Declaration of conflict of interest",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Description, ranges and baseline values of parameters of the model (2).\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Cumulative number of cases reported (sum of confirmed, suspected and probable cases) in the first forty weeks of the 2014\u20132015 Ebola epidemic in Western Africa (World Health Organization, 2018d).\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3: Partial rank correlation coefficients of parameters of model 2.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Fig.\u00a01: Flow diagram of the model (2).",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig.\u00a02: Fitting the model to the data for the 2014\u20132015 Ebola outbreaks in Western Africa (World Health Organization, 2018d): cumulative number of new infected cases (Parameter values used are as given in Table 1).",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Fig.\u00a03: The weighted digraph (G,A) constructed for model (3).",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Fig.\u00a04: Box plot of the reproduction number (R0Q) with 2000, resp. 10000 LHS runs. Parameter values used are as given in Table 1.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Fig.\u00a05: Effect of quarantine of susceptible individuals (q) on the number of new Ebola cases. Parameter values used are as given in Table 1, with different values of q.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Fig.\u00a06: Effect of duration of quarantine (1/rQ) on the cumulative number of new Ebola cases. Parameter values used are as given in Table 1, with rQ=0.33,rQ=1.54 (fitted value) and rQ=3.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Fig.\u00a07: Effect of modification parameter for disease transmission during quarantine (\u03b7Q) on the cumulative number of new Ebola cases. Parameter values used are as given in Table 2, with \u03b7Q=0.05,\u03b7Q=0.502 (fitted value), \u03b7Q=0.75 and \u03b7Q=1.",
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Fig.\u00a08: The effect of the per capita contact rate (kQQ) during quarantine.",
+            "type": "figure"
+        },
+        "FIGREF8": {
+            "text": "Fig.\u00a09: Contour plot of the quarantine reproduction number (R0Q), as a function of modification parameter for reduction of infectiousness of quarantined-infected individuals (\u03b7Q) and contact rate during quarantine (kQQ). Parameter values used are as given in Table 1, with b=0.054, k=9.3, \u03b7T=0.7176, \u03b7D=2.748, p=0.6784, v=0.4764, m=0.8578, w=1.3578, f=1.276 and d=0.00054.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Mathematical assessment of the effect of traditional beliefs and customs on the transmission dynamics of the 2014 Ebola outbreaks",
+            "authors": [
+                {
+                    "first": "F.B.",
+                    "middle": [],
+                    "last": "Agusto",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.I.",
+                    "middle": [],
+                    "last": "Teboh-Ewungkem",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.B.",
+                    "middle": [],
+                    "last": "Gumel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "BMC Medicine",
+            "volume": "13",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "The construction of next-generation matrices for compartmental epidemic models",
+            "authors": [
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Diekmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.A.P.",
+                    "middle": [],
+                    "last": "Heesterbeek",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.G.",
+                    "middle": [],
+                    "last": "Roberts",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Journal of The Royal Society Interface",
+            "volume": "7",
+            "issn": "47",
+            "pages": "873-885",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Ebola and quarantine",
+            "authors": [
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Drazen",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Kanapathipillai",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.W.",
+                    "middle": [],
+                    "last": "Campion",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.J.",
+                    "middle": [],
+                    "last": "Rubin",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.M.",
+                    "middle": [],
+                    "last": "Hammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Morrissey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "New England Journal of Medicine",
+            "volume": "371",
+            "issn": "",
+            "pages": "2029-2030",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Reproduction numbers and sub-threshold endemic equilibria for compartmental models of disease transmission",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "van den Driessche",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Watmough",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Mathematical Biosciences",
+            "volume": "180",
+            "issn": "",
+            "pages": "29-48",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Ebola and human rights in West Africa",
+            "authors": [
+                {
+                    "first": "P.M.",
+                    "middle": [],
+                    "last": "Eba",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "The Lancet",
+            "volume": "384",
+            "issn": "9960",
+            "pages": "2091-2093",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Assessing the international spreading risk associated with the 2014 West African Ebola outbreak",
+            "authors": [
+                {
+                    "first": "M.F.",
+                    "middle": [],
+                    "last": "Gomes",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Pastore y Piontti",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Rossi",
+                    "suffix": ""
+                },
+                {
+                    "first": "D.",
+                    "middle": [],
+                    "last": "Chao",
+                    "suffix": ""
+                },
+                {
+                    "first": "I.",
+                    "middle": [],
+                    "last": "Longini",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.E.",
+                    "middle": [],
+                    "last": "Halloran",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS Currents Outbreaks",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Modelling strategies for controlling SARS outbreaks",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Gumel",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Ruan",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Day",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Watmough",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Brauer",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "van den Driesche",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Proceedings of the Royal Society of London B Biological Sciences",
+            "volume": "271",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "On the quarantine period for Ebola virus",
+            "authors": [
+                {
+                    "first": "C.N.",
+                    "middle": [],
+                    "last": "Haas",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS Currents Outbreaks",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Effects of quarantine in six endemic models for infectious diseases",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Hethcote",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Zhien",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Shengbing",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Mathematical Biosciences",
+            "volume": "180",
+            "issn": "",
+            "pages": "141-160",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Isolation and partial characterisation of a new virus causing acute haemorrhagic fever in Zaire",
+            "authors": [
+                {
+                    "first": "K.M.",
+                    "middle": [],
+                    "last": "Johnson",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.A.",
+                    "middle": [],
+                    "last": "Webb",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.V.",
+                    "middle": [],
+                    "last": "Lange",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.A.",
+                    "middle": [],
+                    "last": "Murphy",
+                    "suffix": ""
+                }
+            ],
+            "year": 1977,
+            "venue": "Lancet",
+            "volume": "309",
+            "issn": "",
+            "pages": "569-571",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "LaSalle",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Lefschetz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1961,
+            "venue": "",
+            "volume": "Vol. 4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Estimating the reproduction number of Ebola virus (EBOV) during the 2014 outbreak in West Africa",
+            "authors": [
+                {
+                    "first": "C.L.",
+                    "middle": [],
+                    "last": "Althaus",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS Currents Outbreaks",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Understanding the dynamics of Ebola epidemics",
+            "authors": [
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Legrand",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.F.",
+                    "middle": [],
+                    "last": "Grais",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.-Y.",
+                    "middle": [],
+                    "last": "Boelle",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.-J.",
+                    "middle": [],
+                    "last": "Valleron",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Flahault",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Epidemiology and Infection",
+            "volume": "135",
+            "issn": "4",
+            "pages": "610-621",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Dynamics and control of Ebola virus transmission in Montserrado, Liberia: A mathematical modelling analysis",
+            "authors": [
+                {
+                    "first": "J.A.",
+                    "middle": [],
+                    "last": "Lewnard",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.L.N.",
+                    "middle": [],
+                    "last": "Mbah",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.A.",
+                    "middle": [],
+                    "last": "Alfaro-Murillo",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.L.",
+                    "middle": [],
+                    "last": "Altice",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Bawo",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.G.",
+                    "middle": [],
+                    "last": "Nyenswah",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "The Lancet Infectious Diseases",
+            "volume": "14",
+            "issn": "12",
+            "pages": "1189-1195",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Transmission dynamics and control of severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Lipsitch",
+                    "suffix": ""
+                },
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Cohen",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Cooper",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Robins",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "James",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "5627",
+            "pages": "1966-1970",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "A\u00a0comparison of three methods for selecting values of input variables in the analysis of output from a computer code",
+            "authors": [
+                {
+                    "first": "M.D.",
+                    "middle": [],
+                    "last": "McKay",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.J.",
+                    "middle": [],
+                    "last": "Beckman",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.J.",
+                    "middle": [],
+                    "last": "Conover",
+                    "suffix": ""
+                }
+            ],
+            "year": 1979,
+            "venue": "Technometrics",
+            "volume": "21",
+            "issn": "2",
+            "pages": "239-245",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "A\u00a0cost-based comparison of quarantine strategies for new emerging diseases",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Mubayi",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Kribs Zaleta",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Martcheva",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castillo-Ch\u00e1vez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Mathematical Biosciences and Engineering",
+            "volume": "7",
+            "issn": "3",
+            "pages": "687-717",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Early transmission dynamics of Ebola virus disease (EVD), West Africa, March to August 2014",
+            "authors": [
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Nishiura",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Euro Surveillance",
+            "volume": "19",
+            "issn": "36",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Dynamics of two-strain influenza with isolation and partial cross-immunity",
+            "authors": [
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Nu\u00f1o",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Feng",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Martcheva",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "SIAM Journal on Applied Mathematics",
+            "volume": "65",
+            "issn": "3",
+            "pages": "964-982",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Strategies for containing Ebola in West Africa",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Pandey",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.E.",
+                    "middle": [],
+                    "last": "Atkins",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Medlock",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Wenzel",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.P.",
+                    "middle": [],
+                    "last": "Townsend",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.E.",
+                    "middle": [],
+                    "last": "Childs",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Science",
+            "volume": "346",
+            "issn": "6212",
+            "pages": "991-995",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Modeling the impact of interventions on an epidemic of Ebola in Sierra Leone and Liberia",
+            "authors": [
+                {
+                    "first": "C.M.",
+                    "middle": [],
+                    "last": "Rivers",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.T.",
+                    "middle": [],
+                    "last": "Lofgren",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Marathe",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Eubank",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.L.",
+                    "middle": [],
+                    "last": "Lewis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS Currents Outbreaks",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Global asymptotic dynamics of a model for quarantine and isolation",
+            "authors": [
+                {
+                    "first": "M.A.",
+                    "middle": [],
+                    "last": "Safi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.B.",
+                    "middle": [],
+                    "last": "Gumel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Discrete and Continuous Dynamical Systems - Series B",
+            "volume": "14",
+            "issn": "1",
+            "pages": "209-231",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Transmission dynamics and final epidemic size of Ebola Virus Disease outbreaks with varying interventions",
+            "authors": [
+                {
+                    "first": "M.V.",
+                    "middle": [],
+                    "last": "Barbarossa",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "D\u00e9nes",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Kiss",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Nakata",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "R\u00f6st",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Vizi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "PLoS One",
+            "volume": "10",
+            "issn": "7",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Dynamics of a model with quarantine-adjusted incidence and quarantine of susceptible individuals",
+            "authors": [
+                {
+                    "first": "M.A.",
+                    "middle": [],
+                    "last": "Safi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.B.",
+                    "middle": [],
+                    "last": "Gumel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Journal of Mathematical Analysis and Applications",
+            "volume": "399",
+            "issn": "2",
+            "pages": "565-575",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Dynamics analysis of a quarantine model in two patches",
+            "authors": [
+                {
+                    "first": "M.A.",
+                    "middle": [],
+                    "last": "Safi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.B.",
+                    "middle": [],
+                    "last": "Gumel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Mathematical Methods in the Applied Sciences",
+            "volume": "38",
+            "issn": "2",
+            "pages": "349-364",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Global stability of infectious disease models using Lyapunov functions",
+            "authors": [
+                {
+                    "first": "Z.",
+                    "middle": [],
+                    "last": "Shuai",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "van den Driessche",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "SIAM Journal on Applied Mathematics",
+            "volume": "73",
+            "issn": "4",
+            "pages": "1513-1532",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "H.R.",
+                    "middle": [],
+                    "last": "Thieme",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Temporal variations in the effective reproduction number of the 2014 West Africa Ebola outbreak",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Towers",
+                    "suffix": ""
+                },
+                {
+                    "first": "O.",
+                    "middle": [],
+                    "last": "Patterson-Lomba",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS Currents Outbreaks",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Assessing the impact of the environmental contamination on the transmission of Ebola virus disease (EVD)",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Tsanou",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Bowong",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Lubuma",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Mbang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Journal of Applied Mathematics and Computing",
+            "volume": "55",
+            "issn": "1\u20132",
+            "pages": "205-243",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Dynamics of host-reservoir transmission of Ebola with spillover potential to humans",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Tsanou",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Lubuma",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.J.",
+                    "middle": [],
+                    "last": "Ouemba Tass\u00e9",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.M.",
+                    "middle": [],
+                    "last": "Tenkam",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Electronic Journal of Qualitative Theory of Differential Equations",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "A\u00a0model of the Ebola epidemics in West Africa incorporating age of infection",
+            "authors": [
+                {
+                    "first": "G.F.",
+                    "middle": [],
+                    "last": "Webb",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.J.",
+                    "middle": [],
+                    "last": "Browne",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Journal of Biological Dynamics",
+            "volume": "10",
+            "issn": "1",
+            "pages": "18-30",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Sensitivity and uncertainty analysis of complex models of disease transmission: An HIV model, as an example",
+            "authors": [
+                {
+                    "first": "S.M.",
+                    "middle": [],
+                    "last": "Blower",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.",
+                    "middle": [],
+                    "last": "Dowlatabadi",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "International Statistical Review",
+            "volume": "62",
+            "issn": "",
+            "pages": "229-243",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Optimal and sub-optimal quarantine and isolation control in SARS epidemics",
+            "authors": [
+                {
+                    "first": "X.",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.",
+                    "middle": [],
+                    "last": "Zou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Mathematical and Computer Modelling",
+            "volume": "47",
+            "issn": "1\u20132",
+            "pages": "235-245",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "World Health Organization",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "World Health Organization",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "World Health Organization",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "World Health Organization",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "World Health Organization",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Viral haemorrhagic fever in southern Sudan and northern Zaire. Preliminary studies on the aetiological agent",
+            "authors": [
+                {
+                    "first": "E.T.W.",
+                    "middle": [],
+                    "last": "Bowen",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.S.",
+                    "middle": [],
+                    "last": "Platt",
+                    "suffix": ""
+                },
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Lloyd",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Baskerville",
+                    "suffix": ""
+                },
+                {
+                    "first": "W.J.",
+                    "middle": [],
+                    "last": "Harris",
+                    "suffix": ""
+                },
+                {
+                    "first": "E.E.",
+                    "middle": [],
+                    "last": "Vella",
+                    "suffix": ""
+                }
+            ],
+            "year": 1977,
+            "venue": "Lancet",
+            "volume": "309",
+            "issn": "",
+            "pages": "571-573",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Campbell",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Adan",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Morgado",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Dynamical models of tuberculosis and their applications",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                },
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mathematical Biosciences and Engineering",
+            "volume": "1",
+            "issn": "2",
+            "pages": "361-404",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "The basic reproductive number of Ebola and the effects of public health measures: The cases of Congo and Uganda",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.W.",
+                    "middle": [],
+                    "last": "Hengartner",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Castillo-Chavez",
+                    "suffix": ""
+                },
+                {
+                    "first": "P.W.",
+                    "middle": [],
+                    "last": "Fenimore",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.M.",
+                    "middle": [],
+                    "last": "Hyman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Journal of Theoretical Biology",
+            "volume": "229",
+            "issn": "1",
+            "pages": "119-126",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "When is quarantine a useful control strategy for emerging infectious diseases?",
+            "authors": [
+                {
+                    "first": "T.",
+                    "middle": [],
+                    "last": "Day",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "N.",
+                    "middle": [],
+                    "last": "Madras",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Gumel",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "American Journal of Epidemiology",
+            "volume": "163",
+            "issn": "5",
+            "pages": "479-485",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

@@ -1,0 +1,3257 @@
+{
+    "paper_id": "PMC6254671",
+    "metadata": {
+        "title": "Structural basis of development of multi-epitope vaccine against Middle East respiratory syndrome using in silico approach",
+        "authors": [
+            {
+                "first": "Sukrit",
+                "middle": [],
+                "last": "Srivastava",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Mohit",
+                "middle": [],
+                "last": "Kamthania",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Soni",
+                "middle": [],
+                "last": "Singh",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ajay",
+                "middle": [
+                    "K"
+                ],
+                "last": "Saxena",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Nishi",
+                "middle": [],
+                "last": "Sharma",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Middle East respiratory syndrome (MERS) is a respiratory disease caused by Middle East respiratory syndrome coro-navirus (MERS-CoV). MERS involves high fever, cough, difficulty in breathing, chills, chest pain, body aches, sore throat, diarrhea, nausea/vomiting, running nose, renal failure, and pneumonia. The first case of MERS in humans was reported in Saudi Arabia in 2012. After 2012, within a span of only 4 years, MERS-CoV infection was reported from 27 countries.1 Three MERS outbreaks have already occurred in Saudi Arabia (2013 and 2014) and South Korea (2015).2\u20134 The outbreak reported in South Korea also involved spread of MERS through hospital-to-hospital transit of patients and had the fatality rate as high as 40%. High attack rate and easy spread of MERS indicate an epidemic risk.5\u20137 To date, no specific vaccine is available for MERS. The steep increase in MERS cases and its high mortality rate demand an urgent need for specific and safe MERS vaccine. Thus far, only little information is known about the pathogenesis of MERS-CoV. Hence, an immunoinformatics approach to thoroughly study and screen immunogenic proteins from the available proteome sequence data of MERS-CoV is essential for vaccine design.",
+            "cite_spans": [
+                {
+                    "start": 471,
+                    "end": 472,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 571,
+                    "end": 572,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 573,
+                    "end": 574,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 799,
+                    "end": 800,
+                    "mention": "5",
+                    "ref_id": "BIBREF44"
+                },
+                {
+                    "start": 801,
+                    "end": 802,
+                    "mention": "7",
+                    "ref_id": "BIBREF66"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The proteome of MERS-CoV consists of several important vaccine candidate and drug target proteins. These proteins are involved in infection and pathogenesis of MERS-CoV to human host cells. Spike (S) glycoprotein, in particular, its receptor-binding domain, is involved in virus and host cell interaction.8 Envelope (E) protein plays an important role in host cell recognition.9 Nucleocapsid (N) protein is involved in RNA binding during ribonucleocapsid formation by MERS-CoV.10 Membrane (M) protein has interferon (IFN)-antagonizing properties, thus reducing IFN levels in infected patients.11 Open reading frame (ORF) proteins also play critical roles in viral infection and pathogenesis. A mutation study of ORFs (ORF3, ORF4a, ORF4b, and ORF5) indicated that ORFs have major implications in viral infection involving disruption of host cell processes, dysregulated IFN pathway activation, and abrupt inflammation.12 Proteins ORF1a (4P16) and ORF1ab (4WUR) are papain-like proteases (PL(pro)) involved in viral infection and are potential targets for the development of antiviral drugs.13 PL(pro) facilitate infection by their proteolytic, deubiquitinating, and deISGylating activities suppressing innate immune response from the host cell. Protein ORF1a (4RSP), a protease (3CLpro), facilitates proteolytic activity during viral infection and replication.14,15 Protein ORF1ab (5WWP) is a helicase protein of MERS-CoV, and it is one of the most conserved proteins among nidoviruses. Protein ORF8b is a highly conserved protein, and during infection, it induces various immune responses.16",
+            "cite_spans": [
+                {
+                    "start": 305,
+                    "end": 306,
+                    "mention": "8",
+                    "ref_id": "BIBREF68"
+                },
+                {
+                    "start": 377,
+                    "end": 378,
+                    "mention": "9",
+                    "ref_id": "BIBREF69"
+                },
+                {
+                    "start": 477,
+                    "end": 479,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 593,
+                    "end": 595,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 917,
+                    "end": 919,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 1089,
+                    "end": 1091,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 1359,
+                    "end": 1361,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 1362,
+                    "end": 1364,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1589,
+                    "end": 1591,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In the present study, we propose two multi-epitope vaccine (MEV) designs for MERS. The proposed MEVs are composed of cytotoxic T lymphocyte (CTL) and helper T lymphocyte (HTL) epitopes. Both CTL and HTL MEVs contain overlapping regions of linear B-cell epitopes. Both MEVs also contain human \u03b2-defensin-2 (hBD-2) and human \u03b2-defensin-3 (hBD-3) as adjuvants to enhance the immunogenic response.17,18",
+            "cite_spans": [
+                {
+                    "start": 393,
+                    "end": 395,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 396,
+                    "end": 398,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "For vaccine development, proteins critically involved in virus\u2013host cell interaction, viral proliferation, and host cell disruption were chosen. Thirteen proteins of MERS-CoV proteome chosen for epitope screening included the following: S glycoprotein; E protein; N protein; M protein; ORFs (ORF3, ORF4a, ORF4b, and ORF5); ORF1a (4P16), a papain-like protease (PL(pro)); ORF1a (4RSP), a protease (3CLpro); ORF1ab (4WUR), a PL(pro); ORF1ab (5WWP); and ORF8b. For sequence-based epitope screening, full-length protein sequences of the abovementioned MERS-CoV proteins were retrieved from the NCBI database (National Center for Biotechnology Information, https://www.ncbi.nlm.nih.gov/protein). A total of 2,499 amino acid sequences belonging to different proteins of MERS-CoV of different strains and origins were retrieved. For structure-based epitope screening, available 3D structures of MERS-CoV proteins were retrieved from Protein Data Bank (PDB, http://www.rcsb.org/pdb/home/home.do). For the proteins with no structure available in PDB, homology modeling was performed using the Swiss-model, (http://swissmodel.expasy.org/) (Table S1).22",
+            "cite_spans": [
+                {
+                    "start": 1140,
+                    "end": 1142,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "MERS-CoV proteins chosen for MEV preparation ::: Methodology",
+            "ref_spans": []
+        },
+        {
+            "text": "To screen CTL epitopes, the Immune Epitope Database (IEDB) tool \u201cProteasomal cleavage/TAP transport/MHC class I combined predictor\u201d (http://tools.iedb.org/processing/) was used.23\u201325 The total score generated by the tool is a combined score of proteasome, TAP (N-terminal interaction), major histocompatibility complex (MHC), and processing analysis scores. The score is generated using the combination of six methods, namely, Consensus, NN-align, SMM-align, Combinatorial Library, Sturniolo, and NetMHCIIpan. The IC50 (nM) value was also obtained using this IEDB tool. Epitopes with high, intermediate, and least affinity of binding to an HLA allele have IC50 values <50 nM, <500 nM, and <5,000 nM, respectively. Immunogenicity of the screened CTL epitopes was also obtained by the \u201cMHC I Immunogenicity\u201d tool of IEDB (http://tools.iedb.org/immunogenicity/) with all parameters set to default (first, second, and C-terminus amino acids).26 The tool predicts immunogenicity of a peptide MHC complex on the basis of physiochemical properties of amino acids and their position within the short peptide sequence.",
+            "cite_spans": [
+                {
+                    "start": 177,
+                    "end": 179,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 180,
+                    "end": 182,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 938,
+                    "end": 940,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Screening of CTL epitope ::: T-cell epitope prediction ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "To screen HTL epitopes, the IEDB tool \u201cMHC-II Binding Predictions\u201d (http://tools.iedb.org/mhcii/) was used. The percentile rank for each peptide is generated by the combination of three methods (Combinatorial Library, SMM-align, and Sturniolo) by comparing the score of peptide against the scores of other random five million 15-mer peptides from the SwissProt database.27\u201330 The rank for the Consensus method was generated by the median percentile rank of the three methods.",
+            "cite_spans": [
+                {
+                    "start": 370,
+                    "end": 372,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 373,
+                    "end": 375,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Screening of HTL epitopes ::: T-cell epitope prediction ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "The \u201cPopulation Coverage\u201d tool of IEDB (http://tools.iedb.org/population/) was used to analyze the world human population coverage by the shortlisted 28 CTL and 28 HTL epitopes.31 Use of multi-epitopes involving both CTL and HTL epitopes would have the higher probability of larger human population coverage worldwide.",
+            "cite_spans": [
+                {
+                    "start": 177,
+                    "end": 179,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Population coverage by CTL and HTL epitopes ::: T-cell epitope prediction ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "Protein sequence-based linear B-cell epitopes were predicted by six different prediction methods available at \u201cB Cell Epitope Prediction Tools\u201d tool of IEDB server (http://tools.iedb.org/bcell/); these tools are based on the propensity scale method and physicochemical properties of the antigenic sequence. These methods include \u201cBepiPred Linear Epitope Prediction\u201d (propensity scale method such as hidden Markov model), \u201cChou & Fasman Beta-Turn Prediction\u201d, \u201cEmini Surface Accessibility Prediction\u201d, \u201cKarplus & Schulz Flexibility Prediction\u201d, \u201cKolaskar & Tongaonkar Antigenicity\u201d, and \u201cParker Hydrophilicity Prediction\u201d.32\u201337",
+            "cite_spans": [
+                {
+                    "start": 621,
+                    "end": 623,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 624,
+                    "end": 626,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Sequence-based B-cell epitope prediction ::: B-cell epitope prediction ::: T-cell epitope prediction ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "Two structure-based B-cell epitope prediction methods, namely, DiscoTope 2.0 (Structure-based Antibody Prediction tool; http://tools.iedb.org/discotope/) and Ellipro (Antibody Epitope Prediction tool; http://tools.iedb.org/ellipro/), available in IEDB, were used for linear and discontinuous B-cell epitope prediction.38,39 The ElliPro method is based on the location of the residue in the protein\u2019s 3D structure. The residues lying outside of the ellipsoid covering 90% of the inner core residues of the protein score highest protrusion index (PI) of 0.9 and so on. Discontinuous epitopes predicted by ElliPro are clustered on the basis of distance R in \u00c5 between two residues\u2019 centers of mass lying outside the largest possible ellipsoid. The larger the value of R, the larger will be the number of discontinuous epitopes clustered. DiscoTope 2.0 is based on the number of contacts of the residues\u2019 C\u03b1 carbon atom with other C\u03b1 carbon atoms in the 3D structure within the 10 \u00c5 distance and the propensity of a residue to be a part of an epitope.",
+            "cite_spans": [
+                {
+                    "start": 318,
+                    "end": 320,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 321,
+                    "end": 323,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Structure-based B-cell epitope prediction ::: B-cell epitope prediction ::: T-cell epitope prediction ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "Shortlisted CTL, HTL, and B-cell epitopes were subjected to conservancy analysis by the \u201cEpitope Conservancy Analysis\u201d tool (http://tools.iedb.org/conservancy/) of IEDB among all their respective source protein sequences of MERS-CoV retrieved from the NCBI protein database.40",
+            "cite_spans": [
+                {
+                    "start": 274,
+                    "end": 276,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "Epitope conservation analysis ::: Characterization of potential epitopes ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "Toxicity assessment of CTL and HTL epitopes and B-cell epitopes was performed by ToxinPred (http://crdd.osdd.net/raghava/toxinpred/multi_submit.php) analysis. This analysis allows to identify highly toxic or nontoxic peptides. The analysis was performed by the \u201csupport vector machine (SVM) (SwissProt)-based\u201d method with all the parameters set to default.41",
+            "cite_spans": [
+                {
+                    "start": 356,
+                    "end": 358,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Epitope toxicity prediction ::: Characterization of potential epitopes ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "Multiple Sequence Alignment (MSA) analysis using the Clustal Omega tool (https://www.ebi.ac.uk/Tools/msa/clustalo/) of European Bioinformatics Institute was performed for all the shortlisted CTL, HTL, and B-cell epitopes from 13 MERS-CoV proteins.42 MSA by Clustal Omega virtually aligns any number of protein sequences and delivers accurate alignments.",
+            "cite_spans": [
+                {
+                    "start": 247,
+                    "end": 249,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "Overlapping residue analysis ::: Characterization of potential epitopes ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "CTL and HTL epitopes were shortlisted for further in silico analysis on the basis of their overlapping sequence regions among all three types of epitopes (CTL, HTL, and B-cell) or complete overlap among any two types of epitopes or the highest number of HLA allele binders.",
+            "cite_spans": [],
+            "section": "Epitope selected for molecular interaction study with HLA allele and TAP ::: Characterization of potential epitopes ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "Template-based homology modeling for HLA class I and II allele binders of the shortlisted epitopes was performed by the Swiss-model.22 Protein sequences of HLA class I and II alleles were retrieved from Immuno Polymorphism Database (IPD-IMGT/HLA) (https://www.ebi.ac.uk/ipd/imgt/hla/allele.html).69 Template with high sequence identity was chosen for modeling, and the models thus generated were validated for quality by the Qualitative Model Energy ANalysis (QMEAN) analysis. The QMEAN value is a composite (both global and local [ie, per residue] structure) quality estimate of the generated model.43 Models with an acceptable QMEAN value with a cutoff of \u22124.0 were chosen for further studies (Table S2).",
+            "cite_spans": [
+                {
+                    "start": 132,
+                    "end": 134,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 296,
+                    "end": 298,
+                    "mention": "69",
+                    "ref_id": "BIBREF65"
+                },
+                {
+                    "start": 600,
+                    "end": 602,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                }
+            ],
+            "section": "Tertiary structure modeling of HLA alleles and selected T-cell epitopes ::: Molecular interaction analysis of the selected epitopes with HLA alleles ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "\u201cNatural Peptides Module for Beginners\u201d module of the PEPstrMOD tool (http://osddlinux.osdd.net/raghava/pepstrmod/nat_ss.php) was used to generate tertiary structures of the selected epitopes.44 Prediction was carried out with a simulation time window of 100 ps, and the peptide environment was set to vacuum.",
+            "cite_spans": [
+                {
+                    "start": 192,
+                    "end": 194,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                }
+            ],
+            "section": "Tertiary structure modeling of HLA alleles and selected T-cell epitopes ::: Molecular interaction analysis of the selected epitopes with HLA alleles ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "AutoDock Tool 4.2 and AutoDock Vina were used for molecular docking study of the selected epitopes and their respective HLA allele binders.45,46 Further, the docked complexes were subjected to MD simulation study by Gromacs 5.1.4 using Optimized Potentials for Liquid Simulations \u2013 all atom (OPLS-AA) force field.47,48",
+            "cite_spans": [
+                {
+                    "start": 139,
+                    "end": 141,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 142,
+                    "end": 144,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 313,
+                    "end": 315,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 316,
+                    "end": 318,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Molecular docking and molecular dynamics (MD) simulation study of the selected epitopes with HLA alleles ::: Molecular interaction analysis of the selected epitopes with HLA alleles ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "Molecular docking study of the shortlisted CTL epitopes with TAP receptor was performed by AutoDock Vina.45,46 For more accurate prediction, instead of homology modeling, the cryo-EM structure of TAP (PDB ID: 5u1d) was used.49 For docking, the antigen from the TAP cavity of the original structure was removed.",
+            "cite_spans": [
+                {
+                    "start": 105,
+                    "end": 107,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 108,
+                    "end": 110,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 224,
+                    "end": 226,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                }
+            ],
+            "section": "Molecular interaction analysis (docking) of the selected CTL epitopes with TAP ::: Molecular interaction analysis of the selected epitopes with HLA alleles ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "From the screened and shortlisted CTL and HTL epitopes, two MEVs were designed using EAAAK and GGGGS as short peptide rigid and flexible linkers, respectively (Figure 1A and B). To enhance the immune response, hBD-2 (PDB ID: 1FD3, sequence: GIGDPVTCLKSGAICHPVFCPRRYKQIGTCG LPGTKCCKKP) and hBD-3 (PDB ID: 1KJ6, sequence: GII NTLQKYYCRVRGGRCAVLSCLPKEEQIGKCSTRGRK CCRRKK) were used as adjuvants for both MEVs at N and C terminals, respectively.17,18,50\u201353 Upon lung infection, the expression of hBD-2 and hBD-3 was found to be increased. \u03b2-Defensins are involved in chemotactic activity for memory T cells, monocytes, and immature dendritic cells as well as in degranulation of mast cells. Thus, hBDs enhance innate and adaptive immunity and therefore were chosen here as adjuvants for the design of MEVs.",
+            "cite_spans": [
+                {
+                    "start": 441,
+                    "end": 443,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 444,
+                    "end": 446,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 447,
+                    "end": 449,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 450,
+                    "end": 452,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                }
+            ],
+            "section": "Design of MEVs ::: Design, characterization, and interaction analysis of MEVs with TLR-3 ::: Screening of potential epitopes",
+            "ref_spans": [
+                {
+                    "start": 160,
+                    "end": 175,
+                    "mention": "Figure 1A and B",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "IFN-\u03b3 epitopes with potential to induce the release of IFN-\u03b3 from CD4+ T cells from both MEVs were predicted by \u201cIFNepitope\u201d server (http://crdd.osdd.net/raghava/ifnepitope/scan.php) using the \u201cMotif and SVM hybrid\u201d (MERCI: Motif-EmeRging and with Classes-Identification, and SVM) approach. The tool generates overlapping sequences from the query protein/antigen and uses it for IFN-\u03b3-inducing epitope prediction. The prediction is based on a dataset of IFN-\u03b3-inducing and IFN-\u03b3-noninducing MHC class II binders.54,55",
+            "cite_spans": [
+                {
+                    "start": 512,
+                    "end": 514,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 515,
+                    "end": 517,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "IFN-\u03b3-inducing epitope prediction ::: Design, characterization, and interaction analysis of MEVs with TLR-3 ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "For both MEVs, AlgPred was used for allergenicity prediction (http://crdd.osdd.net/raghava/algpred/submission.html).56 The AlgPred prediction of allergens is based on similarity of the known epitope with any region of the submitted protein. VaxiJen (http://www.ddg-pharmfac.net/vaxijen/VaxiJen/VaxiJen.html) was used to analyze the probability of antigenicity of both MEVs.57 The VaxiJen analysis applies an alignment-free approach that is solely based on the physicochemical properties of the sequences of the submitted proteins.",
+            "cite_spans": [
+                {
+                    "start": 116,
+                    "end": 118,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 373,
+                    "end": 375,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                }
+            ],
+            "section": "Allergenicity and antigenicity prediction of MEVs ::: Design, characterization, and interaction analysis of MEVs with TLR-3 ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "To analyze the physiochemical properties of CTL and HTL MEVs, ProtParam (https://web.expasy.org/protparam/) was used.58 ProtParam analysis performs empirical investigation for a given protein amino acid sequence.",
+            "cite_spans": [
+                {
+                    "start": 117,
+                    "end": 119,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "Physicochemical analysis of MEVs ::: Design, characterization, and interaction analysis of MEVs with TLR-3 ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "Both the CTL and HTL MEVs were further subjected to 3D structure modeling by RaptorX structure prediction server (http://raptorx.uchicago.edu/StructurePrediction/predict/).59 The quality of the generated model is indicated by its P-value. The P-value is the probability of a predicted model being worse than the best. It indicates relative quality in terms of modeling error by combining global distance test (GDT) and un-normalized GDT, that is, error at each residue. The smaller the P-value, the higher is the quality of the predicted model.",
+            "cite_spans": [
+                {
+                    "start": 172,
+                    "end": 174,
+                    "mention": "59",
+                    "ref_id": "BIBREF54"
+                }
+            ],
+            "section": "3D structure modeling and refinement of MEVs ::: Design, characterization, and interaction analysis of MEVs with TLR-3 ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "The generated MEV models were further refined by ModRefiner and GalaxyRefin.60,70 GalaxyRefine performs repeated structure perturbation along with subsequent structural relaxation by dynamics simulation to refine a protein structure. To avoid breaks in model structures, GalaxyRefine uses the triaxial loop closure method.",
+            "cite_spans": [
+                {
+                    "start": 76,
+                    "end": 78,
+                    "mention": "60",
+                    "ref_id": "BIBREF56"
+                },
+                {
+                    "start": 79,
+                    "end": 81,
+                    "mention": "70",
+                    "ref_id": "BIBREF67"
+                }
+            ],
+            "section": "3D structure modeling and refinement of MEVs ::: Design, characterization, and interaction analysis of MEVs with TLR-3 ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "The refined 3D models of both MEVs were then subjected to RAMPAGE analysis for generating a Ramachandran plot (http://mordred.bioc.cam.ac.uk/~rapper/rampage.php).61 The Ramachandran plot shows the residues that form energetically allowed and disallowed dihedral angles psi (\u03c8) and phi (\u03d5), which are calculated on the basis of van der Waal radius of the amino acid side chain.",
+            "cite_spans": [
+                {
+                    "start": 162,
+                    "end": 164,
+                    "mention": "61",
+                    "ref_id": "BIBREF57"
+                }
+            ],
+            "section": "In silico validation of refined MEV models ::: Design, characterization, and interaction analysis of MEVs with TLR-3 ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "Both the designed CTL and HTL MEVs were subjected to discontinuous B-cell epitope prediction to analyze structure-based humoral immunogenic potential of both MEVs using the ElliPro tool.39",
+            "cite_spans": [
+                {
+                    "start": 186,
+                    "end": 188,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Discontinuous B-cell epitope prediction from MEVs ::: Design, characterization, and interaction analysis of MEVs with TLR-3 ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "To study the molecular interaction, the refined models of CTL and HTL MEVs were docked with TLR-3 by PatchDock server (http://bioinfo3d.cs.tau.ac.il/PatchDock/).62\u201364 The 3D structure of human TLR-3 ectodomain (ECD) was retrieved from PDB databank (PDB ID: 2A0Z). To analyze the stable complex formation, both complexes were subjected to MD simulation by Gromacs 5.1.4 using OPLS-AA.47,48",
+            "cite_spans": [
+                {
+                    "start": 161,
+                    "end": 163,
+                    "mention": "62",
+                    "ref_id": "BIBREF58"
+                },
+                {
+                    "start": 164,
+                    "end": 166,
+                    "mention": "64",
+                    "ref_id": "BIBREF60"
+                },
+                {
+                    "start": 383,
+                    "end": 385,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 386,
+                    "end": 388,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Molecular docking and MD simulation study of MEVs and the immunological receptor TLR-3 ::: Design, characterization, and interaction analysis of MEVs with TLR-3 ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "Optimized cDNAs for both MEVs were generated by the Codon Usage Wrangler Tool with the option of a mammalian host cell line (human) as the expression system (http://www.mrc-lmb.cam.ac.uk/ms/methods/codon.html). Further, the GenScript Rare Codon Analysis Tool (https://www.genscript.com/tools/rare-codon-analysis) was used to analyze the cDNAs of both MEVs. The tool provides GC content, codon adaptation index (CAI), and tandem rare codon frequency for cDNA.65\u201367",
+            "cite_spans": [
+                {
+                    "start": 458,
+                    "end": 460,
+                    "mention": "65",
+                    "ref_id": "BIBREF61"
+                },
+                {
+                    "start": 461,
+                    "end": 463,
+                    "mention": "67",
+                    "ref_id": "BIBREF63"
+                }
+            ],
+            "section": "Analysis of cDNAs of both MEVs for cloning and expression ::: Design, characterization, and interaction analysis of MEVs with TLR-3 ::: Screening of potential epitopes",
+            "ref_spans": []
+        },
+        {
+            "text": "On the basis of \u201ctotal score\u201d and acceptably low IC50 (nM) value of epitope-HLA class I allele pairs, 75 CD8+ CTL epitopes were chosen. Later, 28 epitopes were shortlisted with high scoring and larger number of HLA class I allele binders for further studies. Immunogenicity of the screened CTL epitopes was also determined. The higher the immunogenicity score, the greater is the immunogenicity of the epitope (Tables S3 and S4).",
+            "cite_spans": [],
+            "section": "Screening of CTL epitope ::: T-cell epitope prediction ::: Screening of potential epitopes ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Screening of HTL epitopes was performed on the basis of \u201cpercentile rank\u201d. Small percentile rank shows the high affinity of the peptide for its respective HLA allele. Initially, from the 13 MERS-CoV proteins, 70 CD4+ T-cell epitopes with the highest percentile rank were screened, and 28 epitopes with high percentile rank and the highest number of HLA class II allele binders were then shortlisted (Tables S5 and S6). Several CTL and HTL epitopes predicted in the present study show overlapping regions with the epitopes detected to induce T-cell responses in previous studies done using peripheral blood mononuclear cells from infected patients.68 Hence, epitopes screened and reported in the present study could be predicted to originate from the highly immunogenic stretch of MERS-CoV protein sequences.",
+            "cite_spans": [
+                {
+                    "start": 647,
+                    "end": 649,
+                    "mention": "68",
+                    "ref_id": "BIBREF64"
+                }
+            ],
+            "section": "Screening of HTL epitopes ::: T-cell epitope prediction ::: Screening of potential epitopes ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In this study, most geographical regions of the world, and in particular, the countries of Middle East, South Asia, East Asia, and Northeast Asia, were included. This study indicates that the combined use of all shortlisted CTL and HTL epitopes would have an average worldwide population coverage of 94.0%, with an SD of 20.19 (Table S7).",
+            "cite_spans": [],
+            "section": "Population coverage by CTL and HTL epitopes ::: Screening of potential epitopes ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Initially, a total of 144 B-cell epitopes were screened from 13 MERS-CoV proteins, with epitope length of four or more than four amino acids by the BepiPred Linear Epitope Prediction method. The epitopes predicted by five other methods based on different physicochemical properties showed a significant consensus overlap of amino acid sequences with that of BepiPred Linear Epitope Prediction. From the 144 B-cell epitopes, 12 with the length of 4\u201319 amino acids were shortlisted (Table S8 and Figure 2).",
+            "cite_spans": [],
+            "section": "Sequence-based B-cell epitope prediction ::: B-cell epitope prediction ::: Screening of potential epitopes ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 494,
+                    "end": 502,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Discontinuous and linear epitopes predicted by DiscoTope 2.0 and Ellipro methods showed significant consensus overlap of amino acid sequence with the linear epitopes predicted by the BepiPred linear epitope method (Table S8 and Figure 2). This result confirms that the shortlisted BepiPred linear epitopes are highly immunogenic B-cell epitopes.",
+            "cite_spans": [],
+            "section": "Structure-based B-cell epitope prediction ::: B-cell epitope prediction ::: Screening of potential epitopes ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 228,
+                    "end": 236,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "The conservation analysis of shortlisted 28 CTL, 28 HTL, and 12 B-cell epitopes shows that amino acid sequence conservancy of CTL epitopes varied from 72.7% to 100%, that of HTL epitopes varied from (50% for two epitopes) 68.18% to 100%, and that of B-cell epitopes varied from 85.71% to 99.26% (Tables S3, S5, and S8). This result indicates high conservancy nature of the shortlisted CTL, HTL, and B-cell epitopes.",
+            "cite_spans": [],
+            "section": "Epitope conservation analysis ::: Characterization of potential epitopes ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "All the shortlisted CTL, HTL, and B-cell epitopes analyzed by the ToxinPred tool were predicted to be nontoxic (Tables S3, S5, and S8). The analysis was based on the ToxinPred main dataset consisting of 1,805 toxic peptides for its prediction.",
+            "cite_spans": [],
+            "section": "Epitope toxicity prediction ::: Characterization of potential epitopes ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "MSA analysis of all the screened CTL, HTL, and B-cell epitopes from the 13 MERS-CoV protein candidates revealed that several epitopes of CTL, HTL, and B-cell have overlapping amino acid sequence regions. Epitopes with two or more than two residues in the overlapping region are shown in Figure 3.",
+            "cite_spans": [],
+            "section": "Overlapping residue analysis ::: Characterization of potential epitopes ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 287,
+                    "end": 295,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Overlapping CTL and HTL epitopes clustering with all three (CTL, HTL, and B-cell) types of epitopes or with complete epitope sequence overlap or with the highest number of HLA allele binders were identified and selected for their molecular interaction analysis with HLA alleles and TAP (Figure 3). These include CTL epitopes:47 AQADTAGLY,31,55 FTYIPASGY,25,39 STDSIVFTY,33,58 SMKMAPLMLL,14,67 VTVDGVNFR,22,51 and LVQPALYLY;59 and HTL epitopes:52 AGLYTNFRIDVPSAE,36,66 ASGYVAALAVNVCLI,11,50 EVLVTVDGVNFRTVV,25,58 SMKMAPLMLLQLLGR,72,117 and FLRNVRFELHEFALL.131",
+            "cite_spans": [
+                {
+                    "start": 325,
+                    "end": 327,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 338,
+                    "end": 340,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 341,
+                    "end": 343,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 354,
+                    "end": 356,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 357,
+                    "end": 359,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 370,
+                    "end": 372,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 373,
+                    "end": 375,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                },
+                {
+                    "start": 387,
+                    "end": 389,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 390,
+                    "end": 392,
+                    "mention": "67",
+                    "ref_id": "BIBREF63"
+                },
+                {
+                    "start": 403,
+                    "end": 405,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 406,
+                    "end": 408,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 423,
+                    "end": 425,
+                    "mention": "59",
+                    "ref_id": "BIBREF54"
+                },
+                {
+                    "start": 443,
+                    "end": 445,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 462,
+                    "end": 464,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 465,
+                    "end": 467,
+                    "mention": "66",
+                    "ref_id": "BIBREF62"
+                },
+                {
+                    "start": 484,
+                    "end": 486,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 487,
+                    "end": 489,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 506,
+                    "end": 508,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 509,
+                    "end": 511,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "Epitope selected for molecular interaction study with HLA allele and TAP ::: Characterization of potential epitopes ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 287,
+                    "end": 295,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Molecular docking study of all the selected epitopes with their respective HLA allele binders revealed a significantly favorable molecular interaction. Docking complexes thus formed have significantly negative binding energy, and several amino acid residues of epitopes and HLA alleles were involved in hydrogen bond formation (Figure 4). To analyze the stability of binding, docking complexes were further subjected to MD simulation study with an analysis time window of 0.1 ns at the reasonably invariable temperature (~300 K) and pressure (~1 bar). The results of MD simulation for all the epitope-HLA allele complexes showed a very convincing reasonably invariant root mean square deviation (RMSD) value between ~0.1 and 0.2 nm, thus indicating stable complex formation (Figure 5). Moreover, the reasonably invariant radius of gyration (Rg) of the complexes (Figure S2) and RMS fluctuation (RMSF) for all the atoms in the complexes (Figure S3) indicate that the epitope-HLA complexes remain very stable in their folded form. B-factor of the epitope and HLA allele complexes is shown in the rainbow color presentation in Figure S4. Most of the regions of the complexes are stable (blue) with a very small region being acceptably fluctuating (yellow and orange).",
+            "cite_spans": [],
+            "section": "Molecular docking and MD simulation study of the selected epitopes with HLA alleles ::: Molecular interaction analysis of the selected epitopes with HLA allele ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 328,
+                    "end": 336,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 775,
+                    "end": 783,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Molecular docking results show a favorable molecular interaction between the selected CTL epitopes and the TAP cavity. The result reveals several molecular interaction sites for the selected epitopes within the TAP cavity. Two sites of interaction\u2014one close to the cytoplasm and another close to the ER lumen\u2014are shown in Figure 6. All the interactions showed a significantly negative binding energy with one or more than one hydrogen bond formation at both sites of interaction. From this study, we may predict a smooth passage for selected CTL epitopes from the cytoplasm to the ER lumen throughout the entire passage of the TAP cavity (Figure 6).",
+            "cite_spans": [],
+            "section": "Molecular interaction analysis (docking) of the selected CTL epitopes with TAP ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 322,
+                    "end": 330,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                },
+                {
+                    "start": 639,
+                    "end": 647,
+                    "mention": "Figure 6",
+                    "ref_id": "FIGREF5"
+                }
+            ]
+        },
+        {
+            "text": "IFN-\u03b3 is involved in both adaptive and innate immune responses. It stimulates macrophages and natural killer cells. IFN-\u03b3-inducing 15-mer peptide epitopes were predicted from both CTL and HTL MEVs by IFNepitope server. A total of 486 and 640 IFN-\u03b3 epitopes were predicted from CTL and HTL MEVs, respectively. Out of these, 35 CTL MEVs and 18 HTL MEVs, IFN-\u03b3-inducing POSITIVE epitopes, with score of one or more than one were chosen (Table S9 and Figure 7C and G).",
+            "cite_spans": [],
+            "section": "IFN-\u03b3-inducing epitope prediction ::: Characterization and interaction analysis of designed MEVs with TLR-3 ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 447,
+                    "end": 462,
+                    "mention": "Figure 7C and G",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "The AlgPred analysis of CTL and HTL MEVs revealed that both MEVs are nonallergens with the score of \u22120.95415008 and \u22120.8647714, respectively, with sensitivity and specificity of 88.87% and 81.86%, respectively, while the default threshold value was \u22120.4. The VaxiJen analysis indicated both MEVs to be probable ANTIGENS with prediction score of 0.5302 and 0.5097 for CTL MEVs and HTL MEVs, respectively, while the default threshold value was 0.4 for viral proteins. Hence, both MEVs are predicted to be nonallergic and potentially antigenic in nature.",
+            "cite_spans": [],
+            "section": "Allergenicity and antigenicity prediction of MEVs ::: Characterization and interaction analysis of designed MEVs with TLR-3 ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "ProtParam analysis showed that CTL MEVs have 500 amino acids, 50.4 kDa molecular weight, and 9.72 theoretical pI. The half-life in mammalian reticulocytes, yeast, and Escherichia coli was 30 hours, 20 hours, and 10 hours, respectively; aliphatic index was 61.68, and grand average of hydropathicity (GRAVY) was \u22120.020, indicating globular and hydrophilic nature of CTL MEVs; the instability index was 50.70, indicating that CTL MEVs are theoretically close to stable in nature. ProtParam study showed HTL MEV has 657 amino acids, 67.583 kDa molecular weight, and 9.29 theoretical pI. The half-life in mammalian reticulocytes, yeast, and E. coli was 30 hours, 20 hours, and 10 hours, respectively; aliphatic index was 94.22, and grand average of hydropathicity (GRAVY) was 0.337, both indicating globular and hydrophilic nature of HTL MEV; the instability index was 37.66, indicating theoretically stable nature of HTL MEV.",
+            "cite_spans": [],
+            "section": "Physicochemical analysis of MEVs ::: Characterization and interaction analysis of designed MEVs with TLR-3 ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The model generated by RaptorX for CTL MEV has 4% helix, 37% \u03b2-sheet, and 58% coil; the model is 26% exposed, 41% medium, and 31% buried. It has three domains: first domain (1\u201346 aa, template-1fd3:A); second domain (47\u2013444 aa, template-4dou:A, 4zch:A); and third domain (445\u2013500 aa, template-1kj6:A) (Figure 7A). The model generated by RaptorX for HTL MEV has 35% helix, 20% \u03b2-sheet, and 44% coil; the model is 26% exposed, 35% medium, and 37% buried. It has four domains: first domain (1\u201346 aa, template-1fd3:A); second domain (47\u2013546 aa, templates-4ufcA, 2eabA, and 2rdyA); third domain (547\u2013601 aa, template-1tue:B); and fourth domain (602\u2013657 aa, template-1kj6:A) (Figure 7E). The P-values of the best template of CTL and HTL MEV models are 3.98e-05 and 5.41e-04, respectively. Good quality alpha proteins and good quality beta proteins should have P-value of less than 10\u22123 and 10\u22124 respectively. Hence, both the models of CTL and HTL MEVs generated by RaptorX are of good quality. Because the CTL and HTL epitopes used for the design of both MEVs show overlapping with B-cell linear epitopes (Figure 3), both the CTL and HTL MEV models also carry overlapping regions of B-cell linear epitopes (Figure 7B and F).",
+            "cite_spans": [],
+            "section": "3D structure modeling and refinement of MEVs ::: Characterization and interaction analysis of designed MEVs with TLR-3 ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 301,
+                    "end": 310,
+                    "mention": "Figure 7A",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 669,
+                    "end": 678,
+                    "mention": "Figure 7E",
+                    "ref_id": "FIGREF6"
+                },
+                {
+                    "start": 1099,
+                    "end": 1107,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1200,
+                    "end": 1215,
+                    "mention": "Figure 7B and F",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "The structural accuracy of initial model including joining of the gaps was performed by ModRefiner refinment. Galaxy-Refine was used to further refine the 3D models of CTL and HTL MEVs. For both MEVs, refined model 1 was chosen on the basis of best scorings. For CTL MEV refinement, the score of model 1 was as follows: Rama favored was 94.2%, GDT-HA was 0.9500, RMSD was 0.433, MolProbity was 2.211, Clash score was 18.3, and Poor rotamers was 1.2. For HTL MEV refinement, the score of model 1 was as follows: Rama favored was 93.4%, GDT-HA was 0.9502, RMSD was 0.412, MolProbity was 2.262, Clash score was 21.9, and Poor rotamers was 0.6. Here, MolProbity is the log-weighted combination of clash score, percentage Ramachandran not favored, and percentage bad side-chain rotamers. After refinement, all the mentioned parameters improved significantly as compared to those of the initial model (Table S10).",
+            "cite_spans": [],
+            "section": "3D structure modeling and refinement of MEVs ::: Characterization and interaction analysis of designed MEVs with TLR-3 ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The RAMPAGE analysis showed that the refined CTL MEV model has 94% residues in the favored region, 3.8% residues in the allowed region, and only 1.4% residues in the outlier region, while the refined HTL MEV model has 94% of residues in the favored region, 5.2% residues in the allowed region, and only 0.8% residues in the outlier region (Figure 7D and H).",
+            "cite_spans": [],
+            "section": "In silico validation of refined MEV models ::: Characterization and interaction analysis of designed MEVs with TLR-3 ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 340,
+                    "end": 355,
+                    "mention": "Figure 7D and H",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "Discontinuous B-cell epitope prediction from both MEVs was performed by the ElliPro tool. The screening revealed CTL MEV to have six discontinuous epitopes and HTL MEV to have five discontinuous epitopes. The PI score for CTL MEV epitopes ranged from 0.549 to 0.906 and that for HTL MEV ranged from 0.56 to 0.729 (Table S11 and Figure 7C and G). The higher the score, the greater is the potential of the B-cell discontinuous epitope.",
+            "cite_spans": [],
+            "section": "Discontinuous B-cell epitope prediction from MEVs ::: Characterization and interaction analysis of designed MEVs with TLR-3 ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 328,
+                    "end": 343,
+                    "mention": "Figure 7C and G",
+                    "ref_id": "FIGREF6"
+                }
+            ]
+        },
+        {
+            "text": "The refined models of CTL and HTL MEVs were further analyzed for their interaction with the ECD of human TLR-3 by molecular docking using the PatchDock tool. Docking conformation chosen for the CTL and HTL MEVs showed scores of 18,096 and 23,690, respectively, which were highest among all docked complexes. The highest score indicates the best geometric shape complementarity fitting of ligand and receptor predicted by the tool. The docking complex shows a fitting confirmation of both the MEVs within the ECD of TLR-3 (Figure 8A and E). Further, the MD simulation analysis of the docked CTL-TLR-3 and HTL-TLR-3 complexes showed a very convincing reasonably stable RMSD value betwee\u00f10.4 and 0.5 nm for a given time window of 6 ns at the reasonably invariable temperature (~300 K) and pressure (~1 bar). These results indicate a stable complex formation for both MEVs with TLR-3 (Figure 8B and F). The reasonably invariant Rg of MEV-TLR-3 complexes (Figure 8C and G) and RMSF for all the atoms in the complexes (Figure 8D and H) indicate that both the MEV-TLR-3 complexes are reasonably stable and are properly folded. The B-factor of CTL and HTL MEV complexes with the TLR-3 receptor is shown by rainbow color presentation in Figure 8A and E. Most of the regions of both complexes are stable (blue) with a very small region being acceptably fluctuating (yellow and orange).",
+            "cite_spans": [],
+            "section": "Molecular docking and MD simulation study of MEVs and the immunological receptor TLR-3 ::: Characterization and interaction analysis of designed MEVs with TLR-3 ::: Results and discussion",
+            "ref_spans": [
+                {
+                    "start": 522,
+                    "end": 537,
+                    "mention": "Figure 8A and E",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 881,
+                    "end": 896,
+                    "mention": "Figure 8B and F",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 951,
+                    "end": 966,
+                    "mention": "Figure 8C and G",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 1013,
+                    "end": 1028,
+                    "mention": "Figure 8D and H",
+                    "ref_id": "FIGREF7"
+                },
+                {
+                    "start": 1228,
+                    "end": 1243,
+                    "mention": "Figure 8A and E",
+                    "ref_id": "FIGREF7"
+                }
+            ]
+        },
+        {
+            "text": "Optimized cDNAs for both CTL and HTL MEVs were generated by the Codon Usage Wrangler Tool with a mammalian host cell line (human) as the choice of the expression system. The GenScript Rare Codon Analysis Tool showed that the GC content of optimized CTL MEV cDNA was 69.74% and CAI score was 1.0 with 0% tandem rare codons. Likewise, the GC content of optimized HTL MEV cDNA was 66.63%, and the CAI score was 1.0 with 0% tandem rare codons. Ideally, the GC content should be 30%\u201370%, the CAI score indicating the possibility of cDNA expression in the chosen expression system should be between 0.8 and 1.0, and tandem rare codon frequency indicating the percentage of low-frequency codons present in cDNA for the chosen expression system should be <30%. Tandem rare codons may hinder the expression of cDNA or even interrupt the translational machinery. Hence, the optimized cDNAs of both MEVs are predicted to be highly expressing in the mammalian host cell line (human).",
+            "cite_spans": [],
+            "section": "Analysis of cDNAs of both MEVs for cloning and expression ::: Characterization and interaction analysis of designed MEVs with TLR-3 ::: Results and discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In this study, we propose the design of two MEVs against MERS-CoV that consisted of CTL and HTL epitopes. The selected CTL and HTL epitopes were validated by in silico methods for their molecular interaction with HLA alleles and TAP (for CTL epitopes). The population coverage by the designed MEVs is as high as 94% of the world population. Both MEVs were found to contain IFN-\u03b3 epitopes and B-cell discontinuous epitopes. Moreover, they also showed stable interaction with the immunoreceptor TLR-3. On the basis of the design and in silico validation of both the CTL and HTL MEVs, their joint administration is predicted to induce humoral and cell-mediated immune response. Codon-based cDNAs of both MEVs are predicted to have high expression in the mammalian host cell line (human); hence, they could be cloned and expressed at the laboratory level for in vivo trials on humanized HLA-expressing mice for further study.",
+            "cite_spans": [],
+            "section": "Conclusion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: Multi-epitope vaccine design. Notes: (A) CTL and (B) HTL epitopes were linked by the short peptide linker GGGGS. Human \u03b2-defensin-2 and \u03b2-defensin-3 were used as adjuvant at N and C terminals, respectively, linked by the short peptide linker EAAAK. Epitopes from different proteins are colored in different colors. C-terminal 6xHis is designated as His tag. Abbreviations: CTL, cytotoxic T lymphocyte; HTL, helper T lymphocyte.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Overlapping regions of the BepiPred linear B-cell epitopes and the epitopes predicted by other methods. Notes: This analysis shows a strong consensus between the BepiPred linear B-cell epitopes and the epitopes predicted by other sequence-based and structure-based epitope prediction methods. Different colors are used to highlight overlapping regions of epitopes predicted by the different methods.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: Overlapping CTL, HTL, and B-cell epitopes. Notes: Overlapping CTL (red), HTL (blue), and B-cell epitopes (green) were sorted out by MSA using Clustal Omega at EBI server. The ringed clusters of epitopes involve all three types of epitopes, epitopes with full sequence overlap, and the epitopes with highest number of HLA allele binders. Abbreviations: CTL, cytotoxic T lymphocyte; EBI, European Bioinformatics Institute; HLA, human leukocyte antigen; HTL, helper T lymphocyte; MSA, multiple sequence alignment.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: Molecular docking study of CTL and HTL epitopes with respective HLA allele binders. Notes: (A) CTL and (B) HTL epitopes docked with their respective HLA allele binders. The docking study shows acceptable negative binding energy and hydrogen bonds (green balls) formation between epitopes (magenta sticks) and HLA alleles (cyan cartoons). (*) Residues forming hydrogen bonds with more than one residue. Abbreviations: CTL, cytotoxic T lymphocyte; HLA, human leukocyte antigen; HTL, helper T lymphocyte.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: Molecular dynamics simulation study of the epitope and HLA allele complexes. Notes: Molecular dynamics simulation study of (A) CTL and (B) HTL epitope complexes with their respective HLA allele binders. The reasonably invariable RMSD value indicates a stable complex formation. Abbreviations: CTL, cytotoxic T lymphocyte; HLA, human leukocyte antigen; HTL, helper T lymphocyte; RMSD, root mean square deviation.",
+            "type": "figure"
+        },
+        "FIGREF5": {
+            "text": "Figure 6: Molecular docking study of CTL epitopes with the TAP cavity. Notes: TAP is shown by cyan ribbon, and epitopes are shown by magenta. In every panel of the epitope\u2013TAP complex, (A) shows the binding of epitope at two different sites of the TAP cavity, (B) and (C) show the hydrogen bond formation between epitopes and TAP cavity residues at two respective sites of the TAP cavity. (*) Residues forming hydrogen bonds with more than one residue. (a and b) Chain A and B of TAP. Binding energy is shown in kcal/mol. Hydrogen bonds are shown by yellow dots. Abbreviations: CTL, cytotoxic T lymphocyte; TAP, transporter associated with antigen processing.",
+            "type": "figure"
+        },
+        "FIGREF6": {
+            "text": "Figure 7: 3D structure modeling of CTL and HTL MEVs. Notes: (A and E) 3D structure of CTL and HTL MEVs models, respectively, showing epitopes from different proteins in different colors (epitope colors are the same as those shown in Figure 1). (B and F) Overlapping regions belonging to B-cell linear epitopes from both CTL and HTL MEVs, respectively, are shown by spheres. From (C) CTL and (G) HTL MEVs, IFN-\u03b3-inducing epitopes are shown in cyan, while discontinuous B-cell epitopes are shown in magenta. The regions shown in wheat color are common to both IFN-\u03b3 and discontinuous B-cell epitopes. (D and H) RAMPAGE analysis of refined CTL and HTL MEV models, respectively. Abbreviations: CTL, cytotoxic T lymphocyte; HTL, helper T lymphocyte; IFN, interferon; MEV, multi-epitope vaccine.",
+            "type": "figure"
+        },
+        "FIGREF7": {
+            "text": "Figure 8: Molecular docking and MD simulation study of CTL and HTL MEVs with TLR-3. Notes: (A) CTL and (E) HTL MEVs (cartoon) docked complex with TLR-3 (ribbon), respectively. B-factor of the complexes is shown by rainbow (VIBGYOR) presentation; the regions in blue are very stable, and the region in red is unstable. In the above complexes, most of the regions are in blue and a very small region is in yellow and orange, indicating that both complexes are very stable. (B and F) MD simulation study of CTL and HTL MEV complexes with TLR-3, respectively. (C and G) Rg across the time window of 6,000 ps for CTL and HTL MEV complexes with TLR-3, respectively. (D and H) RMSF for all the atoms of the CTL and HTL MEV complex with TLR-3, respectively. Abbreviations: CTL, cytotoxic T lymphocyte; HTL, helper T lymphocyte; MD, molecular dynamics; MEV, multi-epitope vaccine; Rg, radius of gyration; RMSD, root mean square deviation; RMSF, root mean square fluctuation; TLR-3, toll-like receptor 3.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "",
+            "authors": [],
+            "year": 2016,
+            "venue": "WHO MERS-CoV Global Summary and Risk Assessment",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Crystallographic analysis of the N-terminal domain of Middle East respiratory syndrome coronavirus nucleocapsid protein",
+            "authors": [
+                {
+                    "first": "YS",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "CK",
+                    "middle": [],
+                    "last": "Chang",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Hou",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Acta Crystallogr F Struct Biol Commun",
+            "volume": "71",
+            "issn": "Pt 8",
+            "pages": "977-980",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Middle East respiratory syndrome coronavirus M protein suppresses type I interferon expression through the inhibition of TBK1-dependent phosphorylation of IRF3",
+            "authors": [
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Lui",
+                    "suffix": ""
+                },
+                {
+                    "first": "LY",
+                    "middle": [],
+                    "last": "Wong",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Fung",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Emerg Microbes Infect",
+            "volume": "5",
+            "issn": "4",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "MERS-CoV Accessory ORFs Play Key Role for Infection and Pathogenesis",
+            "authors": [
+                {
+                    "first": "VD",
+                    "middle": [],
+                    "last": "Menachery",
+                    "suffix": ""
+                },
+                {
+                    "first": "HD",
+                    "middle": [],
+                    "last": "Mitchell",
+                    "suffix": ""
+                },
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Cockrell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "MBio",
+            "volume": "8",
+            "issn": "4",
+            "pages": "e00665-17",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Crystal structure of the papain-like protease of MERS coronavirus reveals unusual, potentially druggable active-site features",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lei",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "Mesters",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Drosten",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Anem\u00fcller",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Hilgenfeld",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Antiviral Res",
+            "volume": "109",
+            "issn": "",
+            "pages": "72-82",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Ligand-induced Dimerization of Middle East Respiratory Syndrome (MERS) Coronavirus nsp5 Protease (3CLpro): IMPLICATIONS FOR nsp5 REGULATION AND THE DEVELOPMENT OF ANTIVIRALS",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tomar",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Johnston",
+                    "suffix": ""
+                },
+                {
+                    "first": "SE",
+                    "middle": [],
+                    "last": "St John",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "J Biol Chem",
+            "volume": "290",
+            "issn": "32",
+            "pages": "19403-19422",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Structural and mutational analysis of the interaction between the Middle-East respiratory syndrome coronavirus (MERS-CoV) papain-like protease and human ubiquitin",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lei",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Hilgenfeld",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Virol Sin",
+            "volume": "31",
+            "issn": "4",
+            "pages": "288-299",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Sequencing and Phylogenetic Analyses of Structural and Accessory Proteins of Middle East Respiratory Syndrome Coronavirus from the First Imported Case in China, 2015",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Zou",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Bing Du Xue Bao",
+            "volume": "31",
+            "issn": "4",
+            "pages": "333-340",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Antiviral mechanisms of human defensins",
+            "authors": [
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "ME",
+                    "middle": [],
+                    "last": "Wiens",
+                    "suffix": ""
+                },
+                {
+                    "first": "JG",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J Mol Biol",
+            "volume": "425",
+            "issn": "24",
+            "pages": "4965-4980",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Rhinovirus increases human \u03b2-defensin-2 and-3 mRNA expression in cultured bronchial epithelial cells",
+            "authors": [
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Duits",
+                    "suffix": ""
+                },
+                {
+                    "first": "PH",
+                    "middle": [],
+                    "last": "Nibbering",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "van Strijen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Pathogens and Disease",
+            "volume": "38",
+            "issn": "1",
+            "pages": "59-64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Assembly and export of MHC class I peptide ligands",
+            "authors": [
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Antoniou",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Powis",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Elliott",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Curr Opin Immunol",
+            "volume": "15",
+            "issn": "1",
+            "pages": "75-81",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Hospital outbreak of Middle East respiratory syndrome corona-virus",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Assiri",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "McGeer",
+                    "suffix": ""
+                },
+                {
+                    "first": "TM",
+                    "middle": [],
+                    "last": "Perl",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "N Engl J Med Overseas Ed",
+            "volume": "369",
+            "issn": "5",
+            "pages": "407-416",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Innate immunity: structure and function of TLRs",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Delneste",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Beauvillain",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Jeannin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Med Sci (Paris)",
+            "volume": "23",
+            "issn": "1",
+            "pages": "67-73",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Toll-like receptor 3 signaling via TRIF contributes to a protective innate immune response to severe acute respiratory syndrome coronavirus infection",
+            "authors": [
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Totura",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Whitmore",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Agnihothram",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "MBio",
+            "volume": "6",
+            "issn": "3",
+            "pages": "e00638-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "The SWISS-MODEL workspace: a web-based environment for protein structure homology modelling",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Arnold",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Bordoli",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kopp",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Schwede",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Bioinformatics",
+            "volume": "22",
+            "issn": "2",
+            "pages": "195-201",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Modeling the MHC class I pathway by combining predictions of proteasomal cleavage, TAP transport and MHC class I binding",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Tenzer",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bulik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Cell Mol Life Sci",
+            "volume": "62",
+            "issn": "9",
+            "pages": "1025-1037",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Identifying MHC class I epitopes by predicting the TAP transport efficiency of epitope precursors",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bulik",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Tampe",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Van Endert",
+                    "suffix": ""
+                },
+                {
+                    "first": "HG",
+                    "middle": [],
+                    "last": "Holzh\u00fctter",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "J Immunol",
+            "volume": "171",
+            "issn": "4",
+            "pages": "1741-1749",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "NetMHCpan, a method for MHC class I binding prediction beyond humans",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Hoof",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Peters",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sidney",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Immunogenetics",
+            "volume": "61",
+            "issn": "1",
+            "pages": "1-13",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Properties of MHC class I presented peptides that enhance immunogenicity",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Calis",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Maybeno",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Greenbaum",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "PLoS Comput Biol",
+            "volume": "9",
+            "issn": "10",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Peptide binding predictions for HLA DR, DP and DQ molecules",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sidney",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "BMC Bioinformatics",
+            "volume": "11",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Quantitative peptide binding motifs for 19 human and mouse MHC class I molecules derived using positional scanning combinatorial peptide libraries",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sidney",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Assarsson",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Moore",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Immunome Res",
+            "volume": "4",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Prediction of MHC class II binding affinity using SMM-align, a novel stabilization matrix alignment method",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Lundegaard",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Lund",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "2014 MERS-CoV outbreak in Jeddah \u2013 a link to health care facilities",
+            "authors": [
+                {
+                    "first": "IK",
+                    "middle": [],
+                    "last": "Oboho",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Tomczyk",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Al-Asmari",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "N Engl J Med",
+            "volume": "372",
+            "issn": "9",
+            "pages": "846-854",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Generation of tissue-specific and promiscuous HLA ligand databases using DNA microarrays and virtual HLA class II matrices",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Sturniolo",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bono",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nat Biotechnol",
+            "volume": "17",
+            "issn": "6",
+            "pages": "555-561",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Predicting population coverage of T-cell epitope-based diagnostics and vaccines",
+            "authors": [
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Bui",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sidney",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Dinh",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Southwood",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sette",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "BMC Bioinformatics",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Improved method for predicting linear B-cell epitopes",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Larsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Lund",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Immunome Res",
+            "volume": "2",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Prediction of the secondary structure of proteins from their amino acid sequence",
+            "authors": [
+                {
+                    "first": "PY",
+                    "middle": [],
+                    "last": "Chou",
+                    "suffix": ""
+                },
+                {
+                    "first": "GD",
+                    "middle": [],
+                    "last": "Fasman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1978,
+            "venue": "Adv Enzymol Relat Areas Mol Biol",
+            "volume": "47",
+            "issn": "",
+            "pages": "45-148",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Induction of hepatitis A virus-neutralizing antibody by a virus-specific synthetic peptide",
+            "authors": [
+                {
+                    "first": "EA",
+                    "middle": [],
+                    "last": "Emini",
+                    "suffix": ""
+                },
+                {
+                    "first": "JV",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Perlow",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Boger",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "J Virol",
+            "volume": "55",
+            "issn": "3",
+            "pages": "836-839",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Prediction of chain flexibility in proteins",
+            "authors": [
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Karplus",
+                    "suffix": ""
+                },
+                {
+                    "first": "GE",
+                    "middle": [],
+                    "last": "Schulz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Naturwissenschaften",
+            "volume": "72",
+            "issn": "4",
+            "pages": "212-213",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "A semi-empirical method for prediction of antigenic determinants on protein antigens",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Kolaskar",
+                    "suffix": ""
+                },
+                {
+                    "first": "PC",
+                    "middle": [],
+                    "last": "Tongaonkar",
+                    "suffix": ""
+                }
+            ],
+            "year": 1990,
+            "venue": "FEBS Lett",
+            "volume": "276",
+            "issn": "1\u20132",
+            "pages": "172-174",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "New hydrophilicity scale derived from high-performance liquid chromatography peptide retention data: correlation of predicted surface residues with antigenicity and X-ray-derived accessible sites",
+            "authors": [
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Parker",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Hodges",
+                    "suffix": ""
+                }
+            ],
+            "year": 1986,
+            "venue": "Biochemistry",
+            "volume": "25",
+            "issn": "19",
+            "pages": "5425-5432",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Reliable B cell epitope predictions: impacts of method development and improved benchmarking",
+            "authors": [
+                {
+                    "first": "JV",
+                    "middle": [],
+                    "last": "Kringelum",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Lundegaard",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Lund",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS Comput Biol",
+            "volume": "8",
+            "issn": "12",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "ElliPro: a new structure-based tool for the prediction of antibody epitopes",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ponomarenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Bui",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMC Bioinformatics",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Hospital Outbreaks of Middle East Respiratory Syndrome, Daejeon, South Korea, 2015",
+            "authors": [
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "KH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Emerg Infect Dis",
+            "volume": "23",
+            "issn": "6",
+            "pages": "898-905",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Development of an epitope conservancy analysis tool to facilitate the design of epitope-based diagnostics and vaccines",
+            "authors": [
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Bui",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Sidney",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Fusseder",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sette",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "In silico approach for predicting toxicity of peptides and proteins",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gupta",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Kapoor",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Chaudhary",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "PLoS One",
+            "volume": "8",
+            "issn": "9",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Fast, scalable generation of high-quality protein multiple sequence alignments using Clustal Omega",
+            "authors": [
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Sievers",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wilm",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Dineen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Mol Syst Biol",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "QMEAN: A comprehensive scoring function for model quality assessment",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Benkert",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Tosatto",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Schomburg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Proteins",
+            "volume": "71",
+            "issn": "1",
+            "pages": "261-277",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "PEPstrMOD: structure prediction of peptides containing natural, non-natural and modified residues",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Singh",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Singh",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tuknait",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Biol Direct",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "AutoDock4 and AutoDockTools4: Automated docking with selective receptor flexibility",
+            "authors": [
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Morris",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Huey",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Lindstrom",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "J Comput Chem",
+            "volume": "30",
+            "issn": "16",
+            "pages": "2785-2791",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "AutoDock Vina: improving the speed and accuracy of docking with a new scoring function, efficient optimization, and multithreading",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Trott",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Olson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Comput Chem",
+            "volume": "31",
+            "issn": "2",
+            "pages": "455-461",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "GROMACS: High performance molecular simulations through multi-level parallelism from laptops to supercomputers",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Abraham",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Murtola",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Schulz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "SoftwareX",
+            "volume": "1\u20132",
+            "issn": "2",
+            "pages": "19-25",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Development and testing of the OPLS all-atom force field on conformational energetics and properties of organic liquids",
+            "authors": [
+                {
+                    "first": "WL",
+                    "middle": [],
+                    "last": "Jorgensen",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Maxwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Tirado-Rives",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "J Am Chem Soc",
+            "volume": "118",
+            "issn": "45",
+            "pages": "11225-11236",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Structure of the transporter associated with antigen processing trapped by herpes simplex virus",
+            "authors": [
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Oldham",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Grigorieff",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Elife",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Epidemiologic features of the first MERS outbreak in Korea: focus on Pyeongtaek St. Mary\u2019s Hospital",
+            "authors": [
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ki",
+                    "suffix": ""
+                },
+                {
+                    "first": "SI",
+                    "middle": [],
+                    "last": "Cho",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Epidemiol Health",
+            "volume": "37",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "A flexible peptide linker enhances the immunoreactivity of two copies HBsAg preS1 (21-47) fusion protein",
+            "authors": [
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "J Biotechnol",
+            "volume": "107",
+            "issn": "1",
+            "pages": "83-90",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "The structure of human beta-defensin-2 shows evidence of higher order oligomerization",
+            "authors": [
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Hoover",
+                    "suffix": ""
+                },
+                {
+                    "first": "KR",
+                    "middle": [],
+                    "last": "Rajashankar",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Blumenthal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Biol Chem",
+            "volume": "275",
+            "issn": "42",
+            "pages": "32911-32918",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Immunoinformatics analysis and in silico designing of a novel multi-epitope peptide vaccine against Staphylococcus aureus",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Hajighahramani",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Nezafat",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eslami",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Negahdaripour",
+                    "suffix": ""
+                },
+                {
+                    "first": "SS",
+                    "middle": [],
+                    "last": "Rahmatabadi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ghasemi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Infect Genet Evol",
+            "volume": "48",
+            "issn": "",
+            "pages": "83-94",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Fusion protein linkers: property, design and functionality",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Zaro",
+                    "suffix": ""
+                },
+                {
+                    "first": "WC",
+                    "middle": [],
+                    "last": "Shen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Adv Drug Deliv Rev",
+            "volume": "65",
+            "issn": "10",
+            "pages": "1357-1369",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "VaccineDA: Prediction, design and genome-wide screening of oligodeoxynucleotide-based vaccine adjuvants",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Nagpal",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gupta",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Chaudhary",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Dhanda",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Prakash",
+                    "suffix": ""
+                },
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Raghava",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Sci Rep",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Designing of interferon-gamma inducing MHC class-II binders",
+            "authors": [
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Dhanda",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Vir",
+                    "suffix": ""
+                },
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Raghava",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Biol Direct",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "AlgPred: prediction of allergenic proteins and mapping of IgE epitopes",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Saha",
+                    "suffix": ""
+                },
+                {
+                    "first": "GP",
+                    "middle": [],
+                    "last": "Raghava",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res",
+            "volume": "34",
+            "issn": "Web Server issue",
+            "pages": "W202-W209",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "VaxiJen: a server for prediction of protective antigens, tumour antigens and subunit vaccines",
+            "authors": [
+                {
+                    "first": "IA",
+                    "middle": [],
+                    "last": "Doytchinova",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Flower",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Protein identification and analysis tools on the ExPASy server",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Gasteiger",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Hoogland",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gattiker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "The Proteomics Protocols Handbook",
+            "volume": "",
+            "issn": "",
+            "pages": "571-607",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Template-based protein structure modeling using the RaptorX web server",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "K\u00e4llberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nat Protoc",
+            "volume": "7",
+            "issn": "8",
+            "pages": "1511-1522",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "2015 MERS outbreak in Korea: hospital-to-hospital transmission",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ki",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Epidemiol Health",
+            "volume": "37",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "GalaxyWEB server for protein structure prediction and refinement",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ko",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Park",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Heo",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Seok",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nucleic Acids Res",
+            "volume": "40",
+            "issn": "Web Server issue",
+            "pages": "W294-W297",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Structure validation by Calpha geometry: phi,psi and Cbeta deviation",
+            "authors": [
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Lovell",
+                    "suffix": ""
+                },
+                {
+                    "first": "IW",
+                    "middle": [],
+                    "last": "Davis",
+                    "suffix": ""
+                },
+                {
+                    "first": "WB",
+                    "middle": [],
+                    "last": "Arendall",
+                    "suffix": "3rd"
+                }
+            ],
+            "year": 2003,
+            "venue": "Proteins",
+            "volume": "50",
+            "issn": "3",
+            "pages": "437-450",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "The molecular structure of the Toll-like receptor 3 ligand-binding domain",
+            "authors": [
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Bell",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Botos",
+                    "suffix": ""
+                },
+                {
+                    "first": "PR",
+                    "middle": [],
+                    "last": "Hall",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "102",
+            "issn": "31",
+            "pages": "10976-10980",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Efficient unbound docking of rigid molecules",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Duhovny",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Nussinov",
+                    "suffix": ""
+                },
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Wolfson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Proceedings of the 2\u2019nd Workshop on Algorithms in Bioinformatics (WABI)",
+            "volume": "2452",
+            "issn": "",
+            "pages": "185-200",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "PatchDock and SymmDock: servers for rigid and symmetric docking",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Schneidman-Duhovny",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Inbar",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Nussinov",
+                    "suffix": ""
+                },
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Wolfson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucleic Acids Res",
+            "volume": "33",
+            "issn": "Web Server issue",
+            "pages": "W363-W367",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Designing an efficient multi-epitope oral vaccine against Helicobacter pylori using immunoinformatics and structural vaccinology approaches",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Nezafat",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eslami",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Negahdaripour",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Rahbar",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ghasemi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Mol Biosyst",
+            "volume": "13",
+            "issn": "4",
+            "pages": "699-713",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "Synonymous codon usage pattern in glycoprotein gene of rabies virus",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Morla",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Makhija",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Gene",
+            "volume": "584",
+            "issn": "1",
+            "pages": "1-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Computational identification of rare codons of Escherichia coli based on codon pairs preference",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "BMC Bioinformatics",
+            "volume": "11",
+            "issn": "1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "Recovery from the Middle East respiratory syndrome is associated with antibody and T-cell responses",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Zhao",
+                    "suffix": ""
+                },
+                {
+                    "first": "AN",
+                    "middle": [],
+                    "last": "Alshukairi",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Baharoon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "Sci Immunol",
+            "volume": "2",
+            "issn": "14",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "The IPD and IMGT/HLA database: allele variant databases",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Robinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Halliwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Hayhurst",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Flicek",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Parham",
+                    "suffix": ""
+                },
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Marsh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nucleic acids research",
+            "volume": "43",
+            "issn": "D1",
+            "pages": "D423-D431",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "Emergencies Preparedness, Reponse: Coronavirus Infections",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Improving the Physical Realism and Structural Accuracy of Protein Models by a Two-step Atomic-level Energy Minimization",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Biophys J",
+            "volume": "101",
+            "issn": "10",
+            "pages": "2525-34",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "Evaluation of candidate vaccine approaches for MERS-CoV",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Joyce",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Nat Commun",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "Analysis of the genome sequence and prediction of B-cell epitopes of the envelope protein of Middle East respiratory syndrome-coronavirus",
+            "authors": [
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Xie",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "IEEE/ACM Trans Comput Biol Bioinform",
+            "volume": "15",
+            "issn": "4",
+            "pages": "1344-1350",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

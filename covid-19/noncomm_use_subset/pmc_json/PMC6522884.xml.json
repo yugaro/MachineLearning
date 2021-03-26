@@ -1,0 +1,2498 @@
+{
+    "paper_id": "PMC6522884",
+    "metadata": {
+        "title": "Potential use of Pichia pastoris strain SMD1168H expressing DNA topoisomerase I in the screening of potential anti-breast cancer agents",
+        "authors": [
+            {
+                "first": "Jian",
+                "middle": [],
+                "last": "Xin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Wan",
+                "middle": [
+                    "Nor",
+                    "Azlin",
+                    "Wan"
+                ],
+                "last": "Mahtar",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Poh",
+                "middle": [
+                    "Chiew"
+                ],
+                "last": "Siah",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Noorizan",
+                "middle": [],
+                "last": "Miswan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Boon",
+                "middle": [
+                    "Yin"
+                ],
+                "last": "Khoo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Cancer chemotherapy uses drugs to prevent the growth of cancerous cells or kill cancerous cells in the human body (1). In general, chemotherapy can be applied for three primary purposes: As an adjuvant therapy, in order to prevent the cancer cells from re-emerging following initial surgery or radiation; as a neo-adjuvant therapy, shrinking the tumour size for its easier removal with surgery; and as a treatment for metastatic disease, to reduce the number of cancer cells and kill cells that have spread to other parts of the body from the primary cancer location, such as to the lymph nodes under the arm in patients with breast cancer.",
+            "cite_spans": [
+                {
+                    "start": 115,
+                    "end": 116,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "General chemotherapeutic drugs that are used to treat breast cancer include the following: Anthracyclines, such as doxorubicin (Adriamycin) and epirubicin (Ellence); taxanes, such as paclitaxel (Taxol) and docetaxel (Taxotere); cyclophosphamide (Cytoxan), capecitabine (Xeloda) and 5-fluorouracil; vinorelbine (Navelbine), gemcitabine (Gemzar), trastuzumab (Herceptin) and other anti-hormone drugs, as well as breast cancer drugs that target human epidermal growth factor receptor-2 (2). Breast cancer chemotherapy is commonly administered orally or by intravenous injection daily (3). In adjuvant and neo-adjuvant settings, chemotherapeutic drugs are usually given as a combination of two or more drugs, since single-drug chemotherapy is less effective (3); however, the toxicity of combined chemotherapy is also greater if the treatment programme is not planned appropriately. An inappropriate combination of chemotherapy may not be able to treat or reduce the spread of breast cancer, and may continuously destroy other dividing cells and affect surrounding healthy tissue. Indeed, the majority of the current chemotherapies cause pain and adverse effects in patients, including nausea and vomiting, loss of appetite, fatigue, mouth soreness, hair loss, weight gain, premature menopause, reduced resistance to infections and increased bleeding (4\u20136). Therefore, it is important to seek effective treatment strategies or combination therapies for breast cancer using novel compounds/substances from natural products, which frequently have reduced toxicity in comparison with traditional chemotherapies. Naturally-occurring anti-cancer products may reduce pain, while preventing the spread of cancer cells to other parts of the body.",
+            "cite_spans": [
+                {
+                    "start": 484,
+                    "end": 485,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 582,
+                    "end": 583,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 755,
+                    "end": 756,
+                    "mention": "3",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 1348,
+                    "end": 1349,
+                    "mention": "4",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 1350,
+                    "end": 1351,
+                    "mention": "6",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The conventional drug screening process can be divided into two main stages: Discovery and development (7\u201311). The discovery stage can be further divided into early discovery, lead identification and lead optimization before the selected candidates proceed to the preclinical screening stages (Fig. 1). Early discovery is the research phase of the screening process, during which thousands of potential compounds are extracted and synthesised from various resources annually, with the hope that certain of these compounds may possess promising therapeutic effects. According to the Pharmaceutical Research and Manufacturers of America (12), only one drug is selected from every 10,000 test compounds by the end of the screening process, with the entire process costing >1 billion euros and requiring ~12 years to complete. Therefore, the initial in vitro steps in the screening process are particularly important, and increasing the speed of the early high-throughput process to identify the specific desired effects of compounds is crucial. As such, the current study aimed to develop a novel screening assay to accelerate the identification of specific compounds prior to animal studies and preclinical stages.",
+            "cite_spans": [
+                {
+                    "start": 104,
+                    "end": 105,
+                    "mention": "7",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 106,
+                    "end": 108,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 636,
+                    "end": 638,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": [
+                {
+                    "start": 294,
+                    "end": 300,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Popular in vitro strategy to identify preliminary growth inhibitory effects of potential agents frequently involves the use of cell-based proliferation assays, which include secondary metabolite detection in conditioned medium using tetrazolium salts, such as the MTT assay; cell membrane damage detection by assessing dehydrogenase release from damaged cells; DNA fragmentation detection via an in situ 5\u2032-bromo-2\u2032-deoxyuridine assay; and other assays using cell staining and flow cytometry. Conducting these assays requires costly laboratory facilities and cell culture expertise, as the culture is sensitive to impurities in the tested agents, which may cause contamination unless the crude extracts used are dissolved in an antimicrobial solvent, such as dimethyl sulfoxide. Furthermore, these assays rely on slow-growing cell lines, in which multiple passages may also change the genotype and phenotype of the cells. Thus, a cost-effective approach is required to overcome these limitations, as subjecting all unidentified compounds to cell-based screening in the early screening process is costly.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The present study aimed to develop a yeast-based screening assay using Pichia pastoris that was transformed with a plasmid expressing DNA topoisomerase I (TOPOI), namely SMD1168H-TOPOI. DNA topoisomerase is involved in cell proliferation, and thus overexpression of this enzyme in yeast enhances the proliferation, mimicking cancer cells. The use of a yeast-based assay is more versatile, as it allows for the screening of a larger number of compounds without the need for cell culture facilities and expertise, while producing similar findings that are comparable to the cell-based assays. Therefore, such an assay results in a faster preliminary screening process. Only candidate compounds that exhibit a positive effect at the early discovery stages will then proceed to the next steps of the drug discovery process.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "A Pichia pastoris strain clone of SMD1168H carrying TOPOI in a pPICZ\u03b1A plasmid was generated in our previous study (13), and was referred to as SMD1168H-TOPOI. This clone was used for the development of the yeast-based screening assay in the present study. The assay was designed to have the following characteristics: i) Easy to operate with no special skill required; ii) no specific equipment is required, and can be performed with a simple laboratory set-up, for instance using only a shaker flask system; iii) the yeast cell density is the main component of the assay, therefore, no additional detection kit, enzyme or reagent is needed other than the chemical, medium and reagent to maintain the yeast cells; iv) a short amount of time is required to complete the full assay (<1 week), and the assay can be performed at room temperature or at least in a laboratory equipped with an air-conditioner; and v) produces results that are comparable to cell-based screening assays.",
+            "cite_spans": [
+                {
+                    "start": 116,
+                    "end": 118,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Preliminary design of the yeast-based assay :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Yeast culture stocks (SMD1168H, SMD1168H-pPICZ\u03b1A and SMD1168H-TOPOI), which were constructed and stored in glycerol at \u221280\u00b0C as previously described (13), were retrieved and enriched using 5 ml buffered glycerol-complex medium (BMGY) in a universal bottle. The transformed yeast strain was incubated overnight at 15\u201320\u00b0C in an incubator shaker at 250 rpm. Subsequently, 250 \u00b5l of the overnight culture was transferred into a 250 ml conical flask that contained 25 ml fresh BMGY. The culture was then incubated in the shaker for another 16 h at 15\u201320\u00b0C with agitation at 250 rpm, until the exponential growth phase was reached. The growth of the yeast cells was induced using 1.0% (v/v) methanol. After 12 h of incubation, culture medium with 100 \u00b5M glutamate or L-glutamic acid (97% purity; Sigma-Aldrich; Merck KGaA, Darmstadt, Germany; serving as a growth agonist) was added, and cells were incubated for 96 h. A small volume of the sample was withdrawn from the treated culture every 12 h for cell density measurement, and the yeast cell density was expected to be enhanced under these conditions. An optional step involved replenishing the same volume of the medium containing the drug solution in order to maintain the original culture volume. Throughout the assay, methanol was added every 24 h. Alternatively, camptothecin (97% purity; Sigma-Aldrich; Merck KGaA; serving as a growth antagonist) was added to the culture instead of glutamate. Similar to glutamate-treated cells, samples were withdrawn from the yeast cell culture treated with 100 \u00b5M camptothecin every 12 h for cell density measurement, and the cell density was expected to be inhibited under these culture conditions.",
+            "cite_spans": [
+                {
+                    "start": 150,
+                    "end": 152,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Yeast cultivation for the cell density measurement :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The cell density (culture turbidity) of the collected samples was assessed at an optical density of 600 nm every 12 h for 72 h using a spectrophotometer, and the turbidity level in each sample was recorded. The value of the samples was then compared with the value of the background control. Next, the growth profile of the yeast at each time-point was plotted. The density (unit) of the yeast culture was expected to grow continuously or to be reduced by ~40% following treatment with glutamate or camptothecin, respectively, for 96 h compared with the density of the background control and relative to the measurement at 12 h of cultivation. The normal yeast (SMD1168H) and the yeast transformed with only the pPICZ\u03b1A plasmid (SMD1168H-pPICZ\u03b1A; without the inserted gene) were used as the controls. Subsequently, the overall response of the yeast culture treated with camptothecin was compared with the performance of the drug in a cell-based MTT assay.",
+            "cite_spans": [],
+            "section": "Measurement of the glutamate- and camptothecin-treated yeast cell density by spectrophotometry :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "As SMD1168H-TOPOI was expected to mimic cancer cells, an MTT assay was conducted to examine the effect of camptothecin on various human cell lines and compare it with the effect in yeast cells. The cell lines used in this assay included highly metastatic MDA-MB-231 breast cancer cells, weakly metastatic CAL-27 oral cancer and MCF-7 breast cancer cells, bone marrow-derived mesenchymal stem cells and MCF-10a normal breast cells. All cell lines used in the present study were previously purchased from the American Type Culture Collection (Manassas, VA, USA) and cultured in respective growth medium in the laboratory. The cancerous cells were maintained in high glucose Dulbecco's Modified Eagle's medium (DMEM) supplemented with 10% Fetal bovine serum (FBS) and 100 \u00b5g/ml streptomycin/penicillin, whereas the non-cancerous cells were maintained in DMEM/F12 medium supplemented with 100 mg/ml epidermal growth factor, 1 mg/ml hydrocortisone, 10 mg/ml insulin, 10% FBS and 100 \u00b5g/ml penicillin/streptomycin. The aforementioned culture reagents were all purchased from Gibco (Thermo Fisher Scientific, Inc., Waltham, MA, USA). Briefly, 2\u00d7104 cells/ml of each cell line were seeded in 96-well plates and routinely cultured in a humidified incubator at 37\u00b0C with 5% CO2 for 24 h or until the cells reached ~70% confluence. Subsequently, the cells were treated with increasing concentrations (0\u2013100 \u00b5g/ml) of camptothecin solution for 24, 48 and 72 h. At the end of each incubation period, 24 \u00b5l MTT reagent (5 mg/ml; Sigma-Aldrich; Merck KGaA) was added to each well, and the reaction was incubated for 4 h. The solution was carefully removed without disturbing the formazan crystals that had formed in each well. Subsequently, 100 \u00b5l acidified isopropanol was added to each well and agitated for homogeneous colour development. Following colour development, the intensity of the colour in the plate was measured at 570 nm using an ELISA plate reader. Dose response curves were generated from cell viability (%) plotted against the logarithmic scale (Log) concentration of drug used. The responses of camptothecin in cell-based and yeast-based assays were then compared.",
+            "cite_spans": [],
+            "section": "Analysis of the inhibitory effect on camptothecin-treated cell lines by MTT assay :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "All graphs were generated and statistical analysis of data was performed using one-way analysis of variance via Friedman test by GraphPad Prism software (version 7.04 for Windows; GraphPad Software, Inc., La Jolla, CA, USA). Subsequent to the initial measurement/analysis, the experiments were repeated twice for cell density measurement (n=3 in total) and three times for cell inhibitory effect analysis (n=4 in total) to confirm the consistency, repeatability and reproducibility of the results. All values are expressed as the mean \u00b1 standard deviation. P<0.05 was considered to indicate a statistically significant difference.",
+            "cite_spans": [],
+            "section": "Statistical analysis :::  ::: Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The cell density of the yeast strain SMD1168H was gradually increased after 36 h of cultivation (1.306 units; P<0.05) and reached a peak value of 1.343 units at ~48 h (P<0.05; Fig. 2A). Following this peak, the cell density was reduced from 60 h of cultivation and onwards, with the yeast growth reaching the lowest level of 0.873 units at 72 h. A similar growth profile was observed when SMD1168H was transformed with the empty pPICZ\u03b1A plasmid (SMD1168H-pPICZ\u03b1A) and maintained in the culture without treatment (Fig. 2B). The cell density was significantly increased at 24 h (1.502 units; P<0.01), reaching an optimum growth level of 1.888 units at 36 h (P<0.001) and then reduced to 1.717 units at 48 h (P<0.01). The cell density reached the lowest level of 0.747 units at 72 h (P<0.05), which was lower than the minimal level observed for normal SMD1168H. This phenomenon may be due to the transformation of the plasmid vector into the yeast, causing the cells to be more fragile. By contrast, a different growth curve was observed when the SMD1168H was transformed with the pPICZ\u03b1A plasmid carrying the TOPOI gene (SMD1168H-TOPOI). A significantly higher cell density was observed at 24 h (1.692 units; P<0.01), 36 h (1.851 units; P<0.001) and 48 h (1.953 units; P<0.001) of cultivation, and the yeast growth remained high at later time points (Fig. 2C). Although the growth of the yeast did slightly reduce from 60 h onwards, the cells did not reach the lowest level of growth observed in the other yeast strains. The cell density at 60 h (1.774 units; P<0.001) and 72 h (1.504 units; P<0.01) remained significantly higher compared with the 12 h group, indicating that the transformed TOPOI gene enhanced the growth of the yeast.",
+            "cite_spans": [],
+            "section": "Cell density of untreated SMD1168H and its recombinant forms :::  ::: Results",
+            "ref_spans": [
+                {
+                    "start": 176,
+                    "end": 183,
+                    "mention": "Fig. 2A",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 513,
+                    "end": 520,
+                    "mention": "Fig. 2B",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1349,
+                    "end": 1356,
+                    "mention": "Fig. 2C",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "As shown in Fig. 2D, SMD1168H treated with 100 \u00b5M glutamate exhibited a significantly higher cell density of 1.316 units at 24 h compared with at 12 h. The cell density of the glutamate-treated SMD1168H reached an optimum level of 1.511 units at ~36 h (P<0.01) and was maintained at approximately this level until 72 h of cultivation. The cell densities were 1.551 units (P<0.01), 1.520 units (P<0.01) and 1.600 units (P<0.01) at 48, 60 and 72 h of cultivation, respectively. Similarly, in the glutamate-treated SMD1168H-pPICZ\u03b1A, the growth of the yeast reached 1.351 units at 24 h (P<0.05) and an optimum level at 1.492 units at 36 h of cultivation (P<0.05), and the cells continuously grew at this level until 72 h of cultivation (Fig. 2E). The cell densities were 1.545 units (P<0.01), 1.520 units (P<0.01) and 1.546 units (P<0.01) at 48, 60 and 72 h, respectively. However, the growth profile of the glutamate-treated SMD1168H-TOPOI was not observed to be as expected. The recombinant yeast grew steadily during the early cultivation, and the cell densities were 1.280 units (P<0.05), 1.288 units (P<0.05) and 1.446 units (P<0.05) at 24, 36 and 48 h of cultivation, respectively (Fig. 2F). The cell density reached 1.487 units at 60 h of cultivation, similar to the SMD1168H and SMD1168H-pPICZ\u03b1A, with the optimum level of 1.540 units observed at 72 h of cultivation (P<0.01). This phenomenon indicates that using both glutamate and TOPOI in the culture may create competition among the components. As such, the growth of cells was slightly stunted, which resulted in a delay in reaching the optimum growth level. The growth of these three yeast types clearly responded to glutamate treatment in the culture, indicating that the recombinant yeast may be useful in estimating the effect of other potential agents for cancer treatment.",
+            "cite_spans": [],
+            "section": "Cell density of glutamate-treated SMD1168H and its recombinant forms :::  ::: Results",
+            "ref_spans": [
+                {
+                    "start": 12,
+                    "end": 19,
+                    "mention": "Fig. 2D",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 733,
+                    "end": 740,
+                    "mention": "Fig. 2E",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1184,
+                    "end": 1191,
+                    "mention": "Fig. 2F",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "SMD1168H treated with 100 \u00b5M camptothecin for 72 h exhibited a similar optimum level of cell density as glutamate-treated SMD1168H before 48 h of cultivation. The treated yeast was still capable of maintaining a cell density of 1.340 units at 24 h of cultivation (P<0.05) and an optimum level of 1.583 units at ~36 h of cultivation (P<0.01; Fig. 2G). However, the cell density was subsequently reduced to ~1.225 units, and the growth was gradually maintained at this level until 72 h. In the camptothecin-treated SMD1168H-pPICZ\u03b1A, a similar growth profile was observed, with a cell density of 1.408 units at 24 h (P<0.05) and a peak levels of 1.540 units being reached at 36 h (P<0.01; Fig. 2H). The growth of the yeast was reduced to ~1.389 units and growth continued at this level until 72 h of cultivation. Notably, camptothecin did not induce the same inhibitory effects in SMD1168H-TOPOI as that demonstrated in the other two yeast clones. Despite a markedly lower cell density in the yeast expressing the camptothecin target (TOPOI) at 24 and 36 h compared with SMD1168H and SMD1168H-pPICZ\u03b1A, the recombinant yeast grew steadily at a cell density of ~1.170 units throughout the experiment, and the growth of the recombinant yeast was not inhibited by camptothecin treatment, with no statistically significant changes observed (Fig. 2I). Camptothecin treatment of SMD1168H-TOPOI was expected to reduce the yeast cell density; however, this treatment did not entirely inhibit the yeast growth, indicating the aggressiveness of the SMD1168H-TOPOI, which may be comparable to that of highly metastatic human cancer cells.",
+            "cite_spans": [],
+            "section": "Cell density of camptothecin-treated SMD1168H and its recombinant forms :::  ::: Results",
+            "ref_spans": [
+                {
+                    "start": 341,
+                    "end": 348,
+                    "mention": "Fig. 2G",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 686,
+                    "end": 693,
+                    "mention": "Fig. 2H",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1333,
+                    "end": 1340,
+                    "mention": "Fig. 2I",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Treatment of MCF-10a cells with camptothecin for 72 h did not produce a typical dose-response curve (Fig. 3A). Similarly, no typical dose-response was observed in CAL-27 cells following treatment with camptothecin over 48 h. Camptothecin only produced a logistic dose-response in CAL-27 cells when treatment was performed for 72 h (hillslope=\u22121.29; maximal response, \u226425%; Fig. 3B). The maximal dose-response of camptothecin in MCF-7 cells was observed to improve with treatment for 24 h (hillslope=\u22122.42; maximal response, \u226450%), 48 h (hillslope=\u22120.65; maximal response, \u226425%) and 72 h (hillslope=\u22121.28; maximal response, \u226425%; Fig. 3C). In general, chemosensitivity to camptothecin was better in MCF-7 cells in comparison with CAL-27 cells, although similar dose response was observed in MCF-7 (hillslope=\u22121.28; maximal response, \u226425%) and CAL-27 (hillslope=\u22121.29; maximal response, \u226425%) cells treated for 72 h. As shown in Fig. 3D, camptothecin only produced a typical dose-response in MDA-MB-231 cells treated for 24 h (hillslope=\u22120.37; maximal response, \u226450%). However, the effect was not sustained after 24 h of treatment. The semi-parabolic growth profile, which is a general growth curve that conveys resistance of an organism to a particular drug treatment, was produced when treatment was performed for 72 h. This phenomenon indicates that reduced growth at 48 h of treatment and onwards may be due to by-product accumulation in the culture. These preliminary findings indicate that there was a considerable similarity in the initial response of MDB-MB-231 cells and the recombinant yeast SMD1168H-TOPOI to camptothecin treatment.",
+            "cite_spans": [],
+            "section": "Camptothecin dose-response in various cell lines :::  ::: Results",
+            "ref_spans": [
+                {
+                    "start": 101,
+                    "end": 108,
+                    "mention": "Fig. 3A",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 373,
+                    "end": 380,
+                    "mention": "Fig. 3B",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 629,
+                    "end": 636,
+                    "mention": "Fig. 3C",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 927,
+                    "end": 934,
+                    "mention": "Fig. 3D",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The present study demonstrated that common growth profiles were observed in untreated SMD1168H and SMD1168H-pPICZ\u03b1A, whereas growth enhancement was observed in SMD1168H that had been transformed with the TOPOI gene via a pPICZ\u03b1A plasmid (namely the SMD1168H-TOPOI). Glutamate enhanced the growth of the SMD1168H and SMD1168H-pPICZ\u03b1A; however, when combined with TOPOI expression in the culture, this treatment did not multiply the growth effect further. By contrast, camptothecin reduced the cell growth of the SMD1168H after 36 h of cultivation, but showed no effect on the SMD1168H-pPICZ\u03b1A. The cell density was notably lower during the early treatment of the yeast expressing TOPOI with camptothecin compared with the other yeast strains; however, the cell growth remained stable throughout the experiment. This phenomenon indicates that it was difficult to reduce the growth of the transformed SMD1168H-TOPOI, with a similar phenomenon observed in the highly metastatic MDA-MB-231 breast cancer cells treated with camptothecin.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "SMD1168H-TOPOI was developed in our laboratory as a newly simplified prototype for potential use in anti-growth compound screening. Cell density or growth inhibition can be used as the parameter for measuring the effect of a compound on the yeast. This technique may be useful for screening potential growth inhibitors in the future. A similar strategy has been used to enable high-throughput screening for novel pharmacological modulators of K+ channels. In a previous study, an assay was developed based on the growth of yeast that functionally expresses mammalian Kir2.1 channels (14). In another study, a less demanding phenotypic yeast-based assay on 96-well microplates was established using a methylamine-sensitive yeast strain, in which a methylamine-permeable aquaporin was expressed to rescue proliferation on selection plates, whereby specific inhibition of the aquaporin directly correlated with reduced cell proliferation (15). Engineered-fission yeast strains have also been used in high-throughput screening for phosphodiesterase (PDE) inhibitors that possess \u2018drug-like\u2019 characteristics over a 48-h period by assessing the growth behaviour of the yeast to determine the activity of heterologous cyclic nucleotide PDEs (16). This system could be used to screen cDNA libraries for biological regulators of target PDEs, and to identify whether different PDE protein complexes exhibit distinct patterns of inhibitor sensitivity. To be more specific, a high-throughput yeast-based growth assay has also been used to screen for potential PDE11 inhibitors; however, identifying compounds that inhibit PDE11 is required, as the biological roles of the enzyme are poorly understood (17). In addition, a robust yeast-based growth assay that is potentially applicable to numerous equilibrative nucleoside transporters (ENTs) was developed in order to identify inhibitors of ENT1 of the malarial parasite Plasmodium falciparum (PfENT1) (18). These inhibitors were detected based on their ability to rescue the growth of PfENT1-expressing fui1\u0394 yeast in the presence of a cytotoxic PfENT1 substrate, 5-fluorouridine. The data supported the hypothesis that blocking purine transport through PfENT1 may be a novel and compelling approach for antimalarial drug development (18). By contrast, the expression of Xenopus cyclin A1 was induced in a yeast-based growth interference assay in order to elevate the activity of cell division cycle 28 (Cdc28) kinase in the yeast (19). The hyperactivation of Cdc28 kinase in yeast resulted in growth arrest, and thus compounds that can rescue the cyclin A1-induced growth arrest may be potential novel antitumour drug candidates that act on the cyclin-dependent kinase-mediated cell cycle regulation pathways.",
+            "cite_spans": [
+                {
+                    "start": 584,
+                    "end": 586,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 936,
+                    "end": 938,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 1235,
+                    "end": 1237,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 1690,
+                    "end": 1692,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 1941,
+                    "end": 1943,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 2274,
+                    "end": 2276,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 2471,
+                    "end": 2473,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "By assessing growth behaviour, the enzymes that are targeted in cells do not need to be purified at specific time points for the screening purposes. This strategy provides a simple solution that meets general laboratory needs without requiring specific facilities or equipment to carry out the preliminary screening approach for potential growth inhibitors. Indeed, no additional detection kits, enzymes or reagents are required other than the chemical, medium and reagent required to maintain the recombinant yeast. The assay can ideally be used for screening synthetic compounds, plant extracts, nanoparticles, small molecules and chemical compounds extracted from natural products, including flavonoids. Only those agents that produce a positive effect in the yeast-based approach will then proceed to the subsequent steps, which require more costly gel-based or cell-based assays. To the best of our knowledge, the majority of cell-based assays typically require >7 days to be accomplished, whereas the yeast-based assay requires only 6 days (Fig. 4), which reduces the duration of the screening process by ~15%. As such, this may save months of work in the 12 years required to develop a drug from the original 10,000 test compounds. Therefore, the yeast-based strategy saves time, money and resources, and makes the screening procedures more practical, versatile and competitive in the market, as well as more affordable for the researchers in low-resource laboratories.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": [
+                {
+                    "start": 1047,
+                    "end": 1053,
+                    "mention": "Fig. 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The yeast-based strategy described in the present study was developed when constructing Pichia with multiple copy numbers of TOPOI for the expression and purification of the target enzyme (13,20). GS115 and SMD1168 yeasts were found to be better than Pichia strains in accommodating the exogenous recombinant TOPOI expression, and an enzyme activity of ~3.02\u00d7105 U/l of crude culture was obtained in the recombinant yeast; however, only SMD1168 was able to stably express the enzyme in the culture supernatant at room temperature (13). This prototype development is based on our present original research, and provides innovation and novelty to screening processes within the medical biotechnology sector.",
+            "cite_spans": [
+                {
+                    "start": 189,
+                    "end": 191,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 192,
+                    "end": 194,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 531,
+                    "end": 533,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Yeast expressing higher levels of TOPOI exhibit similarities to highly metastatic human cancer cells, such as MDA-MB-231 (21,22); they exhibit similarly robust cell growth, as determined by respective growth inhibition assays. As such, this SMD1168H-TOPOI can be used as a cost-effective yeast-based assay to conduct high-throughput screening for target-specific growth inhibitors and accelerate the identification of potential compounds. Novel antitumour drugs that have reduced toxicity compared with current chemotherapies are required and may improve the treatment of patients with breast cancer. A similar strategy has previously been conducted using a simplified yeast-based screening approach to search for activators of caspase-3 and caspase-7 (23). This was followed by evaluation of the activity of the selected compounds in two human tumour cell lines, including the acute promyelocytic leukaemia HL-60 and breast adenocarcinoma MCF-7 cells. This proof of principle strategy demonstrates the effectiveness of the yeast assays in the discovery of caspase activators, which may pave the way for a new class of caspase activators with improved anticancer properties.",
+            "cite_spans": [
+                {
+                    "start": 122,
+                    "end": 124,
+                    "mention": "21",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 125,
+                    "end": 127,
+                    "mention": "22",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 753,
+                    "end": 755,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Similar yeast-based assays have been used as platforms for screening and identifying various types of compounds. For instance, a rapid two-step yeast-based assay was developed to screen for anti-prion drugs (24). This assay was used to identify compounds effective against budding yeast prions that are responsible for the [PSI+] and [URE3] phenotypes, and was an efficient high-throughput screening approach for the identification of novel prion inhibitors. An additional robust high-throughput yeast-based assay to determine potential genotoxicity and mutagenicity of drug candidates early in the discovery phase of drug development was created to replace the most widely used Ames Salmonella test, which is not readily adaptable for high-throughput screening, for the assessment of mutagenicity and genotoxicity. The yeast-based system assaying DNA repair was able to detect genotoxicity, which incorporated metabolic activation (25). This assay is efficient, requires little time and small amounts of the compound, while it is adaptable to a high-throughput platform and yields data that accurately and reproducibly detect DNA damage based on metabolic activation. Furthermore, the use of genetically tractable model yeast as a vehicle for target-based high-throughput screening has overcome numerous limitations of in vitro biochemical and phenotypic assay platforms for drug discovery by allowing the identification of on-target compounds that function within a eukaryotic cellular context (26).",
+            "cite_spans": [
+                {
+                    "start": 208,
+                    "end": 210,
+                    "mention": "24",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 933,
+                    "end": 935,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 1497,
+                    "end": 1499,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "A yeast-based assay for monitoring GAr-dependent inhibition of translation was also established and identified doxorubicin as a compound that specifically interferes with the GAr effect on translation in yeast (27). This approach was, thus, validated as an effective high-throughput screening assay for the identification of drugs that interfere with Epstein-Barr virus (EBV) immune evasion and may be candidates for treating EBV-associated diseases, including cancer. Another yeast-based system for identifying and screening inhibitors against coronavirus N7-methyltransferase (MTase) was developed using 96-well and 384-well microtiter plates in order to examine MTase inhibitors previously identified using in vitro biochemical assays, such as sinefungin, which effectively suppressed N7-MTase (28). These results validated the application of a yeast-based assay system for inhibitor screening, while also demonstrating the difference between in vitro and cell-based biochemical assays, whereby more potent inhibitors reducing the activity of coronavirus based on the human N7-MTase can be identified.",
+            "cite_spans": [
+                {
+                    "start": 211,
+                    "end": 213,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 798,
+                    "end": 800,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition to coronavirus, the development of a fully automated anti-parasitic drug-screening yeast system has been reported, which allows for multiple parasite targets to be assessed simultaneously due to the expression of different fluorescent proteins in the yeast strain. Compounds that specifically target parasite enzymes can be selected through this assay, rather than their host counterparts, thus enabling the early elimination of compounds that carry potential side effects (29). In this system, compounds that cannot discriminate between the host and parasite enzymes are excluded by including a strain expressing the human target in the multiplexed screen. The advantages of this type of assay include the use of known targets and the lack of requirement for in vitro culture of parasites.",
+            "cite_spans": [
+                {
+                    "start": 486,
+                    "end": 488,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Rapid yeast-based assays can also be established for screening active drugs against human inherited mitochondrial diseases affecting ATP synthase, in particular ataxia, neuropathy and retinitis pigmentosa syndrome (30). The unique ability of yeast to survive without the production of ATP by oxidative phosphorylation was used to identify chlorhexidine by screening a chemical library and oleate through a candidate approach (30). Furthermore, the high-throughput yeast-based screening bioassays have also been used to detect selective oestrogen receptor modulators and selective androgen receptor (AR) modulators (31), to screen commercial chemical libraries to identify PDE7 inhibitors (32), to robustly identify new lead compounds targeting specific enzymes and to detect the toxicity of human CA isozyme II (hCAII) inhibitors (33), which can be achieved using a multidrug-sensitive derivative of the \u0394nce103 strain expressing a low level of hCAII. Finally, the use of yeast present the advantage that it is a relevant surrogate model for eukaryotic cell processes that can be miniaturised and automated.",
+            "cite_spans": [
+                {
+                    "start": 215,
+                    "end": 217,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 426,
+                    "end": 428,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 615,
+                    "end": 617,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 689,
+                    "end": 691,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 831,
+                    "end": 833,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "To the best of our knowledge, the majority of screening assays are developed using Saccharomyces (S.) cerevisiae. For instance, a miniaturised short-term in vivo genotoxicity screening assay based on genetically modified S. cerevisiae was performed to explore the chronic cytotoxicity and genotoxic effect of compounds in a eukaryotic organism (34). In another example, an efficient and reliable yeast-based detection system was created to evaluate the androgenic activity of endocrine disruptors from pulp and paper mill effluents (35). This system used S. cerevisiae transformed with \u03b2-galactosidase genes, and the reporter expression was driven by human AR and response elements, in order to identify compounds that altered the reporter gene induction by testosterone. The findings of the assay suggested that the pulp and paper mill effluents are rich in androgenic chemicals, and this detection system could be applicable as a primary screening method for inhibitors/activators of AR functions (35). S. cerevisiae has also been used to screen for polymorphisms of human genes, such as heat shock protein 90, which is essential for cell proliferation in budding yeast (36). Speed and low cost make yeast-based assays a useful tool for identifying human polymorphisms and proteins. In addition, a sensitive, fast and user-friendly progesterone receptor (PR) transactivation assay was established using recombinant S. cerevisiae that was modified to express green fluorescent protein driven by human PR and progesterone response element (37). Stimulation of cells with increasing concentrations of progesterone resulted in a significant elevation in fluorescence activity, and this yeast-based bioassay provided a robust and rapid method for high-throughput screening of (anti)-progestative compounds from various sources. Another S. cerevisiae model system has also been used to investigate the regulation of human BRAFV600E (38). Under osmotic stress conditions, hBRAFV600E can rescue the growth of strains carrying a double or triple mitogen-activated protein kinase deletion in high osmolarity glycerol. The results of this previous study demonstrated the potential of using S. cerevisiae to investigate hBRAFV600E, identify its functional interactors and, in doing so, uncover new cancer-associated genes with therapeutic potential. In brief, live yeast cell-based assays are rapid, inexpensive, sensitive and amenable to high-throughput methods that can be used for a variety of applications, including isolation of novel genes, directed evolution and gene-specific drug screening, and will facilitate various approaches in numerous research areas.",
+            "cite_spans": [
+                {
+                    "start": 345,
+                    "end": 347,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 533,
+                    "end": 535,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1000,
+                    "end": 1002,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 1173,
+                    "end": 1175,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1540,
+                    "end": 1542,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 1929,
+                    "end": 1931,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In the current study, Pichia was used as the host to express TOPOI, rather than Saccharomyces, due to the simplicity of the techniques required for molecular genetic manipulation and the similarity to Saccharomyces (39). Furthermore, the ability of Pichia to produce foreign proteins at a higher level, intracellularly and extracellularly, and the ability to perform eukaryotic post-translational modifications make this yeast strain more suitable to produce proteins for human applications. The SMD1168H-TOPOI also offers a competitive and low-cost strategy for potential growth inhibitor screening that may be accessible in low-resource laboratory settings, while still enabling a high-throughput screening process. TOPOI is the focus of the present study; this enzyme is a general target for screening potential growth inhibitors that can be used as effective compounds for combined use with breast cancer chemotherapy drugs, since various anticancer drugs, including camptothecin, are TOPOI inhibitors.",
+            "cite_spans": [
+                {
+                    "start": 216,
+                    "end": 218,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "In conclusion, the current study developed a preliminary form of a yeast-based system that is cost-effective, fast, easy to operate and efficient for compound screening. This system is expected to overcome certain limitations of the cell-based proliferation assays, while maintaining similar screening functions. Although yeast-based bioassays have been established as powerful approaches to identify potential therapeutic compounds, creating robust models that are amenable to high-throughput screening remains a challenge. Therefore, further studies should focus in this area to ensure that the function of the assay can be implemented effectively in the future.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1.: Schematic of general processes for drug screening. The figure was adapted from Figure 9: The Drug Discovery and Development Process from the PhRMA Pharmaceutical Industry Profile 2010 (12).",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: Cell density of SMD1168 and transformed yeast clones with and without treatment at different time-points. (A) Untreated SMD1168H, (B) untreated SMD1168H-pPICZ\u03b1A, (C) untreated SMD1168H-TOPOI, (D) glutamate-treated SMD1168H, (E) glutamate-treated SMD1168H-pPICZ\u03b1A, (F) glutamate-treated SMD1168H-TOPOI, (G) camptothecin-treated SMD1168H, (H) camptothecin-treated SMD1168H-pPICZ\u03b1A and (I) camptothecin-treated SMD1168H-TOPOI. *P<0.05, **P<0.01 and ***P<0.001 vs. 12 h group. TOPOI, topoisomerase I.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: Camptothecin dose-response curves using human cell lines. (A) MCF-10a, (B) CAL-27, (C) MCF-7 and (D) MDA-MB-231 cells were subjected to treatment with camptothecin for 24, 48 and 72 h. Blue arrows indicate levels of maximal response.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: Overview schematic of the required time frame of newly developed yeast-based and cell-based assays for potential growth inhibitor screening. The yeast-based assay requires 6 days to complete, whereas cell-based tests typically require >7 days.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Chemotherapy",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Brearley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Feline Soft Tissue and General Surgery",
+            "volume": "",
+            "issn": "",
+            "pages": "161-167",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/B978-0-7020-4336-9.00016-0"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Drug discovery from plant sources: An integrated approach",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Katiyar",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gupta",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Kanjilal",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Katiyar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Ayu",
+            "volume": "33",
+            "issn": "",
+            "pages": "10-19",
+            "other_ids": {
+                "DOI": [
+                    "10.4103/0974-8520.100295"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "New perspectives on how to discover drugs from herbal medicines: CAM's outstanding contribution to modern therapeutics",
+            "authors": [
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Pan",
+                    "suffix": ""
+                },
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Zhou",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Gao",
+                    "suffix": ""
+                },
+                {
+                    "first": "ZL",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "SF",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                },
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "YF",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "WF",
+                    "middle": [],
+                    "last": "Fong",
+                    "suffix": ""
+                },
+                {
+                    "first": "KM",
+                    "middle": [],
+                    "last": "Ko",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Evid Based Complement Alternat Med",
+            "volume": "2013",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1155/2013/627375"
+                ]
+            }
+        },
+        "BIBREF3": {
+            "title": "Pharmaceutical Industry Profile 2010",
+            "authors": [
+                {
+                    "first": "Research",
+                    "middle": [],
+                    "last": "Pharmaceutical",
+                    "suffix": ""
+                },
+                {
+                    "first": "America",
+                    "middle": [],
+                    "last": "Manufacturers of",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Expression of stable and active human DNA topoisomerase I in Pichia pastoris",
+            "authors": [
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Lim",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Miswan",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Chew",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Noordin",
+                    "suffix": ""
+                },
+                {
+                    "first": "BY",
+                    "middle": [],
+                    "last": "Khoo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Protein Expr Purif",
+            "volume": "141",
+            "issn": "",
+            "pages": "52-62",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.pep.2017.09.003"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Novel neuroprotective K+ channel inhibitor identified by high-throughput screening in yeast",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Zaks-Makhina",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Aizenman",
+                    "suffix": ""
+                },
+                {
+                    "first": "ES",
+                    "middle": [],
+                    "last": "Levitan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol Pharmacol",
+            "volume": "65",
+            "issn": "",
+            "pages": "214-219",
+            "other_ids": {
+                "DOI": [
+                    "10.1124/mol.65.1.214"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "A yeast-based phenotypic screen for aquaporin inhibitors",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Altmann",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Barzel",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Krehan",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Beitz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Pflugers Arch",
+            "volume": "456",
+            "issn": "",
+            "pages": "717-720",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00424-007-0383-3"
+                ]
+            }
+        },
+        "BIBREF7": {
+            "title": "A fission yeast-based platform for phosphodiesterase inhibitor HTSs and analyses of phosphodiesterase activity",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Demirbas",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Ceyhan",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Wyman",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Hoffman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Handb Exp Pharmacol",
+            "volume": "",
+            "issn": "",
+            "pages": "135-149",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/978-3-642-17969-3_5"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Identification of biologically active PDE11-selective inhibitors using a yeast-based high-throughput screen",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Ceyhan",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Birsoy",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Hoffman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Chem Biol",
+            "volume": "19",
+            "issn": "",
+            "pages": "155-163",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.chembiol.2011.12.010"
+                ]
+            }
+        },
+        "BIBREF9": {
+            "title": "Yeast-based high-throughput screen identifies Plasmodium falciparum equilibrative nucleoside transporter 1 inhibitors that kill malaria parasites",
+            "authors": [
+                {
+                    "first": "IJ",
+                    "middle": [],
+                    "last": "Frame",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Deniskin",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rinderspacher",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Katz",
+                    "suffix": ""
+                },
+                {
+                    "first": "SX",
+                    "middle": [],
+                    "last": "Deng",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Moir",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Adjalley",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Coburn-Flynn",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Fidock",
+                    "suffix": ""
+                },
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Willis",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "ACS Chem Biol",
+            "volume": "10",
+            "issn": "",
+            "pages": "775-783",
+            "other_ids": {
+                "DOI": [
+                    "10.1021/cb500981y"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "A new structural class of proteasome inhibitors identified by microbial screening using yeast-based assay",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Asai",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tsujita",
+                    "suffix": ""
+                },
+                {
+                    "first": "SV",
+                    "middle": [],
+                    "last": "Sharma",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Yamashita",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Akinaga",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Funakoshi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kobayashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Mizukami",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Biochem Pharmacol",
+            "volume": "67",
+            "issn": "",
+            "pages": "227-234",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.bcp.2003.08.035"
+                ]
+            }
+        },
+        "BIBREF11": {
+            "title": "Understanding breast cancer-The long and winding road",
+            "authors": [
+                {
+                    "first": "KE",
+                    "middle": [],
+                    "last": "Lukong",
+                    "suffix": ""
+                }
+            ],
+            "year": 2017,
+            "venue": "BBA Clin",
+            "volume": "7",
+            "issn": "",
+            "pages": "64-77",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.bbacli.2017.01.001"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Comparing the expression of human DNA topoisomerase I in KM71 and X33 strains of Pichia pastoris",
+            "authors": [
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "Ang",
+                    "suffix": ""
+                },
+                {
+                    "first": "LS",
+                    "middle": [],
+                    "last": "Teoh",
+                    "suffix": ""
+                },
+                {
+                    "first": "MK",
+                    "middle": [],
+                    "last": "Chan",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Miswan",
+                    "suffix": ""
+                },
+                {
+                    "first": "BY",
+                    "middle": [],
+                    "last": "Khoo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Electron J Biotechnol",
+            "volume": "21",
+            "issn": "",
+            "pages": "9-17",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.ejbt.2016.01.007"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "Potential effects of chrysin on MDA-MB-231 cells",
+            "authors": [
+                {
+                    "first": "TB",
+                    "middle": [],
+                    "last": "Hong",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rahumatullah",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Yogarajah",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ahmad",
+                    "suffix": ""
+                },
+                {
+                    "first": "KB",
+                    "middle": [],
+                    "last": "Yin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Int J Mol Sci",
+            "volume": "11",
+            "issn": "",
+            "pages": "1057-1069",
+            "other_ids": {
+                "DOI": [
+                    "10.3390/ijms11031057"
+                ]
+            }
+        },
+        "BIBREF14": {
+            "title": "Antitumor activity of Chinese propolis in human breast cancer MCF-7 and MDA-MB-231 cells",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Xuan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Yan",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Sang",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "He",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Evid Based Complement Alternat Med",
+            "volume": "2014",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1155/2014/280120"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Potential small-molecule activators of caspase-7 identified using yeast-based caspase-3 and \u22127 screening assays",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Pereira",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Lopes-Rodrigues",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Coutinho",
+                    "suffix": ""
+                },
+                {
+                    "first": "MP",
+                    "middle": [],
+                    "last": "Neves",
+                    "suffix": ""
+                },
+                {
+                    "first": "RT",
+                    "middle": [],
+                    "last": "Lima",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pinto",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Cidade",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Vasconcelos",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Saraiva",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Eur J Pharm Sci",
+            "volume": "54",
+            "issn": "",
+            "pages": "8-16",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.ejps.2013.12.017"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Isolation of drugs active against mammalian prions using a yeast-based screening assay",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bach",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Talarek",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Andrieu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JM",
+                    "middle": [],
+                    "last": "Vierfond",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Mettey",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Galons",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Dormont",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Meijer",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Cullin",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Blondel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Nat Biotechnol",
+            "volume": "21",
+            "issn": "",
+            "pages": "1075-1081",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nbt855"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Development of a highthroughput yeast-based assay for detection of metabolically activated genotoxins",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Kramer",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Swaffield",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chai",
+                    "suffix": ""
+                },
+                {
+                    "first": "AG",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Mutat Res",
+            "volume": "653",
+            "issn": "",
+            "pages": "63-69",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.mrgentox.2008.03.006"
+                ]
+            }
+        },
+        "BIBREF18": {
+            "title": "Yeast: Bridging the gap between phenotypic and biochemical assays for high-throughput screening",
+            "authors": [
+                {
+                    "first": "PW",
+                    "middle": [],
+                    "last": "Denny",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Expert Opin Drug Discov",
+            "volume": "16",
+            "issn": "",
+            "pages": "1-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "A yeast-based assay identifies drugs that interfere with immune evasion of the Epstein-Barr virus",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Voisset",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Daskalogianni",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Contesse",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Mazars",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Arbach",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Le Cann",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Soubigou",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Apcher",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "F\u00e5hraeus",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Blondel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Dis Model Mech",
+            "volume": "7",
+            "issn": "",
+            "pages": "435-444",
+            "other_ids": {
+                "DOI": [
+                    "10.1242/dmm.014308"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Yeast-based assays for the high-throughput screening of inhibitors of coronavirus RNA cap guanine-N7-methyltransferase",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Sun",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Tao",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Shi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Guo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Antiviral Res",
+            "volume": "104",
+            "issn": "",
+            "pages": "156-164",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.antiviral.2014.02.002"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "Yeast-based automated high-throughput screens to identify anti-parasitic lead compounds",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bilsland",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sparkes",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Williams",
+                    "suffix": ""
+                },
+                {
+                    "first": "HJ",
+                    "middle": [],
+                    "last": "Moss",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "de Clare",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Pir",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Rowland",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Aubrey",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Pateman",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Young",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Open Biol",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1098/rsob.120158"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Personalized medicine for targeted and platinum-based chemotherapy of lung and bladder cancer",
+            "authors": [
+                {
+                    "first": "GD",
+                    "middle": [],
+                    "last": "Cimino",
+                    "suffix": ""
+                },
+                {
+                    "first": "CX",
+                    "middle": [],
+                    "last": "Pan",
+                    "suffix": ""
+                },
+                {
+                    "first": "PT",
+                    "middle": [],
+                    "last": "Henderson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Bioanalysis",
+            "volume": "5",
+            "issn": "",
+            "pages": "369-391",
+            "other_ids": {
+                "DOI": [
+                    "10.4155/bio.12.325"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "A yeast-based assay identifies drugs active against human mitochondrial disorders",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Couplan",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Aiyar",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kucharczyk",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kabala",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Ezkurdia",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Gagneur",
+                    "suffix": ""
+                },
+                {
+                    "first": "RP",
+                    "middle": [],
+                    "last": "St Onge",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Salin",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Soubigou",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Le Cann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "108",
+            "issn": "",
+            "pages": "11989-11994",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.1101478108"
+                ]
+            }
+        },
+        "BIBREF24": {
+            "title": "SERMs and SARMs: Detection of their activities with yeast-based bioassays",
+            "authors": [
+                {
+                    "first": "TF",
+                    "middle": [],
+                    "last": "Bovee",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Thevis",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Hamers",
+                    "suffix": ""
+                },
+                {
+                    "first": "AA",
+                    "middle": [],
+                    "last": "Peijnenburg",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Nielen",
+                    "suffix": ""
+                },
+                {
+                    "first": "WG",
+                    "middle": [],
+                    "last": "Schoonen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Steroid Biochem Mol Biol",
+            "volume": "118",
+            "issn": "",
+            "pages": "85-92",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.jsbmb.2009.10.007"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "New classes of PDE7 inhibitors identified by a fission yeast-based HTS",
+            "authors": [
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Alaamery",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Wyman",
+                    "suffix": ""
+                },
+                {
+                    "first": "FD",
+                    "middle": [],
+                    "last": "Ivey",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Allain",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Demirbas",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Ceyhan",
+                    "suffix": ""
+                },
+                {
+                    "first": "CS",
+                    "middle": [],
+                    "last": "Hoffman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "J Biomol Screen",
+            "volume": "15",
+            "issn": "",
+            "pages": "359-367",
+            "other_ids": {
+                "DOI": [
+                    "10.1177/1087057110362100"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Development of a high throughput yeast-based screening assay for human carbonic anhydrase isozyme II inhibitors",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sangkaew",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Krungkrai",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Yompakdee",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "AMB Express",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/s13568-018-0653-9"
+                ]
+            }
+        },
+        "BIBREF27": {
+            "title": "A yeast-based method for the detection of cyto and genotoxicity",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Lichtenberg-Frat\u00e9",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Schmitt",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Gellert",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ludwig",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Toxicol In Vitro",
+            "volume": "17",
+            "issn": "",
+            "pages": "709-716",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0887-2333(03)00129-2"
+                ]
+            }
+        },
+        "BIBREF28": {
+            "title": "Development of a yeast-based assay to determine the (anti)androgenic contaminants from pulp and paper mill effluents in India",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Chatterjee",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Majumder",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Roy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Environ Toxicol Pharmacol",
+            "volume": "24",
+            "issn": "",
+            "pages": "114-121",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.etap.2007.04.006"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "A yeast-based assay reveals a functional defect of the Q488H polymorphism in human Hsp90alpha",
+            "authors": [
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "MacLean",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Llordella",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Bot",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Picard",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Biochem Biophys Res Commun",
+            "volume": "337",
+            "issn": "",
+            "pages": "133-137",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.bbrc.2005.09.025"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "Screening of some anti-progestin endocrine disruptors using a recombinant yeast-based in vitro bioassay",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Chatterjee",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Majumder",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Roy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Toxicol In Vitro",
+            "volume": "22",
+            "issn": "",
+            "pages": "788-798",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.tiv.2007.12.006"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "Development of a yeast-based system to identify new hBRAFV600E functional interactors",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lubrano",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Comelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Piccirilli",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Marranci",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Dapporto",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Tantillo",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Gemignani",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Gutkind",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Salvetti",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chiorino",
+                    "suffix": ""
+                }
+            ],
+            "year": 2019,
+            "venue": "Oncogene",
+            "volume": "38",
+            "issn": "",
+            "pages": "1355-1366",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/s41388-018-0496-5"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "title": "Fed-batch fermentation of GM-CSF-producing glycoengineered Pichia pastoris under controlled specific growth rate",
+            "authors": [
+                {
+                    "first": "PP",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Inan",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Festjens",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Haustraete",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Van Hecke",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Contreras",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Meagher",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Callewaert",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Microb Cell Fact",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1475-2859-9-93"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Cancer cachexia-pathophysiology and management",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Suzuki",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Asakawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Amitani",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Nakamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Inui",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "J Gastroenterol",
+            "volume": "48",
+            "issn": "",
+            "pages": "574-594",
+            "other_ids": {
+                "DOI": [
+                    "10.1007/s00535-013-0787-0"
+                ]
+            }
+        },
+        "BIBREF34": {
+            "title": "Impact of physical exercise in cancer survivors during and after antineoplastic treatments",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ferioli",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Zauli",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Martelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Vitale",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "McCubrey",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ultimo",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Capitani",
+                    "suffix": ""
+                },
+                {
+                    "first": "LM",
+                    "middle": [],
+                    "last": "Neri",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Oncotarget",
+            "volume": "9",
+            "issn": "",
+            "pages": "14005-14034",
+            "other_ids": {
+                "DOI": [
+                    "10.18632/oncotarget.24456"
+                ]
+            }
+        },
+        "BIBREF35": {
+            "title": "Targeted therapy: Attacking cancer with molecular and immunological targeted agents",
+            "authors": [
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Wilkes",
+                    "suffix": ""
+                }
+            ],
+            "year": 2018,
+            "venue": "Asia Pac J Oncol Nurs",
+            "volume": "5",
+            "issn": "",
+            "pages": "137-155",
+            "other_ids": {
+                "DOI": [
+                    "10.4103/apjon.apjon_79_17"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "Pharmaceutical prospecting and the potential for pharmaceutical crops. Natural product drug discovery and development at the United States National Cancer Institute",
+            "authors": [
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Cragg",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Boyd",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Grever",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Schepartz",
+                    "suffix": ""
+                }
+            ],
+            "year": 1995,
+            "venue": "Ann Missouri Bot Gard",
+            "volume": "82",
+            "issn": "",
+            "pages": "47-53",
+            "other_ids": {
+                "DOI": [
+                    "10.2307/2399979"
+                ]
+            }
+        },
+        "BIBREF37": {
+            "title": "Genetically based therapeutics for cancer: Similarities and contrasts with traditional drug discovery and development",
+            "authors": [
+                {
+                    "first": "TW",
+                    "middle": [],
+                    "last": "Hermiston",
+                    "suffix": ""
+                },
+                {
+                    "first": "DH",
+                    "middle": [],
+                    "last": "Kirn",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Mol Ther",
+            "volume": "11",
+            "issn": "",
+            "pages": "496-507",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.ymthe.2004.12.004"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Principles of early drug discovery",
+            "authors": [
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Rees",
+                    "suffix": ""
+                },
+                {
+                    "first": "SB",
+                    "middle": [],
+                    "last": "Kalindjian",
+                    "suffix": ""
+                },
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "Philpott",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Br J Pharmacol",
+            "volume": "162",
+            "issn": "",
+            "pages": "1239-1249",
+            "other_ids": {
+                "DOI": [
+                    "10.1111/j.1476-5381.2010.01127.x"
+                ]
+            }
+        }
+    }
+}

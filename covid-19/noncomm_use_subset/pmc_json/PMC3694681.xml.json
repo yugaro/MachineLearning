@@ -1,0 +1,1369 @@
+{
+    "paper_id": "PMC3694681",
+    "metadata": {
+        "title": "Multitask learning for host\u2013pathogen protein interactions",
+        "authors": [
+            {
+                "first": "Meghana",
+                "middle": [],
+                "last": "Kshirsagar",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jaime",
+                "middle": [],
+                "last": "Carbonell",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Judith",
+                "middle": [],
+                "last": "Klein-Seetharaman",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Infectious diseases are a major health concern worldwide, causing millions of illnesses and deaths each year. Newly emerging viral diseases, such as swine H1N1 influenza, severe acute respiratory syndrome (SARS) and bacterial infections, such as the recurrent Salmonella and Escherichia coli outbreaks not only lead to wide-spread loss of life and health, but also result in heavy economic losses. To better navigate this landscape of infectious diseases, it is important to not only understand the mechanisms of individual diseases, but also the commonalities between them. Combining knowledge from related diseases will give us deeper insights into infection and host immune response, will enhance our ability to comprehend new diseases and lead to efficient development of therapeutics.",
+            "cite_spans": [],
+            "section": "1 INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Key to the infection process are host\u2013pathogen interactions at the molecular level, where pathogen proteins physically bind with human proteins. Via these protein interactions, the pathogen manipulates important biological processes in the host cell, evades host immune response and multiplies within the host. Interactions between host and pathogen proteins can be studied using small-scale biochemical, biophysical and genetic experiments or large-scale high-throughput screening methods like yeast two-hybrid (Y2H) assays. Databases like PHI-base (Winnenburg et al., 2008), PIG (Driscoll et al., 2009), HPIDB (Kumar and Nanduri, 2010), PHISTO (Tekir et al., 2012) aggregate host\u2013pathogen protein interactions from several small-scale and high-throughput experiments via manual literature curation. These databases are valuable sources of information for developing models of the modus operandi of pathogens.",
+            "cite_spans": [
+                {
+                    "start": 551,
+                    "end": 574,
+                    "mention": "Winnenburg et al., 2008",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 582,
+                    "end": 603,
+                    "mention": "Driscoll et al., 2009",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 613,
+                    "end": 636,
+                    "mention": "Kumar and Nanduri, 2010",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 647,
+                    "end": 665,
+                    "mention": "Tekir et al., 2012",
+                    "ref_id": "BIBREF17"
+                }
+            ],
+            "section": "1 INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "However, interaction datasets from these databases are not only small but are available for only a few well-studied pathogens. For example, the PHI-base (Winnenburg et al., 2008) database covers 64 diseases but has only 1335 interactions, PIG (Driscoll et al., 2009) covers only 12 pathogens. Computationally, this calls for techniques that combine datasets and build joint models across several pathogens, which can then be used to analyze the commonalities in the pathogens and also to predict plausible interactions that are biased by this joint understanding.",
+            "cite_spans": [
+                {
+                    "start": 154,
+                    "end": 177,
+                    "mention": "Winnenburg et al., 2008",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 244,
+                    "end": 265,
+                    "mention": "Driscoll et al., 2009",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "1 INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In our work, we study host\u2013pathogen protein\u2013protein interaction (PPI) where the host is fixed and the pathogens are various bacterial species (Fig. 1A). The host species we consider is human and the bacterial species are Yersinia pestis, Francisella tularensis, Salmonella and Bacillus anthracis, which cause the diseases bubonic plague, acute pneumonia, typhoid and anthrax, respectively.\n",
+            "cite_spans": [],
+            "section": "1 INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 143,
+                    "end": 149,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Some recent work on infectious diseases has alluded to the hypothesis that different pathogens target essentially the same critical biological processes in the human body. The analysis by Chen et al. (2012) suggests that HIV infection shares common molecular mechanisms with certain signaling pathways and cancers. Dyer et al. (2008) study bacterial and viral interactions with human genes and find infection mechanisms common to multiple pathogens. Experiments by Jubelin et al. (2010) show how various bacterial cyclomodulins target the host cell cycle. The study by Mukhtar et al. (2011) on plant pathogens, in particular, Arabidopsis concludes that pathogens from different kingdoms deploy independently evolved virulence proteins that interact with a limited set of highly connected cellular hubs to facilitate their diverse life cycle strategies. Figure 1B illustrates an example depicting the commonality in various bacterial species, where they are targeting the same biological pathways in their human host.",
+            "cite_spans": [
+                {
+                    "start": 188,
+                    "end": 206,
+                    "mention": "Chen et al. (2012)",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 315,
+                    "end": 333,
+                    "mention": "Dyer et al. (2008)",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 465,
+                    "end": 486,
+                    "mention": "Jubelin et al. (2010)",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 569,
+                    "end": 590,
+                    "mention": "Mukhtar et al. (2011)",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "1 INTRODUCTION",
+            "ref_spans": [
+                {
+                    "start": 853,
+                    "end": 861,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "This biological hypothesis, which we henceforth call the commonality hypothesis, is exploited here to jointly learn PPI models for multiple bacterial species. We translate the hypothesis into a prior that will bias the learned models. We use a multitask learning\u2013based approach, where each \u2018task\u2019 represents the interaction of one bacterial species with human. The prior is represented in the form of a regularizer that penalizes models to the degree that the above hypothesis is violated.",
+            "cite_spans": [],
+            "section": "1 INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "The most reliable experimental methods for studying PPI are often time-consuming and expensive, making it hard to investigate the prohibitively large set of possible host\u2013pathogen interactions\u2014for example, the bacterium B.anthracis, which causes anthrax, has about 2321 proteins, which when coupled with the 25 000 or so human proteins gives approximately 60 million protein pairs to test, experimentally. Computational techniques complement laboratory-based methods by predicting highly probable PPIs\u2014thereby enabling experimental biologists to focus on fewer interactions and ruling out the vast majority of unlikely ones.",
+            "cite_spans": [],
+            "section": "2 BACKGROUND",
+            "ref_spans": []
+        },
+        {
+            "text": "In particular, supervised machine learning\u2013based methods use the few experimentally discovered interactions as training data and formulate the interaction prediction problem in a classification setting, with target classes: \u2018interacting\u2019 or \u2018non-interacting\u2019. Features are derived for each host\u2013pathogen protein pair using various attributes of the two proteins such as protein sequence, gene expression, gene ontology (GO) etc. The general outline of the supervised PPI prediction procedure is illustrated in Supplementary Figure S1.",
+            "cite_spans": [],
+            "section": "2 BACKGROUND",
+            "ref_spans": []
+        },
+        {
+            "text": "Most of the prior work in PPI prediction has focussed on building models separately for individual organisms (Chen and Liu, 2005; Qi et al., 2006; Singh et al., 2006; Wu et al., 2006) or on building a model specific to a disease in the case of host\u2013pathogen PPI prediction (Dyer et al., 2007; Kshirsagar et al., 2012; Qi et al., 2009; Tastan et al., 2009). The use of PPI data from several organisms has predominantly been in the form of (i) features derived from various PPI datasets, (ii) use of common structural properties of proteins across organisms (Wang et al., 2007) or (iii) methods that narrow down predicted interactions in the organism of interest (Garcia et al., 2010). Some of these methods use the concepts of \u2018homologs\u2019, \u2018orthologs\u2019 and \u2018interologs\u2019 to define a similarity measure between PPIs from various organisms (Garcia et al., 2010).",
+            "cite_spans": [
+                {
+                    "start": 110,
+                    "end": 128,
+                    "mention": "Chen and Liu, 2005",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 130,
+                    "end": 145,
+                    "mention": "Qi et al., 2006",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 147,
+                    "end": 165,
+                    "mention": "Singh et al., 2006",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 167,
+                    "end": 182,
+                    "mention": "Wu et al., 2006",
+                    "ref_id": "BIBREF23"
+                },
+                {
+                    "start": 274,
+                    "end": 291,
+                    "mention": "Dyer et al., 2007",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 293,
+                    "end": 316,
+                    "mention": "Kshirsagar et al., 2012",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 318,
+                    "end": 333,
+                    "mention": "Qi et al., 2009",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 335,
+                    "end": 354,
+                    "mention": "Tastan et al., 2009",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 557,
+                    "end": 574,
+                    "mention": "Wang et al., 2007",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 662,
+                    "end": 681,
+                    "mention": "Garcia et al., 2010",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 835,
+                    "end": 854,
+                    "mention": "Garcia et al., 2010",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "2 BACKGROUND",
+            "ref_spans": []
+        },
+        {
+            "text": "There has been little work on combining PPI datasets with the goal of improving prediction performance for multiple organisms. Qi et al. (2010) proposed a semi-supervised multitask framework to predict PPIs from partially labeled reference sets. The basic idea is to perform multitask learning on a supervised classification task and a semi-supervised auxiliary task via a regularization term. Another line of work in PPI prediction (Xu et al., 2010) uses the Collective Matrix Factorization (CMF) approach proposed by Singh and Gordon (2008). The CMF method learns models for multiple networks by simultaneously factorizing several adjacency matrices and sharing parameters amongst the factors. Xu et al. (2010) use these ideas in their transfer learning setting, where the source network is a relatively dense interaction network of proteins and the objective is to infer PPI edges in a relatively sparse target network. To compute similarities between the nodes in the source and target networks, they use protein sequences and the topological structures of the interaction networks.",
+            "cite_spans": [
+                {
+                    "start": 127,
+                    "end": 143,
+                    "mention": "Qi et al. (2010)",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 434,
+                    "end": 449,
+                    "mention": "Xu et al., 2010",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 519,
+                    "end": 542,
+                    "mention": "Singh and Gordon (2008)",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 696,
+                    "end": 712,
+                    "mention": "Xu et al. (2010)",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "2 BACKGROUND",
+            "ref_spans": []
+        },
+        {
+            "text": "Multitask learning is a family of machine learning methods that addresses the issue of building models using data from multiple problem domains (i.e. \u2018tasks\u2019) by exploiting the similarity between them. The goal is to achieve performance benefits for all the tasks involved. This paradigm of building joint models has been applied successfully in many areas including text mining, computer vision, etc. Because bioinformatics datasets often represent an organism, a natural notion of a \u2018task\u2019 is an \u2018organism\u2019\u2014for example, the work by Widmer et al. (2010) uses a multitask learning approach for splice-site prediction across many organisms. They use phylogenetic trees to incorporate similarity between organisms (i.e. tasks). For a survey of multitask learning in computational biology, see Xu and Yang (2011).",
+            "cite_spans": [
+                {
+                    "start": 534,
+                    "end": 554,
+                    "mention": "Widmer et al. (2010)",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 791,
+                    "end": 809,
+                    "mention": "Xu and Yang (2011)",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "3 APPROACH",
+            "ref_spans": []
+        },
+        {
+            "text": "Our multitask learning method is based on the task regularization framework, which formulates the multitask learning problem as an objective function with two terms: an empirical loss term on the training data of all tasks, and a regularization term that encodes the relationships between tasks. Equation (1) shows the general form of such an objective, the term R being the regularizer raised to the power p and with a q-norm. The work by Evgeniou and Pontil (2004) is one of the early few to develop this general approach. The function in Equation (1) represents a simple multitask objective with a single regularizer R; many of the formulations often involve a summation over multiple terms.\n(1)\n",
+            "cite_spans": [
+                {
+                    "start": 440,
+                    "end": 466,
+                    "mention": "Evgeniou and Pontil (2004)",
+                    "ref_id": "BIBREF33"
+                }
+            ],
+            "section": "3 APPROACH",
+            "ref_spans": []
+        },
+        {
+            "text": "We optimize this function by modifying the regularizer R to encode the biological hypothesis. Our approach differs greatly from prior work because we propose a technique to translate a problem-relevant biological hypothesis into a task regularization\u2013based approach rather than applying existing general formalisms on a dataset. Our tasks try to capture a naturally occurring phenomenon. While our framework is developed in the context of a specific hypothesis, we also illustrate the incorporation of other hypotheses with an example. The key contributions of our work are as follows:\nwe present a novel way of combining experimental PPI data coming from several organismswe incorporate domain knowledge in designing a prior that causes the learned models to exhibit the requisite common structure across the tasksto optimize the resulting non-convex objective function, we implement a concave convex procedure (CCCP)-based method\n",
+            "cite_spans": [],
+            "section": "3 APPROACH",
+            "ref_spans": []
+        },
+        {
+            "text": "In the Methods section (Section 4), we describe details of the PPI datasets and our multitask learning framework. The evaluation metrics and description of experiments is in Section 6, results and analysis in Section 7.",
+            "cite_spans": [],
+            "section": "3 APPROACH",
+            "ref_spans": []
+        },
+        {
+            "text": "Biologists often represent the set of human proteins involved in a particular biological process by a graph called a \u2018biological pathway\u2019. One such example, the \u2018glucose transport pathway\u2019 in human is shown in the Supplementary. To use this pathway construct, we revise our hypothesis to \u2018proteins from different bacterial species are likely to interact with human proteins from the same biological pathway\u2019. Figure 1B illustrates an example where this hypothesis holds. The pathway information for each human protein can be obtained from pathway databases like Reactome (Matthews et al., 2009) and PID (Schaefer et al., 2009). While pathways are generally represented as graphs, for our current work we do not use the edges. We treat a pathway as a set of proteins\u2014a human protein h can be a member of several pathways depending on the biological processes it is involved in. Let N be the total number of pathways in human. For a protein pair , let  be the binary \u2018pathway vector\u2019 indicating the pathway membership of h.",
+            "cite_spans": [
+                {
+                    "start": 572,
+                    "end": 593,
+                    "mention": "Matthews et al., 2009",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 604,
+                    "end": 625,
+                    "mention": "Schaefer et al., 2009",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "The pathway-based objective ::: 4.1 Multitask pathway\u2013based learning ::: 4 METHODS",
+            "ref_spans": [
+                {
+                    "start": 409,
+                    "end": 417,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The commonality hypothesis suggests that the pathway memberships of human proteins from interactions should be similar across tasks. We define a pathway-summary function S, which aggregates all pathway vectors for a given task . Because our hypothesis is about interactions, we only consider pathway vectors of positive examples. Let  represent the set of positive examples from tasks  and ; let  be their sizes. In Figure 2, we depict the aggregation done by S. Mathematically, we have\n(2)\nwhere  is the pathway vector for example i, and . S sums up the pathway vectors of examples predicted to be positive. We normalize using  to compensate for the different dataset sizes across tasks.\n",
+            "cite_spans": [],
+            "section": "The pathway-based objective ::: 4.1 Multitask pathway\u2013based learning ::: 4 METHODS",
+            "ref_spans": [
+                {
+                    "start": 416,
+                    "end": 424,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Let  be a matrix containing all pathway vectors for positive examples from task . Analogously,  is a matrix for the positive examples from task . Matrices Ps and Pt are constant matrices and are known a priori. Let  and  be the pathway summaries of the tasks. We want to penalize the dissimilarity between these summaries. Our objective function thus has the following general form:\n(3)\n",
+            "cite_spans": [],
+            "section": "The pathway-based objective ::: 4.1 Multitask pathway\u2013based learning ::: 4 METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Here  and  can be any convex loss functions computed over the two tasks. We use logistic loss in our work based on prior experience with PPI datasets. The last two  norms over the parameter vectors  and  control overfitting. The parameters \u03bb and \u03c3 take positive values.",
+            "cite_spans": [],
+            "section": "The pathway-based objective ::: 4.1 Multitask pathway\u2013based learning ::: 4 METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The indicator function Ipos is non-differentiable. So we approximate Ipos with the exponential function, which is a convex upper bound of the indicator function and will make optimization easier. Let , where C is a positive constant. This function, for various values of C has been plot in Figure 3. Small positive values of  indicate positive-class predictions that are closer to the decision boundary of the classifier. Examples predicted to be positive with a high confidence have a large z. With varying values of C, the function  gives varying importance to predictions based on their classifier confidence \u2018z\u2019. Negative values of z, which correspond to examples predicted to be negative, are given close to zero importance by . The choice of an appropriate C is important so as to ensure the proper behavior of the summary function S. A steeply increasing curve (C = 1) is undesirable as it will assign too much weight to the summary of only some of the examples. We chose a moderate value of C = 30 for our experiments.\n",
+            "cite_spans": [],
+            "section": "The pathway-based objective ::: 4.1 Multitask pathway\u2013based learning ::: 4 METHODS",
+            "ref_spans": [
+                {
+                    "start": 290,
+                    "end": 298,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Replacing Ipos by  in Equation (2), our summary function S becomes . Putting everything together, our objective with the logistic loss terms, the pathway summary function and the  regularizer terms has the following form:\n(3)\nwhere ",
+            "cite_spans": [],
+            "section": "The pathway-based objective ::: 4.1 Multitask pathway\u2013based learning ::: 4 METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The objective in Equation (3) is non-convex, and with some algebraic simplifications we can reduce it to a difference of convex functions (DC). To optimize this function, we implement the CCCP algorithm, which was originally introduced by Yuille and Rangarajan (2003).",
+            "cite_spans": [
+                {
+                    "start": 239,
+                    "end": 267,
+                    "mention": "Yuille and Rangarajan (2003)",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "The pathway-based objective ::: 4.1 Multitask pathway\u2013based learning ::: 4 METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The convergence criterion for algorithm 1 is , where \u03c4 is a threshold. We used  in our experiments. Smaller values required a long time to convergence. The inner optimization (line # 5), which uses L-BFGS, had a convergence threshold of 0.0001. This step took more iterations initially and fewer iterations getting closer to convergence.",
+            "cite_spans": [],
+            "section": "Stopping criteria ::: 4.2 Solving the optimization problem ::: 4 METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "In the previous sections, we described how we combine two tasks. In particular, Equation (3) involves pairwise learning, which results in two models  and . Because our current framework can combine only two tasks at a time, for m tasks we perform  pairwise learning experiments and then combine their outputs. Each task will thus have m \u2212 1 models as a result of pairing up with each of the other tasks. Let the set of models for task  be . We treat  as an ensemble of models for this task and aggregate the output labels from all models to get the final labels on the test data. Let the output labels from each model for a given test instance x be . Then the final output label y is computed by taking a vote and checking if it crosses a threshold:\n(8)\nwhere v is a vote threshold that should be crossed in order for the label to be positive. In our experiments, we found that the predictions for  from all models in  overlapped greatly. Hence, we used v = 1, which implies that x is an interaction if any one of our four tasks labels it as such.",
+            "cite_spans": [],
+            "section": "4.3 Combining pairwise models ::: 4 METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "For each protein pair, we compute features similar to the work in Kshirsagar et al. (2012). Some features use both proteins in the pair, while some others are based on either the host protein or the pathogen protein. While the features used for S.typhi were obtained directly from the authors, those for the other three datasets were derived from the following attributes of proteins available in public databases: protein sequences from Uniprot (UniProt Consortium, 2011), gene ontology from GO database (Ashburner et al., 2000), gene expression from GEO (Barrett et al., 2011), properties of human proteins in the human PPI network. Owing to the lack of space, we briefly mention only some of the prominent features here, and encourage the readers to refer to the supplementary for details. The sequence features count the frequency of amino acid\u2013based n-grams or n-mers (for n = 2, 3, 4, 5) in the protein sequence. The GO features count the co-occurrence of host\u2013pathogen GO term combinations. The human PPI network-based features compute various graph properties like node-degree, betweenness-centrality, clustering coefficient of the human protein.",
+            "cite_spans": [
+                {
+                    "start": 66,
+                    "end": 90,
+                    "mention": "Kshirsagar et al. (2012)",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 447,
+                    "end": 471,
+                    "mention": "UniProt Consortium, 2011",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 506,
+                    "end": 528,
+                    "mention": "Ashburner et al., 2000",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 557,
+                    "end": 577,
+                    "mention": "Barrett et al., 2011",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "5.1 Feature set ::: 5 DATASET AND FEATURES",
+            "ref_spans": []
+        },
+        {
+            "text": "Our features define a high-dimensional and sparse space (the number of features is listed in Table 1). Because our features are derived by integrating several databases, some of which are not complete, there are many examples and features with missing values. In our current work, we eliminate all examples with >10% missing features. For the rest, we use mean value\u2013based feature imputation. Handling missing data effectively is an important aspect of the PPI prediction problem; however, it is not the focus of this work. The remaining examples after elimination and imputation are also shown in Table 1.",
+            "cite_spans": [],
+            "section": "5.1 Feature set ::: 5 DATASET AND FEATURES",
+            "ref_spans": [
+                {
+                    "start": 93,
+                    "end": 100,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 598,
+                    "end": 605,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "The interactions listed in the table form the positive class. Because there is no experimental evidence about proteins that do not interact, we construct the \u2018non-interacting\u2019 (i.e. negative) class using a technique commonly used in PPI prediction literature. We use random pairs of proteins sampled from the set of all possible bacteria\u2013human protein pairs. The number of random pairs chosen as the negative class is decided by what we expect the interaction ratio to be. We chose a ratio of 1:100 meaning that we expect 1 in every 100 random bacteria\u2013human protein pairs to interact with each other. In general, there is no basis for choosing a more meaningful ratio, as there are few known interactions. We rely on previous work on better-studied organisms, where a ratio of 1:100 was used, based on the number of known interactions. Further, prior studies (Dyer et al., 2007; Tastan et al., 2009) also use a similar ratio. This random selection strategy is likely to introduce \u223c1% false negatives into the training set.",
+            "cite_spans": [
+                {
+                    "start": 861,
+                    "end": 878,
+                    "mention": "Dyer et al., 2007",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 880,
+                    "end": 899,
+                    "mention": "Tastan et al., 2009",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "5.2 Negative class examples ::: 5 DATASET AND FEATURES",
+            "ref_spans": []
+        },
+        {
+            "text": "We analyze the known host\u2013pathogen interactions from our datasets. This analysis also motivates our choice of a multitask approach that uses a pathway-based similarity across tasks. The known PPIs are compared across datasets in two ways: (i) pathway enrichment and (ii) presence of interologs.\nThe human proteins involved in each interaction dataset are used to obtain the human pathways that are enriched. We use Fisher\u2019s test (based on the hypergeometric distribution) to compute the P-value of each pathway. We plot these P-values for each pathway, and for each dataset in the form of a heatmap shown in Figure 4. The heatmap shows how there are several commonly enriched pathways across the datasets (the black vertical lines spanning all four rows). It also shows the difference in the enrichment for the S.typhi dataset, which comes from small-scale PPI experiments.We analyze the similarity between the PPIs from various datasets. A natural way to determine similarity is to check if proteins known to interact in one dataset have homologous proteins that are also interacting in another dataset. Such pairs of proteins, also called \u2018interologs\u2019, are defined as a quadruple of proteins , where  (interaction) and . Further, A,  are homologs and B,  are also homologs. The number of such interologs existing between the four datasets is shown in Table 2. To compute homologs of a protein, we used BLASTP sequence alignment with an e-value cutoff of 0.1. As evident from Table 2, there are few interologs across the bacterial PPIs. None of the high-throughput datasets have an interolog in the small-scale S.typhi dataset. This seems to indicate that interolog-based approaches to compute task similarity are not relevant here. The phenomenon governing the similarity of these host\u2013pathogen interactions is probably at a much higher level, rather than at the level of individual proteins. We explore one such possibility\u2014the \u2018commonality hypothesis\u2019.\n\n",
+            "cite_spans": [],
+            "section": "5.3 Analyzing the known interactions ::: 5 DATASET AND FEATURES",
+            "ref_spans": [
+                {
+                    "start": 608,
+                    "end": 616,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 1353,
+                    "end": 1360,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 1477,
+                    "end": 1484,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "We followed an identical procedure for all algorithms. For the 10-fold CV experiments we train on 8-folds, use 1-fold as held-out and another as test. The optimal parameters (i.e. the best model) were obtained by parameter tuning on the held-out fold. The test fold was used to evaluate this best model\u2014these results are reported in Section 7. The range of values we tried during the tuning of the regularization parameter (\u03bb) were 150\u201310\u22124. For \u03c3, the parameter controlling overfitting in multitask pathway\u2013based learning (MTPL), we used a fixed value of . For Mean MTL, we tune both \u03bb and \u03c3. To handle the high-class imbalance in our data, we used a weight-parameter Wpos to increase the weight of the positive examples in the logistic loss terms of our function. We tried three values and found  performed the best on training data.",
+            "cite_spans": [],
+            "section": "6.1 Parameter tuning ::: 6 EXPERIMENTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Table 3 reports for each bacterial species, the average F1 along with the standard deviation for the 10-fold CV experiments. The performance of all baselines is similar, and our method outperforms the best of the baselines by a margin of 4 points for B.anthracis, 3.4 points for F.tularensis and 3.2 points for Y.pestis and 3.3 for S.typhi. The overall performance of all methods on this dataset is twice as good as that on the others. We believe that the difference in the nature of the datasets might explain the above observations. While the S.typhi dataset comprises small-scale interaction studies, the other datasets come from high-throughput experiments. Owing to its smaller size, it has less variance making it an easier task. This dataset is also likely to be a biased sample of interactions, as it comes from focussed studies targeting select proteins.\n",
+            "cite_spans": [],
+            "section": "7.1 Overall performance ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 7,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "The coupled learner (Coupled) performs slightly worse than Indep. This is explained by the fact that Indep. has more flexibility in setting the regularization parameter for each task separately, which is not the case in Coupled. It is interesting to note that the independent models that use the pathway matrices Ps and Pt as features (i.e. Indep-Path) show a slightly worse performance than the Indep. models that do not use them. This seems to suggest that the cross-task pathway similarity structure that we enforce using our regularizer has more information than simply the pathway membership of proteins used as features. Precision-Recall curves: We also plot the P-R curves for MTPL. Please see the Supplementary Section 3.",
+            "cite_spans": [],
+            "section": "7.1 Overall performance ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Given two paired sets of k measured values, the paired t-test determines whether they differ from each other in a significant way. We compare MTPL with Indep.\u2014the best baseline from the 10-fold CV results. Because the 10-fold CV results from the previous section give insufficient samples (i.e. only 10 samples), we instead use 50 bootstrap sampling experiments and use the results to compute the P-values. Each bootstrap sampling experiment consists of the following procedure: we first make two random splits of 80 and 20% of the data, such that the class ratio of 1:100 is maintained in both. The training set is then constructed using a bootstrap sample from the 80% split and the test data from the 20% split. A total of 50 models are thus trained and evaluated. We do not tune parameters again for each model and instead use the optimal setting of parameter values from our 10-fold CV experiments. The F1 is computed for each experiment thereby giving us 50 values, which will be our samples for the hypothesis test.",
+            "cite_spans": [],
+            "section": "7.2 Paired t-tests for statistical significance ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Because t-tests assume a normal distribution of the samples, we first did a normality test on each set of 50 F1 values. We performed the Shapiro\u2013Wilk test with a significance level of  and found that our samples satisfy normality.",
+            "cite_spans": [],
+            "section": "7.2 Paired t-tests for statistical significance ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The averaged F1 over the 50 bootstrap experiments for the four tasks with MTPL and Indep. has been tabulated in the Supplementary Table S1. We observe that MTPL does better than Indep. for the three high-throughput datasets and marginally underperforms for the S.typhi. dataset. Table 4 shows the P-values on applying the paired t-tests to the 50 F1 values. For three of the four tasks, the performance improvement by MTPL is clearly statistically significant. For the fourth task, which involves S.typhi., the baseline has a slightly better averaged performance but the P-value does not indicate statistical significance. Hence we can say that the performance of MTPL and Indep. is similar for this task.\n",
+            "cite_spans": [],
+            "section": "7.2 Paired t-tests for statistical significance ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 279,
+                    "end": 286,
+                    "mention": "Table 4",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "The previous section gave a summary of the aggregated performance of MTPL for every task. Here we present the performance of every pairwise learning experiment of MTPL in Table 5. This gives an idea of how various tasks benefit from being paired up with other tasks. For each task, we check the task-pairing that gave the best performance (best F1 for each task is shown in bold). For instance, the best F1 of 32.3 for Y.pestis was obtained in the pairwise model learned with S.typhi. It is evident that coupling a model with one additional task seems to improve the performance over the baseline.\n",
+            "cite_spans": [],
+            "section": "7.3 Pairwise performance of tasks in MTPL ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 171,
+                    "end": 178,
+                    "mention": "Table 5",
+                    "ref_id": "TABREF4"
+                }
+            ]
+        },
+        {
+            "text": "To get an understanding of inter-task model similarity, we compared the parameter vectors \u2018w\u2019 of all tasks with each other (each w was learned on the entire training data). Because the number of features is large, we computed the cosine similarity between them. Note that we only use features that are common across tasks for this comparison. Gene expression features for instance were not used as they vary with regard to the number of expression time points, the experiment protocol, etc.",
+            "cite_spans": [],
+            "section": "7.4 Feature importance across tasks ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "We found that the feature weights vary greatly across models\u2014the cosine similarity ranges between 0.1 and 0.13. We also analyzed which features had the highest absolute weight. We found that the node-degree feature (computed using the human PPI graph) has a high positive weight across all tasks. Gene expression features have large negative weights across all tasks. In general, the GO and protein sequence\u2013based n-gram features have different weights across tasks.",
+            "cite_spans": [],
+            "section": "7.4 Feature importance across tasks ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "This seems to imply that having similar parameter values across models is not particularly important for this multitask problem. This explains why one of our baselines: the Mean MTL method, which penalizes differences between parameter vectors, does not perform well. Instead, regularization using the pathway summaries seems key in giving a better performance.",
+            "cite_spans": [],
+            "section": "7.4 Feature importance across tasks ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Sparsity of weights: We use  regularization in our optimization function, which does not produce sparse weight vectors. We observe that \u223c50% of the features have 0 weight in all tasks. About 75\u201380% of the features have small weights in the range of (0.001 to \u22120.001).",
+            "cite_spans": [],
+            "section": "7.4 Feature importance across tasks ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "We perform enrichment analysis on the human pathways from the positive predictions of MTPL. We use Fisher\u2019s exact test with the hypergeometric distribution. We intersect the top enriched pathways that satisfy P-value e-07 from each task to get the commonly enriched pathways. The sizes of the various intersections are shown in Figure 5. Seventeen pathways are commonly enriched across all four tasks. One hundred four pathways are enriched across the three high-throughput datasets, which is a significant fraction of the total number of pathways considered. This result indicates that the bias produced by our regularizer does produce predictions satisfying the commonality hypothesis.\n",
+            "cite_spans": [],
+            "section": "Enriched human pathways ::: 7.5 Analysis of predictions ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 328,
+                    "end": 336,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "Table 6 shows some of the common enriched pathways. The \u2018Integrin alpha IIb beta3 (\u03b1IIb ) signaling\u2019 pathway is enriched only in B.anthracis and Y.pestis in the training data. However, in the predictions it is enriched in all four bacterial datasets. Integrin-\u03b1IIb  is a transmembrane receptor expressed in mast cells and plays an important role in innate immune responses against pathogens.\n",
+            "cite_spans": [],
+            "section": "Enriched human pathways ::: 7.5 Analysis of predictions ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 7,
+                    "mention": "Table 6",
+                    "ref_id": "TABREF5"
+                }
+            ]
+        },
+        {
+            "text": "We also analyze the overlap between the pathways enriched in the gold-standard positives and those enriched in the predictions. Please see the Supplementary Section 5 for details.",
+            "cite_spans": [],
+            "section": "Enriched human pathways ::: 7.5 Analysis of predictions ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The regularizer in Equation (3) uses the pathway information matrix to enforce pathway-level similarity. The matrix can be used to represent any other common structure. For example, consider the hypothesis \u2018all pathogens target hub proteins in the host\u2019, which implies that bacterial proteins are often found to interact with host proteins that have a high node degree in the PPI network of the host. We tried two variants to incorporate this hypothesis\u2014(i) we identify \u2018hubs\u2019 in the human PPI graph and use the binary vectors  as an indicator of the \u2018hub\u2019 protein targeted by the bacterial protein, (ii) instead of a discrete \u2018hub\u2019/\u2018not hub\u2019 indicator we use  to represent the node degree [each component of  represents one node-degree bin say (10\u201320)]. We found that using (i) gives us an improvement of upto 2.5 F points over the baseline methods.",
+            "cite_spans": [],
+            "section": "7.6 Incorporating other biological hypotheses ::: 7 RESULTS AND DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "We presented a method that uses biological knowledge in jointly learning multiple PPI prediction tasks. Using a task regularization\u2013based multitask learning technique, we were able to encode a biological hypothesis into the optimization framework effectively, thus enabling the commonality hypothesis to be tested. Our results indicate that the tasks benefit from this joint learning and we see an improvement of 4 F points over the baseline methods.",
+            "cite_spans": [],
+            "section": "8 CONCLUSION",
+            "ref_spans": []
+        },
+        {
+            "text": "While our current results were presented on four bacterial species, we plan to extend our analysis to several other pathogens. Another direction to explore is the case where the pathogen is fixed and the hosts are different.",
+            "cite_spans": [],
+            "section": "8 CONCLUSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Our current approach integrates multiple tasks in a pairwise manner, which is inefficient because it does not scale well while integrating several PPI datasets. The most straightforward way of extending Equation (3) to learning m tasks simultaneously involves loss terms for each of the tasks and  pairwise regularization terms, which unfortunately makes the optimization problem more complex and inefficient. A more promising and efficient direction would be to consider model selection at the task level where only the most relevant and useful tasks are used for multitask learning.",
+            "cite_spans": [],
+            "section": "8 CONCLUSION",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Characteristics of all four interaction datasets used\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2.: Conserved interactions in the form of interologs across the various host\u2013bacterial datasets\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3.: Averaged 10-fold CV performance for all methods for a positive:negative class ratio of 1:100\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table 4.: P-values from pairwise t-tests of statistical significance\n",
+            "type": "table"
+        },
+        "TABREF4": {
+            "text": "Table 5.: Pairwise model performance of MTPL\n",
+            "type": "table"
+        },
+        "TABREF5": {
+            "text": "Table 6.: Five of the 17 commonly enriched pathways in the predicted interactions from MTPL\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Fig. 1.: (A) Host\u2013pathogen PPI prediction where the host is human and the pathogens are bacteria. (B) An example depicting the commonality in the bacterial attack of human proteins. Pathway-1 and pathway-3 (highlighted) represent critical processes targeted by all bacterial species",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Fig. 2.: A schematic illustrating the pathway summarizing function S for a task . On the left are the examples from the input predicted to be positive, indicated by . The matrix P has the pathway vectors for each example in . The summary function aggregates the pathway vectors to get the distribution",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Fig. 3.: The exponential function  for different values of C",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Fig. 4.: Heatmap showing pathways enriched in each bacterial\u2013human PPI interactions dataset. The horizontal axis represents the pathways (about 2100 of them) and the vertical axis represents the four datasets. Each entry in the heatmap represents the P-value of a pathway w.r.t one dataset. Darker values represent more enrichment. The black columns that span across all four rows show the commonly enriched pathways",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Fig. 5.: The intersection of enriched human pathways from predicted interactions. The total number of enriched pathways for each bacterial species are B.anthracis: 250, F.tularensis: 164, Y.pestis: 400 and S.typhi: 40. The size of the intersection between all tasks\u2019 enriched pathways is 17. The size of this intersection for the high-throughput datasets (excluding S.typhi) is much larger: 104",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Gene ontology: tool for the unification of biology",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Ashburner",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nat. Genet.",
+            "volume": "25",
+            "issn": "",
+            "pages": "25-29",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Liblinear: a library for large linear classification",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Fan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "J. Mach. Learn. Res.",
+            "volume": "9",
+            "issn": "",
+            "pages": "1871-1874",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Biana: a software framework for compiling biological interactions and analyzing networks",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Garcia",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "BMC Bioinformatics",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Pathogenic bacteria target NEDD8-conjugated cullins to hijack host-cell signaling pathways",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Jubelin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Pathog.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Techniques to cope with missing data in host-pathogen protein interaction prediction",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Kshirsagar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Bioinformatics",
+            "volume": "28",
+            "issn": "",
+            "pages": "i466-i472",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "HPIDB\u2013a unified resource for host-pathogen interactions",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kumar",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Nanduri",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "BMC Bioinformatics",
+            "volume": "11",
+            "issn": "Suppl. 6",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Reactome knowledgebase of human biological pathways and processes",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Matthews",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Res.",
+            "volume": "37",
+            "issn": "",
+            "pages": "D619-D622",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Independently evolved virulence effectors converge onto hubs in a plant immune system network",
+            "authors": [
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Mukhtar",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Science",
+            "volume": "333",
+            "issn": "",
+            "pages": "596-601",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Evaluation of different biological data and computational classification methods for use in protein interaction prediction",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Proteins",
+            "volume": "63",
+            "issn": "",
+            "pages": "490-500",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Systematic prediction of human membrane receptor interactions",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Proteomics",
+            "volume": "23",
+            "issn": "",
+            "pages": "5243-5255",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Semi-supervised multi-task learning for predicting interactions between HIV-1 and human proteins",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Qi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Bioinformatics",
+            "volume": "26",
+            "issn": "",
+            "pages": "i645-i652",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "NCBI GEO: archive for functional genomics data sets\u201410 years on",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Barrett",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nucleic Acids Res.",
+            "volume": "39",
+            "issn": "",
+            "pages": "D1005-D1010",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "PID: the pathway interaction database",
+            "authors": [
+                {
+                    "first": "CF",
+                    "middle": [],
+                    "last": "Schaefer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Res.",
+            "volume": "37",
+            "issn": "",
+            "pages": "D674-D679",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "The current salmonella-host interactome",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Schleker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Proteomics Clin. Appl.",
+            "volume": "6",
+            "issn": "",
+            "pages": "117-133",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Relational learning via collective matrix factorization",
+            "authors": [
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Singh",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Gordon",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "KDD",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Struct2net: integrating structure into protein-protein interaction prediction",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Singh",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Pac. Symp. Biocomput.",
+            "volume": "",
+            "issn": "",
+            "pages": "403-414",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Prediction of interactions between HIV-1 and human proteins by information integration",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Tastan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Pac. Symp. Biocomput.",
+            "volume": "",
+            "issn": "",
+            "pages": "516-527",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Infection strategies of bacterial and viral pathogens through pathogen-host protein\u2013protein interactions",
+            "authors": [
+                {
+                    "first": "SD",
+                    "middle": [],
+                    "last": "Tekir",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Front. Microbiol.",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Ongoing and future developments at the universal protein resource",
+            "authors": [],
+            "year": 2011,
+            "venue": "Nucleic. Acids Res.",
+            "volume": "39",
+            "issn": "",
+            "pages": "D214-D219",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Analysis on multi-domain cooperation for predicting protein-protein interactions",
+            "authors": [
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "BMC Bioinformatics",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Leveraging sequence classification by taxonomy-based multitask learning",
+            "authors": [
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Widmer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "RECOMB",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Phi-base update: additions to the pathogen host interaction database",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Winnenburg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Nucleic Acids Res.",
+            "volume": "36",
+            "issn": "",
+            "pages": "D572-D576",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Prediction of protein-protein interactions using random decision forest framework",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Liu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Bioinformatics",
+            "volume": "21",
+            "issn": "",
+            "pages": "4394-4400",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Prediction of yeast protein-protein interaction network: insights from the gene ontology and annotations",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Nucleic Acids Res.",
+            "volume": "34",
+            "issn": "",
+            "pages": "2137-2150",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "A survey of transfer and multitask learning in bioinformatics",
+            "authors": [
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Yang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Comput. Sci. Eng.",
+            "volume": "5",
+            "issn": "",
+            "pages": "257-268",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "",
+            "authors": [
+                {
+                    "first": "Q",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Learning structural SVMS with latent variables",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Joachims",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "International Conference on Machine Learning",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "The concave-convex procedure",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Yuille",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Rangarajan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "Neural Comput.",
+            "volume": "15",
+            "issn": "",
+            "pages": "915-936",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Associations between HIV and human pathways revealed by protein-protein interactions and correlated gene expression profiles",
+            "authors": [
+                {
+                    "first": "KC",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS One",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Pig\u2013the pathogen interaction gateway",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Driscoll",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nucleic Acids Res.",
+            "volume": "37",
+            "issn": "",
+            "pages": "D647-D650",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Computational prediction of host-pathogen protein-protein interactions",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Dyer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Bioinformatics",
+            "volume": "23",
+            "issn": "",
+            "pages": "i159-i166",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "The landscape of human proteins interacting with viruses and other pathogens",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Dyer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS Pathog.",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "The human-bacterial pathogen protein interaction networks of Bacillus anthracis, Francisella tularensis, and Yersinia pestis",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Dyer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS One",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Regularized multi-task learning",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Evgeniou",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Pontil",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "SIGKDD",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

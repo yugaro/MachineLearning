@@ -1,0 +1,4103 @@
+{
+    "paper_id": "PMC3526318",
+    "metadata": {
+        "title": "LoFreq: a sequence-quality aware, ultra-sensitive variant caller for uncovering cell-population heterogeneity from high-throughput sequencing datasets",
+        "authors": [
+            {
+                "first": "Andreas",
+                "middle": [],
+                "last": "Wilm",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Pauline",
+                "middle": [
+                    "Poh",
+                    "Kim"
+                ],
+                "last": "Aw",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Denis",
+                "middle": [],
+                "last": "Bertrand",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Grace",
+                "middle": [
+                    "Hui",
+                    "Ting"
+                ],
+                "last": "Yeo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Swee",
+                "middle": [
+                    "Hoe"
+                ],
+                "last": "Ong",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Chang",
+                "middle": [
+                    "Hua"
+                ],
+                "last": "Wong",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Chiea",
+                "middle": [
+                    "Chuen"
+                ],
+                "last": "Khor",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Rosemary",
+                "middle": [],
+                "last": "Petric",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Martin",
+                "middle": [
+                    "Lloyd"
+                ],
+                "last": "Hibberd",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Niranjan",
+                "middle": [],
+                "last": "Nagarajan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Recent advances in sequencing technologies have enabled more widespread study of heterogeneity and sub-populations in a cell population, and a migration away from a \u2018consensus sequence\u2019 view of their evolution. Such a \u2018population perspective\u2019 has applications in a range of biological systems, from the characterization of viral quasi species and intra-host variation (1,2), to bacterial sub-populations (3\u20135), to sub-clonal evolution in cancer (6\u20138). Precise characterization of population structure (and rare sub-populations) in these studies is fundamental to the analysis of population evolution and dynamics as a function of host response or drug exposure. Several recent cancer sequencing studies have further emphasized the functional role of rare sub-populations and variants in aspects such as tumor growth, drug resistance and metastasis (9,10) and the need for computational tools to study them.",
+            "cite_spans": [
+                {
+                    "start": 369,
+                    "end": 370,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 371,
+                    "end": 372,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 405,
+                    "end": 408,
+                    "mention": "3\u20135",
+                    "ref_id": null
+                },
+                {
+                    "start": 446,
+                    "end": 449,
+                    "mention": "6\u20138",
+                    "ref_id": null
+                },
+                {
+                    "start": 849,
+                    "end": 850,
+                    "mention": "9",
+                    "ref_id": "BIBREF55"
+                },
+                {
+                    "start": 851,
+                    "end": 853,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In principle, the high throughput of massively parallel sequencing allows for sampling of even rare sub-populations. Sequencing errors, however, complicate the determination of true variations in the population. Sequencing error rates are known to be highly variable and differ significantly between technologies, runs, lanes, multiplexes, genomic location as well as substitution types (11\u201313). While approaches to correct for these have been studied, the majority of variant-calling methods have focused on low-coverage human re-sequencing data and diploid calls (14\u201316) with discrete frequencies of interest (i.e. 0, 0.5 and 1; a related set of methods are those tailored for calling diploid genotypes in pooled sequencing data (17\u201320) and are not generally applicable).",
+            "cite_spans": [
+                {
+                    "start": 388,
+                    "end": 393,
+                    "mention": "11\u201313",
+                    "ref_id": null
+                },
+                {
+                    "start": 566,
+                    "end": 571,
+                    "mention": "14\u201316",
+                    "ref_id": null
+                },
+                {
+                    "start": 732,
+                    "end": 737,
+                    "mention": "17\u201320",
+                    "ref_id": null
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "Studies of RNA viruses have provided the exceptions to this rule (21\u201324). RNA viruses have high mutation rates (due to poor or missing proof-reading capability of the viral RNA-dependent DNA polymerase) and high replication rates, and the resulting intra-host variations have implications for drug treatment strategies (25) and the genetic monitoring of live vaccines (26). The methods used in these studies though rely on ad hoc trimming, filtering and thresholds to call variants, limiting their sensitivity and widespread applicability (needing manual adjustment per sample or sequencing run). Recent model-based approaches such as Breseq (27,28) and SNVer (29) are potentially more sensitive and generic, but rely on simple binomial models and are not tailored to accommodate biases in error rates. A more sophisticated approach, that relies on phasing to reduce the effect of sequencing errors and is tailored to 454 sequencing has recently been applied to viral datasets (30). This method is, however, not directly applicable to other technologies and cannot be run on large genomes or sequencing datasets.",
+            "cite_spans": [
+                {
+                    "start": 66,
+                    "end": 71,
+                    "mention": "21\u201324",
+                    "ref_id": null
+                },
+                {
+                    "start": 320,
+                    "end": 322,
+                    "mention": "25",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 369,
+                    "end": 371,
+                    "mention": "26",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 643,
+                    "end": 645,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 646,
+                    "end": 648,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 661,
+                    "end": 663,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                },
+                {
+                    "start": 978,
+                    "end": 980,
+                    "mention": "30",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In emerging clinical applications that use sequencing to monitor the genomic state of cells, the ability to detect rare variants in a population and to do so at the edge of detection limits is an important unfulfilled capability. On the one hand, increased sensitivity in variant callers can make it possible to monitor rare but important sub-populations (e.g. cancer stem cell mutations) and on the other hand, sensitivity is essential for early detection of say a drug-resistant sub-population (e.g. with antiretroviral drugs for HIV). In such settings, ad hoc approaches lack the desired adaptability and robustness and may suffer from an artificial cap in the sensitivity of variant detection. Precise modeling of sequencing errors is essential to push sensitivity limits and it is this need that we seek to address.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "In this work, we present a sensitive and robust approach for calling single-nucleotide variants (SNVs) from high-coverage sequencing datasets, based on a formal model for biases in sequencing error rates. We show that rigorous statistical testing can be done efficiently under this model, without resorting to approximations, thus allowing for the exact analysis of large genomes and high-coverage datasets. The resulting method, LoFreq, adapts automatically to sequencing run and position-specific sequencing biases and can call SNVs at a frequency lower than the average sequencing error rate in a dataset. LoFreq\u2019s robustness, sensitivity and specificity were validated using several simulated and real datasets (viral, bacterial and human) and on two experimental platforms (Fluidigm and Sequenom). Our results from applying LoFreq to call rare somatic SNVs (in exome sequencing datasets for gastric cancer) and for studying dengue virus quasi species before and after treatment in a clinical study (of a nucleoside-analog drug Balapiravir) further highlight the robustness and versatility of this approach.",
+            "cite_spans": [],
+            "section": "INTRODUCTION",
+            "ref_spans": []
+        },
+        {
+            "text": "All dengue virus samples were sequenced in the Genome Institute of Singapore, as described below. For a description of the clinical samples, see Nguyet et al. (31). Sequencing data for an Escherichia coli str. K-12 substr. MG1655 clone were downloaded from the Sequence Read Archive (SRA submission ERA000206; 2 \u00d7 100 bp reads). Mapped whole-genome and exome sequencing data for gastric cancer were taken from Zang et al. (32).",
+            "cite_spans": [
+                {
+                    "start": 160,
+                    "end": 162,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 423,
+                    "end": 425,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Sequencing data ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "A single RT-primer was designed to bind specifically to the 3\u2032-end of dengue viruse genomes. For complementary DNA (cDNA) synthesis, the RevertAid\u2122 Premium First Strand cDNA Synthesis Kit (Fermentas, St. Leon-Rot, Germany) was used. Primer pairs were designed to generate multiple overlapping polymerase chain reaction (PCR) fragments, roughly 2 kb in size. PCR was performed using the PfuUltra\u2122 II Fusion HS DNA Polymerase (Stratagene, La Jolla, CA, USA) according to the manufacturer\u2019s instructions. The fragments were gel extracted from 1% agarose gel prepared in 1\u00d7 TBE buffer and the concentrations were measured using the NanoDrop ND 1000 Spectrophotometer (Thermo Fisher Scientific, Waltham, MA, USA). Equal concentration of DNA products of each sample was combined and fragmented into a peak size range of 100\u2013300 bp using the Covaris S2 (Covaris, Woburn, MA, USA) (shearing conditions\u2014duty cycle: 20%; intensity: 5; cycles per burst: 200 and time: 110 s). After fragmentation, the samples were purified using the Qiagen PCR purification kit (Qiagen, Valencia, CA, USA). Fragmented products were quality-checked (2100 Bioanalyzer with a DNA 1000 Chip, Agilent Technologies, Santa Clara, CA, USA). For library preparation, the NEBNext DNA Sample Prep Master Mix 1 kit (New England Biolabs) was used. The DNA samples underwent end-repair, A-tailing and ligation of adapters according to the manufacturer\u2019s instructions. After quality check of the ligated product on the Bioanalyzer, fragments in the range 200\u2013400 bp were extracted from 2% agarose gel prepared in 1\u00d7 TAE buffer, cleaned using the Qiagen Gel extraction kit (Qiagen) and quality-checked again. Finally, using the Multiplexing Sample Preparation Oligonucleotide Kit (Illumina, San Diego, CA, USA), samples underwent 16 PCR cycles to incorporate indices and were quality-checked again using the Bioanalyzer and the LightCycler 480 SYBR Green I Master mix (Roche Applied Science, Indianapolis, IN, USA) in a LightCycler\u00ae 480 II real-time thermal cycler (Roche Applied Science) according to the manufacturer\u2019s instructions.",
+            "cite_spans": [],
+            "section": "Library construction ::: Sequencing of dengue virus samples ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "To study consistency and reproducibility, six library replicates of DENV2 TSV01 viruses were created. The viruses were grown in c6/36 cells and RNA was extracted using the QIAamp Viral RNA Mini Kit (Qiagen). The extracted RNA underwent library preparation as described above. In the final PCR step, the sample was divided into six reactions, which were indexed and multiplexed accordingly.",
+            "cite_spans": [],
+            "section": "Multiplex replicates ::: Sequencing of dengue virus samples ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Dengue virus samples were sequenced in the Genome Institute of Singapore on an Illumina GA-II sequencer to obtain 35 bp reads. Base calling was done with CASAVA 1.7 and reads that did not pass Illumina\u2019s chastity filter (CASAVA 1.7 user guide) were removed.",
+            "cite_spans": [],
+            "section": "Sequencing ::: Sequencing of dengue virus samples ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "DENV2 NGC cDNA was used to construct two sets of libraries in parallel (PCR duplicates) and sequenced on an Illumina Genome Analyzer II to obtain 2 \u00d7 75 bp paired-end reads. SNVs were called on both replicates using LoFreq, SNVer and Breseq and 12 low-frequency SNVs were selected from the union (found in both replicates, frequency \u22645%, discordant calls between methods, >50 bp away from PCR fragment ends) for validation on the Fluidigm Digital Array\u2122 (Fluidigm, San Francisco, CA, USA). cDNA quantification was performed on a Tecan GENios microplate detection device (Tecan Inc., Research Triangle Park, NC, USA) and the sample was diluted accordingly. Taqman assays were designed based on the positions of the 12 SNVs. The main components in the sample preparation pre-mix include the TaqMan\u00ae Gene Expression Master Mix (Applied Biosystems, Life Technologies, Foster City, CA, USA), 20\u00d7 GE sample loading reagent (Fluidigm) and 20\u00d7 gene-specific assays (Applied Biosystems). The diluted cDNA and pre-mix were transferred into the primed chip and loaded using an Integrated Fluidic Circuit Controller MX (Fluidigm) following manufacturer\u2019s instructions. The chip was then run on the The BioMark\u2122 System (Fluidigm) using the Data Collection Software. Data were extracted and analyzed using the Digital PCR Analysis Software (Fluidigm). SNV frequencies were determined in quadruplicates.",
+            "cite_spans": [],
+            "section": "Fluidigm digital array ::: Experimental validation ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We attempted to detect sequence variants within the pool of dengue virus genomes using the Sequenom MassArray iPLEX primer extension platform (Sequenom, San Diego, CA, USA). Note that this approach is not expected to be as sensitive as digital PCR and correspondingly we only used it to measure the Type II error rate. Assays for the sequence variants were designed in multiplex and the genotyping step comprises an initial PCR reaction to amplify the viral genomic region of interest followed by primer extension based on viral genotype status. The size of the extended products thus represents viral genotype status and was then resolved by mass spectrometry time of flight. In total, 18 clinical samples and 4 cell-culture samples (all DENV2) were assayed in two replicates at 79 and 13 positions, respectively (1474 primer/sample combinations). Moderate and sample-specific calls were then compared with sequencing-based LoFreq calls to assess concordance.",
+            "cite_spans": [],
+            "section": "Sequenom MassArray ::: Experimental validation ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We generated 10 mutants of the DENV2 Refseq sequence NC_001474.2, by randomly mutating 0.1% of the positions (without replacement), and thus obtained a list of true-positive SNVs. From the haplotype sequences, we simulated 35 bp reads using Metasim (33), with error rates derived from average quality per read position for the clinical DENV2 samples. For each coverage level (50\u00d7, 100\u00d7, 500\u00d7, 1000\u00d7, 5000\u00d7 and 10 000\u00d7), 10 replicates were simulated. The quality values were added to the simulated fasta file to produce a FastQ file with base-call qualities. The abundance of the haplotypes (Metasim\u2019s taxonomy profile) was set according to a geometric series (multiplicative factor of 2) resulting in haplotype and corresponding SNV frequencies ranging from a lower bound of 0.1\u201350%.",
+            "cite_spans": [
+                {
+                    "start": 250,
+                    "end": 252,
+                    "mention": "33",
+                    "ref_id": "BIBREF26"
+                }
+            ],
+            "section": "Simulated sequencing ::: Simulated datasets ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "From the clinical DENV2 samples, we took the six datasets with highest coverage and used the most sensitive SNV-calling module (LoFreq-NQ; see below) to call variants. Reads supporting any called variants were removed to make the datasets appear \u2018clonal\u2019 while retaining sequencing errors. The consensus genome for each of the six datasets was then aligned to Genbank sequence EU660415 (which was also used for read mapping) to determine true-positive SNVs. The six datasets were then randomly sub-sampled and pooled according to a geometric series, leading to a range of haplotype/SNV frequencies (\u223c1\u201350%) and total coverage of \u223c100\u00d7.",
+            "cite_spans": [],
+            "section": "Simulated population ::: Simulated datasets ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "To test the detection limits of the various methods, we artificially created short alignments with various coverage values and controlled counts of non-reference bases (i.e. SNVs to be detected), where each base was assigned the same uniform quality. For each given quality/coverage combination, we recorded the minimum number of non-reference bases needed to call a SNV. Breseq did not make any calls for this dataset and we suspect that this is because it is based on a likelihood ratio test using background frequencies from the whole alignment, and these were not meaningful for this artificial and short dataset.",
+            "cite_spans": [],
+            "section": "Detection limit test ::: Simulated datasets ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Given an alignment of reads to a consensus reference, LoFreq treats each base in a column as arising from a Bernoulli trial (success = reference/consensus base; failure = variant base). Each trial is assumed to be independent with an associated sequencing error probability that can be derived from a Phred-scaled quality value (Q) for the base (P = 10 exp (\u2212Q/10)). The number of variant bases (K) in a column of N bases is then given by a Poisson\u2013binomial distribution\u2014a generalization of the binomial distribution, where each Bernoulli trial can have a distinct success probability. To compute exact P-values under this null model, we employed the following recursion formula that is easy to derive from first principles:\n(1)\nwhere Prn(X=k) is the probability of observing k variants in the first n bases and Pn is the error probability for the nth base. The P-value is then given by \u2211k\u2265K PrN (X=k), i.e. the sum of the tail of the probability mass function (pmf) for n=N. ",
+            "cite_spans": [],
+            "section": "Modeling sequencing error ::: SNV calling with LoFreq ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "While a naive recursion based on Equation (1) can take time exponential in N, a dynamic programming approach to save intermediate results allows for the computation of the pmf in O(N2) time. As N can be large in practice, we aimed to reduce runtime by limiting computation to the portions of intermediate pmfs that affect the final P-value. In particular, it is easy to show that Prn(X=k)=0 for k>n and that entries for n>N \u2212 K, k<K \u2212 N + n do not affect the final P-value. Also, for a given threshold (t) on the P-value, if \u2211k\u2265K Prn(X=k)>t for any n, then the P-value will also be greater than t (as shown below) allowing for computation to terminate prematurely for most columns in an alignment (the non-variant columns). Finally, a key refinement in LoFreq is based on the following recursion:\n(2)\nwhere Sn = \u2211k\u2265K Prn(X = k). This recursion can be derived directly from Equation (1) and allows LoFreq to only compute the pmf for k < K, in addition to keeping track of Sn using Equation (2). Thus, the worst-case runtime for LoFreq is reduced to O(KN)\u2014a significant gain when most columns have few variant bases. Note that to maintain numerical precision, all arithmetic in LoFreq is done in log-space where we compute log(a) + log(b), a > b, using the formula log(a) + log(1+exp(log(b) \u2212 log(a))).",
+            "cite_spans": [
+                {
+                    "start": 43,
+                    "end": 44,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 883,
+                    "end": 884,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 990,
+                    "end": 991,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Runtime optimization ::: SNV calling with LoFreq ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Where available, LoFreq takes in Phred-scaled quality values provided by the sequencing instrument as input to its model. Quality calibration, as described in (15) can also be used to further refine these values and reduce bias. For variant bases, a user-defined threshold T (default Q20 or 1% error rate) was used to conservatively remove bases with quality below the threshold and variant bases were assigned a quality of T. In the absence of user-provided quality values, LoFreq models error rates for all 12 possible base substitution classes (PX>Y, X \u2260 Y) and estimates them using an Expectation\u2013Maximization (EM) approach (34). For this, each column (C) was assumed to come from one of two models, either a reference base with a 12-parameter model for sequencing error (R) or a variant column (V, i.e. ZC \u2208 {R,V}). During the training phase, error probabilities for all substitution classes are learnt directly from the data: the expectation step calls SNVs using a binomial test (Bonferroni-corrected P-value < 0.05) with the current error probabilities and the maximization step updates the error probabilities based on base counts in columns in which the respective substitution class was not called a SNV (i.e. , where b(C) is the reference base in column C and nCY is the number of Y bases seen in column C; this assignment can be shown to maximize the likelihood function). The maximization and expectation steps are iterated until error probabilities converge (<10\u22129). For final SNV calling, the expectation step was used with the converged error probabilities. This EM-based approach (LoFreq-NQ) is faster and more sensitive (but has higher false-positive rates; data not shown) and can be employed when quality values are missing or unreliable.",
+            "cite_spans": [
+                {
+                    "start": 160,
+                    "end": 162,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 629,
+                    "end": 631,
+                    "mention": "34",
+                    "ref_id": "BIBREF27"
+                }
+            ],
+            "section": "Sequencing quality ::: SNV calling with LoFreq ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to identify sample-specific variants (say somatic in A when compared with tissue B), LoFreq employs the following approach: (1) variants called in Sample A are then tested in B and (2) variants that are not called in B by LoFreq are further tested to see if this could be because of inadequate read coverage in B (using a binomial test with SNV frequency from A). Variants that pass this test are then reported as being specific to/somatic in A.",
+            "cite_spans": [
+                {
+                    "start": 134,
+                    "end": 135,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 191,
+                    "end": 192,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                }
+            ],
+            "section": "Calling somatic/sample-specific variants ::: SNV calling with LoFreq ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Analogous to the tests in other methods (14,27,29), LoFreq allows the user to identify variant positions marked by a significant bias in the strand from which the supporting reads are derived. It does so by doing a two-tailed Fisher\u2019s exact test of the hypothesis that variant-base forward and reverse strand counts come from the same distribution as the consensus base. A user can then choose to ignore variants with high strand bias (low P-value; Holm\u2013Bonferroni corrected for multiple-hypothesis testing).",
+            "cite_spans": [
+                {
+                    "start": 41,
+                    "end": 43,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 44,
+                    "end": 46,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 47,
+                    "end": 49,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Flagging strand bias ::: SNV calling with LoFreq ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "To compare the frequency of C > N mutations in the placebo group versus the drug group, for each paired sample (Table 3) we called SNVs in pre- and post-dose samples using LoFreq. We then subtracted the sum of SNV frequencies from pre-dose samples from the sum for post-dose samples and normalized by the time difference and the number of cytosine bases in the consensus sequence. The resulting numbers (a measure of average mutation rate) were compared for drug and placebo group pairs using the Mann\u2013Whitney test.",
+            "cite_spans": [],
+            "section": "Shift in mutation frequencies ::: Dengue data analysis ::: MATERIALS AND METHODS",
+            "ref_spans": [
+                {
+                    "start": 112,
+                    "end": 119,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "For identifying mutational hotspots, we used a scanning window approach to scan the dengue virus genome for each sample (window size of 20 and an overlap of five nucleotides) to look for an excess of SNVs in a window compared with the genome-wide average (binomial test; Bonferroni-corrected P-value < 0.05). For cold-spots, we pooled SNVs from all samples and scanned for windows (minimum size of 40) with a depletion of SNVs (binomial test; Bonferroni-corrected P-value < 0.05).",
+            "cite_spans": [],
+            "section": "Hotspots and cold-spots ::: Dengue data analysis ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Simulated reads were generated using Metasim (RefSeq entry NC_000913 as reference) with error rates and number of reads set to those observed from the real dataset. Reads from the simulated and real datasets were uniquely mapped against RefSeq entry NC_000913 using BWA (36), which resulted in an average coverage of \u223c560\u00d7. Quality recalibration was performed for the real dataset in the same way as was done for the dengue data. The real dataset was assumed to be genetically clonal with no true rare SNVs to be detected.",
+            "cite_spans": [
+                {
+                    "start": 271,
+                    "end": 273,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Escherichia coli data analysis ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Reads mapping against the mitochondrial genome were extracted from the hg18-mapped BAM files and stringently remapped (BWA unique) against the Cambridge reference (37) to allow for easy comparison with Mitomap entries. This was followed by quality recalibration (as was done for the dengue data) and SNV calling using LoFreq.",
+            "cite_spans": [
+                {
+                    "start": 164,
+                    "end": 166,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                }
+            ],
+            "section": "Mitochondrial heteroplasmy ::: Gastric cancer data analysis ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "For the analysis of the whole-genome sequencing data, we applied the same filtering rules for samtools (Version 0.1.18; (14)) and LoFreq to allow for a fair comparison. Specifically, we set the coverage cap to 10 000, removed any bases with a quality <13 (samtools default corresponding to an error rate of 5%), removed predicted SNVs with a quality <40 (0.01% error rate) and removed SNVs if more than three are present in a window of 20 bp, to reduce indel-associated artifacts. No extra strand-bias filter was applied. SNP calls for validation were obtained using data from a Illumina Human610-Quadv1 array (32). Positive predictive value (PPV) was computed as the fraction of samtools or LoFreq calls at array positions that were concordant with the SNP array and sensitivity was measured as the fraction of genotyped positions that were correctly called by the variant callers.",
+            "cite_spans": [
+                {
+                    "start": 121,
+                    "end": 123,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 611,
+                    "end": 613,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Whole-genome sequencing data ::: Gastric cancer data analysis ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Somatic SNVs were called with LoFreq and compared with the calls made using a samtools-based pipeline (32). Specifically, a somatic variant was reported for a variant call unique to the tumor, where the normal genotype called by samtools was different and where less than two reads of the variant genotype were seen in the normal sample. P-values for somatic SNV calls produced by LoFreq were Bonferroni corrected and if more than three SNPs where present in a window of 20 bp, they were removed to reduce indel-associated artifacts (this was done for the samtools calls as well).",
+            "cite_spans": [
+                {
+                    "start": 103,
+                    "end": 105,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Exome sequencing data ::: Gastric cancer data analysis ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "In order to enable comparisons with the methods described in these publications\u2014which were chosen as representatives for non-model-based algorithms\u2014we re-implemented them and these are now available as part of the LoFreq package.",
+            "cite_spans": [],
+            "section": "Goto et al. and Wright et al. ::: Parameters for SNV calling ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We used SNVer Version 0.3.1, which automatically determines error rates, whereas the original version needed a fixed, user-defined sequencing error threshold (29). The SNVerIndividual.jar module was used for SNV calling. The number of haploids was set to 1 and the alt/ref ratio threshold was set to 0.0 to switch off filtering of variants with frequencies below the default of 25%.",
+            "cite_spans": [
+                {
+                    "start": 159,
+                    "end": 161,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "SNVer ::: Parameters for SNV calling ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "We used Breseq Version 0.18 (27,28) and switched on its \u2018polymorphism-prediction\u2019 function for calling variants. Note that Breseq is an end-to-end protocol for the analysis of microbial short-read data with many more features, but here we only used its ability to predict substitutions. We ran the full Breseq pipeline (SSAHA2 Version 2.5.5 for mapping), starting from the unmapped reads and parsed SNVs from the final html output. Where it made sense to use Breseq\u2019s stand-alone variant caller (e.g. in the runtime comparison), we used this version and denote it as \u2018Breseq*\u2019.",
+            "cite_spans": [
+                {
+                    "start": 29,
+                    "end": 31,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 32,
+                    "end": 34,
+                    "mention": "28",
+                    "ref_id": "BIBREF20"
+                }
+            ],
+            "section": "Breseq ::: Parameters for SNV calling ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "LoFreq takes a samtools pileup as input (samtools mpileup; Version 0.1.18). By default samtools applies a coverage cap and we set this to be sufficiently high to avoid filtering reads in a sample (-d 100000). Whenever indels were not allowed for read mapping, we switched off samtools BAQ computation (-B). SNVs were called with a Bonferroni-corrected P-value threshold of 0.05 and the same threshold was applied for calling somatic variants with the binomial test. Unless stated otherwise, we removed variant positions with a significant strand bias (Holm\u2013Bonferroni-corrected P-value < 0.05) from LoFreq predictions.",
+            "cite_spans": [],
+            "section": "LoFreq ::: Parameters for SNV calling ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "All simulated and sequencing datasets generated in this study can be downloaded from http://collaborations.gis.a-star.edu.sg/\u223cwilma/lofreq_paper_data/ and sequencing data will be available soon from the Sequence Read Archive.",
+            "cite_spans": [],
+            "section": "Availability of datasets ::: MATERIALS AND METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "To benchmark LoFreq against existing methods (SNVer, Breseq, Goto et al. (38) and Wright et al. (23)), we constructed several in silico datasets with varying characteristics. In particular, we constructed datasets with simulated reads mimicking the characteristics of the dengue virus sequencing datasets in this study (see \u2018Materials and Methods\u2019 section) and designed to contain 10 haplotypes with the rarest being represented at a frequency of 0.1%. These datasets allowed us to investigate the performance of the various methods as a function of sequencing coverage (from 50\u00d7 to 10 000\u00d7). Overall, the heuristic approaches performed poorly in terms of sensitivity (Goto et al.) or PPV (Wright et al.), while all the model-based approaches (SNVer, Breseq and LoFreq) had perfect PPV and therefore perfect specificity (Table 1). LoFreq was also the most sensitive method with perfect specificity and called 96% of variants at 0.2% frequency with 10 000\u00d7 coverage (compared with 0 and 8% for SNVer and Breseq, respectively). As expected, with lower coverage, sensitivity fell for all methods but LoFreq continued to improve on results from SNVer and Breseq. These results highlight the utility of the quality-aware approach in LoFreq for being able to exploit information present in high-coverage sequencing datasets to call variants with high sensitivity and specificity.\n",
+            "cite_spans": [
+                {
+                    "start": 74,
+                    "end": 76,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 97,
+                    "end": 99,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Sensitivity/specificity tradeoffs and detection limits ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 821,
+                    "end": 828,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "In order to more closely mimic the biases in sequencing read coverage and base qualities, we also created \u2018simulated population\u2019 datasets using real sequencing data (see \u2018Materials and Methods\u2019 section). As before SNVer, Breseq and LoFreq had perfect specificity, but LoFreq consistently detects the highest number of true SNVs in all frequency ranges (Figure 1a). A striking aspect of these results is that even for SNVs with frequency >10%, LoFreq finds >40 variants that are missed by SNVer and Breseq, providing a 10\u201320% boost in sensitivity in this range (Figure 1a). In fact, predictions made by Breseq and SNVer were found to be essentially a subset of LoFreq\u2019s prediction (Figure 1b) with LoFreq increasing overall sensitivity by 25 and 71% compared with SNVer and Breseq, respectively.\n",
+            "cite_spans": [],
+            "section": "Sensitivity/specificity tradeoffs and detection limits ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 353,
+                    "end": 361,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 561,
+                    "end": 569,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 681,
+                    "end": 689,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "The detection limits of rare variant-calling methods have not been systematically assessed before and the general assumption has been that variants at a frequency lower than the average error rate in a dataset are likely to be undetectable (23). To study this aspect further, we evaluated the methods on datasets with controlled coverage values and counts for non-reference bases (see \u2018Materials and Methods\u2019 section). Our results show that LoFreq successfully exploits high-coverage (10 000\u00d7) and high-quality (Q40) sequencing data and calls variants with frequency as low as 0.05% under these conditions (Figure 1c). In contrast, the model-based approach in SNVer had a substantially higher detection limit (1%) that was unaffected by the quality of the data (Figure 1c). LoFreq\u2019s ability to automatically tune its stringency thus allows it to adjust to local variations in sequencing quality and maximize its power to detect variants.",
+            "cite_spans": [
+                {
+                    "start": 241,
+                    "end": 243,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Sensitivity/specificity tradeoffs and detection limits ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 607,
+                    "end": 615,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 762,
+                    "end": 770,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "We further evaluated LoFreq and other variant-calling methods on several large sequencing datasets (viral, bacterial and human). In particular, we applied the methods to six technical replicates of DENV2 cell-culture isolates to measure the robustness and reproducibility of their results (see \u2018Materials and Methods\u2019 section). In this analysis, all methods did well in terms of reproducibility (% of SNVs called in at least two replicates) but LoFreq was the most sensitive among them, calling twice as many variants on average compared with SNVer (Table 2). For robustness, LoFreq results on the pooled data were nearly a superset of the individual calls (Supplementary Figure S1) and were as robust as the calls for SNVer (Table 2). The analysis here suggests that sensitivity is the major limiting factor for variant callers. In addition, the presence of SNVs seen in two or more replicates, but not in all six replicates (Supplementary Figure S1), suggests that sequencing coverage may be a bottleneck to fully capture true variants in the population.\n",
+            "cite_spans": [],
+            "section": "Robustness and false-positive rates ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 550,
+                    "end": 557,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                },
+                {
+                    "start": 726,
+                    "end": 733,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "Our results from simulated and real datasets suggest that LoFreq is a conservative as well as an ultra-sensitive variant caller. To characterize the false-positive rates for LoFreq further, we analyzed simulated as well as real data for an E. coli clone (560\u00d7 coverage; see \u2018Materials and Methods\u2019 section). With over 4.6 million positions, the E. coli genome provides a larger test case and with simulated reads, LoFreq reported no false-positive calls. From the sequencing data, Breseq, LoFreq and SNVer reported 79, 2 and 0, potentially false-positive variants, respectively. It is possible that some of these SNVs are in fact real as it is known that \u2018clonal\u2019 bacterial populations evolve under laboratory conditions (27), maintaining variation even in equilibrium conditions in chemostats (39,40). Nevertheless, our results suggest that all three methods are conservative and that LoFreq has low false-positive rates (<0.00005% in this dataset).",
+            "cite_spans": [
+                {
+                    "start": 722,
+                    "end": 724,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 795,
+                    "end": 797,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 798,
+                    "end": 800,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "Robustness and false-positive rates ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "While LoFreq was designed with applications to high-coverage sequencing of viral or bacterial genomes in mind, it is generic and fast enough to be applied to large genomes and low-coverage datasets as well. To highlight this, we analyzed whole-genome sequencing data for two gastric adenocarcinoma samples (\u223c30\u00d7 coverage; (32)) with LoFreq and compared results with those from a commonly used genotype caller on human re-sequencing datasets, samtools (14) (using SNP quality threshold of 40 and identical filtering rules; see \u2018Materials and Methods\u2019 section). Interestingly, we found that LoFreq\u2019s predictions were an almost perfect superset of those made by samtools (>99.7% of samtools predictions are shared with LoFreq), while >14% of LoFreq\u2019s predictions were unique to it. Overall, LoFreq had similar precision as samtools (PPV = 99.8% for both methods and datasets), but higher sensitivity (\u223c99% versus \u223c95% on both datasets) as measured on a SNP array (see \u2018Materials and Methods\u2019 section). These results provide the basis for applying LoFreq to sensitively and accurately call somatic variants from paired tumor/normal sequencing datasets (as discussed later) and note that this comparison is not meant to suggest that LoFreq can be used a genotype caller, as is the case for samtools.",
+            "cite_spans": [
+                {
+                    "start": 323,
+                    "end": 325,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 452,
+                    "end": 454,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                }
+            ],
+            "section": "Robustness and false-positive rates ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Similar to other variant callers, LoFreq\u2019s runtime scales linearly with the size of the genome. Runtime increases as a function of the depth of coverage was similar between LoFreq and the fastest ad hoc methods (Goto et al. (38) and Wright et al. (23); the runtime here is dominated by the time to parse the data), with LoFreq being faster than Breseq (factor of 2) and more than an order of magnitude faster than SNVer at 10 000\u00d7 coverage on the dengue virus genome (Supplementary Figure S2). Also, when compared with a naive version for computing exact P-values (see \u2018Materials and Methods\u2019 section), LoFreq\u2019s pruned-dynamic-programming approach is also an order of magnitude faster (Supplementary Figure S2). On a single processor, the runtime for LoFreq was roughly 1 min on a dataset with 3700\u00d7 coverage of the dengue virus genome (size = 10.7 kb), 1 h for 600\u00d7 coverage of the E. coli genome (size = 4.6 Mbp) and 1 h and 20 min for 100\u00d7 coverage of the human exome (size = 33 Mbp). Note that a parallel implementation of LoFreq is straightforward and would provide further runtime improvements for large genomes.",
+            "cite_spans": [
+                {
+                    "start": 225,
+                    "end": 227,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 248,
+                    "end": 250,
+                    "mention": "23",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Runtime efficiency ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "Validation of low-frequency SNVs reported by variant callers is a challenging task and one that has not been attempted before in published methods (21\u201324,27,29). The recent availability of micro-fluidic digital PCR systems has made this more accessible but significant cost limitations and technical challenges remain for large-scale validation. As a proof-of-principle, we designed an experiment on the Fluidigm Digital Array\u2122 (Fluidigm) based on 12 randomly chosen SNVs with discordant calls from LoFreq, SNVer and Breseq on two replicate dengue virus sequencing datasets (see \u2018Materials and Methods\u2019 section; Supplementary Figure S3). Strikingly, LoFreq predictions were validated in all experiments (nine out of nine valid calls; Figure 1d) with the rarest SNV detected by LoFreq being just <0.5% in frequency. Also, the frequencies estimated by LoFreq were within the experimentally predicted ranges in all cases. In contrast, Breseq was correct in seven out of nine predictions while SNVer was only able to correctly call two of the higher frequency variants (Figure 1d). Despite being the most conservative variant caller on the simulated datasets, SNVer had two false-positive calls on this dataset.",
+            "cite_spans": [
+                {
+                    "start": 148,
+                    "end": 153,
+                    "mention": "21\u201324",
+                    "ref_id": null
+                },
+                {
+                    "start": 154,
+                    "end": 156,
+                    "mention": "27",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 157,
+                    "end": 159,
+                    "mention": "29",
+                    "ref_id": "BIBREF21"
+                }
+            ],
+            "section": "Experimental validation ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 734,
+                    "end": 742,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1066,
+                    "end": 1074,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "As an additional validation, we designed an experiment on the Sequenom MassArray iPLEX platform for testing 92 variant positions in 18 clinical and 4 cell-culture dengue virus samples (see \u2018Materials and Methods\u2019 section). In total, 1474 variant position/sample combinations were tested in this experiment. All calls made by Sequenom MassArray were also captured in the results from LoFreq (5/5) indicating that the Type II error rate for LoFreq is likely to be low. SNVer also detected all five calls and Breseq detected four out of five calls. These results highlight the fact that LoFreq calls (and SNVer\u2019s) are likely to be at least as sensitive as this commonly used mass-spectrometry-based gold-standard for validating SNVs.",
+            "cite_spans": [],
+            "section": "Experimental validation ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "High-coverage exome and whole-genome sequencing datasets for matched tumor and normal samples from cancer patients are increasingly being generated to characterize cancer-specific somatic mutations that could play a driving role in tumorigenesis. Despite the known heterogeneity of tumors, calling of somatic variants is often limited to those in a majority of the cells or performed using ad hoc approaches (10,32,41). In addition, since tumor samples are often contaminated with normal tissue, the ability to robustly detect somatic mutations can be critical. In particular, results from a samtools analysis of 14 exome sequencing datasets for gastric tumor/normal paired samples from Zang et al. (32) revealed an asymmetric frequency distribution for the somatic SNVs called, suggesting that sample contamination can lead to significantly reduced sensitivity even with high sequencing coverage (Supplementary Figure S4). Re-analysis of these datasets with LoFreq helped to recover the full distribution (Figure 2), revealing the value of a systematic approach to call low-frequency somatic SNVs even when the goal is to only identify heterozygous and homozygous variants in high-coverage datasets.\n",
+            "cite_spans": [
+                {
+                    "start": 409,
+                    "end": 411,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 412,
+                    "end": 414,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 415,
+                    "end": 417,
+                    "mention": "41",
+                    "ref_id": "BIBREF35"
+                },
+                {
+                    "start": 700,
+                    "end": 702,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Application: tumor heterogeneity in gastric cancer ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 1007,
+                    "end": 1015,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "In addition, we also extended the somatic SNV analysis to the mitochondrial genome (\u223c3000\u00d7 coverage) of the two whole-genome sequencing datasets from Zang et al. (32) analyzed earlier. Heteroplasmic mitochondrial DNA (mtDNA) mutations (present in only a fraction of the mtDNA) are often disease related and have been associated with tumor activity and cancer etiology (42,43). In particular, we identified two low-frequency somatic SNVs (3628:A>C at 8% and 12868:G>A at 10%) in NADH dehydrogenases 1 and 5 in patient NGC0092 which were non-synonymous and not listed in Mitomap (44). Somatic mtDNA mutations have been seen in a diverse set of cancers (45) and mutations in the NADH dehydrogenases, with their role in oxidative phosphorylation in the mitochondria (46), could potentially play an important role. Analogously, we identified one somatic SNV (8300:T>C at 25%) in the tRNA (Lys) gene in patient NGC0082, a known hotspot for mtDNA mutations and with several variants associated with myopathies (including one at position 8303 (47,48)). Rare heteroplasmic variations have previously been studied with targeted re-sequencing, followed by ad hoc filtering and detection rules, which have been shown to lead to irreproducible results (38). As shown here, the use of a sensitive variant caller on low-coverage whole-genome sequencing datasets provides a new approach to study this phenomenon.",
+            "cite_spans": [
+                {
+                    "start": 163,
+                    "end": 165,
+                    "mention": "32",
+                    "ref_id": "BIBREF25"
+                },
+                {
+                    "start": 369,
+                    "end": 371,
+                    "mention": "42",
+                    "ref_id": "BIBREF36"
+                },
+                {
+                    "start": 372,
+                    "end": 374,
+                    "mention": "43",
+                    "ref_id": "BIBREF37"
+                },
+                {
+                    "start": 578,
+                    "end": 580,
+                    "mention": "44",
+                    "ref_id": "BIBREF38"
+                },
+                {
+                    "start": 651,
+                    "end": 653,
+                    "mention": "45",
+                    "ref_id": "BIBREF39"
+                },
+                {
+                    "start": 763,
+                    "end": 765,
+                    "mention": "46",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 1036,
+                    "end": 1038,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 1039,
+                    "end": 1041,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 1240,
+                    "end": 1242,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                }
+            ],
+            "section": "Application: tumor heterogeneity in gastric cancer ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "The sensitivity and robustness of LoFreq allow for the characterization of subtle shifts in the viral quasi species and we highlight this capability here by analyzing dengue virus sequencing datasets from a drug-trial study for the nucleoside-analog Balapiravir (31). Since the putative mechanism of action of the drug is to lead to mutations in cytosine bases (C > N mutagen by inhibition of CMP incorporation (49)), this dataset provides an ideal test-bed for studying quasi species dynamics of the dengue virus using samples from two time points (Table 3). In particular, an important conclusion of the original study was that despite encouraging results in in vitro studies, the drug did not work as expected in vivo (31). To investigate this aspect further, we compared the frequency of C > N mutations in the placebo group versus the drug group (see \u2018Materials and Methods\u2019 section) in dengue virus serotype 1, 2 and 3 (DENV1, DENV2 and DENV3) samples using LoFreq SNV calls (see \u2018Materials and Methods\u2019 section). Our results indicate that no significant changes can be seen in this frequency for any serotype (Mann\u2013Whitney test, P-value > 0.3), providing a molecular basis for the in vivo conclusion of this study. Despite this, we do detect other changes in viral intra-host variation, including an increase in the number of SNVs at later time points, as expected (one-sided Mann\u2013Whitney test P-value < 0.007 for DENV1 placebo group), as well as the disappearance of a mutational hotspot in NS3 (see \u2018Materials and Methods\u2019 section) at a later time point, possibly due to adaptation to the host\u2019s immune response (Figure 3).\n\n\n",
+            "cite_spans": [
+                {
+                    "start": 263,
+                    "end": 265,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 412,
+                    "end": 414,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 722,
+                    "end": 724,
+                    "mention": "31",
+                    "ref_id": "BIBREF24"
+                }
+            ],
+            "section": "Application: quasi-species evolution in clinical dengue virus samples ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 1622,
+                    "end": 1630,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 550,
+                    "end": 557,
+                    "mention": "Table 3",
+                    "ref_id": "TABREF2"
+                }
+            ]
+        },
+        {
+            "text": "We further leveraged the SNVs called with LoFreq to systematically determine mutational cold-spots and hotspot regions in DENV1 and DENV2 (Figure 3; see \u2018Materials and Methods\u2019 section). Interestingly, these features differ substantially between the two serotypes, with the exception of a shared cold-spot in the membrane glycoprotein precursor protein (prM), known to be critical for assembly and secretion of all flavivirus virions (50). This region was only recently shown to be conserved across flaviviruses (51), though this conservation cannot be readily observed from an alignment of >2900 complete dengue virus genomes available in GenBank (Supplementary Figure S5). Comparison of clinical and cell-culture samples for DENV2 also revealed a shared hotspot in the known variable region of the 3-UTR (52), which has been shown to be dispensable for replication in some host cell types (53).",
+            "cite_spans": [
+                {
+                    "start": 435,
+                    "end": 437,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 513,
+                    "end": 515,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 807,
+                    "end": 809,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 892,
+                    "end": 894,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                }
+            ],
+            "section": "Application: quasi-species evolution in clinical dengue virus samples ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 139,
+                    "end": 147,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "The value of cold-spot and hotspot analysis for identifying functionally important residues can also be seen from a structural perspective (Figure 4). For example, when viewed on the structure of the NS5 methyltransferase (Figure 4a), a first group of cold-spots consists of contiguous residues completely enclosing the binding site of the S-adenosyl-l-methionine (SAM) molecule that serves as a methyl donor for the reaction catalyzed by NS5 for capping of viral mRNAs, while a second group of cold-spots corresponds to the carboxyl end which acts as the linker region that connects to the NS5 polymerase domain. Similarly, a representation of cold-spots on the NS5 RNA-dependent RNA polymerase domain (Figure 4b) encompasses the critical GDD catalytic triad and also most of the template tunnel through which the viral RNA substrate enters or exits during replication. Another example showing cold-spots and hotspots on the NS3 serine protease and helicase, delineating potential interaction surfaces and key resides can be found in Supplementary Figure S6. Our results here suggest that sequencing and characterizing the intra-host variation in a relatively small set of samples can be sufficient for such analysis and reveal candidate drug targets (cold-spots) as well as fast-evolving regions in the viral genome (hotspots) that can be used to estimate haplotype diversity, avoiding the computational complexity of the problem (54). The availability of a sensitive variant caller such as LoFreq thus opens up the potential for the use of this \u2018quasi species footprinting\u2019 approach (akin to phylogenetic footprinting) to reveal functionally important regions in other viral genomes as well.\n",
+            "cite_spans": [
+                {
+                    "start": 1433,
+                    "end": 1435,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "Application: quasi-species evolution in clinical dengue virus samples ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 140,
+                    "end": 148,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 223,
+                    "end": 231,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 704,
+                    "end": 712,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "The exact, quality-aware approach employed in LoFreq is a statistically rigorous way of accounting for biases in sequencing errors while calling SNVs and is, in principle, sequencing technology independent (though our work here was focused on Illumina datasets). More complex models for sequencing errors can be constructed, that say account for correlations between adjacent bases, but would be technology specific and are likely to provide modest gains in sensitivity. The sensitivity/specificity tradeoff results here suggest that while model-based approaches (SNVer, Breseq) provide an improvement over ad hoc approaches, further significant gains in sensitivity are possible (without loss in specificity) using a quality-aware approach (LoFreq). Note that as LoFreq essentially distinguishes true variants from sequencing errors, it can also serve as a quality-aware \u2018error-correction\u2019 module for designing haplotype assemblers that can accommodate high-coverage sequencing datasets (54).",
+            "cite_spans": [
+                {
+                    "start": 989,
+                    "end": 991,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Our experimental validation results confirm that the rare variants discovered by LoFreq are indeed real (with the rarest being at a frequency of 0.5%) and that LoFreq may provide a sensitivity boost on even low-coverage whole-genome sequencing datasets. Despite not relying on any approximations, LoFreq is fast and generic enough to be applied to high-coverage human whole-exome and genome sequencing datasets and thus has applications beyond the analysis of low-frequency variants in viral and microbial sequencing datasets. The ability to call rare somatic variants, in particular, can be valuable in genomic studies of tumor heterogeneity and evolution as well as in emerging applications such as in tumor monitoring by sequencing of cell-free DNA (55). LoFreq\u2019s sensitivity can help detect subtle shifts in cell populations and thus be valuable for sequencing-based monitoring and evolutionary studies of viral, bacterial and cancer samples.",
+            "cite_spans": [
+                {
+                    "start": 753,
+                    "end": 755,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The ability to call rare variants is dictated in general by both sequencing quality and read coverage and LoFreq allows the user to exploit local variations in both parameters. More extensive simulations of the sort depicted in Figure 1c can be employed by a user to help guide experimental design when the goal is to capture SNVs at a certain frequency. LoFreq is based on calibrated quality values that are commonly generated from sequencing data and where this is not feasible, conservative quality values or an estimate of average quality values (as used in LoFreq-NQ; see \u2018Materials and Methods\u2019 section) can be employed with an accompanying loss in sensitivity and specificity, respectively.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": [
+                {
+                    "start": 228,
+                    "end": 236,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "While sequencing quality is a key for correctly calling SNVs, indel variants are more likely to be influenced by alignment quality. LoFreq\u2019s variant-calling model could be extended to indels (and other classes of variants) if the probability of error in a variant-supporting read can be encoded in a suitably computed quality value. Also, in calling SNVs, LoFreq requires unique read mappings and high-quality alignments, similar to other variant callers. Calling rare SNVs in regions with non-unique mappings and alignment uncertainty represents a significant technical challenge and is a potential direction for future extensions to LoFreq.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Supplementary Data are available at NAR Online: Supplementary Figures 1\u20136.",
+            "cite_spans": [],
+            "section": "SUPPLEMENTARY DATA",
+            "ref_spans": []
+        },
+        {
+            "text": "Funding for open access charge: Agency for Science Technology and Research (A*STAR), Singapore.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        },
+        {
+            "text": "Conflict of interest statement. None declared.",
+            "cite_spans": [],
+            "section": "FUNDING",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Performance of variant callers as a function of coverage\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2.: Reproducibility and robustness of variant callers\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table 3.: Distribution of clinical dengue virus sequencing datasets\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1.: In silico and experimental validation. (a) Sensitivity as a function of SNV frequency for LoFreq, SNVer and Breseq on a simulated viral population (see \u2018Materials and Methods\u2019 section). (b) Venn diagram showing the overlap of SNV predictions on the simulated population. (c) Detection limits for LoFreq and SNVer as a function of sequencing quality and coverage. Note that SNVer results are unaffected by varying quality values. (d) Validation results for rare variants on a Fluidigm Digital Array. Standard deviations are shown as boxes with error-bars. Note that three assays failed (reporting a non-sense frequency of 50%) and are not shown here.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: SNV calling in the presence of tumor sample heterogeneity. Germline and somatic variant frequencies for paired tumor-normal exome sequencing datasets from a custom samtools-based pipeline (32) are compared here with those from LoFreq (see \u2018Materials and Methods\u2019 section). As shown, while germline variants are consistently distributed around 50% (as expected for heterozygous variants), somatic variants are shifted to lower frequencies, likely due to contamination in the tumor sample from normal stromal tissue. Note that while samtools-based somatic calls appear \u2018clipped\u2019 at lower frequencies, LoFreq calls are symmetrically distributed as expected.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: Mutational hotspots and cold-spots in the dengue virus genome. Circos plots (56) of mutational hotspots and cold-spots derived from clinical (a) DENV1 and (b) DENV2 samples. Outer ring: gene annotation; inner ring: average coverage (log10-scaled). The inner bars mark mutational hotspots (red) and cold-spots (blue), which were derived from intra-host variations called by LoFreq (see \u2018Materials and Methods\u2019 section). Height of hotspots indicates how often the hotspot was found (sqrt(count)), whereas the height of cold-spots is fixed. The cold-spot in prM is shared between both serotypes. The last hotspot window in NS1 for the DENV2 samples was only found in pre-dose samples (Table 3) and disappears at later time points.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: Structural view of hot and cold-spots in the dengue virus genome. (a) Surface representation of dengue virus NS5 methyltransferase (PDB accession number 1R6A). The nucleoside-analog ribavirin 5\u2032-triphosphate (RTP) is shown in blue and the by-product of S-adenosyl-l-methionine (SAM) after the transfer of a methyl group, S-adenosyl-l-homocysteine (SAH), is in red, both in ball-and-stick representation. Cold-spots are colored in violet. The first group of cold-spots consists of contiguous residues which completely enclose the binding site for SAM. SAM molecules serve as a methyl donor in the reaction catalyzed by the NS5 methyltransferase, which results in the capping of viral mRNAs. The second group of cold-spots corresponds to the carboxyl end of the NS5 methyltransferase which act as the linker region that connects the domain to the NS5 polymerase domain. (b) Surface representation of dengue virus NS5 RNA-dependent RNA polymerase (PDB accession number 2J7W). The GDD catalytic triad is colored in red whereas the cold-spots identified from SNV analysis are colored in violet. Cold-spots include the dengue virus NS5 RNA-dependent RNA polymerase GDD catalytic triad and also parts of the template tunnel through which the viral RNA substrate enters and exits during replication.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Selforganization of matter and the evolution of biological macromolecules",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eigen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1971,
+            "venue": "Die Naturwissenschaften",
+            "volume": "58",
+            "issn": "",
+            "pages": "465-523",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Clonal evolution in relapsed acute myeloid leukaemia revealed by whole-genome sequencing",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Ley",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Larson",
+                    "suffix": ""
+                },
+                {
+                    "first": "CA",
+                    "middle": [],
+                    "last": "Miller",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Koboldt",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Welch",
+                    "suffix": ""
+                },
+                {
+                    "first": "JK",
+                    "middle": [],
+                    "last": "Ritchey",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Young",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Lamprecht",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "McLellan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nature",
+            "volume": "481",
+            "issn": "",
+            "pages": "506-510",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Comparison of sequence reads obtained from three next-generation sequencing platforms",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Suzuki",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Ono",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Furusawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "B-W",
+                    "middle": [],
+                    "last": "Ying",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Yomo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Evaluation of genomic high-throughput sequencing data generated on Illumina HiSeq and Genome Analyzer systems",
+            "authors": [
+                {
+                    "first": "AE",
+                    "middle": [],
+                    "last": "Minoche",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Dohm",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Himmelbauer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Genome Biol.",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Sequence-specific error profile of Illumina sequencers",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Nakamura",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Oshima",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Morimoto",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ikeda",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Yoshikawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Shiwa",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Ishikawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Linak",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hirai",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Takahashi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nucleic Acids Res.",
+            "volume": "39",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "The Sequence alignment/map format and SAMtools",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Handsaker",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Wysoker",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Fennell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ruan",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Homer",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Marth",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Abecasis",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Durbin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "",
+            "pages": "2078-2079",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "The Genome Analysis Toolkit: a MapReduce framework for analyzing next-generation DNA sequencing data",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "McKenna",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Hanna",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Banks",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Sivachenko",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Cibulskis",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kernytsky",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Garimella",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Altshuler",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Gabriel",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Daly",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Genome Res.",
+            "volume": "20",
+            "issn": "",
+            "pages": "1297-1303",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Genotype and SNP calling from next-generation sequencing data",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Nielsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Paul",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Albrechtsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "YS",
+                    "middle": [],
+                    "last": "Song",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nat. Rev. Genet.",
+            "volume": "12",
+            "issn": "",
+            "pages": "443-451",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "A statistical method for the detection of variants from next-generation resequencing of DNA pools",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Bansal",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Bioinformatics (Oxford, England)",
+            "volume": "26",
+            "issn": "",
+            "pages": "i318-i324",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Quantification of rare allelic variants from pooled genomic DNA",
+            "authors": [
+                {
+                    "first": "TE",
+                    "middle": [],
+                    "last": "Druley",
+                    "suffix": ""
+                },
+                {
+                    "first": "FLM",
+                    "middle": [],
+                    "last": "Vallania",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Wegner",
+                    "suffix": ""
+                },
+                {
+                    "first": "KE",
+                    "middle": [],
+                    "last": "Varley",
+                    "suffix": ""
+                },
+                {
+                    "first": "OL",
+                    "middle": [],
+                    "last": "Knowles",
+                    "suffix": ""
+                },
+                {
+                    "first": "JA",
+                    "middle": [],
+                    "last": "Bonds",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Robison",
+                    "suffix": ""
+                },
+                {
+                    "first": "SW",
+                    "middle": [],
+                    "last": "Doniger",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hamvas",
+                    "suffix": ""
+                },
+                {
+                    "first": "FS",
+                    "middle": [],
+                    "last": "Cole",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nat. Methods",
+            "volume": "6",
+            "issn": "",
+            "pages": "263-265",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "High-throughput discovery of rare insertions and deletions in large cohorts",
+            "authors": [
+                {
+                    "first": "FLM",
+                    "middle": [],
+                    "last": "Vallania",
+                    "suffix": ""
+                },
+                {
+                    "first": "TE",
+                    "middle": [],
+                    "last": "Druley",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Ramos",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Borecki",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Province",
+                    "suffix": ""
+                },
+                {
+                    "first": "RD",
+                    "middle": [],
+                    "last": "Mitra",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Genome Res.",
+            "volume": "20",
+            "issn": "",
+            "pages": "1711-1718",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "High-resolution analysis of intrahost genetic diversity in dengue virus serotype 1 infection identifies mixed infections",
+            "authors": [
+                {
+                    "first": "KTD",
+                    "middle": [],
+                    "last": "Thai",
+                    "suffix": ""
+                },
+                {
+                    "first": "MR",
+                    "middle": [],
+                    "last": "Henn",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Zody",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Tricou",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Nguyet",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Charlebois",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Lennon",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Green",
+                    "suffix": ""
+                },
+                {
+                    "first": "PJ",
+                    "middle": [],
+                    "last": "de Vries",
+                    "suffix": ""
+                },
+                {
+                    "first": "TT",
+                    "middle": [],
+                    "last": "Hien",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Virol.",
+            "volume": "86",
+            "issn": "",
+            "pages": "835-843",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "VarScan: variant detection in massively parallel sequencing of individual and pooled samples",
+            "authors": [
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Koboldt",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Wylie",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Larson",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "McLellan",
+                    "suffix": ""
+                },
+                {
+                    "first": "ER",
+                    "middle": [],
+                    "last": "Mardis",
+                    "suffix": ""
+                },
+                {
+                    "first": "GM",
+                    "middle": [],
+                    "last": "Weinstock",
+                    "suffix": ""
+                },
+                {
+                    "first": "RK",
+                    "middle": [],
+                    "last": "Wilson",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "",
+            "pages": "2283-2285",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Rhinovirus genome evolution during experimental human infection",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cordey",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Junier",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Gerlach",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Gobbini",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Farinelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Zdobnov",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Winther",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Tapparel",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Kaiser",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS One",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Infidelity of SARS-CoV Nsp14-exonuclease mutant virus replication is revealed by complete genome sequencing",
+            "authors": [
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Eckerle",
+                    "suffix": ""
+                },
+                {
+                    "first": "MM",
+                    "middle": [],
+                    "last": "Becker",
+                    "suffix": ""
+                },
+                {
+                    "first": "RA",
+                    "middle": [],
+                    "last": "Halpin",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Venter",
+                    "suffix": ""
+                },
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Lu",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Scherbakova",
+                    "suffix": ""
+                },
+                {
+                    "first": "RL",
+                    "middle": [],
+                    "last": "Graham",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Baric",
+                    "suffix": ""
+                },
+                {
+                    "first": "TB",
+                    "middle": [],
+                    "last": "Stockwell",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Pathog.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Beyond the consensus: dissecting within-host viral population diversity of foot-and-mouth disease virus by using next-generation genome sequencing",
+            "authors": [
+                {
+                    "first": "CF",
+                    "middle": [],
+                    "last": "Wright",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Morelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Th\u00e9baud",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Knowles",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Herzyk",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJ",
+                    "middle": [],
+                    "last": "Paton",
+                    "suffix": ""
+                },
+                {
+                    "first": "DT",
+                    "middle": [],
+                    "last": "Haydon",
+                    "suffix": ""
+                },
+                {
+                    "first": "DP",
+                    "middle": [],
+                    "last": "King",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "J. Virol.",
+            "volume": "85",
+            "issn": "",
+            "pages": "2266-2275",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Genetic heterogeneity of hepatitis C virus in association with antiviral therapy determined by ultra-deep sequencing",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nasu",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Marusawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Ueda",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Nishijima",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Takahashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Osaki",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Yamashita",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Inokuma",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Tamada",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Fujiwara",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Quasispecies theory and the behavior of RNA viruses",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Lauring",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Andino",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "PLoS Pathog.",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Massively parallel sequencing for monitoring genetic consistency and quality control of live viral vaccines",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Neverov",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Chumakov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "107",
+            "issn": "",
+            "pages": "20063-20068",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Genome evolution and adaptation in a long-term experiment with Escherichia coli",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Barrick",
+                    "suffix": ""
+                },
+                {
+                    "first": "DS",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Yoon",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Jeong",
+                    "suffix": ""
+                },
+                {
+                    "first": "TK",
+                    "middle": [],
+                    "last": "Oh",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Schneider",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Lenski",
+                    "suffix": ""
+                },
+                {
+                    "first": "JF",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nature",
+            "volume": "461",
+            "issn": "",
+            "pages": "1243-1247",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Genome-wide mutational diversity in an evolving population of Escherichia coli",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Barrick",
+                    "suffix": ""
+                },
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Lenski",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Cold Spring Harb. Symp. Quant. Biol.",
+            "volume": "74",
+            "issn": "",
+            "pages": "119-129",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "SNVer: a statistical tool for variant calling in analysis of pooled or individual next-generation sequencing data",
+            "authors": [
+                {
+                    "first": "Z",
+                    "middle": [],
+                    "last": "Wei",
+                    "suffix": ""
+                },
+                {
+                    "first": "W",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Hu",
+                    "suffix": ""
+                },
+                {
+                    "first": "GJ",
+                    "middle": [],
+                    "last": "Lyon",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Hakonarson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nucleic Acids Res.",
+            "volume": "39",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Bacterial charity work leads to population-wide resistance",
+            "authors": [
+                {
+                    "first": "HH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "MN",
+                    "middle": [],
+                    "last": "Molla",
+                    "suffix": ""
+                },
+                {
+                    "first": "CR",
+                    "middle": [],
+                    "last": "Cantor",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Collins",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nature",
+            "volume": "467",
+            "issn": "",
+            "pages": "82-85",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Highly sensitive and specific detection of rare variants in mixed viral populations from massively parallel sequence data",
+            "authors": [
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Macalalad",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Zody",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Charlebois",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Lennon",
+                    "suffix": ""
+                },
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Newman",
+                    "suffix": ""
+                },
+                {
+                    "first": "CM",
+                    "middle": [],
+                    "last": "Malboeuf",
+                    "suffix": ""
+                },
+                {
+                    "first": "EM",
+                    "middle": [],
+                    "last": "Ryan",
+                    "suffix": ""
+                },
+                {
+                    "first": "CL",
+                    "middle": [],
+                    "last": "Boutwell",
+                    "suffix": ""
+                },
+                {
+                    "first": "KA",
+                    "middle": [],
+                    "last": "Power",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Brackney",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "PLoS Comput. Biol.",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "A randomized, double-blind placebo controlled trial of balapiravir, a polymerase inhibitor, in adult dengue patients",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Nguyen",
+                    "suffix": ""
+                },
+                {
+                    "first": "CNB",
+                    "middle": [],
+                    "last": "Tran",
+                    "suffix": ""
+                },
+                {
+                    "first": "LK",
+                    "middle": [],
+                    "last": "Phung",
+                    "suffix": ""
+                },
+                {
+                    "first": "KTH",
+                    "middle": [],
+                    "last": "Duong",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [
+                        "le",
+                        "A"
+                    ],
+                    "last": "Huynh",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Farrar",
+                    "suffix": ""
+                },
+                {
+                    "first": "QTH",
+                    "middle": [],
+                    "last": "Nguyen",
+                    "suffix": ""
+                },
+                {
+                    "first": "HT",
+                    "middle": [],
+                    "last": "Tran",
+                    "suffix": ""
+                },
+                {
+                    "first": "CVV",
+                    "middle": [],
+                    "last": "Nguyen",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Merson",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Infect. Dis.",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Exome sequencing of gastric adenocarcinoma identifies recurrent somatic mutations in cell adhesion and chromatin remodeling genes",
+            "authors": [
+                {
+                    "first": "ZJ",
+                    "middle": [],
+                    "last": "Zang",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Cutcutache",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Poon",
+                    "suffix": ""
+                },
+                {
+                    "first": "SL",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "JR",
+                    "middle": [],
+                    "last": "McPherson",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Tao",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Rajasegaran",
+                    "suffix": ""
+                },
+                {
+                    "first": "HL",
+                    "middle": [],
+                    "last": "Heng",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Deng",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Gan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nat. Genet.",
+            "volume": "44",
+            "issn": "",
+            "pages": "570-574",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "MetaSim: a sequencing simulator for genomics and metagenomics",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Richter",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Ott",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Auch",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Schmid",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "PLoS One",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Maximum likelihood from incomplete data via the EM algorithm",
+            "authors": [
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Dempster",
+                    "suffix": ""
+                },
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Dempster",
+                    "suffix": ""
+                },
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Laird",
+                    "suffix": ""
+                },
+                {
+                    "first": "DB",
+                    "middle": [],
+                    "last": "Rubin",
+                    "suffix": ""
+                }
+            ],
+            "year": 1977,
+            "venue": "J. Roy. Stat. Soc. B",
+            "volume": "39",
+            "issn": "",
+            "pages": "1-38",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "RazerS\u2014fast read mapping with sensitivity control",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Weese",
+                    "suffix": ""
+                },
+                {
+                    "first": "A-K",
+                    "middle": [],
+                    "last": "Emde",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Rausch",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "D\u00f6ring",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Reinert",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Genome Res.",
+            "volume": "19",
+            "issn": "",
+            "pages": "1646-1654",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Fast and accurate short read alignment with Burrows\u2013Wheeler transform",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Durbin",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Bioinformatics",
+            "volume": "25",
+            "issn": "",
+            "pages": "1754-1760",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Reanalysis and revision of the Cambridge reference sequence for human mitochondrial DNA",
+            "authors": [
+                {
+                    "first": "RM",
+                    "middle": [],
+                    "last": "Andrews",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Kubacka",
+                    "suffix": ""
+                },
+                {
+                    "first": "PF",
+                    "middle": [],
+                    "last": "Chinnery",
+                    "suffix": ""
+                },
+                {
+                    "first": "RN",
+                    "middle": [],
+                    "last": "Lightowlers",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Turnbull",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Howell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nat. Genet.",
+            "volume": "23",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Dynamics of mitochondrial heteroplasmy in three families investigated via a repeatable re-sequencing study",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Goto",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Dickins",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Afgan",
+                    "suffix": ""
+                },
+                {
+                    "first": "IM",
+                    "middle": [],
+                    "last": "Paul",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Taylor",
+                    "suffix": ""
+                },
+                {
+                    "first": "KD",
+                    "middle": [],
+                    "last": "Makova",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Nekrutenko",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Genome Biol.",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Clonal adaptive radiation in a constant environment",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Maharjan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Seeto",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Notley-McRobb",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ferenci",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Science",
+            "volume": "313",
+            "issn": "",
+            "pages": "514-517",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Evolutionary paths to antibiotic resistance under dynamically sustained drug selection",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Toprak",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Veres",
+                    "suffix": ""
+                },
+                {
+                    "first": "J-B",
+                    "middle": [],
+                    "last": "Michel",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Chait",
+                    "suffix": ""
+                },
+                {
+                    "first": "DL",
+                    "middle": [],
+                    "last": "Hartl",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kishony",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nat. Genet.",
+            "volume": "44",
+            "issn": "",
+            "pages": "101-105",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Metabolic trade-offs and the maintenance of the fittest and the flattest",
+            "authors": [
+                {
+                    "first": "RE",
+                    "middle": [],
+                    "last": "Beardmore",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Gudelj",
+                    "suffix": ""
+                },
+                {
+                    "first": "DA",
+                    "middle": [],
+                    "last": "Lipson",
+                    "suffix": ""
+                },
+                {
+                    "first": "LD",
+                    "middle": [],
+                    "last": "Hurst",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nature",
+            "volume": "472",
+            "issn": "",
+            "pages": "342-346",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Clonal selection drives genetic divergence of metastatic medulloblastoma",
+            "authors": [
+                {
+                    "first": "X",
+                    "middle": [],
+                    "last": "Wu",
+                    "suffix": ""
+                },
+                {
+                    "first": "PA",
+                    "middle": [],
+                    "last": "Northcott",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Dubuc",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Dupuy",
+                    "suffix": ""
+                },
+                {
+                    "first": "DJH",
+                    "middle": [],
+                    "last": "Shih",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Witt",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Croul",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Bouffet",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Fults",
+                    "suffix": ""
+                },
+                {
+                    "first": "CG",
+                    "middle": [],
+                    "last": "Eberhart",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Nature",
+            "volume": "482",
+            "issn": "",
+            "pages": "529-533",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Mitochondrial mutations in cancer",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Brandon",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Baldi",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Wallace",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "Oncogene",
+            "volume": "25",
+            "issn": "",
+            "pages": "4647-4662",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Somatic mutations throughout the entire mitochondrial genome are associated with elevated PSA levels in prostate cancer patients",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Kloss-Brandst\u00e4tter",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Sch\u00e4fer",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Erhart",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "H\u00fcttenhofer",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Coassin",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Seifarth",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Summerer",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Bektic",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Klocker",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Kronenberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Am. J. Hum. Genet.",
+            "volume": "87",
+            "issn": "",
+            "pages": "802-812",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "An enhanced MITOMAP with a global mtDNA mutational phylogeny",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Ruiz-Pesini",
+                    "suffix": ""
+                },
+                {
+                    "first": "MT",
+                    "middle": [],
+                    "last": "Lott",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Procaccio",
+                    "suffix": ""
+                },
+                {
+                    "first": "JC",
+                    "middle": [],
+                    "last": "Poole",
+                    "suffix": ""
+                },
+                {
+                    "first": "MC",
+                    "middle": [],
+                    "last": "Brandon",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Mishmar",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Yi",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Kreuziger",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Baldi",
+                    "suffix": ""
+                },
+                {
+                    "first": "DC",
+                    "middle": [],
+                    "last": "Wallace",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res.",
+            "volume": "35",
+            "issn": "",
+            "pages": "D823-D828",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Mitochondrial subversion in cancer",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Chatterjee",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Dasgupta",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Sidransky",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Cancer Prev. Res.",
+            "volume": "4",
+            "issn": "",
+            "pages": "638-654",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "The ND2 subunit is labeled by a photoaffinity analogue of asimicin, a potent complex I inhibitor",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Nakamaru-Ogiso",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Han",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Matsuno-Yagi",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Keinan",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Sinha",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Yagi",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Ohnishi",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "FEBS Lett.",
+            "volume": "584",
+            "issn": "",
+            "pages": "883-888",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "A new mtDNA mutation in the tRNA(Leu(UUR)) gene associated with maternally inherited cardiomyopathy",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Silvestri",
+                    "suffix": ""
+                },
+                {
+                    "first": "FM",
+                    "middle": [],
+                    "last": "Santorelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Shanske",
+                    "suffix": ""
+                },
+                {
+                    "first": "CB",
+                    "middle": [],
+                    "last": "Whitley",
+                    "suffix": ""
+                },
+                {
+                    "first": "LA",
+                    "middle": [],
+                    "last": "Schimmenti",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Smith",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "DiMauro",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Hum. Mutat.",
+            "volume": "3",
+            "issn": "",
+            "pages": "37-43",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "A tRNA(Lys) mutation in the mtDNA is the causal genetic lesion underlying myoclonic epilepsy and ragged-red fiber (MERRF) syndrome",
+            "authors": [
+                {
+                    "first": "AS",
+                    "middle": [],
+                    "last": "Noer",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Sudoyo",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Lertrit",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Thyagarajan",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Utthanaphol",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kapsa",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Byrne",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Marzuki",
+                    "suffix": ""
+                }
+            ],
+            "year": 1991,
+            "venue": "Am. J. Hum. Genet.",
+            "volume": "49",
+            "issn": "",
+            "pages": "715-722",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "The novel nucleoside analog R1479 (4\u2032-azidocytidine) is a potent inhibitor of NS5B-dependent RNA synthesis and hepatitis C virus replication in cell culture",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Klumpp",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "L\u00e9v\u00eaque",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Le Pogam",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ma",
+                    "suffix": ""
+                },
+                {
+                    "first": "W-R",
+                    "middle": [],
+                    "last": "Jiang",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kang",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Granycome",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Singer",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Laxton",
+                    "suffix": ""
+                },
+                {
+                    "first": "JQ",
+                    "middle": [],
+                    "last": "Hang",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "J. Biol. Chem.",
+            "volume": "281",
+            "issn": "",
+            "pages": "3793-3799",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Experimental evolution of a facultative thermophile from a mesophilic ancestor",
+            "authors": [
+                {
+                    "first": "IK",
+                    "middle": [],
+                    "last": "Blaby",
+                    "suffix": ""
+                },
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Lyons",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wroclawska-Hughes",
+                    "suffix": ""
+                },
+                {
+                    "first": "GCF",
+                    "middle": [],
+                    "last": "Phillips",
+                    "suffix": ""
+                },
+                {
+                    "first": "TP",
+                    "middle": [],
+                    "last": "Pyle",
+                    "suffix": ""
+                },
+                {
+                    "first": "SG",
+                    "middle": [],
+                    "last": "Chamberlin",
+                    "suffix": ""
+                },
+                {
+                    "first": "SA",
+                    "middle": [],
+                    "last": "Benner",
+                    "suffix": ""
+                },
+                {
+                    "first": "TJ",
+                    "middle": [],
+                    "last": "Lyons",
+                    "suffix": ""
+                },
+                {
+                    "first": "V",
+                    "middle": [
+                        "de"
+                    ],
+                    "last": "Cr\u00e9cy-Lagard",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [
+                        "de"
+                    ],
+                    "last": "Cr\u00e9cy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Appl. Environ. Microbiol.",
+            "volume": "78",
+            "issn": "",
+            "pages": "144-155",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "The flavivirus precursor membrane-envelope protein complex: structure and maturation",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "S-M",
+                    "middle": [],
+                    "last": "Lok",
+                    "suffix": ""
+                },
+                {
+                    "first": "I-M",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Zhang",
+                    "suffix": ""
+                },
+                {
+                    "first": "RJ",
+                    "middle": [],
+                    "last": "Kuhn",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "MG",
+                    "middle": [],
+                    "last": "Rossmann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "Science",
+            "volume": "319",
+            "issn": "",
+            "pages": "1830-1834",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "A conserved region in the prM protein is a critical determinant in the assembly of flavivirus particles",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Yoshii",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Igarashi",
+                    "suffix": ""
+                },
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Ichii",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Yokozawa",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Ito",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kariwa",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Takashima",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "J. Gen. Virol.",
+            "volume": "93",
+            "issn": "",
+            "pages": "27-38",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Genetic variation in the 3\u2032 non-coding region of dengue viruses",
+            "authors": [
+                {
+                    "first": "AC",
+                    "middle": [],
+                    "last": "Shurtleff",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Beasley",
+                    "suffix": ""
+                },
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Ni",
+                    "suffix": ""
+                },
+                {
+                    "first": "MT",
+                    "middle": [],
+                    "last": "Suderman",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Xu",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Wang",
+                    "suffix": ""
+                },
+                {
+                    "first": "SC",
+                    "middle": [],
+                    "last": "Weaver",
+                    "suffix": ""
+                },
+                {
+                    "first": "DM",
+                    "middle": [],
+                    "last": "Watts",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Virology",
+            "volume": "281",
+            "issn": "",
+            "pages": "75-87",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Role of RNA structures present at the 3\u2032-UTR of dengue virus on translation, RNA synthesis, and viral replication",
+            "authors": [
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Alvarez",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "De Lella Ezcurra",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Fucito",
+                    "suffix": ""
+                },
+                {
+                    "first": "AV",
+                    "middle": [],
+                    "last": "Gamarnik",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Virology",
+            "volume": "339",
+            "issn": "",
+            "pages": "200-212",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "ShoRAH: estimating the genetic diversity of a mixed sample from next-generation sequencing data",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Zagordi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Bhattacharya",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Eriksson",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Beerenwinkel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "BMC Bioinformatics",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Noninvasive identification and monitoring of cancer mutations by targeted deep sequencing of plasma DNA",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Forshew",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Murtaza",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Parkinson",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Gale",
+                    "suffix": ""
+                },
+                {
+                    "first": "DWY",
+                    "middle": [],
+                    "last": "Tsui",
+                    "suffix": ""
+                },
+                {
+                    "first": "F",
+                    "middle": [],
+                    "last": "Kaper",
+                    "suffix": ""
+                },
+                {
+                    "first": "S-J",
+                    "middle": [],
+                    "last": "Dawson",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Piskorz",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Jimenez-Linan",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Bentley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Sci. Transl. Med.",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Circos: an information aesthetic for comparative genomics",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Krzywinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Schein",
+                    "suffix": ""
+                },
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Birol",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Connors",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Gascoyne",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Horsman",
+                    "suffix": ""
+                },
+                {
+                    "first": "SJ",
+                    "middle": [],
+                    "last": "Jones",
+                    "suffix": ""
+                },
+                {
+                    "first": "MA",
+                    "middle": [],
+                    "last": "Marra",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Genome research",
+            "volume": "19",
+            "issn": "",
+            "pages": "1639-45",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Genome remodelling in a basal-like breast cancer metastasis and xenograft",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Ding",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Ellis",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                },
+                {
+                    "first": "DE",
+                    "middle": [],
+                    "last": "Larson",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Chen",
+                    "suffix": ""
+                },
+                {
+                    "first": "JW",
+                    "middle": [],
+                    "last": "Wallis",
+                    "suffix": ""
+                },
+                {
+                    "first": "CC",
+                    "middle": [],
+                    "last": "Harris",
+                    "suffix": ""
+                },
+                {
+                    "first": "MD",
+                    "middle": [],
+                    "last": "McLellan",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Fulton",
+                    "suffix": ""
+                },
+                {
+                    "first": "LL",
+                    "middle": [],
+                    "last": "Fulton",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nature",
+            "volume": "464",
+            "issn": "",
+            "pages": "999-1005",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Intratumor heterogeneity and branched evolution revealed by multiregion sequencing",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Gerlinger",
+                    "suffix": ""
+                },
+                {
+                    "first": "AJ",
+                    "middle": [],
+                    "last": "Rowan",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Horswell",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Larkin",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Endesfelder",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Gronroos",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Martinez",
+                    "suffix": ""
+                },
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Matthews",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Stewart",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Tarpey",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "New Eng. J. Med.",
+            "volume": "366",
+            "issn": "",
+            "pages": "883-892",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Detection of low prevalence somatic mutations in solid tumors with ultra-deep targeted sequencing",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Harismendy",
+                    "suffix": ""
+                },
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Schwab",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Bao",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Olson",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Rozenzhak",
+                    "suffix": ""
+                },
+                {
+                    "first": "SK",
+                    "middle": [],
+                    "last": "Kotsopoulos",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Pond",
+                    "suffix": ""
+                },
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Crain",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Chee",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Messer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Genome Biol.",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Tumor heterogeneity is an active process maintained by a mutant EGFR-induced cytokine circuit in glioblastoma",
+            "authors": [
+                {
+                    "first": "M-del-M",
+                    "middle": [],
+                    "last": "Inda",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Bonavia",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Mukasa",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Narita",
+                    "suffix": ""
+                },
+                {
+                    "first": "DWY",
+                    "middle": [],
+                    "last": "Sah",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Vandenberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Brennan",
+                    "suffix": ""
+                },
+                {
+                    "first": "TG",
+                    "middle": [],
+                    "last": "Johns",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Bachoo",
+                    "suffix": ""
+                },
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Hadwiger",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Genes Dev.",
+            "volume": "24",
+            "issn": "",
+            "pages": "1731-1745",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

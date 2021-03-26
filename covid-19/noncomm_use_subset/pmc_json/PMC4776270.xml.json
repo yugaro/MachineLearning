@@ -1,0 +1,808 @@
+{
+    "paper_id": "PMC4776270",
+    "metadata": {
+        "title": "The Characteristics of Middle Eastern Respiratory Syndrome Coronavirus Transmission Dynamics in South Korea",
+        "authors": [
+            {
+                "first": "Yunhwan",
+                "middle": [],
+                "last": "Kim",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Sunmi",
+                "middle": [],
+                "last": "Lee",
+                "suffix": "",
+                "email": "sunmilee@khu.ac.kr",
+                "affiliation": {}
+            },
+            {
+                "first": "Chaeshin",
+                "middle": [],
+                "last": "Chu",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Seoyun",
+                "middle": [],
+                "last": "Choe",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Saeme",
+                "middle": [],
+                "last": "Hong",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Youngseo",
+                "middle": [],
+                "last": "Shin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "One of the most significant events in South Korea in 2015 was the introduction and diffusion of Middle Eastern respiratory syndrome coronavirus (MERS-CoV). It is a novel coronavirus which was first identified in Saudi Arabia in September 2012 [1]. After that, MERS-CoV exhibited outbreaks in several regions and the last one was in South Korea (at the time of writing). It is known as having a high fatality rate and having a resemblance in clinical features with severe acute respiratory syndrome coronavirus (SARS-CoV) [2], thus, it has drawn much concern both from the public health authority and the general public when the first index case was identified in May 2015, for the first time in Korea.",
+            "cite_spans": [
+                {
+                    "start": 243,
+                    "end": 246,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 521,
+                    "end": 524,
+                    "mention": "[2]",
+                    "ref_id": "BIBREF7"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In the case of the outbreak in South Korea, it is characteristic in that a single importation of the pathogen sparked a large cluster of infected cases, while sporadic importations did not lead to local outbreaks in other regions [3]. It was surprising because South Korea has been said to have one of the most advanced medical and public health systems in the world [4], and it raises fears that the situation would be much worse in countries with less developed public health systems. Thus, the investigation of this study about the South Korean incidence is expected to give an invaluable lesson both to public health authorities around the world and the community of epidemiology researchers. Moreover, it might be able to provide a quantified result with mathematical modeling and statistical analysis, which is beneficial given that the studies about the South Korean case are largely comprised of epidemiological descriptions 4, 5.",
+            "cite_spans": [
+                {
+                    "start": 230,
+                    "end": 233,
+                    "mention": "[3]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 367,
+                    "end": 370,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 933,
+                    "end": 934,
+                    "mention": "4",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 936,
+                    "end": 937,
+                    "mention": "5",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "It is not only in the South Korean case but also in MERS-CoV studies in general that case studies and epidemiological descriptions are the main approach. Assiri et al [6] provided a detailed description of cases in the Middle East, Drosten et al [7] and Guery et al [8] analyzed the clinical features of infected cases, and Memish et al [9] and Al-Tawfiq et al [1] described the epidemiological data with respect to family clusters and hospitalized patient respectively. The most thorough description of the South Korean case is presented by Korea Centers for Disease Control and Prevention [5], while it was briefly mentioned by Chowell et al [3] and Cho and Chu [4].",
+            "cite_spans": [
+                {
+                    "start": 167,
+                    "end": 170,
+                    "mention": "[6]",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 246,
+                    "end": 249,
+                    "mention": "[7]",
+                    "ref_id": "BIBREF12"
+                },
+                {
+                    "start": 266,
+                    "end": 269,
+                    "mention": "[8]",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 337,
+                    "end": 340,
+                    "mention": "[9]",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 361,
+                    "end": 364,
+                    "mention": "[1]",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 591,
+                    "end": 594,
+                    "mention": "[5]",
+                    "ref_id": "BIBREF10"
+                },
+                {
+                    "start": 644,
+                    "end": 647,
+                    "mention": "[3]",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 664,
+                    "end": 667,
+                    "mention": "[4]",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Other than these descriptive studies, a small number of literature tried to assess the transmissibility of MERS-CoV in a more quantified fashion. Cachemez et al [10] estimated the incubation period and generation time from publicly available data and calculated the reproduction numbers both in animal-to-human and human-to-human transmission cases. Breban et al [11] compared the possibility of MERS-CoV being pandemic by comparing the basic reproduction number (Appendix) with that of SARS. Using MERS-CoV outbreak data, Chowell et al [12] delved further and calculated two reproduction numbers based on different epidemiological scenarios: one is when all reported zoonotic cases are severe and the other is not. Chowell et al [3] took a different approach that compared the reproduction numbers in SARS and MERS-CoV in large hospital clusters.",
+            "cite_spans": [
+                {
+                    "start": 161,
+                    "end": 165,
+                    "mention": "[10]",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 363,
+                    "end": 367,
+                    "mention": "[11]",
+                    "ref_id": "BIBREF2"
+                },
+                {
+                    "start": 537,
+                    "end": 541,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 730,
+                    "end": 733,
+                    "mention": "[3]",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Since South Korea is where the largest number of cases was reported outside the Middle East, we need to pay more attention to the South Korean case. While a few researches have dealt with the South Korean case, as briefly mentioned above, research gaps still exist that need to be filled. First of all, whether some demographic characteristics, such as age or sex, and locations have influence on the possibility of being infected needs to be explored. Also, the transmissibility needs to be investigated with more detail. As done in some literature, transmissibility in hospitals and in general need to be calculated separately and it needs to be taken into consideration whether the transmissibility might change in time. Here, the SIR-type mathematical modeling is of great use, while there are very few in MERS-CoV studies. Its usefulness might be boosted if combined with real-world data, which will be done in the present study.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "The purpose of this study is to uncover the characteristics of MERS-CoV transmission in South Korea in 2015. To this aim, a mathematical model will be built and analyzed. In particular, it will be observed whether there were any periods with different transmissibility and, if so, they will be estimated in general and hospital circumstances. Before this, some statistical analysis will be conducted in order to identify which group was more susceptible to MERS-CoV based on South Korean data.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "A mathematical model of MERS-CoV transmission in South Korea is suggested based on the model in Chowell et al [12]. It categorizes each individual into one of six epidemiological classes; susceptible (S), exposed (or high-risk latent) (E), symptomatic and infectious (I), infection but asymptomatic class (A), hospitalized (H), and recovery class (R). It is assumed that only infectious and hospitalized individuals can infect others and asymptomatic individuals cannot. In Chowell et al [12], the actual data of the zoonotic case were gathered so they were able to take secondary cases as well as index cases into account. By contrast, there was no zoonotic transmission except the primary case in South Korea, thus we do not consider the zoonotic case of MERS-CoV model in the present study. The model takes the following form:(1)dSdt=\u2212S\u03b2(I+lH)NdEdt=S\u03b2(I+lH)N\u2212\u03baEdIdt=\u03ba\u03c1E\u2212(\u03b3a+\u03b3I)IdAdt=\u03ba(1\u2212\u03c1)EdHdt=\u03b3aI\u2212\u03b3rHdRdt=\u03b3II+\u03b3rHwhere \u03b2 is the human-to-human transmission rate per unit time (day) and l quantifies the relative transmissibility of hospitalized patients; \u03ba is the rate at which an individual leaves the exposed class by becoming infectious (symptomatic or asymptomatic); \u03c1 is the proportion of progression from exposed class E to symptomatic infectious class I, and (1\u2212\u03c1) is that of progression to asymptomatic class; A; \u03b3a is the average rate at which symptomatic individuals hospitalize and \u03b3I is the recovery rate without being hospitalized; \u03b3r isthe recovery rate of hospitalized patients. Using these parameters, we will estimate the transmission rate (\u03b2) and transmissibility of hospitalized (l) in next section.",
+            "cite_spans": [
+                {
+                    "start": 110,
+                    "end": 114,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF3"
+                },
+                {
+                    "start": 488,
+                    "end": 492,
+                    "mention": "[12]",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "In many epidemiological models, basic reproduction number is one of the key values that can predict whether the infectious disease will spread into a population or die out. It is the average number of secondary infectious cases when one infectious individual is introduced in a whole susceptible population. The basic reproduction number is calculated by the next generation matrix approach outlined in van den Driessche and Watmough [13]. As a result, the basic reproductive number R0 for our model is:(2)R0=\u03c1\u03b2(1\u03b3a+\u03b3I+\u03b3al\u03b3r(\u03b3a+\u03b3I))where the first term is the average number of secondary infected people from one infectious individual during his or her infectious period and the second term is the average number of secondary infected people from one patient during their hospital stay (the details of the derivation of R0 are given in Appendix).",
+            "cite_spans": [
+                {
+                    "start": 434,
+                    "end": 438,
+                    "mention": "[13]",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "Materials and methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Other than calculating transmissibility, revealing more susceptible groups is one of the useful ways of characterizing the transmission of MERS-CoV in South Korea. It is done by conducting statistical analysis to publicly available MERS-CoV data in South Korea and its result is presented in Table 1 (this is based on Table A1, Table A2 and Figure A1, Figure A2, Figure A3).",
+            "cite_spans": [],
+            "section": "Identifying more susceptible groups ::: Results",
+            "ref_spans": [
+                {
+                    "start": 341,
+                    "end": 350,
+                    "mention": "Figure A1",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 352,
+                    "end": 361,
+                    "mention": "Figure A2",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 363,
+                    "end": 372,
+                    "mention": "Figure A3",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 292,
+                    "end": 299,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 318,
+                    "end": 326,
+                    "mention": "Table A1",
+                    "ref_id": "TABREF2"
+                },
+                {
+                    "start": 328,
+                    "end": 336,
+                    "mention": "Table A2",
+                    "ref_id": "TABREF3"
+                }
+            ]
+        },
+        {
+            "text": "First of all, it was tested whether age is related to the susceptibility and mortality of MERS-CoV using z-test. The average age of MERS-CoV confirmed cases is 55 years and that of death patients is 69.8 years, while that of the total population in South Korea is 38.9 years in 2015. These differences were statistically significant and age is related both to susceptibility and mortality of MERS-CoV. Next, Chi-square test was conducted in order to investigate whether sex, region, and/or visited hospital had any relationship with mortality of MERS-CoV. The result shows that mortality was different by region and visited hospital, while it was not by sex. We also tested whether patients' sex was different by age, region, and/or category of patients (health workers, epidemiological survey, or visitor/family). According to the result, the sex of patients was not related to age and region, but it was significantly different by the category of patients. Finally, we investigated whether sex, region, and mortality are related to the number of cases by generation; in other words, it was investigated whether mortality increased or decreased as the disease spread further. The result of Chi-square test demonstrates that the number of cases by generation was not related to age while it was different by region and mortality (more details are given in Appendix).",
+            "cite_spans": [],
+            "section": "Identifying more susceptible groups ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "The parameter estimation of system (1) to the incidence data of MERS-CoV in South Korea from May 6, 2015 to July 1, 2015 is conducted using the least-square method for this nonlinear system. Since the primary case was exposed to MERS-CoV during their stay in the Middle East, the patient and his wife are assumed to be in the exposed class of our system before the confirmation day (May 20, 2015).",
+            "cite_spans": [],
+            "section": "Estimating transmission rates ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "In Figure 1, the data of MERS-CoV incidence (\u2218) and its best fit (solid curve) of incidence Eq. (1) are plotted from May 6, 2015 to July 4, 2015. The MERS-CoV incidence is defined as the number of newly infected individuals per day. The figure demonstrates that our fitted MERS-CoV model fits well to the reported incidence data. In the figure, we can see the trend of logistic curve; thus, we split up the time into two periods (May 6, June 7 and June 7, July 1) where the rate of change is in its increasing and decreasing trend respectively. Due to the implementation of intensive interventions at June 7, each period has its own remarkable trend, thus, parameters are estimated in each period. Two kinds of transmission rates are estimated\u2014transmission rate \u03b2 and transmissibility of hospitalized patients l\u2014because many MERS-CoV patients are infected in hospitals and it is assumed that the value of hospitalized transmissibility l is bigger than transmission rate \u03b2. Parameter values used for simulation are listed in Table 2.",
+            "cite_spans": [],
+            "section": "Estimating transmission rates ::: Results",
+            "ref_spans": [
+                {
+                    "start": 3,
+                    "end": 11,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                },
+                {
+                    "start": 1024,
+                    "end": 1031,
+                    "mention": "Table 2",
+                    "ref_id": "TABREF1"
+                }
+            ]
+        },
+        {
+            "text": "As a result, the estimated value of the transmission rate \u03b2 is 0.0835 [95% confidence interval (CI): 0.0835\u20130.0835] and the transmissibility of hospitalized patients l is 22 (95% CI, 18.7303\u201325.2697) in Period 1, and \u03b2 is 0.036 (95% CI, 0.0306\u20130.0414) and l is 1 (95% CI, 0.1597\u20131.8403) in Period 2. Also, as mentioned in the previous section, the basic reproduction number is calculated. Using our estimated values of \u03b2 and l, R0 is 5.3973(95% CI, 4.6057\u20136.1888) in Period 1 and 0.1351 (95% CI, 0.0403\u20130.2562) in Period 2. The remarkably larger value of R0 in Period 1 than in Period 2 is considered to be attributed to the superspreader.",
+            "cite_spans": [],
+            "section": "Estimating transmission rates ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Due to the rapid development of nation-wide and world-wide transportation, it is more likely for a large-scale infectious disease outbreak to occur. This raises the importance of timely and accurate countermeasures. In order to devise efficient intervention strategies, it is critical to understand both the biological characteristics of the disease and the social response of the location where the disease spreads or is likely to spread. It is because these two aspects in combination determine the mode of diffusion of the infectious disease. In this regard, it is crucial to investigate the characteristics of MERS-CoV transmission in South Korea since it can demonstrate the current capability and the future potential of South Korea to resist infectious disease. This study tried to meet this need by examining which demographic group is more susceptible using incidence data and estimating transmission rates of general and hospitalized populations. The result of this study is expected to have theoretical and practical implications.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Further research can be suggested as follows. As seen in the result, the role of the superspreader might be decisive in the spread of MERS-CoV in South Korea. It can be explored what might happen if the superspreader was identified and isolated earlier or later, or if the spreading power was stronger or weaker. Also, the role of the media in the spread of MERS-CoV in South Korea can be investigated. How the Korean media covered MERS-CoV and how the lay person responded can be an issue, and how these two combined influence the spread of MERS-CoV may be examined.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "All authors have no conflicts of interest to declare.",
+            "cite_spans": [],
+            "section": "Conflicts of interest",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: Results of statistical analysis of Middle Eastern respiratory syndrome coronavirus data.\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Parameter used in simulations for Figure 1.\n",
+            "type": "table"
+        },
+        "TABREF2": {
+            "text": "Table A1: Characteristics of confirmed cases.\n",
+            "type": "table"
+        },
+        "TABREF3": {
+            "text": "Table A2: The number of infections by the hospital that the primary patient visited.\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure\u00a01: Data and parameter estimation of two periods.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure A1: The timeline of the primary patient before isolation.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure A2: Transmission tree of confirmed Middle Eastern respiratory syndrome coronavirus.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure A3: Incidence data of Middle Eastern respiratory syndrome coronavirus. MERS-CoV = Middle Eastern respiratory syndrome coronavirus.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Middle East respiratory syndrome coronavirus: a case-control study of hospitalized patients",
+            "authors": [
+                {
+                    "first": "J.A.",
+                    "middle": [],
+                    "last": "Al-Tawfiq",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.",
+                    "middle": [],
+                    "last": "Hinedi",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Ghandour",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Clin Infect Dis",
+            "volume": "59",
+            "issn": "2",
+            "pages": "160-165",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Middle East respiratory syndrome coronavirus: quantification of the extent of the epidemic, surveillance biases, and transmissibility",
+            "authors": [
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Cauchemez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Fraser",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.D.",
+                    "middle": [],
+                    "last": "Van Kerkhove",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Lancet Infect Dis",
+            "volume": "14",
+            "issn": "1",
+            "pages": "50-56",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Interhuman transmissibility of Middle East respiratory syndrome coronavirus: estimation of pandemic risk",
+            "authors": [
+                {
+                    "first": "R.",
+                    "middle": [],
+                    "last": "Breban",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Riou",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Fontanet",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Lancet",
+            "volume": "382",
+            "issn": "9893",
+            "pages": "694-699",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Synthesizing data and models for the spread of MERS-CoV, 2013: Key role of index cases and hospital transmission",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Blumberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.",
+                    "middle": [],
+                    "last": "Simonsen",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Epidemics",
+            "volume": "9",
+            "issn": "",
+            "pages": "40-51",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Reproduction numbers and sub-threshold endemic equilibria for compartmental models of disease transmission",
+            "authors": [
+                {
+                    "first": "P.",
+                    "middle": [],
+                    "last": "van den Driessche",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Watmough",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Math Biosci",
+            "volume": "180",
+            "issn": "1\u20132",
+            "pages": "29-48",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "The epidemiology of MERS-CoV",
+            "authors": [
+                {
+                    "first": "D.N.",
+                    "middle": [],
+                    "last": "Fisman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.R.",
+                    "middle": [],
+                    "last": "Tuite",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Lancet Infect Dis",
+            "volume": "14",
+            "issn": "1",
+            "pages": "6-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Current epidemiological situation of Middle East respiratory syndrome coronavirus clusters and implications for public health response in South Korea",
+            "authors": [
+                {
+                    "first": "J.W.",
+                    "middle": [],
+                    "last": "Choi",
+                    "suffix": ""
+                },
+                {
+                    "first": "K.H.",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y.M.",
+                    "middle": [],
+                    "last": "Cho",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "J Korean Med Assoc",
+            "volume": "58",
+            "issn": "6",
+            "pages": "487-497",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Clinical course and outcomes of critically ill patients with Middle East respiratory syndrome coronavirus infection",
+            "authors": [
+                {
+                    "first": "Y.M.",
+                    "middle": [],
+                    "last": "Arabi",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.A.",
+                    "middle": [],
+                    "last": "Arifi",
+                    "suffix": ""
+                },
+                {
+                    "first": "H.H.",
+                    "middle": [],
+                    "last": "Balkhy",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Ann Intern Med",
+            "volume": "160",
+            "issn": "6",
+            "pages": "389-397",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Transmission characteristics of MERS and SARS in the healthcare setting: a comparative study",
+            "authors": [
+                {
+                    "first": "G.",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "F.",
+                    "middle": [],
+                    "last": "Abdirizak",
+                    "suffix": ""
+                },
+                {
+                    "first": "S.",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "BMC Med",
+            "volume": "13",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Outbreak of Middle East respiratory syndrome in Korea?",
+            "authors": [
+                {
+                    "first": "H.W.",
+                    "middle": [],
+                    "last": "Cho",
+                    "suffix": ""
+                },
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Chu",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Osong Public Health Res Perspect",
+            "volume": "6",
+            "issn": "4",
+            "pages": "219-223",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Middle East respiratory syndrome coronavirus outbreak in the Republic of Korea, 2015",
+            "authors": [
+                {
+                    "first": "",
+                    "middle": [],
+                    "last": "Korea Centers for Disease Control and Prevention",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Osong Public Health Res Perspect",
+            "volume": "6",
+            "issn": "",
+            "pages": "269-278",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Epidemiological, demographic, and clinical characteristics of 47 cases of Middle East respiratory syndrome coronavirus disease from Saudi Arabia: a descriptive study",
+            "authors": [
+                {
+                    "first": "A.",
+                    "middle": [],
+                    "last": "Assiri",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.A.",
+                    "middle": [],
+                    "last": "Al-Tawfiq",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.A.",
+                    "middle": [],
+                    "last": "Al-Rabeeah",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Lancet Infect Dis",
+            "volume": "13",
+            "issn": "9",
+            "pages": "752-761",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Clinical features and virological analysis of a case of Middle East respiratory syndrome coronavirus infection",
+            "authors": [
+                {
+                    "first": "C.",
+                    "middle": [],
+                    "last": "Drosten",
+                    "suffix": ""
+                },
+                {
+                    "first": "M.",
+                    "middle": [],
+                    "last": "Seilmaier",
+                    "suffix": ""
+                },
+                {
+                    "first": "V.M.",
+                    "middle": [],
+                    "last": "Corman",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Lancet Infect Dis",
+            "volume": "13",
+            "issn": "9",
+            "pages": "745-751",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Clinical features and viral diagnosis of two cases of infection with Middle East respiratory syndrome coronavirus: a report of nosocomial transmission",
+            "authors": [
+                {
+                    "first": "B.",
+                    "middle": [],
+                    "last": "Guery",
+                    "suffix": ""
+                },
+                {
+                    "first": "J.",
+                    "middle": [],
+                    "last": "Poissy",
+                    "suffix": ""
+                },
+                {
+                    "first": "L.E.",
+                    "middle": [],
+                    "last": "Mansouf",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "Lancet",
+            "volume": "381",
+            "issn": "9885",
+            "pages": "2265-2272",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Family cluster of Middle East respiratory syndrome coronavirus infections",
+            "authors": [
+                {
+                    "first": "Z.A.",
+                    "middle": [],
+                    "last": "Memish",
+                    "suffix": ""
+                },
+                {
+                    "first": "A.I.",
+                    "middle": [],
+                    "last": "Zumla",
+                    "suffix": ""
+                },
+                {
+                    "first": "R.F.",
+                    "middle": [],
+                    "last": "Al-Hakeem",
+                    "suffix": ""
+                }
+            ],
+            "year": null,
+            "venue": "N Engl J Med",
+            "volume": "368",
+            "issn": "26",
+            "pages": "2487-2494",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

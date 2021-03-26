@@ -1,0 +1,921 @@
+{
+    "paper_id": "PMC5688036",
+    "metadata": {
+        "title": "Methods Using Social Media and Search Queries to Predict Infectious Disease Outbreaks",
+        "authors": [
+            {
+                "first": "Dong-Woo",
+                "middle": [],
+                "last": "Seo",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Soo-Yong",
+                "middle": [],
+                "last": "Shin",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Emerging infectious diseases, such as Severe Acute Respiratory Syndrome (SARS) in 2002, the H1N1 pandemic in 2009, and Middle East Respiratory Syndrome (MERS) in 2015, have highlighted the necessity for a syndromic surveillance system, which can play a significant role in detecting the beginning of an infectious disease outbreak [123]. However, traditional surveillance systems mainly depend on case reports, such as influenza-like illness (ILI) reports, which have time-delays in reporting and case confirmation. To enable the earlier detection of infectious disease outbreaks, a syndromic surveillance system should utilize real-time or near-real-time data, i.e., school or work absenteeism, over the counter medication sales, or the volume of Internetbased health inquiries [4567]. Among diverse alternative data sources, search queries, social media, and website visits have proven potential for digital surveillance systems [3578910]. In Korea, there is a national health alert system operated by the National Health Insurance Service which uses data from social media and blogs [11].",
+            "cite_spans": [
+                {
+                    "start": 332,
+                    "end": 333,
+                    "mention": "1",
+                    "ref_id": "BIBREF0"
+                },
+                {
+                    "start": 333,
+                    "end": 334,
+                    "mention": "2",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 334,
+                    "end": 335,
+                    "mention": "3",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 780,
+                    "end": 781,
+                    "mention": "4",
+                    "ref_id": "BIBREF14"
+                },
+                {
+                    "start": 781,
+                    "end": 782,
+                    "mention": "5",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 782,
+                    "end": 783,
+                    "mention": "6",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 783,
+                    "end": 784,
+                    "mention": "7",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 932,
+                    "end": 933,
+                    "mention": "3",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 933,
+                    "end": 934,
+                    "mention": "5",
+                    "ref_id": "BIBREF15"
+                },
+                {
+                    "start": 934,
+                    "end": 935,
+                    "mention": "7",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 935,
+                    "end": 936,
+                    "mention": "8",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 936,
+                    "end": 937,
+                    "mention": "9",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 937,
+                    "end": 939,
+                    "mention": "10",
+                    "ref_id": "BIBREF1"
+                },
+                {
+                    "start": 1087,
+                    "end": 1089,
+                    "mention": "11",
+                    "ref_id": "BIBREF2"
+                }
+            ],
+            "section": "I. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "In this paper, we briefly introduce how social media and search queries can be used to predict infectious disease outbreaks. This prediction method could be the core engine for implementing a (near-) real-time digital surveillance system.",
+            "cite_spans": [],
+            "section": "I. Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "ILI data in Korea can be gathered from Korea Centers for Disease Control and Prevention (KCDC) [12]. Since the ILI reports of the KCDC are published in word processor formats, such as HWP files in Korean and DOC files in English, the data should be manually curated. Figure 1 shows an example ILI report published by the KCDC. The ratio of ILI in week 28 was 6.0.",
+            "cite_spans": [
+                {
+                    "start": 96,
+                    "end": 98,
+                    "mention": "12",
+                    "ref_id": "BIBREF3"
+                }
+            ],
+            "section": "1) Collection of disease statistics ::: 1. Data Collection ::: II. Case Description",
+            "ref_spans": [
+                {
+                    "start": 267,
+                    "end": 275,
+                    "mention": "Figure 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The MERS statistics of Korea in 2015 were released via the official governmental MERS statistics site. However, since that site was not accessible at the time of this study, the statistics could be alternately collected from Wikipedia [13]. When curating disease statistics, researchers should be cautious about time intervals. ILI data is weekly data, whereas MERS statistics are reported as daily data.",
+            "cite_spans": [
+                {
+                    "start": 236,
+                    "end": 238,
+                    "mention": "13",
+                    "ref_id": "BIBREF4"
+                }
+            ],
+            "section": "1) Collection of disease statistics ::: 1. Data Collection ::: II. Case Description",
+            "ref_spans": []
+        },
+        {
+            "text": "To collect digital data from search engine queries or Twitter, the keywords that relate to influenza or MERS need to be determined first. This step is the most important step for the performance of disease prediction model. To choose the keywords, both laypersons' opinions and experts' opinion are taken into consideration, since search queries and social media data are generated by laypersons. In our previous works regarding influenza prediction, we conducted a survey by quota sampling based on sex and age to choose keywords [89]. Moreover, we also included keywords that were chosen by physicians, such as fever, cough, and sore throat for influenza prediction, since these keywords are related to the definitions of ILI.",
+            "cite_spans": [
+                {
+                    "start": 532,
+                    "end": 533,
+                    "mention": "8",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 533,
+                    "end": 534,
+                    "mention": "9",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "2) Choosing keywords ::: 1. Data Collection ::: II. Case Description",
+            "ref_spans": []
+        },
+        {
+            "text": "For MERS prediction, MERS and \uba54\ub974\uc2a4 (MERS in Korean) were chosen first. Then the top two related combined queries in Korean were added [3]. Moreover, selected keywords were translated into English or Korean since people can perform search queries in both languages. The chosen keywords are shown in Table 1.",
+            "cite_spans": [
+                {
+                    "start": 134,
+                    "end": 135,
+                    "mention": "3",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "2) Choosing keywords ::: 1. Data Collection ::: II. Case Description",
+            "ref_spans": [
+                {
+                    "start": 297,
+                    "end": 304,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The daily or weekly trends of the keywords for web search queries can be obtained from Google Trends [14] or Naver DataLab [15]. The newly renovated Naver DataLab only offers weekly trends, and it requires several steps to download the output. Therefore, we only explain how to use Google Trends. Google Trends offers various data patterns starting from the previous minute's data to monthly data based on the selected time range. For example, Figure 2 shows the weekly trend of searches for \u201cinfluenza\u201d of Google Trends between September 9, 2007, and September 8, 2012. Trend data associated with the predefined keywords were retrieved by setting the location parameter to \u201cSouth Korea\u201d and setting the time parameters. The time parameters were based on previous disease outbreak seasons, for example, \u201cMay 2015 to Jun 2015\u201d for MERS in Korea. May 11, 2015 was the symptom onset day of the first laboratory-confirmed patient. The results can be downloaded in a CSV format by clicking the arrow located in upper right in the graph. The downloaded CSV file consists of two columns. The first column represents the week by indicating the starting date of the week and the second column is the trend data. The researcher should collect the necessary trend data for each keyword. Table 2 shows example influenza statistics from ILI reports (Figure 1) with Google Trends data for the following five keywords: \u201cNew influenza,\u201d \u201cNew flu,\u201d \u201cFever,\u201d \u201cTamiflu,\u201d and \u201cFlu\u201d (Figure 2). As shown in Table 2, there is a timedelay pattern between the influenza statistics and Google Trends data.",
+            "cite_spans": [
+                {
+                    "start": 102,
+                    "end": 104,
+                    "mention": "14",
+                    "ref_id": "BIBREF5"
+                },
+                {
+                    "start": 124,
+                    "end": 126,
+                    "mention": "15",
+                    "ref_id": "BIBREF6"
+                }
+            ],
+            "section": "3) Collection of data from search engines ::: 1. Data Collection ::: II. Case Description",
+            "ref_spans": [
+                {
+                    "start": 444,
+                    "end": 452,
+                    "mention": "Figure 2",
+                    "ref_id": null
+                },
+                {
+                    "start": 1337,
+                    "end": 1345,
+                    "mention": "Figure 1",
+                    "ref_id": null
+                },
+                {
+                    "start": 1463,
+                    "end": 1471,
+                    "mention": "Figure 2",
+                    "ref_id": null
+                },
+                {
+                    "start": 1276,
+                    "end": 1283,
+                    "mention": "Table 2",
+                    "ref_id": null
+                },
+                {
+                    "start": 1486,
+                    "end": 1493,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "The important fact is that the current trend data obtained from Google Trends or Naver DataLab are available as normalized values, not the absolute numbers of searches. According to Google Trends, \u201cNumbers represent search interest relative to the highest point on the chart for the given region and time. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular. Likewise, a score of 0 means the term was less than 1% as popular as the peak.\u201d",
+            "cite_spans": [],
+            "section": "3) Collection of data from search engines ::: 1. Data Collection ::: II. Case Description",
+            "ref_spans": []
+        },
+        {
+            "text": "The previous site of Naver DataLab, called Naver Trends offered the separate data trends for mobile and desktop searches [16]. However, Naver DataLab does not distinguish between mobile and desktop trends as Google Trends does. In our previous work, we collaborated with Daum to collect curated data [89].",
+            "cite_spans": [
+                {
+                    "start": 122,
+                    "end": 124,
+                    "mention": "16",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 301,
+                    "end": 302,
+                    "mention": "8",
+                    "ref_id": "BIBREF18"
+                },
+                {
+                    "start": 302,
+                    "end": 303,
+                    "mention": "9",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "3) Collection of data from search engines ::: 1. Data Collection ::: II. Case Description",
+            "ref_spans": []
+        },
+        {
+            "text": "People search web pages using one or multiple words at a time. To reflect this behavior, combinations of the chosen keywords should be considered, for example, \u201cH1N1\u201d, \u201cH1N1 Treatment\u201d, \u201cH1N1 Symptom\u201d, \u201cInfluenza\u201d, \u201cInfluenza Treatment\u201d, and \u201cInfluenza Symptom\u201d.",
+            "cite_spans": [],
+            "section": "3) Collection of data from search engines ::: 1. Data Collection ::: II. Case Description",
+            "ref_spans": []
+        },
+        {
+            "text": "Among diverse social media platforms, Twitter has been used as a data sources for digital surveillance systems [17]. In our previous work, the number of tweets containing one of the predefined keywords was collected through Topsy, which is a certified partner of Twitter that offers social searching and social analytics [3]. However, Topsy closed a few years ago. There are alternative services, such as GNIP [18] or Talkwalker [19]; however, researchers would be required to purchase the relevant data from them. Therefore, there is currently a barrier to using Twitter data.",
+            "cite_spans": [
+                {
+                    "start": 112,
+                    "end": 114,
+                    "mention": "17",
+                    "ref_id": "BIBREF8"
+                },
+                {
+                    "start": 322,
+                    "end": 323,
+                    "mention": "3",
+                    "ref_id": "BIBREF13"
+                },
+                {
+                    "start": 411,
+                    "end": 413,
+                    "mention": "18",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 430,
+                    "end": 432,
+                    "mention": "19",
+                    "ref_id": "BIBREF10"
+                }
+            ],
+            "section": "4) Collection of data from Twitter ::: 1. Data Collection ::: II. Case Description",
+            "ref_spans": []
+        },
+        {
+            "text": "Spearman correlation analyses can be used to examine the correlations between search engine data and disease data. Lag correlation analyses can be used to assess the temporal relationships between these sets of data for up to userdefined days or weeks. Significance was set at p < 0.05. In our work, we used the SPSS package to obtain statistical values, and the proposed method is summarized as follows. The KCDC data values are placed tidily in a column (Table 2). The search engine query data values to be compare are placed next to it. The data must be arranged in rows so that each row represents a specific time period. The correlation value obtained in this state means present (0 week lag) [8]. To get the correlation coefficient of preceding or lagging week, the column containing a search engine query data value is moved in the desired direction and correlation analysis is performed. In this case, the data that differ by the number of weeks to be compare is placed in the same row.",
+            "cite_spans": [
+                {
+                    "start": 699,
+                    "end": 700,
+                    "mention": "8",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "2. Data Analysis ::: II. Case Description",
+            "ref_spans": [
+                {
+                    "start": 457,
+                    "end": 464,
+                    "mention": "Table 2",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "To see the changes in correlation coefficients over time, correlation coefficients in subsequent epidemiological intervals are calculated. These correlation coefficients can be used to validate the developed prediction model. If necessary, subgroup analyses for the period are conducted along the same lines. For example, we performed a subgroup analysis focusing on the acceleration and deceleration period of MERS (June 3, 2015\u2013June 26, 2015) adopting the CDC interval [3].",
+            "cite_spans": [
+                {
+                    "start": 472,
+                    "end": 473,
+                    "mention": "3",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "2. Data Analysis ::: II. Case Description",
+            "ref_spans": []
+        },
+        {
+            "text": "The proposed digital surveillance system which uses Internet resources has enormous potential to monitor disease outbreaks in the early phase; however, this approach has some limitations as well. First, in our work, it was difficult to choose keywords although they have a considerable effect on the performance of a prediction model. More importantly, keywords should be changed periodically. For example, before 2015 only experts were aware of MERS. However, most Koreans know about MERS nowadays. Since people continuously learn new terminology and change the search keywords they use, keywords should be updated regularly to maintain prediction performance [9]. Second, as in the case of Google Flu, this system can fail to predict disease outbreaks correctly [20]. Therefore, the proposed digital surveillance system should be used with caution or as a complementary method.",
+            "cite_spans": [
+                {
+                    "start": 662,
+                    "end": 663,
+                    "mention": "9",
+                    "ref_id": "BIBREF19"
+                },
+                {
+                    "start": 765,
+                    "end": 767,
+                    "mention": "20",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "III. Discussion",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {},
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Severe acute respiratory syndrome",
+            "authors": [
+                {
+                    "first": "JS",
+                    "middle": [],
+                    "last": "Peiris",
+                    "suffix": ""
+                },
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Guan",
+                    "suffix": ""
+                },
+                {
+                    "first": "KY",
+                    "middle": [],
+                    "last": "Yuen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nat Med",
+            "volume": "10",
+            "issn": "12 Suppl",
+            "pages": "S88-S97",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Web queries as a source for syndromic surveillance",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Hulth",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Rydevik",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Linde",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "PLoS One",
+            "volume": "4",
+            "issn": "2",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "National health alert system [Internet]",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "KCDC ILI reports [Internet]",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "2015 Middle East respiratory syndrome outbreak in South Korea [Internet]",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "Google Trends [Internet]",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "Naver DataLab [Internet]",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Correlation between National Influenza Surveillance Data and Search Queries from Mobile Devices and Desktops in South Korea",
+            "authors": [
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Shin",
+                    "suffix": ""
+                },
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Seo",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Sohn",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Ryoo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "PLoS One",
+            "volume": "11",
+            "issn": "7",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "The use of Twitter to track levels of disease activity and public concern in the U.S. during the influenza A H1N1 pandemic",
+            "authors": [
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Signorini",
+                    "suffix": ""
+                },
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Segre",
+                    "suffix": ""
+                },
+                {
+                    "first": "PM",
+                    "middle": [],
+                    "last": "Polgreen",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "PLoS One",
+            "volume": "6",
+            "issn": "5",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "GNIP 2.0 [Internet]",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "Talkwalker [Internet]",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Emergence of a novel swine-origin influenza A (H1N1) virus in humans",
+            "authors": [
+                {
+                    "first": "FS",
+                    "middle": [],
+                    "last": "Dawood",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Jain",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Finelli",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Shaw",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Lindstrom",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "N Engl J Med",
+            "volume": "360",
+            "issn": "25",
+            "pages": "2605-2615",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "The parable of Google Flu: traps in big data analysis",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Lazer",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Kennedy",
+                    "suffix": ""
+                },
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "King",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Vespignani",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Science",
+            "volume": "343",
+            "issn": "6176",
+            "pages": "1203-1205",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "High correlation of Middle East respiratory syndrome spread with Google search and Twitter trends in Korea",
+            "authors": [
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Shin",
+                    "suffix": ""
+                },
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Seo",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "An",
+                    "suffix": ""
+                },
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kwak",
+                    "suffix": ""
+                },
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Kim",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Gwack",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Sci Rep",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "What is syndromic surveillance?",
+            "authors": [
+                {
+                    "first": "KJ",
+                    "middle": [],
+                    "last": "Henning",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "MMWR Suppl",
+            "volume": "53",
+            "issn": "",
+            "pages": "5-11",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Detecting influenza epidemics using search engine query data",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Ginsberg",
+                    "suffix": ""
+                },
+                {
+                    "first": "MH",
+                    "middle": [],
+                    "last": "Mohebbi",
+                    "suffix": ""
+                },
+                {
+                    "first": "RS",
+                    "middle": [],
+                    "last": "Patel",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Brammer",
+                    "suffix": ""
+                },
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Smolinski",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Brilliant",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Nature",
+            "volume": "457",
+            "issn": "7232",
+            "pages": "1012-1014",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Assessment of syndromic surveillance in Europe",
+            "authors": [],
+            "year": 2011,
+            "venue": "Lancet",
+            "volume": "378",
+            "issn": "9806",
+            "pages": "1833-1834",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Infodemiology: tracking flu-related searches on the web for syndromic surveillance",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Eysenbach",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "AMIA Annu Symp Proc",
+            "volume": "2006",
+            "issn": "",
+            "pages": "244-248",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Correlation between national influenza surveillance data and google trends in South Korea",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cho",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Sohn",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Jo",
+                    "suffix": ""
+                },
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Shin",
+                    "suffix": ""
+                },
+                {
+                    "first": "JH",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "SM",
+                    "middle": [],
+                    "last": "Ryoo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "PLoS One",
+            "volume": "8",
+            "issn": "12",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Cumulative query method for influenza surveillance using search engine data",
+            "authors": [
+                {
+                    "first": "DW",
+                    "middle": [],
+                    "last": "Seo",
+                    "suffix": ""
+                },
+                {
+                    "first": "MW",
+                    "middle": [],
+                    "last": "Jo",
+                    "suffix": ""
+                },
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Sohn",
+                    "suffix": ""
+                },
+                {
+                    "first": "SY",
+                    "middle": [],
+                    "last": "Shin",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Lee",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "J Med Internet Res",
+            "volume": "16",
+            "issn": "12",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

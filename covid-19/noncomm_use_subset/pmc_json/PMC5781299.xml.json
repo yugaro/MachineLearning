@@ -1,0 +1,938 @@
+{
+    "paper_id": "PMC5781299",
+    "metadata": {
+        "title": "Seasonal Influenza Forecasting in Real Time Using the Incidence Decay With\nExponential Adjustment Model",
+        "authors": [
+            {
+                "first": "Tahmina",
+                "middle": [],
+                "last": "Nasserie",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ashleigh",
+                "middle": [
+                    "R"
+                ],
+                "last": "Tuite",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Lindsay",
+                "middle": [],
+                "last": "Whitmore",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Todd",
+                "middle": [],
+                "last": "Hatchette",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Steven",
+                "middle": [
+                    "J"
+                ],
+                "last": "Drews",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Adriana",
+                "middle": [],
+                "last": "Peci",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jeffrey",
+                "middle": [
+                    "C"
+                ],
+                "last": "Kwong",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Dara",
+                "middle": [],
+                "last": "Friedman",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Gary",
+                "middle": [],
+                "last": "Garber",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jonathan",
+                "middle": [],
+                "last": "Gubbay",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "David",
+                "middle": [
+                    "N"
+                ],
+                "last": "Fisman",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "This study made use of anonymized weekly public health surveillance data from Ottawa\nPublic Health and laboratory surveillance data from the Ontario, Alberta, and Nova Scotia\nvirology laboratories. Laboratory datasets provided information about the total number of\ntests performed as well as the number of tests that were positive for influenza A virus or\nB virus. The Ottawa Public Health (city) dataset provided information about the onset date\nof influenza illness, the requisition date, and the date when the case was reported as\ntest positive by the relevant laboratory.",
+            "cite_spans": [],
+            "section": "Data Sources ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The Alberta (ProvLab Alberta [PLA]) and Ontario (Public Health Ontario Laboratories\n[PHOL]) laboratory systems perform testing on 25000\u201350000 influenza specimens in a given\nseason, with substantial variability depending on the severity of the influenza season.\nProvLab Alberta performs testing on all specimens submitted for respiratory testing in the\nprovince, whereas PHOL performs testing predominantly focuses on respiratory specimens\nsubmitted from hospitals and emergency rooms, although community specimens are also\ntested. It has been estimated that PHOL tests approximately 55% of unique respiratory\nvirus specimens in the Province of Ontario (Jeff Kwong, personal communication, written\ncommunication, February 2, 2017). The Microbiology Laboratory of the Queen Elizabeth II\nHealth Centre (Central Zone of the Nova Scotia Health Authority) (QE2) performed testing\nin Nova Scotia. Unlike the PHOL and PLA systems, QE2 testing is limited to hospital\ntesting and testing related to outbreaks in long-term care facilities.",
+            "cite_spans": [],
+            "section": "Data Sources ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The IDEA is a single-equation approach that describes epidemic processes in terms of\nexponential growth and simultaneous decay [10].\nIn contrast with traditional approaches, IDEA aims to represent factors other than\npopulation immunity that are associated with slowing epidemic growth [10]. The IDEA is described by a single equation,\nwhich takes the functional form It = =\n[R0/(1+d)t]t.\nThe model describes epidemic processes in terms of exponential growth (a function of the\nbasic reproductive number, R0) and simultaneous decay (d) brought about by\nbehavioral change, public health interventions, increased immunity in the population, or\nany other dynamic change that slows disease transmission.",
+            "cite_spans": [
+                {
+                    "start": 128,
+                    "end": 130,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                },
+                {
+                    "start": 286,
+                    "end": 288,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "Model ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "R0 and d were estimated using a Bayesian pseudo-likelihood approach as\ndescribed by Bolker [12], with 95% confidence\nintervals generated assuming a negative binomial distribution [13]. Models were updated each generation as new weekly data\nbecame available.",
+            "cite_spans": [
+                {
+                    "start": 92,
+                    "end": 94,
+                    "mention": "12",
+                    "ref_id": "BIBREF11"
+                },
+                {
+                    "start": 180,
+                    "end": 182,
+                    "mention": "13",
+                    "ref_id": "BIBREF12"
+                }
+            ],
+            "section": "Model ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "Models were fit to aggregate weekly incident case counts reported by the Ontario (PHO),\nAlberta (PLA), and Nova Scotia (QE2) laboratories and Ottawa Public Health between\nSeptember 2015 and May 2016, as well as to the summed total incident case counts across\nall laboratories (but excluding data from Ottawa Public Health, to avoid double counting,\nbecause some of these cases are also included in the Ontario dataset).",
+            "cite_spans": [],
+            "section": "Analyses ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "For simplicity, the mean generation time for influenza infection was assumed to be 3 days\n[14], meaning that weekly case counts\nrepresented cases produced in approximately 2 generations, although this was varied in\nsensitivity analyses. The onset of influenza season was defined as 2 consecutive weeks in\nwhich the number of cases was greater than zero and greater than the number of cases\nreported in the prior week. The end of influenza season was defined as 2 weeks in a row\nwith zero cases. For prospective analyses, the IDEA model was fit to incident case data to\npredict epidemic peaks, end dates, and final sizes. Models were updated each generation as\nnew weekly data became available. The start dates of influenza season in each region were\nNovember 22, 2015 (Alberta), November 25, 2015 (Ottawa), November 29, 2015 (Ontario), and\nDecember 28, 2015 (Nova Scotia).",
+            "cite_spans": [
+                {
+                    "start": 91,
+                    "end": 93,
+                    "mention": "14",
+                    "ref_id": "BIBREF13"
+                }
+            ],
+            "section": "Analyses ::: METHODS",
+            "ref_spans": []
+        },
+        {
+            "text": "The number of incident influenza cases reported by all participating laboratories over\ntime is shown in Figure 1. Alberta and Ontario\nlaboratories reported most cases (42.7% and 50.8% of total cases). A high proportion of\ncases were reported between mid-February and mid-March 2016. Overall, the epidemic\nappeared to peak near the end of February 2016. Influenza activity in this season started\nmuch later than most previous influenza seasons, especially in Nova Scotia, where the\nseason started in late December 2015. Influenza activity continued until late May 2016. As\nwith other Northern Hemisphere geographies, the 2015\u20132016 influenza season appeared\nrelatively mild [15]. Overall, the model\nreproduced influenza trends well when fit to the complete time series combined across all\njurisdictions (Supplementary Figure 1).",
+            "cite_spans": [
+                {
+                    "start": 673,
+                    "end": 675,
+                    "mention": "15",
+                    "ref_id": "BIBREF14"
+                }
+            ],
+            "section": "The 2015\u20132016 Influenza Season ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 104,
+                    "end": 112,
+                    "mention": "Figure 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "Epidemic dynamics differed slightly in the different regions involved in this study\n(Supplementary Figures 2\u20135). For all models, there was a gradual increase in best-fit\nR0 and d values as the influenza season wore on. Using all available data for\n2015\u20132016, we noted that the highest R0 estimates were associated with\njurisdictions with the largest case counts (Alberta and Ontario, with R0 values\nof approximately 1.4), whereas lower case counts were associated with lower R0\nestimates (Ottawa and Nova Scotia, R0 values 1.1 to 1.2) (Table 1). Higher R0 values were associated with\nhigher d values (Table 1). The best-fit\nR0 estimates are similar to those often estimated for influenza [16].",
+            "cite_spans": [
+                {
+                    "start": 689,
+                    "end": 691,
+                    "mention": "16",
+                    "ref_id": "BIBREF15"
+                }
+            ],
+            "section": "Parameter Estimation ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 536,
+                    "end": 543,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                },
+                {
+                    "start": 601,
+                    "end": 608,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "When provincial case counts for Alberta, Ontario, and Nova Scotia were summed,\nR0 estimates were similar to those seen in Alberta and Ontario (~1.4), with d\n~0.005 (again, as seen in estimates from Ontario and Alberta). Sensitivity analyses on\ninfluenza generation time resulted in a range of R0 estimates from 1.2 to 1.5\n(Table 1). For models using pooled case counts,\nparameter estimates were stable by early February (approximately 24 generations) with\nlittle change thereafter (Figure 2). There were no\nsudden surges in either estimated R0 or d throughout the duration of the\noutbreak.",
+            "cite_spans": [],
+            "section": "Parameter Estimation ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 482,
+                    "end": 490,
+                    "mention": "Figure 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 323,
+                    "end": 330,
+                    "mention": "Table 1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "Projections were generated using best-fit parameter estimates. With complete data summed\nacross jurisdictions (ie, at the end of May 2016), model projected case counts were\nsimilar to observed case counts (11002 vs 11686 cases [a 6.2% difference in counts]).\nFinal size projections were fairly stable from mid-February 2016 onwards, but the\nprecision of these estimates improved markedly after early March 2016 (Figure 3). Projections based on earlier parameters tended\nto overestimate final size (for example, from mid- to late-February 2016, final size\nestimates ranged between approximately 13 000 to 15 500 cases). Projections were similar\nusing 2- or 4-day generation times. Jurisdiction-level projections of final size (eg,\nthose for Alberta [Supplementary Figure S7] and Ontario [Supplementary Figure S9]) were\nsimilar to overall projections but less stable, with persistently high upper-bound\nconfidence limits.",
+            "cite_spans": [],
+            "section": "Forecasting Final Size and Epidemic Peak ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 412,
+                    "end": 420,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "Estimates of epidemic peak dates for combined data are shown in Figure 4. Near the beginning of the outbreak, in December 2015,\nestimates of epidemic peak dates were inaccurate and tended to fluctuate. However, peak\ndate estimates appeared to stabilize, projecting a peak in mid-February, around early\nJanuary 2016. This stable projection occurred before the true peak in the first week of\nMarch 2016, and it remained stable (\u00b11 week) throughout the subsequent study period. By\ncontrast, jurisdiction-specific peak estimates for Alberta (Supplementary Figure S8) and\nOntario (Supplementary Figure S10) did not stabilize until after peaks had occurred, with\nthe post-peak estimate for Ontario being 1 month earlier than the true peak.",
+            "cite_spans": [],
+            "section": "Forecasting Final Size and Epidemic Peak ::: RESULTS",
+            "ref_spans": [
+                {
+                    "start": 64,
+                    "end": 72,
+                    "mention": "Figure 4",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Estimates of d were obtained using a fixed estimate of R0 (1.408) derived\nusing all available data (Supplementary Figure 6). Using a fixed estimate of\nR0, with the model used only to derive estimates of d, still produced parameter\nestimates that stabilized near the end of January, providing no clear advantage over\nfitting both R0 and d simultaneously.",
+            "cite_spans": [],
+            "section": "Estimates of Control With a Fixed Reproduction Number ::: RESULTS",
+            "ref_spans": []
+        },
+        {
+            "text": "The costs and health impact of seasonal influenza epidemics are substantial. Seasonal\ninfluenza epidemics vary in timing and severity from year to year, and it would be desirable\nto develop influenza forecasting methods that are accurate, reliable, and relatively simple\nand user friendly. Approaches to forecasting influenza have included (1) statistical models\nof varying complexity as well as (2) disease dynamic transmission models [17]. The performance of these approaches has been\nvariable, and in a recent influenza forecasting exercise (Predict the Influenza Season\nChallenge) conducted under the auspices of the US Centers for Disease Control and\nPrevention, only 3 of 13 models correctly forecast influenza season onset, 1 of 13 correctly\nforecasts the season\u2019s peak, and 3 of 13 forecast epidemic size to within 1% [17].",
+            "cite_spans": [
+                {
+                    "start": 437,
+                    "end": 439,
+                    "mention": "17",
+                    "ref_id": "BIBREF16"
+                },
+                {
+                    "start": 827,
+                    "end": 829,
+                    "mention": "17",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "In this study, we present a simple, phenomenological model for epidemic growth that we have\ndescribed previously [10], but which was not\nincluded in the above-mentioned competition. The model we present above has the advantage of\nbeing sufficiently simple that it can be constructed in standard statistical spreadsheet\nsoftware.",
+            "cite_spans": [
+                {
+                    "start": 114,
+                    "end": 116,
+                    "mention": "10",
+                    "ref_id": "BIBREF9"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "Using weekly pooled virological data from 3 Canadian regions and 1 city as inputs, we found\nthat the model generated timely and fairly accurate estimates of influenza season size and\nduration. The parameters generated by the model seemed reasonable; our R0\nestimate for seasonal influenza (1.41) is consistent with estimates generated in other\nstudies using more complex modeling approaches [17]. Although peak forecasts were off by approximately 2 weeks, forecasts had\nstabilized before the peak occurred, suggesting that accuracy may be improved with\nrelatively simple adjustments in future; it may be that the persistent early peak\nprojections generated by IDEA reflect the fact that the IDEA curve is symmetrical, whereas\ninfluenza epidemic curves may (as in this case) drop off sharply after the peak is reached.\nThe IDEA model performed reasonably well in projecting final outbreak size. By early March\n2016, we were able to estimate a final size of 11002, compared with a total of 11 686 cases\nby the end of the outbreak, corresponding to error of approximately 6%, with final size\nestimates again having stabilized before the epidemic peak. However, confidence intervals\naround this estimate were wide with the upper bound confidence limit not dropping below\n15000 cases until mid-March (post-peak).",
+            "cite_spans": [
+                {
+                    "start": 392,
+                    "end": 394,
+                    "mention": "17",
+                    "ref_id": "BIBREF16"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "In jurisdictional analyses, we found what appeared to be a threshold effect for case counts\nin generating useful parameter estimates. Although estimates from our 2 largest\njurisdictions (Ontario and Alberta) were fairly consistent with one another, and also with\npooled overall estimates, estimates generated using data from smaller jurisdictions and/or\nthose with more restrictive testing algorithms (Nova Scotia virology laboratory and Ottawa\nPublic Health) was more challenging. The small number of cases reported from these areas was\nassociated with low estimates of R0. In general (and unsurprisingly), the smaller\nthe sample size of the jurisdiction under analysis, the less stable, reliable, and timely\nprojections appeared to be. Because frequency of testing or variability in testing practices\nmay contribute to small test-positive numbers, it is unfortunate that we lacked testing data\nfrom most jurisdictions, which might have permitted us to evaluate the impact of tests per\ncapita on usefulness of this modeling approach. Such explorations will be the subject of\nfuture work.",
+            "cite_spans": [],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition, and as noted by an anonymous reviewer of an earlier draft of this paper, our\nearly overestimation of reproduction numbers (and consequently, overestimation of d) early\nin the influenza season, is consistent with the tendency towards early overestimation of\nreproduction numbers noted by Mercer et al [18].\nOne possible reason for this overestimation relates to our \u201cseeding\u201d our models by assuming\na single case at \u201ctime zero\u201d. Given the well described underdiagnosis of influenza [19], this heuristic is may be problematic, and if our\noutbreak is seeded by >1 initial case that would result in reduction in early estimates\nof R0. It is unclear whether there may be some empirically derived inflation\nfactor that might allow improved early performance (and timelier characterization of\nepidemics) by the IDEA model, but this represents an interesting question for future\nresearch.",
+            "cite_spans": [
+                {
+                    "start": 314,
+                    "end": 316,
+                    "mention": "18",
+                    "ref_id": "BIBREF17"
+                },
+                {
+                    "start": 495,
+                    "end": 497,
+                    "mention": "19",
+                    "ref_id": "BIBREF18"
+                }
+            ],
+            "section": "DISCUSSION",
+            "ref_spans": []
+        },
+        {
+            "text": "The performance of our model during this exercise, while somewhat encouraging, may not\npredict performance in future influenza seasons. The 2015\u20132016 influenza season was atypical\nrelative to other recent influenza seasons, with a late start and relatively low impact\n[20]. The mechanisms underlying these atypical\ndynamics are not clear, but better understanding of the impact of between-season variation\nin predominating circulating strain, and vaccine match and uptake, may in turn permit more\naccurate and timely model projections. This project focused on the ability to forecast\ninfluenza epidemics in real time, but better understanding of factors influencing model\nperformance will likely also need to include historical data from well characterized\ninfluenza seasons, and we are currently engaged in such work.",
+            "cite_spans": [
+                {
+                    "start": 269,
+                    "end": 271,
+                    "mention": "20",
+                    "ref_id": "BIBREF19"
+                }
+            ],
+            "section": "CONCLUSIONS",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1.: Estimates of R0 and d for Populations and Generation Time Estimates Used\nin Analyses\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1.: Weekly incidence of influenza cases in Ottawa, Ontario, Alberta, and Nova Scotia. The\nvertical axis represents the number of influenza cases reported by participating\nlaboratories and Ottawa Public Health, covering the period between week 48 (beginning\nNovember 23, 2015) and week 21 (beginning May 23, 2016).",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: Parameter estimates, summed provincial case counts. Parameter estimates (solid lines;\nR0: left y-axis, and d: right y-axis) for summed influenza counts from\nOntario, Alberta, and Nova Scotia. Dashed lines represent 95% confidence intervals for\nparameter estimates. Overall influenza activity had begun in late November 2015;\nparameter estimates had stabilized by mid-January 2016. The dates on the x-axis\nrepresent the date of the most recent influenza data used for model fitting.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: Final size projections for 2015\u20132016 influenza season. Projections of final epidemic\nsize generated using the incidence decay with exponential adjustment (IDEA) model for\nsummed influenza counts from Ontario, Alberta, and Nova Scotia (y-axis). The dates\nplotted on the x-axis are the dates of most recent influenza data used for model\nfitting. The solid black line represents projected size; dashed black lines represent\nupper- and lower-bound 95% confidence intervals (CIs). Upper-bound CI for final size\nbefore February 2016 are >100000 and not shown on the graph. Dashed gray line\nrepresents true final size (11686 cases).",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4.: Peak date projections for 2015\u20132016 influenza season. Projections of final epidemic\npeak date generated using the incidence decay with exponential adjustment (IDEA) model\nfor summed influenza counts from Ontario, Alberta, and Nova Scotia. The dates plotted\non the x-axis are the dates of most recent influenza data used for model fitting; the\ny-axis represents the projected peak date. As noted in the text, peak date projections\nstabilized in mid-February before the true peak (first week of March 2016). Thus, a\nstable peak date was forecast before the true peak, but this forecast was persistently\nearlier than the true peak date.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Influenza: epidemiology, clinical features, therapy, and\nprevention",
+            "authors": [
+                {
+                    "first": "NM",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                },
+                {
+                    "first": "JP",
+                    "middle": [],
+                    "last": "Lynch",
+                    "suffix": "3rd"
+                }
+            ],
+            "year": 2011,
+            "venue": "Semin Respir Crit Care\nMed",
+            "volume": "32",
+            "issn": "",
+            "pages": "373-92",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Clinical problem-solving. A shocking development",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Levenson",
+                    "suffix": ""
+                },
+                {
+                    "first": "DR",
+                    "middle": [],
+                    "last": "Kaul",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Saint",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "N\nEngl J Med",
+            "volume": "369",
+            "issn": "",
+            "pages": "2253-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Pandemic versus epidemic influenza mortality: a pattern of changing age\ndistribution",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Simonsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "MJ",
+                    "middle": [],
+                    "last": "Clarke",
+                    "suffix": ""
+                },
+                {
+                    "first": "LB",
+                    "middle": [],
+                    "last": "Schonberger",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "J Infect Dis",
+            "volume": "178",
+            "issn": "",
+            "pages": "53-60",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "The annual impact of seasonal influenza in the US: measuring disease burden\nand costs",
+            "authors": [
+                {
+                    "first": "NA",
+                    "middle": [],
+                    "last": "Molinari",
+                    "suffix": ""
+                },
+                {
+                    "first": "IR",
+                    "middle": [],
+                    "last": "Ortega-Sanchez",
+                    "suffix": ""
+                },
+                {
+                    "first": "ML",
+                    "middle": [],
+                    "last": "Messonnier",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Vaccine",
+            "volume": "25",
+            "issn": "",
+            "pages": "5086-96",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "The impact of influenza epidemics on hospitalizations",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Simonsen",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Fukuda",
+                    "suffix": ""
+                },
+                {
+                    "first": "LB",
+                    "middle": [],
+                    "last": "Schonberger",
+                    "suffix": ""
+                },
+                {
+                    "first": "NJ",
+                    "middle": [],
+                    "last": "Cox",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "J Infect Dis",
+            "volume": "181",
+            "issn": "",
+            "pages": "831-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Modelling an influenza pandemic: A guide for the\nperplexed",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Fisman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "CMAJ",
+            "volume": "181",
+            "issn": "",
+            "pages": "171-3",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Mathematical models to characterize early epidemic growth: A\nreview",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Chowell",
+                    "suffix": ""
+                },
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Sattenspiel",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Bansal",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Viboud",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Phys Life Rev",
+            "volume": "18",
+            "issn": "",
+            "pages": "66-97",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Estimation of MERS-coronavirus reproductive number and case fatality rate\nfor the spring 2014 Saudi Arabia outbreak: insights from publicly available\ndata",
+            "authors": [
+                {
+                    "first": "MS",
+                    "middle": [],
+                    "last": "Majumder",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Rivers",
+                    "suffix": ""
+                },
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Lofgren",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Fisman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS Curr",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Projected impact of vaccination timing and dose availability on the\ncourse of the 2014 West African ebola epidemic",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Fisman",
+                    "suffix": ""
+                },
+                {
+                    "first": "A",
+                    "middle": [],
+                    "last": "Tuite",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "PLoS\nCurr",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "An IDEA for short term outbreak projection: nearcasting using the basic\nreproduction number",
+            "authors": [
+                {
+                    "first": "DN",
+                    "middle": [],
+                    "last": "Fisman",
+                    "suffix": ""
+                },
+                {
+                    "first": "TS",
+                    "middle": [],
+                    "last": "Hauck",
+                    "suffix": ""
+                },
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Tuite",
+                    "suffix": ""
+                },
+                {
+                    "first": "AL",
+                    "middle": [],
+                    "last": "Greer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "PLoS One",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Cholera epidemic in Haiti, 2010: using a transmission model to explain\nspatial spread of disease and identify optimal control interventions",
+            "authors": [
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Tuite",
+                    "suffix": ""
+                },
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Tien",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Eisenberg",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Ann Intern Med",
+            "volume": "154",
+            "issn": "",
+            "pages": "593-601",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Bblme: Tools for General Maximum Likelihood\nEstimation",
+            "authors": [
+                {
+                    "first": "B",
+                    "middle": [],
+                    "last": "Bolker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "The IDEA model: A single equation approach to the Ebola forecasting\nchallenge",
+            "authors": [
+                {
+                    "first": "AR",
+                    "middle": [],
+                    "last": "Tuite",
+                    "suffix": ""
+                },
+                {
+                    "first": "DN",
+                    "middle": [],
+                    "last": "Fisman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "Epidemics",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Estimation of the serial interval of influenza",
+            "authors": [
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Cowling",
+                    "suffix": ""
+                },
+                {
+                    "first": "VJ",
+                    "middle": [],
+                    "last": "Fang",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Riley",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "Epidemiology",
+            "volume": "20",
+            "issn": "",
+            "pages": "344-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "",
+            "authors": [],
+            "year": null,
+            "venue": "",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Estimates of the reproduction number for seasonal, pandemic, and zoonotic\ninfluenza: a systematic review of the literature",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Biggerstaff",
+                    "suffix": ""
+                },
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Cauchemez",
+                    "suffix": ""
+                },
+                {
+                    "first": "C",
+                    "middle": [],
+                    "last": "Reed",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "BMC Infect\nDis",
+            "volume": "14",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Results from the centers for disease control and prevention\u2019s predict the\n2013\u20132014 Influenza Season Challenge",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Biggerstaff",
+                    "suffix": ""
+                },
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Alper",
+                    "suffix": ""
+                },
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Dredze",
+                    "suffix": ""
+                }
+            ],
+            "year": 2016,
+            "venue": "BMC Infect\nDis",
+            "volume": "16",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Effective reproduction numbers are commonly overestimated early in a\ndisease outbreak",
+            "authors": [
+                {
+                    "first": "GN",
+                    "middle": [],
+                    "last": "Mercer",
+                    "suffix": ""
+                },
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Glass",
+                    "suffix": ""
+                },
+                {
+                    "first": "NG",
+                    "middle": [],
+                    "last": "Becker",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Stat Med",
+            "volume": "30",
+            "issn": "",
+            "pages": "984-94",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Influenza case definitions - optimising sensitivity and\nspecificity",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [],
+                    "last": "Penttinen",
+                    "suffix": ""
+                },
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Pebody",
+                    "suffix": ""
+                }
+            ],
+            "year": 2015,
+            "venue": "Euro Surveill",
+            "volume": "20",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Interventions to increase influenza vaccination of health-care\nworkers--California and Minnesota",
+            "authors": [],
+            "year": 2005,
+            "venue": "MMWR Morb Mortal Wkly\nRep",
+            "volume": "54",
+            "issn": "",
+            "pages": "196-9",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

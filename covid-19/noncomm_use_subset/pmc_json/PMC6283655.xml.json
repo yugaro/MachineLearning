@@ -1,0 +1,2423 @@
+{
+    "paper_id": "PMC6283655",
+    "metadata": {
+        "title": "Systems vaccinology and big data in the vaccine development chain",
+        "authors": [
+            {
+                "first": "Ren\u00e9",
+                "middle": [
+                    "H.",
+                    "M."
+                ],
+                "last": "Raeven",
+                "suffix": "",
+                "email": "rene.raeven@intravacc.nl",
+                "affiliation": {}
+            },
+            {
+                "first": "Elly",
+                "middle": [],
+                "last": "van Riet",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Hugo",
+                "middle": [
+                    "D."
+                ],
+                "last": "Meiring",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Bernard",
+                "middle": [],
+                "last": "Metz",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Gideon",
+                "middle": [
+                    "F.",
+                    "A."
+                ],
+                "last": "Kersten",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "There are many effective vaccines available to protect humans against infectious diseases. However, the development of vaccines against \u2018difficult\u2019 pathogens remains challenging. For example, vaccines against human immunodeficiency virus (HIV) and respiratory syncytial virus (RSV) are still under development. Furthermore, some existing vaccines require improved efficacy, e.g. vaccines against Bordetella pertussis, influenza viruses, Mycobacterium tuberculosis and Plasmodium species causing malaria. In addition, new infectious diseases such as severe acute respiratory syndrome and Ebola virus disease will continue to emerge, which require new vaccines to prevent epidemics. Also, therapeutic vaccines against non\u2010infectious diseases, such as cancer, are needed. The lack of in\u2010depth knowledge of the pathogen and requirements for protective immunity often hamper development.1 Application of systems biology during the development of vaccines, or systems vaccinology, can be an important tool to enhance insight into immune responses induced by (candidate) vaccines or identification of (early) correlates of protection.2, 3 Alan Aderem defined systems biology as a \u2018comprehensive quantitative analysis of the manner in which all the components of a biological system interact functionally over time and space that is executed by an interdisciplinary team of investigators.\u20194 This definition can readily be applied to study the responses to vaccination. Systems\u2010based approaches are often labeled unbiased and broad (sometimes even the word \u2018holistic\u2019 is used). However, that is only true to a certain extent, as defining a research objective is already introducing bias. Often only a few analytical techniques are used (as described in the next section) to address the objectives (Fig. 1). Usually, there are also limitations in availability of materials. For example, in preclinical studies using mice the amount of blood that can be collected is very limited, whereas in clinical studies mainly body fluids can be used, although biopsies and mucosal lavages are sometimes available. Also, time is an essential parameter of systems vaccinology for studying kinetics and cause\u2013effect relations, but repeated sampling is limited in humans. In this review, we describe current developments of the techniques that form the pillars of systems vaccinology and discuss the implementation of systems vaccinology in the vaccine research and development chain.",
+            "cite_spans": [],
+            "section": "Introduction",
+            "ref_spans": [
+                {
+                    "start": 1794,
+                    "end": 1795,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "For decades, RNA analysis has been applied to study vaccine\u2010induced responses6 and has evolved from (quantitative) polymerase chain reaction to high\u2010throughput methods like microarrays and next\u2010generation sequencing (RNAseq). The applications range from assessing transcriptional profiles in whole tissues and blood to purified cell populations7, 8 and, more recently, even single cells.9, 10 In contrast to conventional transcriptome analysis that results in loss of tissue or cells, transcriptome in vivo analysis allows us to monitor mRNA expression in situ in live cells or animals.11 Transcriptomics of the complete genome is unbiased, relatively straightforward and is offered as a service by many contract laboratories. Gene expression levels and kinetics provide information on involvement of genes following immunization.12, 13, 14, 15 However, mRNA is often not an effector molecule in itself, but needs translation into protein and mRNA levels often do not correlate with protein content. One study reported that in mice, under those conditions, only 27% of the mRNA transcript correlates with protein expression.16 To that end, transcriptomic profiling in vaccine research serves as an excellent tool to find potential markers of vaccine\u2010induced responses that subsequently need to be confirmed on protein or cellular level. Novel methods such as cellular indexing of transcriptomes and epitopes by sequencing (CITE\u2010seq) try to overcome this translational challenge by combining in parallel the targeting of single cells with protein markers with unbiased transcriptome profiling to obtain more specific information on gene expression in cellular phenotypes than RNA\u2010seq in the complete tissue.17 In addition to mRNA profiles, investigating the role of non\u2010coding microRNAs becomes relevant given their role in immunology.18\n",
+            "cite_spans": [],
+            "section": "Transcriptomics ::: Systems vaccinology techniques",
+            "ref_spans": []
+        },
+        {
+            "text": "Contrary to the transcriptome, the proteome encompasses the effectors that exert and control the immune response. Receptors, ligands, enzymes, hormones and even structural proteins detect foreign substances, determine the identity of cells and communicate messages between cells and tissues. Profiling the subset of proteins and peptides involved in the immune response (termed immunoproteomics)19 is important to understand how vaccines work. During the last three decades, mass spectrometry (MS) \u2010based proteomics has emerged as an essential tool to profile this immunoproteome in terms of protein identification, protein dynamics and protein\u2013protein interactions. Hunt et al.20 pioneered the MS\u2010based analysis of immunogenic peptides presented by molecules of the major histocompatibility complex (MHC). Since then, many studies have profiled the human leucocyte antigen (HLA) ligand repertoire using immunoprecipitation techniques and subsequent MS\u2010based ligand identification to find new antigen leads and to understand the concept of immunogenicity. Apart from targeting infectious diseases,21, 22, 23, 24 MHC ligandome analysis also is applied in, for example, cancer immunotherapy.25 Recent studies, however, have shown that the plethora of MHC\u2010presented peptides is even more complex than expected, due to the formation of non\u2010linear peptide sequences (i.e. splicing variants) of these T\u2010cell epitopes as it is estimated that one\u2010third of the CD8+ T\u2010cell epitopes is comprised of proteasome\u2010generated spliced epitopes.26, 27, 28, 29\n",
+            "cite_spans": [],
+            "section": "Proteomics ::: Systems vaccinology techniques",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition to profiling the T\u2010cell epitope repertoire, assessing the antigenic determinants that interact with B\u2010cells and antibodies is of high significance in elucidating immune responses in vaccine development and vaccine design.30, 31, 32 Since B\u2010cell epitopes are often conformational or even discontinuous, their identification is complex and currently not possible using in silico tools. With instrumental improvement of MS and the supporting software tools, MS is now used as a versatile tool to determine B\u2010cell epitopes, that is, the areas where antibodies bind. Opuni et al.33 comprehensively reviewed MS\u2010based approaches to map B\u2010cell epitopes. Antibody\u2013antigen binding is just one example of a protein\u2013protein interaction. Large\u2010scale interaction analysis (interactomics) is rapidly developing to identify any type of protein\u2013protein interaction.",
+            "cite_spans": [],
+            "section": "Proteomics ::: Systems vaccinology techniques",
+            "ref_spans": []
+        },
+        {
+            "text": "A new class of MS\u2010cleavable cross\u2010linking reagents has a great potential in interactomics.34, 35, 36 Like all other cross\u2010linking reagents, these compounds stabilize transient protein\u2013protein interactions by the formation of covalent bonds under physiological conditions. But they also allow for the unambiguous identification of the spatially distributed peptides of the interacting proteins, based on the presence of characteristic reporter ions in the mass spectra that are representative for intramolecular or intermolecular cross\u2010links. Liu et al. showed a good correlation between protein three\u2010dimensional\u2010structure data obtained from chemical cross\u2010linking MS (XL\u2010MS) using MS\u2010cleavable reagents and data from cryo\u2010electron microscopy (cryo\u2010EM) on purified protein assemblies. In addition, they also identified in HeLa cell lysates cross\u2010links from protein domains lacking X\u2010ray or cryo\u2010EM three\u2010dimensional\u2010structure data,37 illustrating the great potential of this strategy in identifying protein\u2013protein interactions. To detect protein\u2013protein interactions by XL\u2010MS, it is mandatory that the amino acids in the interaction area are reactive with the cross\u2010linker.",
+            "cite_spans": [],
+            "section": "Proteomics ::: Systems vaccinology techniques",
+            "ref_spans": []
+        },
+        {
+            "text": "Secreted proteins play an essential role in communication between immune cells. The immune secretome consists of a wide range of cytokines such as tumor necrosis factors, interferons and interleukins. Multiplex immunoassays and ELISA methods target predefined proteins from the secretome, based on cytokine\u2010specific antibodies. In contrast, newly developed MS\u2010based proteomics methods like BioOrthogonal Non\u2010Canonical Amino acid Tagging (BONCAT) can target the full repertoire of secreted proteins, although limited to in vitro experiments only. In a BONCAT assay, an amino acid is replaced by an azido\u2010containing analogue (e.g. methionine replacement by azidohomoalanine). The azido moiety allows for purification of excreted, low abundance, newly synthesized proteins from cell culture medium by click\u2010chemistry using alkyne\u2010functionalized beads.38, 39 The amino acid modification does not affect the structure and function of the protein, nor does it alter the protein synthesis rate or cell viability.40, 41 In combination with multiplexing technologies based on Tandem Mass Tagging (TMT), N,N\u2010dimethyl leucine (DiLeu) tagging or neutron\u2010encoded reagents, up to 25 samples can be multiplexed in a single run, for unbiased identification and relative quantification of de novo\u2010synthesized proteins in the secretome.42, 43\n",
+            "cite_spans": [],
+            "section": "Proteomics ::: Systems vaccinology techniques",
+            "ref_spans": []
+        },
+        {
+            "text": "Limitations of MS\u2010based proteomics lay in the fact that, like transcriptomics, it is dependent on the availability and quality of annotated protein databases, e.g. number of annotated genes or proteins. The sensitivity of the current generation of mass spectrometers is high, but could improve further to reach the levels achieved with, for example, quantitative polymerase chain reaction. However, as described here and by others,44 MS is currently very useful for the characterization of a wide range of immunological mechanisms in the context of infection and vaccination.",
+            "cite_spans": [],
+            "section": "Proteomics ::: Systems vaccinology techniques",
+            "ref_spans": []
+        },
+        {
+            "text": "The Systems Vaccinology approach is not limited to the common application of transcriptomics and proteomics and novel techniques and applications are more often applied (Table 1). For example, metabolomics is a high\u2010throughput technology to study metabolic pathways in biological systems. The metabolome covers all small molecules and intermediates (usually < 2000 dalton (Da) molecular weight) that are highly dynamic in the catabolic and anabolic processes of cells. In many immunological studies, metabolomics is now an integral part of system vaccinology, to predict biomarkers and to evaluate vaccine efficacy.45, 46 Untargeted metabolome analysis requires many different sample preparation procedures and analytical tools to identify all metabolites. Gas chromatography, liquid chromatography, capillary electrophoresis, MS, Fourier transform infrared spectroscopy and nuclear magnetic resonance are frequently used or combined to study the metabolome, although with limited precision and accuracy. Improved accuracy, precision and specificity of these assays can be obtained by using semi\u2010targeted or targeted metabolomics strategies if the chemical identities of the analytes are known beforehand.47\n",
+            "cite_spans": [],
+            "section": "Miscellaneous techniques ::: Systems vaccinology techniques",
+            "ref_spans": [
+                {
+                    "start": 176,
+                    "end": 177,
+                    "mention": "1",
+                    "ref_id": "TABREF0"
+                }
+            ]
+        },
+        {
+            "text": "In the context of systems vaccinology, conventional assays that are neither high throughput, nor unbiased, remain necessary to confirm hypotheses. Histology is still the common method to confirm the influx and the location of immune cells in tissues as a result of an infection or immunization. However, visualization of cells in tissue sections continually improves by better immunoimaging techniques48 such as confocal microscopy. Ex vivo, assays such as ELISA and flow cytometry are applied to identify and quantify specific cell subsets as well as their activation state and function (such as cytokine production or proliferation). These immunological techniques for studying these responses have also become more powerful. Flow cytometry equipment has improved, for example, by combining the measurement of the amount of proteins per cell (flow cytometry), with visualization of their localization within the cells (microscopy), so\u2010called imaging flow cytometry.49 Also, more fluorescent labels have become available, increasing the number of markers that can be investigated simultaneously. Multi\u2010parameter flow cytometry enables the identification of these specialized, often rare, subsets of cells.50 For example, innate cells that play a crucial role in pathogen recognition and in influencing the magnitude and direction of adaptive immunity, such as specific subtypes of antigen\u2010presenting cells and innate lymphoid cells. With respect to adaptive immune responses, the ability to identify rare subsets mainly focuses on antigen\u2010specific B\u2010cells51 and T\u2010cells,52 both circulating and tissue\u2010resident cells, and precursors as well as effector and memory cells.7, 8 Cytometry by Time\u2010of\u2010Flight mass spectrometry (CyTOF)53 uses rare\u2010metal isotopes instead of fluorescent labels for labeling, thereby almost abolishing the spectral overlap seen with fluorescent dyes and expanding the number markers that can be measured simultaneously even further. For example, Van Unen et al.54 identified 142 immune subsets in the human mucosal immune system.",
+            "cite_spans": [],
+            "section": "Humoral and cell\u2010mediated responses ::: Systems vaccinology techniques",
+            "ref_spans": []
+        },
+        {
+            "text": "In addition, the opportunity of sorting specific subsets of cells not only as a population, but also as single cells, in combination with high\u2010throughput analysis of the isolated cells, added yet another dimension. Lymphocyte epitope specificity necessarily is extremely diverse to fight the wide array of possible pathogens and is accomplished by randomness through several recombinatorial events and additional random changes during lymphocyte ontogeny. For example, the number of different antibodies human B\u2010cells can produce, outnumbers the B lymphocytes (~1011) in the human body.55 High\u2010throughput single\u2010cell analysis enabled detailed interrogation of these broad B\u2010cell and T\u2010cell repertoires.56 These techniques also revealed that priming might not always be predictive, as preferential expansion of B\u2010cells and T\u2010cells also plays an important role.57 This illustrates that enhanced understanding of lymphocyte responses not only leads to identification of novel early markers for efficacy of vaccines, but is also useful for their evaluation. Hypotheses with respect to B\u2010cell and T\u2010cell epitopes can be derived from MS\u2010based studies as described in the former paragraph. Moreover, current knowledge with respect to HLA specificity has also enabled the prediction of T\u2010cell epitopes in silico, decreasing the time needed for analysis.58 As B\u2010cell epitopes are often conformational, current knowledge does not yet enable in silico predictions to the same extent as for T\u2010cells. For B\u2010cell epitope analysis of complex multi\u2010protein vaccines, antibody\u2013antigen binding can be investigated using two\u2010dimensional gel electrophoresis with Western blotting to pinpoint immunogenic antigens.59 Subsequently, peptide arrays can be applied to investigating the immunodominant epitopes of these discovered antigens.60\n",
+            "cite_spans": [],
+            "section": "Humoral and cell\u2010mediated responses ::: Systems vaccinology techniques",
+            "ref_spans": []
+        },
+        {
+            "text": "The ability to isolate single antibody\u2010producing B\u2010cells and subsequent DNA sequencing of immunoglobulin genes in high\u2010throughput settings (Ig\u2010seq) has greatly impacted the depth of understanding with respect to the antibody repertoire.55 Single\u2010cell sorting in combination with B\u2010cell cloning has enabled the isolation of specific antibodies able to neutralize pathogens, including rare antigens with characteristics that are of special interest, such as antibodies that are broadly cross\u2010reactive among highly variable viruses by binding to conserved regions. This was, for example, found for influenza hemagglutinin (HA) subtypes upon infection as well as vaccination.61, 62, 63, 64 In general, this has shifted the focus from the most immunogenic epitopes to the more conserved regions. However, it has proved challenging to design vaccines that induce strong responses against these regions. Challenges with respect to design of vaccines inducing such broadly neutralizing antibodies for HIV and influenza virus were extensively reviewed by Corti and Lanzavecchia.65 For example, other regions might need to be removed or de\u2010immunized and the conserved epitopes might not be easily accessible, preventing the vaccine\u2010induced antibodies from binding to the natural target. Another point of attention is that a focus on increased immunogenicity should not lead to a decrease in safety. For example, antibodies with long or charged CDR\u2010H3 regions enable binding to occluded sites on pathogens and mediate pathogen neutralization but are also more likely to be autoreactive.55\n",
+            "cite_spans": [],
+            "section": "Humoral and cell\u2010mediated responses ::: Systems vaccinology techniques",
+            "ref_spans": []
+        },
+        {
+            "text": "IgG antibody levels have served as correlates of protection for traditional vaccines,66 but in the context of systems vaccinology, not only antibody quantity, but also functionality is increasingly investigated. Antibodies may inhibit other functional antibodies or enhance disease by facilitating virus entry into cells. However, non\u2010neutralizing antibodies may still be functional and could have more impact on protection from disease than neutralizing antibodies, for instance by interaction of the antibody constant domain with Fc receptors. This interaction is determined by two characteristics, antibody subclass (irreversible) and antibody glycosylation (fast and reversible) that can for example impact the affinity for Fc receptors.67 The glycosylation profile of antigen\u2010specific antibodies is changed upon vaccination, whereas the glycosylation profile of total IgG is not affected. Interestingly, despite very different pre\u2010vaccination glycosylation levels in populations in different parts of the world,68 profiles induced by vaccination are similar, as was shown after influenza vaccination.69\n",
+            "cite_spans": [],
+            "section": "Humoral and cell\u2010mediated responses ::: Systems vaccinology techniques",
+            "ref_spans": []
+        },
+        {
+            "text": "However, different vaccine formulations can induce different glycosylation profiles.68 This is likely also influenced by the adjuvant present in the formulation, either directly or via cytokine induction.70 Though the biological implications of these differences are not yet clear, the recent developments in systems serology demonstrate that multiple parameters of the antibody response, such as IgG subtype and antibody glycosylation among others, influence antibody functionally and therefore vaccine efficacy.71, 72, 73\n",
+            "cite_spans": [],
+            "section": "Humoral and cell\u2010mediated responses ::: Systems vaccinology techniques",
+            "ref_spans": []
+        },
+        {
+            "text": "One of the difficulties in systems approaches is the amount of data. Statistical evaluation, visualization and extracting meaningful conclusions are major challenges and require multiple tools and expertises.74, 75 New technologies in systems vaccinology such as metabolomics may require different statistical and bioinformatic analysis strategies compared with transcriptomics and proteomics data sets, as described by Ren et al.76 Visualization of data from full genomes or proteomes was initially performed with tools applying e.g. heatmaps, Venn diagrams and network analysis, e.g. with Cytoscape.77 These allowed visualization of numerous individual data points or groups, but also the clustering of related data points. Additionally, the generation of multiple systems\u2010scale data sets enables the comparison of immune responses induced by different vaccines in an unbiased manner.78, 79 Hierarchical Stochastic Neighborhood Embedding (HSNE) enables us to visualize data of cellular composition of millions of cells in detail up to the single\u2010cell level.80 Although these graphs provide an easier perspective on trends in the data sets, they are not designed to provide information on the biological function of individual data points. The development of data mining tools (Fig. 1) has given scientists a handle to translate their data sets into the description of relevant biological processes.81 This allows for investigation of the involvement and mutual interaction of pathways, processes and cell types. Tools that are focused on pathway analysis include DAVID,82 Pathway\u2010Express,83 Gene Onthology (GO)84 and the Kyoto Encyclopedia of Genes and Genomes (KEGG).85 With BioGPS, the involvement of cells or the different stages in cell activation can be investigated.86 This has also led to the development of specialized databases for specific research topics. For example, InnateDB contains data on innate immune responses87 while INTERFEROME focuses on interferon\u2010related processes88 and the CEMiTool can be used for co\u2010expression analyses and discovery of functionality of genes.89 For the discovery and analysis of the repertoire of T\u2010 and B\u2010cell receptor sequences, VDJviz can be applied for the routine analysis and quality control of sequencing of immune repertoires90 and VDJdb is designed for the annotation of T\u2010cell receptor repertoire data.91 These databases evolve and expand continuously based on novel data, scientific insights and technologies. Depending on the choice of data mining tools, the outcome of results might differ. However, within the Human Vaccines Project,92 researchers demonstrated that there was no difference in the outcome of their data when it was either analyzed using a tool based on prior knowledge, in this case the NetAnalyst platform, or with an unbiased tool, DIABLO.",
+            "cite_spans": [],
+            "section": "Data analysis and bioinformatics ::: Systems vaccinology techniques",
+            "ref_spans": [
+                {
+                    "start": 1284,
+                    "end": 1285,
+                    "mention": "1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "In addition, to generate knowledge and understanding, large data sets are used in computational systems biology studies to predict host immune responses.75, 93 From the antigen point of view, machine\u2010learning tools are widely applied to predict B\u2010cell94 and T\u2010cell epitopes95 and novel tools such as the IL17eScan96 enable us to predict the capacity of epitopes to induce interleukin\u201017. All these data can be gathered in silico prior to or simultaneous with laboratory studies to confirm the role of host biomarkers and antigen epitopes in vaccine responses.",
+            "cite_spans": [],
+            "section": "Data analysis and bioinformatics ::: Systems vaccinology techniques",
+            "ref_spans": []
+        },
+        {
+            "text": "During the discovery phase a systems approach can be implemented to investigate vaccine composition as is especially interesting for complex multi\u2010protein vaccines (Fig. 2). For example, transcriptomics and/or proteomics approaches can be applied during strain generation for an inactivated vaccine to provide detailed information on protein composition and, more specifically, the proportion of immunogenic proteins. These techniques can subsequently be used for process development to verify whether or not the product is similar when produced at a larger scale. This was, for instance, demonstrated for pertussis whole\u2010cell vaccines.97 Information on the relationship between cultivation conditions and the composition of the final vaccine, considerably enhances the process of optimizing vaccine efficacy. In addition, it reveals key process parameters that can subsequently be tightly monitored, making the process more consistent and thereby eventual vaccine release easier.",
+            "cite_spans": [],
+            "section": "Exploratory studies in vaccine development ::: Application of systems vaccinology in vaccine research",
+            "ref_spans": [
+                {
+                    "start": 170,
+                    "end": 171,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "To study the vaccine responses in the discovery phase, systems vaccinology methods can be used to study the mechanism of action of vaccines or adjuvants, both in vitro as well as in experimental animals (Fig. 2). In vitro cell\u2010based assays allow the gain of information on the magnitude and direction of the innate response, but they lack the possibility to study coherent interactions between innate and adaptive immune responses. Especially in the transition from innate to adaptive responses, a lot of immunological information is still missing.",
+            "cite_spans": [],
+            "section": "Exploratory studies in vaccine development ::: Application of systems vaccinology in vaccine research",
+            "ref_spans": [
+                {
+                    "start": 209,
+                    "end": 210,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "While the main focus in systems vaccinology is on vaccine\u2010induced responses, pathogen\u2010induced responses during infection are also of great interest, as these can enable the discovery of potential markers of, or mechanisms involved in, protective immunity, or unwanted immunological effects such as immune evasion (Fig. 2). Systems biology can assist to investigate host\u2013pathogen interactions by looking at pathogen behavior and clearance after infection. A natural infection sometimes induces effective protection, e.g. mumps, that may serve as a benchmark for a vaccine, whereas other pathogens may display immune evasive or suppressive responses, which one would like to avoid in a vaccine\u2010induced response. A systems\u2010based approach was for instance used to investigate infection\u2010induced responses during sepsis.98 In terms of vaccine\u2010preventable diseases, investigators have looked at infection\u2010induced responses for pathogens such as RSV,99, 100, 101\nM. tuberculosis,102\nB. pertussis\n12, 78, 103 and influenza.104, 105 The course of a B. pertussis infection was investigated in mice to unravel molecular and cellular signatures of the effective infection\u2010induced immunity.12, 106 Results indicated that a B. pertussis infection induced T helper type 17 (Th17) cells and mucosal IgA responses that were preceded by a prolonged acute\u2010phase response, broad pathogen recognition and early gene signatures of subsequent T\u2010cell recruitment in the lungs.12 In addition, the infection led to enhanced activation of pulmonary innate immune cells and markers indicating recruitment of CCR6+ B\u2010cells and Th17 cells.106 These promising markers of infection\u2010induced responses should ideally be confirmed in human B. pertussis challenge models.107 In a comparative network analysis of two data sets, the pulmonary molecular signatures that preceded the effector cells in B. pertussis infection\u2010induced\u2010immunity12 were compared with signatures induced upon pulmonary immunization with a novel Outer Membrane Vesicle Pertussis vaccine (omvPV).15 Network analysis demonstrated that similar genes and pathways were involved in both responses but that the intensity and kinetics between infection\u2010induced and vaccine\u2010induced responses were different. Both responses did, however, result in induction of mucosal immunity and better protection compared with subcutaneous vaccine administration.",
+            "cite_spans": [],
+            "section": "Exploratory studies in vaccine development ::: Application of systems vaccinology in vaccine research",
+            "ref_spans": [
+                {
+                    "start": 319,
+                    "end": 320,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Systems approaches have also been used to investigate innate responses, for example responses induced by adjuvants.108\nIn vitro studies were performed to investigate monocyte\u2010specific responses induced by alum salts using a proteomics approach109 and to study subset\u2010specific dendritic cell responses following lipopolysaccharide stimulation using a transcriptomics approach.110 These extensive in vitro studies provide insight into novel markers, pathways and cell subsets activated by adjuvants. Yet the complexity of cell\u2010to\u2010cell interaction during immune responses requires in vivo studies. This was also addressed by Mosca et al.,13 who conducted one of the first systems\u2010based studies in mice for better understanding of adjuvants, such as MF59, alum, CpG ODN and \u03b1\u2010GalCer. Adjuvant\u2010induced responses were profiled in muscle at the site of injection. This provided comparative information on plain adjuvant responses such as the fact that CpG elicited stronger systemic innate responses compared with MF59 and alum. Others have studied the responses of adjuvants in combination with antigen, that might also influence the immune response. Olafsdottir et al.111 determined molecular signatures induced in mice of four clinically tested vaccine adjuvants (CAF01, IC31 GLA\u2010SE and Alum) using a tuberculosis vaccine candidate (H56) as model antigen. With a transcriptomics analysis, signatures of T follicular helper (Tfh) and germinal center (GC) B\u2010cell responses were found to be enhanced in adjuvated vaccines compared with those of the H56 antigen alone. Using a similar combination of H56 adjuvanted with CAF01, Santoro et al.112 applied systems vaccinology to demonstrate that recall innate responses following boosting were modulated by the use of adjuvant in the primary immunization. Lindqvist et al.113 focused on specifying the molecular signatures in mice induced by mucosal adjuvants for vaccination against sexually transmitted infections.",
+            "cite_spans": [],
+            "section": "Exploratory studies in vaccine development ::: Application of systems vaccinology in vaccine research",
+            "ref_spans": []
+        },
+        {
+            "text": "Relevant animal models to study infection are not always available. In such cases, the application of systems approaches in vaccination studies can provide valuable information on the mechanism of action of candidate vaccines. G\u00f3mez et al. unraveled transcriptomic activation markers of human myeloid and plasmacytoid dendritic cells upon stimulation with a vaccine candidate against HIV/AIDS, based on an MVA\u2010based vector. Subsequently, HIV\u20101\u2010specific CD4+ and CD8+ T\u2010cell memory responses were demonstrated in vivo.114 Strouts et al.115 were able to link early specific gene transcripts related to T\u2010cell activation and type I interferon response to the magnitude of neutralizing antibody titers after immunization with a live\u2010attenuated tetravalent dengue vaccine in non\u2010human primates. As part of the development of a novel Outer Membrane Vesicle Pertussis vaccine (omvPV), vaccine\u2010induced responses were investigated in mice. An extensive proteomics approach for antibody profiling was used to determine the distinct antibody specificity and subclass distribution induced by different pertussis vaccines.59 Transcriptome and cytokine profiling demonstrated reduced pro\u2010inflammatory responses, potentially leading to less adverse effects by the omvPV compared with a classic whole\u2010cell pertussis vaccine while maintaining the vaccine efficacy.116 To investigate the effect of the route of immunization on protective immunity, the responses induced by subcutaneous and pulmonary administration of omvPV in mice were compared.15 The study demonstrated improved mucosal immunity, and therefore protection, against B. pertussis after pulmonary immunization. Finally, in terms of vaccine safety, Mizukami et al.117 applied the systems\u2010approach in a rat model to predict safety and batch\u2010to\u2010batch consistency of influenza vaccines. Wang et al.118 investigated blood gene signatures in non\u2010human primates immunized with seven marketed or experimental vaccines to isolate markers of vaccine efficacy and safety. Whereas overlapping trends in markers of efficacy were found between some vaccines, no markers were found correlating to adverse effects.",
+            "cite_spans": [],
+            "section": "Exploratory studies in vaccine development ::: Application of systems vaccinology in vaccine research",
+            "ref_spans": []
+        },
+        {
+            "text": "Predictive markers that have been found in the exploratory studies (described in the previous section) can be applied in subsequent clinical studies. Moreover, systems vaccinology analyses are also useful in a clinical study itself to obtain better insight into safety and efficacy (Fig. 2). However, to our knowledge in only a few clinical studies has systems vaccinology been performed to assess signatures that correlate to adverse effects, such as fever and seizures. In the public\u2013private project BIOVACSAFE, systems approaches are applied to investigate markers correlating to vaccine safety in human and animal models potentially providing novel markers.119 Investigators have conducted systems\u2010based studies in humans investigating vaccine candidates against Ebola (rVSV\u2010ZEBOV),120 HIV\u20101,121 malaria (RTS,S)122, 123 and M. tuberculosis (M72/AS01).124 For Ebola (rVSV\u2010ZEBOV), IP\u201010 and CXCR6+ natural killer (NK) cells were independently correlating with antibody titers, suggesting that IP\u201010 could be a potential target to influence vaccine\u2010induced responses.120 Anderson et al.121 investigated transcriptome profiles in the blood of healthy volunteers following immunization with a novel HIV\u20101 vaccine adjuvanted with a Toll\u2010like receptor 4 agonist. High responders, based on serum antibodies, contained modules of genes expressed in NK cells, whereas modules of genes related to myeloid cells, monocytes and integrin cell surface interactions were detected in low responders. These signatures enable vaccine responses to be distinguished in an early phase and perhaps even allows steering of immune responses in low responders by adjustment of the vaccine. In a phase I randomized controlled trial using AS03\u2010adjuvanted and unadjuvanted inactivated split\u2010virus H5N1 influenza vaccines, the effect of adjuvant on vaccine\u2010induced responses, such as serum cytokines, antibody titers, and gene expression levels, was investigated. This led to novel insights into antigen processing, presentation markers in neutrophils and revealed the correlation of serum IP\u201010 levels with proliferation of NK cells.125 Interestingly, for the prediction of protection induced by malaria (RTS,S) immunization, NK cells correlated negatively whereas positive correlations were detected for molecular signatures of B\u2010cells and plasma cells122 and the nuclear factor\u2010\u03baB and interferon\u2010\u03b3 pathways.123 These findings indicate that different vaccine\u2013adjuvant combinations may induce different immune (non)effective responses.",
+            "cite_spans": [],
+            "section": "Clinical studies ::: Application of systems vaccinology in vaccine research",
+            "ref_spans": [
+                {
+                    "start": 288,
+                    "end": 289,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "After vaccines have been licensed and introduced on the market, post\u2010marketing surveillance studies are performed to monitor vaccine safety and efficacy in larger populations (Fig. 2). At this point in the vaccine life cycle, correlates of protection, or surrogates thereof, are sometimes known, however the mechanism of action is often underexposed. Systems approaches in this phase are not routinely applied, as far as we know. The validation of the methods is complex and expensive, with the added value not yet proven convincingly. However, pioneering studies have demonstrated that vaccine efficacy after yellow fever and influenza vaccination could be predicted in an early stage after immunization by analyzing molecular signatures.14, 126, 127 For the yellow fever vaccine, the enhanced levels of specific gene expression profiles in blood obtained 1 to 7 days after vaccination were predictive for antigen\u2010specific CD8+ T\u2010cell levels and antibody titers usually obtained 60 days after immunization, thus inducing a significant time advantage. In a clinical phase, regulators might want to see positive classical end\u2010points but for post\u2010marketing purposes this approach of looking at early correlates may be valuable. Furthermore, these studies are of value in comparative studies of different vaccine formulations. Nakaya et al.128 compared two different vaccine formulations, trivalent inactivated influenza vaccine (TIV) and MF59\u2010adjuvanted TIV (ATIV), in children and predicted influenza antibody titers 1 month after vaccination with a seasonal influenza vaccine across five consecutive seasons by analyzing specific signatures of innate immunity and plasma blasts.129 In addition, a systems biology approach could also be applied to investigate the differences in vaccine responsiveness in different target groups. For example, researchers predicted age\u2010related vaccine hypo\u2010responses against a hepatitis B vaccine in the elderly with a gene marker130 and exposed transcriptomic signatures of vaccine\u2010induced immunity, both cellular and humoral immune responses, after seasonal influenza vaccination specifically in older adults.131 Obviously, these post\u2010marketing surveillance studies facilitate further clinical development of improved vaccines or provide insight into general mechanisms that will enhance future vaccine development, even if correlates of protection are unknown.132\n",
+            "cite_spans": [],
+            "section": "Post\u2010marketing studies ::: Application of systems vaccinology in vaccine research",
+            "ref_spans": [
+                {
+                    "start": 181,
+                    "end": 182,
+                    "mention": "2",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Finally, a great benefit of systems vaccinology studies is the ability to combine data sets from vaccine responses against different pathogens in integrative network modeling to reveal detailed insight into universal signatures of vaccine responsiveness.78, 79, 118, 133 Li et al.79 compared molecular signatures, induced by five different human vaccines against specific bacterial or viral infections, which could predict antibody responses. This indicates that investigating responses against a single pathogen can lead to universal markers that serve as benchmark for vaccine development against new emerging diseases. This also supports the desire for data obtained in systems\u2010approaches to be publicly available (open access) for future large meta\u2010analyses.",
+            "cite_spans": [],
+            "section": "Post\u2010marketing studies ::: Application of systems vaccinology in vaccine research",
+            "ref_spans": []
+        },
+        {
+            "text": "Systems vaccinology has been implemented in the different phases of the vaccine development chain and has become a relevant approach in the field of vaccinology. The recent progression in systems vaccinology has led to successful initiatives such as the ADITEC project134 that provided a novel gene expression method to analyze biomarkers of tuberculosis pathogenesis135 as well as a study where safety and immunogenicity of a novel vaccine against tuberculosis (VPM1002) were evaluated.136 To achieve maximum vaccine efficacy and safety, future vaccine research will have to focus on target groups such as neonates137, 138 or even on the development of personalized vaccines.139 Systems vaccinology approaches can be further applied to investigate the inter\u2010group differences in vaccine responsiveness between healthy adults and specific target groups such as infants, and elderly or immune\u2010deficient individuals.140\n",
+            "cite_spans": [],
+            "section": "Future outlook",
+            "ref_spans": []
+        },
+        {
+            "text": "Investigating vaccine\u2010induced responses with systems vaccinology has led to a trend of gathering massive amounts of data going as deep as investigating every molecule in single cells. Acquiring large data sets is far easier than extracting novel relevant information from those data. Furthermore, the amount of data is constantly increasing, especially when combining data sets of different origin (genes versus proteins versus cells). This requires equally advanced tools for (i) data visualization and (ii) translation of content to knowledge and understanding, forcing a dialogue between vaccine developers and bioinformatics experts. In the future, implementation of artificial intelligence could assist in data processing and for data visualization online publications may become interactive allowing readers to scroll through, for example, the immune responses induced by immunization over time.",
+            "cite_spans": [],
+            "section": "Future outlook",
+            "ref_spans": []
+        },
+        {
+            "text": "In summary, systems vaccinology is becoming a valuable tool in each phase of the vaccine development chain. The link with predicting immune responses beforehand is, however, still difficult. Small but important steps are currently taken towards application of the insights created by systems vaccinology. Recent studies show that the application of systems vaccinology is especially interesting for investigating complex or dangerous pathogens such as Ebola virus, HIV, malaria\u2010causing Plasmodium spp. and M. tuberculosis where phase 3 studies are challenging or even impossible,120, 121, 122, 123, 124 or even for investigating the heterologous or non\u2010specific effects that vaccines induce against other diseases.141 These promising changes call for the inclusion of systems vaccinology as early as possible in the vaccine development chain to better understand why some vaccines work and others do not. This will enable efficiency of vaccine development proportionally in the design phase and will lead to improved vaccine evaluation in early phases, thereby reducing time and costs.",
+            "cite_spans": [],
+            "section": "Future outlook",
+            "ref_spans": []
+        },
+        {
+            "text": "R.R., E.R., H.M., B.M. and G.K. wrote the review.",
+            "cite_spans": [],
+            "section": "Author contribution",
+            "ref_spans": []
+        },
+        {
+            "text": "The authors declare no competing interest.",
+            "cite_spans": [],
+            "section": "Disclosures",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "TABREF0": {
+            "text": "Table 1: The omics in vaccinology\n",
+            "type": "table"
+        },
+        "TABREF1": {
+            "text": "Table 2: Applications of systems vaccinology\n",
+            "type": "table"
+        },
+        "FIGREF0": {
+            "text": "Figure 1: Systems vaccinology approach in a pre\u2010clinical setting. A biological system can range from a single cell to the complete human body consisting of different levels such as genes, proteins, cells, tissues and organs that interact with each other. The biological processes in these levels have distinct time\u2010 and space\u2010resolved kinetics. Information on the immune status can be acquired by analysis at the molecular level of the actors (i.e. gene expression, protein synthesis, lipid secretion and production of metabolites), or by determining the changes in cellular composition and morphology. To study the relationship and interaction between all distinct levels of a biological system, a comprehensive approach is required, using multiple analytical techniques. Data, preferably obtained during a time course of the same subject, are combined for further analysis. Network analysis (e.g. Cytoscape) is performed to determine co\u2010expression profiles, indicating interdependence. Functional analysis is executed in public databases, e.g. DAVID (http://www.david.ncifcrf.gov), STRING (http://www.string-db.org), BioGPS (http://www.biogps.org), and Interferome (http://www.interferome.org). Combined data form a response profile for a vaccine. Vaccine profiles can be compared with other vaccine or infection profiles and used for multiple applications as mentioned in Table 1.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: Vaccine development and application of systems vaccinology. Systems vaccinology can be applied to all phases implementing different techniques (e.g. transcriptomics, proteomics, cell\u2010based assays) to provide detailed insight in different research objectives, such as composition, immunogenicity and safety of the vaccine. The host\u2013pathogen responses are not essential for vaccine development but since protection after infection is often superior in terms of efficacy \u2013 but not safety \u2013 this knowledge can be useful throughout the vaccine development chain, as illustrated by arrows.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Vaccinology at the beginning of the 21st century",
+            "authors": [],
+            "year": 2005,
+            "venue": "Curr Opin Immunol",
+            "volume": "17",
+            "issn": "",
+            "pages": "411-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "Systems biology approaches to new vaccine development",
+            "authors": [],
+            "year": 2011,
+            "venue": "Curr Opin Immunol",
+            "volume": "23",
+            "issn": "",
+            "pages": "436-43",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Systems vaccinology",
+            "authors": [],
+            "year": 2010,
+            "venue": "Immunity",
+            "volume": "33",
+            "issn": "",
+            "pages": "516-29",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Systems biology: its practice and challenges",
+            "authors": [],
+            "year": 2005,
+            "venue": "Cell",
+            "volume": "121",
+            "issn": "",
+            "pages": "511-3",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Reverse vaccinology",
+            "authors": [],
+            "year": 2000,
+            "venue": "Curr Opin Microbiol",
+            "volume": "3",
+            "issn": "",
+            "pages": "445-50",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Transcriptional profiling technology for studying vaccine responses: an untapped goldmine",
+            "authors": [],
+            "year": 2013,
+            "venue": "Methods",
+            "volume": "60",
+            "issn": "",
+            "pages": "269-74",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Using transcriptional signatures to assess immune cell function: from basic mechanisms to immune\u2010related disease",
+            "authors": [],
+            "year": 2015,
+            "venue": "J Mol Biol",
+            "volume": "427",
+            "issn": "",
+            "pages": "3356-67",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Transcriptome signature for dampened Th2 dominance in acellular pertussis vaccine\u2010induced CD4(+) T cell responses through TLR4 ligation",
+            "authors": [],
+            "year": 2016,
+            "venue": "Sci Rep",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Massively parallel nanowell\u2010based single\u2010cell gene expression profiling",
+            "authors": [],
+            "year": 2017,
+            "venue": "BMC Genom",
+            "volume": "18",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Single\u2010cell transcriptomics to explore the immune system in health and disease",
+            "authors": [],
+            "year": 2017,
+            "venue": "Science",
+            "volume": "358",
+            "issn": "",
+            "pages": "58-63",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "Transcriptome in vivo analysis (TIVA) of spatially defined single cells in live tissue",
+            "authors": [],
+            "year": 2014,
+            "venue": "Nat Methods",
+            "volume": "11",
+            "issn": "",
+            "pages": "190-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Molecular signatures of the evolving immune response in mice following a bordetella pertussis infection",
+            "authors": [],
+            "year": 2014,
+            "venue": "PLoS ONE",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Molecular and cellular signatures of human vaccine adjuvants",
+            "authors": [],
+            "year": 2008,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "105",
+            "issn": "",
+            "pages": "10501-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Systems biology of vaccination for seasonal influenza in humans",
+            "authors": [],
+            "year": 2011,
+            "venue": "Nat Immunol",
+            "volume": "12",
+            "issn": "",
+            "pages": "786-95",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "Molecular and cellular signatures underlying superior immunity against Bordetella pertussis upon pulmonary vaccination",
+            "authors": [],
+            "year": 2018,
+            "venue": "Mucosal Immunol",
+            "volume": "11",
+            "issn": "",
+            "pages": "979-93",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Comparative analysis of proteome and transcriptome variation in mouse",
+            "authors": [],
+            "year": 2011,
+            "venue": "PLoS Genet",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "Simultaneous epitope and transcriptome measurement in single cells",
+            "authors": [],
+            "year": 2017,
+            "venue": "Nat Methods",
+            "volume": "14",
+            "issn": "",
+            "pages": "865-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Mechanisms of post\u2010transcriptional regulation by microRNAs: are the answers in sight?",
+            "authors": [],
+            "year": 2008,
+            "venue": "Nat Rev Genet",
+            "volume": "9",
+            "issn": "",
+            "pages": "102-14",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Immunoproteomics: Mass spectrometry\u2010based methods to study the targets of the immune response",
+            "authors": [],
+            "year": 2004,
+            "venue": "Mol Cell Proteomics",
+            "volume": "3",
+            "issn": "",
+            "pages": "193-208",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Characterization of peptides bound to the class I MHC molecule HLA\u2010A2.1 by mass spectrometry",
+            "authors": [],
+            "year": 1992,
+            "venue": "Science",
+            "volume": "255",
+            "issn": "",
+            "pages": "1261-3",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "Measles virus epitope presentation by HLA: novel insights into epitope selection, dominance, and microvariation",
+            "authors": [],
+            "year": 2015,
+            "venue": "Front Immunol",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Viral infection causes a shift in the self peptide repertoire presented by human MHC class I molecules",
+            "authors": [],
+            "year": 2015,
+            "venue": "Proteomics Clin Appl",
+            "volume": "9",
+            "issn": "",
+            "pages": "1035-52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Comparative analysis of the endogenous peptidomes displayed by HLA\u2010B*27 and Mamu\u2010B*08: two MHC class I alleles associated with elite control of HIV/SIV infection",
+            "authors": [],
+            "year": 2016,
+            "venue": "J Proteome Res",
+            "volume": "15",
+            "issn": "",
+            "pages": "1059-69",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Profiling MHC II immunopeptidome of blood\u2010stage malaria reveals that cDC1 control the functionality of parasite\u2010specific CD4 T cells",
+            "authors": [],
+            "year": 2017,
+            "venue": "EMBO Mol Med",
+            "volume": "9",
+            "issn": "",
+            "pages": "1605-21",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "The role of mass spectrometry and proteogenomics in the advancement of HLA epitope prediction",
+            "authors": [],
+            "year": 2018,
+            "venue": "Proteomics",
+            "volume": "18",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "Proteasomes generate spliced epitopes by two different mechanisms and as efficiently as non\u2010spliced epitopes",
+            "authors": [],
+            "year": 2016,
+            "venue": "Sci Rep",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "Mapping HLA\u2010A2, \u2010A3 and \u2010B7 supertype\u2010restricted T\u2010cell epitopes in the ebolavirus proteome",
+            "authors": [],
+            "year": 2018,
+            "venue": "BMC Genom",
+            "volume": "19",
+            "issn": "Suppl 1",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Definition of proteasomal peptide splicing rules for high\u2010efficiency spliced peptide presentation by MHC class I molecules",
+            "authors": [],
+            "year": 2015,
+            "venue": "J Immunol",
+            "volume": "195",
+            "issn": "",
+            "pages": "4085-95",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "A large fraction of HLA class I ligands are proteasome\u2010generated spliced peptides",
+            "authors": [],
+            "year": 2016,
+            "venue": "Science",
+            "volume": "354",
+            "issn": "",
+            "pages": "354-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Proteomic contributions to our understanding of vaccine and immune responses",
+            "authors": [],
+            "year": 2015,
+            "venue": "Proteomics Clin Appl",
+            "volume": "9",
+            "issn": "",
+            "pages": "972-89",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "The role of structural proteomics in vaccine development: recent advances and future prospects",
+            "authors": [],
+            "year": 2016,
+            "venue": "Expert Rev Proteomics",
+            "volume": "13",
+            "issn": "",
+            "pages": "55-68",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Proteome\u2010wide mapping of immune features onto Plasmodium protein three\u2010dimensional structures",
+            "authors": [],
+            "year": 2018,
+            "venue": "Sci Rep",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "Mass spectrometric epitope mapping",
+            "authors": [],
+            "year": 2018,
+            "venue": "Mass Spectrom Rev",
+            "volume": "37",
+            "issn": "",
+            "pages": "229-41",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Development of a novel cross\u2010linking strategy for fast and accurate identification of cross\u2010linked peptides of protein complexes",
+            "authors": [],
+            "year": 2011,
+            "venue": "Mol Cell Proteomics",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Development of large\u2010scale cross\u2010linking mass spectrometry",
+            "authors": [],
+            "year": 2017,
+            "venue": "Mol Cell Proteomics",
+            "volume": "17",
+            "issn": "",
+            "pages": "1055-66",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Divide and conquer: cleavable cross\u2010linkers to study protein conformation and protein\u2013protein interactions",
+            "authors": [],
+            "year": 2017,
+            "venue": "Anal Bioanal Chem",
+            "volume": "409",
+            "issn": "",
+            "pages": "33-44",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Proteome\u2010wide profiling of protein assemblies by cross\u2010linking mass spectrometry",
+            "authors": [],
+            "year": 2015,
+            "venue": "Nat Methods",
+            "volume": "12",
+            "issn": "",
+            "pages": "1179-84",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Selective enrichment of azide\u2010containing peptides from complex mixtures",
+            "authors": [],
+            "year": 2009,
+            "venue": "J Proteome Res",
+            "volume": "8",
+            "issn": "",
+            "pages": "3702-11",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "Selective enrichment of newly synthesized proteins for quantitative secretome analysis",
+            "authors": [],
+            "year": 2012,
+            "venue": "Nat Biotechnol",
+            "volume": "30",
+            "issn": "",
+            "pages": "984-90",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Selective identification of newly synthesized proteins in mammalian cells using bioorthogonal noncanonical amino acid tagging (BONCAT)",
+            "authors": [],
+            "year": 2006,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "103",
+            "issn": "",
+            "pages": "9482-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Rapid temporal dynamics of transcription, protein synthesis, and secretion during macrophage activation",
+            "authors": [],
+            "year": 2014,
+            "venue": "Mol Cell Proteomics",
+            "volume": "13",
+            "issn": "",
+            "pages": "792-810",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "High\u2010resolution enabled 12\u2010plex DiLeu isobaric tags for quantitative proteomics",
+            "authors": [],
+            "year": 2015,
+            "venue": "Anal Chem",
+            "volume": "87",
+            "issn": "",
+            "pages": "1646-54",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Neucode labels for multiplexed, absolute protein quantification",
+            "authors": [],
+            "year": 2016,
+            "venue": "Anal Chem",
+            "volume": "88",
+            "issn": "",
+            "pages": "3295-303",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Mass spectrometry\u2010based proteomic exploration of the human immune system: focus on the inflammasome, global protein secretion, and T cells",
+            "authors": [],
+            "year": 2017,
+            "venue": "Expert Rev Proteomics",
+            "volume": "14",
+            "issn": "",
+            "pages": "395-407",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Will systems biology deliver its promise and contribute to the development of new or improved vaccines? From data to understanding through systems biology",
+            "authors": [],
+            "year": 2018,
+            "venue": "Cold Spring Harb Perspect Biol",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Metabolic phenotypes of response to vaccination in humans",
+            "authors": [],
+            "year": 2017,
+            "venue": "Cell",
+            "volume": "169",
+            "issn": "",
+            "pages": "862-77",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Systems level studies of mammalian metabolomes: the roles of mass spectrometry and nuclear magnetic resonance spectroscopy",
+            "authors": [],
+            "year": 2011,
+            "venue": "Chem Soc Rev",
+            "volume": "40",
+            "issn": "",
+            "pages": "387-426",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "Functional immunoimaging: the revolution continues",
+            "authors": [],
+            "year": 2012,
+            "venue": "Nat Rev Immunol",
+            "volume": "12",
+            "issn": "",
+            "pages": "858-64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Single\u2010cell technologies for monitoring immune systems",
+            "authors": [],
+            "year": 2014,
+            "venue": "Nat Immunol",
+            "volume": "15",
+            "issn": "",
+            "pages": "128-35",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Single\u2010cell technologies are revolutionizing the approach to rare cells",
+            "authors": [],
+            "year": 2016,
+            "venue": "Immunol Cell Biol",
+            "volume": "94",
+            "issn": "",
+            "pages": "225-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Gene expression profiling of plasma cells and plasmablasts: toward a better understanding of the late stages of B\u2010cell differentiation",
+            "authors": [],
+            "year": 2003,
+            "venue": "Blood",
+            "volume": "102",
+            "issn": "",
+            "pages": "592-600",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Precursors of human CD4+ cytotoxic T lymphocytes identified by single\u2010cell transcriptome analysis",
+            "authors": [],
+            "year": 2018,
+            "venue": "Sci Immunol",
+            "volume": "3",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "Broad immune monitoring and profiling of T cell subsets with mass cytometry",
+            "authors": [],
+            "year": 2018,
+            "venue": "Methods Mol Biol",
+            "volume": "1745",
+            "issn": "",
+            "pages": "67-82",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Mass cytometry of the human mucosal immune system identifies tissue\u2010 and disease\u2010associated immune subsets",
+            "authors": [],
+            "year": 2016,
+            "venue": "Immunity",
+            "volume": "44",
+            "issn": "",
+            "pages": "1227-39",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "The promise and challenge of high\u2010throughput sequencing of the antibody repertoire",
+            "authors": [],
+            "year": 2014,
+            "venue": "Nat Biotechnol",
+            "volume": "32",
+            "issn": "",
+            "pages": "158-68",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "High throughput cellular screens to interrogate the human T and B cell repertoires",
+            "authors": [],
+            "year": 2011,
+            "venue": "Curr Opin Immunol",
+            "volume": "23",
+            "issn": "",
+            "pages": "430-5",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "T cell immunity. Functional heterogeneity of human memory CD4+ T cell clones primed by pathogens or vaccines",
+            "authors": [],
+            "year": 2015,
+            "venue": "Science",
+            "volume": "347",
+            "issn": "",
+            "pages": "400-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "\nIn silico\u2010accelerated identification of conserved and immunogenic variola/vaccinia T\u2010cell epitopes",
+            "authors": [],
+            "year": 2009,
+            "venue": "Vaccine",
+            "volume": "27",
+            "issn": "",
+            "pages": "6471-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF58": {
+            "title": "Immunoproteomic profiling of Bordetella pertussis outer membrane vesicle vaccine reveals broad and balanced humoral immunogenicity",
+            "authors": [],
+            "year": 2015,
+            "venue": "J Proteome Res",
+            "volume": "14",
+            "issn": "",
+            "pages": "2929-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF59": {
+            "title": "Immunosignatures can predict vaccine efficacy",
+            "authors": [],
+            "year": 2013,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "110",
+            "issn": "",
+            "pages": "18614-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF60": {
+            "title": "Broadly cross\u2010reactive antibodies dominate the human B cell response against 2009 pandemic H1N1 influenza virus infection",
+            "authors": [],
+            "year": 2011,
+            "venue": "J Exp Med",
+            "volume": "208",
+            "issn": "",
+            "pages": "181-93",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF61": {
+            "title": "Pandemic H1N1 influenza vaccine induces a recall response in humans that favors broadly cross\u2010reactive memory B cells",
+            "authors": [],
+            "year": 2012,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "109",
+            "issn": "",
+            "pages": "9047-52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF62": {
+            "title": "A neutralizing antibody selected from plasma cells that binds to group 1 and group 2 influenza A hemagglutinins",
+            "authors": [],
+            "year": 2011,
+            "venue": "Science",
+            "volume": "333",
+            "issn": "",
+            "pages": "850-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF63": {
+            "title": "Rapid development of broadly influenza neutralizing antibodies through redundant mutations",
+            "authors": [],
+            "year": 2014,
+            "venue": "Nature",
+            "volume": "516",
+            "issn": "",
+            "pages": "418-22",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF64": {
+            "title": "Broadly neutralizing antiviral antibodies",
+            "authors": [],
+            "year": 2013,
+            "venue": "Annu Rev Immunol",
+            "volume": "31",
+            "issn": "",
+            "pages": "705-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF65": {
+            "title": "Correlates of protection induced by vaccination",
+            "authors": [],
+            "year": 2010,
+            "venue": "Clin Vaccine Immunol",
+            "volume": "17",
+            "issn": "",
+            "pages": "1055-65",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF66": {
+            "title": "Beyond binding: antibody effector functions in infectious diseases",
+            "authors": [],
+            "year": 2018,
+            "venue": "Nat Rev Immunol",
+            "volume": "18",
+            "issn": "",
+            "pages": "46-61",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF67": {
+            "title": "Antigen\u2010specific antibody glycosylation is regulated via vaccination",
+            "authors": [],
+            "year": 2016,
+            "venue": "PLoS Pathog",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF68": {
+            "title": "Changes in antigen\u2010specific IgG1 Fc N\u2010glycosylation upon influenza and tetanus vaccination",
+            "authors": [],
+            "year": 2012,
+            "venue": "Mol Cell Proteomics",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF69": {
+            "title": "Fc\u2010glycosylation of IgG1 is modulated by B\u2010cell stimuli",
+            "authors": [],
+            "year": 2011,
+            "venue": "Mol Cell Proteomics",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF70": {
+            "title": "Systems serology for evaluation of HIV vaccine trials",
+            "authors": [],
+            "year": 2017,
+            "venue": "Immunol Rev",
+            "volume": "275",
+            "issn": "",
+            "pages": "262-70",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF71": {
+            "title": "Prospects from systems serology research",
+            "authors": [],
+            "year": 2018,
+            "venue": "Immunology",
+            "volume": "153",
+            "issn": "",
+            "pages": "279-89",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF72": {
+            "title": "Dissecting polyclonal vaccine\u2010induced humoral immunity against HIV using systems serology",
+            "authors": [],
+            "year": 2015,
+            "venue": "Cell",
+            "volume": "163",
+            "issn": "",
+            "pages": "988-98",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF73": {
+            "title": "High\u2010throughput data analysis and data integration for vaccine trials",
+            "authors": [],
+            "year": 2015,
+            "venue": "Vaccine",
+            "volume": "33",
+            "issn": "",
+            "pages": "5249-55",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF74": {
+            "title": "Systems vaccinology: learning to compute the behavior of vaccine induced immunity",
+            "authors": [],
+            "year": 2012,
+            "venue": "Wiley Interdiscip Rev Syst Biol Med",
+            "volume": "4",
+            "issn": "",
+            "pages": "193-205",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF75": {
+            "title": "Computational and statistical analysis of metabolomics data",
+            "authors": [],
+            "year": 2015,
+            "venue": "Metabolomics",
+            "volume": "11",
+            "issn": "",
+            "pages": "1492-513",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF76": {
+            "title": "Cytoscape: a software environment for integrated models of biomolecular interaction networks",
+            "authors": [],
+            "year": 2003,
+            "venue": "Genome Res",
+            "volume": "13",
+            "issn": "",
+            "pages": "2498-504",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF77": {
+            "title": "Meta\u2010Analysis of pulmonary transcriptomes from differently primed mice identifies molecular signatures to differentiate immune responses following bordetella pertussis challenge",
+            "authors": [],
+            "year": 2017,
+            "venue": "J Immunol Res",
+            "volume": "2017",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF78": {
+            "title": "Molecular signatures of antibody responses derived from a systems biology study of five human vaccines",
+            "authors": [],
+            "year": 2014,
+            "venue": "Nat Immunol",
+            "volume": "15",
+            "issn": "",
+            "pages": "195-204",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF79": {
+            "title": "Visual analysis of mass cytometry data by hierarchical stochastic neighbour embedding reveals rare cell types",
+            "authors": [],
+            "year": 2017,
+            "venue": "Nat Commun",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF80": {
+            "title": "Unifying immunology with informatics and multiscale biology",
+            "authors": [],
+            "year": 2014,
+            "venue": "Nat Immunol",
+            "volume": "15",
+            "issn": "",
+            "pages": "118-27",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF81": {
+            "title": "Systematic and integrative analysis of large gene lists using DAVID bioinformatics resources",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nat Protoc",
+            "volume": "4",
+            "issn": "",
+            "pages": "44-57",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF82": {
+            "title": "A systems biology approach for pathway level analysis",
+            "authors": [],
+            "year": 2007,
+            "venue": "Genome Res",
+            "volume": "17",
+            "issn": "",
+            "pages": "1537-45",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF83": {
+            "title": "Gene ontology: tool for the unification of biology. The gene ontology consortium",
+            "authors": [],
+            "year": 2000,
+            "venue": "Nat Genet",
+            "volume": "25",
+            "issn": "",
+            "pages": "25-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF84": {
+            "title": "KEGG: Kyoto encyclopedia of genes and genomes",
+            "authors": [],
+            "year": 1999,
+            "venue": "Nucleic Acids Res",
+            "volume": "27",
+            "issn": "",
+            "pages": "29-34",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF85": {
+            "title": "BioGPS: an extensible and customizable portal for querying and organizing gene annotation resources",
+            "authors": [],
+            "year": 2009,
+            "venue": "Genome Biol",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF86": {
+            "title": "InnateDB: facilitating systems\u2010level analyses of the mammalian innate immune response",
+            "authors": [],
+            "year": 2008,
+            "venue": "Mol Syst Biol",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF87": {
+            "title": "INTERFEROME: the database of interferon regulated genes",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nucleic Acids Res",
+            "volume": "37",
+            "issn": "Database issue",
+            "pages": "D852-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF88": {
+            "title": "CEMiTool: a Bioconductor package for performing comprehensive modular co\u2010expression analyses",
+            "authors": [],
+            "year": 2018,
+            "venue": "BMC Bioinformatics",
+            "volume": "19",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF89": {
+            "title": "VDJviz: a versatile browser for immunogenomics data",
+            "authors": [],
+            "year": 2016,
+            "venue": "BMC Genom",
+            "volume": "17",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF90": {
+            "title": "VDJdb: a curated database of T\u2010cell receptor sequences with known antigen specificity",
+            "authors": [],
+            "year": 2018,
+            "venue": "Nucleic Acids Res",
+            "volume": "46",
+            "issn": "D1",
+            "pages": "D419-27",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF91": {
+            "title": "The Human Vaccines Project: towards a comprehensive understanding of the human immune response to immunization",
+            "authors": [],
+            "year": 2018,
+            "venue": "Hum Vaccin Immunother",
+            "volume": "14",
+            "issn": "",
+            "pages": "2214-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF92": {
+            "title": "Computational systems biology",
+            "authors": [],
+            "year": 2002,
+            "venue": "Nature",
+            "volume": "420",
+            "issn": "",
+            "pages": "206-10",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF93": {
+            "title": "Machine learning\u2010based methods for prediction of linear B\u2010cell epitopes",
+            "authors": [],
+            "year": 2014,
+            "venue": "Methods Mol Biol",
+            "volume": "1184",
+            "issn": "",
+            "pages": "217-36",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF94": {
+            "title": "T\u2010cell epitope prediction methods: an overview",
+            "authors": [],
+            "year": 2014,
+            "venue": "Methods Mol Biol",
+            "volume": "1184",
+            "issn": "",
+            "pages": "333-64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF95": {
+            "title": "IL17eScan: a Tool for the Identification of Peptides Inducing IL\u201017 Response",
+            "authors": [],
+            "year": 2017,
+            "venue": "Front Immunol",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF96": {
+            "title": "Proteome analysis is a valuable tool to monitor antigen expression during upstream processing of whole\u2010cell pertussis vaccines",
+            "authors": [],
+            "year": 2017,
+            "venue": "J Proteome Res",
+            "volume": "16",
+            "issn": "",
+            "pages": "528-37",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF97": {
+            "title": "Identification of a human neonatal immune\u2010metabolic network associated with bacterial infection",
+            "authors": [],
+            "year": 2014,
+            "venue": "Nat Commun",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF98": {
+            "title": "Systemic signature of the lung response to respiratory syncytial virus infection",
+            "authors": [],
+            "year": 2011,
+            "venue": "PLoS ONE",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF99": {
+            "title": "Whole blood gene expression profiles to assess pathogenesis and disease severity in infants with respiratory syncytial virus infection",
+            "authors": [],
+            "year": 2013,
+            "venue": "PLoS Med",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF100": {
+            "title": "Systematic analysis of cell\u2010type differences in the epithelial secretome reveals insights into the pathogenesis of respiratory syncytial virus\u2010induced lower respiratory tract infections",
+            "authors": [],
+            "year": 2017,
+            "venue": "J Immunol",
+            "volume": "198",
+            "issn": "",
+            "pages": "3345-64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF101": {
+            "title": "An interferon\u2010inducible neutrophil\u2010driven blood transcriptional signature in human tuberculosis",
+            "authors": [],
+            "year": 2010,
+            "venue": "Nature",
+            "volume": "466",
+            "issn": "",
+            "pages": "973-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF102": {
+            "title": "Lung response to Bordetella pertussis infection in mice identified by gene\u2010expression profiling",
+            "authors": [],
+            "year": 2007,
+            "venue": "Immunogenetics",
+            "volume": "59",
+            "issn": "",
+            "pages": "555-64",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF103": {
+            "title": "A systems analysis identifies a feedforward inflammatory circuit leading to lethal influenza infection",
+            "authors": [],
+            "year": 2013,
+            "venue": "Cell",
+            "volume": "154",
+            "issn": "",
+            "pages": "197-212",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF104": {
+            "title": "Lipidomic profiling of influenza infection identifies mediators that induce and resolve inflammation",
+            "authors": [],
+            "year": 2013,
+            "venue": "Cell",
+            "volume": "154",
+            "issn": "",
+            "pages": "213-27",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF105": {
+            "title": "Immunological signatures after Bordetella pertussis infection demonstrate importance of pulmonary innate immune cells",
+            "authors": [],
+            "year": 2016,
+            "venue": "PLoS ONE",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF106": {
+            "title": "Nonhuman primate and human challenge models of pertussis",
+            "authors": [],
+            "year": 2014,
+            "venue": "J Infect Dis",
+            "volume": "209",
+            "issn": "Suppl 1",
+            "pages": "S20-3",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF107": {
+            "title": "Systems analysis of human vaccine adjuvants",
+            "authors": [],
+            "year": 2018,
+            "venue": "Semin Immunol",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.smim.2018.08.001"
+                ]
+            }
+        },
+        "BIBREF108": {
+            "title": "Novel identified aluminum hydroxide\u2010induced pathways prove monocyte activation and pro\u2010inflammatory preparedness",
+            "authors": [],
+            "year": 2018,
+            "venue": "J Proteomics",
+            "volume": "175",
+            "issn": "",
+            "pages": "144-55",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF109": {
+            "title": "A systems biology approach to the analysis of subset\u2010specific responses to lipopolysaccharide in dendritic cells",
+            "authors": [],
+            "year": 2014,
+            "venue": "PLoS ONE",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF110": {
+            "title": "Comparative systems analyses reveal molecular signatures of clinically tested vaccine adjuvants",
+            "authors": [],
+            "year": 2016,
+            "venue": "Sci Rep",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF111": {
+            "title": "Transcriptomics of the vaccine immune response: priming with adjuvant modulates recall innate responses after boosting",
+            "authors": [],
+            "year": 2018,
+            "venue": "Front Immunol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF112": {
+            "title": "Unraveling molecular signatures of immunostimulatory adjuvants in the female genital tract through systems biology",
+            "authors": [],
+            "year": 2011,
+            "venue": "PLoS ONE",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF113": {
+            "title": "Systems analysis of MVA\u2010C induced immune response reveals its significance as a vaccine candidate against HIV/AIDS of clade C",
+            "authors": [],
+            "year": 2012,
+            "venue": "PLoS ONE",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF114": {
+            "title": "Early transcriptional signatures of the immune response to a live attenuated tetravalent dengue vaccine candidate in non\u2010human primates",
+            "authors": [],
+            "year": 2016,
+            "venue": "PLoS Negl Trop Dis",
+            "volume": "10",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF115": {
+            "title": "\nBordetella pertussis outer membrane vesicle vaccine confers equal efficacy in mice with milder inflammatory responses compared to a whole\u2010cell vaccine",
+            "authors": [],
+            "year": 2016,
+            "venue": "Sci Rep",
+            "volume": "6",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF116": {
+            "title": "System vaccinology for the evaluation of influenza vaccine safety by multiplex gene detection of novel biomarkers in a preclinical study and batch release test",
+            "authors": [],
+            "year": 2014,
+            "venue": "PLoS ONE",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF117": {
+            "title": "Transcriptional profiling of vaccine\u2010induced immune responses in humans and non\u2010human primates",
+            "authors": [],
+            "year": 2012,
+            "venue": "Microb Biotechnol",
+            "volume": "5",
+            "issn": "",
+            "pages": "177-87",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF118": {
+            "title": "Application of \u201csystems vaccinology\u201d to evaluate inflammation and reactogenicity of adjuvanted preventative vaccines",
+            "authors": [],
+            "year": 2015,
+            "venue": "J Immunol Res",
+            "volume": "2015",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF119": {
+            "title": "Systems vaccinology identifies an early innate immune signature as a correlate of antibody responses to the Ebola vaccine rVSV\u2010ZEBOV",
+            "authors": [],
+            "year": 2017,
+            "venue": "Cell Rep",
+            "volume": "20",
+            "issn": "",
+            "pages": "2251-61",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF120": {
+            "title": "Molecular signatures of a TLR4 agonist\u2010adjuvanted HIV\u20101 vaccine candidate in humans",
+            "authors": [],
+            "year": 2018,
+            "venue": "Front Immunol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF121": {
+            "title": "Systems analysis of protective immune responses to RTS, S malaria vaccination in humans",
+            "authors": [],
+            "year": 2017,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "114",
+            "issn": "",
+            "pages": "2425-30",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF122": {
+            "title": "Predicting RTS, S vaccine\u2010mediated protection from transcriptomes in a malaria\u2010challenge clinical trial",
+            "authors": [],
+            "year": 2017,
+            "venue": "Front Immunol",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF123": {
+            "title": "Adjuvant\u2010associated peripheral blood mRNA profiles and kinetics induced by the adjuvanted recombinant protein candidate tuberculosis vaccine M72/AS01 in bacillus Calmette\u2013Gu\u00e9rin\u2010vaccinated adults",
+            "authors": [],
+            "year": 2018,
+            "venue": "Front Immunol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF124": {
+            "title": "Cell\u2010based systems biology analysis of human AS03\u2010adjuvanted H5N1 avian influenza vaccine responses: a phase I randomized controlled trial",
+            "authors": [],
+            "year": 2017,
+            "venue": "PLoS ONE",
+            "volume": "12",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF125": {
+            "title": "Systems biology approach predicts immunogenicity of the yellow fever vaccine in humans",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nat Immunol",
+            "volume": "10",
+            "issn": "",
+            "pages": "116-25",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF126": {
+            "title": "Yellow fever vaccine induces integrated multilineage and polyfunctional immune responses",
+            "authors": [],
+            "year": 2008,
+            "venue": "J Exp Med",
+            "volume": "205",
+            "issn": "",
+            "pages": "3119-31",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF127": {
+            "title": "Systems biology of immunity to MF59\u2010adjuvanted versus nonadjuvanted trivalent seasonal influenza vaccines in early childhood",
+            "authors": [],
+            "year": 2016,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "113",
+            "issn": "",
+            "pages": "1853-8",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF128": {
+            "title": "Systems analysis of immunity to influenza vaccination across multiple years and in diverse populations reveals shared molecular signatures",
+            "authors": [],
+            "year": 2015,
+            "venue": "Immunity",
+            "volume": "43",
+            "issn": "",
+            "pages": "1186-98",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF129": {
+            "title": "Pre\u2010vaccination inflammation and B\u2010cell signalling predict age\u2010related hyporesponse to hepatitis B vaccination",
+            "authors": [],
+            "year": 2016,
+            "venue": "Nat Commun",
+            "volume": "7",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF130": {
+            "title": "Transcriptomic signatures of cellular and humoral immune responses in older adults after seasonal influenza vaccination identified by data\u2010driven clustering",
+            "authors": [],
+            "year": 2018,
+            "venue": "Sci Rep",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF131": {
+            "title": "Complex correlates of protection after vaccination",
+            "authors": [],
+            "year": 2013,
+            "venue": "Clin Infect Dis",
+            "volume": "56",
+            "issn": "",
+            "pages": "1458-65",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF132": {
+            "title": "Systems scale interactive exploration reveals quantitative and qualitative differences in response to influenza and pneumococcal vaccines",
+            "authors": [],
+            "year": 2013,
+            "venue": "Immunity",
+            "volume": "38",
+            "issn": "",
+            "pages": "831-44",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF133": {
+            "title": "Molecular signatures of immunity and immunogenicity in infection and vaccination",
+            "authors": [],
+            "year": 2017,
+            "venue": "Front Immunol",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF134": {
+            "title": "Identification of biomarkers for tuberculosis disease using a novel dual\u2010color RT\u2010MLPA assay",
+            "authors": [],
+            "year": 2012,
+            "venue": "Genes Immun",
+            "volume": "13",
+            "issn": "",
+            "pages": "71-82",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF135": {
+            "title": "Safety and immunogenicity of the recombinant Mycobacterium bovis BCG vaccine VPM1002 in HIV\u2010unexposed newborn infants in South Africa",
+            "authors": [],
+            "year": 2017,
+            "venue": "Clin Vaccine Immunol",
+            "volume": "24",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF136": {
+            "title": "Stereotypic immune system development in newborn children",
+            "authors": [],
+            "year": 2018,
+            "venue": "Cell",
+            "volume": "174",
+            "issn": "",
+            "pages": "1277-92",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF137": {
+            "title": "Neonate\u2010omics: charting the unknown immune response in early life",
+            "authors": [],
+            "year": 2018,
+            "venue": "Cell",
+            "volume": "174",
+            "issn": "",
+            "pages": "1051-3",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF138": {
+            "title": "A roadmap towards personalized immunology",
+            "authors": [],
+            "year": 2018,
+            "venue": "NPJ Syst Biol Appl",
+            "volume": "4",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF139": {
+            "title": "Systems vaccinology: probing humanity's diverse immune systems with vaccines",
+            "authors": [],
+            "year": 2014,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "111",
+            "issn": "",
+            "pages": "12300-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF140": {
+            "title": "Non\u2010specific effects of vaccines: current evidence and potential implications",
+            "authors": [],
+            "year": 2018,
+            "venue": "Semin Immunol",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.smim.2018.06.002"
+                ]
+            }
+        },
+        "BIBREF141": {
+            "title": "The key role of genomics in modern vaccine and drug design for emerging infectious diseases",
+            "authors": [],
+            "year": 2009,
+            "venue": "PLoS Genet",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF142": {
+            "title": "Development and use of molecular markers: past and present",
+            "authors": [],
+            "year": 2016,
+            "venue": "Crit Rev Biotechnol",
+            "volume": "36",
+            "issn": "",
+            "pages": "290-302",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF143": {
+            "title": "Single\u2010nucleotide polymorphism associations in common with immune responses to measles and rubella vaccines",
+            "authors": [],
+            "year": 2014,
+            "venue": "Immunogenetics",
+            "volume": "66",
+            "issn": "",
+            "pages": "663-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF144": {
+            "title": "Impact of host genetic polymorphisms on vaccine induced antibody response",
+            "authors": [],
+            "year": 2016,
+            "venue": "Hum Vaccin Immunother",
+            "volume": "12",
+            "issn": "",
+            "pages": "907-15",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF145": {
+            "title": "Age\u2010related profiling of DNA methylation in CD8+ T cells reveals changes in immune response and transcriptional regulator genes",
+            "authors": [],
+            "year": 2015,
+            "venue": "Sci Rep",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF146": {
+            "title": "System\u2010wide associations between DNA\u2010methylation, gene expression, and humoral immune response to influenza vaccination",
+            "authors": [],
+            "year": 2016,
+            "venue": "PLoS ONE",
+            "volume": "11",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF147": {
+            "title": "Using epigenetics to define vaccine\u2010induced memory T cells",
+            "authors": [],
+            "year": 2013,
+            "venue": "Curr Opin Virol",
+            "volume": "3",
+            "issn": "",
+            "pages": "371-6",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF148": {
+            "title": "Personalized vaccinology: a review",
+            "authors": [],
+            "year": 2018,
+            "venue": "Vaccine",
+            "volume": "36",
+            "issn": "",
+            "pages": "5350-7",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF149": {
+            "title": "Vaccinomics, adversomics, and the immune response network theory: individualized vaccinology in the 21st century",
+            "authors": [],
+            "year": 2013,
+            "venue": "Semin Immunol",
+            "volume": "25",
+            "issn": "",
+            "pages": "89-103",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF150": {
+            "title": "Genetics and vaccines in the era of personalized medicine",
+            "authors": [],
+            "year": 2015,
+            "venue": "Curr Genomics",
+            "volume": "16",
+            "issn": "",
+            "pages": "47-59",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF151": {
+            "title": "Transcriptomics technologies",
+            "authors": [],
+            "year": 2017,
+            "venue": "PLoS Comput Biol",
+            "volume": "13",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF152": {
+            "title": "Transcriptomics in human challenge models",
+            "authors": [],
+            "year": 2017,
+            "venue": "Front Immunol",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF153": {
+            "title": "Cell type discovery and representation in the era of high\u2010content single cell phenotyping",
+            "authors": [],
+            "year": 2017,
+            "venue": "BMC Bioinformatics",
+            "volume": "18",
+            "issn": "Suppl 17",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF154": {
+            "title": "Host\u2010pathogen transcriptomics by dual RNA\u2010Seq",
+            "authors": [],
+            "year": 2018,
+            "venue": "Methods Mol Biol",
+            "volume": "1737",
+            "issn": "",
+            "pages": "59-75",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF155": {
+            "title": "Resolving host\u2013pathogen interactions by dual RNA\u2010seq",
+            "authors": [],
+            "year": 2017,
+            "venue": "PLoS Pathog",
+            "volume": "13",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF156": {
+            "title": "Transcriptional profiling of immune\u2010related genes in Leishmania infantum\u2010infected mice: identification of potential biomarkers of infection and progression of disease",
+            "authors": [],
+            "year": 2018,
+            "venue": "Front Cell Infect Microbiol",
+            "volume": "8",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF157": {
+            "title": "Discovery of protective B\u2010cell epitopes for development of antimicrobial vaccines and antibody therapeutics",
+            "authors": [],
+            "year": 2014,
+            "venue": "Immunology",
+            "volume": "142",
+            "issn": "",
+            "pages": "1-23",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF158": {
+            "title": "Epitope location for two monoclonal antibodies against human cystatin C, representing opposite aggregation inhibitory properties",
+            "authors": [],
+            "year": 2016,
+            "venue": "Amino Acids",
+            "volume": "48",
+            "issn": "",
+            "pages": "1717-29",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF159": {
+            "title": "Determination of protein\u2010derived epitopes by mass spectrometry",
+            "authors": [],
+            "year": 2005,
+            "venue": "Expert Rev Proteomics",
+            "volume": "2",
+            "issn": "",
+            "pages": "745-56",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF160": {
+            "title": "Deciphering the MHC\u2010associated peptidome: a review of naturally processed ligand data",
+            "authors": [],
+            "year": 2017,
+            "venue": "Expert Rev Proteomics",
+            "volume": "14",
+            "issn": "",
+            "pages": "729-36",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF161": {
+            "title": "The potential of metabolic profiling for vaccine development",
+            "authors": [],
+            "year": 2018,
+            "venue": "Semin Immunol",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.smim.2018.07.002"
+                ]
+            }
+        },
+        "BIBREF162": {
+            "title": "Integrative metabolomics and transcriptomics signatures of clinical tolerance to Plasmodium vivax reveal activation of innate cell immunity and T cell signaling",
+            "authors": [],
+            "year": 2018,
+            "venue": "Redox Biol",
+            "volume": "17",
+            "issn": "",
+            "pages": "158-70",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF163": {
+            "title": "Lipidomic analysis of immune activation in equine leptospirosis and Leptospira\u2010vaccinated horses",
+            "authors": [],
+            "year": 2018,
+            "venue": "PLoS ONE",
+            "volume": "13",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF164": {
+            "title": "Integrated omics analysis of pathogenic host responses during pandemic H1N1 influenza virus infection: the crucial role of lipid metabolism",
+            "authors": [],
+            "year": 2016,
+            "venue": "Cell Host Microbe",
+            "volume": "19",
+            "issn": "",
+            "pages": "254-66",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF165": {
+            "title": "A method for high\u2010throughput, sensitive analysis of IgG Fc and Fab glycosylation by capillary electrophoresis",
+            "authors": [],
+            "year": 2015,
+            "venue": "J Immunol Methods",
+            "volume": "417",
+            "issn": "",
+            "pages": "34-44",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF166": {
+            "title": "Effect of antibiotic\u2010mediated microbiome modulation on rotavirus vaccine immunogenicity: a human, randomized\u2010control proof\u2010of\u2010concept trial",
+            "authors": [],
+            "year": 2018,
+            "venue": "Cell Host Microbe",
+            "volume": "24",
+            "issn": "",
+            "pages": "197-207",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF167": {
+            "title": "Modeling host\u2013pathogen interactions in the context of the microenvironment: 3\u2010D cell culture comes of age",
+            "authors": [],
+            "year": 2018,
+            "venue": "Infect Immun",
+            "volume": "86",
+            "issn": "11",
+            "pages": "e00282-18",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/IAI.00282-18"
+                ]
+            }
+        },
+        "BIBREF168": {
+            "title": "The significance of the intestinal microbiome for vaccinology: from correlations to therapeutic applications",
+            "authors": [],
+            "year": 2018,
+            "venue": "Drugs",
+            "volume": "78",
+            "issn": "",
+            "pages": "1063-72",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF169": {
+            "title": "Best practices for analysing microbiomes",
+            "authors": [],
+            "year": 2018,
+            "venue": "Nat Rev Microbiol",
+            "volume": "16",
+            "issn": "",
+            "pages": "410-22",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF170": {
+            "title": "Host\u2013microorganism interactions in lung diseases",
+            "authors": [],
+            "year": 2014,
+            "venue": "Nat Rev Immunol",
+            "volume": "14",
+            "issn": "",
+            "pages": "827-35",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF171": {
+            "title": "Gut microbiota, metabolites and host immunity",
+            "authors": [],
+            "year": 2016,
+            "venue": "Nat Rev Immunol",
+            "volume": "16",
+            "issn": "",
+            "pages": "341-52",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF172": {
+            "title": "Modulation of the gut microbiota to improve innate resistance",
+            "authors": [],
+            "year": 2018,
+            "venue": "Curr Opin Immunol",
+            "volume": "54",
+            "issn": "",
+            "pages": "137-44",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF173": {
+            "title": "The influence of the intestinal microbiome on vaccine responses",
+            "authors": [],
+            "year": 2018,
+            "venue": "Vaccine",
+            "volume": "36",
+            "issn": "",
+            "pages": "4433-9",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF174": {
+            "title": "Apoptosis and other immune biomarkers predict influenza vaccine responsiveness",
+            "authors": [],
+            "year": 2013,
+            "venue": "Mol Syst Biol",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF175": {
+            "title": "Early patterns of gene expression correlate with the humoral immune response to influenza vaccination in humans",
+            "authors": [],
+            "year": 2011,
+            "venue": "J Infect Dis",
+            "volume": "203",
+            "issn": "",
+            "pages": "921-9",
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

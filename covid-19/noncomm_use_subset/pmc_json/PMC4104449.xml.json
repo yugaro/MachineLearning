@@ -1,0 +1,1403 @@
+{
+    "paper_id": "PMC4104449",
+    "metadata": {
+        "title": "Reconstructing propagation networks with natural diversity and identifying hidden sources",
+        "authors": [
+            {
+                "first": "Zhesi",
+                "middle": [],
+                "last": "Shen",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Wen-Xu",
+                "middle": [],
+                "last": "Wang",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ying",
+                "middle": [],
+                "last": "Fan",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Zengru",
+                "middle": [],
+                "last": "Di",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Ying-Cheng",
+                "middle": [],
+                "last": "Lai",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "The general problem that CST addresses is to reconstruct a vector X\u03b5RN from linear measurements Y about X in the form",
+            "cite_spans": [],
+            "section": "Compressed sensing ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Compressed sensing ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "where Y\u03b5RM and \u03a6 is an M \u00d7 N matrix. The striking feature of CS is that the number of measurements can be much less than the number of components of the unknown vector, that is, M<<N, insofar as X is sparse and the number of non-zero components in it is less than M. Accurate reconstruction can be achieved by solving the following convex-optimization problem35:",
+            "cite_spans": [
+                {
+                    "start": 359,
+                    "end": 361,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                }
+            ],
+            "section": "Compressed sensing ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Compressed sensing ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "where  is the L1 norm of X and the matrix \u03a6 satisfies the restricted isometry property. Solutions to the convex optimization are now standard353637383940. (More details of the CST can be found in Supplementary Note 1.) Our goal is to develop a framework to cast the problem of reconstructing propagation networks into form (1).",
+            "cite_spans": [
+                {
+                    "start": 141,
+                    "end": 143,
+                    "mention": "35",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 143,
+                    "end": 145,
+                    "mention": "36",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 145,
+                    "end": 147,
+                    "mention": "37",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 147,
+                    "end": 149,
+                    "mention": "38",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 149,
+                    "end": 151,
+                    "mention": "39",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 151,
+                    "end": 153,
+                    "mention": "40",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "Compressed sensing ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To present our framework in a transparent manner, we first consider the relatively simple case where there is no hidden source. Further, we assume that the disease starts to propagate from a fraction of the infected nodes. As we will see, based on this framework, it is feasible to locate any hidden source based solely on time series after outbreak of infection. The state of an arbitrary node i is denoted as Si, where",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Owing to the characteristic difference between the SIS dynamics and CP, we treat them separately (see Methods).",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "For the SIS dynamics, the probability  of an arbitrary node i being infected by its neighbors at time t is",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "where \u03bbi is the infection rate of i, aij stands for the elements of the adjacency matrix (aij=1 if i connects to j and aij=0 otherwise), Sj(t) is the state of node j at t, and the superscript 01 denotes the change from susceptible state (0) to infected state (1). At the same time, the recovery probability of i is , where \u03b4i is the recovery rate of node i and the superscript 10 denotes the transition from infected state to susceptible state. Equation (4) can be rewritten as",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "If measurements at different times t=t1, t2, \u00b7\u00b7\u00b7, tm are available, equation (5) can be written in the matrix form Ym \u00d7 1=\u03a6m \u00d7 (N\u22121)\u00b7X(N\u22121) \u00d7 1, where Y contains  at different t, \u03a6 is determined by the state Sj(t) of nodes except i, and X comprising the links and infection rates of i is sparse for a general network (see Methods). The main challenge here is that the infection probabilities  at different times are not given directly from the time series of the nodal state.",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "To develop a method to estimate the probability from the nodal states, we set a threshold \u0394 pertaining to the normalized Hamming distance between strings composed of Sj(t) (j\u2260i) at different t to identify a base string at  and a set of strings subject to the base. According to the law of large numbers, the probability  can be estimated by the average over the state Si(t+1) at all proper time. By setting another threshold \u0398 associated with the normalized Hamming distance, we can identify a set of base strings. This process finally gives rise to a set of reconstruction equations in the matrix form:",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "where  correspond to the time associated with m base strings and \u2039\u00b7\u203a denote the average over all satisfied t (see Methods). The vector Ym \u00d7 1 and the matrix \u03a6m \u00d7 (N\u22121) can then be obtained based solely on time series of nodal states and the vector X(N\u22121) \u00d7 1 to be reconstructed is sparse, rendering applicable the CS framework. As a result, we can achieve exact reconstruction of all neighbours of node i from relatively small amounts of observation. In a similar manner the neighbouring vectors of all other nodes can be uncovered from time series, enabling a full reconstruction of the whole network by matching the neighboring sets of all nodes.",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "For the CP dynamics, the infection probability of an arbitrary node i is given by",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "where ki is the degree of the node i, and the recovery probability is  (see Methods). In close analogy to the SIS dynamics, we have",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "We then choose a series of base strings using a proper threshold \u0398 to establish a set of equations, expressed in the matrix form Ym \u00d7 1=\u03a6m \u00d7 (N\u22121)\u00b7X(N\u22121) \u00d7 1 (see Supplementary Note 2), where \u03a6 has the same form as in equation (6), but Y and X are given by",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Our reconstruction framework based on establishing the vector Y and the matrix \u03a6 is schematically illustrated in Fig. 1. It is noteworthy that our framework can be extended to directed networks in a straightforward manner due to the feature that the neighbouring set of each node can be independently reconstructed. For instance, the neighbouring vector X can be defined to represent a unique link direction, for example, incoming links. Inference of the directed links of all nodes yields the full topology of the entire directed network.",
+            "cite_spans": [],
+            "section": "Reconstruction framework ::: Results",
+            "ref_spans": [
+                {
+                    "start": 113,
+                    "end": 119,
+                    "mention": "Fig. 1",
+                    "ref_id": "FIGREF0"
+                }
+            ]
+        },
+        {
+            "text": "To quantify the performance of our method in terms of the number of base strings (equations) for a variety of diffusion dynamics and network structures, we study the success rates for existent links (SRELs) and null connections (SRNCs), corresponding to non-zero and zero element values in the adjacency matrix, respectively. We impose the strict criterion that the network is regarded to have been fully reconstructed if and only if both success rates reach 100%. The sparsity of links makes it necessary to define SREL and SRNC separately. As the reconstruction method is implemented for each node in the network, we define SREL and SRNC on the basis of each individual node and the two success rates for the entire network are the respective averaged values over all nodes. We also consider the issue of trade-off in terms of the true positive rate (for correctly inferred links) and the false positive rate (for incorrectly inferred links).",
+            "cite_spans": [],
+            "section": "Reconstructing networks and infection and recovery rates ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Here we assume that there is no hidden source and the spreading process starts from a fraction of infected nodes, and record the binary time series. Figure 2a shows the reconstructed values of the components of the neighbouring vector X of all nodes. Let  be the number of base strings normalized by the network size N. For small values of , for example, , the values of elements associated with links and that associated with null connections (actual zeros in the adjacency matrix) overlap, leading to ambiguities in the identification of links. In contrast, for larger values of , for example, , an apparent gap emerges between the two groups of element values, enabling us to correctly identify all links by simply setting a cut-off within the gap (see Supplementary Fig. 1a and Supplementary Note 4 for a method to set the cut-off). The success rates (SREL and SRNC) as a function of  for SIS and CP on both homogeneous and heterogeneous networks are shown in Fig. 2b,c, where we observe nearly perfect reconstruction of links insofar as  exceeds a relatively small value\u2014an advantage of compressed sensing. The exact reconstruction is robust in the sense that a wide range of  values can yield nearly 100% success rates. Our reconstruction method is then effective for tackling real networks in the absence of any a priori knowledge about its topology. In particular, the existence of a clear gap in the reconstructed vector X represents a successful reconstruction for a real network.",
+            "cite_spans": [],
+            "section": "Reconstructing networks and infection and recovery rates ::: Results",
+            "ref_spans": [
+                {
+                    "start": 149,
+                    "end": 158,
+                    "mention": "Figure 2a",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 964,
+                    "end": 973,
+                    "mention": "Fig. 2b,c",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "Note that a network is reconstructed through the union of all neighbourhoods, which may encounter \u2018conflicts\u2019 with respect to the presence/absence of a link between two nodes as generated by reconstruction centred at the two nodes. The conflicts would reduce the accuracy in the reconstruction of the entire network. To characterize the effects of edge conflicts, we study the consistency of mutual assessment of the presence or absence of link between each pair of nodes, as shown in Fig. 2b,c. We see that inconsistency arises for small values of  but vanishes completely when the success rates reach 100%, indicating complete consistency among the mutual inferences of nodes and consequently guaranteeing accurate reconstruction of the entire network. Detailed results of success rates and trade-off measures with respect to a variety of model and real networks are displayed in Table 1, Supplementary Figs 2 and 3. and Supplementary Note 5.",
+            "cite_spans": [],
+            "section": "Reconstructing networks and infection and recovery rates ::: Results",
+            "ref_spans": [
+                {
+                    "start": 485,
+                    "end": 494,
+                    "mention": "Fig. 2b,c",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 882,
+                    "end": 889,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "Although the number of base strings is relatively small compared with the network size, we need a set of strings at different time with respect to a base string to formulate the mathematical framework for reconstruction. We study how the length of time series affects the accuracy of reconstruction. Figure 3a,b show the success rate as a function of the relative length nt of time series for SIS and CP dynamics on both homogeneous and heterogeneous networks, where nt is the total length of time series from the beginning of the spreading process divided by the network size N. The results demonstrate that even for very small values of nt, most links can already be identified, as reflected by the high values of the success rate shown. Figure 3c,d show the minimum length  required to achieve at least 95% success rate for different network sizes. For both SIS and CP dynamics on different networks,  decreases considerably as N is increased. This seemingly counterintuitive result is due to the fact that different base strings can share strings at different times to enable reconstruction. In general, as N is increased,  will increase accordingly. However, a particular string can belong to different base strings with respect to the threshold \u0394, accounting for the slight increase in the absolute length of the time series (see Supplementary Fig. 4 and Supplementary Note 5) and the reduction in  (see Supplementary Note 3 on the method to choose base and subordinate strings). The dependence of the success rate on the average node degree \u2039k\u203a for SIS and CP on different networks has been investigated as well (see Supplementary Fig. 5 and Supplementary Note 5). The results in Figs 2 and 3, Supplementary Figs 2\u20135 and Table 1 demonstrate the high accuracy and efficiency of our reconstruction method based on small amounts of data.",
+            "cite_spans": [],
+            "section": "Reconstructing networks and infection and recovery rates ::: Results",
+            "ref_spans": [
+                {
+                    "start": 300,
+                    "end": 311,
+                    "mention": "Figure 3a,b",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 740,
+                    "end": 751,
+                    "mention": "Figure 3c,d",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1687,
+                    "end": 1693,
+                    "mention": "Figs 2",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 1698,
+                    "end": 1699,
+                    "mention": "3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1728,
+                    "end": 1735,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "In practice, noise is present and it is also common for time series from certain nodes to be missing, and it is necessary to test the applicability of our method in more realistic situations. Figure 4a,b show the dependence of the success rate on the fraction nf of states in the time series that flip due to noise for SIS and CP dynamics on two types of networks. We observe that the success rates are hardly affected, providing strong evidence for the applicability of our reconstruction method. For example, even when 25% of the nodal states flip, we can still achieve about 80% success rates for both dynamical processes and different network topologies. Figure 4c,d present the success rate versus the fraction nm of unobservable nodes, the states of which are externally inaccessible. We find that the high success rate remains mostly unchanged as nm is increased from 0 to 25%, a somewhat counterintuitive but striking result. The high degree of robustness against the limit to accessing nodal states is elaborated further in Supplementary Fig. 6 and Supplementary Note 5. We find that, in general, missing information can affect the reconstruction of the neighbouring vector, as reflected by the reduction of the gap between the reconstructed values associated with actual links and null connections. However, even for high values of nm, for example, nm=0.3, there is still a clear gap, indicating that a full recovery of all links is achievable. We have also found that our method is robust against inaccurately specified diffusion processes with fluctuation in infection rates (see Supplementary Fig. 7 and Supplementary Note 5). Taken together, the high accuracy, efficiency and robustness against noise, missing information and inaccurately modelling of real dynamical processes provide strong credence for the validity and power of our framework for binary time-series-based network reconstruction.",
+            "cite_spans": [],
+            "section": "Reconstructing networks and infection and recovery rates ::: Results",
+            "ref_spans": [
+                {
+                    "start": 192,
+                    "end": 203,
+                    "mention": "Figure 4a,b",
+                    "ref_id": "FIGREF3"
+                },
+                {
+                    "start": 659,
+                    "end": 670,
+                    "mention": "Figure 4c,d",
+                    "ref_id": "FIGREF3"
+                }
+            ]
+        },
+        {
+            "text": "Having reconstructed the network structure, we can estimate the infection and recovery rates of individuals to uncover their diversity in immunity. This is an essential step to implement target vaccination strategy in a population or on a computer network to effectively suppress/prevent the spreading of virus at low cost, as a large body of literature indicates that knowledge about the network structure and individual characteristics is sufficient for controlling the spreading dynamics47484950. Here we offer an effective method to infer the individuals\u2019 infection rates \u03bbi based solely on the binary time series of the nodal states after an outbreak of contamination. (To our knowledge, there was no prior work addressing this critical issue.) In particular, after all links have been successfully predicted, \u03bbi can be deduced from the infection probabilities that can be approximated by the corresponding infection frequencies (see Methods). These probabilities depend on both \u03bbi and the number of infected neighbours. The reproduced infection rates \u03bbi of individuals for both SIS and CP dynamics on different networks are in quite good agreement with the true values with small prediction errors (see Supplementary Fig. 8 and Supplementary Note 6). Results from a comprehensive error analysis are listed in Table 1, where the uniformly high accuracy validates our method. The inhomogeneous recovery rates \u03b4i of nodes can be predicted from the binary time series in a more straightforward way, because \u03b4i do not depend on the nodal connections (see Supplementary Fig. 9 and Supplementary Note 6). Thus, our framework is capable of predicting characteristics of nodal diversity in terms of degrees, and infection and recovery rates based solely on binary time series of nodal states.",
+            "cite_spans": [
+                {
+                    "start": 490,
+                    "end": 492,
+                    "mention": "47",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 492,
+                    "end": 494,
+                    "mention": "48",
+                    "ref_id": "BIBREF42"
+                },
+                {
+                    "start": 494,
+                    "end": 496,
+                    "mention": "49",
+                    "ref_id": "BIBREF43"
+                },
+                {
+                    "start": 496,
+                    "end": 498,
+                    "mention": "50",
+                    "ref_id": "BIBREF45"
+                }
+            ],
+            "section": "Reconstructing networks and infection and recovery rates ::: Results",
+            "ref_spans": [
+                {
+                    "start": 1315,
+                    "end": 1322,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "We assume that a hidden source exists outside the network but there are connections between it and some nodes in the network. In practice, the source can be modelled as a special node that is always infected. Starting from the neighbourhood of the source, the infection originates from the source and spreads all over the network. We collect a set of time series of the nodal states, except the hidden source (see Methods). The basic idea of ascertaining and locating the hidden source is based on missing information from the hidden source when attempting to reconstruct the network. In particular, to reconstruct the connections belonging to the immediate neighbourhood of the source accurately, time series from the source are needed to generate the matrix \u03a6 and the vector Y. However, as the source is hidden, no time series from it are available, leading to reconstruction inaccuracy and, consequently, anomalies in the predicted link patterns of the neighbouring nodes. It is then possible to detect the neighbourhood of the hidden source by identifying any abnormal connection patterns51, which can be accomplished by using different data segments. If the inferred links of a node are stable with respect to different data segments, the node can be deemed to have no connection with the hidden source; otherwise, if the result of inferring a node\u2019s links varies significantly with respect to different data segments, the node is likely to be connected to the hidden source. The s.d. of the predicted results with respect to different data segments can be used as a quantitative criterion for the anomaly. Once the neighbouring set of the source is determined, the source is then precisely located topologically.",
+            "cite_spans": [
+                {
+                    "start": 1092,
+                    "end": 1094,
+                    "mention": "51",
+                    "ref_id": "BIBREF46"
+                }
+            ],
+            "section": "Locating the hidden source of propagation ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "Figure 5 presents an example, where a hidden source is connected with four nodes in the network (Fig. 5a), as reflected in the network adjacency matrix (Fig. 5b). We implement our reconstruction framework on each accessible node by using different sets of data in the time series. For each data set, we predict the neighbours of all nodes and generate an adjacency matrix. Averaging over the elements corresponding to each location in all the reconstructed adjacency matrices, we obtain Fig. 5c, in which each row corresponds to the mean number of links in a node\u2019s neighbourhood. The inferred links of the immediate neighbours of the hidden source exhibit anomalies. To quantify the anomalies, we calculate the structural s.d. \u03c3 from different data segments, where \u03c3 associated with node i is defined through the ith row in the adjacency matrix as",
+            "cite_spans": [],
+            "section": "Locating the hidden source of propagation ::: Results",
+            "ref_spans": [
+                {
+                    "start": 0,
+                    "end": 8,
+                    "mention": "Figure 5",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 97,
+                    "end": 104,
+                    "mention": "Fig. 5a",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 153,
+                    "end": 160,
+                    "mention": "Fig. 5b",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 487,
+                    "end": 494,
+                    "mention": "Fig. 5c",
+                    "ref_id": "FIGREF4"
+                }
+            ]
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Locating the hidden source of propagation ::: Results",
+            "ref_spans": []
+        },
+        {
+            "text": "where j denotes the column,  represents the element value in the adjacency matrix inferred from the kth group of the data,  is the mean value of aij and g is the number of data segments. Applying equation (10) to the reconstructed adjacency matrices gives the results in Fig. 5d, where the values of \u03c3 associated with the immediate neighbouring nodes of the hidden source are much larger than those from others (which are essentially zero). A cut-off value can be set in the distribution of \u03c3i to identify the immediate neighbours of the hidden source (see Supplementary Fig. 1b and Supplementary Note 4). The performance of locating hidden source by means of the trade-off measures (true positive rate versus false positive rate) are displayed in Table 1.",
+            "cite_spans": [],
+            "section": "Locating the hidden source of propagation ::: Results",
+            "ref_spans": [
+                {
+                    "start": 271,
+                    "end": 278,
+                    "mention": "Fig. 5d",
+                    "ref_id": "FIGREF4"
+                },
+                {
+                    "start": 748,
+                    "end": 755,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "We have developed a general framework to reconstruct complex propagation networks on which epidemic spreading takes place from binary time series. Our paradigm is based on compressed sensing, is completely data-driven and practically significant for controlling epidemic spreading through targeted vaccination. Both theoretically and practically, our framework can be used to address the extremely challenging problem of reconstructing the intrinsic interacting patterns of complex stochastic systems based on small amounts of polarized time series. The key to success of our method lies in our development of a novel class of transformation, allowing the network inference problem to be converted to the problem of sparse signal reconstruction, which can then be solved by the standard compressed-sensing algorithm. The accuracy and efficiency of our framework in uncovering the network structure, the natural diversity in the nodal characteristics, and any hidden source are guaranteed by the CST with rigorous proof for low-data requirement and convergence to optimal solution. The feasibility of our framework has been demonstrated using a large number of combinations of epidemic processes and network structures, where in all cases highly accurate reconstruction is achieved. Our approach opens up a new avenue towards fully addressing the inverse problem in complex stochastic systems in a highly efficient manner, a fundamental stepping stone towards understanding and controlling complex dynamical systems in general.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "We have focused on two types of spreading dynamics, SIS and CP, where an infected individual can recover and becomes susceptible again. In this regard, even if an outbreak occurs, control strategy such as targeted vaccination or quarantine can be helpful to eliminate the virus eventually. A main purpose of our work is to identify the key individuals in the network to implement target control and to locate the source of infection to isolate it so as to prevent recurrent infection in the future. Although for any spreading dynamics, the most effective way to prevent a large-scale outbreak is to implement control during the early stage, this may be impractical in many situations. If we miss the early stage, which is possible especially in complex networks where the epidemic threshold can be near zero, to be able to reconstruct the spreading network is of tremendous value. Besides disease spreading, our framework is applicable to rumour or information spreading. In this case, identifying the source of rumour is important, a problem that our framework is capable of solving.",
+            "cite_spans": [],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "Our work raises a number of questions to further and perfect the theoretical and algorithmic development of reconstructing complex dynamical systems. For example, if partial knowledge about the network structure is available, the information can be incorporated into our framework to further reduce the required data amount. Moreover, for non-Markovian spreading processes, our current reconstruction framework may fail. This raises the need to develop new and more general approaches. Nevertheless, our theory, due to its generality and applicability to various types of inhomogeneous interactions, can be applied to networks of networks or interdependent networks, in which there may be different spreading patterns associated with distinct layers or components. Taken together, our results provide strong credence to the proposition that complex networks can be fully decrypted from measurements, even when stochastic disturbance and hidden sources are present. This can offer a deeper understanding of complex systems in general and significantly enhance our ability to control them based on, for example, the recently developed controllability theory of complex networks52535455565758.",
+            "cite_spans": [
+                {
+                    "start": 1175,
+                    "end": 1177,
+                    "mention": "52",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 1177,
+                    "end": 1179,
+                    "mention": "53",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1179,
+                    "end": 1181,
+                    "mention": "54",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 1181,
+                    "end": 1183,
+                    "mention": "55",
+                    "ref_id": "BIBREF50"
+                },
+                {
+                    "start": 1183,
+                    "end": 1185,
+                    "mention": "56",
+                    "ref_id": "BIBREF51"
+                },
+                {
+                    "start": 1185,
+                    "end": 1187,
+                    "mention": "57",
+                    "ref_id": "BIBREF52"
+                },
+                {
+                    "start": 1187,
+                    "end": 1189,
+                    "mention": "58",
+                    "ref_id": "BIBREF53"
+                }
+            ],
+            "section": "Discussion",
+            "ref_spans": []
+        },
+        {
+            "text": "The SIS model is a classic epidemic model that has been used frequently to study a variety of spreading behaviours in social and computer networks. Each node of the network represents an individual and links are connections along which infection can propagate to others with certain probability. At each time step, a susceptible node i in state 0 is infected with rate \u03bbi if it is connected to an infected node in state 1. If i connects to more than one infected neighbour, the infection probability P01 is given by equation (4). At the same time, infected nodes are continuously recovered to be susceptible at the rates \u03b4i. The CP model has been used extensively to describe, for example, the spreading of infection and competition of animals over a territory, where \u03bbi is determined by equation (7). The main difference between SIS and CP dynamics lies in the influence on a node\u2019s state from its vicinity. In both SIS and CP dynamics, \u03bbi and \u03b4i depend on the individuals\u2019 immune systems and are selected from a uniform distribution characterizing the natural diversity (see Supplementary Note 7 for details of numerical simulations). Moreover, a hidden source is regarded as infected for all time.",
+            "cite_spans": [],
+            "section": "Spreading processes ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "For SIS dynamics, suppose measurements at a sequence of times t=t1, t2, \u00b7\u00b7\u00b7, tm are available. equation (5) leads to the following matrix form Ym \u00d7 1=\u03a6m \u00d7 (N\u22121)\u00b7X(N\u22121) \u00d7 1:",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where the vector X(N\u22121) \u00d7 1 contains all possible connections between node i and all other nodes, and it is sparse for a general complex network. We see that if the vector Ym \u00d7 1 and the matrix \u03a6m \u00d7 (N\u22121) can be constructed from time series, X(N\u22121) \u00d7 1 can then be solved by using CST. The main challenge here is that the infection probabilities  at different times are not given directly by the time series of the nodal states. To devise a heuristic method to estimate the probabilities, we assume that the neighbouring set \u0393i of the node i is known. The number of such neighbouring nodes is given by ki, the degree of node i and their states at time t can be denoted as",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To approximate the infection probability, we use Si(t)=0 so that at t+1, the node i can be infected with certain probability. In contrast, if Si(t)=1, Si(t+1) is only related with the recovery probability \u03b4i. Hence, we focus on the Si(t)=0 case to derive . If we can find two time instants: t1, t2\u03b5T (T is the length of time series), such that Si(t1)=0 and Si(t2)=0, we can then calculate the normalized Hamming distance  between  and , where the normalized Hamming distance between two strings of equal length is defined as ratio of the number of positions with different symbols between them and the length of string. If , we can regard the states at the next time step, Si(t1+1) and Si(t2+1), as i.i.d Bernoulli trials. In this case, using the law of large numbers, we have",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "A more intuitive understanding of (equation (12)) is that if the states of i\u2019s neighbours are unchanged, the fraction of times of i being infected by its neighbours over the entire time period will approach the actual infection probability . Note, however, that the neighbouring set of i is unknown and to be inferred. A strategy is then to artificially enlarge the neighbouring set  to include all nodes in the network, except i. In particular, we denote",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "If H[S\u2212i(t1), S\u2212i(t2)]=0, the condition  will be ensured. Consequently, due to the nature of i.i.d Bernoulli trials, from the law of large numbers, we have",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Hence, the infection probability  of a node at  can be evaluated by averaging over its states associated with zero-normalized Hamming distance between the strings of other nodes at some time associated with . In practice, to find two strings with absolute zero-normalized Hamming distance is unlikely. We thus set a threshold \u0394 so as to pick the suitable strings to approximate the law of large numbers, that is",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where  serves as a base for comparison with S\u2212i(t) at all other times and . As  is not exactly zero, there is a small difference between  and . We thus consider the average of  for all t\u03bd to obtain , leading to the right-hand side of equation (14). We denote  and . To reduce the error in the estimation, we implement the average on S\u2212i(t) over all selected strings through equation (14). The averaging process is with respect to the nodal states Sj, j,\u2260i(t) on the right-hand side of the modified dynamical equation (5). Specifically, averaging over time t restricted by equation (14) on both sides of equation (5), we obtain . If \u03bbi is small with insignificant fluctuations, we can approximately have  (see Supplementary Fig. 10 and Supplementary Note 8), which leads to . Substituting  by , we finally get",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Although the above procedure yields an equation that bridges the links of an arbitrary node i with the observable states of the nodes, a single equation does not contain sufficient structural information about the network. Our second step is then to derive a sufficient number of linearly independent equations required by CST to reconstruct the local connection structure. To achieve this, we choose a series of base strings at a number of time instants from a set denoted by Tbase, in which each pair of strings satisfy",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where  and  correspond to the time instants of two base strings in the time series and \u0398 is a threshold. For each string, we repeat the process of establishing the relationship between the nodal states and connections, leading to a set of equations at different values of  in equation (15), as described in the matrix form (equation (6)). See Supplementary Fig. 11, 12 and Supplementary Note 8 for the dependence of success rate on threshold \u0394 and \u0398 for SIS and CP dynamics in combination with four types of networks.",
+            "cite_spans": [],
+            "section": "Mathematical formulation of reconstruction based on CST ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "The values of the infection rate \u03bbi of nodes can be inferred after the neighbourhood of each node has been successfully reconstructed. The idea roots in the fact that the infection probability of a node approximated by the frequency of being infected calculated from time series is determined both by its infection rate and by the number of infected nodes in its neighbourhood. To provide an intuitive picture, we consider the following simple scenario in which the number of infected neighbours of node i does not change with time. In this case, the probability of i being infected at each time step is fixed. We can thus count the frequency of the 01 and 00 pairs embedded in the time series of i. The ratio of the number of 01 pairs over the total number of 01 and 00 pairs gives approximately the infection probability. The infection rate can then be calculated by using equations (4) and (7) for the SIS and CP dynamics, respectively. In a real-world situation, however, the number of infected neighbours varies with time. The time-varying factor can be taken into account by sorting out the time instants corresponding to different numbers of the infected neighbours, and the infection probability can be obtained at the corresponding time instants, leading to a set of values for the infection rate whose average represents an accurate estimate of the true infection rate for each node.",
+            "cite_spans": [],
+            "section": "Inferring inhomogeneous infection rates ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "To be concrete, considering all the time instants t\u03bd associated with kI infected neighbors, we denote , \u2200 t\u03bd,  and Si(t\u03bd)=0, where \u0393i is the neighbouring set of node i, kI is the number of infected neighbours and  represents the average infected fraction of node i with kI infected neighbours. Given , we can rewrite equation (4) by substituting  for  and  for \u03bbi, which yields . To reduce the estimation error, we average  with respect to different values of kI, as follows:",
+            "cite_spans": [],
+            "section": "Inferring inhomogeneous infection rates ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Inferring inhomogeneous infection rates ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where \u039bi denotes the set of all possible infected neighbours during the epidemic process and  denotes the number of different values of kI in the set. Analogously, for CP, we can evaluate  from equation (7) by",
+            "cite_spans": [],
+            "section": "Inferring inhomogeneous infection rates ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "",
+            "cite_spans": [],
+            "section": "Inferring inhomogeneous infection rates ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "where  is the node degree of i. Insofar as all the links of i have been successfully reconstructed,  can be obtained from the time series in terms of the satisfied Si(t\u03bd+1), allowing us to infer  via equations (17) and (18).",
+            "cite_spans": [],
+            "section": "Inferring inhomogeneous infection rates ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Note that the method is applicable to any type of networks insofar as the network structure has been successfully reconstructed.",
+            "cite_spans": [],
+            "section": "Inferring inhomogeneous infection rates ::: Methods",
+            "ref_spans": []
+        },
+        {
+            "text": "Model networks and real networks we used are described in Supplementary Note 10 and Table 1.",
+            "cite_spans": [],
+            "section": "Networks analysed ::: Methods",
+            "ref_spans": [
+                {
+                    "start": 84,
+                    "end": 91,
+                    "mention": "Table 1",
+                    "ref_id": null
+                }
+            ]
+        },
+        {
+            "text": "W.-X.W., Z.S., Y.F., Z.D. and Y.-C.L. designed research; Z.S. and W.-X.W. performed research; Y.F. and Z.D. contributed analytic tools; Z.S., W.-X.W., Y.F., Z.D. and Y.-C.L. analysed data; and W.-X.W. and Y.-C.L. wrote the paper.",
+            "cite_spans": [],
+            "section": "Author contributions",
+            "ref_spans": []
+        },
+        {
+            "text": "How to cite this article: Shen, Z. et al. Reconstructing propagation networks with natural diversity and identifying hidden sources. Nat. Commun. 5:4323 doi: 10.1038/ncomms5323 (2014).",
+            "cite_spans": [],
+            "section": "Additional information",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1: (a) Fourteen snapshots of data at time instants t1\u2212t14 of eight nodes in a sample network, where Si is the time series of node 2 and S\u2212i denotes the strings of other nodes at different times. The neighbourhood of node 2 is to be reconstructed. Only the pairs 00 and 01 in the time series of Si (i=2) and the corresponding S\u2212i contain useful information about the network, as marked by different colours. (b) As Si(t+1) is determined by the neighbours of i and S\u2212i(t), we sort out Si(t+1) and S\u2212i(t) in the coloured sections of the time series in a. According to the threshold parameters \u0394=3/7 and \u0398=3/7, we calculate the normalized Hamming distance between each pair of strings S\u2212i(t), finding two base strings at  and  with . We separate the coloured strings into two groups that are led by the two base strings, respectively. In each group, the normalized Hamming distance  between the base string and other strings is calculated and the difference from  in each string is marked by red. Using parameter \u0394, in the group led by , S\u2212i(t5) and Si(t6) are preserved, because of . In contrast, S\u2212i(t7) and Si(t8) are disregarded because . In the group led by , due to , the string is preserved. The two sets of remaining strings marked by purple and green can be used to yield the quantities required by the reconstruction formula. (Note that different base strings are allowed to share some strings, but for simplicity, this situation is not illustrated here. See Supplementary Note 3 for a detailed discussion.) (c) The average values  and  used to extract the vector Y and the matrix \u03a6 in the reconstruction formula, where , ,  and  based on the remaining strings marked in different colours (see Methods for more details). CST can be used to reconstruct the neighbouring vector X of node 2 from Y and \u03a6 from Y=\u03a6\u00b7X.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2: (a) Element values ln(1\u2212\u03bbi)aij of vector X times \u22121 for different fraction  of base strings for SIS dynamics. (b,c) Success rate (SREL and SRNC) and conflict rate (CR) of reconstruction as a function of  for SIS dynamics on Newman\u2013Watts (NW) small-world networks (b) and CP dynamics on Erd\u00f6s\u2013R\u00e9nyi (ER) random networks (c). For the SIS dynamics, the parameters are \u0398=0.25, \u0394=0.45 and the infection and recovery rates \u03bbi and \u03b4i are randomly distributed in the ranges (0.2, 0.4) and (0.4, 0.6), respectively. For the CP dynamics, the parameters are \u0398=0.35, \u0394=0.45 and \u03bbi and \u03b4i are randomly distributed in the ranges (0.7, 0.9) and (0.2, 0.4), respectively. The network size N is 200 with average node degree \u2039k\u203a=4. The results are obtained by ensemble averaging over ten independent realizations. The success rate is determined by setting a cut-off according to Supplementary Fig. 1a and the method described in Supplementary Note 4.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3: (a,b) Success rate as a function of the relative length nt of time series for SIS (a) and CP (b) in combination with Newman\u2013Watts (NW) and Barab\u00e1si\u2013Albert (BA) networks. The dashed lines represent 95% success rate. (c,d) the minimum relative length  that assures at least 95% success rate as a function of the network size N for SIS (c) and CP (d) dynamics on NW and BA networks. Here the success rate is the geometric average over SREL and SRNC. For SIS dynamics, \u03bb\u03b5(0.1, 0.3) and \u03b4\u03b5(0.2, 0.4). For CP dynamics, \u03bb\u03b5(0.7, 0.9) and \u03b4\u03b5(0.3, 0.5). In a and b, the network size N is 500. The other parameters are the same as in Fig. 2. Note that nt\u2261t/N, where t is the absolute length of time series, and , where tmin is the minimum absolute length of time series required for at least 95% success rate.",
+            "type": "figure"
+        },
+        "FIGREF3": {
+            "text": "Figure 4: (a,b) Success rate as a function of the fraction nf of the flipped states induced by noise in time series for SIS (a) and CP (b) dynamics on Erd\u00f6s\u2013R\u00e9nyi (ER) and Barab\u00e1si\u2013Albert (BA) networks. (c,d) Success rate as a function of the fraction nm of nodes that are externally inaccessible for SIS (c) and CP (d) dynamics on NW and BA networks. The network size N is 500 and \u2039k\u203a=4. The other parameters are the same as in Fig. 2.",
+            "type": "figure"
+        },
+        "FIGREF4": {
+            "text": "Figure 5: (a) Hidden source treated as a special node (in red) is connected to four nodes in the network (blue). The time series of other nodes except the source (number 50) after the outbreak of an epidemic are assumed to be available. (b) True adjacency matrix of the NW network with identical link weights to facilitate a comparison with the reconstructed adjacency matrix. (c) Reconstructed adjacency matrix from a number of segments in time series. The four neighbouring nodes of the source are predicted to be densely linked to other nodes, as indicated by the average value of the elements in the four rows corresponding to these nodes. (d) Structural variance \u03c3 of each node. The four neighbouring nodes of the source exhibit much larger values of \u03c3 than those from the other nodes, providing unequivocal evidence that they belong to the immediate neighbourhood of the hidden source.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Reconstructing a credit network",
+            "authors": [],
+            "year": 2013,
+            "venue": "Nat. Phys.",
+            "volume": "9",
+            "issn": "",
+            "pages": "125-126",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF1": {
+            "title": "The structure and function of complex networks",
+            "authors": [],
+            "year": 2003,
+            "venue": "SIAM Rev.",
+            "volume": "45",
+            "issn": "",
+            "pages": "167-256",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF2": {
+            "title": "Complex networks: Structure and dynamics",
+            "authors": [],
+            "year": 2006,
+            "venue": "Phys. Rep.",
+            "volume": "424",
+            "issn": "",
+            "pages": "175-308",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "",
+            "authors": [],
+            "year": 2009,
+            "venue": "Networks: An Introduction",
+            "volume": "",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF4": {
+            "title": "Epidemic spreading in scale-free networks",
+            "authors": [],
+            "year": 2001,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "86",
+            "issn": "",
+            "pages": "3200-3203",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF5": {
+            "title": "Modeling dynamic and network heterogeneities in the spread of sexually transmitted diseases",
+            "authors": [],
+            "year": 2002,
+            "venue": "Proc. Natl Acad. Sci.",
+            "volume": "99",
+            "issn": "",
+            "pages": "13330-13335",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF6": {
+            "title": "Multiscale, resurgent epidemics in a hierarchical metapopulation model",
+            "authors": [],
+            "year": 2005,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "102",
+            "issn": "",
+            "pages": "11157-11162",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "The role of the airline transportation network in the prediction and predictability of global epidemics",
+            "authors": [],
+            "year": 2006,
+            "venue": "Proc. Natl Acad. Sci. USA",
+            "volume": "103",
+            "issn": "",
+            "pages": "2015-2020",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF8": {
+            "title": "Spreading of sexually transmitted diseases in heterosexual populations",
+            "authors": [],
+            "year": 2008,
+            "venue": "Proc. Natl Acad. Sci",
+            "volume": "105",
+            "issn": "",
+            "pages": "1399-1404",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Understanding the spreading patterns of mobile phone viruses",
+            "authors": [],
+            "year": 2009,
+            "venue": "Science",
+            "volume": "324",
+            "issn": "",
+            "pages": "1071-1076",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF10": {
+            "title": "The role of population heterogeneity and human mobility in the spread of pandemic influenza",
+            "authors": [],
+            "year": 2010,
+            "venue": "Proc. R. Soc. B",
+            "volume": "277",
+            "issn": "",
+            "pages": "557-565",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Inferring genetic networks and identifying compound mode of action via expression profiling",
+            "authors": [],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "301",
+            "issn": "",
+            "pages": "102-105",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF12": {
+            "title": "Phase transitions in contagion processes mediated by recurrent mobility patterns",
+            "authors": [],
+            "year": 2011,
+            "venue": "Nat. Phys.",
+            "volume": "7",
+            "issn": "",
+            "pages": "581-586",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF13": {
+            "title": "Transmission dynamics of the etiological agent of sars in hong kong: impact of public health interventions",
+            "authors": [],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1961-1966",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "The genome sequence of the sars-associated coronavirus",
+            "authors": [],
+            "year": 2003,
+            "venue": "Science",
+            "volume": "300",
+            "issn": "",
+            "pages": "1399-1404",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF15": {
+            "title": "Strategies for containing an emerging influenza pandemic in southeast asia",
+            "authors": [],
+            "year": 2005,
+            "venue": "Nature",
+            "volume": "437",
+            "issn": "",
+            "pages": "209-214",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF16": {
+            "title": "H5n1 hybrid viruses bearing 2009/h1n1 virus genes transmit in guinea pigs by respiratory droplet",
+            "authors": [],
+            "year": 2013,
+            "venue": "Science",
+            "volume": "340",
+            "issn": "",
+            "pages": "1459-1463",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF17": {
+            "title": "Emergence and pandemic potential of swine-origin h1n1 influenza virus",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nature",
+            "volume": "459",
+            "issn": "",
+            "pages": "931-939",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Origins and evolutionary genomics of the 2009 swine-origin h1n1 influenza a epidemic",
+            "authors": [],
+            "year": 2009,
+            "venue": "Nature",
+            "volume": "459",
+            "issn": "",
+            "pages": "1122-1125",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF19": {
+            "title": "Despite large research effort, h7n9 continues to baffle",
+            "authors": [],
+            "year": 2013,
+            "venue": "Science",
+            "volume": "340",
+            "issn": "",
+            "pages": "414-415",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF20": {
+            "title": "H7n9 is a virus worth worrying about",
+            "authors": [],
+            "year": 2013,
+            "venue": "Nature",
+            "volume": "496",
+            "issn": "",
+            "pages": "399-399",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF21": {
+            "title": "Absence of epidemic threshold in scale-free networks with degree correlations",
+            "authors": [],
+            "year": 2003,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "90",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF22": {
+            "title": "Revealing network connectivity from response dynamics",
+            "authors": [],
+            "year": 2007,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "98",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF23": {
+            "title": "Epidemic threshold for the susceptible-infectious-susceptible model on random networks",
+            "authors": [],
+            "year": 2010,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "104",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Thresholds for epidemic spreading in networks",
+            "authors": [],
+            "year": 2010,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "105",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF25": {
+            "title": "High-accuracy approximation of binary-state dynamics on networks",
+            "authors": [],
+            "year": 2011,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "107",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF26": {
+            "title": "",
+            "authors": [],
+            "year": 2010,
+            "venue": "Proceedings of the 16th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+            "volume": "",
+            "issn": "",
+            "pages": "1019-1028",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Locating the source of diffusion in large-scale networks",
+            "authors": [],
+            "year": 2012,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "109",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Robust uncertainty principles: Exact signal reconstruction from highly incomplete frequency information",
+            "authors": [],
+            "year": 2006,
+            "venue": "IEEE Trans. Inf. Theory",
+            "volume": "52",
+            "issn": "",
+            "pages": "489-509",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF29": {
+            "title": "Stable signal recovery from incomplete and inaccurate measurements",
+            "authors": [],
+            "year": 2006,
+            "venue": "Commun. Pure Appl. Math.",
+            "volume": "59",
+            "issn": "",
+            "pages": "1207-1223",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF30": {
+            "title": "Compressed sensing",
+            "authors": [],
+            "year": 2006,
+            "venue": "IEEE Trans. Inf. Theory",
+            "volume": "52",
+            "issn": "",
+            "pages": "1289-1306",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF31": {
+            "title": "Compressive sensing [lecture notes]",
+            "authors": [],
+            "year": 2007,
+            "venue": "Sig. Proc. Mag. IEEE",
+            "volume": "24",
+            "issn": "",
+            "pages": "118-121",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF32": {
+            "title": "An introduction to compressive sampling",
+            "authors": [],
+            "year": 2008,
+            "venue": "Sig. Proc. Mag. IEEE",
+            "volume": "25",
+            "issn": "",
+            "pages": "21-30",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF33": {
+            "title": "Automated reverse engineering of nonlinear dynamical systems",
+            "authors": [],
+            "year": 2007,
+            "venue": "Proc. Natl Acad. Sci.",
+            "volume": "104",
+            "issn": "",
+            "pages": "9943-9948",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Imaging via compressive sampling",
+            "authors": [],
+            "year": 2008,
+            "venue": "Sig. Proc. Mag. IEEE",
+            "volume": "25",
+            "issn": "",
+            "pages": "14-20",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Predicting catastrophes in nonlinear dynamical systems by compressive sensing",
+            "authors": [],
+            "year": 2011,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "106",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF36": {
+            "title": "Time-series\u2013based prediction of complex oscillator networks via compressive sensing",
+            "authors": [],
+            "year": 2011,
+            "venue": "EPL",
+            "volume": "94",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Network reconstruction based on evolutionary-game data via compressive sensing",
+            "authors": [],
+            "year": 2011,
+            "venue": "Phys. Rev. X",
+            "volume": "1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF38": {
+            "title": "On the Convexity of Latent Social Network Inference",
+            "authors": [],
+            "year": 2010,
+            "venue": "Adv. Neural Inf. Process Syst.",
+            "volume": "23",
+            "issn": "",
+            "pages": "1741-1749",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Non-mean-field behavior of the contact process on scale-free networks",
+            "authors": [],
+            "year": 2006,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "96",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF40": {
+            "title": "Epidemic thresholds in dynamic contact networks",
+            "authors": [],
+            "year": 2009,
+            "venue": "J. R. Soc. Interface",
+            "volume": "6",
+            "issn": "",
+            "pages": "233-241",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF41": {
+            "title": "Efficient immunization strategies for computer networks and populations",
+            "authors": [],
+            "year": 2003,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "91",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF42": {
+            "title": "Optimizing the control of disease infestations at the landscape scale",
+            "authors": [],
+            "year": 2007,
+            "venue": "Proc. Natl Acad. Sci",
+            "volume": "104",
+            "issn": "",
+            "pages": "4984-4989",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF43": {
+            "title": "Synthesizing epidemiological and economic optima for control of immunizing infections",
+            "authors": [],
+            "year": 2011,
+            "venue": "Proc. Natl Acad. Sci",
+            "volume": "108",
+            "issn": "",
+            "pages": "14366-14370",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF44": {
+            "title": "Hierarchical structure and the prediction of missing links in networks",
+            "authors": [],
+            "year": 2008,
+            "venue": "Nature",
+            "volume": "453",
+            "issn": "",
+            "pages": "98-101",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Searching for the most cost-effective strategy for controlling epidemics spreading on regular and small-world networks",
+            "authors": [],
+            "year": 2012,
+            "venue": "J. R. Soc. Interface",
+            "volume": "9",
+            "issn": "",
+            "pages": "158-169",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF46": {
+            "title": "Detecting hidden nodes in complex networks from time series",
+            "authors": [],
+            "year": 2012,
+            "venue": "Phys. Rev. E",
+            "volume": "85",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF47": {
+            "title": "",
+            "authors": [],
+            "year": 1991,
+            "venue": "Applied Nonlinear Control",
+            "volume": "vol. 1",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF48": {
+            "title": "Controllability of complex networks",
+            "authors": [],
+            "year": 2011,
+            "venue": "Nature",
+            "volume": "473",
+            "issn": "",
+            "pages": "167-173",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF49": {
+            "title": "Controlling edge dynamics in complex networks",
+            "authors": [],
+            "year": 2012,
+            "venue": "Nat. Phys.",
+            "volume": "8",
+            "issn": "",
+            "pages": "568-573",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF50": {
+            "title": "Controlling complex networks: How much energy is needed?",
+            "authors": [],
+            "year": 2012,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "108",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF51": {
+            "title": "Observability of complex systems",
+            "authors": [],
+            "year": 2013,
+            "venue": "Proc. Natl Acad. Sci",
+            "volume": "110",
+            "issn": "",
+            "pages": "2460-2465",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF52": {
+            "title": "The power to control",
+            "authors": [],
+            "year": 2013,
+            "venue": "Nat. Phys.",
+            "volume": "9",
+            "issn": "",
+            "pages": "126-128",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF53": {
+            "title": "Exact controllability of complex networks",
+            "authors": [],
+            "year": 2013,
+            "venue": "Nat. Commun.",
+            "volume": "4",
+            "issn": "",
+            "pages": "2447-1\u20139",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF54": {
+            "title": "Noise bridges dynamical correlation and topology in coupled oscillator networks",
+            "authors": [],
+            "year": 2010,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "104",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF55": {
+            "title": "Network reconstruction from random phase resetting",
+            "authors": [],
+            "year": 2011,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "107",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF56": {
+            "title": "Inner composition alignment for inferring directed networks from short time series",
+            "authors": [],
+            "year": 2011,
+            "venue": "Phys. Rev. Lett.",
+            "volume": "107",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF57": {
+            "title": "Statistical mechanics of complex networks",
+            "authors": [],
+            "year": 2002,
+            "venue": "Rev. Mod. Phys.",
+            "volume": "74",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": []
+            }
+        }
+    }
+}

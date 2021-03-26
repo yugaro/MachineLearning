@@ -1,0 +1,1401 @@
+{
+    "paper_id": "PMC4615106",
+    "metadata": {
+        "title": "Cell cycle control (and more) by programmed \u22121 ribosomal frameshifting: implications for disease and therapeutics",
+        "authors": [
+            {
+                "first": "Ashton",
+                "middle": [
+                    "T"
+                ],
+                "last": "Belew",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            },
+            {
+                "first": "Jonathan",
+                "middle": [
+                    "D"
+                ],
+                "last": "Dinman",
+                "suffix": "",
+                "email": null,
+                "affiliation": {}
+            }
+        ]
+    },
+    "body_text": [
+        {
+            "text": "Translational reading frame maintenance is a primary determinant of the proteome. If the specificity of this process is lost or degraded, cells will almost certainly die. This is a central point of attack by many antibiotics, which capitalize on small but distinct differences between bacterial and eukaryotic ribosomes.5,6 Reading frame is determined by recognition of a start codon by an initiator tRNA in the ribosome's decoding center and is maintained through the consistent translocation by 3 nucleotides during elongation. The three stop codons do not correspond to any tRNAs, this enables the release factor complex to initiate translation termination. Translational recoding comprises the spectrum of events which occur when canonical translation is disrupted. This ranges from mechanisms which subvert initiation,7 alter the equilibria of events during elongation,8 and affect the termination process9 generally resulting in suppression or reinitiation. This document mainly focuses on a particular recoding event called programmed \u22121 ribosomal frameshifting that occurs during elongation.",
+            "cite_spans": [
+                {
+                    "start": 320,
+                    "end": 323,
+                    "mention": "5,6",
+                    "ref_id": "BIBREF4"
+                },
+                {
+                    "start": 823,
+                    "end": 824,
+                    "mention": "7",
+                    "ref_id": "BIBREF6"
+                },
+                {
+                    "start": 874,
+                    "end": 875,
+                    "mention": "8",
+                    "ref_id": "BIBREF7"
+                },
+                {
+                    "start": 910,
+                    "end": 911,
+                    "mention": "9",
+                    "ref_id": "BIBREF8"
+                }
+            ],
+            "section": "Reading frame definition and maintenance ::: Introduction",
+            "ref_spans": []
+        },
+        {
+            "text": "Examination of the history of modern molecular genetics shows that most basic molecular mechanisms were first observed in viruses. Therefore, it was reasonable to hypothesize that \u22121 PRF is also used to control expression of cellular genes. Indeed, the serendipitous discoveries of \u22121 PRF signals of viral origin in the mammalian PEG1021,22 and Edr123 mRNAs suggested that more of these elements were hidden in eukaryotic genomes. Simultaneously, genetic studies in yeast suggested that \u22121 PRF may play a role in cell cycle control.24 Thus began the search for \u22121 PRF signals in eukaryotic genomes.",
+            "cite_spans": [
+                {
+                    "start": 335,
+                    "end": 340,
+                    "mention": "21,22",
+                    "ref_id": "BIBREF20"
+                },
+                {
+                    "start": 349,
+                    "end": 351,
+                    "mention": "23",
+                    "ref_id": "BIBREF22"
+                },
+                {
+                    "start": 532,
+                    "end": 534,
+                    "mention": "24",
+                    "ref_id": "BIBREF23"
+                }
+            ],
+            "section": "Genomic \u22121 PRF ::: Programmed \u22121 Ribosomal Frameshifting",
+            "ref_spans": []
+        },
+        {
+            "text": "There are 2 complementary approaches when searching genome databases for potential frameshift signals. The first is to search for genes harboring conserved overlapping open reading frames.25 This approach has been highly successful in identifying new viral \u22121 PRF signals, and conserved +1 PRF signals in ornithine decarboxylase genes.26 However, while this enables identification of novel PRF signals, it enforces the assumption that frameshifting results in a new functional protein. The second method is to search for sequence motifs that conform to known PRF signals. Though limited to one class of signal, this method does not assume that frameshifting results in a C-terminal extension product.",
+            "cite_spans": [
+                {
+                    "start": 188,
+                    "end": 190,
+                    "mention": "25",
+                    "ref_id": "BIBREF24"
+                },
+                {
+                    "start": 335,
+                    "end": 337,
+                    "mention": "26",
+                    "ref_id": "BIBREF25"
+                }
+            ],
+            "section": "Genomic \u22121 PRF ::: Programmed \u22121 Ribosomal Frameshifting",
+            "ref_spans": []
+        },
+        {
+            "text": "The efforts of our laboratory have focused on this latter approach. In particular, \u22121 PRF was chosen because there are sufficient viral examples to enable the generation of heuristics. This is in contrast to +1 frameshifting, which appears to be idiosyncratic. The basic strategy is to perform a pattern-match based search for allowable heptameric slippery sequences followed by strong downstream structure; this search is NP-complete27 and therefore computationally difficult. The initial study using this approach pressed the available CPU limits at the time, taking significant time for relatively small numbers of sequences.28 Later searches against the yeast genome refined this strategy and used significantly greater computational resources, allowing the yeast genome to be exhaustively searched in months.29 Further refinements, increases in memory/CPU, and larger computational resources made it possible to complete approximately one genome per week30 along with comparisons against randomized sequences. Analysis of multiple genomes reveals that approximately 10% of annotated genes contain at least one high-confidence potential frameshift signal. A searchable database of predicted eukaryotic \u22121 PRF signals is available in the Predicted Ribosomal Frameshift Database (PRFdb, www.prfdb.umd.edu).30",
+            "cite_spans": [
+                {
+                    "start": 434,
+                    "end": 436,
+                    "mention": "27",
+                    "ref_id": "BIBREF26"
+                },
+                {
+                    "start": 628,
+                    "end": 630,
+                    "mention": "28",
+                    "ref_id": "BIBREF27"
+                },
+                {
+                    "start": 813,
+                    "end": 815,
+                    "mention": "29",
+                    "ref_id": "BIBREF28"
+                },
+                {
+                    "start": 959,
+                    "end": 961,
+                    "mention": "30",
+                    "ref_id": "BIBREF29"
+                },
+                {
+                    "start": 1308,
+                    "end": 1310,
+                    "mention": "30",
+                    "ref_id": "BIBREF29"
+                }
+            ],
+            "section": "Genomic \u22121 PRF ::: Programmed \u22121 Ribosomal Frameshifting",
+            "ref_spans": []
+        },
+        {
+            "text": "As noted above, a motif based search removes the assumption that frameshift events produce functional extended peptides. This led to the surprising observation that only 0.07% candidate \u22121 PRF containing sequences extend more than 30 codons beyond the frameshift event, regardless of the cellular genome examined (Fig. 2A). The observation that the vast majority of frameshift events direct translating ribosomes to premature termination codons engendered the hypothesis that \u22121 frameshift signals function as mRNA destabilizing elements through the nonsense mediated mRNA decay pathway (NMD)31 (Fig. 2B). This was initially validated in yeast cells using a well-defined viral frameshift signal and further analysis suggested a role for No-Go decay (NGD) as well.32 More recent studies in our laboratory demonstrate that this general rule is also true in human cells.33\n\n",
+            "cite_spans": [
+                {
+                    "start": 592,
+                    "end": 594,
+                    "mention": "31",
+                    "ref_id": "BIBREF30"
+                },
+                {
+                    "start": 763,
+                    "end": 765,
+                    "mention": "32",
+                    "ref_id": "BIBREF31"
+                },
+                {
+                    "start": 867,
+                    "end": 869,
+                    "mention": "33",
+                    "ref_id": "BIBREF32"
+                }
+            ],
+            "section": "An unexpected result: cells use \u22121 PRF to control mRNA abundance ::: Programmed \u22121 Ribosomal Frameshifting",
+            "ref_spans": [
+                {
+                    "start": 314,
+                    "end": 321,
+                    "mention": "Fig. 2A",
+                    "ref_id": "FIGREF1"
+                },
+                {
+                    "start": 596,
+                    "end": 603,
+                    "mention": "Fig. 2B",
+                    "ref_id": "FIGREF1"
+                }
+            ]
+        },
+        {
+            "text": "If \u223c10% of cellular mRNAs are controlled by \u22121 PRF, what is the biological significance of this phenomenon? As noted above, the first hint that \u22121 PRF may have a physiological role came from the observation that mutants that promote global increased rates of \u22121 PRF appeared to disrupt the cell cycle in yeast.34 Indeed, a general observation in our laboratory over the past 2 decades has been that mutations that globally alter rates of \u22121 PRF compromise cell growth and viability.35",
+            "cite_spans": [
+                {
+                    "start": 310,
+                    "end": 312,
+                    "mention": "34",
+                    "ref_id": "BIBREF33"
+                },
+                {
+                    "start": 482,
+                    "end": 484,
+                    "mention": "35",
+                    "ref_id": "BIBREF34"
+                }
+            ],
+            "section": "\u22121 PRF and gene expression ::: Programmed \u22121 Ribosomal Frameshifting",
+            "ref_spans": []
+        },
+        {
+            "text": "The serendipitous discovery of a +1 PRF signal in the yeast EST3 mRNA, which encodes a component of telomerase,36 prompted a search the PRFdb for \u22121 PRF signals in additional mRNAs encoding proteins involved in telomere maintenance. Operational \u22121 PRF signals (defined as promoting \u22651% frameshifting) were identified in 4 mRNAs encoding proteins critical for yeast telomere maintenance. These are: EST2, encoding the reverse transcriptase component of telomerase; EST1, encoding the protein that \u201cdocks\u201d telomerase to chromosome ends; and STN1 and CDC13 mRNAs, which encode proteins involved in recruiting telomerase to shortened telomeres. These were all shown to function as NMD-dependent mRNA destabilizing elements. The wide range of \u22121 PRF efficiencies (from 2% - 70%) promoted by these elements enabled characterization of a simple exponential decay function between \u22121 PRF efficiency and mRNA destabilizing activity:",
+            "cite_spans": [
+                {
+                    "start": 111,
+                    "end": 113,
+                    "mention": "36",
+                    "ref_id": "BIBREF35"
+                }
+            ],
+            "section": "\u22121 PRF and gene expression ::: Programmed \u22121 Ribosomal Frameshifting",
+            "ref_spans": []
+        },
+        {
+            "text": "where x denotes PRF efficiency and mRNA abundance is a function of x. Abrogation of \u22121 PRF in the EST2 mRNA (leading to increased expression of this protein) yielded cells with telomeres of intermediate length, consistent with prior studies showing similar effects upon overexpression of this gene, or STN1 or CDC13.37-40 Importantly, abrogation of NMD resulted in cells with very short telomeres, consistent with NMD being epistatic to \u22121 PRF. Microscopic examination of these cells revealed that a large fraction were arrested at the G2/M boundary characterized by large mother cells attached to equally large daughter cells. Indeed, many of these cells had additional buds , characteristic of cell cycle \u201cescape\u201d mutants. In unpublished studies, operational frameshift signals have been identified in at least 2 human messages encoding proteins required for telomere maintenance; suggesting that \u22121 PRF may also play a role in human telomere maintenance and aging.",
+            "cite_spans": [
+                {
+                    "start": 316,
+                    "end": 321,
+                    "mention": "37-40",
+                    "ref_id": "BIBREF36"
+                }
+            ],
+            "section": "\u22121 PRF and gene expression ::: Programmed \u22121 Ribosomal Frameshifting",
+            "ref_spans": []
+        },
+        {
+            "text": "In yeast, telomerase abundance is strictly limited: it is estimated that diploid cells, which contain 64 chromosome ends, only contain \u223c29 telomerase molecules,41 consistent with observations that limitation of telomerase levels is required for telomere length homeostasis.42 Current models43,44 posit that telomeres exist in a range of states, from long, and fully capped (by Rap1p, Rif2p, Rif1p trimers) to short and uncapped, and that the small fraction of short uncapped telomeres present in any given cell cycle are preferentially repaired. As shown in Figure 3, as telomeres age, they progressively shorten, and at some point reach an intermediate, uncapped status. This recruits a complex containing the MRX complex (Mre11p, Rad50p, Xrs2p) plus Tel1p, which in turn recruits the CST complex (Cdc13p, Stn1p and Ten1), inducing checkpoint arrest at the G2/M boundary. Phosphorylation of Cdc13p by Tel1p enables recruitment of telomerase through Est1p, stimulating telomere repair, and releasing cells from checkpoint arrest. Failure to recruit telomerase leads to further telomere shortening, where they eventually resemble double-stranded breaks (DSB). These short telomeres recruit the DSB repair machinery, resulting in strong checkpoint arrest at the G2/M boundary. Eventually, these short telomeres are maintained by this machinery, resulting in telomere end joining, and bypass of checkpoint arrest, i.e. multiply budded cells. The net effect is to \u201cimmortalize\u201d telomeres, resulting in longer lifespans, but at the cost of genome integrity. As shown in Figure 3, we propose that \u22121 PRF is used to maintain the correct stoichiometric ratios of telomerase components critical for telomerase recruitment. Changes in the expression of any one of these components, e.g. by abrogating \u22121 PRF in EST2 or overexpressing any single component, has dominant-negative effects on telomerase recruitment resulting in the observed increased rates of telomere shortening, consistent with the intermediate telomere lengths observed in these mutants. We further propose that changing the expression of all of the \u22121 PRF containing mRNAs, e.g., by globally changing rates of \u22121 PRF or by inactivation of NMD, has an even more dramatic effect, accounting for the very short telomeres observed in these classes of mutants.\n\n",
+            "cite_spans": [
+                {
+                    "start": 160,
+                    "end": 162,
+                    "mention": "41",
+                    "ref_id": "BIBREF40"
+                },
+                {
+                    "start": 273,
+                    "end": 275,
+                    "mention": "42",
+                    "ref_id": "BIBREF41"
+                },
+                {
+                    "start": 290,
+                    "end": 295,
+                    "mention": "43,44",
+                    "ref_id": "BIBREF42"
+                }
+            ],
+            "section": "Model: how \u22121 PRF may control telomere length ::: Programmed \u22121 Ribosomal Frameshifting",
+            "ref_spans": [
+                {
+                    "start": 558,
+                    "end": 566,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                },
+                {
+                    "start": 1565,
+                    "end": 1573,
+                    "mention": "Figure 3",
+                    "ref_id": "FIGREF2"
+                }
+            ]
+        },
+        {
+            "text": "If \u22121 PRF is normally employed to control gene expression, it stands to reason that \u22121 PRF itself should be subject to regulation. As suggested above, since global changes in \u22121 PRF tend to be detrimental to cells, regulation of \u22121 PRF should be sequence-specific. Given that \u22121 PRF is directed by cis-acting elements in mRNAs, sequence-specific interactions could be mediated by either base-pairing interactions with trans-acting RNAs, or by highly specific interactions with trans-acting proteins. Indeed, examples of both cases have been recently documented. The human CCR5 mRNA harbors a \u22121 PRF signal that functions as an mRNA destabilizing element by directing elongating ribosomes to premature termination codons, and we recently demonstrated that sequence specific interactions between this element and at least 2 micro-RNAs (miRNAs) promote increased rates of -1 PRF.33 Mapping of the miRNA/\u22121 PRF signal interaction suggested that formation of an RNA-triplex structure stabilizes the frameshift-stimulating mRNA pseudoknot, leading to increased ribosome pause times at the slippery sequence, further enhancing frameshifting. With this in mind, it is also possible that trans-acting RNAs that destabilize \u22121 PRF stimulating pseudoknots may also exist, i.e., these would have \u22121 PRF inhibitory activity. Trans-acting proteins can also stimulate \u22121 PRF: in the porcine reproductive and respiratory syndrome virus (PRRSV), both \u22121 and \u22122 PRF are stimulated by the virus-encoded nsp1\u03b2 replicase subunit that specifically interacts with sequence containing the slippery site.45",
+            "cite_spans": [
+                {
+                    "start": 876,
+                    "end": 878,
+                    "mention": "33",
+                    "ref_id": "BIBREF32"
+                },
+                {
+                    "start": 1579,
+                    "end": 1581,
+                    "mention": "45",
+                    "ref_id": "BIBREF44"
+                }
+            ],
+            "section": "Regulation of \u22121 PRF ::: Programmed \u22121 Ribosomal Frameshifting",
+            "ref_spans": []
+        },
+        {
+            "text": "To date, no direct connection has been established between changes in \u22121 PRF and human disease. However, a growing body of evidence suggests that such linkages may be forthcoming. The DKC1 gene encodes dyskerin, the protein that catalyzes conversion of uridines into pseudouridine in ribosomal rRNAs. Patients harboring mutations in this gene present with X-linked dyskeratosis (X-DC), a congenital disease characterized by bone marrow failure, dystrophic nails, mucosal leukoplakia, mottled rashes, congenital anomoalies and additional clinical presentations.46 Hypo-pseudouridulated yeast and human ribosomes have lower affinities for tRNAs, resulting in greater rates of tRNA slippage at \u22121 PRF signals.47 In unpublished work, we have shown that these mutant yeast cells have shortened telomeres, consistent with the progeria like symptoms of this disease. Indeed, X-DC is a member of a general class of diseases called ribosomopathies, which are caused by mutations in ribosomal protein genes and genes involved in ribosome biogenesis.48 Unpublished yeast based studies in our laboratory suggest that translational fidelity defects including altered rates of \u22121 PRF, may play important roles in this general class of diseases. Spinocerebellar ataxia 26 (SCA26) is caused by a mutation in eukaryotic translation elongation factor 2 (eEF2), the GTPase that translocates ribosomes along mRNAs.49\n\u22121 PRF can occur during translocation, and inhibition of this process can stimulate this.50\n\u22121 PRF is elevated In yeast cells expressing mutant forms of eEF2 harboring the SCA26-equivalent mutation,49 and in unpublished work, we have observed that this also occurs in cells derived from SCA26 patients. The finding that the same mutation in ribosomal protein L10 (eL16) found in a significant fraction of patients with T-cell lymphoblastic leukemia (T-ALL) also promotes increased rates of \u22121 PRF (by promoting decreased ribosomal affinity for aminoacyl-tRNA) provides evidence that somatically acquired mutations that affect \u22121 PRF may contribute to at least some cancers.51",
+            "cite_spans": [
+                {
+                    "start": 560,
+                    "end": 562,
+                    "mention": "46",
+                    "ref_id": "BIBREF45"
+                },
+                {
+                    "start": 706,
+                    "end": 708,
+                    "mention": "47",
+                    "ref_id": "BIBREF46"
+                },
+                {
+                    "start": 1039,
+                    "end": 1041,
+                    "mention": "48",
+                    "ref_id": "BIBREF47"
+                },
+                {
+                    "start": 1394,
+                    "end": 1396,
+                    "mention": "49",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 1486,
+                    "end": 1488,
+                    "mention": "50",
+                    "ref_id": "BIBREF49"
+                },
+                {
+                    "start": 1595,
+                    "end": 1597,
+                    "mention": "49",
+                    "ref_id": "BIBREF48"
+                },
+                {
+                    "start": 2070,
+                    "end": 2072,
+                    "mention": "51",
+                    "ref_id": "BIBREF50"
+                }
+            ],
+            "section": "Emerging evidence for a role of \u22121 PRF in human disease ::: Programmed \u22121 Ribosomal Frameshifting",
+            "ref_spans": []
+        },
+        {
+            "text": "Like many basic molecular regulatory mechanisms, while \u22121 PRF was discovered in viruses it has now been found to be involved in the expression of a significant number of eukaryotic genes. Surprisingly, unlike viruses, where \u22121 PRF is used to expand the genomic coding content, it appears that \u22121 PRF signals are used to post-transcriptionally regulate gene expression by functioning as mRNA destabilizing elements. Emerging evidence links global defects in \u22121 PRF to a growing number of human diseases. Recent studies in yeast revealed the importance of this mechanism in telomere maintenance and cell-cycle control, and current research suggests that may also be applicable to human cells. The recent finding of \u22121 PRF signal-specific regulation by miRNAs has solved one of the central questions in the field, and in combination with the telomerase studies, provokes the hypothesis that aging may be programmed in part by \u22121 PRF. The ability of trans-acting factors to manipulate \u22121 PRF also suggests therapeutic approaches including recombinant proteins, and synthetic non-coding RNAs/RNA analogs. Other more global approaches may include use of small molecule modulators of \u22121 PRF, or targeting of downstream pathways, e.g. nonsense mediated mRNA decay. The new paradigms described here will continue to guide a diverse set of research efforts into the future.",
+            "cite_spans": [],
+            "section": "Summary and Perspectives",
+            "ref_spans": []
+        }
+    ],
+    "ref_entries": {
+        "FIGREF0": {
+            "text": "Figure 1.: \u22121 PRF signals: structure and mechanism. (A) A typical \u22121 PRF signal is composed of 3 elements. 1) a heptameric \u201cslippery site,\" 2) a short spacer, and 3) a stable mRNA structure, e.g., an H-type pseudoknot. (B) The pseudoknot forces an elongating ribosome to pause with its A- and P-site tRNAs positioned at the slippery site in the 0-frame. (C) Slippage of the tRNAs by one base in the 5\u2019 (\u22121) direction enables non-wobble base pairing. (D) The ribosome denatures the pseudoknot, and translation elongation resumes in the \u22121 reading frame.",
+            "type": "figure"
+        },
+        "FIGREF1": {
+            "text": "Figure 2.: \u22121 PRF signals function as mRNA destabilizing elements. (A) Data from the programmed \u22121 ribosomal frameshift database (prfdb.umd.edu) plotting the number of \u22121 frame encoded C-terminal extensions (y-axis) versus their lengths in codons (x-axis) reveals that >99% of \u22121 PRF events direct ribosomes to termination codons within 30 codons. (B) Model: a \u22121 PRF event directs a ribosome to a premature termination codon. This triggers recruitment of the Nonsense Mediated mRNA Decay (NMD) complex to the mRNA, clearing the ribosome and initiating deadenylation of the 3\u2019 end followed by decapping of the 5\u2019 end. . The mRNA then becomes a substrate for exonucleolytic degradation.",
+            "type": "figure"
+        },
+        "FIGREF2": {
+            "text": "Figure 3.: Model: telomerase recruitment to uncapped telomeres is controlled by the relative stoichiometries of telomerase components in yeast. Top left depicts a fully capped telomere. As telomeres shorten, they become uncapped (middle left), recruiting the MRX-Tel1p complex, which in turn recruits the CST complex to the telomere end. Phosphorylation of Cdc13p by Tel1p recruits telomerase via Est1p. Est2p is the reverse transcriptase component of telomerase. If telomeres continue to shorten, they resemble chromosomes with double stranded breaks (DSB-like, lower left), recruiting DNA repair machinery. This results in cell growth arrest at checkpoint (G2/M). If cells cannot repair the defect, they undergo \u201ccrisis\u201d and a subpopulation will bypass arrest, maintaining their chromosome ends by DSB repair. Operational \u22121 PRF signals have been identified in the STN1, CDC13, EST1 and EST2 mRNAs. We propose that their relative abundances are controlled by \u22121 PRF. In optimal conditions, precisely controlled rates of \u22121 PRF ensures that these proteins are present in the correct stoichiometries, maximizing telomere repair (bold up arrow), and minimizing progression to the DSB-like state. When expression of any one of these genes is altered, e.g. telomerase recruitment is less efficient and more telomeres progress more rapidly to the DSB-like state. When expression of all 4 are altered, e.g., by global changes in \u22121 PRF or by abrogation of NMD, telomeres progress rapidly to the DSB-like state.",
+            "type": "figure"
+        }
+    },
+    "back_matter": [],
+    "bib_entries": {
+        "BIBREF0": {
+            "title": "Mechanisms and implications of programmed translational frameshifting",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Wiley InterdiscipRevRNA",
+            "volume": "3",
+            "issn": "",
+            "pages": "661-73",
+            "other_ids": {
+                "DOI": [
+                    "10.1002/wrna.1126"
+                ]
+            }
+        },
+        "BIBREF1": {
+            "title": "Identification of the nature of reading frame transitions observed in prokaryotic genomes",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Antonov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Nucleic Acids Res",
+            "volume": "41",
+            "issn": "",
+            "pages": "6514-30",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkt274"
+                ]
+            }
+        },
+        "BIBREF2": {
+            "title": "Reprogrammed genetic decoding in cellular gene expression",
+            "authors": [
+                {
+                    "first": "O",
+                    "middle": [],
+                    "last": "Namy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "MolCell",
+            "volume": "13",
+            "issn": "",
+            "pages": "157-68",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF3": {
+            "title": "Transfer RNA modifications that alter +1 frameshifting in general fail to affect \u22121 frameshifting",
+            "authors": [
+                {
+                    "first": "J",
+                    "middle": [],
+                    "last": "Urbonavicius",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "RNA",
+            "volume": "9",
+            "issn": "",
+            "pages": "760-8",
+            "other_ids": {
+                "DOI": [
+                    "10.1261/rna.5210803"
+                ]
+            }
+        },
+        "BIBREF4": {
+            "title": "On the structural basis of peptide-bond formation and antibiotic resistance from atomic structures of the large ribosomal subunit",
+            "authors": [
+                {
+                    "first": "TA",
+                    "middle": [],
+                    "last": "Steitz",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "FEBS Lett",
+            "volume": "579",
+            "issn": "",
+            "pages": "955-8",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.febslet.2004.11.053"
+                ]
+            }
+        },
+        "BIBREF5": {
+            "title": "Functional insights from the structure of the 30S ribosomal subunit and its interactions with antibiotics",
+            "authors": [
+                {
+                    "first": "AP",
+                    "middle": [],
+                    "last": "Carter",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "Nature",
+            "volume": "407",
+            "issn": "",
+            "pages": "340-8",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/35030019"
+                ]
+            }
+        },
+        "BIBREF6": {
+            "title": "Molecular mechanisms of translation initiation in eukaryotes",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [
+                        "V"
+                    ],
+                    "last": "Pestova",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Proc Nat lAcad Sci USA",
+            "volume": "98",
+            "issn": "",
+            "pages": "7029-36.",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF7": {
+            "title": "Eukaryotic rpL10 drives ribosomal rotation",
+            "authors": [
+                {
+                    "first": "SO",
+                    "middle": [],
+                    "last": "Sulima",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nucleic Acids Res",
+            "volume": "42",
+            "issn": "",
+            "pages": "2049-63",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkt1107"
+                ]
+            }
+        },
+        "BIBREF8": {
+            "title": "Endless possibilities: translation termination and stop codon recognition",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Bertram",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Microbiology-Uk",
+            "volume": "147",
+            "issn": "",
+            "pages": "255-69",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF9": {
+            "title": "Expression of the Rous Sarcoma Virus pol gene by ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "T",
+                    "middle": [],
+                    "last": "Jacks",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Science",
+            "volume": "230",
+            "issn": "",
+            "pages": "1237-42",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.2416054"
+                ]
+            }
+        },
+        "BIBREF10": {
+            "title": "Bacterial peptide chain release factors: conserved primary structure and possible frameshift regulation of release factor 2",
+            "authors": [
+                {
+                    "first": "WJ",
+                    "middle": [],
+                    "last": "Craigen",
+                    "suffix": ""
+                }
+            ],
+            "year": 1985,
+            "venue": "Proc Natl Acad Sci USA",
+            "volume": "82",
+            "issn": "",
+            "pages": "3616-20",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF11": {
+            "title": "Efficient translational frameshifting occurs within a conserved sequence of the overlap between the two genes of a yeast Ty1 transposon",
+            "authors": [
+                {
+                    "first": "JJ",
+                    "middle": [],
+                    "last": "Clare",
+                    "suffix": ""
+                }
+            ],
+            "year": 1988,
+            "venue": "Proc Nat lAcad Sc iUSA",
+            "volume": "85",
+            "issn": "",
+            "pages": "6816-20",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.85.18.6816"
+                ]
+            }
+        },
+        "BIBREF12": {
+            "title": "Unusual mRNA pseudoknot structure is recognized by a protein translational repressor",
+            "authors": [
+                {
+                    "first": "CK",
+                    "middle": [],
+                    "last": "Tang",
+                    "suffix": ""
+                }
+            ],
+            "year": 1989,
+            "venue": "Cell",
+            "volume": "57",
+            "issn": "",
+            "pages": "531-6",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/0092-8674(89)90123-2"
+                ]
+            }
+        },
+        "BIBREF13": {
+            "title": "An efficient ribosomal frame-shifting signal in the polymerase-encoding region of the coronavirus IBV",
+            "authors": [
+                {
+                    "first": "I",
+                    "middle": [],
+                    "last": "Brierley",
+                    "suffix": ""
+                }
+            ],
+            "year": 1987,
+            "venue": "EMBO J",
+            "volume": "6",
+            "issn": "",
+            "pages": "3779-85",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF14": {
+            "title": "RECODE: a database of frameshifting, bypassing and codon redefinition utilized for gene expression",
+            "authors": [
+                {
+                    "first": "PV",
+                    "middle": [],
+                    "last": "Baranov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Nucleic Acids Res",
+            "volume": "29",
+            "issn": "",
+            "pages": "264-7",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/29.1.264"
+                ]
+            }
+        },
+        "BIBREF15": {
+            "title": "Recode-2: new design, new search tools, and many more genes",
+            "authors": [
+                {
+                    "first": "M",
+                    "middle": [],
+                    "last": "Bekaert",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nucleic Acids Res",
+            "volume": "38",
+            "issn": "",
+            "pages": "D69-74",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkp788"
+                ]
+            }
+        },
+        "BIBREF16": {
+            "title": "Structure-function analysis of the ribosomal frameshifting signal of two human immunodeficiency virus type 1 isolates with increased resistance to viral protease inhibitors",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Girnary",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Gen Virol",
+            "volume": "88",
+            "issn": "",
+            "pages": "226-35",
+            "other_ids": {
+                "DOI": [
+                    "10.1099/vir.0.82064-0"
+                ]
+            }
+        },
+        "BIBREF17": {
+            "title": "Regulated ribosomal frameshifting by an RNA-protein interaction",
+            "authors": [
+                {
+                    "first": "H",
+                    "middle": [],
+                    "last": "Kollmus",
+                    "suffix": ""
+                }
+            ],
+            "year": 1996,
+            "venue": "RNA",
+            "volume": "2",
+            "issn": "",
+            "pages": "316-23",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF18": {
+            "title": "Stem-loop structures can effectively substitute for an RNA pseudoknot in -1 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "CH",
+                    "middle": [],
+                    "last": "Yu",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Nucleic Acids Res",
+            "volume": "39",
+            "issn": "",
+            "pages": "8952-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkr579"
+                ]
+            }
+        },
+        "BIBREF19": {
+            "title": "Minor groove RNA triplex in the crystal structure of a ribosomal frameshifting viral pseudoknot",
+            "authors": [
+                {
+                    "first": "L",
+                    "middle": [],
+                    "last": "Su",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Nat Struct Biol",
+            "volume": "6",
+            "issn": "",
+            "pages": "285-92",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/6722"
+                ]
+            }
+        },
+        "BIBREF20": {
+            "title": "Mammalian gene PEG10 expresses two reading frames by high efficiency -1 frameshifting in embryonic-associated tissues",
+            "authors": [
+                {
+                    "first": "MB",
+                    "middle": [],
+                    "last": "Clark",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "J Biol Chem",
+            "volume": "282",
+            "issn": "",
+            "pages": "37359-69",
+            "other_ids": {
+                "DOI": [
+                    "10.1074/jbc.M705676200"
+                ]
+            }
+        },
+        "BIBREF21": {
+            "title": "A retrotransposon-derived gene, PEG10, is a novel imprinted gene located on human chromosome 7q21",
+            "authors": [
+                {
+                    "first": "R",
+                    "middle": [],
+                    "last": "Ono",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "Genomics",
+            "volume": "73",
+            "issn": "",
+            "pages": "232-7",
+            "other_ids": {
+                "DOI": [
+                    "10.1006/geno.2001.6494"
+                ]
+            }
+        },
+        "BIBREF22": {
+            "title": "Characterization of the frameshift signal of Edr, a mammalian example of programmed -1 ribosomal frameshifting",
+            "authors": [
+                {
+                    "first": "E",
+                    "middle": [],
+                    "last": "Manktelow",
+                    "suffix": ""
+                }
+            ],
+            "year": 2005,
+            "venue": "Nucleic Acids Res",
+            "volume": "33",
+            "issn": "",
+            "pages": "1553-63",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gki299"
+                ]
+            }
+        },
+        "BIBREF23": {
+            "title": "Translational maintenance of frame: mutants of Saccharomyces cerevisiae with altered -1 ribosomal frameshifting efficiencies",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Genetics",
+            "volume": "136",
+            "issn": "",
+            "pages": "75-86",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF24": {
+            "title": "Recoding: translational bifurcations in gene expression",
+            "authors": [
+                {
+                    "first": "P",
+                    "middle": [
+                        "V"
+                    ],
+                    "last": "Baranov",
+                    "suffix": ""
+                }
+            ],
+            "year": 2002,
+            "venue": "Gene",
+            "volume": "286",
+            "issn": "",
+            "pages": "187-201",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0378-1119(02)00423-7"
+                ]
+            }
+        },
+        "BIBREF25": {
+            "title": "Observation of dually decoded regions of the human genome using ribosome profiling data",
+            "authors": [
+                {
+                    "first": "AM",
+                    "middle": [],
+                    "last": "Michel",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Genome Res",
+            "volume": "22",
+            "issn": "",
+            "pages": "2219-29",
+            "other_ids": {
+                "DOI": [
+                    "10.1101/gr.133249.111"
+                ]
+            }
+        },
+        "BIBREF26": {
+            "title": "Pseudoknots in RNA secondary structures",
+            "authors": [
+                {
+                    "first": "RB",
+                    "middle": [],
+                    "last": "Lyngs\u00f8",
+                    "suffix": ""
+                }
+            ],
+            "year": 2000,
+            "venue": "In Proc Fourth Annu Int Conf Comput Mol Biol",
+            "volume": "",
+            "issn": "",
+            "pages": "201-9.",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF27": {
+            "title": "Identification of putative programmed -1 ribosomal frameshift signals in large DNA databases",
+            "authors": [
+                {
+                    "first": "AB",
+                    "middle": [],
+                    "last": "Hammell",
+                    "suffix": ""
+                }
+            ],
+            "year": 1999,
+            "venue": "Genome Res",
+            "volume": "9",
+            "issn": "",
+            "pages": "417-27",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF28": {
+            "title": "Identification of functional, endogenous programmed -1 ribosomal frameshift signals in the genome of Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "JL",
+                    "middle": [],
+                    "last": "Jacobs",
+                    "suffix": ""
+                }
+            ],
+            "year": 2007,
+            "venue": "Nucleic Acids Res",
+            "volume": "35",
+            "issn": "",
+            "pages": "165-74",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkl1033"
+                ]
+            }
+        },
+        "BIBREF29": {
+            "title": "PRFdb: a database of computationally predicted eukaryotic programmed -1 ribosomal frameshift signals",
+            "authors": [
+                {
+                    "first": "AT",
+                    "middle": [],
+                    "last": "Belew",
+                    "suffix": ""
+                }
+            ],
+            "year": 2008,
+            "venue": "BMC Genomics",
+            "volume": "9",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1186/1471-2164-9-339"
+                ]
+            }
+        },
+        "BIBREF30": {
+            "title": "A programmed -1 ribosomal frameshift signal can function as a cis-acting mRNA destabilizing element",
+            "authors": [
+                {
+                    "first": "EP",
+                    "middle": [],
+                    "last": "Plant",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Nucleic Acids Res",
+            "volume": "32",
+            "issn": "",
+            "pages": "784-90",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkh256"
+                ]
+            }
+        },
+        "BIBREF31": {
+            "title": "Endogenous ribosomal frameshift signals operate as mRNA destabilizing elements through at least two molecular pathways in yeast",
+            "authors": [
+                {
+                    "first": "AT",
+                    "middle": [],
+                    "last": "Belew",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Nucleic Acids Res",
+            "volume": "39",
+            "issn": "",
+            "pages": "2799-808",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/nar/gkq1220"
+                ]
+            }
+        },
+        "BIBREF32": {
+            "title": "Ribosomal frameshifting in the CCR5 mRNA is regulated by miRNAs and the NMD pathway",
+            "authors": [
+                {
+                    "first": "AT",
+                    "middle": [],
+                    "last": "Belew",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Nature",
+            "volume": "512",
+            "issn": "",
+            "pages": "265-9",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/nature13429"
+                ]
+            }
+        },
+        "BIBREF33": {
+            "title": "Translational maintenance of frame:\u00a0 mutants of Saccharomyces cerevisiae with altered -1 ribosomal frameshifting efficiencies",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 1994,
+            "venue": "Genetics",
+            "volume": "136",
+            "issn": "",
+            "pages": "75-86",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF34": {
+            "title": "Mutants that affect recoding",
+            "authors": [
+                {
+                    "first": "JD",
+                    "middle": [],
+                    "last": "Dinman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2010,
+            "venue": "Recoding: Expansion of Decoding Rules Enriches Gene Expression",
+            "volume": "",
+            "issn": "",
+            "pages": "321-44.",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF35": {
+            "title": "Programmed translational frameshifting in a gene required for yeast telomere replication",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Lundblad",
+                    "suffix": ""
+                }
+            ],
+            "year": 1997,
+            "venue": "Curr Biol",
+            "volume": "7",
+            "issn": "",
+            "pages": "969-76",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/S0960-9822(06)00416-7"
+                ]
+            }
+        },
+        "BIBREF36": {
+            "title": "mRNAs encoding telomerase components and regulators are controlled by UPF genes in Saccharomyces cerevisiae",
+            "authors": [
+                {
+                    "first": "JN",
+                    "middle": [],
+                    "last": "Dahlseid",
+                    "suffix": ""
+                }
+            ],
+            "year": 2003,
+            "venue": "EukaryotCell",
+            "volume": "2",
+            "issn": "",
+            "pages": "134-42",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF37": {
+            "title": "Telomere cap components influence the rate of senescence in telomerase-deficient yeast cells",
+            "authors": [
+                {
+                    "first": "S",
+                    "middle": [],
+                    "last": "Enomoto",
+                    "suffix": ""
+                }
+            ],
+            "year": 2004,
+            "venue": "Mol Cell Biol",
+            "volume": "24",
+            "issn": "",
+            "pages": "837-45",
+            "other_ids": {
+                "DOI": [
+                    "10.1128/MCB.24.2.837-845.2004"
+                ]
+            }
+        },
+        "BIBREF38": {
+            "title": "Telomere length regulation and telomeric chromatin require the nonsense- mediated mRNA decay pathway",
+            "authors": [
+                {
+                    "first": "JE",
+                    "middle": [],
+                    "last": "Lew",
+                    "suffix": ""
+                }
+            ],
+            "year": 1998,
+            "venue": "Mo lCell Biol",
+            "volume": "18",
+            "issn": "",
+            "pages": "6121-30",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF39": {
+            "title": "Telomerase subunit overexpression suppresses telomere-specific checkpoint activation in the yeast yku80 mutant",
+            "authors": [
+                {
+                    "first": "SH",
+                    "middle": [],
+                    "last": "Teo",
+                    "suffix": ""
+                }
+            ],
+            "year": 2001,
+            "venue": "EMBO Rep",
+            "volume": "2",
+            "issn": "",
+            "pages": "197-202",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/embo-reports/kve038"
+                ]
+            }
+        },
+        "BIBREF40": {
+            "title": "Low abundance of telomerase in yeast: implications for telomerase haploinsufficiency",
+            "authors": [
+                {
+                    "first": "AD",
+                    "middle": [],
+                    "last": "Mozdy",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "RNA",
+            "volume": "12",
+            "issn": "",
+            "pages": "1721-37",
+            "other_ids": {
+                "DOI": [
+                    "10.1261/rna.134706"
+                ]
+            }
+        },
+        "BIBREF41": {
+            "title": "Telomere length homeostasis requires that telomerase levels are limiting",
+            "authors": [
+                {
+                    "first": "G",
+                    "middle": [],
+                    "last": "Cristofari",
+                    "suffix": ""
+                }
+            ],
+            "year": 2006,
+            "venue": "EMBO J",
+            "volume": "25",
+            "issn": "",
+            "pages": "565-74",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/sj.emboj.7600952"
+                ]
+            }
+        },
+        "BIBREF42": {
+            "title": "Telomere length regulation: coupling DNA end processing to feedback regulation of telomerase",
+            "authors": [
+                {
+                    "first": "D",
+                    "middle": [],
+                    "last": "Shore",
+                    "suffix": ""
+                }
+            ],
+            "year": 2009,
+            "venue": "EMBO J",
+            "volume": "28",
+            "issn": "",
+            "pages": "2309-22",
+            "other_ids": {
+                "DOI": [
+                    "10.1038/emboj.2009.195"
+                ]
+            }
+        },
+        "BIBREF43": {
+            "title": "Replication of telomeres and the regulation of telomerase",
+            "authors": [
+                {
+                    "first": "V",
+                    "middle": [],
+                    "last": "Pfeiffer",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Cold Spring Harb. Perspect. Biol",
+            "volume": "5",
+            "issn": "",
+            "pages": null,
+            "other_ids": {
+                "DOI": [
+                    "10.1101/cshperspect.a010405"
+                ]
+            }
+        },
+        "BIBREF44": {
+            "title": "Transactivation of programmed ribosomal frameshifting by a viral protein",
+            "authors": [
+                {
+                    "first": "Y",
+                    "middle": [],
+                    "last": "Li",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Proc Natl Acad Sci U S A",
+            "volume": "",
+            "issn": "",
+            "pages": "1-10.",
+            "other_ids": {
+                "DOI": []
+            }
+        },
+        "BIBREF45": {
+            "title": "Updates on the biology and management of dyskeratosis congenita and related telomere biology disorders",
+            "authors": [
+                {
+                    "first": "BJ",
+                    "middle": [],
+                    "last": "Ballew",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Expert Rev Hematol",
+            "volume": "6",
+            "issn": "",
+            "pages": "327-37",
+            "other_ids": {
+                "DOI": [
+                    "10.1586/ehm.13.23"
+                ]
+            }
+        },
+        "BIBREF46": {
+            "title": "rRNA pseudouridylation defects affect ribosomal ligand binding and translational fidelity from yeast to human cells",
+            "authors": [
+                {
+                    "first": "K",
+                    "middle": [],
+                    "last": "Jack",
+                    "suffix": ""
+                }
+            ],
+            "year": 2011,
+            "venue": "Mol Cell",
+            "volume": "44",
+            "issn": "",
+            "pages": "660-6",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.molcel.2011.09.017"
+                ]
+            }
+        },
+        "BIBREF47": {
+            "title": "Genetics. mysterious ribosomopathies",
+            "authors": [
+                {
+                    "first": "KL",
+                    "middle": [],
+                    "last": "McCann",
+                    "suffix": ""
+                }
+            ],
+            "year": 2013,
+            "venue": "Science",
+            "volume": "341",
+            "issn": "",
+            "pages": "849-50",
+            "other_ids": {
+                "DOI": [
+                    "10.1126/science.1244156"
+                ]
+            }
+        },
+        "BIBREF48": {
+            "title": "A conserved eEF2 coding variant in SCA26 leads to loss of translational fidelity and increased susceptibility to proteostatic insult",
+            "authors": [
+                {
+                    "first": "KE",
+                    "middle": [],
+                    "last": "Hekman",
+                    "suffix": ""
+                }
+            ],
+            "year": 2012,
+            "venue": "Hum Mol Genet",
+            "volume": "21",
+            "issn": "",
+            "pages": "5472-83",
+            "other_ids": {
+                "DOI": [
+                    "10.1093/hmg/dds392"
+                ]
+            }
+        },
+        "BIBREF49": {
+            "title": "Programmed -1 frameshifting by kinetic partitioning during impeded translocation",
+            "authors": [
+                {
+                    "first": "N",
+                    "middle": [],
+                    "last": "Caliskan",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Cell",
+            "volume": "157",
+            "issn": "",
+            "pages": "1619-31",
+            "other_ids": {
+                "DOI": [
+                    "10.1016/j.cell.2014.04.041"
+                ]
+            }
+        },
+        "BIBREF50": {
+            "title": "Bypass of the pre-60S ribosomal quality control as a pathway to oncogenesis",
+            "authors": [
+                {
+                    "first": "SO",
+                    "middle": [],
+                    "last": "Sulima",
+                    "suffix": ""
+                }
+            ],
+            "year": 2014,
+            "venue": "Proc Natl Acad Sci",
+            "volume": "111",
+            "issn": "",
+            "pages": "5640-5",
+            "other_ids": {
+                "DOI": [
+                    "10.1073/pnas.1400247111"
+                ]
+            }
+        }
+    }
+}

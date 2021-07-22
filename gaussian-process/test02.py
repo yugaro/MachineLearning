@@ -19,10 +19,10 @@ x3 = np.array([1, 2, 1, 1])
 x4 = np.array([1, 1, 2, 1])
 
 
-v = np.array([np.sqrt(1 / 3), np.sqrt(1 / 3), np.sqrt(1 / 3), 0])
-x_q = np.sqrt(2 * np.log(2 * (a ** 2) / (2 * (a ** 2) - ((N * eta) ** 2)))) * np.sqrt(Lambda).dot(v) + x1
-print(x_q)
-kernel_metric = my_kernel_metric(x1, x_q, a, Lambda)
+# v = np.array([np.sqrt(1 / 3), np.sqrt(1 / 3), np.sqrt(1 / 3), 0])
+# x_q = np.sqrt(2 * np.log(2 * (a ** 2) / (2 * (a ** 2) - ((N * eta) ** 2)))) * np.sqrt(Lambda).dot(v) + x1
+# print(x_q)
+kernel_metric = my_kernel_metric(x1, x4, a, Lambda)
 print(kernel_metric)
 
 # print(x_q)

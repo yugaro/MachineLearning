@@ -21,7 +21,6 @@ matplotlib.rc('font', **font)
 
 # visualization of DataFrame　(graph)
 
-
 def display(*dfs, head=True):
     for df in dfs:
         IPython.display.display(df)

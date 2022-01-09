@@ -4,7 +4,6 @@ import pandas as pd
 
 data = pd.read_csv("./new_cases.csv")
 
-
 # Data列を日付データとして認識
 data['date'] = pd.to_datetime(data['date'])
 # 日付順に並び替え

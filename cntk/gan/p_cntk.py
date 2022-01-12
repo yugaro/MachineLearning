@@ -4,7 +4,6 @@ import os
 import matplotlib.pyplot as plt
 import time
 
-
 def create_reader(path, is_training, input_dim, num_label_classes):
     """
     input:
